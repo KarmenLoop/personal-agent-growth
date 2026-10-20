@@ -2,7 +2,7 @@
 
 A skill for keeping an agent's work connected across tasks, reviews, and tools. It helps the agent prepare for its next step, learn from a failed attempt, revise a decision when evidence changes, and resume from shared task records.
 
-Version **0.3.2** includes lessons from real Codex scheduled runs and a Codex-to-Cursor handoff on one Mac. The skill instructions are in Chinese. This repository's installation, licensing, and contributor documentation are in English.
+Version **0.3.2** includes lessons from real Codex scheduled runs and a Codex-to-Cursor handoff on one Mac. The skill instructions are in Chinese. Complete installation guides are available in English and Chinese; licensing and contributor documentation are in English.
 
 ## What it does
 
@@ -17,6 +17,8 @@ The skill is a set of instructions and a small offline package checker. It does 
 
 ## Install
 
+Start with the complete [English installation guide](docs/install.md) or [Chinese installation guide](docs/install.zh-CN.md). Both cover macOS and Windows commands, Codex and Cursor discovery, shared task memory, verification, scheduled reviews, updates, and removal.
+
 Download `personal-agent-growth-0.3.2.zip` and `manifest.json` from the [release](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.3.2). Extract the `personal-agent-growth` folder into a skill directory supported by your agent. Keep its `references`, `scripts`, `LICENSE`, and `NOTICE` files together.
 
 Alternatively, clone the source:
@@ -29,7 +31,9 @@ Open the extracted or cloned folder in your tool and explicitly ask it to read `
 
 For shared use, point both tools at the same skill folder and the same **separate task-memory folder**. Confirm the resolved paths and current state before handing off work. A shared skill does not share login credentials, permissions, or a scheduler.
 
-See [installation and shared use](docs/install.md) for concrete examples.
+The recommended installation uses one shared skill folder and one discovery entry under `.agents/skills`, supported by current Codex and Cursor versions. Follow the guide to check actual loading in your host.
+
+The macOS guide's install and removal commands were executed in an isolated directory. See the [installation command results](docs/install-verification.md) for checks, file identities, and the untested Windows-command scope.
 
 ## Start a task
 
