@@ -63,6 +63,8 @@ This check does not authenticate the publisher or prove that a host will use the
 
 ## Validation
 
+Version 0.3.2 passed 13 utility tests and 21 package checks on each of Linux, macOS Intel, and Windows. The [release acceptance report](docs/release-0.3.2-acceptance.md) includes the completed CI jobs, package hashes, and the resolved macOS scheduling issue.
+
 The preceding local trials included two genuine Codex scheduler wakeups and three Cursor recoveries from shared task memory. An independent review found two relocation mistakes, which were corrected and checked again.
 
 The final 0.3.2 text adds the lessons from those trials. It has not had a separate complete Cursor behavior trial. See [validation and limitations](docs/validation.md) for the exact scope.

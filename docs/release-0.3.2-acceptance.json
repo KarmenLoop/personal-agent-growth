@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "release_version": "0.3.2",
+  "release_tag_commit": "bfe713595ee22808d5a9148508369966ca71035e",
+  "ci": {
+    "observed_at": "2026-10-21T03:09:16.756546+08:00",
+    "scope": "Bundled Python utilities and installable package; not agent behavior",
+    "result": "PASS",
+    "run_id": 39480710426,
+    "url": "https://github.com/KarmenLoop/personal-agent-growth/actions/runs/39480710426",
+    "commit": "43e6f6a8323a1aa8ee99cfcb3c96f7ae271014ca",
+    "jobs": [
+      {
+        "name": "check (ubuntu-24.04)",
+        "job_id": 118828210523,
+        "url": "https://github.com/KarmenLoop/personal-agent-growth/actions/runs/39480710426/job/118828210523",
+        "conclusion": "success",
+        "tests_passed": 13,
+        "archive_checks_passed": 21,
+        "package_content_sha256": "3b551b97ecc0551266b54492eb93f0b6f2578c7255faf595ce0aaeeb3d0c3698",
+        "started_at": "2026-10-20T19:07:19Z",
+        "completed_at": "2026-10-20T19:07:27Z",
+        "log_sha256": "bb8e0c4b1f49833b6dc5f7d06ed8499a955c855d8efd94796f047efee89be06c"
+      },
+      {
+        "name": "check (macos-26-intel)",
+        "job_id": 118828210858,
+        "url": "https://github.com/KarmenLoop/personal-agent-growth/actions/runs/39480710426/job/118828210858",
+        "conclusion": "success",
+        "tests_passed": 13,
+        "archive_checks_passed": 21,
+        "package_content_sha256": "3b551b97ecc0551266b54492eb93f0b6f2578c7255faf595ce0aaeeb3d0c3698",
+        "started_at": "2026-10-20T19:07:21Z",
+        "completed_at": "2026-10-20T19:07:43Z",
+        "log_sha256": "0df7aff6258ee932dab9f08a24a09172f17d41b940881c955f55114992f29514"
+      },
+      {
+        "name": "check (windows-2025)",
+        "job_id": 118828211169,
+        "url": "https://github.com/KarmenLoop/personal-agent-growth/actions/runs/39480710426/job/118828211169",
+        "conclusion": "success",
+        "tests_passed": 13,
+        "archive_checks_passed": 21,
+        "package_content_sha256": "3b551b97ecc0551266b54492eb93f0b6f2578c7255faf595ce0aaeeb3d0c3698",
+        "started_at": "2026-10-20T19:07:18Z",
+        "completed_at": "2026-10-20T19:07:34Z",
+        "log_sha256": "5575db4b343b2c75ef0d04f58d0338e5a414131a89551b579428c0d2f1a2a059"
+      }
+    ]
+  },
+  "original_failure": {
+    "run_ids": [
+      39468002952,
+      39468117247
+    ],
+    "macos_conclusion": "cancelled",
+    "runner_acquired": false,
+    "test_steps_executed": 0,
+    "cause": "GitHub-hosted macOS ARM64 runner capacity; no runner acquired",
+    "original_runs_preserved": true,
+    "resolution": "Use the explicit macos-26-intel runner; preserve all test commands and package files"
+  },
+  "release_download": {
+    "status": "PASS",
+    "exit_code": 0,
+    "archive_checks_passed": 21,
+    "archive_sha256": "b2e58a97357cee25cac9c890e053d381cb4240b4d63ff1815886c0dfcd9a61b0",
+    "manifest_sha256": "38c173aded1b11f91814684a52e82d3f71275c44cf86da420a7e28d2b07ebc9a",
+    "content_sha256": "3b551b97ecc0551266b54492eb93f0b6f2578c7255faf595ce0aaeeb3d0c3698",
+    "file_checks": [
+      {
+        "path": "LICENSE",
+        "sha256": "8486a10c4393cee1c25392769ddd3b2d6c242d6ec7928e1414efff7dfb2f07ef",
+        "matches_current_source": true
+      },
+      {
+        "path": "NOTICE",
+        "sha256": "a40bb7e087f8bb67fc2b843ab3714648db4c73329ac62384341c576fd9e95e4f",
+        "matches_current_source": true
+      },
+      {
+        "path": "SKILL.md",
+        "sha256": "d50877ba2986b00752f504d4bc17780d68c47026f4c1e99fbc933cd82505e688",
+        "matches_current_source": true
+      },
+      {
+        "path": "references/autonomous-continuation.md",
+        "sha256": "78622a4f42f0a0aedc29eb0fd3072bb621caf1849913ad15cbdccf9ff68167e3",
+        "matches_current_source": true
+      },
+      {
+        "path": "references/learning-and-contact.md",
+        "sha256": "027419c71c477ea6aa18a489b191dc59aa462f1c58da3783ed01361fcb0d6125",
+        "matches_current_source": true
+      },
+      {
+        "path": "references/shared-memory.md",
+        "sha256": "07e2f3eb132d5e059fc3b397077894b9ff4e1194eaf6b6149a5f15b354d62272",
+        "matches_current_source": true
+      },
+      {
+        "path": "references/task-record.md",
+        "sha256": "f6b35591235d5119c74bed49a3a348d5a75c0d53b43689425b356b52de4b824c",
+        "matches_current_source": true
+      },
+      {
+        "path": "scripts/verify_handoff.py",
+        "sha256": "526667a4374c9d470a01da1197cbdde5f7a8aad0501689a15cced63c95cd9dde",
+        "matches_current_source": true
+      }
+    ]
+  },
+  "scope_exclusions": [
+    "macOS ARM64 cloud CI success",
+    "cross-platform agent behavior",
+    "native Cursor scheduling",
+    "another complete Cursor 0.3.2 behavior trial"
+  ]
+}

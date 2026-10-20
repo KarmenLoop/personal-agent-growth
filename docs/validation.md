@@ -2,6 +2,8 @@
 
 This page separates prior maintainer-run local trials from checks anyone can run from this repository. It is an account of observed results, not a claim that every host or task behaves the same way.
 
+The version 0.3.2 utility and package checks have passed on Linux, macOS Intel, and Windows: 13 tests and 21 package checks on each platform. The [release acceptance report](release-0.3.2-acceptance.md) links the actual jobs, records the earlier macOS runner-capacity failure, and identifies the unchanged published package.
+
 ## Native Codex continuation
 
 On October 21, 2026, Asia/Shanghai time, a local task received two actual Codex scheduler wakeups without a new human task message between them.
