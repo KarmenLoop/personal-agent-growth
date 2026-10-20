@@ -1,0 +1,162 @@
+{
+  "status": "PASS",
+  "run_id": 39485618391,
+  "run_url": "https://github.com/KarmenLoop/personal-agent-growth/actions/runs/39485618391",
+  "tested_commit": "89c3bddefc95b788e320bb117c0e8f4324a9a566",
+  "scope": "Windows installation, shared-file task recovery, and uninstall; independent test processes, not Codex/Cursor desktop agents",
+  "results": [
+    {
+      "shell": "powershell",
+      "powershell_version": "5.1.26100.33438",
+      "os": "Microsoft Windows Server 2025 Datacenter",
+      "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+      "job_url": "https://github.com/KarmenLoop/personal-agent-growth/actions/runs/39485618391/job/118845129525",
+      "guide_sha256": {
+        "docs/install.md": "d96f80d690c500a2ef97c7a509084cfaa629ae2fbd9484d732801b6c81618081",
+        "docs/install.zh-CN.md": "99c7e8e20e04ae34682a707997b6cfd8f072c4dc2458002004e406f442d8c602"
+      },
+      "receipt_sha256": "ed3f1bd3ac98e82fe1fddecb4f4645a21c3bc18cd76afc6a8d565c057efcb4e8",
+      "recorded_child_commands": 22,
+      "cases": [
+        {
+          "case": "default",
+          "status": "PASS",
+          "root": "D:\\AgentKnowledge",
+          "command_substitutions": [
+            "GrowthSkillsRoot"
+          ],
+          "installed_files": 8,
+          "package_checks": 21,
+          "skill_file_identity_shared": true,
+          "memory_file_identity_shared": true,
+          "copied_state_rejected_as_shared": true,
+          "memory_revisions": [
+            1,
+            2,
+            3
+          ],
+          "worker_pids": [
+            9404,
+            6640,
+            7392
+          ],
+          "stale_revision_rejected_without_write": true,
+          "repeat_install_preserved_files": true,
+          "uninstall_preserved_skill_and_memory": true,
+          "ordinary_directory_removal_rejected": true
+        },
+        {
+          "case": "custom",
+          "status": "PASS",
+          "root": "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-xocszz3u\\Knowledge space 中文 & review",
+          "command_substitutions": [
+            "GrowthSkillsRoot",
+            "GrowthRoot"
+          ],
+          "installed_files": 8,
+          "package_checks": 21,
+          "skill_file_identity_shared": true,
+          "memory_file_identity_shared": true,
+          "copied_state_rejected_as_shared": true,
+          "memory_revisions": [
+            1,
+            2,
+            3
+          ],
+          "worker_pids": [
+            8496,
+            7632,
+            4304
+          ],
+          "stale_revision_rejected_without_write": true,
+          "repeat_install_preserved_files": true,
+          "uninstall_preserved_skill_and_memory": true,
+          "ordinary_directory_removal_rejected": true
+        }
+      ]
+    },
+    {
+      "shell": "pwsh",
+      "powershell_version": "7.6.6",
+      "os": "Microsoft Windows Server 2025 Datacenter",
+      "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+      "job_url": "https://github.com/KarmenLoop/personal-agent-growth/actions/runs/39485618391/job/118845129868",
+      "guide_sha256": {
+        "docs/install.md": "d96f80d690c500a2ef97c7a509084cfaa629ae2fbd9484d732801b6c81618081",
+        "docs/install.zh-CN.md": "99c7e8e20e04ae34682a707997b6cfd8f072c4dc2458002004e406f442d8c602"
+      },
+      "receipt_sha256": "4bef133a62f64231cf597eed6612e8c139136f700b52f5d29c9fcd1fb4263913",
+      "recorded_child_commands": 22,
+      "cases": [
+        {
+          "case": "default",
+          "status": "PASS",
+          "root": "D:\\AgentKnowledge",
+          "command_substitutions": [
+            "GrowthSkillsRoot"
+          ],
+          "installed_files": 8,
+          "package_checks": 21,
+          "skill_file_identity_shared": true,
+          "memory_file_identity_shared": true,
+          "copied_state_rejected_as_shared": true,
+          "memory_revisions": [
+            1,
+            2,
+            3
+          ],
+          "worker_pids": [
+            9128,
+            7436,
+            7948
+          ],
+          "stale_revision_rejected_without_write": true,
+          "repeat_install_preserved_files": true,
+          "uninstall_preserved_skill_and_memory": true,
+          "ordinary_directory_removal_rejected": true
+        },
+        {
+          "case": "custom",
+          "status": "PASS",
+          "root": "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-rstojyn6\\Knowledge space 中文 & review",
+          "command_substitutions": [
+            "GrowthSkillsRoot",
+            "GrowthRoot"
+          ],
+          "installed_files": 8,
+          "package_checks": 21,
+          "skill_file_identity_shared": true,
+          "memory_file_identity_shared": true,
+          "copied_state_rejected_as_shared": true,
+          "memory_revisions": [
+            1,
+            2,
+            3
+          ],
+          "worker_pids": [
+            1768,
+            4008,
+            2060
+          ],
+          "stale_revision_rejected_without_write": true,
+          "repeat_install_preserved_files": true,
+          "uninstall_preserved_skill_and_memory": true,
+          "ordinary_directory_removal_rejected": true
+        }
+      ]
+    }
+  ],
+  "initial_failed_run": "https://github.com/KarmenLoop/personal-agent-growth/actions/runs/39485238116",
+  "fixes": [
+    "Reset PSModulePath only for the Windows PowerShell child launched through Python under PowerShell 7.",
+    "Use Python -X utf8 for captured checker output with Chinese paths; document the same invocation."
+  ],
+  "evidence_asset": "windows-install-evidence-39485618391.zip",
+  "evidence_sha256": "0b3b63cdb274a72f7b81444094a7002240f81421068adba4ecb08cdd97e6dd62",
+  "not_tested": [
+    "Windows Codex/Cursor GUI discovery or model behavior",
+    "Native scheduler",
+    "Physical machine without D: for automatic C: fallback",
+    "Non-administrator permissions or every Windows version"
+  ]
+}

@@ -1,5 +1,7 @@
 # Installation command verification
 
+This page records the macOS run. The later [Windows verification](windows-install-verification.md) covers PowerShell 5.1 and 7 installation, shared-file recovery, and removal.
+
 Observed October 21, 2026, Asia/Shanghai time (2026-10-20 19:29:50 UTC).
 
 The macOS installation block in the [English guide](install.md) was executed on macOS 27.0 ARM64 with zsh. Only `GrowthRoot` and `GrowthSkillsRoot` were redirected into an isolated directory; both paths included spaces, and the knowledge path included Chinese characters. The release was downloaded from GitHub during the run. No user-level skill installation was changed.
@@ -27,6 +29,6 @@ The English and [Chinese guide](install.zh-CN.md) contain identical macOS and Wi
 
 This is a maintainer-run shell installation and removal check. The private receipt retains the exact commands, paths, stdout, stderr, exit codes, and file identities.
 
-The Windows PowerShell installation commands were reviewed against the linked Microsoft documentation but were **not executed in this run**. The existing Windows CI result covers the Python utilities and package, not these installation commands.
+Windows installation commands were not executed in this macOS run. They were subsequently executed in the separate Windows verification linked above. The original three-platform utility CI remains a different check.
 
 This run did not test fresh-chat skill selection, a new Codex-to-Cursor behavior sequence, scheduling, or cross-device memory. Earlier behavior trials and their limits are recorded in [validation](validation.md). Local ARM64 command execution is separate from the Intel macOS CI result in the [release acceptance report](release-0.3.2-acceptance.md).

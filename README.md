@@ -33,7 +33,7 @@ For shared use, point both tools at the same skill folder and the same **separat
 
 The recommended installation uses one shared skill folder and one discovery entry under `.agents/skills`, supported by current Codex and Cursor versions. Follow the guide to check actual loading in your host.
 
-The macOS guide's install and removal commands were executed in an isolated directory. See the [installation command results](docs/install-verification.md) for checks, file identities, and the untested Windows-command scope.
+The install and removal commands were executed on macOS and on Windows with both PowerShell 5.1 and PowerShell 7. The Windows check also restored and updated shared task files through independent processes. See the [macOS command results](docs/install-verification.md) and [Windows installation and shared-file results](docs/windows-install-verification.md) for the exact scope, fixes, and raw evidence.
 
 ## Start a task
 
