@@ -61,7 +61,7 @@ def memory_worker(phase, task, skill, release):
             return 3
         before = state_path.read_bytes()
         if phase == "review":
-            argv = [sys.executable, str(skill / "scripts/verify_handoff.py"),
+            argv = [sys.executable, "-X", "utf8", str(skill / "scripts/verify_handoff.py"),
                     "--archive", str(release / "personal-agent-growth-0.3.2.zip"),
                     "--manifest", str(release / "manifest.json")]
             run = subprocess.run(argv, capture_output=True, timeout=60)
@@ -117,11 +117,16 @@ def main():
         write_json(output / "receipt.json", report)
 
     def run(label, argv, expected=0, contains=None):
-        result = subprocess.run(argv, capture_output=True, timeout=240)
+        # PS7 -> Python -> Windows PowerShell otherwise inherits PS7 modules.
+        env = None
+        if Path(argv[0]).name.lower() in ("powershell", "powershell.exe"):
+            env = {k: v for k, v in os.environ.items() if k.upper() != "PSMODULEPATH"}
+        result = subprocess.run(argv, capture_output=True, timeout=240, env=env)
         (output / (label + ".stdout")).write_bytes(result.stdout)
         (output / (label + ".stderr")).write_bytes(result.stderr)
         record = {"label": label, "argv": argv, "exit_code": result.returncode,
                   "expected_exit_code": expected, "stdout": label + ".stdout",
+                  "child_psmodulepath_reset": env is not None,
                   "stderr": label + ".stderr",
                   "observed_at": datetime.now(timezone.utc).isoformat()}
         report["records"].append(record)
@@ -160,6 +165,8 @@ def main():
         environment = json.loads(ps("environment", root_line + """
 [ordered]@{
   powershell = $PSVersionTable.PSVersion.ToString()
+  module_path = $env:PSModulePath
+  hash_command_module = (Get-Command Get-FileHash).ModuleName
   os = (Get-CimInstance Win32_OperatingSystem).Caption
   selected_root = $GrowthRoot
   d_drive_present = (Test-Path -LiteralPath 'D:\\')
@@ -195,16 +202,28 @@ def main():
             alternate = alias / "shared-review"
 
             def worker(phase, path, expected=0):
-                return run(label + "-memory-" + phase + ("-stale" if expected else ""),
-                           [sys.executable, "-X", "utf8", str(SELF), "--memory-worker", phase,
-                            "--task", str(path), "--skill", str(entry),
-                            "--release", str(release)], expected)
+                try:
+                    return run(label + "-memory-" + phase + ("-stale" if expected else ""),
+                               [sys.executable, "-X", "utf8", str(SELF), "--memory-worker", phase,
+                                "--task", str(path), "--skill", str(entry),
+                                "--release", str(release)], expected)
+                finally:
+                    for stream in ("stdout", "stderr"):
+                        raw = task / ("review." + stream)
+                        if raw.exists():
+                            shutil.copyfile(raw, output / (label + "-verifier." + stream))
 
             first = json.loads(worker("prepare", task))
             assert os.path.samefile(task / "state.json", alternate / "state.json")
             copied = base / label / "copied-state.json"
             shutil.copyfile(task / "state.json", copied)
             assert not os.path.samefile(task / "state.json", copied)
+            if label == "custom":
+                run("legacy-non-utf8-verifier",
+                    [sys.executable, str(entry / "scripts/verify_handoff.py"),
+                     "--archive", str(release / "personal-agent-growth-0.3.2.zip"),
+                     "--manifest", str(release / "manifest.json")],
+                    expected=1, contains="UnicodeEncodeError")
             reviewed = json.loads(worker("review", alternate))
             assert first["state"]["nonce"] == reviewed["state"]["nonce"]
             assert json.loads((task / "state.json").read_text(encoding="utf-8")) == reviewed["state"]

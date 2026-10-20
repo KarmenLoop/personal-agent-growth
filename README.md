@@ -55,7 +55,7 @@ python3 scripts/verify_handoff.py \
   --manifest /path/to/manifest.json
 ```
 
-On Windows, use `py -3` in place of `python3` and supply Windows paths.
+On Windows, use `py -3 -X utf8` in place of `python3` and supply Windows paths. UTF-8 mode preserves Chinese paths when the JSON output is captured by another process.
 
 | Exit | Result | Meaning |
 |---|---|---|

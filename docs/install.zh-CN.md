@@ -176,11 +176,13 @@ Windows 默认 D / C 盘选择：
 
 ```powershell
 $GrowthRoot = if (Test-Path -LiteralPath 'D:\') { 'D:\AgentKnowledge' } else { 'C:\AgentKnowledge' }
-py -3 (Join-Path $GrowthRoot 'skills\personal-agent-growth\scripts\verify_handoff.py') --archive (Join-Path $GrowthRoot 'downloads\0.3.2\personal-agent-growth-0.3.2.zip') --manifest (Join-Path $GrowthRoot 'downloads\0.3.2\manifest.json')
+py -3 -X utf8 (Join-Path $GrowthRoot 'skills\personal-agent-growth\scripts\verify_handoff.py') --archive (Join-Path $GrowthRoot 'downloads\0.3.2\personal-agent-growth-0.3.2.zip') --manifest (Join-Path $GrowthRoot 'downloads\0.3.2\manifest.json')
 Write-Output "Exit code: $LASTEXITCODE"
 ```
 
 自选位置或手动安装请改成实际路径。正常应为 **PASS、退出码 0、21 项检查**。退出码 1 表示检查发现问题，2 表示检查未完成；Python 本身没启动时，不能给安装包下结论。该程序验证 ZIP 与所给 manifest 的一致性，不验证发布者身份，也不证明 Agent 行为。详见 [manifest 说明](manifest.md)。
+
+Windows 调用验包程序时保留 `-X utf8`，从其他进程调用时也一样。Python 3.11 默认的重定向输出编码可能无法表示中文路径，导致写出 JSON 前出现 `UnicodeEncodeError`。读取保存的 JSON 或子进程输出时明确使用 UTF-8；任务记忆文件也应明确采用 UTF-8，不依赖不同 PowerShell 版本的默认编码。
 
 ## 6. 初始化私人记忆，完成第一次实际任务
 
@@ -286,6 +288,8 @@ Agent 按任务需要创建或复用这些记录，小任务可以更精简。�
 | 联接或链接创建失败 | 检查文件系统、可写位置和残留入口；必要时采用直接文件夹安装。 |
 | 下载成 HTML 或哈希不符 | 下载发布页里名称准确的附件，重新校验，不跳过不一致。 |
 | 没有 Python 或版本偏低 | 安装 Python 3.11+ 或明确指定对应解释器；读取 Markdown 不受影响。 |
+| 捕获的验包输出为空或出现 `UnicodeEncodeError` | 使用 `py -3 -X utf8` 或 `python -X utf8`，并按 UTF-8 解码输出。 |
+| 从其他程序启动的 PowerShell 5.1 找不到 `Get-FileHash` | 直接打开 Windows PowerShell；如果由 PowerShell 7 下的 Python 启动，只在子进程环境中去掉 `PSModulePath`，让 5.1 重建自己的模块路径，不修改全局设置。 |
 | 两边都说共用记忆，但修订不同 | 核对真实路径、task_id、文件内容和 writer；跨设备相同字符串不等于同一文件。 |
 | 只写计划，没有复习结果 | 显式选择 skill，提供具体产物和验收条件，再核对实际命令及输出。 |
 | 没有自动唤醒 | 检查正式后端登记、绑定、宿主可用性、期限和轮次上限；安装本身不创建调度。 |

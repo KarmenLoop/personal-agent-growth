@@ -174,11 +174,13 @@ Windows, with the default D:/C: selection:
 
 ```powershell
 $GrowthRoot = if (Test-Path -LiteralPath 'D:\') { 'D:\AgentKnowledge' } else { 'C:\AgentKnowledge' }
-py -3 (Join-Path $GrowthRoot 'skills\personal-agent-growth\scripts\verify_handoff.py') --archive (Join-Path $GrowthRoot 'downloads\0.3.2\personal-agent-growth-0.3.2.zip') --manifest (Join-Path $GrowthRoot 'downloads\0.3.2\manifest.json')
+py -3 -X utf8 (Join-Path $GrowthRoot 'skills\personal-agent-growth\scripts\verify_handoff.py') --archive (Join-Path $GrowthRoot 'downloads\0.3.2\personal-agent-growth-0.3.2.zip') --manifest (Join-Path $GrowthRoot 'downloads\0.3.2\manifest.json')
 Write-Output "Exit code: $LASTEXITCODE"
 ```
 
 Change paths for a custom or manual installation. Expected: `PASS`, exit `0`, **21 checks**. Exit `1` means rejection after inspection; exit `2` means incomplete inspection. If Python did not start, no package verdict exists. The checker compares the supplied archive and manifest; it does not authenticate a publisher or test agent behavior. See the [manifest contract](manifest.md).
+
+Keep `-X utf8` when invoking the checker on Windows, including from another process. With Python 3.11's default redirected-output encoding, a Chinese path can otherwise cause `UnicodeEncodeError` before the JSON result is written. When reading the JSON from a file or subprocess, decode it as UTF-8. For a version-controlled memory file, choose UTF-8 explicitly rather than relying on a PowerShell version's default encoding.
 
 ## 6. Initialize private memory and complete a first task
 
@@ -280,6 +282,8 @@ Pause affected writes/schedules, preserve the failed candidate and its evidence,
 | Junction or link fails | Check local filesystem support, writable paths, and stale entries. Use a direct-folder installation if necessary. |
 | Download is HTML or its hash differs | Use the named release assets, not “Source code”; redownload and compare. Do not skip the mismatch. |
 | Python is missing or too old | Install Python 3.11+ or select that interpreter explicitly. Loading Markdown does not require Python. |
+| Captured checker output is empty or shows `UnicodeEncodeError` | Use `py -3 -X utf8` (or `python -X utf8`) and decode the captured JSON as UTF-8. |
+| PowerShell 5.1 cannot find `Get-FileHash` after launch from another program | Start Windows PowerShell directly. For a Python launcher under PowerShell 7, remove `PSModulePath` only from the child process environment so 5.1 rebuilds its own module paths; do not change global module settings. |
 | Both tools claim shared memory, but revisions differ | Compare resolved paths, task_id, file content, and current writer. Same-looking paths on different devices are not the same files. |
 | Agent writes plans but performs no review | Explicitly select the skill, give a concrete artifact and completion check, and inspect saved commands/results. |
 | Nothing wakes automatically | Check a real backend registration, binding, host availability, deadline, and run limit. Installing the skill alone does not schedule work. |
