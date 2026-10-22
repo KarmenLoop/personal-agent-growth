@@ -182,7 +182,7 @@ py -3 -X utf8 (Join-Path $GrowthRoot 'skills\personal-agent-growth\scripts\verif
 Write-Output "Exit code: $LASTEXITCODE"
 ```
 
-自选位置或手动安装请改成实际路径。正常应为 **PASS、退出码 0、21 项检查**。退出码 1 表示检查发现问题，2 表示检查未完成；Python 本身没启动时，不能给安装包下结论。该程序验证 ZIP 与所给 manifest 的一致性，不验证发布者身份，也不证明 Agent 行为。详见 [manifest 说明](manifest.md)。
+自选位置或手动安装请改成实际路径。正常应为 **PASS、退出码 0、31 项检查**。退出码 1 表示检查发现问题，2 表示检查未完成；Python 本身没启动时，不能给安装包下结论。该程序验证 ZIP 与所给 manifest 的一致性，不验证发布者身份，也不证明 Agent 行为。详见 [manifest 说明](manifest.md)。
 
 Windows 调用验包程序时保留 `-X utf8`，从其他进程调用时也一样。Python 3.11 默认的重定向输出编码可能无法表示中文路径，导致写出 JSON 前出现 `UnicodeEncodeError`。读取保存的 JSON 或子进程输出时明确使用 UTF-8；任务记忆文件也应明确采用 UTF-8，不依赖不同 PowerShell 版本的默认编码。
 
@@ -299,7 +299,7 @@ Agent 按任务需要创建或复用这些记录，小任务可以更精简。�
 
 ## 已验证范围与资料
 
-发布包的工具测试和验包检查已在 Linux、macOS Intel、Windows 通过；另有 Codex 实际唤醒、同一 Mac 上 Cursor 共享记忆恢复的历史实测。这些是不同层次的证据，不代表每个新对话都能自动选中 skill，也不代表所有平台的 Agent 行为都已验证。详见 [发布验收](release-0.3.2-acceptance.md) 和 [验证范围](validation.md)。
+链接的 v0.3.2 历史记录涵盖 Linux、macOS Intel、Windows 的工具与验包检查；当前 v0.3.3 结果记录在 GitHub Actions；另有 Codex 实际唤醒、同一 Mac 上 Cursor 共享记忆恢复的历史实测。这些是不同层次的证据，不代表每个新对话都能自动选中 skill，也不代表所有平台的 Agent 行为都已验证。详见 [发布验收](release-0.3.2-acceptance.md) 和 [验证范围](validation.md)。
 
 宿主安装位置和使用方式核对自 [OpenAI Skills 官方文档](https://learn.chatgpt.com/docs/build-skills)、[Cursor Skills 官方文档](https://cursor.com/docs/skills) 和 [Cursor 定制帮助](https://cursor.com/help/customization/skills)。Windows 命令参考 [New-Item 联接说明](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/new-item?view=powershell-7.5) 与 [Expand-Archive](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.archive/expand-archive?view=powershell-7.5)。
 

@@ -57,7 +57,7 @@ Open Terminal, paste the whole block, and press Return. It downloads the pinned 
 
 Success prints two checksum lines ending in `OK` and three paths labeled `Skill`, `Discovery entry`, and `Task memory`. The variables exist only inside this block; later examples define their own paths.
 
-The canonical folder should contain exactly these eight files:
+The canonical folder contains the runtime files below plus both README languages, bilingual tutorials, and the versioned workflow illustration (13 files total):
 
 ```text
 personal-agent-growth/
@@ -180,7 +180,7 @@ py -3 -X utf8 (Join-Path $GrowthRoot 'skills\personal-agent-growth\scripts\verif
 Write-Output "Exit code: $LASTEXITCODE"
 ```
 
-Change paths for a custom or manual installation. Expected: `PASS`, exit `0`, **21 checks**. Exit `1` means rejection after inspection; exit `2` means incomplete inspection. If Python did not start, no package verdict exists. The checker compares the supplied archive and manifest; it does not authenticate a publisher or test agent behavior. See the [manifest contract](manifest.md).
+Change paths for a custom or manual installation. Expected: `PASS`, exit `0`, **31 checks**. Exit `1` means rejection after inspection; exit `2` means incomplete inspection. If Python did not start, no package verdict exists. The checker compares the supplied archive and manifest; it does not authenticate a publisher or test agent behavior. See the [manifest contract](manifest.md).
 
 Keep `-X utf8` when invoking the checker on Windows, including from another process. With Python 3.11's default redirected-output encoding, a Chinese path can otherwise cause `UnicodeEncodeError` before the JSON result is written. When reading the JSON from a file or subprocess, decode it as UTF-8. For a version-controlled memory file, choose UTF-8 explicitly rather than relying on a PowerShell version's default encoding.
 
@@ -293,7 +293,7 @@ Pause affected writes/schedules, preserve the failed candidate and its evidence,
 
 ## Verification scope and sources
 
-The release's utility tests and package checks passed on Linux, macOS Intel, and Windows. Separate maintainer trials covered native Codex wakeups and same-Mac Cursor shared-memory recovery. These are different checks; they do not establish automatic selection in every fresh chat or behavior on every platform. See [release acceptance](release-0.3.2-acceptance.md) and [validation limits](validation.md).
+The linked historical v0.3.2 record covers Linux, macOS Intel, and Windows utility/package checks. Current v0.3.3 results are recorded in GitHub Actions. Separate maintainer trials covered native Codex wakeups and same-Mac Cursor shared-memory recovery. These are different checks; they do not establish automatic selection in every fresh chat or behavior on every platform. See [release acceptance](release-0.3.2-acceptance.md) and [validation limits](validation.md).
 
 Current installation locations and host behavior were checked against [OpenAI's skills documentation](https://learn.chatgpt.com/docs/build-skills), [Cursor's skills documentation](https://cursor.com/docs/skills), and [Cursor's customization help](https://cursor.com/help/customization/skills). Windows commands use documented [New-Item junction support](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/new-item?view=powershell-7.5) and [Expand-Archive](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.archive/expand-archive?view=powershell-7.5).
 
