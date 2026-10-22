@@ -46,7 +46,7 @@ def memory_worker(phase, task, skill, release):
         state = {
             "task_id": str(uuid.uuid4()), "state_revision": 1,
             "writer": "process-b", "phase": "review-package",
-            "prediction": {"status": "PASS", "checks": 21},
+            "prediction": {"status": "PASS", "checks": 31},
             "preference": "能自行解决就先完成，只在需要我决定时联系",
             "producer_pid": os.getpid(), "nonce": str(uuid.uuid4()),
             "next_action": "Reuse the installed checker on the downloaded package",
@@ -62,7 +62,7 @@ def memory_worker(phase, task, skill, release):
         before = state_path.read_bytes()
         if phase == "review":
             argv = [sys.executable, "-X", "utf8", str(skill / "scripts/verify_handoff.py"),
-                    "--archive", str(release / "personal-agent-growth-0.3.2.zip"),
+                    "--archive", str(release / "personal-agent-growth-0.3.3.zip"),
                     "--manifest", str(release / "manifest.json")]
             run = subprocess.run(argv, capture_output=True, timeout=60)
             (task / "review.stdout").write_bytes(run.stdout)
@@ -182,7 +182,7 @@ def main():
             discovery = base / label / "Discovery 中文 & entry" / ".agents/skills"
             skill = growth / "skills/personal-agent-growth"
             entry = discovery / "personal-agent-growth"
-            release = growth / "downloads/0.3.2"
+            release = growth / "downloads/0.3.3"
             source = install.replace(discovery_line, "$GrowthSkillsRoot = " + quoted(discovery))
             substitutions = ["GrowthSkillsRoot"]
             if label == "custom":
@@ -221,7 +221,7 @@ def main():
             if label == "custom":
                 run("legacy-non-utf8-verifier",
                     [sys.executable, str(entry / "scripts/verify_handoff.py"),
-                     "--archive", str(release / "personal-agent-growth-0.3.2.zip"),
+                     "--archive", str(release / "personal-agent-growth-0.3.3.zip"),
                      "--manifest", str(release / "manifest.json")],
                     expected=1, contains="UnicodeEncodeError")
             reviewed = json.loads(worker("review", alternate))
@@ -253,7 +253,7 @@ def main():
             report["cases"].append({
                 "case": label, "status": "PASS", "root": str(growth),
                 "command_substitutions": substitutions, "installed_files": 8,
-                "package_checks": 21, "skill_file_identity_shared": True,
+                "package_checks": 31, "skill_file_identity_shared": True,
                 "memory_file_identity_shared": True, "copied_state_rejected_as_shared": True,
                 "memory_revisions": [1, 2, 3], "worker_pids": [first["pid"], reviewed["pid"], finished["pid"]],
                 "stale_revision_rejected_without_write": True,

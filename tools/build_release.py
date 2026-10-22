@@ -20,6 +20,11 @@ FILES = (
     "scripts/verify_handoff.py",
     "LICENSE",
     "NOTICE",
+    "README.md",
+    "README.zh-CN.md",
+    "docs/tutorial.en.md",
+    "docs/tutorial.zh-CN.md",
+    "docs/images/workflow-v0.3.3.svg",
 )
 
 

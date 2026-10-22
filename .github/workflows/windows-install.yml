@@ -36,3 +36,4 @@ jobs:
           path: ${{ runner.temp }}/windows-install-evidence
           if-no-files-found: error
           retention-days: 90
+      - run: python -B scripts/check_publication.py

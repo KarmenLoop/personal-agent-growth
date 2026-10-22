@@ -1,3 +1,5 @@
+[Current concise guide](tutorial.en.md). This detailed installation record applies to **v0.3.2**.
+
 # Installation guide
 
 [中文安装说明](install.zh-CN.md) · Version **0.3.2** · Host documentation checked October 21, 2026.
