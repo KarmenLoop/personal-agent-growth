@@ -3,7 +3,7 @@ name: personal-agent-growth
 description: 处理需要跨步骤判断、主动补知识、根据反馈改计划或改进既有 skill 的任务。用于持续任务、跨宿主接续、定时恢复、重复返工、证据冲突和任务后复盘；简单独立请求直接完成。
 license: AGPL-3.0-only
 metadata:
-  version: "0.3.2"
+  version: "0.3.3"
 ---
 
 # 个人智能体成长
