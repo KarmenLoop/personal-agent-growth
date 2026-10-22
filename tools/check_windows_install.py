@@ -191,7 +191,7 @@ def main():
             ps(label + "-install", source)
             manifest = json.loads((release / "manifest.json").read_text())
             expected_files = {p: v["sha256"] for p, v in manifest["files"].items()}
-            assert len(expected_files) == 8 and snapshot(skill) == expected_files
+            assert len(expected_files) == 13 and snapshot(skill) == expected_files
             assert os.path.samefile(entry / "SKILL.md", skill / "SKILL.md")
             ps(label + "-entry", "Get-Item -LiteralPath " + quoted(entry) +
                " | Select-Object LinkType, Target, FullName | ConvertTo-Json -Compress")

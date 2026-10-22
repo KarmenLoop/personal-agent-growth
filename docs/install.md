@@ -1,8 +1,6 @@
-[Current concise guide](tutorial.en.md). This detailed installation record applies to **v0.3.2**.
-
 # Installation guide
 
-[中文安装说明](install.zh-CN.md) · Version **0.3.2** · Host documentation checked October 21, 2026.
+[中文安装说明](install.zh-CN.md) · Version **0.3.3** · Host documentation checked October 21, 2026.
 
 This guide installs Personal Agent Growth in Codex and Cursor on the same computer, then checks shared task memory and an optional scheduled review. Start with your operating system's instructions. No Git checkout is required.
 
@@ -16,7 +14,7 @@ Installation needs internet access to download the release. On macOS, the comman
 |---|---|---|
 | Knowledge root | `~/Desktop/AgentKnowledge` | `D:\AgentKnowledge` if D: exists, otherwise `C:\AgentKnowledge` |
 | Canonical skill | `<root>/skills/personal-agent-growth` | `<root>\skills\personal-agent-growth` |
-| Downloaded release | `<root>/downloads/0.3.2` | `<root>\downloads\0.3.2` |
+| Downloaded release | `<root>/downloads/0.3.3` | `<root>\downloads\0.3.3` |
 | Private task records | `<root>/tasks/<task-id>` | `<root>\tasks\<task-id>` |
 | User discovery entry | `~/.agents/skills/personal-agent-growth` | `%USERPROFILE%\.agents\skills\personal-agent-growth` |
 
@@ -35,8 +33,8 @@ Open Terminal, paste the whole block, and press Return. It downloads the pinned 
   GrowthSkillsRoot="$HOME/.agents/skills"
   SkillDir="$GrowthRoot/skills/personal-agent-growth"
   SkillEntry="$GrowthSkillsRoot/personal-agent-growth"
-  ReleaseDir="$GrowthRoot/downloads/0.3.2"
-  ReleaseUrl="https://github.com/KarmenLoop/personal-agent-growth/releases/download/v0.3.2"
+  ReleaseDir="$GrowthRoot/downloads/0.3.3"
+  ReleaseUrl="https://github.com/KarmenLoop/personal-agent-growth/releases/download/v0.3.3"
 
   if [ -e "$SkillDir" ] || [ -L "$SkillDir" ] || [ -e "$SkillEntry" ] || [ -L "$SkillEntry" ]; then
     echo "An installation already exists. Follow the update section instead."
@@ -44,13 +42,13 @@ Open Terminal, paste the whole block, and press Return. It downloads the pinned 
   fi
 
   mkdir -p "$ReleaseDir" "$GrowthRoot/skills" "$GrowthRoot/tasks" "$GrowthSkillsRoot"
-  curl --fail --location --retry 2 --max-time 90 "$ReleaseUrl/personal-agent-growth-0.3.2.zip" -o "$ReleaseDir/personal-agent-growth-0.3.2.zip"
+  curl --fail --location --retry 2 --max-time 90 "$ReleaseUrl/personal-agent-growth-0.3.3.zip" -o "$ReleaseDir/personal-agent-growth-0.3.3.zip"
   curl --fail --location --retry 2 --max-time 90 "$ReleaseUrl/manifest.json" -o "$ReleaseDir/manifest.json"
 
-  printf '%s  %s\n' 'b2e58a97357cee25cac9c890e053d381cb4240b4d63ff1815886c0dfcd9a61b0' "$ReleaseDir/personal-agent-growth-0.3.2.zip" | shasum -a 256 -c -
-  printf '%s  %s\n' '38c173aded1b11f91814684a52e82d3f71275c44cf86da420a7e28d2b07ebc9a' "$ReleaseDir/manifest.json" | shasum -a 256 -c -
+  printf '%s  %s\n' '5c385b2cb0cee07d4f713c9734e02abe262c4b96905f618543731b81a9d8a76a' "$ReleaseDir/personal-agent-growth-0.3.3.zip" | shasum -a 256 -c -
+  printf '%s  %s\n' '88be0aa807dc971bfa4f15c105d98abf521eedc3a386001ec17ebc45be36f765' "$ReleaseDir/manifest.json" | shasum -a 256 -c -
 
-  unzip -q "$ReleaseDir/personal-agent-growth-0.3.2.zip" -d "$GrowthRoot/skills"
+  unzip -q "$ReleaseDir/personal-agent-growth-0.3.3.zip" -d "$GrowthRoot/skills"
   ln -s "$SkillDir" "$SkillEntry"
   test -f "$SkillEntry/SKILL.md"
   printf 'Skill: %s\nDiscovery entry: %s\nTask memory: %s\n' "$SkillDir" "$SkillEntry" "$GrowthRoot/tasks"
@@ -86,23 +84,23 @@ Open **PowerShell**, not Command Prompt. Paste the whole block. It chooses D: wh
   $GrowthSkillsRoot = Join-Path $env:USERPROFILE '.agents\skills'
   $SkillDir = Join-Path $GrowthRoot 'skills\personal-agent-growth'
   $SkillEntry = Join-Path $GrowthSkillsRoot 'personal-agent-growth'
-  $ReleaseDir = Join-Path $GrowthRoot 'downloads\0.3.2'
-  $ReleaseUrl = 'https://github.com/KarmenLoop/personal-agent-growth/releases/download/v0.3.2'
+  $ReleaseDir = Join-Path $GrowthRoot 'downloads\0.3.3'
+  $ReleaseUrl = 'https://github.com/KarmenLoop/personal-agent-growth/releases/download/v0.3.3'
 
   if ((Test-Path -LiteralPath $SkillDir) -or (Test-Path -LiteralPath $SkillEntry)) {
     throw 'An installation already exists. Follow the update section instead.'
   }
 
   New-Item -ItemType Directory -Force -Path $ReleaseDir, (Join-Path $GrowthRoot 'skills'), (Join-Path $GrowthRoot 'tasks'), $GrowthSkillsRoot | Out-Null
-  $ZipPath = Join-Path $ReleaseDir 'personal-agent-growth-0.3.2.zip'
+  $ZipPath = Join-Path $ReleaseDir 'personal-agent-growth-0.3.3.zip'
   $ManifestPath = Join-Path $ReleaseDir 'manifest.json'
-  Invoke-WebRequest -UseBasicParsing -Uri "$ReleaseUrl/personal-agent-growth-0.3.2.zip" -OutFile $ZipPath
+  Invoke-WebRequest -UseBasicParsing -Uri "$ReleaseUrl/personal-agent-growth-0.3.3.zip" -OutFile $ZipPath
   Invoke-WebRequest -UseBasicParsing -Uri "$ReleaseUrl/manifest.json" -OutFile $ManifestPath
 
-  if ((Get-FileHash -LiteralPath $ZipPath -Algorithm SHA256).Hash -ne 'b2e58a97357cee25cac9c890e053d381cb4240b4d63ff1815886c0dfcd9a61b0') {
+  if ((Get-FileHash -LiteralPath $ZipPath -Algorithm SHA256).Hash -ne '5c385b2cb0cee07d4f713c9734e02abe262c4b96905f618543731b81a9d8a76a') {
     throw 'ZIP checksum mismatch. Nothing has been extracted.'
   }
-  if ((Get-FileHash -LiteralPath $ManifestPath -Algorithm SHA256).Hash -ne '38c173aded1b11f91814684a52e82d3f71275c44cf86da420a7e28d2b07ebc9a') {
+  if ((Get-FileHash -LiteralPath $ManifestPath -Algorithm SHA256).Hash -ne '88be0aa807dc971bfa4f15c105d98abf521eedc3a386001ec17ebc45be36f765') {
     throw 'Manifest checksum mismatch. Nothing has been extracted.'
   }
 
@@ -125,13 +123,13 @@ These install and removal commands passed on Windows Server 2025 with PowerShell
 
 ### Manual download
 
-1. Open the [v0.3.2 release](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.3.2). Download the asset named `personal-agent-growth-0.3.2.zip` and `manifest.json`. GitHub's automatically generated “Source code” archives are different archives with different hashes.
+1. Open the [v0.3.3 release](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.3.3). Download the asset named `personal-agent-growth-0.3.3.zip` and `manifest.json`. GitHub's automatically generated “Source code” archives are different archives with different hashes.
 2. Verify the two downloads with the checksum commands above or your SHA-256 tool. The expected values are:
 
    | File | SHA-256 |
    |---|---|
-   | `personal-agent-growth-0.3.2.zip` | `b2e58a97357cee25cac9c890e053d381cb4240b4d63ff1815886c0dfcd9a61b0` |
-   | `manifest.json` | `38c173aded1b11f91814684a52e82d3f71275c44cf86da420a7e28d2b07ebc9a` |
+   | `personal-agent-growth-0.3.3.zip` | `5c385b2cb0cee07d4f713c9734e02abe262c4b96905f618543731b81a9d8a76a` |
+   | `manifest.json` | `88be0aa807dc971bfa4f15c105d98abf521eedc3a386001ec17ebc45be36f765` |
 
 3. Extract the archive. Place the **whole** `personal-agent-growth` folder directly under your user's `.agents/skills` directory. The result must be `.agents/skills/personal-agent-growth/SKILL.md`, without an extra nested folder.
 4. Create a separate `AgentKnowledge/tasks` location for private records. In this manual option, the canonical skill lives in `.agents/skills`, rather than under `AgentKnowledge/skills`. Use that actual location in subsequent commands.
@@ -159,7 +157,7 @@ Paste this, replacing both placeholders with actual absolute paths:
 
 > Read <SKILL_DIR>/SKILL.md and the references needed for this task. Report the resolved skill directory, declared version, and whether all four references and scripts/verify_handoff.py are readable. Use <TASK_DIR> for this task's private records. Do not start a scheduler during this installation check.
 
-Expected result: version `0.3.2`, the intended resolved path, and readable resources. A directory existing is only the installation check; the first useful task below checks actual use.
+Expected result: version `0.3.3`, the intended resolved path, and readable resources. A directory existing is only the installation check; the first useful task below checks actual use.
 
 ### Optional: inspect the release with the bundled checker
 
@@ -169,8 +167,8 @@ macOS, with the default root:
 
 ```bash
 python3 "$HOME/Desktop/AgentKnowledge/skills/personal-agent-growth/scripts/verify_handoff.py" \
-  --archive "$HOME/Desktop/AgentKnowledge/downloads/0.3.2/personal-agent-growth-0.3.2.zip" \
-  --manifest "$HOME/Desktop/AgentKnowledge/downloads/0.3.2/manifest.json"
+  --archive "$HOME/Desktop/AgentKnowledge/downloads/0.3.3/personal-agent-growth-0.3.3.zip" \
+  --manifest "$HOME/Desktop/AgentKnowledge/downloads/0.3.3/manifest.json"
 echo "Exit code: $?"
 ```
 
@@ -178,7 +176,7 @@ Windows, with the default D:/C: selection:
 
 ```powershell
 $GrowthRoot = if (Test-Path -LiteralPath 'D:\') { 'D:\AgentKnowledge' } else { 'C:\AgentKnowledge' }
-py -3 -X utf8 (Join-Path $GrowthRoot 'skills\personal-agent-growth\scripts\verify_handoff.py') --archive (Join-Path $GrowthRoot 'downloads\0.3.2\personal-agent-growth-0.3.2.zip') --manifest (Join-Path $GrowthRoot 'downloads\0.3.2\manifest.json')
+py -3 -X utf8 (Join-Path $GrowthRoot 'skills\personal-agent-growth\scripts\verify_handoff.py') --archive (Join-Path $GrowthRoot 'downloads\0.3.3\personal-agent-growth-0.3.3.zip') --manifest (Join-Path $GrowthRoot 'downloads\0.3.3\manifest.json')
 Write-Output "Exit code: $LASTEXITCODE"
 ```
 
@@ -240,7 +238,7 @@ The complete chain is: registration readback → real host event → state recov
 
 1. Finish or pause current writes and any bound schedule that would use the files being replaced. Record the current writer and state revision.
 2. Back up the canonical skill folder and task records separately. Preserve personal skill edits and their evidence before updating.
-3. Download the desired published release and its matching manifest into a new versioned download directory. Verify that release's hashes; the hashes above apply only to **0.3.2**.
+3. Download the desired published release and its matching manifest into a new versioned download directory. Verify that release's hashes; the hashes above apply only to **0.3.3**.
 4. Extract into a staging directory and inspect its version, resources, and package result. Compare any local method changes before choosing what to keep.
 5. Rename the old canonical folder to a versioned backup, then move the new `personal-agent-growth` folder into the original canonical path. The discovery entry can keep pointing to that path. Leave the separate `tasks` directory in place.
 6. Open a new host chat, verify the resolved path/version, and review an existing task before reactivating a paused schedule through its actual host interface.

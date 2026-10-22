@@ -1,8 +1,6 @@
-[当前简明指南](tutorial.zh-CN.md)。下列详细安装记录仅对应 **v0.3.2**。
-
 # 完整安装说明
 
-[English guide](install.md) · 适用版本：**0.3.2** · 宿主文档核对日期：2026 年 10 月 21 日。
+[English guide](install.md) · 适用版本：**0.3.3** · 宿主文档核对日期：2026 年 10 月 21 日。
 
 本说明覆盖：安装 → 宿主识别 → 初始化私人记忆 → 第一次实际任务 → Codex / Cursor 接续复习 → 可选定时唤醒 → 更新、回滚与卸载。按自己系统选择安装命令即可，不需要先下载源码或配置开发环境。
 
@@ -18,7 +16,7 @@
 |---|---|---|
 | 知识库根目录 | `~/Desktop/AgentKnowledge`，即桌面 | 有 D 盘：`D:\AgentKnowledge`；否则：`C:\AgentKnowledge` |
 | 技能原件 | `<根目录>/skills/personal-agent-growth` | `<根目录>\skills\personal-agent-growth` |
-| 发布包与清单 | `<根目录>/downloads/0.3.2` | `<根目录>\downloads\0.3.2` |
+| 发布包与清单 | `<根目录>/downloads/0.3.3` | `<根目录>\downloads\0.3.3` |
 | 私人任务记忆 | `<根目录>/tasks/<任务ID>` | `<根目录>\tasks\<任务ID>` |
 | 宿主发现入口 | `~/.agents/skills/personal-agent-growth` | `%USERPROFILE%\.agents\skills\personal-agent-growth` |
 
@@ -37,8 +35,8 @@
   GrowthSkillsRoot="$HOME/.agents/skills"
   SkillDir="$GrowthRoot/skills/personal-agent-growth"
   SkillEntry="$GrowthSkillsRoot/personal-agent-growth"
-  ReleaseDir="$GrowthRoot/downloads/0.3.2"
-  ReleaseUrl="https://github.com/KarmenLoop/personal-agent-growth/releases/download/v0.3.2"
+  ReleaseDir="$GrowthRoot/downloads/0.3.3"
+  ReleaseUrl="https://github.com/KarmenLoop/personal-agent-growth/releases/download/v0.3.3"
 
   if [ -e "$SkillDir" ] || [ -L "$SkillDir" ] || [ -e "$SkillEntry" ] || [ -L "$SkillEntry" ]; then
     echo "An installation already exists. Follow the update section instead."
@@ -46,13 +44,13 @@
   fi
 
   mkdir -p "$ReleaseDir" "$GrowthRoot/skills" "$GrowthRoot/tasks" "$GrowthSkillsRoot"
-  curl --fail --location --retry 2 --max-time 90 "$ReleaseUrl/personal-agent-growth-0.3.2.zip" -o "$ReleaseDir/personal-agent-growth-0.3.2.zip"
+  curl --fail --location --retry 2 --max-time 90 "$ReleaseUrl/personal-agent-growth-0.3.3.zip" -o "$ReleaseDir/personal-agent-growth-0.3.3.zip"
   curl --fail --location --retry 2 --max-time 90 "$ReleaseUrl/manifest.json" -o "$ReleaseDir/manifest.json"
 
-  printf '%s  %s\n' 'b2e58a97357cee25cac9c890e053d381cb4240b4d63ff1815886c0dfcd9a61b0' "$ReleaseDir/personal-agent-growth-0.3.2.zip" | shasum -a 256 -c -
-  printf '%s  %s\n' '38c173aded1b11f91814684a52e82d3f71275c44cf86da420a7e28d2b07ebc9a' "$ReleaseDir/manifest.json" | shasum -a 256 -c -
+  printf '%s  %s\n' '5c385b2cb0cee07d4f713c9734e02abe262c4b96905f618543731b81a9d8a76a' "$ReleaseDir/personal-agent-growth-0.3.3.zip" | shasum -a 256 -c -
+  printf '%s  %s\n' '88be0aa807dc971bfa4f15c105d98abf521eedc3a386001ec17ebc45be36f765' "$ReleaseDir/manifest.json" | shasum -a 256 -c -
 
-  unzip -q "$ReleaseDir/personal-agent-growth-0.3.2.zip" -d "$GrowthRoot/skills"
+  unzip -q "$ReleaseDir/personal-agent-growth-0.3.3.zip" -d "$GrowthRoot/skills"
   ln -s "$SkillDir" "$SkillEntry"
   test -f "$SkillEntry/SKILL.md"
   printf 'Skill: %s\nDiscovery entry: %s\nTask memory: %s\n' "$SkillDir" "$SkillEntry" "$GrowthRoot/tasks"
@@ -88,23 +86,23 @@ personal-agent-growth/
   $GrowthSkillsRoot = Join-Path $env:USERPROFILE '.agents\skills'
   $SkillDir = Join-Path $GrowthRoot 'skills\personal-agent-growth'
   $SkillEntry = Join-Path $GrowthSkillsRoot 'personal-agent-growth'
-  $ReleaseDir = Join-Path $GrowthRoot 'downloads\0.3.2'
-  $ReleaseUrl = 'https://github.com/KarmenLoop/personal-agent-growth/releases/download/v0.3.2'
+  $ReleaseDir = Join-Path $GrowthRoot 'downloads\0.3.3'
+  $ReleaseUrl = 'https://github.com/KarmenLoop/personal-agent-growth/releases/download/v0.3.3'
 
   if ((Test-Path -LiteralPath $SkillDir) -or (Test-Path -LiteralPath $SkillEntry)) {
     throw 'An installation already exists. Follow the update section instead.'
   }
 
   New-Item -ItemType Directory -Force -Path $ReleaseDir, (Join-Path $GrowthRoot 'skills'), (Join-Path $GrowthRoot 'tasks'), $GrowthSkillsRoot | Out-Null
-  $ZipPath = Join-Path $ReleaseDir 'personal-agent-growth-0.3.2.zip'
+  $ZipPath = Join-Path $ReleaseDir 'personal-agent-growth-0.3.3.zip'
   $ManifestPath = Join-Path $ReleaseDir 'manifest.json'
-  Invoke-WebRequest -UseBasicParsing -Uri "$ReleaseUrl/personal-agent-growth-0.3.2.zip" -OutFile $ZipPath
+  Invoke-WebRequest -UseBasicParsing -Uri "$ReleaseUrl/personal-agent-growth-0.3.3.zip" -OutFile $ZipPath
   Invoke-WebRequest -UseBasicParsing -Uri "$ReleaseUrl/manifest.json" -OutFile $ManifestPath
 
-  if ((Get-FileHash -LiteralPath $ZipPath -Algorithm SHA256).Hash -ne 'b2e58a97357cee25cac9c890e053d381cb4240b4d63ff1815886c0dfcd9a61b0') {
+  if ((Get-FileHash -LiteralPath $ZipPath -Algorithm SHA256).Hash -ne '5c385b2cb0cee07d4f713c9734e02abe262c4b96905f618543731b81a9d8a76a') {
     throw 'ZIP checksum mismatch. Nothing has been extracted.'
   }
-  if ((Get-FileHash -LiteralPath $ManifestPath -Algorithm SHA256).Hash -ne '38c173aded1b11f91814684a52e82d3f71275c44cf86da420a7e28d2b07ebc9a') {
+  if ((Get-FileHash -LiteralPath $ManifestPath -Algorithm SHA256).Hash -ne '88be0aa807dc971bfa4f15c105d98abf521eedc3a386001ec17ebc45be36f765') {
     throw 'Manifest checksum mismatch. Nothing has been extracted.'
   }
 
@@ -127,13 +125,13 @@ personal-agent-growth/
 
 ### 不使用命令安装
 
-1. 打开 [v0.3.2 发布页](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.3.2)，下载名为 `personal-agent-growth-0.3.2.zip` 和 `manifest.json` 的附件。不要把 GitHub 自动生成的“Source code”压缩包当成这个安装包。
+1. 打开 [v0.3.3 发布页](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.3.3)，下载名为 `personal-agent-growth-0.3.3.zip` 和 `manifest.json` 的附件。不要把 GitHub 自动生成的“Source code”压缩包当成这个安装包。
 2. 使用上面命令中的 SHA-256 校验方法或自己的校验工具，对比：
 
    | 文件 | SHA-256 |
    |---|---|
-   | `personal-agent-growth-0.3.2.zip` | `b2e58a97357cee25cac9c890e053d381cb4240b4d63ff1815886c0dfcd9a61b0` |
-   | `manifest.json` | `38c173aded1b11f91814684a52e82d3f71275c44cf86da420a7e28d2b07ebc9a` |
+   | `personal-agent-growth-0.3.3.zip` | `5c385b2cb0cee07d4f713c9734e02abe262c4b96905f618543731b81a9d8a76a` |
+   | `manifest.json` | `88be0aa807dc971bfa4f15c105d98abf521eedc3a386001ec17ebc45be36f765` |
 
 3. 解压，将**整个** `personal-agent-growth` 文件夹放入当前用户的 `.agents/skills`。结果必须是 `.agents/skills/personal-agent-growth/SKILL.md`，中间不要再套一层同名目录。
 4. 单独创建 `AgentKnowledge/tasks` 保存私人任务记忆。这种手动方案的技能原件直接位于 `.agents/skills`，后续检查命令应使用这个实际路径。
@@ -161,7 +159,7 @@ WSL、SSH 有各自的用户目录和权限。Windows 安装成功不代表 WSL 
 
 > 读取 <技能目录>/SKILL.md，以及本次任务需要的引用文件。报告技能目录解析后的真实路径、声明版本、4 份 reference 和 scripts/verify_handoff.py 是否可读。本次任务的私人记录放在 <任务目录>。这次安装检查不要创建定时任务。
 
-预期应看到 `0.3.2`、正确的真实路径、所有资源可读。文件存在只是安装层验证，后面的实际任务才检查有没有真正使用技能。
+预期应看到 `0.3.3`、正确的真实路径、所有资源可读。文件存在只是安装层验证，后面的实际任务才检查有没有真正使用技能。
 
 ### 可选：运行附带的验包程序
 
@@ -171,8 +169,8 @@ Mac 默认路径：
 
 ```bash
 python3 "$HOME/Desktop/AgentKnowledge/skills/personal-agent-growth/scripts/verify_handoff.py" \
-  --archive "$HOME/Desktop/AgentKnowledge/downloads/0.3.2/personal-agent-growth-0.3.2.zip" \
-  --manifest "$HOME/Desktop/AgentKnowledge/downloads/0.3.2/manifest.json"
+  --archive "$HOME/Desktop/AgentKnowledge/downloads/0.3.3/personal-agent-growth-0.3.3.zip" \
+  --manifest "$HOME/Desktop/AgentKnowledge/downloads/0.3.3/manifest.json"
 echo "Exit code: $?"
 ```
 
@@ -180,7 +178,7 @@ Windows 默认 D / C 盘选择：
 
 ```powershell
 $GrowthRoot = if (Test-Path -LiteralPath 'D:\') { 'D:\AgentKnowledge' } else { 'C:\AgentKnowledge' }
-py -3 -X utf8 (Join-Path $GrowthRoot 'skills\personal-agent-growth\scripts\verify_handoff.py') --archive (Join-Path $GrowthRoot 'downloads\0.3.2\personal-agent-growth-0.3.2.zip') --manifest (Join-Path $GrowthRoot 'downloads\0.3.2\manifest.json')
+py -3 -X utf8 (Join-Path $GrowthRoot 'skills\personal-agent-growth\scripts\verify_handoff.py') --archive (Join-Path $GrowthRoot 'downloads\0.3.3\personal-agent-growth-0.3.3.zip') --manifest (Join-Path $GrowthRoot 'downloads\0.3.3\manifest.json')
 Write-Output "Exit code: $LASTEXITCODE"
 ```
 
@@ -246,7 +244,7 @@ Agent 按任务需要创建或复用这些记录，小任务可以更精简。�
 
 1. 先完成或暂停正在写入的任务；有调度会使用待替换文件时，先暂停该绑定，记录当前责任方与修订。
 2. 分别备份技能原件和任务记忆。用户改写过的 skill 连同改动依据一并保留。
-3. 将目标新版本及对应 manifest 下载到新的版本目录，使用**该版本**的校验值。本文两个 SHA-256 只适用于 **0.3.2**。
+3. 将目标新版本及对应 manifest 下载到新的版本目录，使用**该版本**的校验值。本文两个 SHA-256 只适用于 **0.3.3**。
 4. 在暂存目录解压，检查版本、资源和验包结果；比较本地改动后再决定如何合并。
 5. 将旧技能目录改名备份，把新 `personal-agent-growth` 目录放到原来的技能路径。发现入口可保持不变，单独的 `tasks` 不动。
 6. 在新对话里确认加载路径、版本，再复习一个现有任务；需要恢复暂停的调度时，通过宿主接口实际恢复并回读。
