@@ -115,7 +115,7 @@ Open **PowerShell**, not Command Prompt. Paste the whole block. It chooses D: wh
 }
 ```
 
-Success prints the three installation paths. Keep the eight files shown above together. A directory junction needs a supported local filesystem and permission to create the entry. If junction creation fails after extraction, the canonical skill is still present: fix the destination or use the manual option below. Do not repeatedly extract over it.
+Success prints the three installation paths. Keep every file in the matching release manifest together. A directory junction needs a supported local filesystem and permission to create the entry. If junction creation fails after extraction, the canonical skill is still present: fix the destination or use the manual option below. Do not repeatedly extract over it.
 
 These install and removal commands passed on Windows Server 2025 with PowerShell 5.1 and 7, using the default D: location and a custom C: path with Chinese characters and spaces. Shared-memory checks used independent test processes. See the [actual results and limits](windows-install-verification.md).
 

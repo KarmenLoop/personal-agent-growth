@@ -96,6 +96,7 @@ def main():
     parser.add_argument("--task", type=Path)
     parser.add_argument("--skill", type=Path)
     parser.add_argument("--release", type=Path)
+    parser.add_argument("--local-artifacts", type=Path, help="Use locally built release files; download transport is not exercised")
     args = parser.parse_args()
     if os.name != "nt":
         parser.error("This acceptance check must run on actual Windows.")
@@ -156,6 +157,20 @@ def main():
         assert blocks == re.findall(pattern, zh, re.M | re.S)
         assert len(blocks) == 3
         install, _, uninstall = blocks
+        if args.local_artifacts:
+            local = args.local_artifacts.resolve()
+            replacements = {
+                'Invoke-WebRequest -UseBasicParsing -Uri "$ReleaseUrl/personal-agent-growth-0.3.3.zip" -OutFile $ZipPath':
+                    'Copy-Item -LiteralPath ' + quoted(local / 'personal-agent-growth-0.3.3.zip') + ' -Destination $ZipPath',
+                'Invoke-WebRequest -UseBasicParsing -Uri "$ReleaseUrl/manifest.json" -OutFile $ManifestPath':
+                    'Copy-Item -LiteralPath ' + quoted(local / 'manifest.json') + ' -Destination $ManifestPath',
+            }
+            for original, replacement in replacements.items():
+                assert install.count(original) == 1
+                install = install.replace(original, replacement)
+            report["artifact_transport"] = "local files; published download URL not exercised"
+        else:
+            report["artifact_transport"] = "published GitHub release download"
         report["guide_sha256"] = {p: digest(ROOT / p) for p in
                                    ["docs/install.md", "docs/install.zh-CN.md"]}
         root_line = "$GrowthRoot = if (Test-Path -LiteralPath 'D:\\') { 'D:\\AgentKnowledge' } else { 'C:\\AgentKnowledge' }"
