@@ -3,10 +3,15 @@ name: personal-agent-growth
 description: 处理需要跨步骤判断、主动补知识、根据反馈改计划或改进既有 skill 的任务。用于持续任务、跨宿主接续、定时恢复、重复返工、证据冲突和任务后复盘；简单独立请求直接完成。
 license: AGPL-3.0-only
 metadata:
-  version: "0.3.3"
+  version: "0.4.0"
 ---
 
 # 个人智能体成长
+
+## Executable local adapter
+
+Read [the current host tutorial](docs/tutorial.en.md) to configure the bundled Python 3.11+ CLI/MCP adapter. Verify real calls and saved state before claiming a connection. The tutorial distinguishes implemented local operations from scheduling, identity providers, and remote execution that require an authorized host.
+
 
 围绕用户当前目标完成实际工作，把关键证据、改判和学习变更留下可复用记录。宿主提供工具与唤醒；此 skill 本身不会启动后台进程。
 

@@ -18,13 +18,15 @@ FILES = (
     "references/autonomous-continuation.md",
     "references/shared-memory.md",
     "scripts/verify_handoff.py",
+    "scripts/host.py",
+    "scripts/host_support.py",
     "LICENSE",
     "NOTICE",
     "README.md",
     "README.zh-CN.md",
     "docs/tutorial.en.md",
     "docs/tutorial.zh-CN.md",
-    "docs/images/workflow-v0.3.3.svg",
+    "docs/images/workflow-v0.4.0.svg",
 )
 
 

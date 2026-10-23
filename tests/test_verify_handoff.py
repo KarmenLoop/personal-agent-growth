@@ -145,7 +145,9 @@ class HandoffTests(unittest.TestCase):
             names = set(archive.namelist())
             self.assertIn("personal-agent-growth/LICENSE", names)
             self.assertIn("personal-agent-growth/NOTICE", names)
-            self.assertEqual(len(names), 13)
+            self.assertEqual(len(names), 15)
+            self.assertIn("personal-agent-growth/scripts/host.py", names)
+            self.assertIn("personal-agent-growth/scripts/host_support.py", names)
             self.assertIn("personal-agent-growth/README.zh-CN.md", names)
             self.assertIn("personal-agent-growth/docs/tutorial.en.md", names)
 

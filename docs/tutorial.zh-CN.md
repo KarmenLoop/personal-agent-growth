@@ -1,37 +1,26 @@
-# Personal Agent Growth · 智能体任务复盘: 使用指南
+# Personal Agent Growth v0.4.0 教程
 
-[English](tutorial.en.md) | 简体中文 · [项目首页](../README.zh-CN.md)
+[English](tutorial.en.md) · [中文](tutorial.zh-CN.md)
 
-本指南对应 **v0.3.3**.
+下载并解压当前版本，使用 Python 3.11+。任务数据放在技能与仓库之外。两个工具在本机使用同一个私有数据根目录和相同工作区文件。
 
-## 1. 下载与校验
+```sh
+python /path/to/scripts/host.py --root /private/task-state --workspace /path/to/project --install-host codex install
+python /path/to/scripts/host.py --root /private/task-state --workspace /path/to/project --install-host cursor install
+```
 
-从发行页下载 [`personal-agent-growth-0.3.3.zip`](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.3.3)，同时保留校验文件或 manifest。比较完整 SHA-256 后再解压：macOS 使用 shasum -a 256，Linux 使用 sha256sum，PowerShell 使用 Get-FileHash -Algorithm SHA256。校验只能证明字节一致，预期哈希本身也需要可信来源。
+重载各宿主、批准特定服务，确认发现五个 `growth_*` 工具。配置存在不等于已验收。
 
-## 2. 安装与加载
+在 Codex 调用 `growth_start`，填写 `task_id`、`goal` 和 `acceptance`。实际完成项目中的一步，再用当前 `expected_revision`、阶段、观察、下一步及工作区内产物路径调用 `growth_checkpoint`。适配器核对已有文件，不会替你制造证据。
 
-下载技能 ZIP 与 manifest.json，解压到新的规范技能目录，再通过宿主支持的技能发现路径关联一次。技能目录和私有任务记录分开保存。
+用当前版本和 `target_host: cursor` 调用 `growth_handoff`。在 Cursor 中使用同一任务 ID 调用 `growth_read`，检查写入者、下一步和 `evidence_current`。原宿主仍可读取，但不能继续更新。接收宿主完成工作后，用最新版本提交新检查点；`growth_export` 可导出私有交接 JSON。
 
-刷新宿主发现或开启新会话，明确读取已安装的 SKILL.md，并核对上面版本。不需要为技能另开模型账号；宿主使用自己的模型、工具与权限。
+不使用模型也可检查：
 
-## 3. 配置与第一项任务
+```sh
+python /path/to/scripts/host.py --root /private/task-state --workspace /path/to/project --host-id cursor call growth_read --input request.json
+```
 
-选择两个宿主都能解析到同一物理位置的私有任务目录，交接前记录 writer 与 state_revision。Python 3.11+ 只用于可选的离线检查，读取 Markdown 不需要 Python。
+`request.json` 内容为 `{"task_id":"your-task-id"}`。进程重启不会丢失检查点；旧版本写入需要先重读，产物缺失或变化需要重新验收后再交接。不要覆盖数据库来清除冲突。备份前停止写入，再复制私有目录。
 
-明确加载 SKILL.md，审阅一份合成任务产物，保存实际检查结果，更正一个错误假设，并留下具体复查动作。切换宿主前确认文件已经保存。
-
-## 4. 进一步实践
-
-接手宿主读取当前修订，并在新的检查中使用前一份产物。定时执行需要真实支持的后端及对应任务授权；安装不会创建定时器或跨设备同步。
-
-保留当前版本、真实命令、退出码、结果与未验证限制。使用合成数据做首次检查。
-
-## 5. 排错、升级与移除
-
-宿主找不到技能时，先检查配置的技能根目录和 SKILL.md 可读性。哈希不一致时停止使用该包并重新核对下载；不要跳过错误。
-
-升级前完成当前写入，分别备份技能与私人任务数据。将新版本解压到新目录，核对后再切换；回退时恢复旧技能，保留较新的用户数据与证据。卸载只移除对应技能目录或发现入口；如曾另行注册调度，应在真实宿主中取消并确认。
-
-## 6. 许可证
-
-[AGPL-3.0-only](../LICENSE). 此处提供简明用户指南；具体使用和再分发条件以许可证原文为准。
+调度状态明确保留 `not_registered`，没有创建唤醒任务。本机跨宿主状态不代表跨设备同步。macOS 上真实 Codex 读取与独立 MCP 客户端交接已通过；Cursor 工具发现已通过，认证后的模型回合及 Windows/Linux 原生操作尚未验收。
