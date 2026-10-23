@@ -1,37 +1,26 @@
-# Personal Agent Growth: user guide
+# Personal Agent Growth v0.4.0 tutorial
 
-English | [简体中文](tutorial.zh-CN.md) · [Project](../README.md)
+[English](tutorial.en.md) · [中文](tutorial.zh-CN.md)
 
-This guide matches **v0.3.3**.
+Download and extract the versioned release. Use Python 3.11+. Keep task data outside the skill and repository. Both tools must use the same private data root and the same workspace files on this computer.
 
-## 1. Download and verify
+```sh
+python /path/to/scripts/host.py --root /private/task-state --workspace /path/to/project --install-host codex install
+python /path/to/scripts/host.py --root /private/task-state --workspace /path/to/project --install-host cursor install
+```
 
-From the release, download [`personal-agent-growth-0.3.3.zip`](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.3.3) and its checksum file or manifest. Compare the complete SHA-256 before extracting: use shasum -a 256 on macOS, sha256sum on Linux, or Get-FileHash -Algorithm SHA256 in PowerShell. Byte consistency relies on obtaining the expected hash from a trusted source.
+Reload each host, approve the specific server, and verify its five `growth_*` tools. A configured entry alone is not acceptance.
 
-## 2. Install and load
+In Codex, call `growth_start` with `task_id`, `goal`, and `acceptance`. Complete a real step in the project. Then call `growth_checkpoint` with the current `expected_revision`, phase, observation, next action, and workspace-relative artifact paths. The adapter hashes existing files; it does not create evidence for you.
 
-Download the skill ZIP and manifest.json. Extract into a fresh canonical folder, then add that folder once through your host’s supported skill discovery path. Keep the skill folder separate from private task records.
+Call `growth_handoff` with the current revision and `target_host: cursor`. In Cursor, call `growth_read` with the same task ID. Verify the writer, next action, and `evidence_current`. The old writer can still read but cannot update. Continue the work, then commit a new checkpoint with the receiving host's current revision. `growth_export` writes a private handoff JSON.
 
-Refresh host discovery or open a new session, explicitly read the installed SKILL.md, and check the version above. The skill needs no separate model account; the host supplies its own model, tools, and permissions.
+For direct inspection without a model:
 
-## 3. Configure and try one task
+```sh
+python /path/to/scripts/host.py --root /private/task-state --workspace /path/to/project --host-id cursor call growth_read --input request.json
+```
 
-Choose one private task directory that both hosts resolve to the same physical location. Record the active writer and state_revision before a handoff. Python 3.11+ is needed only for the optional offline checker, not for reading Markdown.
+`request.json` contains `{"task_id":"your-task-id"}`. Restarting the process preserves its checkpoint. A stale revision requires a fresh read; missing or changed artifacts must be rechecked before handoff. Do not overwrite the database to clear a conflict. To back up the store, stop writers and copy its private directory.
 
-Explicitly load SKILL.md, review a synthetic task artifact, save the actual check result, correct one mistaken assumption, and leave a concrete next review action. Confirm those files exist before changing hosts.
-
-## 4. Develop a repeatable workflow
-
-Have the receiving host read the current revision and use the earlier artifact in a new check. Scheduling needs an actual supported backend and separate task authorization; installation creates no timer or cross-device sync.
-
-Keep the version, actual command, exit code, resulting files, and unverified limits together. Use synthetic data for the first check.
-
-## 5. Troubleshoot, update, and remove
-
-If the host cannot find the skill, check its configured discovery root and SKILL.md readability. A checksum mismatch needs a fresh verified download; do not skip it.
-
-Finish active writes and back up the skill and private task data separately. Extract updates into a new directory and verify before switching. For rollback, restore the older skill while retaining newer user records and evidence. Uninstall only its exact skill directory or discovery entry; separately registered schedules must be cancelled and confirmed in their host.
-
-## 6. License
-
-[AGPL-3.0-only](../LICENSE). This is concise user guidance; consult the original license for use and redistribution terms.
+The scheduler field deliberately remains `not_registered`: no wake-up was created. Cross-host state on one computer does not imply cross-device synchronization. A live Codex read and separate MCP-client handoff passed on macOS; Cursor discovered the tools, while an authenticated model turn and native Windows/Linux operation remain unverified.

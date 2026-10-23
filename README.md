@@ -1,37 +1,15 @@
 # Personal Agent Growth
 
-English | [简体中文](README.zh-CN.md)
+[English](README.md) · [中文](README.zh-CN.md) · **v0.4.0**
 
-Give the next work session something better than a chat recap. Keep task state, evidence, corrections, and one useful next action in a shared private folder that the next host can actually read.
+Keep the next useful step when a task moves between tools. The bundled Python adapter saves checkpoints in a private SQLite store, verifies referenced files, and transfers write responsibility between configured hosts.
 
-[Download v0.3.3](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.3.3) · [Guide](docs/tutorial.en.md) · [Issues](https://github.com/KarmenLoop/personal-agent-growth/issues)
+![Checkpoint and handoff workflow](docs/images/workflow-v0.4.0.svg)
 
-## What it does
+A handoff carries the goal, current revision, observation, artifact hashes, and next action. The receiving host reads the same record. A stale writer or changed artifact is rejected instead of silently overwriting the handoff.
 
-A portable instruction skill and offline package checker for task review and handoff. The skill and its four working references are currently Chinese; the public setup guides are available in both languages.
+Get the [v0.4.0 package](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.4.0), install Python 3.11+, and follow the [tutorial](docs/tutorial.en.md). The package also retains its offline archive verifier.
 
-![Personal Agent Growth workflow illustration](docs/images/workflow-v0.3.3.svg)
+This is durable local task state, not an autonomous agent runtime. It does not register timers, contact people, execute the next action, or synchronize databases across devices. Those operations require a separately authorized host. A real Codex turn read the saved handoff; Cursor discovered the tools, but its model turn remains unverified due to local sign-in and usage limits.
 
-*Workflow illustration for v0.3.3; not an application screenshot or runtime acceptance.*
-
-## Start here
-
-Download the skill ZIP and manifest.json. Extract into a fresh canonical folder, then add that folder once through your host’s supported skill discovery path. Keep the skill folder separate from private task records.
-
-Choose one private task directory that both hosts resolve to the same physical location. Record the active writer and state_revision before a handoff. Python 3.11+ is needed only for the optional offline checker, not for reading Markdown.
-
-## A first useful task
-
-Explicitly load SKILL.md, review a synthetic task artifact, save the actual check result, correct one mistaken assumption, and leave a concrete next review action. Confirm those files exist before changing hosts.
-
-Have the receiving host read the current revision and use the earlier artifact in a new check. Scheduling needs an actual supported backend and separate task authorization; installation creates no timer or cross-device sync.
-
-## Questions
-
-**Does this retrain a model?** No. It organizes reusable task records and review methods. Model weights and provider accounts are unchanged.
-
-## Documentation and license
-
-[Download, setup, practice, and updates](docs/tutorial.en.md) · [LICENSE](LICENSE)
-
-AGPL-3.0-only. The original license terms govern use and redistribution; retain the included legal files. [KarmenLoop](https://karmenloop.com).
+[AGPL-3.0](LICENSE). [KarmenLoop](https://karmenloop.com).
