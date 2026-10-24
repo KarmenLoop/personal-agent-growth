@@ -2,248 +2,359 @@
 
 [English](README.md) · [中文](README.zh-CN.md) · **v0.4.0**
 
-[![Check utilities and release package](https://github.com/KarmenLoop/personal-agent-growth/actions/workflows/check.yml/badge.svg)](https://github.com/KarmenLoop/personal-agent-growth/actions/workflows/check.yml)
+[![CI](https://github.com/KarmenLoop/personal-agent-growth/actions/workflows/check.yml/badge.svg)](https://github.com/KarmenLoop/personal-agent-growth/actions/workflows/check.yml)
 [![Release](https://img.shields.io/github/v/release/KarmenLoop/personal-agent-growth)](https://github.com/KarmenLoop/personal-agent-growth/releases/latest)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue)](https://www.python.org/downloads/)
 [![License: AGPL-3.0](https://img.shields.io/badge/license-AGPL--3.0-green)](LICENSE)
-[![MCP](https://img.shields.io/badge/MCP-stdio-purple)](docs/tutorial.zh-CN.md)
-[![Hosts](https://img.shields.io/badge/hosts-Codex%20%7C%20MCP-informational)](docs/tutorial.zh-CN.md)
+[![MCP](https://img.shields.io/badge/transport-MCP%20stdio-purple)](docs/tutorial.zh-CN.md)
 
-**任务换工具后，下一步仍然清楚。**
+**换宿主之后，下一步仍然站得住——靠证据，不靠聊天回放。**
 
-[Personal Agent Growth](https://github.com/KarmenLoop/personal-agent-growth) 是开源的 **智能体 Skill** 与 **Python MCP/CLI 适配器**，用于在本地 AI 编程宿主之间做 **持久任务检查点** 与 **带证据的交接**——面向 **OpenAI Codex** 以及本机上其他 **支持 MCP** 的工具。任务状态保存在 **私有 SQLite**，核对工作区 **产物哈希**，并在 **revision** 护栏下移交 **写入责任（writer）**，让下一个宿主读同一条记录继续，而不是只靠聊天摘要。
+长任务在本地智能体宿主之间切换时，常见做法是把对话摘要贴到下一会话。信息会漂：哪些文件真的核对过、谁有权改任务状态、所谓「完成」是否还对应磁盘上的字节、下一步到底是什么，全靠模型临场发挥。
 
-由 **KARMENLOOP Official Team**（[KarmenLoop](https://github.com/KarmenLoop)、[karmenloop.com](https://karmenloop.com)）维护。当前版本：**v0.4.0**。许可证：**AGPL-3.0-only**。
+Personal Agent Growth 把这件事做成**可安装的 Skill + Python 3.11+ MCP/CLI 适配器**：检查点写入**私有 SQLite**，对声明过的工作区产物做 **SHA-256**，在 **revision** 约束下移交 **writer（写入责任）**。接收方读到的是同一条记录；陈旧写入者或已变产物会被拒绝，而不是静默覆盖。
 
-<!-- 主视觉（仓库尚无素材，合并前请补上）：
-![本地宿主中 Personal Agent Growth 的 MCP 工具](docs/images/hero-mcp-tools.png)
-![智能体交接演示 GIF：growth_handoff 后 growth_read](docs/images/handoff-demo.gif)
-建议：宿主界面中五个 `growth_*` 工具；`growth_handoff` 后 `growth_read` 且 `evidence_current: true` 的短 GIF。
+由 [KarmenLoop](https://github.com/KarmenLoop) / [KARMENLOOP](https://karmenloop.com) 维护。当前版本 **[v0.4.0](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.4.0)**，许可证 **AGPL-3.0-only**。
+
+<!-- 合并前请补素材（仓库中尚无）：
+![本地宿主中五个 growth_* MCP 工具](docs/images/hero-mcp-tools.png)
+![CLI 交接演示：growth_handoff 后 growth_read](docs/images/handoff-demo.gif)
 -->
 
-![Personal Agent Growth v0.4.0 检查点与交接流程](docs/images/workflow-v0.4.0.svg)
+![v0.4.0 检查点与交接示意](docs/images/workflow-v0.4.0.svg)
 
-**下载：** [v0.4.0 包](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.4.0) · **指南：** [中文教程](docs/tutorial.zh-CN.md) · [English tutorial](docs/tutorial.en.md)
-
-**关键词：** 智能体 Skill、MCP 服务、Codex、共享任务记忆、检查点交接、SQLite、证据哈希、跨宿主接续、AGPL-3.0
+[下载 v0.4.0](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.4.0) · [中文教程](docs/tutorial.zh-CN.md) · [English tutorial](docs/tutorial.en.md)
 
 ---
 
-## 一览（给人与问答引擎）
+## 要解决的问题
 
-| 事实 | 内容 |
+宿主擅长执行，不擅长「跨会话拥有」连续性。仅靠粘贴摘要，你会丢掉：
+
+- 产物与结论的对应关系；
+- 明确的写入责任方；
+- 磁盘内容漂移后的可发现失败；
+- 可执行的下一步，而不是一段散文。
+
+本项目把连续性当成**系统约束**：结构化检查点、可复核哈希、独占 writer、本地双方认可的同一数据根。它**不是**自主代理框架——不会注册定时唤醒、不会代你联系人或执行 `next_action`。那些仍归宿主与用户授权。它提供的是换手时仍然可信的状态落点，面向 **Codex** 以及本机其他能跑 **MCP stdio** 的宿主。
+
+---
+
+## 一览
+
+| | |
 |---|---|
-| 产品名 | Personal Agent Growth |
-| 发布方 | KARMENLOOP Official Team / KarmenLoop |
-| 版本 | 0.4.0 |
-| 主要用途 | 持久保存本机智能体任务检查点；在支持 MCP 的宿主间用可核对文件证据交接 |
-| 形态 | Markdown skill（`SKILL.md`）+ Python 3.11+ stdio MCP/CLI 适配器 |
-| 存储 | 私有目录 `--root` → `host.sqlite`（不是云同步服务） |
-| 核心工具 | `growth_start`、`growth_checkpoint`、`growth_handoff`、`growth_read`、`growth_export` |
-| 安全模型 | 当前 `writer` + `expected_revision`；拒绝陈旧写入者与已变产物 |
-| 不包含 | 自主运行时、注册定时器、代执行下一步、跨设备数据库同步 |
-| 仓库 | https://github.com/KarmenLoop/personal-agent-growth |
-| 网站 | https://karmenloop.com |
+| **安装内容** | Skill（`SKILL.md` 与 references）+ `scripts/host.py` 适配器 |
+| **运行时** | Python **3.11+**（适配器路径以标准库为主） |
+| **持久化** | 私有 `--root` → `host.sqlite`（目录与库文件权限收紧） |
+| **传输** | MCP stdio，以及 CLI（`call` / `install` / `mcp`） |
+| **宿主** | 提供 Codex 安装辅助；其他 MCP 宿主可启动同一进程 |
+| **工具** | `growth_start` / `growth_checkpoint` / `growth_handoff` / `growth_read` / `growth_export` |
+| **并发** | 单 writer + `expected_revision`（乐观并发，陈旧即拒） |
+| **证据** | 工作区相对路径、大小上限、SHA-256；读取与交接时复核 |
+| **许可** | AGPL-3.0-only |
 
 ---
 
-## 是什么 / 不是什么
+## 架构
 
-| 是 | 不是 |
-|---|---|
-| 本机可复用的**持久任务状态**，用于跨宿主接续 | 自主代理运行时 |
-| **Skill**（`SKILL.md`）+ **Python 3.11+** MCP/CLI 适配器 | 云同步或多设备数据库服务 |
-| 带证据的检查点（目标、版本、观察、产物哈希、下一步） | 会注册定时器或唤醒宿主的调度器 |
-| 用 writer + revision 拒绝陈旧或冲突写入 | 替你执行下一步动作 |
-| 发行包的离线 ZIP/manifest 校验 | 宣称每个宿主的模型回合都已验收 |
+三层刻意拆开，避免「方法论」和「存储事务」缠在一起：
 
-联系他人、执行下一步、登记唤醒等，仍需另外获得授权的宿主。本包刻意把 `schedule.status` 留在 `not_registered`。
+1. **方法层（Skill）** — `SKILL.md` 与 `references/` 约定如何立项与恢复、如何区分观察与解释、如何在证据变化时改判、何时打扰用户。这是纪律，不是常驻进程。
+2. **适配层（可执行）** — `scripts/host.py`、`scripts/host_support.py` 暴露五个工具，校验入参，对 SQLite 做事务更新；CLI 与 MCP 共用实现。
+3. **私有状态** — 每台机器（或每个隔离边界）一个数据根：任务对象、观察、交接历史、事件流。工作区文件仍在项目树；库里只存元数据与哈希。
 
----
-
-## 如何工作
+```mermaid
+flowchart TB
+  subgraph hosts [本地智能体宿主]
+    H1[Codex 或宿主 A]
+    H2[其他 MCP 宿主]
+  end
+  subgraph adapter [适配器进程]
+    MCP[MCP stdio / CLI]
+    Tools[growth_* 工具]
+    MCP --> Tools
+  end
+  subgraph state [私有数据根]
+    DB[(host.sqlite)]
+    Export[交接 JSON 导出]
+  end
+  WS[项目工作区文件]
+  H1 --> MCP
+  H2 --> MCP
+  Tools -->|事务写入| DB
+  Tools -->|哈希 / 校验| WS
+  Tools --> Export
+```
 
 ```mermaid
 mindmap
   root((Personal Agent Growth))
-    Skill 方法层
+    Skill 方法
       任务记录
-      学习与纠错
-      联系偏好
+      学习闭环
+      联系策略
       接续规则
-    Adapter 执行层
+    Adapter 执行
       growth_start
       growth_checkpoint
       growth_handoff
       growth_read
       growth_export
-    私有状态
-      SQLite host.sqlite
-      writer 与 revision
-      产物 sha256
-    宿主
-      Codex MCP
-      其他 MCP 宿主
+    存储
+      objects
+      events
+      writer
+      state_revision
+    证据
+      相对路径
+      字节数
+      sha256
+```
+
+### 并发与写入生命周期
+
+同一时刻只有一个 `--host-id` 是 `writer`。变更类工具要求：
+
+- 调用进程的 `--host-id` 等于当前 `writer`；
+- 请求里的 `expected_revision` 等于库中的 `state_revision`。
+
+任一不满足即拒绝（如 `NOT_CURRENT_WRITER`、`STALE_REVISION`）。交接后原宿主仍可 `growth_read`，但不能再 checkpoint，除非责任再次转回。
+
+```mermaid
+stateDiagram-v2
+  [*] --> Started: growth_start
+  Started --> Active: growth_checkpoint
+  Active --> Active: growth_checkpoint
+  Active --> HandedOff: growth_handoff
+  HandedOff --> Active: 接收方继续 checkpoint
+  Active --> Exported: growth_export
+  HandedOff --> Exported: growth_export
 ```
 
 ```mermaid
 sequenceDiagram
-  participant A as 宿主 A（如 Codex）
-  participant S as SQLite 与工作区
-  participant B as 宿主 B（MCP）
-  A->>S: growth_start / growth_checkpoint（文件哈希）
-  A->>S: growth_handoff（target_host 为 host-b）
-  B->>S: growth_read（核对哈希）
-  B->>S: growth_checkpoint（新版本）
+  participant A as 宿主 A
+  participant S as 存储与工作区
+  participant B as 宿主 B
+  A->>S: growth_start(task_id, goal, acceptance)
+  A->>S: growth_checkpoint(rev, artifacts[])
+  Note over S: 对工作区内路径计算哈希
+  A->>S: growth_handoff(rev, target_host=B)
+  Note over S: 哈希漂移则拒绝交接
+  B->>S: growth_read(task_id)
+  Note over B: 核对 writer、next_action、evidence_current
+  B->>S: growth_checkpoint(新 revision, ...)
 ```
 
-交接保留**目标**、**当前版本**、**观察**、**产物哈希**和**下一步**。接收宿主读取同一条记录；旧写入者或已变化的产物会被拒绝，避免悄悄覆盖交接状态。
+`growth_handoff` 会先复核证据。文件缺失、越出工作区、或 SHA-256 不一致时返回错误（例如 `EVIDENCE_CHANGED`），不会假装交接成功。
+
+### 检查点里有什么
+
+任务对象大致包括：
+
+- 意图：`task_id`、`goal`、`acceptance`、`goal_revision`
+- 控制：`state_revision`、`writer`、`phase`、`next_action`
+- 证据：`artifacts[]`（相对路径、`bytes`、`sha256`）
+- 历史：`observations[]`、`handoffs[]`
+- 调度占位：`schedule.status = "not_registered"`（有意为之，避免误称已登记唤醒）
+
+适配器**不会**替你造文件。磁盘上没有落地，就没有可诚实哈希的证据。
 
 ---
 
-## 功能
+## 和「只贴聊天记录」比
 
-通过 **MCP stdio** 与 **CLI**（`scripts/host.py`）提供五个工具：
+| 维度 | 仅聊天摘要 | Personal Agent Growth |
+|---|---|---|
+| 真源 | 线程里的散文 | 私有 SQLite 中的结构化记录 |
+| 文件主张 | 易被模型编造 | 对真实路径做 SHA-256 |
+| 谁可改写 | 谁有会话谁就能说 | 明确的 `writer` |
+| 并发冲突 | 后贴覆盖先贴 | 陈旧 revision 直接拒绝 |
+| 崩溃后恢复 | 重读长文 | `growth_read` + `evidence_current` |
+| 发行包核对 | 临时脚本 | `verify_handoff.py` + manifest |
+| 跨设备同步 | 再贴一次？ | **不在范围**——同机 / 同一数据根 |
+
+---
+
+## 能力说明
+
+### 五个工具
 
 | 工具 | 作用 |
 |---|---|
-| `growth_start` | 创建由当前配置宿主拥有的持久任务 |
-| `growth_checkpoint` | 提交带证据的检查点（阶段、观察、下一步、工作区内产物路径） |
-| `growth_handoff` | 在证据仍一致时，把写入责任转给指定宿主 |
-| `growth_read` | 恢复检查点并复核产物哈希（`evidence_current` / `evidence_issues`） |
-| `growth_export` | 在数据根目录写出私有交接 JSON |
+| `growth_start` | 创建由当前宿主拥有的任务；id 已存在则失败（`TASK_EXISTS`） |
+| `growth_checkpoint` | 更新阶段与观察、哈希产物列表、递增 `state_revision` |
+| `growth_handoff` | 复核证据后移交 `writer`，追加交接记录并递增版本 |
+| `growth_read` | 返回任务及最新证据审计（`evidence_current` / `evidence_issues`），只读 |
+| `growth_export` | 在数据根写出私有 JSON，便于归档或离线查看 |
 
-此外还包括：
+### 适配器侧
 
-- `--root` 下的私有库（`host.sqlite`，目录权限收紧）
-- 基于 `expected_revision` 与当前 `writer` 的乐观并发
-- 面向 Codex（`.codex/config.toml`）的安装辅助；其他支持 MCP 的宿主可用同一条 `scripts/host.py … mcp` stdio 命令接入
-- 离线归档校验：`scripts/verify_handoff.py --archive … --manifest …`
-- `SKILL.md` 与 `references/` 中的方法指引
+- **MCP stdio**：工具 schema、入参校验、带 `code` 的结构化错误。
+- **CLI**：`install` / `call` / `mcp` 与 MCP 同路径，便于无模型排障。
+- **Codex 安装辅助**：`--install-host codex install` 向 `.codex/config.toml` 合并 MCP 项，已存在则不覆盖。
+- **通用 MCP 宿主**：stdio 配置指向 `python …/scripts/host.py --root … --workspace … --host-id <id> mcp`；每个宿主使用不同 `--host-id`。
+- **存储**：数据根权限收紧；SQLite WAL + `BEGIN IMMEDIATE`；配置与导出原子写入。
+- **工作区沙箱**：产物路径必须落在 `--workspace` 下。
+- **体积限制**：单文件证据上限（适配器内 8 MiB）；过大 MCP/CLI 载荷拒绝。
+- **离线校验**：`scripts/verify_handoff.py --archive … --manifest …` 只证明包与清单一致，**不等于**现场宿主集成已通过。
 
-适配器只核对**已有**文件的哈希，不会替你制造证据。
+### Skill 层（同属产品）
+
+Markdown Skill 负责告诉智能体如何：
+
+- 从真实任务记录启动或恢复；
+- 把验证结果绑到具体文件身份；
+- 在证据变化时小范围改方法；
+- 遵守联系偏好，避免表演式「主动」；
+- 对调度保持诚实——未登记就写 `not_registered`。
+
+详见 `references/` 下任务记录、共享记忆、学习与联系、自主接续等文档。
 
 ---
 
-## 60 秒上手
+## 快速开始
 
-需要 **Python 3.11+**。任务数据放在技能与仓库之外。本机上要共享该任务的宿主，必须使用同一私有数据根目录和相同工作区文件。
+**前提：** Python 3.11+、可写的私有数据目录，以及各宿主能看到**同一批**工作区文件。
 
 ```sh
-# Codex：写入 MCP 配置（随后重载宿主并批准该服务）
-python /path/to/scripts/host.py --root /private/task-state --workspace /path/to/project --install-host codex install
+# 1）为 Codex 写入 MCP（随后重载并批准）
+python /path/to/scripts/host.py \
+  --root /private/task-state \
+  --workspace /path/to/project \
+  --install-host codex install
 ```
 
-其他支持 MCP 的宿主，请在其 stdio MCP 配置中指向同一适配器（相同 `--root`、`--workspace`，以及不同的 `--host-id`），例如：
+第二个支持 MCP 的宿主，用另一 `--host-id` 启动同一脚本即可：
 
 ```text
 command: python
-args: [/path/to/scripts/host.py, --root, /private/task-state, --workspace, /path/to/project, --host-id, host-b, mcp]
+args:
+  - /path/to/scripts/host.py
+  - --root
+  - /private/task-state
+  - --workspace
+  - /path/to/project
+  - --host-id
+  - host-b
+  - mcp
 ```
 
-然后在宿主中（或用 CLI）：
+**推荐路径**
 
-1. 在 Codex（或宿主 A）调用 `growth_start`，填写 `task_id`、`goal`、`acceptance`。
-2. 在项目中完成真实一步；用当前 `expected_revision`、阶段、观察、下一步及工作区内产物路径调用 `growth_checkpoint`。
-3. 用当前版本与接收方宿主 id（例如 `host-b`）调用 `growth_handoff`。
-4. 在第二个宿主用同一 `task_id` 调用 `growth_read`，检查写入者、下一步和 `evidence_current`。
-5. 继续工作，由接收宿主提交新检查点；需要时可 `growth_export`。
+1. 宿主 A：`growth_start`（`task_id` / `goal` / `acceptance`）。
+2. 完成真实工作后：`growth_checkpoint`（当前 `expected_revision`、阶段、观察、下一步、工作区内产物路径）。
+3. `growth_handoff`，`target_host` 设为宿主 B 的 id（如 `host-b`）。
+4. 宿主 B：`growth_read`，确认 `writer`、`next_action`、`evidence_current`。
+5. 继续工作并再次 checkpoint；需要时 `growth_export`。
 
-不经过模型也可检查：
+**不经模型的检查**
 
 ```sh
-python /path/to/scripts/host.py --root /private/task-state --workspace /path/to/project --host-id host-b call growth_read --input request.json
+python /path/to/scripts/host.py \
+  --root /private/task-state \
+  --workspace /path/to/project \
+  --host-id host-b \
+  call growth_read --input request.json
 ```
 
-`request.json` 内容为 `{"task_id":"your-task-id"}`。旧版本写入需先重读；产物缺失或变化须重新验收后再交接。不要用覆盖数据库的方式「解决」冲突。
+`request.json`：
 
-完整步骤见 [docs/tutorial.zh-CN.md](docs/tutorial.zh-CN.md)。
+```json
+{ "task_id": "your-task-id" }
+```
+
+进程重启不会清空库。遇到陈旧版本先读再写。不要用删除 `host.sqlite`「解决」冲突。备份前停止写入，再复制私有目录。
+
+完整说明：[docs/tutorial.zh-CN.md](docs/tutorial.zh-CN.md)。
+
+> **文档债：** `docs/install.md` / `docs/install.zh-CN.md` 仍钉着 **v0.3.3** 下载校验。在安装指南升版前，请优先用 [v0.4.0 发行资产](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.4.0) 与 v0.4.0 教程。
 
 ---
 
-## 文档
+## 文档导航
 
-| 文档 | 用途 |
+| 文档 | 适用场景 |
 |---|---|
-| [中文教程](docs/tutorial.zh-CN.md) / [Tutorial (EN)](docs/tutorial.en.md) | 安装适配器、五个工具、交接核对 |
-| [中文安装](docs/install.zh-CN.md) / [Installation](docs/install.md) | macOS/Windows 技能布局、发现入口、共享记忆 |
-| [共享记忆](references/shared-memory.md) | 跨宿主恢复、writer 规则、版本纪律 |
-| [任务记录](references/task-record.md) | 任务记录应包含什么 |
-| [验证范围](docs/validation.md) | 证据范围与已知缺口 |
-| [许可说明](docs/licensing.md) | AGPL-3.0 义务 |
-| [团队](TEAM.md) | 维护者联系方式 |
-
-> **待修：** `docs/install.md` 与 `docs/install.zh-CN.md` 仍按 **v0.3.3** 写下载校验。在安装指南升版前，请优先使用 [v0.4.0 发行包](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.4.0) 与 v0.4.0 教程。
+| [中文教程](docs/tutorial.zh-CN.md) · [EN](docs/tutorial.en.md) | 适配器安装与五工具闭环 |
+| [中文安装](docs/install.zh-CN.md) · [EN](docs/install.md) | macOS/Windows 技能布局（注意 0.3.3 钉版） |
+| [共享记忆](references/shared-memory.md) | writer 规则、版本纪律、恢复 |
+| [任务记录](references/task-record.md) | 记录应覆盖的字段与证据 |
+| [学习与联系](references/learning-and-contact.md) | 方法变更与打扰用户的边界 |
+| [自主接续](references/autonomous-continuation.md) | 调度相关——以及不该宣称什么 |
+| [验证范围](docs/validation.md) | 证据边界与已知缺口 |
+| [许可说明](docs/licensing.md) | AGPL 义务 |
+| [TEAM.md](TEAM.md) | 维护者信息 |
 
 ---
 
-## 常见问题（FAQ）
+## 验证说明（如实写）
 
-### Personal Agent Growth 是什么？
+- **CI**（`check.yml`）：在 Ubuntu 24.04、macOS Intel、Windows Server 镜像上跑单测、打发行包并做归档校验。
+- **Codex 现场路径：** 维护者环境中，真实 Codex 回合已成功读取过保存的交接（见 v0.4.0 说明）。
+- **未宣称：** 覆盖所有 MCP 宿主的模型回合、每一类 UI 的原生行为，或任何跨设备库同步。
+- 同机共享 root ≠ 多设备连续；字节不一致时，哈希会暴露问题。
 
-KarmenLoop 在 GitHub 上发布的开源项目：一套智能体 **Skill**，加上 **Python 3.11+ MCP/CLI 适配器**。用私有 SQLite 持久保存本机任务检查点，并在 Codex 及其他支持 MCP 的本地宿主之间做带证据的交接。
+详见 [docs/validation.md](docs/validation.md) 与 [v0.4.0 发行说明](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.4.0)。
 
-### 适合谁用？
+---
 
-在同一台机器上切换本地 AI 编程宿主、需要可核对的共享任务状态、而不只靠聊天摘要的开发者与重度用户。
+## 常见问题
 
-### 它会自己跑代理吗？
+### 一句话：这是什么？
 
-不会。不注册定时器、不联系他人、不代执行下一步、不跨设备同步数据库。这些需要另外获得授权的宿主。除非外部另行登记唤醒，调度字段保持 `not_registered`。
+AGPL 许可的 Skill + Python MCP/CLI 适配器：用私有 SQLite 持久化本机任务检查点，并在支持 MCP 的宿主之间用 SHA-256 证据与独占 writer 做交接。
 
-### 「带证据的交接」怎么工作？
+### 适合谁？
 
-`growth_checkpoint` 记录工作区相对路径及其 SHA-256。`growth_handoff` 仅在证据仍一致时把 `writer` 交给另一宿主。`growth_read` 返回 `evidence_current` 与 `evidence_issues`（缺失或已变文件）。
+已经在同一台机器上的多个本地编程智能体之间倒手、却总在边界丢失「文件级真相」的人——尤其是使用 Codex、同时还有其他 MCP 宿主对着同一工作区的用户。
 
-### 两个宿主同时写会怎样？
+### 算自主代理吗？
 
-写入需要当前 `writer` 与正确的 `expected_revision`。陈旧版本或错误宿主会被拒绝。不要用覆盖 `host.sqlite` 的方式强行合并。
+不算。不注册定时器、不联系人、不执行 `next_action`、不跨设备同步。未另行登记唤醒时，`schedule.status` 保持 `not_registered`。
 
-### 这是不是云端共享记忆？
+### 交接如何保持诚实？
 
-不是。状态在本机私有 `--root` 下。同机宿主须指向同一 root 与工作区。跨设备需要另行授权的同步或传输，不在本包宣称范围内。
+Checkpoint 哈希真实文件；handoff 再核一次；read 返回 `evidence_current` / `evidence_issues`。只有证据仍一致、且调用方是持有正确 revision 的当前 writer，才会移交所有权。
 
-### 支持哪些宿主？
+### 两个宿主同时写？
 
-捆绑安装器可为 **Codex**（`.codex/config.toml`）写入 MCP 配置。其他支持 MCP 的宿主可用独立 `--host-id` 启动同一条 `scripts/host.py … mcp` stdio 进程。配置存在不等于验收——需重载宿主、批准服务，并确认五个 `growth_*` 工具。
+非 writer 或陈旧 revision 会失败。先读、对齐，再写。用覆盖 SQLite 文件「清冲突」不受支持。
 
-### v0.4.0 验证了什么？
+### 非 Codex 宿主能用吗？
 
-CI 在 Ubuntu、macOS Intel、Windows 上跑工具测试与发行包检查。真实 Codex 回合已读取过保存的交接。各宿主上的现场模型回合覆盖仍然有限；详见 [验证范围](docs/validation.md) 与发行说明。
+能。Codex 有现成安装辅助；其他 MCP stdio 宿主用自有 `--host-id` 启动同一 `scripts/host.py … mcp`。磁盘上有配置 ≠ 验收通过——需重载、批准，并确认五个工具可见。
 
-### 怎么安装？
+### Skill 必须装 Python 吗？
 
-下载 [v0.4.0 的 ZIP 与 manifest](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.4.0)，使用 Python 3.11+，按 [docs/tutorial.zh-CN.md](docs/tutorial.zh-CN.md) 安装适配器并走通五个工具。`docs/install.md` 中仍写的 **v0.3.3** 校验视为过时，待该指南升版。
+只读 `SKILL.md` 不必。跑适配器、MCP 工具与发行包校验需要 Python 3.11+。
 
-### 用什么许可证？
+### 如何核对发行 ZIP？
+
+```sh
+python scripts/verify_handoff.py \
+  --archive personal-agent-growth-0.4.0.zip \
+  --manifest manifest.json
+```
+
+退出码 `0` 只表示该检查器认定归档与清单一致，不是现场宿主集成证明。
+
+### 任务数据放哪？
+
+放在 skill 检出与公开仓库之外，使用独立 `--root`。备份时先停写，再复制整个私有目录。
+
+### 许可证？
 
 **AGPL-3.0-only**。见 [LICENSE](LICENSE) 与 [docs/licensing.md](docs/licensing.md)。允许在 AGPL 条款下商用；受覆盖的再分发与经修改的网络交互版本附带源码义务。
 
 ---
 
-## 验证说明（如实）
-
-- CI（`check.yml`）在 Ubuntu、macOS Intel、Windows 上跑工具测试与发行包检查。
-- 真实 Codex 回合已按发行说明中的维护者路径读取过保存的交接。
-- 本机跨宿主状态**不等于**跨设备同步。
-- 不宣称适配器在每个操作系统、每个 MCP 宿主上都已现场验收；详见发行说明与 `docs/validation.md`。
-
----
-
-## 相关检索词
-
-若你在找 **Codex 共享记忆**、**智能体交接检查点**、**MCP 任务状态 SQLite**、**跨工具 Agent Skill** 或 **带证据的智能体接续**，本仓库即 KarmenLoop 面向本地宿主的实现。
-
----
-
 ## 许可与联系
 
-[AGPL-3.0](LICENSE)。由 **KARMENLOOP Official Team**（上海）创建并维护。
+[AGPL-3.0](LICENSE) · [karmenloop.com](https://karmenloop.com) · [GitHub @KarmenLoop](https://github.com/KarmenLoop) · [info@karmenloop.com](mailto:info@karmenloop.com)
 
-- 网站：[karmenloop.com](https://karmenloop.com)
-- GitHub：[KarmenLoop](https://github.com/KarmenLoop)
-- 邮箱：[info@karmenloop.com](mailto:info@karmenloop.com)
-- 团队页：[TEAM.md](TEAM.md)
+KARMENLOOP Official Team · 上海
 
 <!-- Copyright (C) 2026 KARMENLOOP Official Team
 SPDX-License-Identifier: AGPL-3.0-only -->
