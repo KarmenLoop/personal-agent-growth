@@ -16,11 +16,6 @@ Personal Agent Growth 把这件事做成**可安装的 Skill + Python 3.11+ MCP/
 
 由 [KarmenLoop](https://github.com/KarmenLoop) / [KARMENLOOP](https://karmenloop.com) 维护。当前版本 **[v0.4.0](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.4.0)**，许可证 **AGPL-3.0-only**。
 
-<!-- 合并前请补素材（仓库中尚无）：
-![本地宿主中五个 growth_* MCP 工具](docs/images/hero-mcp-tools.png)
-![CLI 交接演示：growth_handoff 后 growth_read](docs/images/handoff-demo.gif)
--->
-
 ![v0.4.0 检查点与交接示意](docs/images/workflow-v0.4.0.svg)
 
 [下载 v0.4.0](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.4.0) · [中文教程](docs/tutorial.zh-CN.md) · [English tutorial](docs/tutorial.en.md)

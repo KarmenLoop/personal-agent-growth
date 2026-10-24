@@ -14,11 +14,6 @@ When you move a long-running job from one agent host to another, most setups lea
 
 Built and maintained by [KarmenLoop](https://github.com/KarmenLoop) / [KARMENLOOP](https://karmenloop.com). Current release: **[v0.4.0](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.4.0)**. License: **AGPL-3.0-only**.
 
-<!-- Add before merge — assets not in the tree yet:
-![Local host showing the five growth_* MCP tools](docs/images/hero-mcp-tools.png)
-![CLI handoff: growth_handoff then growth_read with evidence_current true](docs/images/handoff-demo.gif)
--->
-
 ![v0.4.0 checkpoint and handoff overview](docs/images/workflow-v0.4.0.svg)
 
 [Download v0.4.0](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.4.0) · [Tutorial](docs/tutorial.en.md) · [中文教程](docs/tutorial.zh-CN.md)
