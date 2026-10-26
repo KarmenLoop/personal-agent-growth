@@ -4,7 +4,7 @@
 
 ## 验收范围与结果
 
-2026 年 10 月 27 日，本地文档与分发验收完成，两处实测输入错误已纠正并保留。这里验收公开 Skill、文档、图示及真实文件操作。当前发布提交的 GitHub 跨系统检查仍待执行，完成后补入实际运行链接。
+2026 年 10 月 27 日，本地文档与分发验收完成，两处实测输入错误已纠正并保留。这里验收公开 Skill、文档、图示及真实文件操作。修正后的实现提交 52caa11 已通过三种托管系统。后续文档提交补入这些收条，其检查链接保留在拉取请求中。
 
 | 检查 | 实际结果 |
 |---|---|
@@ -27,12 +27,25 @@
 
 - 首次迁移读取使用了种子索引中不存在的 scientific-data-analysis 领域，工具正确拒绝。随后改读实际存在的 offline-package-check；没有编造兜底经验，也没有为此改产品。
 - 实测脚本误用了 /usr/bin/unlink，本机实际位置为 /bin/unlink。改正可执行文件路径后完成移除；安装教程原本就按 PATH 调用 unlink。
-- Windows 检查器仍残留 0.3.3 文件名与固定文件/检查数量，现已按当前 manifest 和 0.4.1 教程修正。真实 Windows CI 结果待实际运行后单列。
+- Windows 检查器仍残留 0.3.3 文件名与固定文件/检查数量，现已按当前 manifest 和 0.4.1 教程修正。PowerShell 5.1 和 7 随后均通过两类安装根目录，实际任务见下表。
 - 图示渲染发现引号实体、时序语法分隔符及两处标题裁切，已修源文件、重新渲染全部 16 张、更新哈希并目视抽查。
 - 合入此前未发布的 0.4.1 实验与打包工作时，保留 GitHub 0.4.0 已发布的宿主适配器。
+
+## GitHub 跨系统实际结果
+
+| 系统或 Shell | 结果 | 实际运行 |
+|---|---|---|
+| Ubuntu 24.04、macOS 26 Intel、Windows Server 2025 | 各自 48 项测试、核心构建/123 项检查、文档检查全部通过 | [修正后的实现检查](https://github.com/KarmenLoop/personal-agent-growth/actions/runs/40387260224) |
+| Windows PowerShell 5.1.26100.33648、PowerShell 7.6.7 | 默认 D 盘及自定义 C 盘中文空格路径全部通过 | [安装与共享文件检查](https://github.com/KarmenLoop/personal-agent-growth/actions/runs/40387005475) |
+
+Windows 收条记录三个不同进程推进修订 1→2→3、实际共享文件身份、拒绝过期写入、拒绝重复安装及卸载保留记忆。这是**测试进程，不是 Agent**。CI 用当前本地构建替换下载传输，没有访问正式 Release 下载地址。详见 [CI 摘要](evidence/release-0.4.1-ci.json)与[带原始产物哈希的 Windows 摘要](evidence/release-0.4.1-windows.json)。
+
+[首轮 CI](https://github.com/KarmenLoop/personal-agent-growth/actions/runs/40387006023) 有一项 Windows 失败：测试把 RUNNER~1 短路径与解析后的完整路径按文字比较。现改为 samefile 核实真实索引目录，快照与篡改检查全部保留。旧失败没有删除；这是测试可移植性修正，不代表经验加载器返回了错误目录。
+
+正式产物及上传后下载回执见 [v0.4.1](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.4.1)。RELEASE-VERIFICATION.json 记录发布提交、下载哈希、包检查及真实网络安装结果；该文件缺失时不能认为这些发布后检查已完成。它位于 ZIP 外，避免压缩包哈希自引用。
 
 ## 本轮未证明的能力
 
 本次发布没有重新执行原生 Codex、Cursor、Koder 模型回合，没有补齐原生 Windows 桌面 Agent、跨设备同步或应用关闭后的系统唤醒验收，也不证明所有领域的效率上涨。独立 Koder 候选仍有 31 项全量测试失败，其私有产品实现不在公开包内。历史 Agent 实测按原日期保留于[兼容性](compatibility.zh-CN.md)和[跨领域结果](cross-domain-trial.zh-CN.md)。
 
-本地安装使用本地构建产物，不等于 GitHub 网络下载通过。最终发布包将从验收提交重新构建，上传后再下载并校验。ZIP 与 manifest 一致只证明内容一致，不等于独立签名认证。公开回执替换了私人路径前缀，分别保留原始输出和脱敏输出的哈希。
+本地安装使用本地构建产物，不等于 GitHub 网络下载通过。发布校验回执单独标识经过下载复核的最终包。ZIP 与 manifest 一致只证明内容一致，不等于独立签名认证。公开回执替换了私人路径前缀，分别保留原始输出和脱敏输出的哈希。

@@ -1,0 +1,42 @@
+{
+  "status": "completed",
+  "conclusion": "success",
+  "headSha": "52caa11c947f5bc9e5422c8798801ce0ed6d8083",
+  "url": "https://github.com/KarmenLoop/personal-agent-growth/actions/runs/40387260224",
+  "jobs": [
+    {
+      "name": "check (macos-26-intel)",
+      "conclusion": "success",
+      "startedAt": "2026-10-26T19:29:58Z",
+      "completedAt": "2026-10-26T19:30:33Z",
+      "url": "https://github.com/KarmenLoop/personal-agent-growth/actions/runs/40387260224/job/121798727318"
+    },
+    {
+      "name": "check (windows-2025)",
+      "conclusion": "success",
+      "startedAt": "2026-10-26T19:29:55Z",
+      "completedAt": "2026-10-26T19:30:30Z",
+      "url": "https://github.com/KarmenLoop/personal-agent-growth/actions/runs/40387260224/job/121798727593"
+    },
+    {
+      "name": "check (ubuntu-24.04)",
+      "conclusion": "success",
+      "startedAt": "2026-10-26T19:29:55Z",
+      "completedAt": "2026-10-26T19:30:03Z",
+      "url": "https://github.com/KarmenLoop/personal-agent-growth/actions/runs/40387260224/job/121798727672"
+    }
+  ],
+  "version": "0.4.1",
+  "tests_per_platform": 48,
+  "core_files": 59,
+  "package_checks": 123,
+  "source_response_sha256": "9498e0b14d2b8855010e83d9be63facf6d78183380170f9c44f8be9e4b5f0e37",
+  "full_log_sha256": "8d747d026d44238bce48c228b3f7f6898930e89806f93f5ff1670ba104c2e884",
+  "prior_failure": {
+    "url": "https://github.com/KarmenLoop/personal-agent-growth/actions/runs/40387006023",
+    "commit": "826d0c335e22201575ffc68b85586b9e27696b2d",
+    "scope": "One Windows test assertion compared an 8.3 path spelling with a resolved long path. macOS and Ubuntu passed. Corrected to actual samefile identity without removing snapshot hash checks.",
+    "failure_log_sha256": "2209186128c11896e86f9455a1a0dff7369d9215087de1b7b709c71779ed4434"
+  },
+  "scope": "Hosted CI utility/package checks, not desktop Agent execution"
+}

@@ -1,0 +1,569 @@
+{
+  "version": "0.4.1",
+  "workflow_url": "https://github.com/KarmenLoop/personal-agent-growth/actions/runs/40387005475",
+  "results": [
+    {
+      "status": "PASS",
+      "observed_at": "2026-10-26T19:28:22.194464+00:00",
+      "platform": "Windows-10-10.0.26100-SP0",
+      "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+      "shell": "powershell",
+      "github_run_id": "40387005475",
+      "commit": "826d0c335e22201575ffc68b85586b9e27696b2d",
+      "cases": [
+        {
+          "case": "default",
+          "status": "PASS",
+          "root": "D:\\AgentKnowledge",
+          "command_substitutions": [
+            "GrowthSkillsRoot"
+          ],
+          "installed_files": 59,
+          "package_checks": 123,
+          "skill_file_identity_shared": true,
+          "memory_file_identity_shared": true,
+          "copied_state_rejected_as_shared": true,
+          "memory_revisions": [
+            1,
+            2,
+            3
+          ],
+          "worker_pids": [
+            3328,
+            3548,
+            4296
+          ],
+          "stale_revision_rejected_without_write": true,
+          "repeat_install_preserved_files": true,
+          "uninstall_preserved_skill_and_memory": true,
+          "ordinary_directory_removal_rejected": true
+        },
+        {
+          "case": "custom",
+          "status": "PASS",
+          "root": "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-7imf_ton\\Knowledge space 中文 & review",
+          "command_substitutions": [
+            "GrowthSkillsRoot",
+            "GrowthRoot"
+          ],
+          "installed_files": 59,
+          "package_checks": 123,
+          "skill_file_identity_shared": true,
+          "memory_file_identity_shared": true,
+          "copied_state_rejected_as_shared": true,
+          "memory_revisions": [
+            1,
+            2,
+            3
+          ],
+          "worker_pids": [
+            4988,
+            8588,
+            6780
+          ],
+          "stale_revision_rejected_without_write": true,
+          "repeat_install_preserved_files": true,
+          "uninstall_preserved_skill_and_memory": true,
+          "ordinary_directory_removal_rejected": true
+        }
+      ],
+      "scope": "Windows guide commands and shared-file recovery by test processes; no desktop agent behavior or scheduler claim",
+      "artifact_transport": "local files; published download URL not exercised",
+      "guide_sha256": {
+        "docs/install.md": "47d515e0b03c5ca9427f7ec5cd4f99947c8dcf2be4a06ed5c73d58d6a23a8b69",
+        "docs/install.zh-CN.md": "82c2cc1c794b270ad0c610282d3f2027a98c5db41c933b3295904be32ca3021f"
+      },
+      "environment": {
+        "powershell": "5.1.26100.33648",
+        "os": "Microsoft Windows Server 2025 Datacenter",
+        "selected_root": "D:\\AgentKnowledge",
+        "d_drive_present": true
+      },
+      "commands": [
+        {
+          "label": "environment",
+          "exit_code": 0,
+          "expected_exit_code": 0,
+          "observed_at": "2026-10-26T19:28:28.809647+00:00"
+        },
+        {
+          "label": "default-install",
+          "exit_code": 0,
+          "expected_exit_code": 0,
+          "observed_at": "2026-10-26T19:28:31.717832+00:00"
+        },
+        {
+          "label": "default-entry",
+          "exit_code": 0,
+          "expected_exit_code": 0,
+          "observed_at": "2026-10-26T19:28:32.130205+00:00"
+        },
+        {
+          "label": "default-memory-entry",
+          "exit_code": 0,
+          "expected_exit_code": 0,
+          "observed_at": "2026-10-26T19:28:32.419462+00:00"
+        },
+        {
+          "label": "default-memory-prepare",
+          "exit_code": 0,
+          "expected_exit_code": 0,
+          "observed_at": "2026-10-26T19:28:32.502670+00:00"
+        },
+        {
+          "label": "default-memory-review",
+          "exit_code": 0,
+          "expected_exit_code": 0,
+          "observed_at": "2026-10-26T19:28:32.696764+00:00"
+        },
+        {
+          "label": "default-memory-review-stale",
+          "exit_code": 3,
+          "expected_exit_code": 3,
+          "observed_at": "2026-10-26T19:28:32.775378+00:00"
+        },
+        {
+          "label": "default-memory-finish",
+          "exit_code": 0,
+          "expected_exit_code": 0,
+          "observed_at": "2026-10-26T19:28:32.856682+00:00"
+        },
+        {
+          "label": "default-repeat-install",
+          "exit_code": 1,
+          "expected_exit_code": 1,
+          "observed_at": "2026-10-26T19:28:33.293735+00:00"
+        },
+        {
+          "label": "default-uninstall",
+          "exit_code": 0,
+          "expected_exit_code": 0,
+          "observed_at": "2026-10-26T19:28:33.705877+00:00"
+        },
+        {
+          "label": "default-uninstall-ordinary-directory",
+          "exit_code": 1,
+          "expected_exit_code": 1,
+          "observed_at": "2026-10-26T19:28:34.067731+00:00"
+        },
+        {
+          "label": "custom-install",
+          "exit_code": 0,
+          "expected_exit_code": 0,
+          "observed_at": "2026-10-26T19:28:35.280001+00:00"
+        },
+        {
+          "label": "custom-entry",
+          "exit_code": 0,
+          "expected_exit_code": 0,
+          "observed_at": "2026-10-26T19:28:35.689007+00:00"
+        },
+        {
+          "label": "custom-memory-entry",
+          "exit_code": 0,
+          "expected_exit_code": 0,
+          "observed_at": "2026-10-26T19:28:35.992739+00:00"
+        },
+        {
+          "label": "custom-memory-prepare",
+          "exit_code": 0,
+          "expected_exit_code": 0,
+          "observed_at": "2026-10-26T19:28:36.072283+00:00"
+        },
+        {
+          "label": "legacy-non-utf8-verifier",
+          "exit_code": 1,
+          "expected_exit_code": 1,
+          "observed_at": "2026-10-26T19:28:36.212931+00:00"
+        },
+        {
+          "label": "custom-memory-review",
+          "exit_code": 0,
+          "expected_exit_code": 0,
+          "observed_at": "2026-10-26T19:28:36.393840+00:00"
+        },
+        {
+          "label": "custom-memory-review-stale",
+          "exit_code": 3,
+          "expected_exit_code": 3,
+          "observed_at": "2026-10-26T19:28:36.472341+00:00"
+        },
+        {
+          "label": "custom-memory-finish",
+          "exit_code": 0,
+          "expected_exit_code": 0,
+          "observed_at": "2026-10-26T19:28:36.551493+00:00"
+        },
+        {
+          "label": "custom-repeat-install",
+          "exit_code": 1,
+          "expected_exit_code": 1,
+          "observed_at": "2026-10-26T19:28:36.918124+00:00"
+        },
+        {
+          "label": "custom-uninstall",
+          "exit_code": 0,
+          "expected_exit_code": 0,
+          "observed_at": "2026-10-26T19:28:37.337929+00:00"
+        },
+        {
+          "label": "custom-uninstall-ordinary-directory",
+          "exit_code": 1,
+          "expected_exit_code": 1,
+          "observed_at": "2026-10-26T19:28:37.707039+00:00"
+        }
+      ],
+      "receipt_sha256": "a0190dfe990c1204d3666f703c00e93be13b073c7b7ec4d5fd2793fb121f2203",
+      "artifact_files": {
+        "custom-entry.ps1": "86d7aa9da6bde3e27a1ebfa32c2b6c18e4af6d56b6abfc69cab61754e1bf7c08",
+        "custom-entry.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "custom-entry.stdout": "18c4545746a5dcbb6e8f746bc2692e4cae5d5ba0968c157a458f936e6b61e96b",
+        "custom-install.ps1": "6853648aa177eab01cf8a6e27ca47791ef4dd377dacde109c534cb99ff3e1cc7",
+        "custom-install.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "custom-install.stdout": "e47d38fd48d32314a1e641687f6c5c1d771154c88ed5a2ee14fab7307c288896",
+        "custom-memory-entry.ps1": "abeb84617e72afc8114493c0009524eda6a5e3a064fc85bf33147e8029d7afb8",
+        "custom-memory-entry.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "custom-memory-entry.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "custom-memory-final.json": "bd9b3f8e1200da3e4fcad49f304db3846b6b29458ca34d74c44897d331dc5698",
+        "custom-memory-finish.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "custom-memory-finish.stdout": "fee48c02bfd2749c271fcbdddeb09456c87f15827fcc7d5e6e0a287856f03576",
+        "custom-memory-prepare.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "custom-memory-prepare.stdout": "c2a4ef6a159f7d26d37905328cb3ae33f5f341328bc7e8d9194c91285a061d52",
+        "custom-memory-review-stale.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "custom-memory-review-stale.stdout": "02029cb30bbb57b1ada403cf0ff00a9824bc2701ff12b4808033b4c6bf87c250",
+        "custom-memory-review.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "custom-memory-review.stdout": "66bd851edbb6dd37591929ea119f5e6d75f6a78909b6925f7f2138616ad50804",
+        "custom-repeat-install.ps1": "6853648aa177eab01cf8a6e27ca47791ef4dd377dacde109c534cb99ff3e1cc7",
+        "custom-repeat-install.stderr": "91cb9ed54e572ff2748b38534561cdb33c8d9ece01bcc529094826287a437df4",
+        "custom-repeat-install.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "custom-uninstall-ordinary-directory.ps1": "63dac3a2fdeaf87a772f643860c87d265337b0b6a65f348b881d9f72240d58d2",
+        "custom-uninstall-ordinary-directory.stderr": "d82ef0a3692b648e67f013ac5f1240283ac11684e12cef314d10829103209f2f",
+        "custom-uninstall-ordinary-directory.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "custom-uninstall.ps1": "63dac3a2fdeaf87a772f643860c87d265337b0b6a65f348b881d9f72240d58d2",
+        "custom-uninstall.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "custom-uninstall.stdout": "cf74c2cf3f31b06d1cc19d18294f18d9f9f236f89cba4437f48f63da837d37ee",
+        "custom-verifier.json": "68cdbd9f7a4531a71c9e02eb5ffb9ca7c815c657bf2ef4184a8475cdfcb2348f",
+        "custom-verifier.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "custom-verifier.stdout": "68cdbd9f7a4531a71c9e02eb5ffb9ca7c815c657bf2ef4184a8475cdfcb2348f",
+        "default-entry.ps1": "b3a4cb30bca9ee9341c26d34229dac0c2f023afe01aabf4a41da3ab48d124313",
+        "default-entry.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "default-entry.stdout": "8e2af15c1cd2dc23fca289fee9cf9c4adffa0b5dd5a63cf8be219df2423da8f2",
+        "default-install.ps1": "cf1c3703c932bba3eff4270e3f9f44909bcbf3e38e0e3255c18c69a1d4966a9b",
+        "default-install.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "default-install.stdout": "641b968b63b7cb5ba4cd6579036b775e77f483762c40de4205bce8b009f3dc21",
+        "default-memory-entry.ps1": "52c3f26cc99a91089d3eb95fd7f76b017e298987ffad7ae7e244491e6ce51152",
+        "default-memory-entry.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "default-memory-entry.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "default-memory-final.json": "538b3a870fa8013489297dbdb6eff7290d799d057f216851b12ac819b4bc5be5",
+        "default-memory-finish.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "default-memory-finish.stdout": "4af81ac2edb31696eddef68f2aac410b4612baecc735dd6a2dac9340afcd15a6",
+        "default-memory-prepare.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "default-memory-prepare.stdout": "4dc1aa6fd9c593a916944815beb39bfea526979b43358ac007d2c6836772eec9",
+        "default-memory-review-stale.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "default-memory-review-stale.stdout": "02029cb30bbb57b1ada403cf0ff00a9824bc2701ff12b4808033b4c6bf87c250",
+        "default-memory-review.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "default-memory-review.stdout": "041f15c856de2e499aac98fb8e8da89a08d2423b3e9be62ef6168342eb7cae11",
+        "default-repeat-install.ps1": "cf1c3703c932bba3eff4270e3f9f44909bcbf3e38e0e3255c18c69a1d4966a9b",
+        "default-repeat-install.stderr": "410f61cf1e7f2585d6aadc75b0cf4cb321d4c8b36b82df359874466d020ce52f",
+        "default-repeat-install.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "default-uninstall-ordinary-directory.ps1": "634e77107e00b6362b5084e722c89433a270e1e1139837f456b2db0df36d7b98",
+        "default-uninstall-ordinary-directory.stderr": "1b42dac5e994afb2a359cb2455b90dcdd5c61cfcc799c620e910a46c288b62f5",
+        "default-uninstall-ordinary-directory.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "default-uninstall.ps1": "634e77107e00b6362b5084e722c89433a270e1e1139837f456b2db0df36d7b98",
+        "default-uninstall.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "default-uninstall.stdout": "84a0663cf1f6c54548378e185d6f87942a336c4edb391ab6d2d87f1d6183b0df",
+        "default-verifier.json": "4b6aa6da2a83fa55b608d4d01b1b528f1839cb09de95643bd26e2353ce124fe5",
+        "default-verifier.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "default-verifier.stdout": "4b6aa6da2a83fa55b608d4d01b1b528f1839cb09de95643bd26e2353ce124fe5",
+        "environment.ps1": "22784c00968f3dd537f97c1a1206f1bd947f5f2040df20b25e441cf3f12227d9",
+        "environment.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "environment.stdout": "c272558f813f1d9c3a154287f031dece3b16f07db20d737e9529100aa510b7d3",
+        "legacy-non-utf8-verifier.stderr": "37ac3f1538048d5187705cc5e4ccec845474aeddb66a896e3f31155883f23300",
+        "legacy-non-utf8-verifier.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "receipt.json": "a0190dfe990c1204d3666f703c00e93be13b073c7b7ec4d5fd2793fb121f2203"
+      }
+    },
+    {
+      "status": "PASS",
+      "observed_at": "2026-10-26T19:28:22.210625+00:00",
+      "platform": "Windows-10-10.0.26100-SP0",
+      "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+      "shell": "pwsh",
+      "github_run_id": "40387005475",
+      "commit": "826d0c335e22201575ffc68b85586b9e27696b2d",
+      "cases": [
+        {
+          "case": "default",
+          "status": "PASS",
+          "root": "D:\\AgentKnowledge",
+          "command_substitutions": [
+            "GrowthSkillsRoot"
+          ],
+          "installed_files": 59,
+          "package_checks": 123,
+          "skill_file_identity_shared": true,
+          "memory_file_identity_shared": true,
+          "copied_state_rejected_as_shared": true,
+          "memory_revisions": [
+            1,
+            2,
+            3
+          ],
+          "worker_pids": [
+            7224,
+            5272,
+            7568
+          ],
+          "stale_revision_rejected_without_write": true,
+          "repeat_install_preserved_files": true,
+          "uninstall_preserved_skill_and_memory": true,
+          "ordinary_directory_removal_rejected": true
+        },
+        {
+          "case": "custom",
+          "status": "PASS",
+          "root": "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-07blgkkk\\Knowledge space 中文 & review",
+          "command_substitutions": [
+            "GrowthSkillsRoot",
+            "GrowthRoot"
+          ],
+          "installed_files": 59,
+          "package_checks": 123,
+          "skill_file_identity_shared": true,
+          "memory_file_identity_shared": true,
+          "copied_state_rejected_as_shared": true,
+          "memory_revisions": [
+            1,
+            2,
+            3
+          ],
+          "worker_pids": [
+            8456,
+            6996,
+            5196
+          ],
+          "stale_revision_rejected_without_write": true,
+          "repeat_install_preserved_files": true,
+          "uninstall_preserved_skill_and_memory": true,
+          "ordinary_directory_removal_rejected": true
+        }
+      ],
+      "scope": "Windows guide commands and shared-file recovery by test processes; no desktop agent behavior or scheduler claim",
+      "artifact_transport": "local files; published download URL not exercised",
+      "guide_sha256": {
+        "docs/install.md": "47d515e0b03c5ca9427f7ec5cd4f99947c8dcf2be4a06ed5c73d58d6a23a8b69",
+        "docs/install.zh-CN.md": "82c2cc1c794b270ad0c610282d3f2027a98c5db41c933b3295904be32ca3021f"
+      },
+      "environment": {
+        "powershell": "7.6.7",
+        "os": "Microsoft Windows Server 2025 Datacenter",
+        "selected_root": "D:\\AgentKnowledge",
+        "d_drive_present": true
+      },
+      "commands": [
+        {
+          "label": "environment",
+          "exit_code": 0,
+          "expected_exit_code": 0,
+          "observed_at": "2026-10-26T19:28:26.356076+00:00"
+        },
+        {
+          "label": "default-install",
+          "exit_code": 0,
+          "expected_exit_code": 0,
+          "observed_at": "2026-10-26T19:28:29.407495+00:00"
+        },
+        {
+          "label": "default-entry",
+          "exit_code": 0,
+          "expected_exit_code": 0,
+          "observed_at": "2026-10-26T19:28:29.855759+00:00"
+        },
+        {
+          "label": "default-memory-entry",
+          "exit_code": 0,
+          "expected_exit_code": 0,
+          "observed_at": "2026-10-26T19:28:30.249519+00:00"
+        },
+        {
+          "label": "default-memory-prepare",
+          "exit_code": 0,
+          "expected_exit_code": 0,
+          "observed_at": "2026-10-26T19:28:30.341831+00:00"
+        },
+        {
+          "label": "default-memory-review",
+          "exit_code": 0,
+          "expected_exit_code": 0,
+          "observed_at": "2026-10-26T19:28:30.567076+00:00"
+        },
+        {
+          "label": "default-memory-review-stale",
+          "exit_code": 3,
+          "expected_exit_code": 3,
+          "observed_at": "2026-10-26T19:28:30.661493+00:00"
+        },
+        {
+          "label": "default-memory-finish",
+          "exit_code": 0,
+          "expected_exit_code": 0,
+          "observed_at": "2026-10-26T19:28:30.753428+00:00"
+        },
+        {
+          "label": "default-repeat-install",
+          "exit_code": 1,
+          "expected_exit_code": 1,
+          "observed_at": "2026-10-26T19:28:31.376652+00:00"
+        },
+        {
+          "label": "default-uninstall",
+          "exit_code": 0,
+          "expected_exit_code": 0,
+          "observed_at": "2026-10-26T19:28:31.853556+00:00"
+        },
+        {
+          "label": "default-uninstall-ordinary-directory",
+          "exit_code": 1,
+          "expected_exit_code": 1,
+          "observed_at": "2026-10-26T19:28:32.432694+00:00"
+        },
+        {
+          "label": "custom-install",
+          "exit_code": 0,
+          "expected_exit_code": 0,
+          "observed_at": "2026-10-26T19:28:33.816183+00:00"
+        },
+        {
+          "label": "custom-entry",
+          "exit_code": 0,
+          "expected_exit_code": 0,
+          "observed_at": "2026-10-26T19:28:34.303589+00:00"
+        },
+        {
+          "label": "custom-memory-entry",
+          "exit_code": 0,
+          "expected_exit_code": 0,
+          "observed_at": "2026-10-26T19:28:34.700856+00:00"
+        },
+        {
+          "label": "custom-memory-prepare",
+          "exit_code": 0,
+          "expected_exit_code": 0,
+          "observed_at": "2026-10-26T19:28:34.787184+00:00"
+        },
+        {
+          "label": "legacy-non-utf8-verifier",
+          "exit_code": 1,
+          "expected_exit_code": 1,
+          "observed_at": "2026-10-26T19:28:34.950875+00:00"
+        },
+        {
+          "label": "custom-memory-review",
+          "exit_code": 0,
+          "expected_exit_code": 0,
+          "observed_at": "2026-10-26T19:28:35.151171+00:00"
+        },
+        {
+          "label": "custom-memory-review-stale",
+          "exit_code": 3,
+          "expected_exit_code": 3,
+          "observed_at": "2026-10-26T19:28:35.238481+00:00"
+        },
+        {
+          "label": "custom-memory-finish",
+          "exit_code": 0,
+          "expected_exit_code": 0,
+          "observed_at": "2026-10-26T19:28:35.327329+00:00"
+        },
+        {
+          "label": "custom-repeat-install",
+          "exit_code": 1,
+          "expected_exit_code": 1,
+          "observed_at": "2026-10-26T19:28:35.925792+00:00"
+        },
+        {
+          "label": "custom-uninstall",
+          "exit_code": 0,
+          "expected_exit_code": 0,
+          "observed_at": "2026-10-26T19:28:36.404953+00:00"
+        },
+        {
+          "label": "custom-uninstall-ordinary-directory",
+          "exit_code": 1,
+          "expected_exit_code": 1,
+          "observed_at": "2026-10-26T19:28:37.017716+00:00"
+        }
+      ],
+      "receipt_sha256": "735ea391c147999d88ba019b5c95c57f713b274f6f5d0b732fc99009850e97a6",
+      "artifact_files": {
+        "custom-entry.ps1": "387dd75ef043a91f50985a90cdac9289ddf16a062226340812d401b7d7c4cf21",
+        "custom-entry.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "custom-entry.stdout": "4c6f1cea73c2147df734abed5c84b8b5583aff50bff8cef45ef6ce34fe08c4f1",
+        "custom-install.ps1": "eeb537425c5eabbfb2140dba5cf66e9ba62ec0647a778ec9835a76228c20618e",
+        "custom-install.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "custom-install.stdout": "72bdc467abbc044f1fa864aa4b2a5ae0ab2e8a37476bed67e6f164f20ac0cb4c",
+        "custom-memory-entry.ps1": "87c5afbe7554c426f39589885d0677e086b0df6fc2fc3fad049efcf459dd2fad",
+        "custom-memory-entry.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "custom-memory-entry.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "custom-memory-final.json": "8a2a7b274ed6917d4e66862d5b00574aa7676cafde378a87d6f94311df677fbf",
+        "custom-memory-finish.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "custom-memory-finish.stdout": "0998473dfa98118cde5021a2ed43715ab76694f4a1e129f4f1f09ef38b9640d3",
+        "custom-memory-prepare.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "custom-memory-prepare.stdout": "22a1354edb4ce6616a535a595adbf83f383d22b662ceed075cc85171ecd51bb0",
+        "custom-memory-review-stale.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "custom-memory-review-stale.stdout": "02029cb30bbb57b1ada403cf0ff00a9824bc2701ff12b4808033b4c6bf87c250",
+        "custom-memory-review.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "custom-memory-review.stdout": "34600bd70b0da8a1e4cf1a31879c3d64cce660998dd80fd0495a6a5f44020c9c",
+        "custom-repeat-install.ps1": "eeb537425c5eabbfb2140dba5cf66e9ba62ec0647a778ec9835a76228c20618e",
+        "custom-repeat-install.stderr": "95376e36b56c2ff54e3d6746ce594ba5e4b18df2078aa40da550e4531cf74151",
+        "custom-repeat-install.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "custom-uninstall-ordinary-directory.ps1": "8368df3f903bfdbe818ce378e2ffe8ffb8b59c5c3fa4a826e97aeafbc8912c28",
+        "custom-uninstall-ordinary-directory.stderr": "947d8bc888c80d888df5298a6a4681de5a1acfc352739967a766c10b8afd0111",
+        "custom-uninstall-ordinary-directory.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "custom-uninstall.ps1": "8368df3f903bfdbe818ce378e2ffe8ffb8b59c5c3fa4a826e97aeafbc8912c28",
+        "custom-uninstall.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "custom-uninstall.stdout": "f0b98d0e81bc98a1d36164e0d730a1e670a949cd365dd8818d221ab847d38bac",
+        "custom-verifier.json": "1fb433927867c6f3bde67dabbfaedfe6d9ea19299516a5bbf8d05bf0f30a2e22",
+        "custom-verifier.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "custom-verifier.stdout": "1fb433927867c6f3bde67dabbfaedfe6d9ea19299516a5bbf8d05bf0f30a2e22",
+        "default-entry.ps1": "6f28c85522b6747d29bddcf0246cc54b997585689a1e79eeeae93b796bdf2655",
+        "default-entry.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "default-entry.stdout": "a0b3bdfdd9501936b5198aeb2f2a9fbeae29100cc4040cba603a106296661b10",
+        "default-install.ps1": "2257f680b0a572d78c6271755da1e32ef26a8ebcb49b86fee8e10680a635ff24",
+        "default-install.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "default-install.stdout": "3c5da7957ba76a1eb5a0604e4490cdfaa938dd29bdbe49059ab472b5fa1c605c",
+        "default-memory-entry.ps1": "cade0a219873d9789ef1399a40f9899c8689b7be7407c4556cdfd7ed106dc99b",
+        "default-memory-entry.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "default-memory-entry.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "default-memory-final.json": "13a66f0bca3989b4e00431d862c1c53f4d6be3eba97c3b6f0f0dc5f21fc88a76",
+        "default-memory-finish.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "default-memory-finish.stdout": "d41cdcdb5123c6d7f23d436e665654f9f7b7389e2558850601e1fb1850227d3b",
+        "default-memory-prepare.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "default-memory-prepare.stdout": "eb71d7b88c4b6e6eaa4022d703500953f47af4ebd3eb91543a366bb5d854371f",
+        "default-memory-review-stale.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "default-memory-review-stale.stdout": "02029cb30bbb57b1ada403cf0ff00a9824bc2701ff12b4808033b4c6bf87c250",
+        "default-memory-review.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "default-memory-review.stdout": "1b982d2e0c6ece4a50ddff1c00b55db0f68f5aba8b744990e56d8719ede2dab8",
+        "default-repeat-install.ps1": "2257f680b0a572d78c6271755da1e32ef26a8ebcb49b86fee8e10680a635ff24",
+        "default-repeat-install.stderr": "e76b4cadeeeefceb4d44dcad64c8c83afab7aec276f6f8442281aae9bb512b36",
+        "default-repeat-install.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "default-uninstall-ordinary-directory.ps1": "bbbc35afa284585a7dbc8f06cf9708efb51dfd8870e2d152984ed7a3d1e62d99",
+        "default-uninstall-ordinary-directory.stderr": "2ed7eb2b6d42fc5008c8e60b34f42e438eed891c48efc1bbadcd3ab553ccf459",
+        "default-uninstall-ordinary-directory.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "default-uninstall.ps1": "bbbc35afa284585a7dbc8f06cf9708efb51dfd8870e2d152984ed7a3d1e62d99",
+        "default-uninstall.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "default-uninstall.stdout": "84a0663cf1f6c54548378e185d6f87942a336c4edb391ab6d2d87f1d6183b0df",
+        "default-verifier.json": "4b6aa6da2a83fa55b608d4d01b1b528f1839cb09de95643bd26e2353ce124fe5",
+        "default-verifier.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "default-verifier.stdout": "4b6aa6da2a83fa55b608d4d01b1b528f1839cb09de95643bd26e2353ce124fe5",
+        "environment.ps1": "22784c00968f3dd537f97c1a1206f1bd947f5f2040df20b25e441cf3f12227d9",
+        "environment.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "environment.stdout": "75ecb03295f81161fbf2e1bcd5e817d4e71350ddea97a7f495642152ac454d90",
+        "legacy-non-utf8-verifier.stderr": "595714e88147e0773487538772211c0eb75f96bdfa373ac9aaf63efdbc43c984",
+        "legacy-non-utf8-verifier.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "receipt.json": "735ea391c147999d88ba019b5c95c57f713b274f6f5d0b732fc99009850e97a6"
+      }
+    }
+  ],
+  "scope": "Native Windows Server 2025 file/process checks, not desktop Agent model execution"
+}
