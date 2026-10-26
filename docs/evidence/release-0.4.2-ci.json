@@ -1,1 +1,705 @@
-{"version": "0.4.2", "status": "PENDING", "scope": "Awaiting this publication check; no success claimed"}
+{
+  "schema": 1,
+  "version": "0.4.2",
+  "status": "PASS",
+  "scope": "Public utility CI and Windows installation/shared-file test processes; not private Koder Node suite or desktop Agents",
+  "utilities": {
+    "conclusion": "success",
+    "databaseId": 40395595837,
+    "headSha": "ded3dba7b4a2889f81ba54ecf91e1c52dd9b6954",
+    "jobs": [
+      {
+        "completedAt": "2026-10-26T20:26:33Z",
+        "conclusion": "success",
+        "databaseId": 121827649916,
+        "name": "check (macos-26-intel)",
+        "startedAt": "2026-10-26T20:26:10Z",
+        "status": "completed",
+        "steps": [
+          {
+            "completedAt": "2026-10-26T20:26:12Z",
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "startedAt": "2026-10-26T20:26:11Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:26:16Z",
+            "conclusion": "success",
+            "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "number": 2,
+            "startedAt": "2026-10-26T20:26:12Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:26:16Z",
+            "conclusion": "success",
+            "name": "Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+            "number": 3,
+            "startedAt": "2026-10-26T20:26:16Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:26:16Z",
+            "conclusion": "success",
+            "name": "Record Python and platform",
+            "number": 4,
+            "startedAt": "2026-10-26T20:26:16Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:26:26Z",
+            "conclusion": "success",
+            "name": "Run python -m unittest discover -s tests -v",
+            "number": 5,
+            "startedAt": "2026-10-26T20:26:16Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:26:27Z",
+            "conclusion": "success",
+            "name": "Run python tools/build_release.py --output dist",
+            "number": 6,
+            "startedAt": "2026-10-26T20:26:26Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:26:27Z",
+            "conclusion": "success",
+            "name": "Verify the package named by the built manifest",
+            "number": 7,
+            "startedAt": "2026-10-26T20:26:27Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:26:27Z",
+            "conclusion": "success",
+            "name": "Run python -B scripts/check_publication.py",
+            "number": 8,
+            "startedAt": "2026-10-26T20:26:27Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:26:28Z",
+            "conclusion": "success",
+            "name": "Post Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+            "number": 15,
+            "startedAt": "2026-10-26T20:26:27Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:26:29Z",
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "number": 16,
+            "startedAt": "2026-10-26T20:26:28Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:26:30Z",
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 17,
+            "startedAt": "2026-10-26T20:26:29Z",
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/KarmenLoop/personal-agent-growth/actions/runs/40395595837/job/121827649916"
+      },
+      {
+        "completedAt": "2026-10-26T20:26:27Z",
+        "conclusion": "success",
+        "databaseId": 121827650141,
+        "name": "check (windows-2025)",
+        "startedAt": "2026-10-26T20:26:09Z",
+        "status": "completed",
+        "steps": [
+          {
+            "completedAt": "2026-10-26T20:26:10Z",
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "startedAt": "2026-10-26T20:26:10Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:26:15Z",
+            "conclusion": "success",
+            "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "number": 2,
+            "startedAt": "2026-10-26T20:26:10Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:26:15Z",
+            "conclusion": "success",
+            "name": "Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+            "number": 3,
+            "startedAt": "2026-10-26T20:26:15Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:26:16Z",
+            "conclusion": "success",
+            "name": "Record Python and platform",
+            "number": 4,
+            "startedAt": "2026-10-26T20:26:15Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:26:23Z",
+            "conclusion": "success",
+            "name": "Run python -m unittest discover -s tests -v",
+            "number": 5,
+            "startedAt": "2026-10-26T20:26:16Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:26:23Z",
+            "conclusion": "success",
+            "name": "Run python tools/build_release.py --output dist",
+            "number": 6,
+            "startedAt": "2026-10-26T20:26:23Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:26:23Z",
+            "conclusion": "success",
+            "name": "Verify the package named by the built manifest",
+            "number": 7,
+            "startedAt": "2026-10-26T20:26:23Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:26:24Z",
+            "conclusion": "success",
+            "name": "Run python -B scripts/check_publication.py",
+            "number": 8,
+            "startedAt": "2026-10-26T20:26:23Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:26:24Z",
+            "conclusion": "success",
+            "name": "Post Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+            "number": 15,
+            "startedAt": "2026-10-26T20:26:24Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:26:26Z",
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "number": 16,
+            "startedAt": "2026-10-26T20:26:24Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:26:26Z",
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 17,
+            "startedAt": "2026-10-26T20:26:26Z",
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/KarmenLoop/personal-agent-growth/actions/runs/40395595837/job/121827650141"
+      },
+      {
+        "completedAt": "2026-10-26T20:26:17Z",
+        "conclusion": "success",
+        "databaseId": 121827650432,
+        "name": "check (ubuntu-24.04)",
+        "startedAt": "2026-10-26T20:26:09Z",
+        "status": "completed",
+        "steps": [
+          {
+            "completedAt": "2026-10-26T20:26:10Z",
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "startedAt": "2026-10-26T20:26:10Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:26:11Z",
+            "conclusion": "success",
+            "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "number": 2,
+            "startedAt": "2026-10-26T20:26:10Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:26:11Z",
+            "conclusion": "success",
+            "name": "Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+            "number": 3,
+            "startedAt": "2026-10-26T20:26:11Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:26:12Z",
+            "conclusion": "success",
+            "name": "Record Python and platform",
+            "number": 4,
+            "startedAt": "2026-10-26T20:26:11Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:26:14Z",
+            "conclusion": "success",
+            "name": "Run python -m unittest discover -s tests -v",
+            "number": 5,
+            "startedAt": "2026-10-26T20:26:12Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:26:14Z",
+            "conclusion": "success",
+            "name": "Run python tools/build_release.py --output dist",
+            "number": 6,
+            "startedAt": "2026-10-26T20:26:14Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:26:14Z",
+            "conclusion": "success",
+            "name": "Verify the package named by the built manifest",
+            "number": 7,
+            "startedAt": "2026-10-26T20:26:14Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:26:14Z",
+            "conclusion": "success",
+            "name": "Run python -B scripts/check_publication.py",
+            "number": 8,
+            "startedAt": "2026-10-26T20:26:14Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:26:14Z",
+            "conclusion": "success",
+            "name": "Post Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+            "number": 15,
+            "startedAt": "2026-10-26T20:26:14Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:26:14Z",
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "number": 16,
+            "startedAt": "2026-10-26T20:26:14Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:26:14Z",
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 17,
+            "startedAt": "2026-10-26T20:26:14Z",
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/KarmenLoop/personal-agent-growth/actions/runs/40395595837/job/121827650432"
+      }
+    ],
+    "status": "completed",
+    "url": "https://github.com/KarmenLoop/personal-agent-growth/actions/runs/40395595837"
+  },
+  "windows_installation": {
+    "conclusion": "success",
+    "databaseId": 40395525859,
+    "headSha": "c8d154c7fe96f46aaa6a1abede59f30ad0db4dda",
+    "jobs": [
+      {
+        "completedAt": "2026-10-26T20:26:12Z",
+        "conclusion": "success",
+        "databaseId": 121827404643,
+        "name": "install (pwsh)",
+        "startedAt": "2026-10-26T20:25:42Z",
+        "status": "completed",
+        "steps": [
+          {
+            "completedAt": "2026-10-26T20:25:44Z",
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "startedAt": "2026-10-26T20:25:43Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:25:49Z",
+            "conclusion": "success",
+            "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "number": 2,
+            "startedAt": "2026-10-26T20:25:44Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:25:49Z",
+            "conclusion": "success",
+            "name": "Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+            "number": 3,
+            "startedAt": "2026-10-26T20:25:49Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:25:51Z",
+            "conclusion": "success",
+            "name": "Run python tools/build_release.py --output dist",
+            "number": 4,
+            "startedAt": "2026-10-26T20:25:49Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:26:05Z",
+            "conclusion": "success",
+            "name": "Run guide commands and shared-memory file checks",
+            "number": 5,
+            "startedAt": "2026-10-26T20:25:51Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:26:07Z",
+            "conclusion": "success",
+            "name": "Keep commands, outputs, state revisions, and receipts",
+            "number": 6,
+            "startedAt": "2026-10-26T20:26:05Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:26:08Z",
+            "conclusion": "success",
+            "name": "Run python -B scripts/check_publication.py",
+            "number": 7,
+            "startedAt": "2026-10-26T20:26:07Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:26:08Z",
+            "conclusion": "success",
+            "name": "Post Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+            "number": 13,
+            "startedAt": "2026-10-26T20:26:08Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:26:11Z",
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "number": 14,
+            "startedAt": "2026-10-26T20:26:08Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:26:11Z",
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 15,
+            "startedAt": "2026-10-26T20:26:11Z",
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/KarmenLoop/personal-agent-growth/actions/runs/40395525859/job/121827404643"
+      },
+      {
+        "completedAt": "2026-10-26T20:26:18Z",
+        "conclusion": "success",
+        "databaseId": 121827404960,
+        "name": "install (powershell)",
+        "startedAt": "2026-10-26T20:25:42Z",
+        "status": "completed",
+        "steps": [
+          {
+            "completedAt": "2026-10-26T20:25:44Z",
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "startedAt": "2026-10-26T20:25:43Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:25:51Z",
+            "conclusion": "success",
+            "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "number": 2,
+            "startedAt": "2026-10-26T20:25:44Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:25:51Z",
+            "conclusion": "success",
+            "name": "Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+            "number": 3,
+            "startedAt": "2026-10-26T20:25:51Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:25:53Z",
+            "conclusion": "success",
+            "name": "Run python tools/build_release.py --output dist",
+            "number": 4,
+            "startedAt": "2026-10-26T20:25:51Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:26:11Z",
+            "conclusion": "success",
+            "name": "Run guide commands and shared-memory file checks",
+            "number": 5,
+            "startedAt": "2026-10-26T20:25:53Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:26:13Z",
+            "conclusion": "success",
+            "name": "Keep commands, outputs, state revisions, and receipts",
+            "number": 6,
+            "startedAt": "2026-10-26T20:26:11Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:26:13Z",
+            "conclusion": "success",
+            "name": "Run python -B scripts/check_publication.py",
+            "number": 7,
+            "startedAt": "2026-10-26T20:26:13Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:26:14Z",
+            "conclusion": "success",
+            "name": "Post Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+            "number": 13,
+            "startedAt": "2026-10-26T20:26:13Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:26:16Z",
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "number": 14,
+            "startedAt": "2026-10-26T20:26:14Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T20:26:16Z",
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 15,
+            "startedAt": "2026-10-26T20:26:16Z",
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/KarmenLoop/personal-agent-growth/actions/runs/40395525859/job/121827404960"
+      }
+    ],
+    "status": "completed",
+    "url": "https://github.com/KarmenLoop/personal-agent-growth/actions/runs/40395525859"
+  },
+  "windows_receipts": [
+    {
+      "shell": "powershell",
+      "environment": {
+        "powershell": "5.1.26100.33648",
+        "module_path": "C:\\Users\\runneradmin\\Documents\\WindowsPowerShell\\Modules;C:\\\\Modules\\az_15.6.1;C:\\Users\\packer\\Documents\\WindowsPowerShell\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\PowerShell\\Modules\\",
+        "hash_command_module": "Microsoft.PowerShell.Utility",
+        "os": "Microsoft Windows Server 2025 Datacenter",
+        "selected_root": "D:\\AgentKnowledge",
+        "d_drive_present": true,
+        "volumes": [
+          {
+            "DriveLetter": null,
+            "FileSystem": "FAT32",
+            "DriveType": "Fixed"
+          },
+          {
+            "DriveLetter": "C",
+            "FileSystem": "NTFS",
+            "DriveType": "Fixed"
+          },
+          {
+            "DriveLetter": "D",
+            "FileSystem": "NTFS",
+            "DriveType": "Fixed"
+          }
+        ]
+      },
+      "cases": [
+        {
+          "case": "default",
+          "status": "PASS",
+          "root": "D:\\AgentKnowledge",
+          "command_substitutions": [
+            "GrowthSkillsRoot"
+          ],
+          "installed_files": 61,
+          "package_checks": 127,
+          "skill_file_identity_shared": true,
+          "memory_file_identity_shared": true,
+          "copied_state_rejected_as_shared": true,
+          "memory_revisions": [
+            1,
+            2,
+            3
+          ],
+          "worker_pids": [
+            8560,
+            1680,
+            7716
+          ],
+          "stale_revision_rejected_without_write": true,
+          "repeat_install_preserved_files": true,
+          "uninstall_preserved_skill_and_memory": true,
+          "ordinary_directory_removal_rejected": true
+        },
+        {
+          "case": "custom",
+          "status": "PASS",
+          "root": "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-em2d1yca\\Knowledge space 中文 & review",
+          "command_substitutions": [
+            "GrowthSkillsRoot",
+            "GrowthRoot"
+          ],
+          "installed_files": 61,
+          "package_checks": 127,
+          "skill_file_identity_shared": true,
+          "memory_file_identity_shared": true,
+          "copied_state_rejected_as_shared": true,
+          "memory_revisions": [
+            1,
+            2,
+            3
+          ],
+          "worker_pids": [
+            4296,
+            1908,
+            976
+          ],
+          "stale_revision_rejected_without_write": true,
+          "repeat_install_preserved_files": true,
+          "uninstall_preserved_skill_and_memory": true,
+          "ordinary_directory_removal_rejected": true
+        }
+      ],
+      "source_commit": "c8d154c7fe96f46aaa6a1abede59f30ad0db4dda",
+      "raw_receipt_sha256": "cf3b95682435b0ae5760ea2ec7fe3a8507ca7f8fe8e208f32956a5b61cbd0d7c",
+      "artifact_folder": "windows-install-powershell"
+    },
+    {
+      "shell": "pwsh",
+      "environment": {
+        "powershell": "7.6.7",
+        "module_path": "C:\\Users\\runneradmin\\Documents\\PowerShell\\Modules;C:\\Program Files\\PowerShell\\Modules;c:\\program files\\powershell\\7\\Modules;C:\\\\Modules\\az_15.6.1;C:\\Users\\packer\\Documents\\WindowsPowerShell\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\PowerShell\\Modules\\",
+        "hash_command_module": "Microsoft.PowerShell.Utility",
+        "os": "Microsoft Windows Server 2025 Datacenter",
+        "selected_root": "D:\\AgentKnowledge",
+        "d_drive_present": true,
+        "volumes": [
+          {
+            "DriveLetter": null,
+            "FileSystem": "FAT32",
+            "DriveType": "Fixed"
+          },
+          {
+            "DriveLetter": "D",
+            "FileSystem": "NTFS",
+            "DriveType": "Fixed"
+          },
+          {
+            "DriveLetter": "C",
+            "FileSystem": "NTFS",
+            "DriveType": "Fixed"
+          }
+        ]
+      },
+      "cases": [
+        {
+          "case": "default",
+          "status": "PASS",
+          "root": "D:\\AgentKnowledge",
+          "command_substitutions": [
+            "GrowthSkillsRoot"
+          ],
+          "installed_files": 61,
+          "package_checks": 127,
+          "skill_file_identity_shared": true,
+          "memory_file_identity_shared": true,
+          "copied_state_rejected_as_shared": true,
+          "memory_revisions": [
+            1,
+            2,
+            3
+          ],
+          "worker_pids": [
+            3484,
+            1872,
+            4572
+          ],
+          "stale_revision_rejected_without_write": true,
+          "repeat_install_preserved_files": true,
+          "uninstall_preserved_skill_and_memory": true,
+          "ordinary_directory_removal_rejected": true
+        },
+        {
+          "case": "custom",
+          "status": "PASS",
+          "root": "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-l2ilbi79\\Knowledge space 中文 & review",
+          "command_substitutions": [
+            "GrowthSkillsRoot",
+            "GrowthRoot"
+          ],
+          "installed_files": 61,
+          "package_checks": 127,
+          "skill_file_identity_shared": true,
+          "memory_file_identity_shared": true,
+          "copied_state_rejected_as_shared": true,
+          "memory_revisions": [
+            1,
+            2,
+            3
+          ],
+          "worker_pids": [
+            8012,
+            8256,
+            608
+          ],
+          "stale_revision_rejected_without_write": true,
+          "repeat_install_preserved_files": true,
+          "uninstall_preserved_skill_and_memory": true,
+          "ordinary_directory_removal_rejected": true
+        }
+      ],
+      "source_commit": "c8d154c7fe96f46aaa6a1abede59f30ad0db4dda",
+      "raw_receipt_sha256": "dadd84312655e7fdf026ac45807cf8eefe8311027b89b2d3b4ad397e31fdd01c",
+      "artifact_folder": "windows-install-pwsh"
+    }
+  ],
+  "same_relevant_sources_across_the_two_checked_commits": {
+    "tools/check_windows_install.py": "d9409fd315bbc6e8b51a172817f900d1b556cda520b36d8203575b09fe99618f",
+    "tools/build_release.py": "35748a6d0a1a844886837d20b4b47d5c807c9a30b7d7296521f589ed6f6116cf",
+    "docs/install.md": "5a73e5f1e83c1da32b4e6040760efa91fad3f60ec997a6acacd8c724520f5554",
+    "docs/install.zh-CN.md": "24c6ef193d1ed292d1ddece95807112fe3d65202be7955af3e796cc458215321",
+    "SKILL.md": "3412d6233f1ef89bc7ece8457d8dd5f943617ab4ee2c8841787b213472137d7a"
+  },
+  "tests_per_os": 50,
+  "core_files": 61,
+  "core_checks": 127,
+  "prior_failures": [
+    {
+      "run": "https://github.com/KarmenLoop/personal-agent-growth/actions/runs/40394859606",
+      "cause": "The Windows guide transport adapter used hard-coded 0.4.1 filenames and download directory.",
+      "repair": "Derive current version from publication metadata, require matching local manifest, and preserve actual guide commands."
+    },
+    {
+      "run": "https://github.com/KarmenLoop/personal-agent-growth/actions/runs/40395526150",
+      "cause": "New regression compared an 8.3 Windows temp path against its resolved long spelling.",
+      "repair": "Assert the resolved artifact path; the actual installation run was already successful."
+    }
+  ],
+  "utility_log_sha256": "9045eb5ccd7e36a8ee9ed0d23391ab4fd38f73bbf008dbb394629ee6eccf3e39",
+  "final_publication_note": "This receipt is added after those runs. The release asset RELEASE-VERIFICATION.json binds the final published commit and its own CI runs."
+}

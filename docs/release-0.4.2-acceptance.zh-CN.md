@@ -69,3 +69,5 @@ flowchart TD
 [0.4.2 发布页](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.4.2)提供核心 Skill 与完整双语离线包。ZIP 外单独的 `RELEASE-VERIFICATION.json` 绑定公开提交、下载附件哈希与发布后真实安装，避免归档校验值自引用。[0.4.1 验收](release-0.4.1-acceptance.zh-CN.md)及旧失败按原日期保留。
 
 首轮 Windows 安装 CI 在安装前停止，原因是本地传输适配仍固定 0.4.1。现读取当前发布版本、核对本地 manifest 并推导下载目录；新增两项检查，覆盖未来版本、错误清单和语言不一致。[失败 CI 保留](https://github.com/KarmenLoop/personal-agent-growth/actions/runs/40394859606)。九个内嵌 Mermaid 图均已解析通过，见[图示回执](evidence/release-0.4.2-diagrams.json)。
+
+后续宿主验证通过：[Ubuntu、macOS Intel、Windows 各 50 项测试及包检查](https://github.com/KarmenLoop/personal-agent-growth/actions/runs/40395595837)，以及 [PowerShell 5.1/7 安装、共享文件修订 1→2→3 和受保护卸载](https://github.com/KarmenLoop/personal-agent-growth/actions/runs/40395525859)。两种 shell 均验证默认 D 盘及 C 盘中文空格路径。新增测试随后暴露 Windows 8.3 短路径与解析后长路径的比较问题，已改为核对解析路径。两次成功提交的相关安装源码一致，哈希记录在 CI 回执中。
