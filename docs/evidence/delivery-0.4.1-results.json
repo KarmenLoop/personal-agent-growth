@@ -1,0 +1,470 @@
+{
+  "started_at": "2026-10-23T08:48:45.752448+00:00",
+  "platform": "macOS-27.0-arm64-arm-64bit",
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "scope": "Actual local packaging, installation, migration and utility execution. No new Agent or scheduler run.",
+  "commands": [
+    {
+      "label": "build",
+      "argv": [
+        "<PYTHON>",
+        "-B",
+        "-X",
+        "utf8",
+        "<SOURCE>/tools/build_delivery.py",
+        "--output",
+        "<CHECK>/build"
+      ],
+      "cwd": "<SOURCE>",
+      "started_at": "2026-10-23T08:48:45.767675+00:00",
+      "elapsed_seconds": 0.17794345898437314,
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout_sha256": "58a5fcc900377a7b1f9ddf8b8eea4b1be69f627b0129c23881edb7029adaec4c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "program_inputs": {
+        "<PYTHON>": "d90bce0f5ac3aa40e2ee5900ad243bad0b2205ce17408278f088b34aed737840",
+        "<SOURCE>/tools/build_delivery.py": "c6622b64b3d110ca83b6028e446a026de99ab07bb76750eb96ba64550e415549"
+      }
+    },
+    {
+      "label": "check-extracted",
+      "argv": [
+        "<PYTHON>",
+        "-B",
+        "-X",
+        "utf8",
+        "<CHECK>/解压 原位置/personal-agent-growth-delivery-0.4.1-bundle.1/tools/check_delivery.py",
+        "<CHECK>/解压 原位置/personal-agent-growth-delivery-0.4.1-bundle.1"
+      ],
+      "cwd": "<CHECK>/unrelated",
+      "started_at": "2026-10-23T08:48:45.985124+00:00",
+      "elapsed_seconds": 0.049318459001369774,
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout_sha256": "1fc90a44be8224d64876f4f485bd545c304a355363abc48e0a2697367025f70f",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "program_inputs": {
+        "<PYTHON>": "d90bce0f5ac3aa40e2ee5900ad243bad0b2205ce17408278f088b34aed737840",
+        "<CHECK>/解压 原位置/personal-agent-growth-delivery-0.4.1-bundle.1/tools/check_delivery.py": "a40056968e9b9fca615137bfcf557352f907e2e2ce5eff67f28c1e94ed680480"
+      }
+    },
+    {
+      "label": "check-moved",
+      "argv": [
+        "<PYTHON>",
+        "-B",
+        "-X",
+        "utf8",
+        "<CHECK>/分发 移动后 & offline/tools/check_delivery.py",
+        "<CHECK>/分发 移动后 & offline"
+      ],
+      "cwd": "<CHECK>/unrelated",
+      "started_at": "2026-10-23T08:48:46.047995+00:00",
+      "elapsed_seconds": 0.049066790990764275,
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout_sha256": "1fc90a44be8224d64876f4f485bd545c304a355363abc48e0a2697367025f70f",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "program_inputs": {
+        "<PYTHON>": "d90bce0f5ac3aa40e2ee5900ad243bad0b2205ce17408278f088b34aed737840",
+        "<CHECK>/分发 移动后 & offline/tools/check_delivery.py": "a40056968e9b9fca615137bfcf557352f907e2e2ce5eff67f28c1e94ed680480"
+      }
+    },
+    {
+      "label": "utilities",
+      "argv": [
+        "<PYTHON>",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": "<CHECK>/分发 移动后 & offline",
+      "started_at": "2026-10-23T08:48:46.110807+00:00",
+      "elapsed_seconds": 2.9704130410100333,
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "c7f3b80734f31c6a6d9154b0619a1a0c4518c2572f33ba9323e6de5b98ffea24",
+      "program_inputs": {
+        "<PYTHON>": "d90bce0f5ac3aa40e2ee5900ad243bad0b2205ce17408278f088b34aed737840"
+      }
+    },
+    {
+      "label": "install",
+      "argv": [
+        "<PYTHON>",
+        "-B",
+        "-X",
+        "utf8",
+        "<CHECK>/分发 移动后 & offline/tools/local_install.py",
+        "install",
+        "--root",
+        "<CHECK>/安装 初始位置"
+      ],
+      "cwd": "<CHECK>/unrelated",
+      "started_at": "2026-10-23T08:48:49.095850+00:00",
+      "elapsed_seconds": 0.12995320800109766,
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout_sha256": "f31c075e008f55ce35f9b5e713b26004d99ba471a8a064fb246c613973466b22",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "program_inputs": {
+        "<PYTHON>": "d90bce0f5ac3aa40e2ee5900ad243bad0b2205ce17408278f088b34aed737840",
+        "<CHECK>/分发 移动后 & offline/tools/local_install.py": "b9028a6c4fe900106cd04da63253380bd5138da70b8b92e535fd569e42f6f5e2"
+      }
+    },
+    {
+      "label": "repeat-install-rejected",
+      "argv": [
+        "<PYTHON>",
+        "-B",
+        "-X",
+        "utf8",
+        "<CHECK>/分发 移动后 & offline/tools/local_install.py",
+        "install",
+        "--root",
+        "<CHECK>/安装 初始位置"
+      ],
+      "cwd": "<CHECK>/unrelated",
+      "started_at": "2026-10-23T08:48:49.245616+00:00",
+      "elapsed_seconds": 0.08438899999600835,
+      "exit_code": 1,
+      "expected_exit": 1,
+      "stdout_sha256": "b41f4929bc2d711896bfe3cd90fe5894ad7f71de04357ad03b0dba6d3a5df762",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "program_inputs": {
+        "<PYTHON>": "d90bce0f5ac3aa40e2ee5900ad243bad0b2205ce17408278f088b34aed737840",
+        "<CHECK>/分发 移动后 & offline/tools/local_install.py": "b9028a6c4fe900106cd04da63253380bd5138da70b8b92e535fd569e42f6f5e2"
+      }
+    },
+    {
+      "label": "read-archive",
+      "argv": [
+        "<PYTHON>",
+        "-B",
+        "-X",
+        "utf8",
+        "<CHECK>/知识库 搬迁后 & shared/distribution/tools/read_experience.py",
+        "--library",
+        "<CHECK>/知识库 搬迁后 & shared/experience",
+        "--domain",
+        "offline-package-check"
+      ],
+      "cwd": "<CHECK>/unrelated",
+      "started_at": "2026-10-23T08:48:49.351853+00:00",
+      "elapsed_seconds": 0.062392291001742706,
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout_sha256": "eb4895a1b00a2dcb22de5ef87a804db6535ac379e3e6881e10f6c89ac1757d6b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "program_inputs": {
+        "<PYTHON>": "d90bce0f5ac3aa40e2ee5900ad243bad0b2205ce17408278f088b34aed737840",
+        "<CHECK>/知识库 搬迁后 & shared/distribution/tools/read_experience.py": "65f38deaf7ef55c6e65e54fcf006b6a1dede05caa4bce7edfe7cd922b9e2a12e"
+      }
+    },
+    {
+      "label": "read-cross-domain",
+      "argv": [
+        "<PYTHON>",
+        "-B",
+        "-X",
+        "utf8",
+        "<CHECK>/知识库 搬迁后 & shared/distribution/tools/read_experience.py",
+        "--library",
+        "<CHECK>/知识库 搬迁后 & shared/experience",
+        "--domain",
+        "meta:cross-domain-evidence"
+      ],
+      "cwd": "<CHECK>/unrelated",
+      "started_at": "2026-10-23T08:48:49.430455+00:00",
+      "elapsed_seconds": 0.058769875002326444,
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout_sha256": "f0ffacd9f665de9e12496652269c5c3a7d83919f079e1ad44997607e403484cc",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "program_inputs": {
+        "<PYTHON>": "d90bce0f5ac3aa40e2ee5900ad243bad0b2205ce17408278f088b34aed737840",
+        "<CHECK>/知识库 搬迁后 & shared/distribution/tools/read_experience.py": "65f38deaf7ef55c6e65e54fcf006b6a1dede05caa4bce7edfe7cd922b9e2a12e"
+      }
+    },
+    {
+      "label": "context-relative-default",
+      "argv": [
+        "<PYTHON>",
+        "-B",
+        "-X",
+        "utf8",
+        "<CHECK>/知识库 搬迁后 & shared/experience/versions/a288e4ce31afbb290ade7c2425f645d2b3ad7dbd1e883576fa7817050afe15e9/scripts/context_loader.py",
+        "--task",
+        "release"
+      ],
+      "cwd": "<CHECK>/unrelated",
+      "started_at": "2026-10-23T08:48:49.503633+00:00",
+      "elapsed_seconds": 0.04458549999981187,
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout_sha256": "b0af2d9bc086f378f16aef342c19e95f32d1794b0aeade0f525fbe8da81241ba",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "program_inputs": {
+        "<PYTHON>": "d90bce0f5ac3aa40e2ee5900ad243bad0b2205ce17408278f088b34aed737840",
+        "<CHECK>/知识库 搬迁后 & shared/experience/versions/a288e4ce31afbb290ade7c2425f645d2b3ad7dbd1e883576fa7817050afe15e9/scripts/context_loader.py": "a7dd9add7f9c775c9f0c27bdea1b78b984491e69f589f5ec83f2e6b0dd1598f3"
+      }
+    },
+    {
+      "label": "inner-package",
+      "argv": [
+        "<PYTHON>",
+        "-B",
+        "-X",
+        "utf8",
+        "<CHECK>/知识库 搬迁后 & shared/skills/personal-agent-growth/scripts/verify_handoff.py",
+        "--archive",
+        "<CHECK>/知识库 搬迁后 & shared/distribution/downloads/personal-agent-growth-0.4.1.zip",
+        "--manifest",
+        "<CHECK>/知识库 搬迁后 & shared/distribution/downloads/manifest.json"
+      ],
+      "cwd": "<CHECK>/unrelated",
+      "started_at": "2026-10-23T08:48:49.563290+00:00",
+      "elapsed_seconds": 0.062296041985973716,
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout_sha256": "296c1b6fc34942345525f81f668e6e658039c229021d76214fbc97786a08aa8e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "program_inputs": {
+        "<PYTHON>": "d90bce0f5ac3aa40e2ee5900ad243bad0b2205ce17408278f088b34aed737840",
+        "<CHECK>/知识库 搬迁后 & shared/skills/personal-agent-growth/scripts/verify_handoff.py": "526667a4374c9d470a01da1197cbdde5f7a8aad0501689a15cced63c95cd9dde",
+        "<CHECK>/知识库 搬迁后 & shared/distribution/downloads/personal-agent-growth-0.4.1.zip": "bc7945fd3d1da9d874b5a59d9a57646391ed381083a742632aea7ba2d9406862",
+        "<CHECK>/知识库 搬迁后 & shared/distribution/downloads/manifest.json": "41005889d79aa85736f884b6624b55a39d4dd2cca3622d40219a5e6731a5e713"
+      }
+    },
+    {
+      "label": "context-climate",
+      "argv": [
+        "<PYTHON>",
+        "-B",
+        "-X",
+        "utf8",
+        "<CHECK>/知识库 搬迁后 & shared/experience/versions/a288e4ce31afbb290ade7c2425f645d2b3ad7dbd1e883576fa7817050afe15e9/scripts/context_loader.py",
+        "--task",
+        "climate"
+      ],
+      "cwd": "<CHECK>/工具复用任务",
+      "started_at": "2026-10-23T08:48:49.641315+00:00",
+      "elapsed_seconds": 0.03778195797349326,
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout_sha256": "b49df7a7fe1acb2ba3e36d256336e140ff762f66fffc8abdcb1cc46cda665e53",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "program_inputs": {
+        "<PYTHON>": "d90bce0f5ac3aa40e2ee5900ad243bad0b2205ce17408278f088b34aed737840",
+        "<CHECK>/知识库 搬迁后 & shared/experience/versions/a288e4ce31afbb290ade7c2425f645d2b3ad7dbd1e883576fa7817050afe15e9/scripts/context_loader.py": "a7dd9add7f9c775c9f0c27bdea1b78b984491e69f589f5ec83f2e6b0dd1598f3"
+      }
+    },
+    {
+      "label": "annual-adapter",
+      "argv": [
+        "<PYTHON>",
+        "-B",
+        "-X",
+        "utf8",
+        "<CHECK>/知识库 搬迁后 & shared/experience/versions/a288e4ce31afbb290ade7c2425f645d2b3ad7dbd1e883576fa7817050afe15e9/scripts/annual_series.py",
+        "<CHECK>/工具复用任务/inputs/nasa-temperature.csv",
+        "<CHECK>/工具复用任务/output"
+      ],
+      "cwd": "<CHECK>/unrelated",
+      "started_at": "2026-10-23T08:48:49.692666+00:00",
+      "elapsed_seconds": 0.04082866699900478,
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout_sha256": "7553cc2c5f810c659fa0b64cb670354c43ba649cf85ee7bd7200de6148a35df8",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "program_inputs": {
+        "<PYTHON>": "d90bce0f5ac3aa40e2ee5900ad243bad0b2205ce17408278f088b34aed737840",
+        "<CHECK>/知识库 搬迁后 & shared/experience/versions/a288e4ce31afbb290ade7c2425f645d2b3ad7dbd1e883576fa7817050afe15e9/scripts/annual_series.py": "d961998f45b838b43e39025b7c4583993fea4b2c749e423c2812e37b27ebb5ed",
+        "<CHECK>/工具复用任务/inputs/nasa-temperature.csv": "4c64eda288bce32b8d76926278f346ecea1e53506df8ee72a3d5accb0657c416"
+      }
+    },
+    {
+      "label": "batch-adapter",
+      "argv": [
+        "<PYTHON>",
+        "-B",
+        "-X",
+        "utf8",
+        "<CHECK>/知识库 搬迁后 & shared/experience/versions/a288e4ce31afbb290ade7c2425f645d2b3ad7dbd1e883576fa7817050afe15e9/scripts/batch_handoff.py",
+        "--index",
+        "<CHECK>/工具复用任务/packages/index.json"
+      ],
+      "cwd": "<CHECK>/unrelated",
+      "started_at": "2026-10-23T08:48:49.748047+00:00",
+      "elapsed_seconds": 0.059914874989772215,
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout_sha256": "28eb722de7ea0e17d690d4e987e7778e735ec8f20c82e1b3655356896dffebd0",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "program_inputs": {
+        "<PYTHON>": "d90bce0f5ac3aa40e2ee5900ad243bad0b2205ce17408278f088b34aed737840",
+        "<CHECK>/知识库 搬迁后 & shared/experience/versions/a288e4ce31afbb290ade7c2425f645d2b3ad7dbd1e883576fa7817050afe15e9/scripts/batch_handoff.py": "92a523abb1b46b9c80d973f5052be296c6256fc6cad461613029a563f351126f",
+        "<CHECK>/工具复用任务/packages/index.json": "61fb11e0ae77ad06f1937ffb88049d69d90a73ce09abeb6956515ede301d6155"
+      }
+    },
+    {
+      "label": "changed-skill-removal-rejected",
+      "argv": [
+        "<PYTHON>",
+        "-B",
+        "-X",
+        "utf8",
+        "<CHECK>/知识库 搬迁后 & shared/distribution/tools/local_install.py",
+        "uninstall",
+        "--root",
+        "<CHECK>/知识库 搬迁后 & shared"
+      ],
+      "cwd": "<CHECK>/unrelated",
+      "started_at": "2026-10-23T08:48:49.826491+00:00",
+      "elapsed_seconds": 0.044605958013562486,
+      "exit_code": 1,
+      "expected_exit": 1,
+      "stdout_sha256": "d9bfe5ff5de35981620ffe2c1eeac4879a45aa9023583f25c1c84abed0247fb1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "program_inputs": {
+        "<PYTHON>": "d90bce0f5ac3aa40e2ee5900ad243bad0b2205ce17408278f088b34aed737840",
+        "<CHECK>/知识库 搬迁后 & shared/distribution/tools/local_install.py": "b9028a6c4fe900106cd04da63253380bd5138da70b8b92e535fd569e42f6f5e2"
+      }
+    },
+    {
+      "label": "uninstall",
+      "argv": [
+        "<PYTHON>",
+        "-B",
+        "-X",
+        "utf8",
+        "<CHECK>/知识库 搬迁后 & shared/distribution/tools/local_install.py",
+        "uninstall",
+        "--root",
+        "<CHECK>/知识库 搬迁后 & shared"
+      ],
+      "cwd": "<CHECK>/unrelated",
+      "started_at": "2026-10-23T08:48:49.887738+00:00",
+      "elapsed_seconds": 0.046038542001042515,
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout_sha256": "e87314c35448f8fab581fceae930b38395830484991abc84f3d86e8b1f5089a5",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "program_inputs": {
+        "<PYTHON>": "d90bce0f5ac3aa40e2ee5900ad243bad0b2205ce17408278f088b34aed737840",
+        "<CHECK>/知识库 搬迁后 & shared/distribution/tools/local_install.py": "b9028a6c4fe900106cd04da63253380bd5138da70b8b92e535fd569e42f6f5e2"
+      }
+    },
+    {
+      "label": "mermaid",
+      "argv": [
+        "<NODE>",
+        "<CHECK>/parse.mjs"
+      ],
+      "cwd": "<CHECK>",
+      "started_at": "2026-10-23T08:48:49.975245+00:00",
+      "elapsed_seconds": 0.9703759999829344,
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout_sha256": "9c87b4617dae542717b06077917ee52c8b7f3aaa79ce013812f9faab250444fc",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "program_inputs": {
+        "<NODE>": "18e387c90ab8a8400183e8bdd396376e1e875b91b4c874b894dcade7b35bf572",
+        "<CHECK>/parse.mjs": "e74cb3e20c36736f249a24c757f54e84d8598d2ae003e31f69cb6f617fdd5932"
+      }
+    }
+  ],
+  "checks": {
+    "initial_delivery": {
+      "status": "PASS",
+      "files": 81,
+      "build_id": "0.4.1-bundle.1",
+      "scope": "Content consistency only; not publisher authentication or Agent acceptance"
+    },
+    "moved_delivery": {
+      "status": "PASS",
+      "files": 81,
+      "build_id": "0.4.1-bundle.1",
+      "scope": "Content consistency only; not publisher authentication or Agent acceptance"
+    },
+    "old_extraction_path_absent": true,
+    "utility_tests": 44,
+    "discovery_link_actual_read": true,
+    "old_install_path_absent": true,
+    "shared_context": {
+      "records": 2,
+      "observations": 2,
+      "revision": 1,
+      "uses_moved_library": true
+    },
+    "inner_package": {
+      "status": "PASS",
+      "checks": 25,
+      "sha256": "bc7945fd3d1da9d874b5a59d9a57646391ed381083a742632aea7ba2d9406862"
+    },
+    "annual_adapter": {
+      "source_sha256": "4c64eda288bce32b8d76926278f346ecea1e53506df8ee72a3d5accb0657c416",
+      "rows": 37,
+      "independent_decimal_check": true,
+      "trend_c_per_decade": "0.2349292149292149292149292149"
+    },
+    "batch_adapter": {
+      "case_exits": [
+        0,
+        2,
+        0
+      ],
+      "missing_stage": "read_archive",
+      "valid_after_missing": true
+    },
+    "uninstall": {
+      "skill_removed": true,
+      "memory_byte_identical": true,
+      "tasks_byte_identical": true,
+      "distribution_retained": true
+    },
+    "private_source_library_unchanged": true,
+    "private_path_scan": {
+      "matches": [],
+      "scope": "known source home and private runtime paths"
+    },
+    "local_links": {
+      "count": 114,
+      "missing": []
+    },
+    "mermaid": {
+      "parsed": 8
+    }
+  },
+  "status": "PASS",
+  "archive": {
+    "name": "personal-agent-growth-delivery-0.4.1-bundle.1.zip",
+    "sha256": "32e3f3b93427b16970594dd4e66c44335dd90515bb755b3f3a09d5ed202cbeed",
+    "bytes": 422597
+  },
+  "completed_at": "2026-10-23T08:48:51.036620+00:00",
+  "evidence_kind": "Sanitized report of actual local commands; original stdout/stderr and receipts are retained privately. The checked rehearsal archive predates this report; final delivery identity is supplied alongside its ZIP.",
+  "executable_input_hashes": {
+    "tools/build_delivery.py": "c6622b64b3d110ca83b6028e446a026de99ab07bb76750eb96ba64550e415549",
+    "tools/build_release.py": "be8ea27145f027566cc68d9034edad6b280921dc821473c0740ceb9a71ceb3b8",
+    "tools/check_delivery.py": "a40056968e9b9fca615137bfcf557352f907e2e2ce5eff67f28c1e94ed680480",
+    "tools/check_windows_install.py": "cdfa45e6d8af18823d136ecb65abe253c00d46f58c9210e4baa4c5ff96b2a0a9",
+    "tools/export_experience.py": "616d07ab1441bee78ef9e6e0bb1fe333abafcbf063a3647eed61df03cb880400",
+    "tools/local_install.py": "b9028a6c4fe900106cd04da63253380bd5138da70b8b92e535fd569e42f6f5e2",
+    "tools/plot_cross_domain.py": "dbe8a7f1aa78b875cdcf13eeeb3d785244c12e75b67605876e4c9821a3879d1b",
+    "tools/read_experience.py": "65f38deaf7ef55c6e65e54fcf006b6a1dede05caa4bce7edfe7cd922b9e2a12e",
+    "scripts/compare_trials.py": "a6a05572e9d37e52350139543c0b1a254e737c7a481417a3998c0346cddd7b2c",
+    "scripts/verify_handoff.py": "526667a4374c9d470a01da1197cbdde5f7a8aad0501689a15cced63c95cd9dde",
+    "tests/test_compare_trials.py": "fb4a6504c7c92e8c11cbd2dc98f9841c1baf67c328eb8073d35e268dc7a08fa6",
+    "tests/test_delivery.py": "8f39035849d6efd950ba99f509b01cf8ca3894fdb46bf861afaaef51d19dfc26",
+    "tests/test_verify_handoff.py": "337399fa57b5369c65d6d39be4d1ef0cf76264d5917832a5e1f694dad50e139c"
+  }
+}

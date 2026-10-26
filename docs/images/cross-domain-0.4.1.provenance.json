@@ -1,0 +1,22 @@
+{
+  "source_sha256": "e88fe88ee7ae3794129360a866947d45e5f313820d6efcac1e861d50cd209d80",
+  "script_sha256": "dbe8a7f1aa78b875cdcf13eeeb3d785244c12e75b67605876e4c9821a3879d1b",
+  "matplotlib": "3.10.8",
+  "medium": "GitHub documentation, general web figure; no journal specification",
+  "transformations": [
+    "token counts divided by 1000 for display",
+    "raw repetitions shown with fixed category offsets",
+    "median only when all three timing measurements are valid",
+    "common zero-based axes for comparable panels"
+  ],
+  "uncertainty": "No confidence intervals or significance claim; three complete task repetitions per arm and domain",
+  "missing": "Conflicting UTC and monotonic time shown explicitly; no guard median for the affected group",
+  "outputs": {
+    "png": "9edc3235174d2d42144d6e2156ea47828512a90acaa59708203440a64dc7077e",
+    "svg": "a4791a82356fb608c0bde87c189e5b1a91ad5dfb6ef2ffb85cf0e96151d4c09a"
+  },
+  "postprocessing": {
+    "operation": "Remove trailing spaces from SVG text lines; geometry and labels unchanged",
+    "original_svg_sha256": "3cc064e81ed55e6d733123324f658b524f9aa4a4c216737c28df3e20fcf834ab"
+  }
+}

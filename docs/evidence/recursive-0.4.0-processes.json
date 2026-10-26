@@ -1,0 +1,246 @@
+{
+  "type": "sanitized_process_receipt_summary",
+  "date": "2026-10-23",
+  "host": "Codex on macOS",
+  "scope": "Actual Agent leaves invoked real subprocesses. This is a derived summary; raw receipts and coordinator host observations remain in the private trial.",
+  "records": [
+    {
+      "arm": "baseline",
+      "receipt": "runs/baseline/receipts/case-1.json",
+      "raw_receipt_sha256": "c07ddb8f80dd2e11bfb3875bd49b19c5ed31229d8f530c943a2fd8bfe2c14ef7",
+      "argv": [
+        "<python3.12>",
+        "<experiment>/arms/baseline/scripts/verify_handoff.py",
+        "--archive",
+        "<experiment>/inputs/case-1/personal-agent-growth-0.3.2.zip",
+        "--manifest",
+        "<experiment>/inputs/case-1/manifest.json"
+      ],
+      "pid": 12188,
+      "started_at": "2026-10-23T05:23:24.124046+00:00",
+      "finished_at": "2026-10-23T05:23:24.205251+00:00",
+      "exit_code": 0,
+      "timed_out": false,
+      "stderr": "",
+      "results": [
+        {
+          "case_id": "case-1",
+          "status": "PASS",
+          "exit_code": 0,
+          "stage": "completed_inspection"
+        }
+      ]
+    },
+    {
+      "arm": "baseline",
+      "receipt": "runs/baseline/receipts/case-2.json",
+      "raw_receipt_sha256": "cbf0d9dfd350d54c711159598bf4c4bcff2b3d49dfd98615f3c4400a2bc41cfe",
+      "argv": [
+        "<python3.12>",
+        "<experiment>/arms/baseline/scripts/verify_handoff.py",
+        "--archive",
+        "<experiment>/inputs/case-2/personal-agent-growth-0.3.2.zip",
+        "--manifest",
+        "<experiment>/inputs/case-2/manifest.json"
+      ],
+      "pid": 12275,
+      "started_at": "2026-10-23T05:23:32.654921+00:00",
+      "finished_at": "2026-10-23T05:23:32.714172+00:00",
+      "exit_code": 1,
+      "timed_out": false,
+      "stderr": "",
+      "results": [
+        {
+          "case_id": "case-2",
+          "status": "REJECT",
+          "exit_code": 1,
+          "stage": "completed_inspection"
+        }
+      ]
+    },
+    {
+      "arm": "baseline",
+      "receipt": "runs/baseline/receipts/case-3.json",
+      "raw_receipt_sha256": "e46bd0dc535b0f335f11025b5811604fcf88fc2802bb4df4612ea47acaba2a51",
+      "argv": [
+        "<python3.12>",
+        "<experiment>/arms/baseline/scripts/verify_handoff.py",
+        "--archive",
+        "<experiment>/inputs/case-3/personal-agent-growth-0.3.2.zip",
+        "--manifest",
+        "<experiment>/inputs/case-3/manifest.json"
+      ],
+      "pid": 12341,
+      "started_at": "2026-10-23T05:23:41.361848+00:00",
+      "finished_at": "2026-10-23T05:23:41.469842+00:00",
+      "exit_code": 2,
+      "timed_out": false,
+      "stderr": "",
+      "results": [
+        {
+          "case_id": "case-3",
+          "status": "INCOMPLETE",
+          "exit_code": 2,
+          "stage": "validate_manifest"
+        }
+      ]
+    },
+    {
+      "arm": "general",
+      "receipt": "runs/general/receipts/case-1-01.json",
+      "raw_receipt_sha256": "241830e7d9e05c31fdedecba999a2bd3422e0809d59ff106bad7cc0d25b9ad88",
+      "argv": [
+        "<python3.12>",
+        "<experiment>/arms/general/scripts/verify_handoff.py",
+        "--archive",
+        "<experiment>/inputs/case-1/personal-agent-growth-0.3.2.zip",
+        "--manifest",
+        "<experiment>/inputs/case-1/manifest.json"
+      ],
+      "pid": 12319,
+      "started_at": "2026-10-23T05:23:38.074692+00:00",
+      "finished_at": "2026-10-23T05:23:38.178775+00:00",
+      "exit_code": 0,
+      "timed_out": false,
+      "stderr": "",
+      "results": [
+        {
+          "case_id": "case-1-01",
+          "status": "PASS",
+          "exit_code": 0,
+          "stage": "completed_inspection"
+        }
+      ]
+    },
+    {
+      "arm": "general",
+      "receipt": "runs/general/receipts/case-2-01.json",
+      "raw_receipt_sha256": "1ebc8a613ed23f3cf6d9878755316fc2d7fbd3ee0133ca0b44fb68eebeb7fdbf",
+      "argv": [
+        "<python3.12>",
+        "<experiment>/arms/general/scripts/verify_handoff.py",
+        "--archive",
+        "<experiment>/inputs/case-2/personal-agent-growth-0.3.2.zip",
+        "--manifest",
+        "<experiment>/inputs/case-2/manifest.json"
+      ],
+      "pid": 12318,
+      "started_at": "2026-10-23T05:23:38.073294+00:00",
+      "finished_at": "2026-10-23T05:23:38.177928+00:00",
+      "exit_code": 1,
+      "timed_out": false,
+      "stderr": "",
+      "results": [
+        {
+          "case_id": "case-2-01",
+          "status": "REJECT",
+          "exit_code": 1,
+          "stage": "completed_inspection"
+        }
+      ]
+    },
+    {
+      "arm": "general",
+      "receipt": "runs/general/receipts/case-3-01.json",
+      "raw_receipt_sha256": "5db8cb7b5245c0cbcdb8981a939a9693747e91871c191c35062e6f0d4879b16d",
+      "argv": [
+        "<python3.12>",
+        "<experiment>/arms/general/scripts/verify_handoff.py",
+        "--archive",
+        "<experiment>/inputs/case-3/personal-agent-growth-0.3.2.zip",
+        "--manifest",
+        "<experiment>/inputs/case-3/manifest.json"
+      ],
+      "pid": 12320,
+      "started_at": "2026-10-23T05:23:38.079240+00:00",
+      "finished_at": "2026-10-23T05:23:38.186278+00:00",
+      "exit_code": 2,
+      "timed_out": false,
+      "stderr": "",
+      "results": [
+        {
+          "case_id": "case-3-01",
+          "status": "INCOMPLETE",
+          "exit_code": 2,
+          "stage": "validate_manifest"
+        }
+      ]
+    },
+    {
+      "arm": "domain",
+      "receipt": "runs/domain/receipts/batch-001.json",
+      "raw_receipt_sha256": "5bc4aa0d2122ff19a69b2a96b1d5e22ca71fe61edb2eac5e6aaa581d998feab2",
+      "argv": [
+        "<python3.12>",
+        "-B",
+        "<experiment>/arms/domain/scripts/batch_handoff.py",
+        "--index",
+        "<experiment>/inputs/index.json"
+      ],
+      "pid": 12355,
+      "started_at": "2026-10-23T05:23:42.299093+00:00",
+      "finished_at": "2026-10-23T05:23:42.374934+00:00",
+      "exit_code": 0,
+      "timed_out": false,
+      "stderr": "",
+      "results": [
+        {
+          "case_id": "case-1",
+          "status": "PASS",
+          "exit_code": 0,
+          "stage": "completed_inspection"
+        },
+        {
+          "case_id": "case-2",
+          "status": "REJECT",
+          "exit_code": 1,
+          "stage": "completed_inspection"
+        },
+        {
+          "case_id": "case-3",
+          "status": "INCOMPLETE",
+          "exit_code": 2,
+          "stage": "validate_manifest"
+        }
+      ]
+    },
+    {
+      "arm": "composed",
+      "receipt": "runs/composed/receipts/batch-001.json",
+      "raw_receipt_sha256": "11ee6b9011f95e0d4baf9a28a6c9a645690371e4e73ca53da2b583b993df1b7f",
+      "argv": [
+        "<python3.12>",
+        "-B",
+        "<experiment>/arms/composed/scripts/batch_handoff.py",
+        "--index",
+        "<experiment>/inputs/index.json"
+      ],
+      "pid": 20505,
+      "started_at": "2026-10-23T05:42:21.144853+00:00",
+      "finished_at": "2026-10-23T05:42:21.261867+00:00",
+      "exit_code": 0,
+      "timed_out": false,
+      "stderr": "",
+      "results": [
+        {
+          "case_id": "case-1",
+          "status": "PASS",
+          "exit_code": 0,
+          "stage": "completed_inspection"
+        },
+        {
+          "case_id": "case-2",
+          "status": "REJECT",
+          "exit_code": 1,
+          "stage": "completed_inspection"
+        },
+        {
+          "case_id": "case-3",
+          "status": "INCOMPLETE",
+          "exit_code": 2,
+          "stage": "validate_manifest"
+        }
+      ]
+    }
+  ]
+}

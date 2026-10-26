@@ -145,11 +145,21 @@ class HandoffTests(unittest.TestCase):
             names = set(archive.namelist())
             self.assertIn("personal-agent-growth/LICENSE", names)
             self.assertIn("personal-agent-growth/NOTICE", names)
-            self.assertEqual(len(names), 15)
+            self.assertEqual(len(names), 59)
             self.assertIn("personal-agent-growth/scripts/host.py", names)
             self.assertIn("personal-agent-growth/scripts/host_support.py", names)
             self.assertIn("personal-agent-growth/README.zh-CN.md", names)
             self.assertIn("personal-agent-growth/docs/tutorial.en.md", names)
+            for language in ("en", "zh-CN"):
+                for kind in ("daily", "weekly", "consolidation", "memory", "context", "node",
+                             "summary", "project-experience", "experience", "profile", "behavior",
+                             "tags", "preview", "index", "policy", "research"):
+                    self.assertIn(f"personal-agent-growth/templates/learning/{language}/{kind}.md", names)
+            self.assertIn("personal-agent-growth/scripts/compare_trials.py", names)
+            self.assertIn("personal-agent-growth/references/markdown-learning.en.md", names)
+            text = archive.read("personal-agent-growth/README.md").decode("utf-8")
+            self.assertIn("https://github.com/KarmenLoop/personal-agent-growth/blob/v0.4.1/docs/architecture.en.md", text)
+            self.assertNotIn("](docs/architecture.en.md)", text)
 
 
 if __name__ == "__main__":

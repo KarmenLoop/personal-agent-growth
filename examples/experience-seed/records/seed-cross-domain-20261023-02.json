@@ -1,0 +1,53 @@
+{
+  "kind": "imported_lesson_excerpt",
+  "adopted": null,
+  "previous": null,
+  "source_adopted": "composed",
+  "source_card_sha256": "9e4e5478bf728cac2218870c117b7208df60a7a8ab48fae9fc8bf28c065b528c",
+  "generalization": "Current domain only; other domains require new trials",
+  "reflection": {
+    "lessons": [
+      {
+        "trigger": "A component improvement is proposed for more than one task domain",
+        "bottleneck": "Checker launch counts can miss model, retrieval, reporting and recovery costs",
+        "intervention": "Freeze full-task quality, native token accounting and per-domain elapsed/token guards; test transfer plus the old capability",
+        "observed_result": "All Probe deliverables passed. General's sum of task token medians improved 10.4%, but scientific time grew 23.6%; domain scientific tokens grew about 25%. Neither was eligible.",
+        "scope": "Two observed task domains, three repetitions each; not evidence about all possible general or domain proposals",
+        "invalid_when": "Task value, acceptance criteria, inputs, model or resource accounting differ",
+        "next_probe": "Use complete deliverable cost and an existing successful task as regression when proposing the next strategy change."
+      },
+      {
+        "trigger": "An Agent repeatedly guesses that a shared library root contains SKILL.md or workspace-root scripts",
+        "bottleneck": "Wrong path lookups and redundant context reads",
+        "intervention": "Use an indexed, hash-checked context loader, assigned entry path and explicit typed tool interfaces; retain independent calculation and output checks",
+        "observed_result": {
+          "activated": "composed",
+          "composed_relative_sum_task_median_gain": 0.15846558001628439,
+          "composed_gate": "measured_metric_gain"
+        },
+        "scope": "The tested release and GISTEMP portfolio; component causality is not isolated, and the reader currently routes these indexed profile types",
+        "invalid_when": "Library schema, task inputs, profile types, tool paths or source formats change",
+        "next_probe": "Read the selected profile and this card in a genuinely new task; require real artifacts before claiming post-adoption transfer."
+      },
+      {
+        "trigger": "Native turn completion is missing at the time limit, or two host clocks disagree",
+        "bottleneck": "Partial artifacts and uncertain measurements can be mislabeled as successful efficient runs",
+        "intervention": "Keep timeout/cancellation evidence, create one separately frozen repair round for every strategy, and mark conflicting time evidence unknown",
+        "observed_result": "The first 300-second climate turn had no final usage. The repaired round used 600 seconds for all arms. General release UTC and monotonic time differed by about 503 seconds; its guard remained unknown.",
+        "scope": "Observed local execution and accounting; no diagnosis of host sleep or clock-change cause",
+        "invalid_when": "An independent host receipt later resolves the discrepancy; append evidence rather than rewriting original readings",
+        "next_probe": "Capture UTC, monotonic timing and native completion in later task receipts; budget delivery and termination, not computation alone."
+      },
+      {
+        "trigger": "A scientific input uses abbreviated decimal notation or a float result is compared to an exact decimal literal",
+        "bottleneck": "Generated validation rejects valid data or harmless floating-point representation",
+        "intervention": "Accept the documented numeric syntax and check finite parsed values; compare independent arithmetic using a justified tolerance. Preserve valid computation when only the local readback assertion needs repair.",
+        "observed_result": "The Agent corrected rejection of -.17 before the adapter ran, then corrected an exact-equality readback assertion without rerunning valid computation. The unchanged independent evaluator passed; 408.173 seconds and 479041 tokens remain measured.",
+        "scope": "Observed local recovery on NASA annual values; not a newly tested global parsing rule or proof every recovery branch works",
+        "invalid_when": "A domain requires exact rational/decimal identities, different precision, missing codes or syntax",
+        "next_probe": "Use these actual counterexamples when generating future numeric preflight checks; test the revised validation on new source data rather than relaxing the external evaluator."
+      }
+    ]
+  },
+  "evidence_scope": "Historical lessons; see the bundled trial reports. Raw source traces are not distributed and imported profiles need validation in their new host."
+}

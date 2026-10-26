@@ -1,0 +1,22 @@
+flowchart TD
+  A["Task outcome or review becomes due"] --> B{"Useful work possible now?"}
+  B -->|Yes| C["Read current state and act now"]
+  B -->|No| D{"Concrete future condition?"}
+  D -->|No| E["Save context and stop"]
+  D -->|Yes| F["Check host capability and existing binding"]
+  F --> G{"Real backend available?"}
+  G -->|No| H["Record not_registered and recovery condition"]
+  G -->|Yes| I["Save next action, evidence, owner, expiry, run limit"]
+  I --> J["Register or update through host API"] --> K["Read back backend ID and settings"]
+  K --> L["Wait for actual host event"] --> M["Check event identity and binding"]
+  M --> N{"Done, cancelled, expired, or budget exhausted?"}
+  N -->|Yes| S["Stop backend and verify state"]
+  N -->|No| O["Read latest node and actual artifacts"] --> P["Save prediction · prepare · execute"]
+  P --> Q["Persist receipts · verify outcome · review"]
+  Q --> R{"Result requires"}
+  R -->|Complete| S --> Z["Final state and bounded claim"]
+  R -->|Remediation now| C
+  R -->|Later review| I
+  R -->|User choice| U["Ask one consolidated decision question"]
+  U --> V["Continue independent work; dependent branch waits"]
+  C --> Q

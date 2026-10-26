@@ -1,0 +1,12 @@
+{
+  "lesson": "The adopted batch tool was actually loaded from library revision 1. It retained per-item identity after input relocation/reordering and a missing archive; the following valid case still completed. Diagnose current reached stage rather than copy a prior INCOMPLETE reason.",
+  "limitations": "One same-task variation on macOS Codex. No new cost baseline, cross-domain performance, Windows or Cursor validation; total optimization cost unknown.",
+  "next_probe": "For future matching tasks, read both experience and observation cards. Test large-batch or stateful-verifier behavior before extending this batching scope.",
+  "kind": "imported_review_excerpt",
+  "domain": "offline-package-check",
+  "active_sha256": "55ce7da5eab6024369167edaacecc7a5af41418c205443c495ce0475a2085e78",
+  "source_observation_sha256": "77812f5fe9cbe9f50772b28586d4a371157e8bcf314540de9c379c4e4d2eb6e3",
+  "source_active_sha256": "55ce7da5eab6024369167edaacecc7a5af41418c205443c495ce0475a2085e78",
+  "raw_evidence_distributed": false,
+  "observation_id": "seed-relocated-review-20261023-01"
+}

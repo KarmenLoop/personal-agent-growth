@@ -46,7 +46,7 @@ def memory_worker(phase, task, skill, release):
         state = {
             "task_id": str(uuid.uuid4()), "state_revision": 1,
             "writer": "process-b", "phase": "review-package",
-            "prediction": {"status": "PASS", "checks": 31},
+            "prediction": {"status": "PASS", "checks": 5 + 2 * len(json.loads((release / "manifest.json").read_text(encoding="utf-8"))["files"])},
             "preference": "能自行解决就先完成，只在需要我决定时联系",
             "producer_pid": os.getpid(), "nonce": str(uuid.uuid4()),
             "next_action": "Reuse the installed checker on the downloaded package",
@@ -62,7 +62,7 @@ def memory_worker(phase, task, skill, release):
         before = state_path.read_bytes()
         if phase == "review":
             argv = [sys.executable, "-X", "utf8", str(skill / "scripts/verify_handoff.py"),
-                    "--archive", str(release / "personal-agent-growth-0.3.3.zip"),
+                    "--archive", str(release / json.loads((release / "manifest.json").read_text(encoding="utf-8"))["archive"]["name"]),
                     "--manifest", str(release / "manifest.json")]
             run = subprocess.run(argv, capture_output=True, timeout=60)
             (task / "review.stdout").write_bytes(run.stdout)
@@ -160,8 +160,8 @@ def main():
         if args.local_artifacts:
             local = args.local_artifacts.resolve()
             replacements = {
-                'Invoke-WebRequest -UseBasicParsing -Uri "$ReleaseUrl/personal-agent-growth-0.3.3.zip" -OutFile $ZipPath':
-                    'Copy-Item -LiteralPath ' + quoted(local / 'personal-agent-growth-0.3.3.zip') + ' -Destination $ZipPath',
+                'Invoke-WebRequest -UseBasicParsing -Uri "$ReleaseUrl/personal-agent-growth-0.4.1.zip" -OutFile $ZipPath':
+                    'Copy-Item -LiteralPath ' + quoted(local / 'personal-agent-growth-0.4.1.zip') + ' -Destination $ZipPath',
                 'Invoke-WebRequest -UseBasicParsing -Uri "$ReleaseUrl/manifest.json" -OutFile $ManifestPath':
                     'Copy-Item -LiteralPath ' + quoted(local / 'manifest.json') + ' -Destination $ManifestPath',
             }
@@ -197,7 +197,7 @@ def main():
             discovery = base / label / "Discovery 中文 & entry" / ".agents/skills"
             skill = growth / "skills/personal-agent-growth"
             entry = discovery / "personal-agent-growth"
-            release = growth / "downloads/0.3.3"
+            release = growth / "downloads/0.4.1"
             source = install.replace(discovery_line, "$GrowthSkillsRoot = " + quoted(discovery))
             substitutions = ["GrowthSkillsRoot"]
             if label == "custom":
@@ -206,7 +206,7 @@ def main():
             ps(label + "-install", source)
             manifest = json.loads((release / "manifest.json").read_text())
             expected_files = {p: v["sha256"] for p, v in manifest["files"].items()}
-            assert len(expected_files) == 13 and snapshot(skill) == expected_files
+            assert expected_files and snapshot(skill) == expected_files
             assert os.path.samefile(entry / "SKILL.md", skill / "SKILL.md")
             ps(label + "-entry", "Get-Item -LiteralPath " + quoted(entry) +
                " | Select-Object LinkType, Target, FullName | ConvertTo-Json -Compress")
@@ -236,7 +236,7 @@ def main():
             if label == "custom":
                 run("legacy-non-utf8-verifier",
                     [sys.executable, str(entry / "scripts/verify_handoff.py"),
-                     "--archive", str(release / "personal-agent-growth-0.3.3.zip"),
+                     "--archive", str(release / json.loads((release / "manifest.json").read_text(encoding="utf-8"))["archive"]["name"]),
                      "--manifest", str(release / "manifest.json")],
                     expected=1, contains="UnicodeEncodeError")
             reviewed = json.loads(worker("review", alternate))
@@ -267,8 +267,8 @@ def main():
             assert sentinel.exists() and snapshot(growth) == saved
             report["cases"].append({
                 "case": label, "status": "PASS", "root": str(growth),
-                "command_substitutions": substitutions, "installed_files": 8,
-                "package_checks": 31, "skill_file_identity_shared": True,
+                "command_substitutions": substitutions, "installed_files": len(expected_files),
+                "package_checks": len(json.loads((task / "review.stdout").read_bytes())["checks"]), "skill_file_identity_shared": True,
                 "memory_file_identity_shared": True, "copied_state_rejected_as_shared": True,
                 "memory_revisions": [1, 2, 3], "worker_pids": [first["pid"], reviewed["pid"], finished["pid"]],
                 "stale_revision_rejected_without_write": True,

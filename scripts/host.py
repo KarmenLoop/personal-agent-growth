@@ -40,4 +40,4 @@ def dispatch(name,a,args):
   return db.transaction(update)
  finally:db.close()
 
-if __name__=='__main__':raise SystemExit(main('personal_agent_growth','0.4.0',TOOLS,dispatch))
+if __name__=='__main__':raise SystemExit(main('personal_agent_growth','0.4.1',TOOLS,dispatch))

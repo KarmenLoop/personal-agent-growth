@@ -1,0 +1,14 @@
+{
+  "mindmap_nodes": {
+    "system.en": 137,
+    "system.zh-CN": 137,
+    "reasoning.en": 92,
+    "reasoning.zh-CN": 92,
+    "memory.en": 92,
+    "memory.zh-CN": 92,
+    "recursion.en": 92,
+    "recursion.zh-CN": 92
+  },
+  "language_pairs": 8,
+  "scope": "Architecture diagrams, not behavior evidence"
+}

@@ -44,7 +44,7 @@ Run:
 python3 -m unittest discover -s tests -v
 python3 tools/build_release.py --output dist
 python3 scripts/verify_handoff.py \
-  --archive dist/personal-agent-growth-0.3.2.zip \
+  --archive dist/personal-agent-growth-0.4.1.zip \
   --manifest dist/manifest.json
 ```
 

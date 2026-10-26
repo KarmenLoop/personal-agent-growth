@@ -1,0 +1,114 @@
+{
+  "scope": "Sanitized maintainer evidence summary for an independent private Koder candidate, not public product release or real-model acceptance",
+  "date": "2026-10-27",
+  "platform": "macOS arm64",
+  "source_commit": "fa854e88f5a7325399f9a2f32950848737cdf1d9",
+  "targeted": {
+    "counts": {
+      "tests": 30,
+      "pass": 30,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "duration_ms": 20779.00825
+    },
+    "source_sha256": "da50090ddb4c4be171b31a0bb3e209d4b918490e229ca3b5574b6075b4253a86",
+    "source_name": "learning-source-final.stdout"
+  },
+  "baseline_full": {
+    "counts": {
+      "tests": 1425,
+      "pass": 1358,
+      "fail": 31,
+      "cancelled": 15,
+      "skipped": 21,
+      "duration_ms": 154879.392208
+    },
+    "source_sha256": "8db59ec200795b5c72e2f8fba6eb01a568d914ee1e0ee8fe6b82a1c00eb1c20b",
+    "source_name": "baseline-full-2.stdout"
+  },
+  "candidate_full": {
+    "counts": {
+      "tests": 1454,
+      "pass": 1388,
+      "fail": 31,
+      "cancelled": 14,
+      "skipped": 21,
+      "duration_ms": 167675.817708
+    },
+    "source_sha256": "126f9a9b684e83dad42851a313303da349d038b1149efa7ddfffd8d0677468f4",
+    "source_name": "candidate-full-post-review.stdout"
+  },
+  "candidate_only_nonpassing_names": 0,
+  "comparison_source_sha256": "ff135c92575f0bd8ea21b95cc9dc6b281c3aa6e18c7f3c5097583e2179bab051",
+  "process_receipts": [
+    {
+      "phase": "prepare",
+      "pid": 36236,
+      "started": "2026-10-26T18:16:13.760Z",
+      "finished": "2026-10-26T18:16:14.696Z",
+      "durationMs": 935,
+      "provider": "scripted, no paid or remote model request",
+      "source_sha256": "302d675485a9bc137c7897bcce313b3caadbb2b8235e9f4960d470a96f81e3cf"
+    },
+    {
+      "phase": "first",
+      "pid": 36853,
+      "started": "2026-10-26T18:16:22.145Z",
+      "finished": "2026-10-26T18:16:26.922Z",
+      "durationMs": 4777,
+      "provider": "scripted, no paid or remote model request",
+      "source_sha256": "c44e6a39dee667c12f3b4ddc7e79f4329cafd61687ac4f73c941595f36cfdbb9"
+    },
+    {
+      "phase": "resume",
+      "pid": 37445,
+      "started": "2026-10-26T18:18:21.629Z",
+      "finished": "2026-10-26T18:18:23.828Z",
+      "durationMs": 2198,
+      "provider": "scripted, no paid or remote model request",
+      "source_sha256": "1e1b95082d0d07c1d12fc97566a1599c4e7880db1e092ceaf9b20398f82ea7c7"
+    },
+    {
+      "phase": "complete",
+      "pid": 38097,
+      "started": "2026-10-26T18:19:25.529Z",
+      "finished": "2026-10-26T18:19:25.826Z",
+      "durationMs": 297,
+      "provider": "scripted, no paid or remote model request",
+      "source_sha256": "75901a2f64bb8b94a015f45320c38bc05a3cce1d94906b86055e1e8773d5b52f"
+    },
+    {
+      "phase": "reuse",
+      "pid": 55551,
+      "started": "2026-10-26T18:28:01.686Z",
+      "finished": "2026-10-26T18:28:02.219Z",
+      "durationMs": 533,
+      "provider": "scripted, no paid or remote model request",
+      "source_sha256": "d7a4d2e83ff0a8cbb8f4996d48873dfa3b394d75b10e0c4632b162f6a7662042"
+    }
+  ],
+  "idle_receipt": {
+    "started": "2026-10-26T18:16:17.042Z",
+    "finished": "2026-10-26T18:17:18.858Z",
+    "durationMs": 61815,
+    "pid": 36460,
+    "clock": "host wall clock and monotonic clock, not simulated",
+    "trigger": "open CLI learning lifecycle 60000 ms idle timer",
+    "before": "a1aeeeb8831daa55adc00d14436858344b300e83a08deec8a0ebe54f5fc56f18",
+    "after": "d6ded684c2955528fb12c07f1e456151a0422fe0f1a3c73e95a3e5f5d0e52da5",
+    "warnings": [],
+    "scope": "in-process timer; NOT an app-closed OS wakeup"
+  },
+  "source_report_sha256": "0952dcefc7d6cc57d64a1c5d035f2017225d240c7b659612b0b8b18a2bee6d14",
+  "provider_tokens": null,
+  "actual_cost": null,
+  "not_run": [
+    "Real model learning quality",
+    "Native Windows desktop Agent",
+    "Cross-device synchronization",
+    "App-closed OS wakeup",
+    "Production integration and release"
+  ],
+  "privacy": "Private source, raw chat, credentials and absolute workstation paths are excluded. Underlying receipts remain in maintainer storage."
+}

@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "revision": 1,
+  "profiles": {
+    "offline-package-check": {
+      "path": "versions/55ce7da5eab6024369167edaacecc7a5af41418c205443c495ce0475a2085e78",
+      "sha256": "55ce7da5eab6024369167edaacecc7a5af41418c205443c495ce0475a2085e78",
+      "experiment_id": "seed-recursive-archive-20261023-01",
+      "source": "imported_seed",
+      "source_sha256": "55ce7da5eab6024369167edaacecc7a5af41418c205443c495ce0475a2085e78"
+    },
+    "meta:cross-domain-evidence": {
+      "path": "versions/a288e4ce31afbb290ade7c2425f645d2b3ad7dbd1e883576fa7817050afe15e9",
+      "sha256": "a288e4ce31afbb290ade7c2425f645d2b3ad7dbd1e883576fa7817050afe15e9",
+      "experiment_id": "seed-cross-domain-20261023-02",
+      "source": "imported_seed",
+      "source_sha256": "af3c2b187b4c749b1c42bab15a5d938a7324f39ae5e0bd1b6c3ce9f875f40a4a"
+    }
+  },
+  "records": {
+    "seed-recursive-archive-20261023-01": {
+      "domain": "offline-package-check",
+      "path": "records/seed-recursive-archive-20261023-01.json",
+      "sha256": "ac45c95d31dac1595be8ca64fc6505d9116dcf06f93b6f506522cf888afd481d",
+      "adopted": null,
+      "eligible": []
+    },
+    "seed-cross-domain-20261023-02": {
+      "domain": "meta:cross-domain-evidence",
+      "path": "records/seed-cross-domain-20261023-02.json",
+      "sha256": "c8f2074de24bc99da44da7db88260097ba91b3e26832aa802ff569684b9b9449",
+      "adopted": null,
+      "eligible": []
+    }
+  },
+  "observations": {
+    "seed-relocated-review-20261023-01": {
+      "domain": "offline-package-check",
+      "path": "observations/seed-relocated-review-20261023-01.json",
+      "sha256": "76d3d21af0eb2b3c61119fdf8f206560750519734787bfa92b0916dfe0788b22",
+      "active_sha256": "55ce7da5eab6024369167edaacecc7a5af41418c205443c495ce0475a2085e78"
+    },
+    "seed-cross-domain-cost-review-20261023-01": {
+      "domain": "meta:cross-domain-evidence",
+      "path": "observations/seed-cross-domain-cost-review-20261023-01.json",
+      "sha256": "a5512c4890f0d41bbeb99ac31b226e54724f84209367e2d2d8e54472ba97a25d",
+      "active_sha256": "a288e4ce31afbb290ade7c2425f645d2b3ad7dbd1e883576fa7817050afe15e9"
+    }
+  }
+}

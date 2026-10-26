@@ -1,0 +1,21 @@
+flowchart TB
+  A["Authorized task activity"] --> B["Timestamped observations and sources"]
+  B --> C["Decisions in memory; pause node and context"]
+  B --> D["Behavior log: support, opposition, corrections"]
+  D --> E["Deduplicate and validate source revisions"] --> F["Score confidence and stability"]
+  F --> G{"Conflict or weak support?"}
+  G -->|Yes| H["Observing / pending / neutral default"]
+  G -->|No| I["Scoped tags and explicit preferences"]
+  C --> J["Daily facts, learning, reflection, next action"]
+  J --> K["Read ISO-week daily coverage"] --> L["Weekly patterns and strategy candidates"]
+  L --> M["Next Monday: verify actual application"]
+  M --> N["Applied / still weak / next probe"]
+  I --> P["Preview concepts and project conventions"]
+  N --> P --> Q["Next task reads relevant memory"]
+  Q --> A
+  E --> R["Withdrawn source invalidates dependent conclusions"]
+  R --> F
+  R --> C
+  J --> S["Reusable experience with scope"] --> Q
+  T["Missed periods"] --> U["Bounded catch-up with durable remaining range"] --> J
+  H --> P
