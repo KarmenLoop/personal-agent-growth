@@ -25,7 +25,7 @@ class WindowsGuideTests(unittest.TestCase):
             adapted, remove = guide.prepare_guides(en, zh, version, local)
             self.assertEqual(remove, uninstall)
             self.assertNotIn('Invoke-WebRequest', adapted)
-            self.assertIn(str(local / name).replace("'", "''"), adapted)
+            self.assertIn(str((local / name).resolve()).replace("'", "''"), adapted)
             net = [line for line in network.splitlines() if 'Invoke-WebRequest' not in line]
             saved = [line for line in adapted.splitlines() if 'Copy-Item' not in line]
             self.assertEqual(saved, net)
