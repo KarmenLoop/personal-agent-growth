@@ -61,9 +61,11 @@ flowchart TD
 
 ## 公开分发包核验
 
-本地公开检查已通过：**48 项 Python 测试、61 个核心文件 / 127 项清单检查、23 组双语文档、32 份模板、保留的 16 张渲染图，以及实际安装→搬迁→读取经验→卸载后记忆不变**。首次发布测试仍要求旧 59 个文件，现明确要求新增双语引用后的 61 个，并逐一检查两份新引用。开发用 Skill 验证器最初缺 PyYAML，补入隔离开发依赖后通过；二者不改变私人 Koder 回归结果。
+本地公开检查已通过：**50 项 Python 测试、61 个核心文件 / 127 项清单检查、23 组双语文档、32 份模板、保留的 16 张渲染图，以及实际安装→搬迁→读取经验→卸载后记忆不变**。首次发布测试仍要求旧 59 个文件，现明确要求新增双语引用后的 61 个，并逐一检查两份新引用。开发用 Skill 验证器最初缺 PyYAML，补入隔离开发依赖后通过；二者不改变私人 Koder 回归结果。
 
 
 公开 Python 套件、核心 ZIP/manifest、双语链接、模板、完整包及安装/搬迁/卸载结果见[本地发布回执](evidence/release-0.4.2-local.json)。宿主 CI 结束后记录在 [CI 回执](evidence/release-0.4.2-ci.json)。这些检查针对公开工具分发包，与私人 Koder Node 套件分别记账。
 
 [0.4.2 发布页](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.4.2)提供核心 Skill 与完整双语离线包。ZIP 外单独的 `RELEASE-VERIFICATION.json` 绑定公开提交、下载附件哈希与发布后真实安装，避免归档校验值自引用。[0.4.1 验收](release-0.4.1-acceptance.zh-CN.md)及旧失败按原日期保留。
+
+首轮 Windows 安装 CI 在安装前停止，原因是本地传输适配仍固定 0.4.1。现读取当前发布版本、核对本地 manifest 并推导下载目录；新增两项检查，覆盖未来版本、错误清单和语言不一致。[失败 CI 保留](https://github.com/KarmenLoop/personal-agent-growth/actions/runs/40394859606)。九个内嵌 Mermaid 图均已解析通过，见[图示回执](evidence/release-0.4.2-diagrams.json)。
