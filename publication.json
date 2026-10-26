@@ -1,5 +1,5 @@
 {
-  "version": "0.4.1",
+  "version": "0.4.2",
   "documents": [
     "README.md",
     "README.zh-CN.md",
@@ -23,8 +23,8 @@
     "docs/index.zh-CN.md",
     "docs/tutorial.en.md",
     "docs/tutorial.zh-CN.md",
-    "docs/release-0.4.1-acceptance.en.md",
-    "docs/release-0.4.1-acceptance.zh-CN.md"
+    "docs/release-0.4.2-acceptance.en.md",
+    "docs/release-0.4.2-acceptance.zh-CN.md"
   ],
   "language_pairs": [
     [
@@ -110,6 +110,14 @@
     [
       "references/markdown-learning.en.md",
       "references/markdown-learning.md"
+    ],
+    [
+      "docs/release-0.4.2-acceptance.en.md",
+      "docs/release-0.4.2-acceptance.zh-CN.md"
+    ],
+    [
+      "references/regression-repair.en.md",
+      "references/regression-repair.md"
     ]
   ],
   "template_types": [

@@ -1,4 +1,4 @@
-# Documentation index · 0.4.1
+# Documentation index · 0.4.2
 
 [English](index.en.md) · [中文](index.zh-CN.md)
 
@@ -16,7 +16,7 @@ The current product manual is published in both languages. Runtime names, field 
 | Memory contract and pseudocode | [Read](../docs/markdown-learning.en.md) | [阅读](../docs/markdown-learning.zh-CN.md) |
 | Compatibility and evidence | [Read](../docs/compatibility.en.md) | [阅读](../docs/compatibility.zh-CN.md) |
 | Cross-domain full-task experiment | [Read](../docs/cross-domain-trial.md) | [阅读](../docs/cross-domain-trial.zh-CN.md) |
-| Current release acceptance | [Read](../docs/release-0.4.1-acceptance.en.md) | [阅读](../docs/release-0.4.1-acceptance.zh-CN.md) |
+| Current release acceptance | [Read](../docs/release-0.4.2-acceptance.en.md) | [阅读](../docs/release-0.4.2-acceptance.zh-CN.md) |
 | Team | [Read](../TEAM.md) | [阅读](../TEAM.zh-CN.md) |
 | License guide | [Read](../docs/licensing.md) | [阅读](../docs/licensing.zh-CN.md) |
 
@@ -30,6 +30,8 @@ The current product manual is published in both languages. Runtime names, field 
 - Autonomous continuation: [English](../references/autonomous-continuation.en.md) · [中文](../references/autonomous-continuation.md)
 - Recursive improvement: [English](../references/recursive-improvement.en.md) · [中文](../references/recursive-improvement.md)
 - Markdown learning: [English](../references/markdown-learning.en.md) · [中文](../references/markdown-learning.md)
+
+- Regression repair experience: [English](../references/regression-repair.en.md) · [中文](../references/regression-repair.md)
 
 ## Templates and diagrams
 

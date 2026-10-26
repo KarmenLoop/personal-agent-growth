@@ -3,7 +3,7 @@ name: personal-agent-growth
 description: Complete ongoing tasks that need preparation, evidence-based revision, review, shared memory, or bounded recursive improvement of prompts, tools and workflow components. Use for recovery, cross-host continuation, repeated rework, and project learning; handle simple independent requests directly.
 license: AGPL-3.0-only
 metadata:
-  version: "0.4.1"
+  version: "0.4.2"
 ---
 
 # Personal Agent Growth
@@ -62,5 +62,9 @@ For ZIP and this manifest format, run `scripts/verify_handoff.py --archive <zip>
 
 Resolve Markdown references relative to their containing file, distinguishing local resources, external links, fragments, and code examples. Archive consistency, readability, and portability are separate acceptance layers. Current readability or a target inside the package does not establish relocation stability; symbolic links may depend on old absolute paths. Actually move an isolated copy before claiming portability, or limit the conclusion. Zero checks or unsupported syntax do not establish complete usability.
 
+
+## Repair and full regression
+
+When the user requests all failures fixed or a new release, read the [regression repair lesson](references/regression-repair.en.md). Bind each failure to its cause, repair, and fresh receipt. A failing baseline explains origin; it does not satisfy a repair request. Verify focused behavior, then run the full suite against one frozen candidate. Report failures, cancellations, and skips separately. Explain fixture corrections against the actual contract while retaining product acceptance criteria. Check the built package's materialized dependencies, relocation, and installation behavior separately.
 
 <!-- Copyright (C) 2026 KARMENLOOP Official Team. SPDX-License-Identifier: AGPL-3.0-only -->

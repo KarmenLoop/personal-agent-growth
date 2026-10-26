@@ -21,6 +21,8 @@ FILES = (
     "references/autonomous-continuation.md",
     "references/shared-memory.md",
     "references/recursive-improvement.md",
+    "references/regression-repair.md",
+    "references/regression-repair.en.md",
     "scripts/compare_trials.py",
     "scripts/verify_handoff.py",
     "scripts/host.py",

@@ -1,4 +1,4 @@
-# 从安装到预习、复习与跨工具接续 · 0.4.1
+# 从安装到预习、复习与跨工具接续 · 0.4.2
 
 [English](tutorial.en.md) · [安装](install.zh-CN.md) · [判断方法](reasoning.zh-CN.md)
 

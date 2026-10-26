@@ -38,6 +38,32 @@ def snapshot(folder):
             for p in folder.rglob("*") if p.is_file()}
 
 
+def prepare_guides(en, zh, version, local=None):
+    """Keep guide behavior intact while substituting only CI artifact transport."""
+    if not re.fullmatch(r"[0-9]+\.[0-9]+\.[0-9]+", version):
+        raise ValueError("Invalid publication version")
+    pattern = r"^[ ]*" + chr(96) * 3 + r"powershell\n(.*?)^[ ]*" + chr(96) * 3
+    blocks = re.findall(pattern, en, re.M | re.S)
+    if len(blocks) != 3 or blocks != re.findall(pattern, zh, re.M | re.S):
+        raise ValueError("English and Chinese PowerShell guide blocks differ")
+    install, _, uninstall = blocks
+    if "downloads\\" + version not in install or "releases/download/v" + version not in install:
+        raise ValueError("Guide does not match the publication version")
+    if local is not None:
+        local = local.resolve()
+        archive_name = "personal-agent-growth-" + version + ".zip"
+        manifest = json.loads((local / "manifest.json").read_text(encoding="utf-8"))
+        if manifest.get("declared_version") != version or manifest.get("archive", {}).get("name") != archive_name:
+            raise ValueError("Local artifacts do not match the publication version")
+        for name, destination in [(archive_name, "$ZipPath"), ("manifest.json", "$ManifestPath")]:
+            original = 'Invoke-WebRequest -UseBasicParsing -Uri "$ReleaseUrl/' + name + '" -OutFile ' + destination
+            replacement = "Copy-Item -LiteralPath '" + str(local / name).replace("'", "''") + "' -Destination " + destination
+            if install.count(original) != 1:
+                raise ValueError("Expected one guide download for " + name)
+            install = install.replace(original, replacement)
+    return install, uninstall
+
+
 def memory_worker(phase, task, skill, release):
     """Exercise file recovery and revision discipline without a model."""
     state_path = task / "state.json"
@@ -152,25 +178,11 @@ def main():
     try:
         en = (ROOT / "docs/install.md").read_text(encoding="utf-8")
         zh = (ROOT / "docs/install.zh-CN.md").read_text(encoding="utf-8")
-        pattern = r"^[ ]*" + chr(96) * 3 + r"powershell\n(.*?)^[ ]*" + chr(96) * 3
-        blocks = re.findall(pattern, en, re.M | re.S)
-        assert blocks == re.findall(pattern, zh, re.M | re.S)
-        assert len(blocks) == 3
-        install, _, uninstall = blocks
-        if args.local_artifacts:
-            local = args.local_artifacts.resolve()
-            replacements = {
-                'Invoke-WebRequest -UseBasicParsing -Uri "$ReleaseUrl/personal-agent-growth-0.4.1.zip" -OutFile $ZipPath':
-                    'Copy-Item -LiteralPath ' + quoted(local / 'personal-agent-growth-0.4.1.zip') + ' -Destination $ZipPath',
-                'Invoke-WebRequest -UseBasicParsing -Uri "$ReleaseUrl/manifest.json" -OutFile $ManifestPath':
-                    'Copy-Item -LiteralPath ' + quoted(local / 'manifest.json') + ' -Destination $ManifestPath',
-            }
-            for original, replacement in replacements.items():
-                assert install.count(original) == 1
-                install = install.replace(original, replacement)
-            report["artifact_transport"] = "local files; published download URL not exercised"
-        else:
-            report["artifact_transport"] = "published GitHub release download"
+        version = json.loads((ROOT / "publication.json").read_text(encoding="utf-8"))["version"]
+        install, uninstall = prepare_guides(en, zh, version, args.local_artifacts)
+        report["release_version"] = version
+        report["artifact_transport"] = ("local files; published download URL not exercised" if args.local_artifacts
+                                        else "published GitHub release download")
         report["guide_sha256"] = {p: digest(ROOT / p) for p in
                                    ["docs/install.md", "docs/install.zh-CN.md"]}
         root_line = "$GrowthRoot = if (Test-Path -LiteralPath 'D:\\') { 'D:\\AgentKnowledge' } else { 'C:\\AgentKnowledge' }"
@@ -197,7 +209,7 @@ def main():
             discovery = base / label / "Discovery 中文 & entry" / ".agents/skills"
             skill = growth / "skills/personal-agent-growth"
             entry = discovery / "personal-agent-growth"
-            release = growth / "downloads/0.4.1"
+            release = growth / "downloads" / version
             source = install.replace(discovery_line, "$GrowthSkillsRoot = " + quoted(discovery))
             substitutions = ["GrowthSkillsRoot"]
             if label == "custom":

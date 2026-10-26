@@ -1,4 +1,4 @@
-# 整体架构剖析 · 0.4.1
+# 整体架构剖析 · 0.4.2
 
 [English](architecture.en.md) · [文档索引](index.zh-CN.md) · [复杂思维导图](mindmaps.zh-CN.md)
 
