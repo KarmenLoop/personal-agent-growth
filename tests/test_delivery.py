@@ -82,7 +82,10 @@ class DeliveryTests(unittest.TestCase):
         result = read(moved, "meta:cross-domain-evidence")
         self.assertEqual(result["selection"]["revision"], 1)
         self.assertTrue(result["records"][0]["reflection"]["lessons"])
-        self.assertIn(str(moved), result["profile"])
+        # Windows may resolve the runner's 8.3 temp path to its long name.
+        # Compare the actual indexed directory, not a textual path prefix.
+        expected_profile = moved / result["selection"]["active"]["path"]
+        self.assertTrue(Path(result["profile"]).samefile(expected_profile))
         (Path(result["profile"]) / "SKILL.md").write_text("tampered")
         with self.assertRaisesRegex(ValueError, "snapshot has changed"):
             read(moved, "meta:cross-domain-evidence")
