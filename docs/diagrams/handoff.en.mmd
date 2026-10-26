@@ -1,0 +1,22 @@
+sequenceDiagram
+  participant A as Host A / current writer
+  participant M as Shared memory
+  participant F as Artifacts / receipts
+  participant B as Host B / receiver
+  A->>M: Read context + newest node + revision N
+  A->>F: Execute and retain real output
+  A->>M: Persist node, next action, artifact identities
+  A->>M: Recheck N, transfer writer, commit N+1
+  A->>M: Read back committed state
+  B->>M: Resolve same root, read N+1
+  B->>F: Check existing artifacts and source hashes
+  alt Changed evidence or revision
+    B->>M: Preserve discrepancy, reconcile before writing
+  else Current evidence and ownership
+    B->>M: Read relevant experience and preparation
+    B->>F: Perform review variation and retain receipts
+    B->>M: Commit review and next action as N+2
+  end
+  A->>M: Late message arrives, read current revision
+  Note over A,B: Old writer skips duplicate work, paths alone do not prove shared memory
+  Note over M,F: Actual Agent turns are separate evidence from test-process handoffs

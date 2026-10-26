@@ -1,0 +1,40 @@
+{
+  "kind": "imported_lesson_excerpt",
+  "adopted": null,
+  "previous": null,
+  "source_adopted": "composed",
+  "source_card_sha256": "597d9725a0d6d3b769b5c9c105bd5fe39331186f5e25bca7a9c1324baf0e511b",
+  "generalization": "Current domain only; other domains require new trials",
+  "reflection": {
+    "lessons": [
+      {
+        "trigger": "Several independent archive/manifest pairs use the same checker",
+        "bottleneck": "Repeated interpreter and module startup",
+        "intervention": "Preserve the verifier and batch its invocations in one process",
+        "observed_result": "Three processes became one; all five fixed quality criteria passed. No total-cost or timing gain established.",
+        "scope": "offline-package-check; three observed pairs",
+        "invalid_when": "Shared process state changes results, batch errors lose per-item identity, or large batches exceed limits",
+        "next_probe": "Read the adopted snapshot from the library and inspect relocated, reordered inputs with a new missing-input case."
+      },
+      {
+        "trigger": "A proposed general prompt repeats rules already followed by baseline",
+        "bottleneck": "Rule accumulation without demonstrated behavior change",
+        "intervention": "Drop the redundant outcome-map addition; prefer a distinct component intervention next time",
+        "observed_result": "General arm had the same three checker launches and same quality outcomes; not adopted.",
+        "scope": "This proposal and task only; not proof that outcome maps never help",
+        "invalid_when": "A new task demonstrates an outcome-classification failure",
+        "next_probe": "For a later proposal, identify an observed failure or measurable bottleneck before adding another rule."
+      },
+      {
+        "trigger": "Artifact-writing code fails after a valid checker result",
+        "bottleneck": "Summary generation failure could trigger unnecessary repeated checks",
+        "intervention": "Retain raw JSON and retry report generation separately",
+        "observed_result": "General arm repaired documentation without restarting checker; composed rule retained, but composed failure recovery itself not exercised",
+        "scope": "Candidate recovery lesson; not a measured global gain",
+        "invalid_when": "The underlying inputs or checker results changed",
+        "next_probe": "A future controlled summary-generation failure can test the recovery rule without altering the quality criteria."
+      }
+    ]
+  },
+  "evidence_scope": "Historical lessons; see the bundled trial reports. Raw source traces are not distributed and imported profiles need validation in their new host."
+}

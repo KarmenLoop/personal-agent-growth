@@ -1,0 +1,36 @@
+flowchart TB
+  U["User outcome · scope · explicit preferences"] --> G["Goal revision and acceptance criteria"]
+  subgraph Reasoning["Reasoning and planning"]
+    G --> C["Context and newest node"] --> H["Facts · hypotheses · decisive unknowns"]
+    H --> P["Prepare and predict"] --> A["Choose action and failure continuation"]
+  end
+  subgraph Host["Execution host"]
+    A --> T["Real model turn and authorized tools"] --> O["Artifacts · failures · native receipts"]
+    O --> V["Independent task-level checks"]
+  end
+  subgraph Learning["Markdown learning"]
+    M["Project memory / context / nodes"]
+    E["Experience with scope and sources"]
+    B["Behavior evidence / tags / corrections"]
+    R["Daily / weekly / Monday preparation"]
+    M --> E --> R
+    B --> R
+  end
+  V --> J{"Prediction supported?"}
+  J -->|Yes| M
+  J -->|Gap| L["Diagnose · remediate · retest"] --> P
+  E --> C
+  R --> P
+  subgraph Improvement["Bounded experiments"]
+    X["Baseline + general + domain"] --> Q["Whole-task quality / time / cost"]
+    Q --> S["Compose and run successor"] --> F["Scoped adoption / rollback"]
+    F --> E
+  end
+  L --> X
+  F --> A
+  M --> N{"Next useful condition"}
+  N -->|Future| W["Host scheduler: register → trigger → verify → stop"]
+  N -->|Handoff| K["Writer + revision + artifact check"] --> C
+  N -->|Complete| Z["Summary · reusable experience · final acceptance"]
+  N -->|User choice| U
+  W --> C

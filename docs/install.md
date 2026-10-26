@@ -1,81 +1,65 @@
-# Installation guide
+# Complete installation, update, and removal · 0.4.1
 
-[中文安装说明](install.zh-CN.md) · Version **0.3.3** · Host documentation checked October 21, 2026.
+[中文](install.zh-CN.md) · [Hands-on tutorial](tutorial.en.md) · [Full offline bundle](../START-HERE.md)
 
-This guide installs Personal Agent Growth in Codex and Cursor on the same computer, then checks shared task memory and an optional scheduled review. Start with your operating system's instructions. No Git checkout is required.
+## 1. Choose the package and location
 
-## 1. Requirements and locations
+The release provides a core `personal-agent-growth-0.4.1.zip` containing the skill, bilingual protocols, templates, and utilities. The **complete delivery bundle** also contains all source, tests, the historical experience seed, bilingual long-form guides, and diagram sources. Core-package links to omitted long-form material point to versioned GitHub documents. Choose the complete bundle for offline documentation and experience installation.
 
-You need a local Codex or Cursor installation that supports skills and can read the chosen folders. Use the host's normal model account, file permissions, and tool approvals. This skill has no separate account or API key.
+Use a working host account, writable local folders, and Python 3.11+. Utilities need only the standard library, with no pip install. Check `python3 --version` on macOS or `py -3 --version` on Windows. Markdown can be read without Python, but utility execution cannot be claimed. Installation creates no account, daemon, scheduled task, or device sync.
 
-Installation needs internet access to download the release. On macOS, the commands use Terminal with `curl`, `shasum`, and `unzip`. On Windows, use PowerShell 5.1 or later. Python **3.11 or later** is needed only for the optional package checker and tasks that use Python; the skill itself is Markdown. There is no pip package, Node dependency, or Docker service to install.
+The suggested skill root is `~/Desktop/AgentKnowledge` on macOS and D: when present, otherwise C:, on Windows. Choose a user-owned directory if those locations are not writable. Set a separate private Markdown root such as `AgentKnowledge/learning`, or explicitly share Koder's `~/.koder/learning`. Preserve an existing library instead of replacing it with an empty one.
 
-| Purpose | macOS default | Windows default |
-|---|---|---|
-| Knowledge root | `~/Desktop/AgentKnowledge` | `D:\AgentKnowledge` if D: exists, otherwise `C:\AgentKnowledge` |
-| Canonical skill | `<root>/skills/personal-agent-growth` | `<root>\skills\personal-agent-growth` |
-| Downloaded release | `<root>/downloads/0.3.3` | `<root>\downloads\0.3.3` |
-| Private task records | `<root>/tasks/<task-id>` | `<root>\tasks\<task-id>` |
-| User discovery entry | `~/.agents/skills/personal-agent-growth` | `%USERPROFILE%\.agents\skills\personal-agent-growth` |
+```text
+AgentKnowledge/
+  skills/personal-agent-growth/   Canonical skill
+  downloads/0.4.1/                Release assets
+  learning/                      Private Markdown knowledge
+  tasks/                         Inputs, experiments, raw receipts
+  experience/                    Optional historical seed, separate from the current profile
+```
 
-Current Codex and Cursor documentation both list `.agents/skills` as a discovery location. The commands below create **one entry pointing to one canonical folder**, using a symbolic link on macOS and a directory junction on Windows. Do not add a second same-name copy under `.cursor/skills` or `.codex/skills` unless your host requires it; duplicate entries can select different versions.
+## 2. Install the core package on macOS
 
-Choose a different root by editing `GrowthRoot` before running the block. If D: or the root of C: is not writable, choose a writable folder such as `C:\Users\<you>\AgentKnowledge`. Avoid changing permissions across an entire drive.
-
-## 2. Install on macOS
-
-Open Terminal, paste the whole block, and press Return. It downloads the pinned release, checks both published SHA-256 values, extracts the skill, and creates its discovery entry. It stops if an installation already exists.
+Run the entire block in Terminal. It stops when a skill or discovery entry already exists; follow the update procedure instead. Comparing the downloaded manifest and ZIP checks consistency, not an independent publisher signature.
 
 ```bash
 (
-  set -eu
+  set -e
   GrowthRoot="$HOME/Desktop/AgentKnowledge"
   GrowthSkillsRoot="$HOME/.agents/skills"
   SkillDir="$GrowthRoot/skills/personal-agent-growth"
   SkillEntry="$GrowthSkillsRoot/personal-agent-growth"
-  ReleaseDir="$GrowthRoot/downloads/0.3.3"
-  ReleaseUrl="https://github.com/KarmenLoop/personal-agent-growth/releases/download/v0.3.3"
-
+  ReleaseDir="$GrowthRoot/downloads/0.4.1"
+  ReleaseUrl="https://github.com/KarmenLoop/personal-agent-growth/releases/download/v0.4.1"
   if [ -e "$SkillDir" ] || [ -L "$SkillDir" ] || [ -e "$SkillEntry" ] || [ -L "$SkillEntry" ]; then
-    echo "An installation already exists. Follow the update section instead."
+    echo "An installation already exists. Follow the update section." >&2
     exit 1
   fi
-
   mkdir -p "$ReleaseDir" "$GrowthRoot/skills" "$GrowthRoot/tasks" "$GrowthSkillsRoot"
-  curl --fail --location --retry 2 --max-time 90 "$ReleaseUrl/personal-agent-growth-0.3.3.zip" -o "$ReleaseDir/personal-agent-growth-0.3.3.zip"
+  curl --fail --location --retry 2 --max-time 90 "$ReleaseUrl/personal-agent-growth-0.4.1.zip" -o "$ReleaseDir/personal-agent-growth-0.4.1.zip"
   curl --fail --location --retry 2 --max-time 90 "$ReleaseUrl/manifest.json" -o "$ReleaseDir/manifest.json"
-
-  printf '%s  %s\n' '5c385b2cb0cee07d4f713c9734e02abe262c4b96905f618543731b81a9d8a76a' "$ReleaseDir/personal-agent-growth-0.3.3.zip" | shasum -a 256 -c -
-  printf '%s  %s\n' '88be0aa807dc971bfa4f15c105d98abf521eedc3a386001ec17ebc45be36f765' "$ReleaseDir/manifest.json" | shasum -a 256 -c -
-
-  unzip -q "$ReleaseDir/personal-agent-growth-0.3.3.zip" -d "$GrowthRoot/skills"
+  python3 - "$ReleaseDir" <<'PY'
+import hashlib, json, pathlib, sys
+p = pathlib.Path(sys.argv[1])
+m = json.loads((p / 'manifest.json').read_text(encoding='utf-8'))
+assert m['archive']['name'] == 'personal-agent-growth-0.4.1.zip'
+assert hashlib.sha256((p / m['archive']['name']).read_bytes()).hexdigest() == m['archive']['sha256'], 'ZIP checksum mismatch'
+print('Archive hash matches the supplied manifest')
+PY
+  unzip -q "$ReleaseDir/personal-agent-growth-0.4.1.zip" -d "$GrowthRoot/skills"
+  python3 -B "$SkillDir/scripts/verify_handoff.py" --archive "$ReleaseDir/personal-agent-growth-0.4.1.zip" --manifest "$ReleaseDir/manifest.json"
   ln -s "$SkillDir" "$SkillEntry"
   test -f "$SkillEntry/SKILL.md"
   printf 'Skill: %s\nDiscovery entry: %s\nTask memory: %s\n' "$SkillDir" "$SkillEntry" "$GrowthRoot/tasks"
 )
 ```
 
-Success prints two checksum lines ending in `OK` and three paths labeled `Skill`, `Discovery entry`, and `Task memory`. The variables exist only inside this block; later examples define their own paths.
+Expect a matching hash, package PASS/exit 0, and three paths. Preserve output on failure. If extraction succeeded before link creation failed, inspect the existing copy rather than repeatedly overwriting it.
 
-The canonical folder contains the runtime files below plus both README languages, bilingual tutorials, and the versioned workflow illustration (13 files total):
+## 3. Install the core package on Windows
 
-```text
-personal-agent-growth/
-├── SKILL.md
-├── references/
-│   ├── task-record.md
-│   ├── learning-and-contact.md
-│   ├── autonomous-continuation.md
-│   └── shared-memory.md
-├── scripts/
-│   └── verify_handoff.py
-├── LICENSE
-└── NOTICE
-```
-
-## 3. Install on Windows
-
-Open **PowerShell**, not Command Prompt. Paste the whole block. It chooses D: when present and C: otherwise. Edit `$GrowthRoot` first if you want another location.
+Use PowerShell 5.1 or 7 rather than CMD. Change the root if needed. Retain UTF-8 mode, particularly for Chinese/space-containing paths and redirected output.
 
 ```powershell
 & {
@@ -84,217 +68,106 @@ Open **PowerShell**, not Command Prompt. Paste the whole block. It chooses D: wh
   $GrowthSkillsRoot = Join-Path $env:USERPROFILE '.agents\skills'
   $SkillDir = Join-Path $GrowthRoot 'skills\personal-agent-growth'
   $SkillEntry = Join-Path $GrowthSkillsRoot 'personal-agent-growth'
-  $ReleaseDir = Join-Path $GrowthRoot 'downloads\0.3.3'
-  $ReleaseUrl = 'https://github.com/KarmenLoop/personal-agent-growth/releases/download/v0.3.3'
-
-  if ((Test-Path -LiteralPath $SkillDir) -or (Test-Path -LiteralPath $SkillEntry)) {
-    throw 'An installation already exists. Follow the update section instead.'
+  $ReleaseDir = Join-Path $GrowthRoot 'downloads\0.4.1'
+  $ReleaseUrl = 'https://github.com/KarmenLoop/personal-agent-growth/releases/download/v0.4.1'
+  if ((Test-Path -LiteralPath $SkillDir) -or (Get-Item -LiteralPath $SkillEntry -Force -ErrorAction SilentlyContinue)) {
+    throw 'An installation already exists. Follow the update section.'
   }
-
   New-Item -ItemType Directory -Force -Path $ReleaseDir, (Join-Path $GrowthRoot 'skills'), (Join-Path $GrowthRoot 'tasks'), $GrowthSkillsRoot | Out-Null
-  $ZipPath = Join-Path $ReleaseDir 'personal-agent-growth-0.3.3.zip'
+  $ZipPath = Join-Path $ReleaseDir 'personal-agent-growth-0.4.1.zip'
   $ManifestPath = Join-Path $ReleaseDir 'manifest.json'
-  Invoke-WebRequest -UseBasicParsing -Uri "$ReleaseUrl/personal-agent-growth-0.3.3.zip" -OutFile $ZipPath
+  Invoke-WebRequest -UseBasicParsing -Uri "$ReleaseUrl/personal-agent-growth-0.4.1.zip" -OutFile $ZipPath
   Invoke-WebRequest -UseBasicParsing -Uri "$ReleaseUrl/manifest.json" -OutFile $ManifestPath
-
-  if ((Get-FileHash -LiteralPath $ZipPath -Algorithm SHA256).Hash -ne '5c385b2cb0cee07d4f713c9734e02abe262c4b96905f618543731b81a9d8a76a') {
+  $Manifest = Get-Content -LiteralPath $ManifestPath -Raw -Encoding UTF8 | ConvertFrom-Json
+  if ($Manifest.archive.name -ne 'personal-agent-growth-0.4.1.zip') { throw 'Unexpected archive name.' }
+  if ((Get-FileHash -LiteralPath $ZipPath -Algorithm SHA256).Hash -ne $Manifest.archive.sha256) {
     throw 'ZIP checksum mismatch. Nothing has been extracted.'
   }
-  if ((Get-FileHash -LiteralPath $ManifestPath -Algorithm SHA256).Hash -ne '88be0aa807dc971bfa4f15c105d98abf521eedc3a386001ec17ebc45be36f765') {
-    throw 'Manifest checksum mismatch. Nothing has been extracted.'
-  }
-
   Expand-Archive -LiteralPath $ZipPath -DestinationPath (Join-Path $GrowthRoot 'skills')
+  py -3 -B -X utf8 (Join-Path $SkillDir 'scripts\verify_handoff.py') --archive $ZipPath --manifest $ManifestPath
+  if ($LASTEXITCODE -ne 0) { throw 'Package verification failed; inspect the output.' }
   New-Item -ItemType Junction -Path $SkillEntry -Target $SkillDir | Out-Null
-  if (-not (Test-Path -LiteralPath (Join-Path $SkillEntry 'SKILL.md'))) {
-    throw 'The discovery entry cannot read SKILL.md.'
-  }
+  if (-not (Test-Path -LiteralPath (Join-Path $SkillEntry 'SKILL.md'))) { throw 'Discovery entry is unreadable.' }
   Write-Output "Skill: $SkillDir"
   Write-Output "Discovery entry: $SkillEntry"
   Write-Output "Task memory: $(Join-Path $GrowthRoot 'tasks')"
 }
 ```
 
-Success prints the three installation paths. Keep every file in the matching release manifest together. A directory junction needs a supported local filesystem and permission to create the entry. If junction creation fails after extraction, the canonical skill is still present: fix the destination or use the manual option below. Do not repeatedly extract over it.
-
-These install and removal commands passed on Windows Server 2025 with PowerShell 5.1 and 7, using the default D: location and a custom C: path with Chinese characters and spaces. Shared-memory checks used independent test processes. See the [actual results and limits](windows-install-verification.md).
-
-## 4. Other installation options
-
-### Manual download
-
-1. Open the [v0.3.3 release](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.3.3). Download the asset named `personal-agent-growth-0.3.3.zip` and `manifest.json`. GitHub's automatically generated “Source code” archives are different archives with different hashes.
-2. Verify the two downloads with the checksum commands above or your SHA-256 tool. The expected values are:
-
-   | File | SHA-256 |
-   |---|---|
-   | `personal-agent-growth-0.3.3.zip` | `5c385b2cb0cee07d4f713c9734e02abe262c4b96905f618543731b81a9d8a76a` |
-   | `manifest.json` | `88be0aa807dc971bfa4f15c105d98abf521eedc3a386001ec17ebc45be36f765` |
-
-3. Extract the archive. Place the **whole** `personal-agent-growth` folder directly under your user's `.agents/skills` directory. The result must be `.agents/skills/personal-agent-growth/SKILL.md`, without an extra nested folder.
-4. Create a separate `AgentKnowledge/tasks` location for private records. In this manual option, the canonical skill lives in `.agents/skills`, rather than under `AgentKnowledge/skills`. Use that actual location in subsequent commands.
-5. In Finder, use **Go → Go to Folder** with `~/.agents/skills`; in Windows Explorer, enter `%USERPROFILE%\.agents\skills`. Create missing directories first. A Finder alias or a Windows `.lnk` shortcut is not the filesystem link used by the recommended commands.
-
-This is a standalone skill. It does not include a Cursor plugin marketplace manifest, so do not assume Cursor's plugin repository import will install this repository.
-
-### Limit installation to one project
-
-Before running the command block, change `GrowthSkillsRoot` to your project's absolute `.agents/skills` path. Then open that project in the host. Use either a user entry or a project entry for this skill, not both. Keep private task memory outside a public repository, or explicitly exclude it from version control.
-
-### Linux, WSL, SSH, and cloud agents
-
-For Linux, adapt the macOS block to a writable root such as `$HOME/AgentKnowledge` and ensure `curl`, `unzip`, and `shasum` are available. With `sha256sum`, replace `shasum -a 256 -c -` with `sha256sum -c -`. The same user's `~/.agents/skills` discovery location applies.
-
-WSL and SSH sessions have their own home directories and execution permissions. A Windows installation is not automatically a WSL installation. Use the paths visible to the executing host; sharing through `/mnt/d` requires that mount to be available. A cloud agent cannot read a local Desktop or D: folder just because a chat contains its path. Cross-device use requires a separately configured, authorized transfer or sync method and a path mapping.
-
-## 5. Confirm that the host can use it
-
-Open a new chat in each host. In Codex, select the skill where the Skills interface is available; in CLI/IDE interfaces, use `/skills` or a `$` skill mention. In Cursor, search for the skill with `/` or attach it with `@` where supported. Exact controls depend on the host version.
-
-If it does not appear, reopen the project or restart the host and check the discovery path. Explicitly reading the absolute `SKILL.md` path is a useful fallback; record that as explicit loading, rather than automatic discovery.
-
-Paste this, replacing both placeholders with actual absolute paths:
-
-> Read <SKILL_DIR>/SKILL.md and the references needed for this task. Report the resolved skill directory, declared version, and whether all four references and scripts/verify_handoff.py are readable. Use <TASK_DIR> for this task's private records. Do not start a scheduler during this installation check.
-
-Expected result: version `0.3.3`, the intended resolved path, and readable resources. A directory existing is only the installation check; the first useful task below checks actual use.
-
-### Optional: inspect the release with the bundled checker
-
-Check `python3 --version` on macOS or `py -3 --version` on Windows. Use an installed Python 3.11+ interpreter. If missing, install a current supported Python from [python.org](https://www.python.org/downloads/) and reopen the terminal. No `pip install` is needed.
-
-macOS, with the default root:
-
-```bash
-python3 "$HOME/Desktop/AgentKnowledge/skills/personal-agent-growth/scripts/verify_handoff.py" \
-  --archive "$HOME/Desktop/AgentKnowledge/downloads/0.3.3/personal-agent-growth-0.3.3.zip" \
-  --manifest "$HOME/Desktop/AgentKnowledge/downloads/0.3.3/manifest.json"
-echo "Exit code: $?"
-```
-
-Windows, with the default D:/C: selection:
+To check it again:
 
 ```powershell
 $GrowthRoot = if (Test-Path -LiteralPath 'D:\') { 'D:\AgentKnowledge' } else { 'C:\AgentKnowledge' }
-py -3 -X utf8 (Join-Path $GrowthRoot 'skills\personal-agent-growth\scripts\verify_handoff.py') --archive (Join-Path $GrowthRoot 'downloads\0.3.3\personal-agent-growth-0.3.3.zip') --manifest (Join-Path $GrowthRoot 'downloads\0.3.3\manifest.json')
-Write-Output "Exit code: $LASTEXITCODE"
+py -3 -B -X utf8 (Join-Path $GrowthRoot 'skills\personal-agent-growth\scripts\verify_handoff.py') --archive (Join-Path $GrowthRoot 'downloads\0.4.1\personal-agent-growth-0.4.1.zip') --manifest (Join-Path $GrowthRoot 'downloads\0.4.1\manifest.json')
+if ($LASTEXITCODE -ne 0) { throw 'Verification did not pass.' }
 ```
 
-Change paths for a custom or manual installation. Expected: `PASS`, exit `0`, **31 checks**. Exit `1` means rejection after inspection; exit `2` means incomplete inspection. If Python did not start, no package verdict exists. The checker compares the supplied archive and manifest; it does not authenticate a publisher or test agent behavior. See the [manifest contract](manifest.md).
+Junctions require a supporting filesystem. If link creation is unavailable, put the entire extracted folder directly in a supported discovery directory. Finder aliases and Windows `.lnk` shortcuts are not filesystem links. Windows command checks and desktop Agent behavior are reported separately in [compatibility](compatibility.en.md).
 
-Keep `-X utf8` when invoking the checker on Windows, including from another process. With Python 3.11's default redirected-output encoding, a Chinese path can otherwise cause `UnicodeEncodeError` before the JSON result is written. When reading the JSON from a file or subprocess, decode it as UTF-8. For a version-controlled memory file, choose UTF-8 explicitly rather than relying on a PowerShell version's default encoding.
+## 4. Manual, project-level, and other environments
 
-## 6. Initialize private memory and complete a first task
+Download the exact asset and its manifest from [v0.4.1](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.4.1). GitHub's automatic Source code ZIP serves a different purpose from the installer asset. Extract the whole folder into `.agents/skills/personal-agent-growth` so `SKILL.md` is directly inside it.
 
-Choose one task folder, for example `~/Desktop/AgentKnowledge/tasks/install-review` or `D:\AgentKnowledge\tasks\install-review`. Give both hosts its full absolute path. Expand `~` to your actual user path when sharing it.
+Choose one user-level or project-level entry; a project entry uses `<project>/.agents/skills`. Linux can use the macOS procedure with `$HOME/AgentKnowledge`. WSL, SSH, and cloud environments have separate filesystems, accounts, and permissions. Identical path strings do not synchronize data. Configure authorized transfer/mounting and path mappings before cross-device use.
 
-A useful layout is:
+## 5. Verify actual loading
 
-```text
-tasks/install-review/
-├── task.md                 # Goal, scope, completion criteria, current index
-├── state.json              # Task ID, revision, phase, writer, next action
-├── memory/
-│   ├── preferences.json    # Explicit user preferences and their source
-│   └── lessons.md          # Evidence, revised decisions, limits
-└── evidence/               # Commands, outputs, input identities, results
+Codex/Cursor versions supporting Agent Skills can discover `.agents/skills`. Reload the host/project and select the skill using its current interface. If discovery is unavailable, explicitly read an absolute path:
+
+> Read <absolute-skill-path>/SKILL.md. Report version 0.4.1, its resolved path, and the references/scripts needed for this task. The private learning root is <absolute-path>. Resume the project using the Markdown protocol and identify the context, newest node, and source revisions actually read. Do not create a schedule for this installation check.
+
+Directory presence, discovery, automatic selection, and execution are different evidence. Explicit reading is usable but should be labeled honestly. Continue with the [full tutorial](tutorial.en.md) to produce preparation and review artifacts.
+
+## 6. Shared memory and optional MCP
+
+Both hosts read the same actual directory, project ID, and revision. The current writer finishes writing, retains artifacts, and transfers responsibility; the receiver checks before updating. Reading a separate copy does not establish shared memory. Follow the [Markdown contract](markdown-learning.en.md).
+
+The existing `scripts/host.py` is a separate optional SQLite checkpoint adapter with five `growth_*` tools. Configuration, approval, and real model use require distinct checks. It does not implement the daily/weekly Markdown system. See the [adapter tutorial](tutorial.en.md#adapter). Do not let two writable stores control the same project state.
+
+## 7. Future review and notifications
+
+Authorize real scheduling only for useful spaced review or expected new input. Save the task, action, expiry, run limit, owner, and binding ID. Read the backend back, verify a later event, execute and inspect work, then stop. Contact the user only for a decision; avoid unchanged routine notifications.
+
+Without a scheduler interface, retain not_registered. A Markdown plan does not register a task. In-process idle callbacks, manual continuation, and app-closed OS wakeups are separate behaviors. The [continuation protocol](../references/autonomous-continuation.en.md) defines the complete chain.
+
+## 8. Complete offline bundle and experience
+
+Inside the full bundle, run `python3 -B tools/check_delivery.py .`, then follow [START-HERE](../START-HERE.md) to install into a fresh root. The installer retains a distribution copy, copies the seed, and creates empty task storage; it creates no discovery entry or background work. Historical methods need current applicability and are not a current user profile or a new trial.
+
+Native `learning` commands from the separate Koder candidate are outside this installation. The public skill provides protocols, templates, and tools; native product injection remains subject to its own acceptance limits.
+
+## 9. Update, roll back, remove
+
+Finish active writes and pause bindings that read the old version. Back up skill and memory separately. Download and verify into a new version directory, compare personal edits, and switch the discovery entry. Preserve learning/tasks, and do not overwrite a live library index with a new seed. In a fresh chat, verify paths/version and recover a task.
+
+Rollback restores a known usable skill version while retaining newer facts, failures, and revisions. Check compatibility before continuing; do not overwrite current truth with an old memory backup.
+
+Before removal, stop related host schedules. If MCP was configured, back up the configuration, remove only `personal_agent_growth`, and reload. Deleting files does not unregister schedules or MCP entries.
+
+On macOS, inspect `readlink "$HOME/.agents/skills/personal-agent-growth"`, confirm the target, then remove only that link with `unlink "$HOME/.agents/skills/personal-agent-growth"`. On Windows, confirm the printed target is the intended skill before running:
+
+```powershell
+$SkillEntry = Join-Path $env:USERPROFILE '.agents\skills\personal-agent-growth'
+$Entry = Get-Item -LiteralPath $SkillEntry -Force
+if ($Entry.LinkType -ne 'Junction') { throw 'This is not the expected junction. Inspect it first.' }
+Write-Output $Entry.Target
+cmd /c rmdir "$SkillEntry"
+if ($LASTEXITCODE -ne 0) { throw 'The junction was not removed.' }
 ```
 
-The agent creates these records when needed; installation does not populate a profile or import your chat history. Existing task records should be reused. Small tasks may use fewer files.
-
-Copy this prompt after replacing the two paths:
-
-> Use Personal Agent Growth at <SKILL_DIR>. Task memory is <TASK_DIR>. Complete a useful installation review: before checking, record which resources you expect to be available and why. Read the installed skill and its references, inspect the downloaded release with the verifier if Python is available, and save the actual commands, exit codes, output, and file identities. If a resource or environment assumption fails, identify the cause, learn only what is needed to fix it, and check again. Record what changed your judgment. Create or reuse task.md, state.json, and the evidence index. Record my preference: finish anything you can resolve yourself; contact me only for a decision I must make. Do not invent personal attributes. Leave a concrete review action for the next host. Do not create an automation for this installation review.
-
-This first task should leave a usable result, not just a folder tree. Check the saved output and the next action. It is valid to record an unavailable Python checker separately while completing file and resource checks.
-
-## 7. Resume and review in Cursor or Codex
-
-Finish the current write before switching tools. Ask the current host to save the result, transfer `writer` to the receiving host, and increment `state_revision`. Both tools must resolve the task directory to the same physical location. This is a cooperative writing rule, not an automatic database lock or sync service.
-
-In the receiving host, paste:
-
-> Read <SKILL_DIR>/SKILL.md. Resume from the actual records in <TASK_DIR>. First report task_id, state_revision, writer, the resolved task path, and the next action. Use the previous prediction, failure records, and lessons to complete the pending review. Reuse the existing checker or artifact, save new output, explain whether the evidence changes the earlier conclusion, and update the same state. Reread its revision immediately before writing. If another writer has advanced it, preserve the newer facts and resolve the handoff before writing. Do not create a separate memory copy or unnecessary chat.
-
-Confirm that the second host **read the current revision, used an earlier artifact, and wrote a new result to the same directory**. To check that it is reading files rather than repeating chat context, hand ownership back, record a useful new decision or counterexample, and have the receiving host review that newer revision. Do this only when it adds useful work.
-
-See [shared-memory rules](../references/shared-memory.md) for conflict handling and evidence identity.
-
-## 8. Optional: authorize a scheduled review
-
-Installation does not create a timer. Use scheduling when a future review, external result, or new input gives the next run a purpose. Complete work that is ready now.
-
-Example authorization, after replacing the task path:
-
-> For <TASK_DIR>, arrange a review tomorrow at 09:00 in my current time zone, using this host's supported scheduling interface. First check for an existing binding. Permit at most two automatic runs, expiring 48 hours after registration. Save the goal, review action, completion criteria, deadline, and scheduler owner. Read back the actual registered schedule and record its backend ID. On a real host trigger, recover the current state, perform the review, save evidence, and adjust or stop the schedule according to the result. Verify the stopped state when finished. Resolve routine problems yourself; ask only for a decision I must make. Do not send routine progress notifications.
-
-Use the host's actual notification settings where supported. Do not assume text in a prompt alone controls notifications. If the scheduling interface is unavailable, record that fact and the unregistered next action; do not claim a background job exists.
-
-The complete chain is: registration readback → real host event → state recovery → actual work → checked result → revised or stopped backend schedule. A plan file or `ACTIVE` label alone does not establish that chain. Prior trials verified native Codex wakeups; they did not verify a native Cursor scheduler or execution while the app is closed. Current capabilities must be checked in each host. See [scheduled continuation](../references/autonomous-continuation.md).
-
-## 9. Update, roll back, or uninstall
-
-### Update
-
-1. Finish or pause current writes and any bound schedule that would use the files being replaced. Record the current writer and state revision.
-2. Back up the canonical skill folder and task records separately. Preserve personal skill edits and their evidence before updating.
-3. Download the desired published release and its matching manifest into a new versioned download directory. Verify that release's hashes; the hashes above apply only to **0.3.3**.
-4. Extract into a staging directory and inspect its version, resources, and package result. Compare any local method changes before choosing what to keep.
-5. Rename the old canonical folder to a versioned backup, then move the new `personal-agent-growth` folder into the original canonical path. The discovery entry can keep pointing to that path. Leave the separate `tasks` directory in place.
-6. Open a new host chat, verify the resolved path/version, and review an existing task before reactivating a paused schedule through its actual host interface.
-
-If you installed a direct folder under `.agents/skills`, that folder is the canonical target. If you deliberately keep separate host copies, update and verify each. A Git clone is an alternative for maintainers: inspect local changes and the target revision before updating; do not use a destructive reset to replace personal edits.
-
-### Roll back
-
-Pause affected writes/schedules, preserve the failed candidate and its evidence, then restore the backed-up skill to the same canonical path. Recheck the loaded version. Retain newer task facts; review record compatibility instead of overwriting current memory with an older backup.
-
-### Uninstall
-
-1. Pause or delete this task's bound automation through its host and confirm the result. Removing files does not unregister a scheduler.
-2. Remove only the discovery entry. For the recommended macOS layout, the command below refuses to remove an ordinary directory:
-
-   ```bash
-   if [ -L "$HOME/.agents/skills/personal-agent-growth" ]; then
-     unlink "$HOME/.agents/skills/personal-agent-growth"
-   else
-     echo "No symbolic link removed. Inspect the installed directory first."
-   fi
-   ```
-
-   On Windows, confirm the entry is a junction before using the nonrecursive removal command:
-
-   ```powershell
-   $SkillEntry = Join-Path $env:USERPROFILE '.agents\skills\personal-agent-growth'
-   $Entry = Get-Item -LiteralPath $SkillEntry -Force
-   if ($Entry.LinkType -ne 'Junction') { throw 'This is not the expected junction. Inspect it first.' }
-   cmd /c rmdir "$SkillEntry"
-   if ($LASTEXITCODE -ne 0) { throw 'The junction was not removed.' }
-   ```
-
-3. Reopen the host. Keep or archive the canonical skill and task records as you prefer. With a manual direct-folder installation, move that folder out of the discovery directory instead. Delete private memory only when you intend to discard it.
+These steps remove discovery only, preserving the canonical copy and memory. The full-bundle installer can additionally verify and remove an unchanged skill: `python3 -B <root>/distribution/tools/local_install.py uninstall --root <root>`. It refuses changed/added files and retains experience, tasks, distribution, and the installation receipt. For a manual install, move the skill out of discovery first. The user controls separate deletion of private memory.
 
 ## 10. Troubleshooting
 
-| Symptom | Check or fix |
+| Symptom | Check and remedy |
 |---|---|
-| Skill is absent | Check the exact `.agents/skills/personal-agent-growth/SKILL.md` path, host execution environment, and folder access; reopen the host and try explicit loading. |
-| Two copies appear | Resolve each discovery entry. Keep the intended version and move the stale entry out of discovery after checking it. |
-| Installer says it already exists | Inspect the existing version. Use the update procedure; do not force-overwrite it. |
-| Junction or link fails | Check local filesystem support, writable paths, and stale entries. Use a direct-folder installation if necessary. |
-| Download is HTML or its hash differs | Use the named release assets, not “Source code”; redownload and compare. Do not skip the mismatch. |
-| Python is missing or too old | Install Python 3.11+ or select that interpreter explicitly. Loading Markdown does not require Python. |
-| Captured checker output is empty or shows `UnicodeEncodeError` | Use `py -3 -X utf8` (or `python -X utf8`) and decode the captured JSON as UTF-8. |
-| PowerShell 5.1 cannot find `Get-FileHash` after launch from another program | Start Windows PowerShell directly. For a Python launcher under PowerShell 7, remove `PSModulePath` only from the child process environment so 5.1 rebuilds its own module paths; do not change global module settings. |
-| Both tools claim shared memory, but revisions differ | Compare resolved paths, task_id, file content, and current writer. Same-looking paths on different devices are not the same files. |
-| Agent writes plans but performs no review | Explicitly select the skill, give a concrete artifact and completion check, and inspect saved commands/results. |
-| Nothing wakes automatically | Check a real backend registration, binding, host availability, deadline, and run limit. Installing the skill alone does not schedule work. |
-| A remote host cannot read memory | Configure an authorized transfer/mount and path mapping; copying a local path into a chat does not transfer files. |
+| Missing skill | Folder nesting, current runtime/user, permissions, reload, explicit-path fallback |
+| Existing installation | Inspect the old version and update without forced replacement |
+| Unicode output failure | `py -3 -X utf8` and explicit UTF-8 decoding |
+| HTML download/hash mismatch | Exact asset name/version; do not skip mismatch checks |
+| Different progress in two hosts | Resolved root, ID, revision, writer, artifact hashes |
+| Plan without a wakeup | Backend registration, binding, actual event, host availability |
+| PS5 module error under PS7 | Clear PSModulePath only in the PS5 child environment so it rebuilds; do not change global settings |
+| Weak tag drives planning | Inspect evidence and formula version, downgrade, revisit dependent plans |
 
-## Verification scope and sources
-
-The linked historical v0.3.2 record covers Linux, macOS Intel, and Windows utility/package checks. Current v0.3.3 results are recorded in GitHub Actions. Separate maintainer trials covered native Codex wakeups and same-Mac Cursor shared-memory recovery. These are different checks; they do not establish automatic selection in every fresh chat or behavior on every platform. See [release acceptance](release-0.3.2-acceptance.md) and [validation limits](validation.md).
-
-Current installation locations and host behavior were checked against [OpenAI's skills documentation](https://learn.chatgpt.com/docs/build-skills), [Cursor's skills documentation](https://cursor.com/docs/skills), and [Cursor's customization help](https://cursor.com/help/customization/skills). Windows commands use documented [New-Item junction support](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/new-item?view=powershell-7.5) and [Expand-Archive](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.archive/expand-archive?view=powershell-7.5).
-
-The package retains its [AGPL-3.0-only license](../LICENSE) and [notice](../NOTICE). Keep them with copies and modified distributions; see the [licensing guide](licensing.md) for the obligations.
+Directory conventions are checked against the [Agent Skills specification](https://agentskills.io/specification), [Cursor Skills documentation](https://cursor.com/docs/skills), and actual host capabilities. Preserve [LICENSE](../LICENSE) and [NOTICE](../NOTICE). See [compatibility](compatibility.en.md) for current and historical evidence.

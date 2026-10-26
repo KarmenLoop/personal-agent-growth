@@ -3,17 +3,23 @@ name: personal-agent-growth
 description: 处理需要跨步骤判断、主动补知识、根据反馈改计划或改进既有 skill 的任务。用于持续任务、跨宿主接续、定时恢复、重复返工、证据冲突和任务后复盘；简单独立请求直接完成。
 license: AGPL-3.0-only
 metadata:
-  version: "0.4.0"
+  version: "0.4.1"
 ---
 
 # 个人智能体成长
 
-## Executable local adapter
+[English](SKILL.en.md)
 
-Read [the current host tutorial](docs/tutorial.en.md) to configure the bundled Python 3.11+ CLI/MCP adapter. Verify real calls and saved state before claiming a connection. The tutorial distinguishes implemented local operations from scheduling, identity providers, and remote execution that require an authorized host.
+## 可选的既有交接适配器
+
+需要既有 SQLite 检查点模式时，按[宿主教程](docs/tutorial.zh-CN.md#adapter)配置 Python 3.11+ CLI/MCP 适配器。连接必须有真实调用与状态回读；它与 Markdown 学习模式分开，不提供宿主调度、身份账号或远程执行。
 
 
 围绕用户当前目标完成实际工作，把关键证据、改判和学习变更留下可复用记录。宿主提供工具与唤醒；此 skill 本身不会启动后台进程。
+
+## Markdown 学习记忆
+
+需要按日、按周、按项目沉淀与用户行为标签时，先读 [Markdown 学习协议](references/markdown-learning.md)。以 Markdown 为学习语义唯一真相，恢复必读 context 与最新 node，采用公开评分规则、来源纠正和按需注入；旧交接适配器及实验 JSON 与学习知识职责分开，不建立第二套可写画像。
 
 ## 开始与恢复
 
@@ -34,6 +40,8 @@ Read [the current host tutorial](docs/tutorial.en.md) to configure the bundled P
 每次尝试单独保存命令、输出和状态，再修正或复跑。保留失败记录；已经遗失的原始输出明确标为缺失，后写摘要不能冒充原始回执。
 
 ## 学习与改进
+
+用户启用递归自我改进时，先读 [Propose–Probe–Compose 与双层递归](references/recursive-improvement.md)。每个新任务提出通用短板、领域专用两份改法，各自与原版真实运行对照，再依据轨迹组合后继版本；组合版改变了组件时必须复验。Agent 自主调整获准范围内的提示词、工具、上下文、运行规则和编排策略，通过后启用并保留回退版本，无需逐条等待用户决定。模型配置固定，不做微调、强化学习或训练；未知服务端权重身份如实记录。任务内改进与跨任务元能力分别记账，经验库保留有效、无效及失败改法，后续适用任务实际加载。
 
 预计下一步会用到、但尚未掌握的内容，先做有范围的预习，并记录随后是否实际用上。出现错误后形成原因假设，补对应知识，再回到原任务验证。复习用变式或新的实际任务检查，不以复述旧答案代替应用。
 

@@ -1,0 +1,21 @@
+{
+  "kind": "portable_seed_derivative",
+  "source_revision": 4,
+  "source_index_sha256": "67d19fb537b1d5a1325d03949ddc562b81525826c3a8d5b35ff56f520484e6ca",
+  "scope": "Reviewed lesson excerpts and profile derivatives; private raw Agent events are omitted. Import does not constitute new adoption or Agent acceptance.",
+  "profiles": {
+    "offline-package-check": {
+      "source_sha256": "55ce7da5eab6024369167edaacecc7a5af41418c205443c495ce0475a2085e78",
+      "export_sha256": "55ce7da5eab6024369167edaacecc7a5af41418c205443c495ce0475a2085e78",
+      "changed_files": []
+    },
+    "meta:cross-domain-evidence": {
+      "source_sha256": "af3c2b187b4c749b1c42bab15a5d938a7324f39ae5e0bd1b6c3ce9f875f40a4a",
+      "export_sha256": "a288e4ce31afbb290ade7c2425f645d2b3ad7dbd1e883576fa7817050afe15e9",
+      "changed_files": [
+        "memory-location.json",
+        "scripts/context_loader.py"
+      ]
+    }
+  }
+}

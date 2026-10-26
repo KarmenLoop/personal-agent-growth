@@ -1,5 +1,7 @@
 # Team
 
+[中文](TEAM.zh-CN.md)
+
 **KARMENLOOP Official Team** creates and maintains Personal Agent Growth.
 
 We are based in **Shanghai, China** and build Koder and KARMEN BOT. This project grew out of practical work on agent task recovery, shared memory, focused learning, and verification.

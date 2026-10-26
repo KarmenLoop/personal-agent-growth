@@ -1,0 +1,12 @@
+{
+  "lesson": "Retrospective accounting of the six completed runs of this exact selected snapshot: total tokens were 2031758 versus baseline 2158546 (5.8738% less), but total elapsed time was 1452.831195s versus 1352.851230s (7.3903% more). The predefined sum-of-task-medians gain was 15.8466%, and paired portfolio median gain 10.1928%. Preserve all definitions; the numeric-check repair is a real cost. Do not describe this as an overall speedup or net savings.",
+  "limitations": "Coordinator review of the completed portfolio and current selected bytes, not a new post-adoption Agent task, independent third-domain transfer, or actual bill. Three repeated samples per task; the full optimization cost is only a measured lower bound.",
+  "next_probe": "When a genuinely new authorized task arrives, retrieve this cost review with the strategy and numeric-validation counterexamples; measure its full delivery and cumulative cost before broader promotion.",
+  "kind": "imported_review_excerpt",
+  "domain": "meta:cross-domain-evidence",
+  "active_sha256": "a288e4ce31afbb290ade7c2425f645d2b3ad7dbd1e883576fa7817050afe15e9",
+  "source_observation_sha256": "5877535d77be77f233b39a587ab201258e0f96c32d746f66d1d20445f7ed7f08",
+  "source_active_sha256": "af3c2b187b4c749b1c42bab15a5d938a7324f39ae5e0bd1b6c3ce9f875f40a4a",
+  "raw_evidence_distributed": false,
+  "observation_id": "seed-cross-domain-cost-review-20261023-01"
+}

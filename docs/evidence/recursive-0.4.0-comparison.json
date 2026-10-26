@@ -1,0 +1,73 @@
+{
+  "experiment_id": "recursive-archive-20261023-01",
+  "task_id": "offline-three-package-review",
+  "domain": "offline-package-check",
+  "frozen_sha256": "e1da31322c28c8ef1d1637a97b69e87f9675b1802b376ac8ede56413b4dc84e5",
+  "metric": "checker_processes",
+  "layer": "task",
+  "portfolio": [],
+  "optimization_cost": null,
+  "scope": "Recorded constraints and specified metric only; no overall efficiency claim",
+  "arms": {
+    "baseline": {
+      "quality_pass": true,
+      "checks": {
+        "coverage": true,
+        "raw_result_consistency": true,
+        "input_binding": true,
+        "receipts_present": true,
+        "card_reviewed": true
+      },
+      "cost": 3,
+      "snapshot_sha256": "c60786d04b4c0d6cc3f81354df3a4ac98aea42f7789a2b86157060e650382904"
+    },
+    "general": {
+      "quality_pass": true,
+      "checks": {
+        "coverage": true,
+        "raw_result_consistency": true,
+        "input_binding": true,
+        "receipts_present": true,
+        "card_reviewed": true
+      },
+      "cost": 3,
+      "snapshot_sha256": "43f063b09836b78c751e271fd849218d4e8474bbe59338f17779cae5a9f94d2f",
+      "relative_metric_gain": 0.0,
+      "reason": "no_demonstrated_gain"
+    },
+    "domain": {
+      "quality_pass": true,
+      "checks": {
+        "coverage": true,
+        "raw_result_consistency": true,
+        "input_binding": true,
+        "receipts_present": true,
+        "card_reviewed": true
+      },
+      "cost": 1,
+      "snapshot_sha256": "fb50d77184112bc5b03d847d2bd56fa131d833e571b943fc39ba14338a81a4ab",
+      "relative_metric_gain": 0.6666666666666666,
+      "reason": "measured_metric_gain"
+    },
+    "composed": {
+      "quality_pass": true,
+      "checks": {
+        "coverage": true,
+        "raw_result_consistency": true,
+        "input_binding": true,
+        "receipts_present": true,
+        "card_reviewed": true
+      },
+      "cost": 1,
+      "snapshot_sha256": "55ce7da5eab6024369167edaacecc7a5af41418c205443c495ce0475a2085e78",
+      "relative_metric_gain": 0.6666666666666666,
+      "reason": "measured_metric_gain"
+    }
+  },
+  "eligible": [
+    "domain",
+    "composed"
+  ],
+  "recommendation": "composed",
+  "composition_sha256": "cf2c2f5452aa3236ed02e519baead578c595a8c4bdd0f1f839a2082014ff294f"
+}

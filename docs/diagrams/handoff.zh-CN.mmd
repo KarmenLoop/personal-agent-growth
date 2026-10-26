@@ -1,0 +1,22 @@
+sequenceDiagram
+  participant A as 宿主 A / 当前责任方
+  participant M as 共享记忆
+  participant F as 产物与回执
+  participant B as 宿主 B / 接收方
+  A->>M: 读取 context、最新节点与修订 N
+  A->>F: 实际执行并保留输出
+  A->>M: 保存节点、下一动作及产物身份
+  A->>M: 复核 N，移交 writer，提交 N+1
+  A->>M: 回读新状态
+  B->>M: 解析同一根目录，读取 N+1
+  B->>F: 核对已有产物与来源哈希
+  alt 证据或修订发生变化
+    B->>M: 保留差异，协调后再写入
+  else 证据与责任均有效
+    B->>M: 读取相关经验并预习
+    B->>F: 实际执行复习变式并保存回执
+    B->>M: 将复习与后继提交为 N+2
+  end
+  A->>M: 迟到消息抵达，重新读取当前修订
+  Note over A,B: 原责任方跳过重复工作；路径字符串不证明共用记忆
+  Note over M,F: 真实 Agent 回合与测试进程交接分别留证

@@ -1,0 +1,151 @@
+{
+  "mermaid_version": "11.4.1",
+  "renderer": "Chromium via Playwright",
+  "scope": "Actual SVG rendering, not Agent behavior acceptance",
+  "diagrams": [
+    {
+      "source": "architecture.en.mmd",
+      "source_sha256": "931b2e5dce04bb41ed7adcace7845ba2fb7598f3d2ba11593b32804d4b23a2ff",
+      "output": "architecture.en.svg",
+      "output_sha256": "dc465e0a40a8c7d7fa3aafe85e6085cfab497eb6bf5c90f756fc06b6b1b9dc49",
+      "width": 2185.8203125,
+      "height": 2731.71875,
+      "labels": 57
+    },
+    {
+      "source": "architecture.zh-CN.mmd",
+      "source_sha256": "fdc0d05e15424d5581d296bf1e6ec54ef9381dd68b6d7dd930bc2aaddc1a407e",
+      "output": "architecture.zh-CN.svg",
+      "output_sha256": "87b647f3f95ea6ab7cf6f2a67d077effd40723b33316ccc2d30911df2c0aaa86",
+      "width": 2109.79296875,
+      "height": 2421.546875,
+      "labels": 57
+    },
+    {
+      "source": "cadence.en.mmd",
+      "source_sha256": "f63667a025147431eae29aca1d93fb7e7ad249ddba75bf22f646ddee5eb49ca1",
+      "output": "cadence.en.svg",
+      "output_sha256": "20442331a6cea13c3c38e77eaa2141471bb100f0e5bd1087547b56488bacd3a2",
+      "width": 1178.5,
+      "height": 1858.328125,
+      "labels": 45
+    },
+    {
+      "source": "cadence.zh-CN.mmd",
+      "source_sha256": "688a3feba42a9c704a79459e55a41537e0995494085eda221753149d2f396522",
+      "output": "cadence.zh-CN.svg",
+      "output_sha256": "161f48754f1e457727d11ce365a27748099c6120aceec90c7576eb4862a28f15",
+      "width": 1150.9649658203125,
+      "height": 1626.59375,
+      "labels": 45
+    },
+    {
+      "source": "continuation.en.mmd",
+      "source_sha256": "f67851e3c88d1a729aef8d1469d9274d497f5b0cd06fe5da1491ff285619deee",
+      "output": "continuation.en.svg",
+      "output_sha256": "de98f3a6d831d94d906699303f5a77482ed197d71d62acedadd37248565550b5",
+      "width": 1480.25390625,
+      "height": 2543.15625,
+      "labels": 47
+    },
+    {
+      "source": "continuation.zh-CN.mmd",
+      "source_sha256": "2e59eef7a1e1d50d5ba8beac122956c0a4730ced8987c88865bee37549319ce5",
+      "output": "continuation.zh-CN.svg",
+      "output_sha256": "0b0c762de0d2605edb3d90479a0672ec01a941cd490a9dd8fcdbc0bf191d459b",
+      "width": 1389.2890625,
+      "height": 2187.609375,
+      "labels": 47
+    },
+    {
+      "source": "handoff.en.mmd",
+      "source_sha256": "218d94d581c7f80988dfeabd6e1807129b4da540a12c7c0dc06c2f9c155d8015",
+      "output": "handoff.en.svg",
+      "output_sha256": "e23820f7c03532a3d0be2492762d6affc982588d0690b92eea6b92eb3da25374",
+      "width": 1425,
+      "height": 1017,
+      "labels": 25
+    },
+    {
+      "source": "handoff.zh-CN.mmd",
+      "source_sha256": "3f2e6a1d0713cb28fc0a5cdc32e3ed0c6a989e0d60ef3c33b855a85d68cbaeb4",
+      "output": "handoff.zh-CN.svg",
+      "output_sha256": "26eb485d1f5d299a774fd455302cc0d6f9f6cbb38cccd97b630d643031d7c1b7",
+      "width": 1067.5,
+      "height": 1017,
+      "labels": 25
+    },
+    {
+      "source": "memory.en.mmd",
+      "source_sha256": "124382cef0afae132f232b94a2d1849356f24545156b69b720110643852d5c85",
+      "output": "memory.en.svg",
+      "output_sha256": "5e7c8bb949dfa1fbdc31360dfd6fe013d1fd33ace61419d795fc39de0d26c3e8",
+      "width": 2063.592041015625,
+      "height": 989.450927734375,
+      "labels": 92
+    },
+    {
+      "source": "memory.zh-CN.mmd",
+      "source_sha256": "63a8701645ec91b676082de0c70cd1879eb16a82ac4fdbed38ead9c6f3daf1b6",
+      "output": "memory.zh-CN.svg",
+      "output_sha256": "66c4a38441297b25f0f20fa31780b9bbedafa4e500f429c7124f22780648181f",
+      "width": 1848.9188232421875,
+      "height": 937.9786376953125,
+      "labels": 92
+    },
+    {
+      "source": "reasoning.en.mmd",
+      "source_sha256": "8610e2468aa78a0d52aa30efe158757d62cbd9dd7d97fd3b0571985aaaf20086",
+      "output": "reasoning.en.svg",
+      "output_sha256": "4f52813fc7f712e3a1a23398362d34d4939b92a72680fd22a1fa622ed5f9f4ff",
+      "width": 2241.97314453125,
+      "height": 974.725830078125,
+      "labels": 92
+    },
+    {
+      "source": "reasoning.zh-CN.mmd",
+      "source_sha256": "ccb12ba1e24ab57eada8c8c40bc8bb2054bb90f4e14fb37e67a64e8e6f8dd96f",
+      "output": "reasoning.zh-CN.svg",
+      "output_sha256": "83bea1715e6d10280e825f85465e747d4d4568d987fe463ee6c24d3f06b24b70",
+      "width": 1674.121337890625,
+      "height": 959.42529296875,
+      "labels": 92
+    },
+    {
+      "source": "recursion.en.mmd",
+      "source_sha256": "463f0d55f035ca538bdce74cd6e7879e5aa9dc58d92fd7883588e3c4a4626673",
+      "output": "recursion.en.svg",
+      "output_sha256": "b7f96a8d72b5aa4195faf8ecbf5b2de9626987af86d92f8a88ee6701b8ca50ee",
+      "width": 2217.490234375,
+      "height": 1014.674072265625,
+      "labels": 92
+    },
+    {
+      "source": "recursion.zh-CN.mmd",
+      "source_sha256": "7dbb30ae246ccaea7756f06d790d82c16b3934e533103a9daac839a21ed6878b",
+      "output": "recursion.zh-CN.svg",
+      "output_sha256": "3557b3b96147cccf88f59a120ee26894b057eee5b622e02f93f6e6bdae68e14d",
+      "width": 1736.7271728515625,
+      "height": 966.61279296875,
+      "labels": 92
+    },
+    {
+      "source": "system.en.mmd",
+      "source_sha256": "d99bfd02e07b013f01a9fb5b8d3828a2ab51a74940c81d749295a578573df8a5",
+      "output": "system.en.svg",
+      "output_sha256": "4bba7890cb27a63a73e425d8f93bb59fc38fdde237a41acdf0091df1b16d24fc",
+      "width": 2528.63525390625,
+      "height": 1183.283203125,
+      "labels": 137
+    },
+    {
+      "source": "system.zh-CN.mmd",
+      "source_sha256": "24d7dd16f435d30a62a8a13b3cdc739baf74afed93d8425495c274e68ab6804e",
+      "output": "system.zh-CN.svg",
+      "output_sha256": "e41b22abc6c39f6750bf00cbd3c6e665bc24dd88f6017a4808b20f744dcbd47a",
+      "width": 1997.1734619140625,
+      "height": 1116.6561279296875,
+      "labels": 137
+    }
+  ]
+}

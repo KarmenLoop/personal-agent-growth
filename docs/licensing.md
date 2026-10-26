@@ -1,5 +1,7 @@
 # Using and modifying this project
 
+[中文](licensing.zh-CN.md)
+
 Personal Agent Growth is licensed under **AGPL-3.0-only**. The unmodified license text in [LICENSE](../LICENSE) governs; this guide is a summary, not additional license terms.
 
 The grant in [NOTICE](../NOTICE) covers the team's original skill instructions, reference material, utilities, tests, and repository documentation. Editable Markdown, configuration, and Python files are the source form of this project.
