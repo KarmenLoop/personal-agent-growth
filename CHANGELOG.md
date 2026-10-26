@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.4.2 — 2026-10-27
+
+- Add a bilingual regression-repair experience and route all-failures repair/republication requests to it.
+- Publish sanitized evidence from the repaired private Koder candidate: 1461 pass, zero failures/cancellations, and 21 explicit skips; reconcile all 45 historical nonpassing records.
+- Preserve the unsuccessful repair attempts and final before/after source identity checks.
+- Update the complete bilingual distribution and installation instructions; retain all 16 rendered diagrams, editable sources, and 32 templates.
+- Keep private Koder code, unavailable Windows Agent acceptance, and public Skill utility evidence distinct.
+
 ## 0.4.1 — 2026-10-27
 
 - Integrate retained Propose–Probe–Compose experiments, full-task measurements, portable experience seed, and complete delivery tooling with the published host adapter.

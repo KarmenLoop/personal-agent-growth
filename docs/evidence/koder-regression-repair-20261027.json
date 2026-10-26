@@ -1,0 +1,785 @@
+{
+  "schema": 1,
+  "date": "2026-10-27",
+  "scope": "Maintainer-run private Koder candidate regression; sanitized receipts, not public product source or new desktop Agent proof",
+  "private_source_commit": "41f82c05a6d104edb295a7c8e80ca2f5c73b9e11",
+  "source_unchanged": true,
+  "source_files": 2624,
+  "source_inventory_sha256": "af8dfc3117d3e34479a93e140bd04b449901fb64c78b812f7286195771314de7",
+  "host": {
+    "platform": "macOS-27.0-arm64-arm-64bit",
+    "arch": "arm64",
+    "node": "v22.23.2"
+  },
+  "command": "npm test",
+  "runner": {
+    "file_concurrency": 2,
+    "file_timeout_ms": 60000,
+    "package_setup": "fresh complete archive per run; isolated writable copies",
+    "terminal": "xterm-256color plus explicit dumb-terminal tests"
+  },
+  "original_candidate": {
+    "commit": "fa854e88f5a7325399f9a2f32950848737cdf1d9",
+    "tests": 1454,
+    "pass": 1388,
+    "fail": 31,
+    "cancelled": 14,
+    "skipped": 21
+  },
+  "final": {
+    "tests": 1482,
+    "pass": 1461,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 21,
+    "todo": 0
+  },
+  "whole_command_seconds": 337.703965958,
+  "tap_duration_ms": 289420.553916,
+  "raw_stdout_sha256": "eba43bc90db06cd06ce13e4a55671a57fde8974186fb5dfe51a81c480225dbc5",
+  "published_stdout_sha256": "3c69de96887127ae9b2ed2d4399130f10a8c955cffa5ebe15346af56ab7578c9",
+  "redaction": "Private checkout and owned temporary paths replaced; original bytes retained privately with hash",
+  "nonpassing_reconciliation": [
+    {
+      "original_name": "--json prints one parseable event per line and a final result",
+      "original_file": "test/agent.test.mjs",
+      "original_failure_type": "'testCodeFailure'",
+      "current": "--json prints one parseable event per line and a final result",
+      "result": "PASS",
+      "repair": "Expected JSON events omitted the existing todo event; retained exact event sequencing."
+    },
+    {
+      "original_name": "test/apps-bundle.test.mjs",
+      "original_file": "test/apps-bundle.test.mjs",
+      "original_failure_type": "'testTimeoutFailure'",
+      "current": [
+        "test/apps-bundle.test.mjs"
+      ],
+      "result": "FILE_COMPLETED_IN_ZERO_FAILURE_SUITE",
+      "repair": "Bound concurrency and build one fresh materialized archive per suite; execute isolated bundle behavior."
+    },
+    {
+      "original_name": "test/apps-license.test.mjs",
+      "original_file": "test/apps-license.test.mjs",
+      "original_failure_type": "'testTimeoutFailure'",
+      "current": [
+        "test/apps-license.test.mjs"
+      ],
+      "result": "FILE_COMPLETED_IN_ZERO_FAILURE_SUITE",
+      "repair": "Bound competing heavy setup without raising the 60 second file deadline."
+    },
+    {
+      "original_name": "a pending automatic download leaves real queued chat input usable and is cancelled on exit",
+      "original_file": "test/automatic-update-responsive.test.mjs",
+      "original_failure_type": "'testCodeFailure'",
+      "current": "a pending automatic download leaves real queued chat input usable and is cancelled on exit",
+      "result": "PASS",
+      "repair": "Explicitly enable the update scenario outside the helper default CI opt-out; normalize native readline TERM."
+    },
+    {
+      "original_name": "help in Chinese and English, per-command help, tutorial",
+      "original_file": "test/basics.test.mjs",
+      "original_failure_type": "'testCodeFailure'",
+      "current": "help in Chinese and English, per-command help, tutorial",
+      "result": "PASS",
+      "repair": "Match the current 180-lesson runtime and retained section titles."
+    },
+    {
+      "original_name": "test/cli-anything.test.mjs",
+      "original_file": "test/cli-anything.test.mjs",
+      "original_failure_type": "'testTimeoutFailure'",
+      "current": [
+        "test/cli-anything.test.mjs"
+      ],
+      "result": "FILE_COMPLETED_IN_ZERO_FAILURE_SUITE",
+      "repair": "Bound competing heavy setup without raising the 60 second file deadline."
+    },
+    {
+      "original_name": "old graduates resume at the new consent chapters and retain their shell",
+      "original_file": "test/consent-content.test.mjs",
+      "original_failure_type": "'testCodeFailure'",
+      "current": "old graduates resume at the new consent chapters and retain their shell",
+      "result": "PASS",
+      "repair": "Match the 180-lesson course while retaining saved progress assertions."
+    },
+    {
+      "original_name": "long conversations retain original constraints through bounded carry-over",
+      "original_file": "test/context-memory.test.mjs",
+      "original_failure_type": "'testCodeFailure'",
+      "current": "long conversations retain original constraints through bounded carry-over",
+      "result": "PASS",
+      "repair": "Project public tool definitions and bounded schema annotations; retain actual tool execution constraints and both budget bounds."
+    },
+    {
+      "original_name": "test/cross-platform.test.mjs",
+      "original_file": "test/cross-platform.test.mjs",
+      "original_failure_type": "'testTimeoutFailure'",
+      "current": [
+        "test/cross-platform.test.mjs",
+        "test/cross-platform-linux.test.mjs"
+      ],
+      "result": "FILE_COMPLETED_IN_ZERO_FAILURE_SUITE",
+      "repair": "Materialize nested dependency links; preserve archive byte equivalence and all platform-selection cases in separately bounded files."
+    },
+    {
+      "original_name": "native development tools research, clarify, preserve answers and write a plan under original approvals",
+      "original_file": "test/development-workflow.test.mjs",
+      "original_failure_type": "'testCodeFailure'",
+      "current": "native development tools research, clarify, preserve answers and write a plan under original approvals",
+      "result": "PASS",
+      "repair": "Make the planning fixture request planning explicitly; execution requests retain artifact gates."
+    },
+    {
+      "original_name": "preview installers and update share the tag channel; CMD retrieves its exact versioned website mirror",
+      "original_file": "test/download-route.test.mjs",
+      "original_failure_type": "'testCodeFailure'",
+      "current": "release installers and update share the tag channel; CMD retrieves its exact versioned website mirror",
+      "result": "PASS",
+      "repair": "Align updater default with runtime VERSION and current installer tag."
+    },
+    {
+      "original_name": "engine commands: list, add, use, test handshake, unknown engine",
+      "original_file": "test/engine-qr.test.mjs",
+      "original_failure_type": "'testCodeFailure'",
+      "current": "engine commands: list, add, use, test handshake, unknown engine",
+      "result": "PASS",
+      "repair": "Correct the expected runtime version to the actual candidate."
+    },
+    {
+      "original_name": "busy input can open slash options and fill without submitting",
+      "original_file": "test/input-reliability.test.mjs",
+      "original_failure_type": "'testTimeoutFailure'",
+      "current": "busy input can open slash options and fill without submitting",
+      "result": "PASS",
+      "repair": "Use an explicit xterm environment for native readline while retaining dedicated dumb-terminal coverage."
+    },
+    {
+      "original_name": "coalesced typing filters the menu and no-match stays visible",
+      "original_file": "test/input-reliability.test.mjs",
+      "original_failure_type": "'testCodeFailure'",
+      "current": "coalesced typing filters the menu and no-match stays visible",
+      "result": "PASS",
+      "repair": "Use an explicit xterm environment for native readline while retaining dedicated dumb-terminal coverage."
+    },
+    {
+      "original_name": "test/installer.test.mjs",
+      "original_file": "test/installer.test.mjs",
+      "original_failure_type": "'testTimeoutFailure'",
+      "current": [
+        "test/installer.test.mjs",
+        "test/installer-lifecycle.test.mjs",
+        "test/installer-integrity.test.mjs"
+      ],
+      "result": "FILE_COMPLETED_IN_ZERO_FAILURE_SUITE",
+      "repair": "Share a fresh read-only archive, isolate mutation roots, and split unrelated lifecycle and integrity groups without changing assertions/deadlines."
+    },
+    {
+      "original_name": "current-terminal prefill stays editable, sends only the edited task, and picker cancellation stays local",
+      "original_file": "test/prefill-terminal.test.mjs",
+      "original_failure_type": "'testCodeFailure'",
+      "current": "current-terminal prefill stays editable, sends only the edited task, and picker cancellation stays local",
+      "result": "PASS",
+      "repair": "Stage the editable draft before painting the prompt/footer; normalize native readline TERM."
+    },
+    {
+      "original_name": "conversation suggestions are optional, editable, refreshed by context, and cleared on new sessions",
+      "original_file": "test/prefill-terminal.test.mjs",
+      "original_failure_type": "'testCodeFailure'",
+      "current": "conversation suggestions are optional, editable, refreshed by context, and cleared on new sessions",
+      "result": "PASS",
+      "repair": "Stage the editable draft before painting the prompt/footer; normalize native readline TERM."
+    },
+    {
+      "original_name": "prefills are editable single-line drafts, never submitted by a newline or control sequence",
+      "original_file": "test/prefill.test.mjs",
+      "original_failure_type": "'testCodeFailure'",
+      "current": "prefills are editable single-line drafts, never submitted by a newline or control sequence",
+      "result": "PASS",
+      "repair": "Use an explicit xterm environment for native readline while retaining dedicated dumb-terminal coverage."
+    },
+    {
+      "original_name": "fresh approval questions cannot consume a staged task and snapshots retain it",
+      "original_file": "test/prefill.test.mjs",
+      "original_failure_type": "'testCodeFailure'",
+      "current": "fresh approval questions cannot consume a staged task and snapshots retain it",
+      "result": "PASS",
+      "repair": "Use an explicit xterm environment for native readline while retaining dedicated dumb-terminal coverage."
+    },
+    {
+      "original_name": "freeze preserves a staged draft for update handoff without putting it in the input queue",
+      "original_file": "test/prefill.test.mjs",
+      "original_failure_type": "'testCodeFailure'",
+      "current": "freeze preserves a staged draft for update handoff without putting it in the input queue",
+      "result": "PASS",
+      "repair": "Use an explicit xterm environment for native readline while retaining dedicated dumb-terminal coverage."
+    },
+    {
+      "original_name": "runtime, package, install targets, full guides and eight tutorials describe the same source candidate",
+      "original_file": "test/release-docs-consistency.test.mjs",
+      "original_failure_type": "'testCodeFailure'",
+      "current": "runtime, package, install targets, full guides and eight tutorials describe the same source candidate",
+      "result": "PASS",
+      "repair": "Assert the actual Chinese 180-lesson guide and explicitly retained English 30-lesson guide."
+    },
+    {
+      "original_name": "MiniMax HTTP 401 remains an authentication rejection when memory falls back to RAM",
+      "original_file": "test/screenshot-minimax-regression.test.mjs",
+      "original_failure_type": "'testCodeFailure'",
+      "current": "MiniMax HTTP 401 remains an authentication rejection when memory falls back to RAM",
+      "result": "PASS",
+      "repair": "Canonicalize owned macOS temporary roots so memory fallback reaches the actual HTTP 401 contract."
+    },
+    {
+      "original_name": "test/session-dock.test.mjs",
+      "original_file": "test/session-dock.test.mjs",
+      "original_failure_type": "'testTimeoutFailure'",
+      "current": [
+        "test/session-dock.test.mjs"
+      ],
+      "result": "FILE_COMPLETED_IN_ZERO_FAILURE_SUITE",
+      "repair": "Complete the standalone Escape decoding interval before sending the next control key; normalize native readline TERM."
+    },
+    {
+      "original_name": "busy steer adds context without aborting, preserving a still-editable unsent draft across deltas",
+      "original_file": "test/session-input-terminal.test.mjs",
+      "original_failure_type": "'testCodeFailure'",
+      "current": "busy steer adds context without aborting, preserving a still-editable unsent draft across deltas",
+      "result": "PASS",
+      "repair": "Use an explicit xterm environment for native readline while retaining dedicated dumb-terminal coverage."
+    },
+    {
+      "original_name": "busy composer preserves editable drafts, FIFO tasks and fresh approvals",
+      "original_file": "test/session-input.test.mjs",
+      "original_failure_type": "'testCodeFailure'",
+      "current": "busy composer preserves editable drafts, FIFO tasks and fresh approvals",
+      "result": "PASS",
+      "repair": "Use an explicit xterm environment for native readline while retaining dedicated dumb-terminal coverage."
+    },
+    {
+      "original_name": "test/session-todo.test.mjs",
+      "original_file": "test/session-todo.test.mjs",
+      "original_failure_type": "'testCodeFailure'",
+      "current": [
+        "test/session-todo.test.mjs"
+      ],
+      "result": "FILE_COMPLETED_IN_ZERO_FAILURE_SUITE",
+      "repair": "Load the source/bundled kernel through its existing resolver."
+    },
+    {
+      "original_name": "koder setup on Windows PowerShell: env-variable key, setx hint, koder.cmd editor snippet, fallback engine is disabled",
+      "original_file": "test/setup.test.mjs",
+      "original_failure_type": "'cancelledByParent'",
+      "current": "koder setup on Windows PowerShell: env-variable key, setx hint, koder.cmd editor snippet, fallback engine is disabled",
+      "result": "PASS",
+      "repair": "Select the exact completion row instead of the similarly named notification switch; give the fixture bounded diagnostics."
+    },
+    {
+      "original_name": "koder setup without a terminal explains itself; /setup in a scripted chat does not hang",
+      "original_file": "test/setup.test.mjs",
+      "original_failure_type": "'cancelledByParent'",
+      "current": "koder setup without a terminal explains itself; /setup in a scripted chat does not hang",
+      "result": "PASS",
+      "repair": "Select the exact completion row instead of the similarly named notification switch; give the fixture bounded diagnostics."
+    },
+    {
+      "original_name": "editor --os and engine install on Windows",
+      "original_file": "test/setup.test.mjs",
+      "original_failure_type": "'cancelledByParent'",
+      "current": "editor --os and engine install on Windows",
+      "result": "PASS",
+      "repair": "Select the exact completion row instead of the similarly named notification switch; give the fixture bounded diagnostics."
+    },
+    {
+      "original_name": "context settings edit active model limits without re-entering the API key",
+      "original_file": "test/setup.test.mjs",
+      "original_failure_type": "'cancelledByParent'",
+      "current": "context settings edit active model limits without re-entering the API key",
+      "result": "PASS",
+      "repair": "Select the exact completion row instead of the similarly named notification switch; give the fixture bounded diagnostics."
+    },
+    {
+      "original_name": "setup menu exposes optional memory learning/soul and computer scope without granting on navigation",
+      "original_file": "test/setup.test.mjs",
+      "original_failure_type": "'cancelledByParent'",
+      "current": "setup menu exposes optional memory learning/soul and computer scope without granting on navigation",
+      "result": "PASS",
+      "repair": "Select the exact completion row instead of the similarly named notification switch; give the fixture bounded diagnostics."
+    },
+    {
+      "original_name": "unavailable Token Plan stays gray and cannot enter key setup",
+      "original_file": "test/setup.test.mjs",
+      "original_failure_type": "'cancelledByParent'",
+      "current": "unavailable Token Plan stays gray and cannot enter key setup",
+      "result": "PASS",
+      "repair": "Select the exact completion row instead of the similarly named notification switch; give the fixture bounded diagnostics."
+    },
+    {
+      "original_name": "model Setup automatically discovers account models and saves only an explicit selection",
+      "original_file": "test/setup.test.mjs",
+      "original_failure_type": "'cancelledByParent'",
+      "current": "model Setup automatically discovers account models and saves only an explicit selection",
+      "result": "PASS",
+      "repair": "Select the exact completion row instead of the similarly named notification switch; give the fixture bounded diagnostics."
+    },
+    {
+      "original_name": "actual Agent reads bundled resources and executes a real helper through the existing shell",
+      "original_file": "test/skill-bundles.test.mjs",
+      "original_failure_type": "'testCodeFailure'",
+      "current": "actual Agent reads bundled resources and executes a real helper through the existing shell",
+      "result": "PASS",
+      "repair": "Use the documented preparation step before executing a bundled skill helper in its owned workspace."
+    },
+    {
+      "original_name": "typing / opens options immediately; navigation and selection only fill an editable draft",
+      "original_file": "test/slash-menu-terminal.test.mjs",
+      "original_failure_type": "'testCodeFailure'",
+      "current": "typing / opens options immediately; navigation and selection only fill an editable draft",
+      "result": "PASS",
+      "repair": "Use an explicit xterm environment for native readline while retaining dedicated dumb-terminal coverage."
+    },
+    {
+      "original_name": "slash filtering, Escape, exact commands and pasted commands preserve normal input",
+      "original_file": "test/slash-menu-terminal.test.mjs",
+      "original_failure_type": "'testCodeFailure'",
+      "current": "slash filtering, Escape, exact commands and pasted commands preserve normal input",
+      "result": "PASS",
+      "repair": "Use an explicit xterm environment for native readline while retaining dedicated dumb-terminal coverage."
+    },
+    {
+      "original_name": "current conversation suggestions lead the menu and are revalidated before filling",
+      "original_file": "test/slash-menu-terminal.test.mjs",
+      "original_failure_type": "'testCodeFailure'",
+      "current": "current conversation suggestions lead the menu and are revalidated before filling",
+      "result": "PASS",
+      "repair": "Use an explicit xterm environment for native readline while retaining dedicated dumb-terminal coverage."
+    },
+    {
+      "original_name": "selection consumes one CRLF packet, pasted text stays literal, and commands remain browseable",
+      "original_file": "test/slash-menu-terminal.test.mjs",
+      "original_failure_type": "'testCodeFailure'",
+      "current": "selection consumes one CRLF packet, pasted text stays literal, and commands remain browseable",
+      "result": "PASS",
+      "repair": "Use an explicit xterm environment for native readline while retaining dedicated dumb-terminal coverage."
+    },
+    {
+      "original_name": "small terminal falls back and active model turns keep a popup",
+      "original_file": "test/slash-menu-terminal.test.mjs",
+      "original_failure_type": "'testCodeFailure'",
+      "current": "small terminal falls back and active model turns keep a popup",
+      "result": "PASS",
+      "repair": "Use an explicit xterm environment for native readline while retaining dedicated dumb-terminal coverage."
+    },
+    {
+      "original_name": "PageUp wraps short filtered context lists and never stages a missing row",
+      "original_file": "test/slash-menu-terminal.test.mjs",
+      "original_failure_type": "'testCodeFailure'",
+      "current": "PageUp wraps short filtered context lists and never stages a missing row",
+      "result": "PASS",
+      "repair": "Use an explicit xterm environment for native readline while retaining dedicated dumb-terminal coverage."
+    },
+    {
+      "original_name": "split Windows CRLF selects without submitting and the next explicit Enter still sends",
+      "original_file": "test/slash-menu-terminal.test.mjs",
+      "original_failure_type": "'testCodeFailure'",
+      "current": "split Windows CRLF selects without submitting and the next explicit Enter still sends",
+      "result": "PASS",
+      "repair": "Use an explicit xterm environment for native readline while retaining dedicated dumb-terminal coverage."
+    },
+    {
+      "original_name": "review sends diff, repo rules and call sites; formats text, markdown, json, github",
+      "original_file": "test/workflows.test.mjs",
+      "original_failure_type": "'testCodeFailure'",
+      "current": "review sends diff, repo rules and call sites; formats text, markdown, json, github",
+      "result": "PASS",
+      "repair": "Classify CLI review/test/fix workflows correctly; keep generated-artifact gates and external fix-loop checks."
+    },
+    {
+      "original_name": "review --fix applies the fix and --check verifies it",
+      "original_file": "test/workflows.test.mjs",
+      "original_failure_type": "'testCodeFailure'",
+      "current": "review --fix applies the fix and --check verifies it",
+      "result": "PASS",
+      "repair": "Classify CLI review/test/fix workflows correctly; keep generated-artifact gates and external fix-loop checks."
+    },
+    {
+      "original_name": "fix loops until the check passes",
+      "original_file": "test/workflows.test.mjs",
+      "original_failure_type": "'testCodeFailure'",
+      "current": "fix loops until the check passes",
+      "result": "PASS",
+      "repair": "Classify CLI review/test/fix workflows correctly; keep generated-artifact gates and external fix-loop checks."
+    },
+    {
+      "original_name": "test generation targets changed source files and follows existing tests",
+      "original_file": "test/workflows.test.mjs",
+      "original_failure_type": "'testCodeFailure'",
+      "current": "test generation targets changed source files and follows existing tests",
+      "result": "PASS",
+      "repair": "Classify CLI review/test/fix workflows correctly; keep generated-artifact gates and external fix-loop checks."
+    }
+  ],
+  "skipped": [
+    "Kimi Responses: real CLI file-tool continuation retains private protocol state # SKIP Temporarily unavailable by user decision; public refusal is covered by provider-availability.test.mjs; prior enabled file-tool contract is retained for future re-acceptance.",
+    "Alibaba Token Plan openai: real CLI file-tool continuation retains private protocol state # SKIP Temporarily unavailable by user decision; public refusal is covered by provider-availability.test.mjs; prior enabled file-tool contract is retained for future re-acceptance.",
+    "Alibaba Token Plan responses: real CLI file-tool continuation retains private protocol state # SKIP Temporarily unavailable by user decision; public refusal is covered by provider-availability.test.mjs; prior enabled file-tool contract is retained for future re-acceptance.",
+    "Alibaba Token Plan anthropic: real CLI file-tool continuation retains private protocol state # SKIP Temporarily unavailable by user decision; public refusal is covered by provider-availability.test.mjs; prior enabled file-tool contract is retained for future re-acceptance.",
+    "Volcano Coding Plan openai: real CLI file-tool continuation retains private protocol state # SKIP Temporarily unavailable by user decision; public refusal is covered by provider-availability.test.mjs; prior enabled file-tool contract is retained for future re-acceptance.",
+    "Volcano Coding Plan responses: real CLI file-tool continuation retains private protocol state # SKIP Temporarily unavailable by user decision; public refusal is covered by provider-availability.test.mjs; prior enabled file-tool contract is retained for future re-acceptance.",
+    "Volcano Coding Plan anthropic: real CLI file-tool continuation retains private protocol state # SKIP Temporarily unavailable by user decision; public refusal is covered by provider-availability.test.mjs; prior enabled file-tool contract is retained for future re-acceptance.",
+    "Volcano API openai: real CLI file-tool continuation retains private protocol state # SKIP Temporarily unavailable by user decision; public refusal is covered by provider-availability.test.mjs; prior enabled file-tool contract is retained for future re-acceptance.",
+    "Volcano API responses: real CLI file-tool continuation retains private protocol state # SKIP Temporarily unavailable by user decision; public refusal is covered by provider-availability.test.mjs; prior enabled file-tool contract is retained for future re-acceptance.",
+    "Volcano API anthropic: real CLI file-tool continuation retains private protocol state # SKIP Temporarily unavailable by user decision; public refusal is covered by provider-availability.test.mjs; prior enabled file-tool contract is retained for future re-acceptance.",
+    "default CLI gateway obtains original Core lease; second host cannot subscribe and shutdown releases it # SKIP",
+    "host review regressions use configured Core, original SDK and the independently bundled CLI # SKIP",
+    "Kimi K3 official international endpoint receives its supported token field and reasoning control # SKIP Temporarily unavailable by user decision; public refusal is covered by provider-availability.test.mjs; prior enabled file-tool contract is retained for future re-acceptance.",
+    "Kimi China and international Chat Completions complete real file-tool continuations with nullable SSE fields # SKIP Temporarily unavailable by user decision; public refusal is covered by provider-availability.test.mjs; prior enabled file-tool contract is retained for future re-acceptance.",
+    "Kimi, DeepSeek and Kimi Code Messages routes retain thinking signatures through actual file-tool results # SKIP Temporarily unavailable by user decision; public refusal is covered by provider-availability.test.mjs; prior enabled file-tool contract is retained for future re-acceptance.",
+    "DeepSeek and Kimi Code Responses preserve opaque reasoning and actual file-tool call IDs # SKIP Temporarily unavailable by user decision; public refusal is covered by provider-availability.test.mjs; prior enabled file-tool contract is retained for future re-acceptance.",
+    "formal service: separate CLI processes, actual ACK loss, mobile SQL contract, restart and shared forget # SKIP",
+    "modified native ACL program is refused before execution # SKIP Native Windows ACL helper",
+    "a redirected ACL program is refused before execution # SKIP Native Windows ACL helper",
+    "an explicit native privacy refusal does not invoke another reader # SKIP Native Windows ACL helper",
+    "a blocked native host uses the original reader within the same deadline # SKIP Native Windows ACL helper"
+  ],
+  "attempts": [
+    {
+      "command": [
+        "node",
+        "--test",
+        "--test-concurrency=2",
+        "--test-timeout=60000",
+        "test/agent.test.mjs",
+        "test/automatic-update-responsive.test.mjs",
+        "test/basics.test.mjs",
+        "test/consent-content.test.mjs",
+        "test/context-memory.test.mjs",
+        "test/development-workflow.test.mjs",
+        "test/download-route.test.mjs",
+        "test/engine-qr.test.mjs",
+        "test/input-reliability.test.mjs",
+        "test/prefill-terminal.test.mjs",
+        "test/prefill.test.mjs",
+        "test/release-docs-consistency.test.mjs",
+        "test/screenshot-minimax-regression.test.mjs",
+        "test/session-dock.test.mjs",
+        "test/session-input-terminal.test.mjs",
+        "test/session-input.test.mjs",
+        "test/session-todo.test.mjs",
+        "test/setup.test.mjs",
+        "test/skill-bundles.test.mjs",
+        "test/slash-menu-terminal.test.mjs",
+        "test/workflows.test.mjs"
+      ],
+      "cwd": "<PRIVATE_CANDIDATE>/koder-cli",
+      "exitCode": 1,
+      "startedAt": "2026-10-26T19:46:11.721289+00:00",
+      "durationSeconds": 84.401467042,
+      "stdoutSha256": "e732d8f15d1c3ef927e8c12b60ca65c04a7223cf07206baf01ed755035b31db9",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "label": "targeted-red",
+      "counts": {
+        "tests": 164,
+        "pass": 124,
+        "fail": 31,
+        "cancelled": 9,
+        "skipped": 0
+      },
+      "scope": "intermediate repair attempt"
+    },
+    {
+      "command": [
+        "node",
+        "--test",
+        "--test-concurrency=1",
+        "--test-timeout=60000",
+        "test/apps-bundle.test.mjs",
+        "test/apps-license.test.mjs",
+        "test/bundle.test.mjs",
+        "test/cli-anything.test.mjs",
+        "test/cross-platform.test.mjs",
+        "test/installer.test.mjs"
+      ],
+      "cwd": "<PRIVATE_CANDIDATE>/koder-cli",
+      "exitCode": 1,
+      "startedAt": "2026-10-26T19:48:44.677292+00:00",
+      "durationSeconds": 98.94155483300001,
+      "stdoutSha256": "ec49c91b39586dd0a5016f43d9c2b13996894518d23bbb3fceddf91de0d20900",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "label": "packaging-red",
+      "counts": {
+        "tests": 23,
+        "pass": 21,
+        "fail": 2,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      "scope": "intermediate repair attempt"
+    },
+    {
+      "command": [
+        "env",
+        "TERM=xterm-256color",
+        "node",
+        "--test",
+        "--test-timeout=60000",
+        "test/regression-contracts.test.mjs",
+        "test/workflows.test.mjs",
+        "test/download-route.test.mjs"
+      ],
+      "cwd": "<PRIVATE_CANDIDATE>/koder-cli",
+      "exitCode": 1,
+      "startedAt": "2026-10-26T19:50:46.855031+00:00",
+      "durationSeconds": 3.8301700419999998,
+      "stdoutSha256": "7da0b6cd890340dc43188b77739c84302b966d9e8e60ddd9cf454c316f59c662",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "label": "contract-red",
+      "counts": {
+        "tests": 17,
+        "pass": 12,
+        "fail": 5,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      "scope": "intermediate repair attempt"
+    },
+    {
+      "command": [
+        "node",
+        "--test",
+        "--test-name-pattern=small-window",
+        "test/regression-contracts.test.mjs"
+      ],
+      "cwd": "<PRIVATE_CANDIDATE>/koder-cli",
+      "exitCode": 1,
+      "startedAt": "2026-10-26T19:52:10.322142+00:00",
+      "durationSeconds": 0.687707,
+      "stdoutSha256": "79603b3f5a7e0ce96dbfa1b0f491ce91af2a8a19716e215ac5fd9e30fa78131d",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "label": "small-window-red",
+      "counts": {
+        "tests": 1,
+        "pass": 0,
+        "fail": 1,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      "scope": "intermediate repair attempt"
+    },
+    {
+      "command": [
+        "env",
+        "TERM=xterm-256color",
+        "node",
+        "--test",
+        "--test-concurrency=2",
+        "--test-timeout=60000",
+        "test/agent.test.mjs",
+        "test/automatic-update-responsive.test.mjs",
+        "test/basics.test.mjs",
+        "test/consent-content.test.mjs",
+        "test/context-memory.test.mjs",
+        "test/development-workflow.test.mjs",
+        "test/download-route.test.mjs",
+        "test/engine-qr.test.mjs",
+        "test/release-docs-consistency.test.mjs",
+        "test/screenshot-minimax-regression.test.mjs",
+        "test/session-todo.test.mjs",
+        "test/skill-bundles.test.mjs",
+        "test/workflows.test.mjs",
+        "test/regression-contracts.test.mjs"
+      ],
+      "cwd": "<PRIVATE_CANDIDATE>/koder-cli",
+      "exitCode": 1,
+      "startedAt": "2026-10-26T19:52:48.855049+00:00",
+      "durationSeconds": 19.185459625,
+      "stdoutSha256": "f515cedc707c930d382513163a0e2c2104d807aee742b364c557dd0cca3e0637",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "label": "fixes-targeted-01",
+      "counts": {
+        "tests": 107,
+        "pass": 105,
+        "fail": 2,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      "scope": "intermediate repair attempt"
+    },
+    {
+      "command": [
+        "node",
+        "--test",
+        "--test-concurrency=1",
+        "--test-timeout=60000",
+        "test/cross-platform.test.mjs"
+      ],
+      "cwd": "<PRIVATE_CANDIDATE>/koder-cli",
+      "exitCode": 1,
+      "startedAt": "2026-10-26T19:53:41.961685+00:00",
+      "durationSeconds": 60.055130125,
+      "stdoutSha256": "14a3ae5da9edd59d8275957ecb27827ee6c9754bc7356f6766130e5e2ded5c83",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "label": "package-materialized-01",
+      "counts": {
+        "tests": 3,
+        "pass": 2,
+        "fail": 0,
+        "cancelled": 1,
+        "skipped": 0
+      },
+      "scope": "intermediate repair attempt"
+    },
+    {
+      "command": [
+        "env",
+        "TERM=xterm-256color",
+        "node",
+        "--test",
+        "--test-concurrency=2",
+        "--test-timeout=60000",
+        "test/session-dock.test.mjs",
+        "test/basics.test.mjs",
+        "test/prefill-terminal.test.mjs"
+      ],
+      "cwd": "<PRIVATE_CANDIDATE>/koder-cli",
+      "exitCode": 0,
+      "startedAt": "2026-10-26T19:57:28.886217+00:00",
+      "durationSeconds": 1.908397959,
+      "stdoutSha256": "0434b4ae50cfbf252c63a1c71caf859cc9aaa47252f8a22a141b614607a35b21",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "label": "terminal-final",
+      "counts": {
+        "tests": 27,
+        "pass": 27,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      "scope": "intermediate repair attempt"
+    },
+    {
+      "command": [
+        "npm",
+        "test"
+      ],
+      "cwd": "<PRIVATE_CANDIDATE>/koder-cli",
+      "exitCode": 1,
+      "startedAt": "2026-10-26T19:57:44.805788+00:00",
+      "durationSeconds": 314.69551004100003,
+      "stdoutSha256": "6cba0602333e3b7925aa9f13619f6649ba1acba0f7e82cc7730de2946bfa3080",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "label": "full-01",
+      "counts": {
+        "tests": 1482,
+        "pass": 1457,
+        "fail": 4,
+        "cancelled": 0,
+        "skipped": 21
+      },
+      "scope": "intermediate repair attempt"
+    },
+    {
+      "command": [
+        "env",
+        "TERM=xterm-256color",
+        "node",
+        "--test",
+        "--test-concurrency=2",
+        "--test-timeout=60000",
+        "test/apps-context.test.mjs",
+        "test/context-memory.test.mjs",
+        "test/regression-contracts.test.mjs"
+      ],
+      "cwd": "<PRIVATE_CANDIDATE>/koder-cli",
+      "exitCode": 1,
+      "startedAt": "2026-10-26T20:03:11.402827+00:00",
+      "durationSeconds": 8.648880958,
+      "stdoutSha256": "62ee503a84d3f37e14afc03d6781d8be8e53d4e58a25c3aeb9f8d10587fb204b",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "label": "budget-regression-02",
+      "counts": {
+        "tests": 21,
+        "pass": 19,
+        "fail": 2,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      "scope": "intermediate repair attempt"
+    },
+    {
+      "command": [
+        "env",
+        "TERM=xterm-256color",
+        "node",
+        "--test",
+        "--test-concurrency=2",
+        "--test-timeout=60000",
+        "test/apps-context.test.mjs",
+        "test/context-memory.test.mjs",
+        "test/regression-contracts.test.mjs"
+      ],
+      "cwd": "<PRIVATE_CANDIDATE>/koder-cli",
+      "exitCode": 0,
+      "startedAt": "2026-10-26T20:04:55.406424+00:00",
+      "durationSeconds": 16.707114041999997,
+      "stdoutSha256": "df3c306dd41c8f07c20acd3ad07fdf5c67dd69aa77d296f615e668c8067af0d5",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "label": "budget-regression-03",
+      "counts": {
+        "tests": 21,
+        "pass": 21,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      "scope": "intermediate repair attempt"
+    },
+    {
+      "command": [
+        "npm",
+        "test"
+      ],
+      "cwd": "<PRIVATE_CANDIDATE>/koder-cli",
+      "exitCode": 1,
+      "startedAt": "2026-10-26T20:03:56.032189+00:00",
+      "durationSeconds": 376.420147084,
+      "stdoutSha256": "ee5386e5440ad047c9b1c8f7765624c4da75e1e811857cec548bd8d98e26bd15",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "label": "full-02",
+      "counts": {
+        "tests": 1480,
+        "pass": 1458,
+        "fail": 0,
+        "cancelled": 1,
+        "skipped": 21
+      },
+      "scope": "intermediate repair attempt"
+    },
+    {
+      "command": [
+        "npm",
+        "test"
+      ],
+      "cwd": "<PRIVATE_CANDIDATE>/koder-cli",
+      "exitCode": 0,
+      "startedAt": "2026-10-26T20:10:12.904052+00:00",
+      "durationSeconds": 337.703965958,
+      "stdoutSha256": "eba43bc90db06cd06ce13e4a55671a57fde8974186fb5dfe51a81c480225dbc5",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "label": "full-final",
+      "counts": {
+        "tests": 1482,
+        "pass": 1461,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 21
+      },
+      "scope": "frozen candidate complete configured suite"
+    }
+  ],
+  "limits": [
+    "Private candidate not automatically integrated or distributed as Koder production installer.",
+    "14 provider cases remain disabled by prior user decision; 3 optional service tests need a configured Core/Python; 4 require native Windows.",
+    "No new paid model or Windows desktop Agent session; no throughput or intelligence gain inferred from this repair.",
+    "Earlier failed receipts are retained. Only full-final has before/after source identity verification."
+  ]
+}

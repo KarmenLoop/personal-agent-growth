@@ -1,4 +1,4 @@
-# 完整文档索引 · 0.4.1
+# 完整文档索引 · 0.4.2
 
 [English](index.en.md) · [中文](index.zh-CN.md)
 
@@ -16,7 +16,7 @@
 | 记忆契约与伪代码 | [Read](../docs/markdown-learning.en.md) | [阅读](../docs/markdown-learning.zh-CN.md) |
 | 兼容性与证据 | [Read](../docs/compatibility.en.md) | [阅读](../docs/compatibility.zh-CN.md) |
 | 跨领域完整任务实验 | [Read](../docs/cross-domain-trial.md) | [阅读](../docs/cross-domain-trial.zh-CN.md) |
-| 当前发布验收 | [Read](../docs/release-0.4.1-acceptance.en.md) | [阅读](../docs/release-0.4.1-acceptance.zh-CN.md) |
+| 当前发布验收 | [Read](../docs/release-0.4.2-acceptance.en.md) | [阅读](../docs/release-0.4.2-acceptance.zh-CN.md) |
 | 团队介绍 | [Read](../TEAM.md) | [阅读](../TEAM.zh-CN.md) |
 | 协议说明 | [Read](../docs/licensing.md) | [阅读](../docs/licensing.zh-CN.md) |
 
@@ -30,6 +30,8 @@
 - 自主接续: [English](../references/autonomous-continuation.en.md) · [中文](../references/autonomous-continuation.md)
 - 递归改进: [English](../references/recursive-improvement.en.md) · [中文](../references/recursive-improvement.md)
 - Markdown 学习: [English](../references/markdown-learning.en.md) · [中文](../references/markdown-learning.md)
+
+- 全量回归修复经验: [English](../references/regression-repair.en.md) · [中文](../references/regression-repair.md)
 
 ## 模板与图源
 
