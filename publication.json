@@ -1,5 +1,5 @@
 {
-  "version": "0.4.2",
+  "version": "0.4.3",
   "documents": [
     "README.md",
     "README.zh-CN.md",
@@ -23,8 +23,8 @@
     "docs/index.zh-CN.md",
     "docs/tutorial.en.md",
     "docs/tutorial.zh-CN.md",
-    "docs/release-0.4.2-acceptance.en.md",
-    "docs/release-0.4.2-acceptance.zh-CN.md"
+    "docs/release-0.4.3-acceptance.en.md",
+    "docs/release-0.4.3-acceptance.zh-CN.md"
   ],
   "language_pairs": [
     [
@@ -118,6 +118,10 @@
     [
       "references/regression-repair.en.md",
       "references/regression-repair.md"
+    ],
+    [
+      "docs/release-0.4.3-acceptance.en.md",
+      "docs/release-0.4.3-acceptance.zh-CN.md"
     ]
   ],
   "template_types": [

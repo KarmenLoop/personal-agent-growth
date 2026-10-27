@@ -1,4 +1,4 @@
-# 完整文档索引 · 0.4.2
+# 完整文档索引 · 0.4.3
 
 [English](index.en.md) · [中文](index.zh-CN.md)
 
@@ -16,7 +16,7 @@
 | 记忆契约与伪代码 | [Read](../docs/markdown-learning.en.md) | [阅读](../docs/markdown-learning.zh-CN.md) |
 | 兼容性与证据 | [Read](../docs/compatibility.en.md) | [阅读](../docs/compatibility.zh-CN.md) |
 | 跨领域完整任务实验 | [Read](../docs/cross-domain-trial.md) | [阅读](../docs/cross-domain-trial.zh-CN.md) |
-| 当前发布验收 | [Read](../docs/release-0.4.2-acceptance.en.md) | [阅读](../docs/release-0.4.2-acceptance.zh-CN.md) |
+| 当前发布验收 | [Read](../docs/release-0.4.3-acceptance.en.md) | [阅读](../docs/release-0.4.3-acceptance.zh-CN.md) |
 | 团队介绍 | [Read](../TEAM.md) | [阅读](../TEAM.zh-CN.md) |
 | 协议说明 | [Read](../docs/licensing.md) | [阅读](../docs/licensing.zh-CN.md) |
 
@@ -40,6 +40,7 @@
 ## 历史证据档案
 
 - [Codex wakeup / same-Mac Cursor recovery](validation.md)
+- [0.4.2 full regression repair](release-0.4.2-acceptance.en.md) · [中文](release-0.4.2-acceptance.zh-CN.md)
 - [0.3.2 release checks](release-0.3.2-acceptance.md)
 - [Windows PowerShell and shared-file checks](windows-install-verification.md)
 - [macOS installation checks](install-verification.md)

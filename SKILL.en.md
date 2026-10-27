@@ -3,7 +3,7 @@ name: personal-agent-growth
 description: Complete ongoing tasks that need preparation, evidence-based revision, review, shared memory, or bounded recursive improvement of prompts, tools and workflow components. Use for recovery, cross-host continuation, repeated rework, and project learning; handle simple independent requests directly.
 license: AGPL-3.0-only
 metadata:
-  version: "0.4.2"
+  version: "0.4.3"
 ---
 
 # Personal Agent Growth
@@ -65,6 +65,6 @@ Resolve Markdown references relative to their containing file, distinguishing lo
 
 ## Repair and full regression
 
-When the user requests all failures fixed or a new release, read the [regression repair lesson](references/regression-repair.en.md). Bind each failure to its cause, repair, and fresh receipt. A failing baseline explains origin; it does not satisfy a repair request. Verify focused behavior, then run the full suite against one frozen candidate. Report failures, cancellations, and skips separately. Explain fixture corrections against the actual contract while retaining product acceptance criteria. Check the built package's materialized dependencies, relocation, and installation behavior separately.
+When the user requests all failures fixed or a new release, read the [regression repair lesson](references/regression-repair.en.md). Bind each failure to its cause, repair, and fresh receipt. A failing baseline explains origin; it does not satisfy a repair request. Verify focused behavior, then run the full suite against one frozen candidate. Report failures, cancellations, and skips separately. Audit each skipped prerequisite and supply available inputs; distinguish product policy, offline contracts, and native-platform acceptance. Preserve an exact blocker and resumption checkpoint for anything still unexecuted. Explain fixture corrections against the actual contract while retaining product acceptance criteria. Check the built package's materialized dependencies, relocation, and installation behavior separately.
 
 <!-- Copyright (C) 2026 KARMENLOOP Official Team. SPDX-License-Identifier: AGPL-3.0-only -->

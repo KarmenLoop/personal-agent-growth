@@ -1,4 +1,4 @@
-# Architecture explained · 0.4.2
+# Architecture explained · 0.4.3
 
 [中文](architecture.zh-CN.md) · [Documentation index](index.en.md) · [Detailed maps](mindmaps.en.md)
 

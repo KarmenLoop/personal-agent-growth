@@ -1,4 +1,4 @@
-# 复杂思维导图与流程图 · 0.4.2
+# 复杂思维导图与流程图 · 0.4.3
 
 [English](mindmaps.en.md) · [中文](mindmaps.zh-CN.md)
 
