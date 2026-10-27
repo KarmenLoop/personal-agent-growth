@@ -89,8 +89,14 @@ def validate(root=ROOT):
             if '\ntemplate: true\n' not in text or not re.search(r'^## ', text, re.M):
                 errors.append('Invalid blank template: ' + str(path.relative_to(root)))
     render = json.loads((root / 'docs/diagrams/render-manifest.json').read_text(encoding='utf-8'))
-    if len(render['diagrams']) != 16:
-        errors.append('Expected sixteen rendered diagrams')
+    outputs = [item['output'] for item in render['diagrams']]
+    expected = {Path(name).name for name in data['media_files']
+                if name.startswith('docs/diagrams/') and name.endswith('.svg')}
+    actual = {path.name for path in (root / 'docs/diagrams').glob('*.svg')}
+    if not expected or set(outputs) != expected or actual != expected:
+        errors.append('Diagram inventory differs between files, publication, and render receipts')
+    if len(outputs) != len(set(outputs)):
+        errors.append('Duplicate diagram render record')
     for item in render['diagrams']:
         for field, hashfield in [('source', 'source_sha256'), ('output', 'output_sha256')]:
             p = root / 'docs/diagrams' / item[field]

@@ -73,7 +73,20 @@ Use this section when the requested acceptance includes skipped checks. Read eac
 
 Contact the user only when the missing prerequisite actually requires them, such as restoring a remote connection. Continue independent work while waiting; do not repeat password attempts, ask for secrets, or turn elapsed time into approval. A partial evidence release may document the blocker, but its package checks must not be presented as full product acceptance.
 
-The reusable lesson is to restore the intended observation, not to minimize a skip counter. Load this section before choosing how to enable optional integration or platform coverage. The [21-case audit](../docs/release-0.4.3-acceptance.en.md) records both completed checks and the remaining device boundary.
+The reusable lesson is to restore the intended observation, not to minimize a skip counter. Load this section before choosing how to enable optional integration or platform coverage. The [21-case audit](../docs/release-0.4.3-acceptance.en.md) records each platform result and its limits.
+
+## Run a native check through a VM
+
+1. Verify the installer and runtime against vendor checksums. Retain rejected downloads. Keep the guest disk, transfer files, and result directories owned by this task; leave other VMs unchanged.
+2. Inspect the actual installed environment. Vendor unattended setup can change security defaults. Record observed settings, restore an unexpectedly disabled protection, and verify any required restart. A configured TPM is not proof that its guest API works.
+3. Treat transport, guest execution, and test acceptance separately. In the recorded UTM session, `utmctl exec` could return zero with empty output before the guest command had finished. The `--hide` option also emitted host event errors. Neither output established test success. A unique guest-created marker, independently pulled back, established file transport.
+4. Write guest stdout, stderr, and a completion exit marker. Read results after the marker exists; a missing or locked file means the result is not ready. Use bounded waits and independent work instead of repeated speculative retries. Preserve the host command receipt as well as the guest receipt.
+5. Record OS build, architecture, runtime version, effective identity, elevation, input hashes, actual commands, durations, and output hashes. A service running as SYSTEM does not establish ordinary-user or desktop Agent behavior. Hash-verified original guard tests and real operating-system effects remain separate rows.
+6. Pull the result archive, verify every raw stream against its guest hash, and reconcile original names and zero-skip counts on the host. Sanitize private account paths only in a derived public copy; retain both raw and published hashes. Keep the macOS suite's original platform skips unchanged, and link separate Windows results to those rows.
+
+The recorded recovery also caught two portable-script errors: a batch line `echo 0>...` can consume the digit as a redirection handle, and a Windows ZIP can contain backslash-separated members. Put output redirection before `echo`, check both zero and nonzero controls, and validate member paths before normalizing separators. Keep the original archive and failed extraction; never replace a test result with a repaired transport marker.
+
+Load this procedure when continuing a platform audit from a saved checkpoint. Resume from the last verified artifact and effective capability, not from a previous “success” message or an assumed logged-in desktop.
 
 ## Related links
 

@@ -4,16 +4,16 @@
 
 ## Result
 
-This distribution is a **prerelease** while the four native Windows checks remain pending. Publishing the completed evidence does not close that acceptance gap.
-
-All **21 original skips were inspected individually**. **17 now execute and pass**: 14 offline provider contracts and 3 integrations against the original compatible Core. **4 native Windows checks remain NOT_RUN**. This is a partial product-acceptance result; the remaining cases have not been converted into passes.
+All **21 original skips now have actual PASS results**: 14 offline provider contracts, 3 integrations against the original compatible Core, and 4 original guards executed in a real Windows VM. Three additional Windows checks execute real ACL operations and also pass. The public Skill is released as **0.4.3** with these bounded results.
 
 The frozen private candidate `c7ae14b44fb9f41bed6599af5132519de30e19f3` completed `npm test`: **1489 tests, 1485 pass, 0 fail, 0 cancelled, 4 platform skips**. The full command took **446.70 seconds**. Before/after identities matched for 2629 tracked source files, 542 Core source files, 54 mobile dependency files, and the isolated Python dependency inventory. These are source-level and integration checks, not a new autonomous desktop Agent trial.
 
 | Object | Tests | Pass | Fail | Cancel | Skip |
 |---|---:|---:|---:|---:|---:|
 | Preserved 0.4.2 private regression | 1482 | 1461 | 0 | 0 | 21 |
-| Configured private regression | 1489 | 1485 | 0 | 0 | 4 |
+| Configured private macOS regression | 1489 | 1485 | 0 | 0 | 4 |
+| Separate Windows original guards | 4 | 4 | 0 | 0 | 0 |
+| Separate Windows real ACL operations | 3 | 3 | 0 | 0 | 0 |
 
 Seventeen top-level cases changed from skipped to executed. Enabling the host integration exposes seven nested cases, explaining the total increasing by seven. Installer scenarios were split into independently bounded files without removing or changing their assertions. The machine ledger maps all original names, including names clarified to say “offline adapter” or “explicit shared notes.”
 
@@ -52,20 +52,28 @@ Original TAP numbers refer to the retained 0.4.2 run. PASS describes the scope i
 | S15 | 752 | Kimi, DeepSeek and Kimi Code Messages routes retain thinking signatures through actual file-tool results | PASS | Offline adapter + real CLI tools |
 | S16 | 753 | DeepSeek and Kimi Code Responses preserve opaque reasoning and actual file-tool call IDs | PASS | Offline adapter + real CLI tools |
 | S17 | 1127 | formal service: separate CLI processes, actual ACK loss, mobile SQL contract, restart and shared forget | PASS | Compatible Core integration |
-| S18 | 1409 | modified native ACL program is refused before execution | NOT_RUN | Native Windows required |
-| S19 | 1410 | a redirected ACL program is refused before execution | NOT_RUN | Native Windows required |
-| S20 | 1411 | an explicit native privacy refusal does not invoke another reader | NOT_RUN | Native Windows required |
-| S21 | 1412 | a blocked native host uses the original reader within the same deadline | NOT_RUN | Native Windows required |
+| S18 | 1409 | modified native ACL program is refused before execution | PASS | Windows VM guard; privileged SYSTEM context |
+| S19 | 1410 | a redirected ACL program is refused before execution | PASS | Windows VM guard; privileged SYSTEM context |
+| S20 | 1411 | an explicit native privacy refusal does not invoke another reader | PASS | Windows VM guard; privileged SYSTEM context |
+| S21 | 1412 | a blocked native host uses the original reader within the same deadline | PASS | Windows VM guard; privileged SYSTEM context |
 
-## Windows VM checkpoint
+## Actual Windows VM results
 
-The original Windows device accepted a one-time remote terminal connection after its saved password was rejected. Node 24.22.1 was observed, but long-text transfer did not complete and no ACL test ran. The user then selected a **local VM on the current Mac**, so that is the active continuation path.
+The user-selected local VM completed the remaining checks. Earlier discovery found only about 17 GiB free and no usable VM entry; later storage was available, and launching the verified UTM app revealed previously registered VM records. Those earlier observations were limited discovery results. This task created its own 80 GiB guest and left other VMs unchanged. The [earlier checkpoint](evidence/koder-skip-audit-before-windows-20261027.json) remains available.
 
-No VM application or indexed Windows VM disk was found on the Mac. It is arm64 with 32 GiB RAM and approximately 17 GiB available on the system disk. An existing UTM container could not be listed because macOS denied access; this does not establish an installed or usable VM. An existing VM location or suitable storage is required. Microsoft lists [64 GB or greater storage for Windows 11](https://learn.microsoft.com/en-us/windows/whats-new/windows-11-requirements). No user files, credentials, or machine-wide security settings were changed to obtain access.
+The guest is **Windows 11 Pro ARM64, build 10.0.26300.9457**, on UTM 5.0.8 with 4 CPUs and 8 GiB RAM. Node 22.23.2 ARM64, the Microsoft ISO, and UTM downloads were checked against official hashes. The first invalid Node download was retained and rejected. The user accepted the displayed Windows and Guest Tools licenses and personally completed the new account credentials.
 
-A private audit packet contains exact hashes of the original ACL module, executable, four original guard tests, and a minimal equivalent fixture helper. It also includes three real native checks: protect an owned empty directory and independently read its ACL, refuse a nonempty public fixture without changing its ACL/content, and execute the original PowerShell fallback. `node run.mjs` refuses to claim success outside Windows, preserves timestamped raw output and input hashes, and requires zero skips. **The packet is prepared, not executed.** Its private source and executable are excluded from this public release.
+The official guest agent executed the frozen packet as **NT AUTHORITY\SYSTEM** after reboot. Readback found that vendor unattended installation had set UAC to zero; it was restored to one, and a new boot timestamp and final setting were verified before tests. Secure Boot read back true. The TPM API returned HRESULT `0x80284001`; TPM functionality is not accepted by this ACL audit. No credential was collected, and no security protection was weakened to run a test.
 
-The four original tests use child-process-result stubs for their guard assertions. Running them on Windows plus the three native checks is required to establish both guard behavior and actual ACL operations. Hosted public installer CI cannot substitute for this private native audit. VM acceptance will identify the guest OS, architecture, Node version, virtualization boundary, and actual returned files.
+The [returned Windows receipt](evidence/windows-native-20261027.json) and raw [four-guard TAP](evidence/windows-original-four.stdout) / [three-effect TAP](evidence/windows-native-smoke.stdout) establish:
+
+- All four original guard assertions passed, with no skip, in **0.466 seconds**. Their child-process result stubs remain explicit.
+- Three real operations passed, with no skip, in **12.237 seconds**: the original helper protected an owned empty directory with independent ACL readback; it refused a nonempty public fixture without changing ACLs or content; and the original PowerShell fallback protected another owned empty directory.
+- Original source/helper/test hashes matched before and after execution. The returned ZIP matched the guest-computed hash, and host verification matched every raw output hash and original test name.
+
+The outer batch wrapper initially created an empty exit marker because `echo 0>...` treated the digit as a redirection handle. Its corrected form was checked with explicit exit-0 and exit-2 controls. Test acceptance comes from the preserved Node exit codes and raw TAP, not the empty marker. The first macOS extraction also preserved Windows ZIP backslashes literally; a second extraction validated and normalized member paths, then verified unchanged stream hashes. Both unsuccessful recovery steps remain recorded.
+
+These are targeted checks in a real Windows VM under a privileged service token. They do not establish ordinary-user compatibility, the complete Windows product suite, or Windows Koder-to-Cursor Agent behavior. No private product source or executable is included in this public release.
 
 ```mermaid
 flowchart TD
@@ -83,11 +91,15 @@ flowchart TD
     K -- Yes --> M["Original guards plus real ACL and fallback checks"]
     G --> N["Frozen configured full regression"]
     I --> N
-    M --> N
+    M --> R["Guest receipt, output hashes and result archive"]
+    R --> S["Host verifies source identity, raw streams and test names"]
+    S --> O
     N --> O["Reconcile all original names and retained failed attempts"]
     L --> O
     O --> P["Publish exact scope and reusable Markdown experience"]
 ```
+
+[Rendered audit diagram](diagrams/windows-audit.en.svg) · [Editable source](diagrams/windows-audit.en.mmd)
 
 ## Public Skill distribution
 
@@ -95,6 +107,6 @@ An additional archive-level check found six front-matter source references point
 
 The [public CI receipt](evidence/release-0.4.3-ci.json) binds its tested commit and records 50 utility tests on each of Linux x64, macOS Intel, and Windows x64. The [Windows installer receipt](evidence/release-0.4.3-windows.json) records PowerShell 5.1 and 7 installation, shared-file revisions, stale-writer refusal, and protected uninstall. All five jobs passed. Their complete raw installer artifacts are included separately with the release. These hosted runs do not execute the four private ACL cases.
 
-Personal Agent Growth 0.4.3 adds the [skipped-check procedure](../references/regression-repair.en.md) and per-case evidence. The 61-file core package, bilingual manuals, 32 templates, and 16 existing rendered maps remain available. The private Koder candidate retains runtime version 0.4.14 and its original license; no production Koder installation was replaced.
+Personal Agent Growth 0.4.3 adds the [skipped-check procedure](../references/regression-repair.en.md) and per-case evidence. The 61-file core package, bilingual manuals, 32 templates, and the original 16 rendered maps remain available, with two new Windows audit diagrams. The private Koder candidate retains runtime version 0.4.14 and its original license; no production Koder installation was replaced.
 
-The [local receipt](evidence/release-0.4.3-local.json) records 50 passing utility tests, 127 core-package checks over 61 files, installation under a Unicode/space path, relocation, two experience reads, and removal with memory hashes unchanged. The [diagram receipt](evidence/release-0.4.3-diagrams.json) records 11 parsed Mermaid blocks and fresh rendering of two retained maps. These establish public distribution behavior, independently of the four private native Windows checks. This release adds no new paid model turn, Windows Koder-to-Cursor Agent continuation, app-closed wakeup, or full-task efficiency experiment.
+The [local receipt](evidence/release-0.4.3-local.json) records 52 passing utility tests, 127 core-package checks over 61 files, installation under a Unicode/space path, relocation, two experience reads, and removal with memory hashes unchanged. The [diagram receipt](evidence/release-0.4.3-diagrams.json) records 11 parsed Mermaid blocks and fresh rendering of the two Windows audit diagrams. These establish public distribution behavior, separately from the completed private Windows checks. This release adds no new paid model turn, Windows Koder-to-Cursor Agent continuation, app-closed wakeup, or full-task efficiency experiment.

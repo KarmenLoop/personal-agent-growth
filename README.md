@@ -1,6 +1,6 @@
 # Personal Agent Growth
 
-[English](README.md) · [简体中文](README.zh-CN.md) · **0.4.3 prerelease**
+[English](README.md) · [简体中文](README.zh-CN.md) · **0.4.3**
 
 [![Checks](https://github.com/KarmenLoop/personal-agent-growth/actions/workflows/check.yml/badge.svg)](https://github.com/KarmenLoop/personal-agent-growth/actions/workflows/check.yml)
 [![Release](https://img.shields.io/github/v/release/KarmenLoop/personal-agent-growth)](https://github.com/KarmenLoop/personal-agent-growth/releases/latest)
@@ -85,7 +85,7 @@ Weights are not trained or updated by this project. A hosted model may not expos
 - A historical Codex trial received **two genuine scheduler wakeups**, executed work, changed the schedule, restored results, and paused the automation.
 - A separate same-Mac Cursor trial read and advanced shared task revisions **1→2, 3→4, 5→6**, with repairs after relocation failures.
 - **24 actual Codex CLI executions** compared software-release acceptance and NASA data analysis. Across the composed runs, tokens fell **5.9%**, while elapsed time rose **7.4%**. This does not establish an overall speedup or universal intelligence gain. [Full report](docs/cross-domain-trial.md)
-- The private Koder candidate completed **1485 pass, 0 fail, 0 cancelled, 4 native Windows skips**. Seventeen of the previous 21 skips now execute and pass; the remaining four await a local Windows VM. [Per-case audit](docs/release-0.4.3-acceptance.en.md)
+- All **21 original skips now execute and pass**: 17 in the macOS suite, plus 4 in a real Windows ARM64 VM. Three additional real ACL checks also pass. The retained macOS full run remains **1485 pass, 0 fail, 0 cancelled, 4 platform skips**; the separate Windows run used a privileged SYSTEM context. [Per-case audit](docs/release-0.4.3-acceptance.en.md)
 
 ![Full-task token and time measurements, including the timing anomaly](docs/images/cross-domain-0.4.1.png)
 

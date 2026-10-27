@@ -6,7 +6,7 @@
     "SKILL.md",
     "SKILL.en.md",
     "START-HERE.md",
-    "开始使用.md",
+    "\u5f00\u59cb\u4f7f\u7528.md",
     "docs/install.md",
     "docs/install.zh-CN.md",
     "docs/architecture.en.md",
@@ -37,7 +37,7 @@
     ],
     [
       "START-HERE.md",
-      "开始使用.md"
+      "\u5f00\u59cb\u4f7f\u7528.md"
     ],
     [
       "docs/install.md",
@@ -162,7 +162,9 @@
     "docs/diagrams/continuation.zh-CN.svg": "0b0c762de0d2605edb3d90479a0672ec01a941cd490a9dd8fcdbc0bf191d459b",
     "docs/diagrams/memory.en.svg": "5e7c8bb949dfa1fbdc31360dfd6fe013d1fd33ace61419d795fc39de0d26c3e8",
     "docs/diagrams/memory.zh-CN.svg": "66c4a38441297b25f0f20fa31780b9bbedafa4e500f429c7124f22780648181f",
-    "docs/diagrams/recursion.zh-CN.svg": "3557b3b96147cccf88f59a120ee26894b057eee5b622e02f93f6e6bdae68e14d"
+    "docs/diagrams/recursion.zh-CN.svg": "3557b3b96147cccf88f59a120ee26894b057eee5b622e02f93f6e6bdae68e14d",
+    "docs/diagrams/windows-audit.en.svg": "f2b694ac5ed534ec7689402fac3110ff9a9d32c40a164c78554c5e81e903f974",
+    "docs/diagrams/windows-audit.zh-CN.svg": "c2f5185c9497ddf94f2c408600788f5c0f90c02af0a85b84c5ea672c87c71d4d"
   },
   "source_files": {
     "docs/diagrams/handoff.en.mmd": "218d94d581c7f80988dfeabd6e1807129b4da540a12c7c0dc06c2f9c155d8015",
@@ -184,6 +186,8 @@
     "scripts/host.py": "30f9d6b13177a8d372bc9d3262490cae658cd2dde97e59572fe49702ec8726cb",
     "scripts/host_support.py": "47849645586c94df85dde5487ceb756858a3ee99237e301d1d6b063c9314300f",
     "scripts/compare_trials.py": "a6a05572e9d37e52350139543c0b1a254e737c7a481417a3998c0346cddd7b2c",
-    "tools/render_diagrams.mjs": "b6e0991f1a675a7947f67a1ea1c75fa80c72bcfd6968f59eee1b6ff28d99a6ce"
+    "tools/render_diagrams.mjs": "b6e0991f1a675a7947f67a1ea1c75fa80c72bcfd6968f59eee1b6ff28d99a6ce",
+    "docs/diagrams/windows-audit.en.mmd": "d99ad0ca0d8f122292eec3e1c567f9d6ac16e04ace01b2506496bb84e62f97fb",
+    "docs/diagrams/windows-audit.zh-CN.mmd": "acaedad02be334736ca6678e87355853e47eedaf96ad9ac1ad3366ba46ba7037"
   }
 }

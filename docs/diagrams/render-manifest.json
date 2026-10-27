@@ -146,6 +146,24 @@
       "width": 1997.1734619140625,
       "height": 1116.6561279296875,
       "labels": 137
+    },
+    {
+      "source": "windows-audit.en.mmd",
+      "source_sha256": "d99ad0ca0d8f122292eec3e1c567f9d6ac16e04ace01b2506496bb84e62f97fb",
+      "output": "windows-audit.en.svg",
+      "output_sha256": "f2b694ac5ed534ec7689402fac3110ff9a9d32c40a164c78554c5e81e903f974",
+      "width": 1138.75,
+      "height": 1703.40625,
+      "labels": 2
+    },
+    {
+      "source": "windows-audit.zh-CN.mmd",
+      "source_sha256": "acaedad02be334736ca6678e87355853e47eedaf96ad9ac1ad3366ba46ba7037",
+      "output": "windows-audit.zh-CN.svg",
+      "output_sha256": "c2f5185c9497ddf94f2c408600788f5c0f90c02af0a85b84c5ea672c87c71d4d",
+      "width": 1133.5,
+      "height": 1445.21875,
+      "labels": 2
     }
   ]
 }

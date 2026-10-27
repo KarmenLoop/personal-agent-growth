@@ -10,7 +10,7 @@
 | 同 Mac Cursor 文件恢复 | 修订 1→2、3→4、5→6；独立搬迁与引用检查发现两类缺陷后修复 | [历史报告](validation.md)；未替本次 0.4.1 做全新行为实测 |
 | 0.4.0 可选适配器 | 已发布五工具 CLI/MCP、writer/修订/哈希检查 | [源代码](../scripts/host.py)；既有教程记载 live Codex read 与单独 MCP 客户端交接，不混称 Cursor 模型运行 |
 | Windows 安装与文件共用 | 0.4.3 在 Server 2025、PowerShell 5.1/7、D 盘及 C 盘中文空格路径通过 | [当前收条](evidence/release-0.4.3-windows.json)；独立测试进程，不是桌面 Agent 或四项私人 ACL 检查；[原记录](windows-install-verification.md)保留 |
-| Windows Koder → Cursor Agent | 尚缺原设备完整运行回执；用户已改选本机 Windows 虚拟机 | NOT_RUN/待可用来宾与实际 Agent 回执；用户口头“OK”未替代实际回执 |
+| Windows Koder → Cursor Agent | 尚缺原设备完整运行回执；用户已改选本机 Windows 虚拟机 | NOT_RUN/待实际 Agent 回执；ACL 验收来宾已可用；用户口头“OK”未替代实际回执 |
 | 内层 PPC | 真 Agent 对比原版、通用、领域及组合；之后变式复用并 observe 回写 | [原实测](recursive-improvement-trial.md)；检查器进程数不是总成本 |
 | 跨领域元能力 | 24 个真实 Codex CLI 回合，两个领域，质量与资源约束检查 | [完整任务报告](cross-domain-trial.zh-CN.md)；token -5.9%，耗时 +7.4%，无普遍加速结论 |
 | 经验种子搬迁 | 历史完整包安装、搬迁、加载、工具重用和卸载保留记忆 | [交付报告](delivery-acceptance.md)；导出快照做了路径适配，未新增 Agent 行为试验 |
@@ -35,11 +35,11 @@
 
 ## 剩余跳过项核查
 
-0.4.3 候选已实跑原 21 项中的 17 项。全量 1485 通过、0 失败、0 取消、4 项原生 Windows 跳过；这四项等待用户指定的本机虚拟机，仍为 NOT_RUN。公开安装器 CI 是另一验收对象。[完整核查](release-0.4.3-acceptance.zh-CN.md)。
+原 21 项跳过均已获得实际 PASS：macOS 全量恢复 17 项，真实 Windows 11 ARM64 虚拟机补齐 4 项，另有 3 项真实 ACL 检查通过。保留的 macOS 运行仍是 1485 通过、0 失败、0 取消、4 项平台跳过。Windows 经来宾代理以 SYSTEM 身份执行，已恢复 UAC 并核实重启。普通用户行为、完整 Windows 产品套件与桌面 Agent 接续各自待验。[完整核查](release-0.4.3-acceptance.zh-CN.md)。
 
 ## 如何升级结论
 
-要宣称 Windows Agent 接续，需恢复原任务而非新建模拟：找到原目录和回执，真实 Koder 读取/写入，再由 Cursor 真实模型回合读同一修订、完成复习并写回，检查双方产物与读集。本机 Windows 来宾与实际 Agent 回执未齐时，该支路保持待验，不阻止独立文档发布。
+要宣称 Windows Agent 接续，需恢复原任务而非新建模拟：找到原目录和回执，真实 Koder 读取/写入，再由 Cursor 真实模型回合读同一修订、完成复习并写回，检查双方产物与读集。本机 Windows 来宾已用于 ACL 实测，但尚缺实际 Agent 回执，该支路保持待验，不阻止独立文档发布。
 
 要宣称跨设备，共享内容身份、同步冲突、路径映射和各端权限都要实测。要宣称无人新消息运行，必须保存真实宿主触发及执行/验收/停止回执。要宣称效率上涨，需完整任务质量、耗时、原生用量和优化开销，不能只数工具调用。
 

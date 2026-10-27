@@ -4,16 +4,16 @@
 
 ## 结果
 
-本分发标为**预发布版**，等待剩余四项原生 Windows 检查。公开已有证据不表示这四项验收已经完成。
-
-原 **21 项跳过已逐项核查，17 项已恢复实跑并通过**：14 项离线提供方协议、3 项原兼容 Core 集成。**4 项原生 Windows 检查仍为 NOT_RUN**，没有计为通过。当前产品验收仍有这四项待补。
+原 **21 项跳过均已有实际 PASS**：14 项离线提供方协议、3 项原兼容 Core 集成，以及在真实 Windows 虚拟机中执行的 4 项原守卫。另有 3 项真实 Windows ACL 操作全部通过。公开 Skill 以 **0.4.3** 正式发布，并保留各项结论范围。
 
 冻结的私人候选 `c7ae14b44fb9f41bed6599af5132519de30e19f3` 执行 `npm test`：**1489 项，1485 通过、0 失败、0 取消、4 项平台跳过**。完整命令耗时 **446.70 秒**。执行前后 2629 个跟踪源码、542 个 Core 源文件、54 个移动端依赖文件及隔离 Python 依赖清单身份一致。这是源码与实际集成检查，没有新增桌面 Agent 自主行为结论。
 
 | 对象 | 总数 | 通过 | 失败 | 取消 | 跳过 |
 |---|---:|---:|---:|---:|---:|
 | 保留的 0.4.2 私人回归 | 1482 | 1461 | 0 | 0 | 21 |
-| 配齐条件的私人回归 | 1489 | 1485 | 0 | 0 | 4 |
+| 配齐条件的私人 macOS 回归 | 1489 | 1485 | 0 | 0 | 4 |
+| 独立 Windows 原守卫 | 4 | 4 | 0 | 0 | 0 |
+| 独立 Windows 真实 ACL 操作 | 3 | 3 | 0 | 0 | 0 |
 
 17 个原顶层用例由跳过变为执行；启用宿主集成后又发现并执行了 7 个嵌套用例，因此总数增加 7。安装场景仅拆为各自有时限的文件，原断言没有删除或改变。机器台账逐项对应原名称，并注明哪些标题明确改称“离线适配器”或“显式共享笔记”。
 
@@ -52,20 +52,28 @@
 | S15 | 752 | Kimi, DeepSeek and Kimi Code Messages routes retain thinking signatures through actual file-tool results | PASS | 离线适配器＋真实 CLI 工具 |
 | S16 | 753 | DeepSeek and Kimi Code Responses preserve opaque reasoning and actual file-tool call IDs | PASS | 离线适配器＋真实 CLI 工具 |
 | S17 | 1127 | formal service: separate CLI processes, actual ACK loss, mobile SQL contract, restart and shared forget | PASS | 兼容 Core 实际集成 |
-| S18 | 1409 | modified native ACL program is refused before execution | NOT_RUN | 需要真实 Windows 环境 |
-| S19 | 1410 | a redirected ACL program is refused before execution | NOT_RUN | 需要真实 Windows 环境 |
-| S20 | 1411 | an explicit native privacy refusal does not invoke another reader | NOT_RUN | 需要真实 Windows 环境 |
-| S21 | 1412 | a blocked native host uses the original reader within the same deadline | NOT_RUN | 需要真实 Windows 环境 |
+| S18 | 1409 | modified native ACL program is refused before execution | PASS | Windows 虚拟机守卫；SYSTEM 特权身份 |
+| S19 | 1410 | a redirected ACL program is refused before execution | PASS | Windows 虚拟机守卫；SYSTEM 特权身份 |
+| S20 | 1411 | an explicit native privacy refusal does not invoke another reader | PASS | Windows 虚拟机守卫；SYSTEM 特权身份 |
+| S21 | 1412 | a blocked native host uses the original reader within the same deadline | PASS | Windows 虚拟机守卫；SYSTEM 特权身份 |
 
-## Windows 虚拟机续验节点
+## Windows 虚拟机实际结果
 
-原 Windows 设备在保存密码被拒绝后，接受了官方一次性终端连接；已看到 Node 24.22.1，但长文本传输没有完成，未执行 ACL 测试。用户随后指定改用**当前 Mac 上的本地虚拟机**，后续按此方向继续。
+用户指定的本机虚拟机已完成剩余检查。早期发现仅约 17 GiB 可用空间、未定位到可用虚拟机；后来空间已补齐，打开已校验的 UTM 后也看到了以前注册的虚拟机记录。此前结果仅代表当时有限检索。本任务新建独立的 80 GiB 来宾，其他虚拟机保持原状。[旧节点](evidence/koder-skip-audit-before-windows-20261027.json)继续保留。
 
-本机应用列表及磁盘索引未发现虚拟机程序或 Windows 虚拟磁盘。Mac 为 arm64、32 GiB 内存，系统盘约剩 17 GiB。存在一个 UTM 容器，但 macOS 拒绝列目录，不能据此推断已有可用虚拟机。需要现有虚拟机位置，或适合新建的磁盘空间。微软列出的 [Windows 11 存储要求为至少 64 GB](https://learn.microsoft.com/en-us/windows/whats-new/windows-11-requirements)。没有为取得入口修改用户文件、凭据或全机安全设置。
+来宾为 **Windows 11 Pro ARM64，10.0.26300.9457**，使用 UTM 5.0.8、4 个 CPU、8 GiB 内存。Node 22.23.2 ARM64、Microsoft ISO 和 UTM 下载均核对官方哈希；首次损坏的 Node 下载保留并拒绝使用。用户分别同意屏幕上的 Windows 和 Guest Tools 协议，并亲自完成新账户凭据设置。
 
-私人验收包已绑定原 ACL 模块、原程序、四项守卫测试与等价最小夹具的哈希，并加入三项真实原生检查：收紧自有空目录后独立回读 ACL、对非空公开夹具拒绝且保持 ACL/内容不变、执行原 PowerShell 回退程序。`node run.mjs` 在非 Windows 拒绝签通过，保存独立时间戳的完整输出和输入哈希，并要求零跳过。**验收包已准备，但尚未执行。** 私人源码和程序没有上传本公开仓库。
+重启后，由官方来宾代理以 **NT AUTHORITY\SYSTEM** 身份执行冻结的验收包。实测发现厂商无人值守安装曾把 UAC 设为零，已恢复为一，并在测试前核实新的开机时间及最终值。Secure Boot 回读为 true。TPM 接口返回 `0x80284001`，本次 ACL 验收不签 TPM 功能通过。没有采集凭据，也没有为运行测试削弱保护。
 
-四项原用例自身使用子进程结果桩；需要在 Windows 执行这些守卫，再加三项原生检查，才能同时说明守卫行为及真实 ACL 操作。公开安装器 CI 不能替代。虚拟机回执需说明来宾系统、架构、Node 版本、虚拟化范围和实际返回文件。
+[Windows 返回回执](evidence/windows-native-20261027.json)、[四项守卫原始 TAP](evidence/windows-original-four.stdout)和[三项真实操作 TAP](evidence/windows-native-smoke.stdout)证明：
+
+- 原四项守卫全部通过、零跳过，耗时 **0.466 秒**；正文中的子进程结果桩仍明确保留。
+- 三项真实操作全部通过、零跳过，耗时 **12.237 秒**：原程序收紧自有空目录并由独立 ACL 读取确认；拒绝非空公开夹具且 ACL/内容不变；原 PowerShell 回退程序收紧另一个自有空目录。
+- 原源码、程序与测试执行前后哈希一致；返回 ZIP 与来宾计算的哈希一致，宿主逐一复核原始输出哈希及原用例名称。
+
+外围批处理最初写出空退出码文件，因为 `echo 0>...` 将数字解释成了重定向句柄。已修正写法，并实际验证退出码 0 与 2 的受控样例；测试验收依据是保留的 Node 退出码和原始 TAP，不是空标记。首次 Mac 解压还把 Windows ZIP 的反斜杠作为普通文件名保留；第二次先验证并规范化成员路径，再核对内容哈希不变。这两次回收问题均保留记录。
+
+这些结果属于真实 Windows 虚拟机内、特权服务身份下的定向检查，不能推导普通用户兼容性、完整 Windows 产品套件或 Windows Koder→Cursor Agent 行为。私人产品源码与程序未包含在公开发布中。
 
 ```mermaid
 flowchart TD
@@ -83,11 +91,15 @@ flowchart TD
     K -- 是 --> M["原守卫与真实 ACL 及回退检查"]
     G --> N["冻结版本执行已配置全量"]
     I --> N
-    M --> N
+    M --> R["来宾回执、输出哈希与结果包"]
+    R --> S["宿主核对源码身份、原始输出和用例名称"]
+    S --> O
     N --> O["逐项对账原名称并保留失败尝试"]
     L --> O
     O --> P["发布准确范围并沉淀 Markdown 经验"]
 ```
+
+[核查图 SVG](diagrams/windows-audit.zh-CN.svg) · [可编辑源文件](diagrams/windows-audit.zh-CN.mmd)
 
 ## 公开 Skill 分发
 
@@ -95,6 +107,6 @@ flowchart TD
 
 [公开 CI 回执](evidence/release-0.4.3-ci.json)绑定实际受测提交，Linux x64、macOS Intel、Windows x64 各通过 50 项工具测试。[Windows 安装回执](evidence/release-0.4.3-windows.json)记录 PowerShell 5.1 与 7 的安装、共享文件修订、旧写入者拒绝与受保护卸载。五个任务均通过，完整安装原始产物另随发布提供。这些托管检查没有执行四项私人 ACL 用例。
 
-Personal Agent Growth 0.4.3 增加[跳过核查协议](../references/regression-repair.md)与逐项证据。61 文件核心包、双语手册、32 份模板及原 16 张渲染图继续保留。私人 Koder 候选仍为运行时版本 0.4.14，与其原协议单独交接，没有替换生产安装。
+Personal Agent Growth 0.4.3 增加[跳过核查协议](../references/regression-repair.md)与逐项证据。61 文件核心包、双语手册、32 份模板及原 16 张渲染图继续保留，另加入两张 Windows 核查图。私人 Koder 候选仍为运行时版本 0.4.14，与其原协议单独交接，没有替换生产安装。
 
-[本机回执](evidence/release-0.4.3-local.json)记录 50 项工具测试通过、61 文件核心包 127 项检查，以及中文空格路径安装、搬迁、两类经验读取、卸载后记忆哈希保持一致。[图示回执](evidence/release-0.4.3-diagrams.json)记录 11 个 Mermaid 块解析及两张原图的新渲染。这些证明公开分发行为，与四项私人 Windows 原生检查分开。本次没有新增付费模型回合、Windows Koder→Cursor Agent 接续、关闭应用后的唤醒或完整任务效率实验。
+[本机回执](evidence/release-0.4.3-local.json)记录 52 项工具测试通过、61 文件核心包 127 项检查，以及中文空格路径安装、搬迁、两类经验读取、卸载后记忆哈希保持一致。[图示回执](evidence/release-0.4.3-diagrams.json)记录 11 个 Mermaid 块解析及两张 Windows 核查图的实际渲染。这些证明公开分发行为，与四项私人 Windows 原生检查分开。本次没有新增付费模型回合、Windows Koder→Cursor Agent 接续、关闭应用后的唤醒或完整任务效率实验。
