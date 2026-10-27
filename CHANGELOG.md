@@ -6,6 +6,7 @@
 - Add a reusable skip-audit procedure covering product policy, offline adapter contracts, compatible Core setup, memory isolation, and native-platform evidence.
 - Preserve previous reports and failed attempts. Publish the newly configured full regression, including the installer scheduling repair and bounded package setup.
 - Keep the complete bilingual guides, templates, diagrams, installable Skill, and private product-source boundary.
+- Bind the compact Skill's experience-source metadata to exact release-tag documents; retain the six initially unresolved references in the audit.
 
 ## 0.4.2 — 2026-10-27
 

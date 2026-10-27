@@ -91,6 +91,8 @@ flowchart TD
 
 ## Public Skill distribution
 
+An additional archive-level check found six front-matter source references pointing to documents omitted from the compact Skill. Both experience documents now cite exact release-tag URLs, and all six references resolve to their bound sources. The [package-source receipt](evidence/release-0.4.3-package-links.json) preserves the initial rejection and corrected result. Published-byte verification also downloads these sources and compares their hashes.
+
 The [public CI receipt](evidence/release-0.4.3-ci.json) binds its tested commit and records 50 utility tests on each of Linux x64, macOS Intel, and Windows x64. The [Windows installer receipt](evidence/release-0.4.3-windows.json) records PowerShell 5.1 and 7 installation, shared-file revisions, stale-writer refusal, and protected uninstall. All five jobs passed. Their complete raw installer artifacts are included separately with the release. These hosted runs do not execute the four private ACL cases.
 
 Personal Agent Growth 0.4.3 adds the [skipped-check procedure](../references/regression-repair.en.md) and per-case evidence. The 61-file core package, bilingual manuals, 32 templates, and 16 existing rendered maps remain available. The private Koder candidate retains runtime version 0.4.14 and its original license; no production Koder installation was replaced.

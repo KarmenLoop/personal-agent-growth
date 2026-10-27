@@ -6,7 +6,7 @@ tags: [domain/software, workflow/regression, workflow/packaging]
 status: active
 created: 2026-10-27
 updated: 2026-10-27
-sources: [../docs/evidence/koder-skip-audit-20261027.json, ../docs/evidence/koder-regression-repair-20261027.json, ../docs/release-0.4.2-acceptance.en.md]
+sources: [https://github.com/KarmenLoop/personal-agent-growth/blob/v0.4.3/docs/evidence/koder-skip-audit-20261027.json, https://github.com/KarmenLoop/personal-agent-growth/blob/v0.4.2/docs/evidence/koder-regression-repair-20261027.json, https://github.com/KarmenLoop/personal-agent-growth/blob/v0.4.2/docs/release-0.4.2-acceptance.en.md]
 ---
 # Repair inherited failures without changing the goal · 0.4.3
 
@@ -32,6 +32,8 @@ Classify a failure before changing anything:
 | Optional platform/service is unavailable | Inspect the skip condition and supply available prerequisites; otherwise retain a named blocker | Do not count it as accepted or fabricate the missing host |
 
 A test change is acceptable when the product contract already calls for the new behavior and the old test exercised something else. It is not acceptable merely because the new assertion passes. A deadline must remain meaningful. Shared expensive setup may run once per fresh suite, but each destructive test uses its own copy; never reuse an old package to save time.
+
+Check evidence references in both Markdown links and front matter. If a compact package omits a cited document, use its immutable release-tag URL; a repository-relative path that works only in the full checkout is not a usable installed source.
 
 ## Why it helps
 

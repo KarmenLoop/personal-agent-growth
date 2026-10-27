@@ -6,7 +6,7 @@ tags: [domain/software, workflow/regression, workflow/packaging]
 status: active
 created: 2026-10-27
 updated: 2026-10-27
-sources: [../docs/evidence/koder-skip-audit-20261027.json, ../docs/evidence/koder-regression-repair-20261027.json, ../docs/release-0.4.2-acceptance.zh-CN.md]
+sources: [https://github.com/KarmenLoop/personal-agent-growth/blob/v0.4.3/docs/evidence/koder-skip-audit-20261027.json, https://github.com/KarmenLoop/personal-agent-growth/blob/v0.4.2/docs/evidence/koder-regression-repair-20261027.json, https://github.com/KarmenLoop/personal-agent-growth/blob/v0.4.2/docs/release-0.4.2-acceptance.zh-CN.md]
 ---
 # 修复历史失败，保持原验收目标 · 0.4.3
 
@@ -32,6 +32,8 @@ sources: [../docs/evidence/koder-skip-audit-20261027.json, ../docs/evidence/kode
 | 缺可选平台或服务 | 核实跳过条件，补齐可用前提；确实缺失时记录具名阻塞 | 不计入验收，不伪造宿主 |
 
 只有原产品契约支持新行为、旧测试测了别的东西时，才能修测试。不能因为某个新断言会通过就改成它。超时门必须有意义。完整套件可以共用本轮新建的昂贵只读包，但破坏性场景各用自己的副本，不借用旧包省时间。
+
+证据引用需要同时检查 Markdown 链接和文首元数据。精简包未包含的来源文件应使用固定发布标签 URL；只在完整源码目录里成立的相对路径，不能当作安装后可用的来源。
 
 ## 为何有效
 
