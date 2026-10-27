@@ -105,7 +105,7 @@ flowchart TD
 
 额外的压缩包级检查发现六处文首来源引用指向核心包未包含的文档。两份经验文档现已改用固定发布标签 URL，六处均核对到绑定来源。[包内来源回执](evidence/release-0.4.3-package-links.json)保留首次拒绝与修正结果。发布字节验收还会下载这些来源并比对哈希。
 
-[公开 CI 回执](evidence/release-0.4.3-ci.json)绑定实际受测提交，Linux x64、macOS Intel、Windows x64 各通过 50 项工具测试。[Windows 安装回执](evidence/release-0.4.3-windows.json)记录 PowerShell 5.1 与 7 的安装、共享文件修订、旧写入者拒绝与受保护卸载。五个任务均通过，完整安装原始产物另随发布提供。这些托管检查没有执行四项私人 ACL 用例。
+[公开 CI 回执](evidence/release-0.4.3-ci.json)绑定实际受测提交，Linux x64、macOS Intel、Windows x64 各通过 52 项工具测试。[Windows 安装回执](evidence/release-0.4.3-windows.json)记录 PowerShell 5.1 与 7 的安装、共享文件修订、旧写入者拒绝与受保护卸载。五个任务均通过，完整安装原始产物另随发布提供。这些托管检查没有执行四项私人 ACL 用例。
 
 Personal Agent Growth 0.4.3 增加[跳过核查协议](../references/regression-repair.md)与逐项证据。61 文件核心包、双语手册、32 份模板及原 16 张渲染图继续保留，另加入两张 Windows 核查图。私人 Koder 候选仍为运行时版本 0.4.14，与其原协议单独交接，没有替换生产安装。
 

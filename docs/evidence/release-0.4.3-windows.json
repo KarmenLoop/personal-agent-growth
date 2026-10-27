@@ -1,20 +1,20 @@
 {
   "version": "0.4.3",
   "status": "PASS",
-  "source_commit": "ab04098d788196b1d1b2763c7c0583aa9f3142a3",
-  "workflow": "https://github.com/KarmenLoop/personal-agent-growth/actions/runs/40467642946",
-  "scope": "Public installer and shared-file processes on hosted Windows; not the four private native ACL checks and not desktop Agent execution",
+  "source_commit": "8b662fae7a47534295ae1a4ed6d51f578f82a7f3",
+  "workflow": "https://github.com/KarmenLoop/personal-agent-growth/actions/runs/40499104681",
+  "scope": "Public installer and shared-file processes on hosted Windows; separate from the private native ACL VM checks and not desktop Agent execution",
   "artifacts": [
     {
       "artifact": "windows-install-powershell",
       "receipt": {
         "status": "PASS",
-        "observed_at": "2026-10-27T07:31:47.267770+00:00",
+        "observed_at": "2026-10-27T11:50:23.545317+00:00",
         "platform": "Windows-10-10.0.26100-SP0",
         "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
         "shell": "powershell",
-        "github_run_id": "40467642946",
-        "commit": "ab04098d788196b1d1b2763c7c0583aa9f3142a3",
+        "github_run_id": "40499104681",
+        "commit": "8b662fae7a47534295ae1a4ed6d51f578f82a7f3",
         "records": [
           {
             "label": "environment",
@@ -30,7 +30,7 @@
             "stdout": "environment.stdout",
             "child_psmodulepath_reset": true,
             "stderr": "environment.stderr",
-            "observed_at": "2026-10-27T07:31:56.267832+00:00"
+            "observed_at": "2026-10-27T11:50:30.113084+00:00"
           },
           {
             "label": "default-install",
@@ -46,7 +46,7 @@
             "stdout": "default-install.stdout",
             "child_psmodulepath_reset": true,
             "stderr": "default-install.stderr",
-            "observed_at": "2026-10-27T07:31:59.034803+00:00"
+            "observed_at": "2026-10-27T11:50:34.107869+00:00"
           },
           {
             "label": "default-entry",
@@ -62,7 +62,7 @@
             "stdout": "default-entry.stdout",
             "child_psmodulepath_reset": true,
             "stderr": "default-entry.stderr",
-            "observed_at": "2026-10-27T07:31:59.433380+00:00"
+            "observed_at": "2026-10-27T11:50:34.437664+00:00"
           },
           {
             "label": "default-memory-entry",
@@ -78,7 +78,7 @@
             "stdout": "default-memory-entry.stdout",
             "child_psmodulepath_reset": true,
             "stderr": "default-memory-entry.stderr",
-            "observed_at": "2026-10-27T07:31:59.698557+00:00"
+            "observed_at": "2026-10-27T11:50:34.673812+00:00"
           },
           {
             "label": "default-memory-prepare",
@@ -92,7 +92,7 @@
               "--task",
               "D:\\AgentKnowledge\\tasks\\shared-review",
               "--skill",
-              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-beugzrxl\\default\\Discovery 中文 & entry\\.agents\\skills\\personal-agent-growth",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q26xe_hb\\default\\Discovery \u4e2d\u6587 & entry\\.agents\\skills\\personal-agent-growth",
               "--release",
               "D:\\AgentKnowledge\\downloads\\0.4.3"
             ],
@@ -101,7 +101,7 @@
             "stdout": "default-memory-prepare.stdout",
             "child_psmodulepath_reset": false,
             "stderr": "default-memory-prepare.stderr",
-            "observed_at": "2026-10-27T07:31:59.780616+00:00"
+            "observed_at": "2026-10-27T11:50:34.742840+00:00"
           },
           {
             "label": "default-memory-review",
@@ -113,9 +113,9 @@
               "--memory-worker",
               "review",
               "--task",
-              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-beugzrxl\\default\\Second reader 中文\\shared-review",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q26xe_hb\\default\\Second reader \u4e2d\u6587\\shared-review",
               "--skill",
-              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-beugzrxl\\default\\Discovery 中文 & entry\\.agents\\skills\\personal-agent-growth",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q26xe_hb\\default\\Discovery \u4e2d\u6587 & entry\\.agents\\skills\\personal-agent-growth",
               "--release",
               "D:\\AgentKnowledge\\downloads\\0.4.3"
             ],
@@ -124,7 +124,7 @@
             "stdout": "default-memory-review.stdout",
             "child_psmodulepath_reset": false,
             "stderr": "default-memory-review.stderr",
-            "observed_at": "2026-10-27T07:31:59.981742+00:00"
+            "observed_at": "2026-10-27T11:50:34.997234+00:00"
           },
           {
             "label": "default-memory-review-stale",
@@ -136,9 +136,9 @@
               "--memory-worker",
               "review",
               "--task",
-              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-beugzrxl\\default\\Second reader 中文\\shared-review",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q26xe_hb\\default\\Second reader \u4e2d\u6587\\shared-review",
               "--skill",
-              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-beugzrxl\\default\\Discovery 中文 & entry\\.agents\\skills\\personal-agent-growth",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q26xe_hb\\default\\Discovery \u4e2d\u6587 & entry\\.agents\\skills\\personal-agent-growth",
               "--release",
               "D:\\AgentKnowledge\\downloads\\0.4.3"
             ],
@@ -147,7 +147,7 @@
             "stdout": "default-memory-review-stale.stdout",
             "child_psmodulepath_reset": false,
             "stderr": "default-memory-review-stale.stderr",
-            "observed_at": "2026-10-27T07:32:00.069806+00:00"
+            "observed_at": "2026-10-27T11:50:35.058294+00:00"
           },
           {
             "label": "default-memory-finish",
@@ -161,7 +161,7 @@
               "--task",
               "D:\\AgentKnowledge\\tasks\\shared-review",
               "--skill",
-              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-beugzrxl\\default\\Discovery 中文 & entry\\.agents\\skills\\personal-agent-growth",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q26xe_hb\\default\\Discovery \u4e2d\u6587 & entry\\.agents\\skills\\personal-agent-growth",
               "--release",
               "D:\\AgentKnowledge\\downloads\\0.4.3"
             ],
@@ -170,7 +170,7 @@
             "stdout": "default-memory-finish.stdout",
             "child_psmodulepath_reset": false,
             "stderr": "default-memory-finish.stderr",
-            "observed_at": "2026-10-27T07:32:00.156304+00:00"
+            "observed_at": "2026-10-27T11:50:35.119581+00:00"
           },
           {
             "label": "default-repeat-install",
@@ -186,7 +186,7 @@
             "stdout": "default-repeat-install.stdout",
             "child_psmodulepath_reset": true,
             "stderr": "default-repeat-install.stderr",
-            "observed_at": "2026-10-27T07:32:00.581640+00:00"
+            "observed_at": "2026-10-27T11:50:35.492155+00:00"
           },
           {
             "label": "default-uninstall",
@@ -202,7 +202,7 @@
             "stdout": "default-uninstall.stdout",
             "child_psmodulepath_reset": true,
             "stderr": "default-uninstall.stderr",
-            "observed_at": "2026-10-27T07:32:00.989937+00:00"
+            "observed_at": "2026-10-27T11:50:35.818781+00:00"
           },
           {
             "label": "default-uninstall-ordinary-directory",
@@ -218,7 +218,7 @@
             "stdout": "default-uninstall-ordinary-directory.stdout",
             "child_psmodulepath_reset": true,
             "stderr": "default-uninstall-ordinary-directory.stderr",
-            "observed_at": "2026-10-27T07:32:01.349357+00:00"
+            "observed_at": "2026-10-27T11:50:36.131790+00:00"
           },
           {
             "label": "custom-install",
@@ -234,7 +234,7 @@
             "stdout": "custom-install.stdout",
             "child_psmodulepath_reset": true,
             "stderr": "custom-install.stderr",
-            "observed_at": "2026-10-27T07:32:02.613265+00:00"
+            "observed_at": "2026-10-27T11:50:37.355103+00:00"
           },
           {
             "label": "custom-entry",
@@ -250,7 +250,7 @@
             "stdout": "custom-entry.stdout",
             "child_psmodulepath_reset": true,
             "stderr": "custom-entry.stderr",
-            "observed_at": "2026-10-27T07:32:03.030974+00:00"
+            "observed_at": "2026-10-27T11:50:37.661544+00:00"
           },
           {
             "label": "custom-memory-entry",
@@ -266,7 +266,7 @@
             "stdout": "custom-memory-entry.stdout",
             "child_psmodulepath_reset": true,
             "stderr": "custom-memory-entry.stderr",
-            "observed_at": "2026-10-27T07:32:03.330282+00:00"
+            "observed_at": "2026-10-27T11:50:37.893267+00:00"
           },
           {
             "label": "custom-memory-prepare",
@@ -278,35 +278,35 @@
               "--memory-worker",
               "prepare",
               "--task",
-              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-beugzrxl\\Knowledge space 中文 & review\\tasks\\shared-review",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q26xe_hb\\Knowledge space \u4e2d\u6587 & review\\tasks\\shared-review",
               "--skill",
-              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-beugzrxl\\custom\\Discovery 中文 & entry\\.agents\\skills\\personal-agent-growth",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q26xe_hb\\custom\\Discovery \u4e2d\u6587 & entry\\.agents\\skills\\personal-agent-growth",
               "--release",
-              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-beugzrxl\\Knowledge space 中文 & review\\downloads\\0.4.3"
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q26xe_hb\\Knowledge space \u4e2d\u6587 & review\\downloads\\0.4.3"
             ],
             "exit_code": 0,
             "expected_exit_code": 0,
             "stdout": "custom-memory-prepare.stdout",
             "child_psmodulepath_reset": false,
             "stderr": "custom-memory-prepare.stderr",
-            "observed_at": "2026-10-27T07:32:03.413951+00:00"
+            "observed_at": "2026-10-27T11:50:37.955166+00:00"
           },
           {
             "label": "legacy-non-utf8-verifier",
             "argv": [
               "C:\\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\python.exe",
-              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-beugzrxl\\custom\\Discovery 中文 & entry\\.agents\\skills\\personal-agent-growth\\scripts\\verify_handoff.py",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q26xe_hb\\custom\\Discovery \u4e2d\u6587 & entry\\.agents\\skills\\personal-agent-growth\\scripts\\verify_handoff.py",
               "--archive",
-              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-beugzrxl\\Knowledge space 中文 & review\\downloads\\0.4.3\\personal-agent-growth-0.4.3.zip",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q26xe_hb\\Knowledge space \u4e2d\u6587 & review\\downloads\\0.4.3\\personal-agent-growth-0.4.3.zip",
               "--manifest",
-              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-beugzrxl\\Knowledge space 中文 & review\\downloads\\0.4.3\\manifest.json"
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q26xe_hb\\Knowledge space \u4e2d\u6587 & review\\downloads\\0.4.3\\manifest.json"
             ],
             "exit_code": 1,
             "expected_exit_code": 1,
             "stdout": "legacy-non-utf8-verifier.stdout",
             "child_psmodulepath_reset": false,
             "stderr": "legacy-non-utf8-verifier.stderr",
-            "observed_at": "2026-10-27T07:32:03.552256+00:00"
+            "observed_at": "2026-10-27T11:50:38.116425+00:00"
           },
           {
             "label": "custom-memory-review",
@@ -318,18 +318,18 @@
               "--memory-worker",
               "review",
               "--task",
-              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-beugzrxl\\custom\\Second reader 中文\\shared-review",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q26xe_hb\\custom\\Second reader \u4e2d\u6587\\shared-review",
               "--skill",
-              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-beugzrxl\\custom\\Discovery 中文 & entry\\.agents\\skills\\personal-agent-growth",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q26xe_hb\\custom\\Discovery \u4e2d\u6587 & entry\\.agents\\skills\\personal-agent-growth",
               "--release",
-              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-beugzrxl\\Knowledge space 中文 & review\\downloads\\0.4.3"
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q26xe_hb\\Knowledge space \u4e2d\u6587 & review\\downloads\\0.4.3"
             ],
             "exit_code": 0,
             "expected_exit_code": 0,
             "stdout": "custom-memory-review.stdout",
             "child_psmodulepath_reset": false,
             "stderr": "custom-memory-review.stderr",
-            "observed_at": "2026-10-27T07:32:03.743924+00:00"
+            "observed_at": "2026-10-27T11:50:38.259540+00:00"
           },
           {
             "label": "custom-memory-review-stale",
@@ -341,18 +341,18 @@
               "--memory-worker",
               "review",
               "--task",
-              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-beugzrxl\\custom\\Second reader 中文\\shared-review",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q26xe_hb\\custom\\Second reader \u4e2d\u6587\\shared-review",
               "--skill",
-              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-beugzrxl\\custom\\Discovery 中文 & entry\\.agents\\skills\\personal-agent-growth",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q26xe_hb\\custom\\Discovery \u4e2d\u6587 & entry\\.agents\\skills\\personal-agent-growth",
               "--release",
-              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-beugzrxl\\Knowledge space 中文 & review\\downloads\\0.4.3"
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q26xe_hb\\Knowledge space \u4e2d\u6587 & review\\downloads\\0.4.3"
             ],
             "exit_code": 3,
             "expected_exit_code": 3,
             "stdout": "custom-memory-review-stale.stdout",
             "child_psmodulepath_reset": false,
             "stderr": "custom-memory-review-stale.stderr",
-            "observed_at": "2026-10-27T07:32:03.827636+00:00"
+            "observed_at": "2026-10-27T11:50:38.320371+00:00"
           },
           {
             "label": "custom-memory-finish",
@@ -364,18 +364,18 @@
               "--memory-worker",
               "finish",
               "--task",
-              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-beugzrxl\\Knowledge space 中文 & review\\tasks\\shared-review",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q26xe_hb\\Knowledge space \u4e2d\u6587 & review\\tasks\\shared-review",
               "--skill",
-              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-beugzrxl\\custom\\Discovery 中文 & entry\\.agents\\skills\\personal-agent-growth",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q26xe_hb\\custom\\Discovery \u4e2d\u6587 & entry\\.agents\\skills\\personal-agent-growth",
               "--release",
-              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-beugzrxl\\Knowledge space 中文 & review\\downloads\\0.4.3"
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q26xe_hb\\Knowledge space \u4e2d\u6587 & review\\downloads\\0.4.3"
             ],
             "exit_code": 0,
             "expected_exit_code": 0,
             "stdout": "custom-memory-finish.stdout",
             "child_psmodulepath_reset": false,
             "stderr": "custom-memory-finish.stderr",
-            "observed_at": "2026-10-27T07:32:03.910818+00:00"
+            "observed_at": "2026-10-27T11:50:38.379861+00:00"
           },
           {
             "label": "custom-repeat-install",
@@ -391,7 +391,7 @@
             "stdout": "custom-repeat-install.stdout",
             "child_psmodulepath_reset": true,
             "stderr": "custom-repeat-install.stderr",
-            "observed_at": "2026-10-27T07:32:04.270264+00:00"
+            "observed_at": "2026-10-27T11:50:38.678705+00:00"
           },
           {
             "label": "custom-uninstall",
@@ -407,7 +407,7 @@
             "stdout": "custom-uninstall.stdout",
             "child_psmodulepath_reset": true,
             "stderr": "custom-uninstall.stderr",
-            "observed_at": "2026-10-27T07:32:04.687197+00:00"
+            "observed_at": "2026-10-27T11:50:38.997371+00:00"
           },
           {
             "label": "custom-uninstall-ordinary-directory",
@@ -423,7 +423,7 @@
             "stdout": "custom-uninstall-ordinary-directory.stdout",
             "child_psmodulepath_reset": true,
             "stderr": "custom-uninstall-ordinary-directory.stderr",
-            "observed_at": "2026-10-27T07:32:05.033706+00:00"
+            "observed_at": "2026-10-27T11:50:39.288775+00:00"
           }
         ],
         "cases": [
@@ -445,9 +445,9 @@
               3
             ],
             "worker_pids": [
-              6712,
-              4620,
-              2480
+              8796,
+              1480,
+              6472
             ],
             "stale_revision_rejected_without_write": true,
             "repeat_install_preserved_files": true,
@@ -457,7 +457,7 @@
           {
             "case": "custom",
             "status": "PASS",
-            "root": "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-beugzrxl\\Knowledge space 中文 & review",
+            "root": "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q26xe_hb\\Knowledge space \u4e2d\u6587 & review",
             "command_substitutions": [
               "GrowthSkillsRoot",
               "GrowthRoot"
@@ -473,9 +473,9 @@
               3
             ],
             "worker_pids": [
-              8604,
-              1736,
-              7472
+              4440,
+              2664,
+              7800
             ],
             "stale_revision_rejected_without_write": true,
             "repeat_install_preserved_files": true,
@@ -516,18 +516,18 @@
           ]
         }
       },
-      "sha256": "3ad48243521d9fdd56ef5270d89174d2d8783fd249c3a7fe125c906b58e59e79"
+      "sha256": "939f8cd61b8fef9841135524666f84c21b5554928c6d79b3c41caef39729cb1f"
     },
     {
       "artifact": "windows-install-pwsh",
       "receipt": {
         "status": "PASS",
-        "observed_at": "2026-10-27T07:31:45.748278+00:00",
+        "observed_at": "2026-10-27T11:50:22.298569+00:00",
         "platform": "Windows-10-10.0.26100-SP0",
         "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
         "shell": "pwsh",
-        "github_run_id": "40467642946",
-        "commit": "ab04098d788196b1d1b2763c7c0583aa9f3142a3",
+        "github_run_id": "40499104681",
+        "commit": "8b662fae7a47534295ae1a4ed6d51f578f82a7f3",
         "records": [
           {
             "label": "environment",
@@ -543,7 +543,7 @@
             "stdout": "environment.stdout",
             "child_psmodulepath_reset": false,
             "stderr": "environment.stderr",
-            "observed_at": "2026-10-27T07:31:46.862695+00:00"
+            "observed_at": "2026-10-27T11:50:26.065418+00:00"
           },
           {
             "label": "default-install",
@@ -559,7 +559,7 @@
             "stdout": "default-install.stdout",
             "child_psmodulepath_reset": false,
             "stderr": "default-install.stderr",
-            "observed_at": "2026-10-27T07:31:49.381789+00:00"
+            "observed_at": "2026-10-27T11:50:28.841221+00:00"
           },
           {
             "label": "default-entry",
@@ -575,7 +575,7 @@
             "stdout": "default-entry.stdout",
             "child_psmodulepath_reset": false,
             "stderr": "default-entry.stderr",
-            "observed_at": "2026-10-27T07:31:49.664886+00:00"
+            "observed_at": "2026-10-27T11:50:29.258312+00:00"
           },
           {
             "label": "default-memory-entry",
@@ -591,7 +591,7 @@
             "stdout": "default-memory-entry.stdout",
             "child_psmodulepath_reset": false,
             "stderr": "default-memory-entry.stderr",
-            "observed_at": "2026-10-27T07:31:49.895529+00:00"
+            "observed_at": "2026-10-27T11:50:29.611635+00:00"
           },
           {
             "label": "default-memory-prepare",
@@ -605,7 +605,7 @@
               "--task",
               "D:\\AgentKnowledge\\tasks\\shared-review",
               "--skill",
-              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-kenizaxb\\default\\Discovery 中文 & entry\\.agents\\skills\\personal-agent-growth",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-h9ulmw7z\\default\\Discovery \u4e2d\u6587 & entry\\.agents\\skills\\personal-agent-growth",
               "--release",
               "D:\\AgentKnowledge\\downloads\\0.4.3"
             ],
@@ -614,7 +614,7 @@
             "stdout": "default-memory-prepare.stdout",
             "child_psmodulepath_reset": false,
             "stderr": "default-memory-prepare.stderr",
-            "observed_at": "2026-10-27T07:31:49.952699+00:00"
+            "observed_at": "2026-10-27T11:50:29.707161+00:00"
           },
           {
             "label": "default-memory-review",
@@ -626,9 +626,9 @@
               "--memory-worker",
               "review",
               "--task",
-              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-kenizaxb\\default\\Second reader 中文\\shared-review",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-h9ulmw7z\\default\\Second reader \u4e2d\u6587\\shared-review",
               "--skill",
-              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-kenizaxb\\default\\Discovery 中文 & entry\\.agents\\skills\\personal-agent-growth",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-h9ulmw7z\\default\\Discovery \u4e2d\u6587 & entry\\.agents\\skills\\personal-agent-growth",
               "--release",
               "D:\\AgentKnowledge\\downloads\\0.4.3"
             ],
@@ -637,7 +637,7 @@
             "stdout": "default-memory-review.stdout",
             "child_psmodulepath_reset": false,
             "stderr": "default-memory-review.stderr",
-            "observed_at": "2026-10-27T07:31:50.120118+00:00"
+            "observed_at": "2026-10-27T11:50:29.909171+00:00"
           },
           {
             "label": "default-memory-review-stale",
@@ -649,9 +649,9 @@
               "--memory-worker",
               "review",
               "--task",
-              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-kenizaxb\\default\\Second reader 中文\\shared-review",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-h9ulmw7z\\default\\Second reader \u4e2d\u6587\\shared-review",
               "--skill",
-              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-kenizaxb\\default\\Discovery 中文 & entry\\.agents\\skills\\personal-agent-growth",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-h9ulmw7z\\default\\Discovery \u4e2d\u6587 & entry\\.agents\\skills\\personal-agent-growth",
               "--release",
               "D:\\AgentKnowledge\\downloads\\0.4.3"
             ],
@@ -660,7 +660,7 @@
             "stdout": "default-memory-review-stale.stdout",
             "child_psmodulepath_reset": false,
             "stderr": "default-memory-review-stale.stderr",
-            "observed_at": "2026-10-27T07:31:50.170931+00:00"
+            "observed_at": "2026-10-27T11:50:29.987510+00:00"
           },
           {
             "label": "default-memory-finish",
@@ -674,7 +674,7 @@
               "--task",
               "D:\\AgentKnowledge\\tasks\\shared-review",
               "--skill",
-              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-kenizaxb\\default\\Discovery 中文 & entry\\.agents\\skills\\personal-agent-growth",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-h9ulmw7z\\default\\Discovery \u4e2d\u6587 & entry\\.agents\\skills\\personal-agent-growth",
               "--release",
               "D:\\AgentKnowledge\\downloads\\0.4.3"
             ],
@@ -683,7 +683,7 @@
             "stdout": "default-memory-finish.stdout",
             "child_psmodulepath_reset": false,
             "stderr": "default-memory-finish.stderr",
-            "observed_at": "2026-10-27T07:31:50.218639+00:00"
+            "observed_at": "2026-10-27T11:50:30.068915+00:00"
           },
           {
             "label": "default-repeat-install",
@@ -699,7 +699,7 @@
             "stdout": "default-repeat-install.stdout",
             "child_psmodulepath_reset": false,
             "stderr": "default-repeat-install.stderr",
-            "observed_at": "2026-10-27T07:31:50.584384+00:00"
+            "observed_at": "2026-10-27T11:50:30.625694+00:00"
           },
           {
             "label": "default-uninstall",
@@ -715,7 +715,7 @@
             "stdout": "default-uninstall.stdout",
             "child_psmodulepath_reset": false,
             "stderr": "default-uninstall.stderr",
-            "observed_at": "2026-10-27T07:31:50.850645+00:00"
+            "observed_at": "2026-10-27T11:50:31.041502+00:00"
           },
           {
             "label": "default-uninstall-ordinary-directory",
@@ -731,7 +731,7 @@
             "stdout": "default-uninstall-ordinary-directory.stdout",
             "child_psmodulepath_reset": false,
             "stderr": "default-uninstall-ordinary-directory.stderr",
-            "observed_at": "2026-10-27T07:31:51.192336+00:00"
+            "observed_at": "2026-10-27T11:50:31.537158+00:00"
           },
           {
             "label": "custom-install",
@@ -747,7 +747,7 @@
             "stdout": "custom-install.stdout",
             "child_psmodulepath_reset": false,
             "stderr": "custom-install.stderr",
-            "observed_at": "2026-10-27T07:31:52.048552+00:00"
+            "observed_at": "2026-10-27T11:50:32.786427+00:00"
           },
           {
             "label": "custom-entry",
@@ -763,7 +763,7 @@
             "stdout": "custom-entry.stdout",
             "child_psmodulepath_reset": false,
             "stderr": "custom-entry.stderr",
-            "observed_at": "2026-10-27T07:31:52.306990+00:00"
+            "observed_at": "2026-10-27T11:50:33.188479+00:00"
           },
           {
             "label": "custom-memory-entry",
@@ -779,7 +779,7 @@
             "stdout": "custom-memory-entry.stdout",
             "child_psmodulepath_reset": false,
             "stderr": "custom-memory-entry.stderr",
-            "observed_at": "2026-10-27T07:31:52.541634+00:00"
+            "observed_at": "2026-10-27T11:50:33.549369+00:00"
           },
           {
             "label": "custom-memory-prepare",
@@ -791,35 +791,35 @@
               "--memory-worker",
               "prepare",
               "--task",
-              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-kenizaxb\\Knowledge space 中文 & review\\tasks\\shared-review",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-h9ulmw7z\\Knowledge space \u4e2d\u6587 & review\\tasks\\shared-review",
               "--skill",
-              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-kenizaxb\\custom\\Discovery 中文 & entry\\.agents\\skills\\personal-agent-growth",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-h9ulmw7z\\custom\\Discovery \u4e2d\u6587 & entry\\.agents\\skills\\personal-agent-growth",
               "--release",
-              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-kenizaxb\\Knowledge space 中文 & review\\downloads\\0.4.3"
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-h9ulmw7z\\Knowledge space \u4e2d\u6587 & review\\downloads\\0.4.3"
             ],
             "exit_code": 0,
             "expected_exit_code": 0,
             "stdout": "custom-memory-prepare.stdout",
             "child_psmodulepath_reset": false,
             "stderr": "custom-memory-prepare.stderr",
-            "observed_at": "2026-10-27T07:31:52.590810+00:00"
+            "observed_at": "2026-10-27T11:50:33.630515+00:00"
           },
           {
             "label": "legacy-non-utf8-verifier",
             "argv": [
               "C:\\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\python.exe",
-              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-kenizaxb\\custom\\Discovery 中文 & entry\\.agents\\skills\\personal-agent-growth\\scripts\\verify_handoff.py",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-h9ulmw7z\\custom\\Discovery \u4e2d\u6587 & entry\\.agents\\skills\\personal-agent-growth\\scripts\\verify_handoff.py",
               "--archive",
-              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-kenizaxb\\Knowledge space 中文 & review\\downloads\\0.4.3\\personal-agent-growth-0.4.3.zip",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-h9ulmw7z\\Knowledge space \u4e2d\u6587 & review\\downloads\\0.4.3\\personal-agent-growth-0.4.3.zip",
               "--manifest",
-              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-kenizaxb\\Knowledge space 中文 & review\\downloads\\0.4.3\\manifest.json"
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-h9ulmw7z\\Knowledge space \u4e2d\u6587 & review\\downloads\\0.4.3\\manifest.json"
             ],
             "exit_code": 1,
             "expected_exit_code": 1,
             "stdout": "legacy-non-utf8-verifier.stdout",
             "child_psmodulepath_reset": false,
             "stderr": "legacy-non-utf8-verifier.stderr",
-            "observed_at": "2026-10-27T07:31:52.688523+00:00"
+            "observed_at": "2026-10-27T11:50:33.769683+00:00"
           },
           {
             "label": "custom-memory-review",
@@ -831,18 +831,18 @@
               "--memory-worker",
               "review",
               "--task",
-              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-kenizaxb\\custom\\Second reader 中文\\shared-review",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-h9ulmw7z\\custom\\Second reader \u4e2d\u6587\\shared-review",
               "--skill",
-              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-kenizaxb\\custom\\Discovery 中文 & entry\\.agents\\skills\\personal-agent-growth",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-h9ulmw7z\\custom\\Discovery \u4e2d\u6587 & entry\\.agents\\skills\\personal-agent-growth",
               "--release",
-              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-kenizaxb\\Knowledge space 中文 & review\\downloads\\0.4.3"
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-h9ulmw7z\\Knowledge space \u4e2d\u6587 & review\\downloads\\0.4.3"
             ],
             "exit_code": 0,
             "expected_exit_code": 0,
             "stdout": "custom-memory-review.stdout",
             "child_psmodulepath_reset": false,
             "stderr": "custom-memory-review.stderr",
-            "observed_at": "2026-10-27T07:31:52.803579+00:00"
+            "observed_at": "2026-10-27T11:50:33.957603+00:00"
           },
           {
             "label": "custom-memory-review-stale",
@@ -854,18 +854,18 @@
               "--memory-worker",
               "review",
               "--task",
-              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-kenizaxb\\custom\\Second reader 中文\\shared-review",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-h9ulmw7z\\custom\\Second reader \u4e2d\u6587\\shared-review",
               "--skill",
-              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-kenizaxb\\custom\\Discovery 中文 & entry\\.agents\\skills\\personal-agent-growth",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-h9ulmw7z\\custom\\Discovery \u4e2d\u6587 & entry\\.agents\\skills\\personal-agent-growth",
               "--release",
-              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-kenizaxb\\Knowledge space 中文 & review\\downloads\\0.4.3"
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-h9ulmw7z\\Knowledge space \u4e2d\u6587 & review\\downloads\\0.4.3"
             ],
             "exit_code": 3,
             "expected_exit_code": 3,
             "stdout": "custom-memory-review-stale.stdout",
             "child_psmodulepath_reset": false,
             "stderr": "custom-memory-review-stale.stderr",
-            "observed_at": "2026-10-27T07:31:52.853568+00:00"
+            "observed_at": "2026-10-27T11:50:34.037532+00:00"
           },
           {
             "label": "custom-memory-finish",
@@ -877,18 +877,18 @@
               "--memory-worker",
               "finish",
               "--task",
-              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-kenizaxb\\Knowledge space 中文 & review\\tasks\\shared-review",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-h9ulmw7z\\Knowledge space \u4e2d\u6587 & review\\tasks\\shared-review",
               "--skill",
-              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-kenizaxb\\custom\\Discovery 中文 & entry\\.agents\\skills\\personal-agent-growth",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-h9ulmw7z\\custom\\Discovery \u4e2d\u6587 & entry\\.agents\\skills\\personal-agent-growth",
               "--release",
-              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-kenizaxb\\Knowledge space 中文 & review\\downloads\\0.4.3"
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-h9ulmw7z\\Knowledge space \u4e2d\u6587 & review\\downloads\\0.4.3"
             ],
             "exit_code": 0,
             "expected_exit_code": 0,
             "stdout": "custom-memory-finish.stdout",
             "child_psmodulepath_reset": false,
             "stderr": "custom-memory-finish.stderr",
-            "observed_at": "2026-10-27T07:31:52.904324+00:00"
+            "observed_at": "2026-10-27T11:50:34.122106+00:00"
           },
           {
             "label": "custom-repeat-install",
@@ -904,7 +904,7 @@
             "stdout": "custom-repeat-install.stdout",
             "child_psmodulepath_reset": false,
             "stderr": "custom-repeat-install.stderr",
-            "observed_at": "2026-10-27T07:31:53.255310+00:00"
+            "observed_at": "2026-10-27T11:50:34.653151+00:00"
           },
           {
             "label": "custom-uninstall",
@@ -920,7 +920,7 @@
             "stdout": "custom-uninstall.stdout",
             "child_psmodulepath_reset": false,
             "stderr": "custom-uninstall.stderr",
-            "observed_at": "2026-10-27T07:31:53.528484+00:00"
+            "observed_at": "2026-10-27T11:50:35.051298+00:00"
           },
           {
             "label": "custom-uninstall-ordinary-directory",
@@ -936,7 +936,7 @@
             "stdout": "custom-uninstall-ordinary-directory.stdout",
             "child_psmodulepath_reset": false,
             "stderr": "custom-uninstall-ordinary-directory.stderr",
-            "observed_at": "2026-10-27T07:31:53.874037+00:00"
+            "observed_at": "2026-10-27T11:50:35.551932+00:00"
           }
         ],
         "cases": [
@@ -958,9 +958,9 @@
               3
             ],
             "worker_pids": [
-              4248,
-              2604,
-              4428
+              1360,
+              3144,
+              6400
             ],
             "stale_revision_rejected_without_write": true,
             "repeat_install_preserved_files": true,
@@ -970,7 +970,7 @@
           {
             "case": "custom",
             "status": "PASS",
-            "root": "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-kenizaxb\\Knowledge space 中文 & review",
+            "root": "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-h9ulmw7z\\Knowledge space \u4e2d\u6587 & review",
             "command_substitutions": [
               "GrowthSkillsRoot",
               "GrowthRoot"
@@ -986,9 +986,9 @@
               3
             ],
             "worker_pids": [
-              6664,
-              5560,
-              7532
+              8056,
+              7812,
+              5836
             ],
             "stale_revision_rejected_without_write": true,
             "repeat_install_preserved_files": true,
@@ -1029,7 +1029,12 @@
           ]
         }
       },
-      "sha256": "ce880912745ed73292723c0f5af042a9068c2abc74807ab935565d8dd8384af2"
+      "sha256": "c41f92fdc82b935edb428806c79b694c2a1bd183d1e61ce108a8084e6e9b2da6"
     }
-  ]
+  ],
+  "previous_receipt": {
+    "source_commit": "ab04098d788196b1d1b2763c7c0583aa9f3142a3",
+    "sha256": "fc3f500e22ac7dadb87e54a18f772bc379bf85625e321c7f8313ca12f1d482f6",
+    "repository_revision": "fe3a04dd369087d1d4b6174995cc37d2b159a59a"
+  }
 }
