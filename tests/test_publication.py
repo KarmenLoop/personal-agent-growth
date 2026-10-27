@@ -1,5 +1,7 @@
 """Publication gates reject broken reading paths and stale rendered artifacts."""
 import importlib.util
+import hashlib
+import json
 from pathlib import Path
 import shutil
 import tempfile
@@ -35,6 +37,25 @@ class PublicationTests(unittest.TestCase):
         errors = publication.validate(self.root)['errors']
         self.assertTrue(any('Missing language counterpart' in e for e in errors))
         self.assertTrue(any('Template types differ' in e for e in errors))
+
+    def test_published_diagram_requires_a_render_receipt(self):
+        relative = 'docs/diagrams/unrendered.svg'
+        data = (self.root / 'docs/diagrams/system.en.svg').read_bytes()
+        (self.root / relative).write_bytes(data)
+        manifest = self.root / 'publication.json'
+        publication_data = json.loads(manifest.read_text())
+        publication_data['media_files'][relative] = hashlib.sha256(data).hexdigest()
+        manifest.write_text(json.dumps(publication_data))
+        errors = publication.validate(self.root)['errors']
+        self.assertTrue(any('Diagram inventory differs' in e for e in errors))
+
+    def test_duplicate_render_receipt_does_not_cover_another_diagram(self):
+        manifest = self.root / 'docs/diagrams/render-manifest.json'
+        render = json.loads(manifest.read_text())
+        render['diagrams'][1] = dict(render['diagrams'][0])
+        manifest.write_text(json.dumps(render))
+        errors = publication.validate(self.root)['errors']
+        self.assertTrue(any('Duplicate diagram render record' in e for e in errors))
 
 
 if __name__ == '__main__':

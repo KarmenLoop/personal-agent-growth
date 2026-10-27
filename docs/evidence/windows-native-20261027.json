@@ -1,0 +1,127 @@
+{
+  "schema": 1,
+  "status": "PASS",
+  "observed_at": "2026-10-27T11:39:11.095031+00:00",
+  "guest": {
+    "elevated": true,
+    "packet_sha256": "E130D9E3AA3C2D99BCE456B5BCF5742879B5E0CE24A4699813F0364053F021AA",
+    "build": "26300",
+    "architecture": "ARM 64-bit Processor",
+    "version": "10.0.26300",
+    "node_zip_sha256": "FEC025A6DA31757E3B6AF84C5A1628E9D38442CA99A2161091D78F2FCFA35EF3",
+    "os": "Microsoft Windows 11 Pro",
+    "observed_at": "2026-10-27T11:35:39.9057063Z",
+    "powershell": "5.1.26100.9457",
+    "identity_scope": "NT AUTHORITY\\SYSTEM via the QEMU guest agent; privileged service context",
+    "full_build": "10.0.26300.9457",
+    "vm": {
+      "manager": "UTM 5.0.8",
+      "host": "macOS arm64",
+      "cpus": 4,
+      "ram_gib": 8,
+      "disk_gib": 80
+    }
+  },
+  "platform": "win32",
+  "arch": "arm64",
+  "node": "v22.23.2",
+  "started_at": "2026-10-27T11:35:41.532Z",
+  "completed_at": "2026-10-27T11:35:54.237Z",
+  "inputs": {
+    "src/shared-memory/windows-acl.mjs": "606f28128b4dbabc00ac8c6b716b7b2617f251302b623f7e0552b4e259f6c948",
+    "bin/koder-memory-acl.exe": "c4ba925e4e08581292a899426aab763168ba0b47583760099ea76ebb3dd04273",
+    "test/windows-acl-helper.test.mjs": "4ab5e5d66a40e730ca5112b1af88c54cb6592be194d65257101c8971a05ed3ed",
+    "test/windows-fixtures.mjs": "be9923b6c3f838057e37127ddc769a6eab1ea1e7ffb44c36b9998d00576b160d"
+  },
+  "runs": [
+    {
+      "name": "original-four",
+      "command": [
+        "C:\\WINDOWS\\system32\\config\\systemprofile\\PAG-Audit-20261027-043455\\node\\node-v22.23.2-win-arm64\\node.exe",
+        "--test",
+        "--test-timeout=60000",
+        "test/windows-acl-helper.test.mjs"
+      ],
+      "exitCode": 0,
+      "error": null,
+      "durationSeconds": 0.46581316700000003,
+      "status": "PASS",
+      "stdoutSha256": "f5d20b75364950f5902bffac67a71d6b66e7b1ab231b648195b535df7c74d77d",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "counts": {
+        "tests": 4,
+        "pass": 4,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "names": [
+        "modified native ACL program is refused before execution",
+        "a redirected ACL program is refused before execution",
+        "an explicit native privacy refusal does not invoke another reader",
+        "a blocked native host uses the original reader within the same deadline"
+      ],
+      "published_stdout": "windows-original-four.stdout",
+      "published_stdout_sha256": "f5d20b75364950f5902bffac67a71d6b66e7b1ab231b648195b535df7c74d77d",
+      "published_stderr": "windows-original-four.stderr",
+      "published_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "native-smoke",
+      "command": [
+        "C:\\WINDOWS\\system32\\config\\systemprofile\\PAG-Audit-20261027-043455\\node\\node-v22.23.2-win-arm64\\node.exe",
+        "--test",
+        "--test-timeout=60000",
+        "test/native-smoke.test.mjs"
+      ],
+      "exitCode": 0,
+      "error": null,
+      "durationSeconds": 12.237071292,
+      "status": "PASS",
+      "stdoutSha256": "fa6310a105306734854452849dc7083a85ace4c42425d2f84013acb1595f6f0a",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "counts": {
+        "tests": 3,
+        "pass": 3,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "names": [
+        "actual native helper protects a new empty directory and Windows ACL readback confirms it",
+        "actual native helper refuses a nonempty public directory without changing content or ACL",
+        "actual PowerShell fallback protects an owned empty directory when native helper is absent"
+      ],
+      "published_stdout": "windows-native-smoke.stdout",
+      "published_stdout_sha256": "fa6310a105306734854452849dc7083a85ace4c42425d2f84013acb1595f6f0a",
+      "published_stderr": "windows-native-smoke.stderr",
+      "published_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "raw_receipt_sha256": "58f03a793534b02f049734c15a3c4fcdb068b57b996aba0eda342f898dd03357",
+  "host_verification_sha256": "e8e2d29b3dfee33be6b0f7a484182172fba11514dd3ef3639400afa398f735d4",
+  "source_before_after_identical": true,
+  "returned_archive_sha256": "4b5e71583bc81f11f9e2c6102333e6f7b180ea4acfb4aba450ba464649d65846",
+  "environment": {
+    "uac_initial_vendor_value": 0,
+    "uac_restored_and_reboot_verified": 1,
+    "secure_boot": true,
+    "boot_time": "2026-10-27T11:34:01.9473850Z",
+    "tpm_api": "NOT_ACCEPTED: HRESULT 0x80284001"
+  },
+  "recovery_repairs": [
+    "Preserved empty outer batch exit marker; corrected redirection order and verified explicit 0/2 controls. Acceptance uses original guest Node receipts and raw TAP, not this marker.",
+    "Preserved first macOS extraction with literal backslashes. Re-extracted the unchanged returned ZIP with validated portable paths and verified every stream hash."
+  ],
+  "host_postrun_verification_sha256": "a6bad4dd4a9b7e41ca73b81e16a8d1b960dd9a1574bee4f3ac1561f34e388f42",
+  "limits": [
+    "Targeted Windows VM checks, not the complete Windows product suite",
+    "Original four guards use child-result stubs; three additional checks execute real ACL operations",
+    "No new desktop Agent, live provider, physical phone, or efficiency claim",
+    "SYSTEM execution does not establish ordinary-user compatibility or interactive desktop behavior",
+    "The guest TPM API returned HRESULT 0x80284001; TPM functionality is outside this ACL acceptance"
+  ],
+  "redaction": "Guest account name, SID, and profile prefix omitted; raw receipts retained privately. No private executable or product source is exported."
+}

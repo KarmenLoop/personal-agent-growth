@@ -1,0 +1,21 @@
+flowchart TD
+    A["Read each skip predicate and test body"] --> B{"Missing condition"}
+    B --> C["Product availability decision"]
+    B --> D["Service inputs or dependencies"]
+    B --> E["Native platform"]
+    C --> F["Prove public refusal and zero transport calls"]
+    F --> G["Explicit offline transport with real adapter and tools"]
+    D --> H["Verify routes, versions and input identities"]
+    H --> I["Run actual service and isolation counterexample"]
+    E --> J["Locate the user-selected Windows VM"]
+    J --> K{"Usable guest and storage?"}
+    K -- No --> L["NOT_RUN checkpoint; request the missing prerequisite"]
+    K -- Yes --> M["Original guards plus real ACL and fallback checks"]
+    G --> N["Frozen configured full regression"]
+    I --> N
+    M --> R["Guest receipt, output hashes and result archive"]
+    R --> S["Host verifies source identity, raw streams and test names"]
+    S --> O
+    N --> O["Reconcile all original names and retained failed attempts"]
+    L --> O
+    O --> P["Publish exact scope and reusable Markdown experience"]

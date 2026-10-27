@@ -44,7 +44,7 @@
       {
         "file": "personal-agent-growth/references/regression-repair.en.md",
         "source": "https://github.com/KarmenLoop/personal-agent-growth/blob/v0.4.3/docs/evidence/koder-skip-audit-20261027.json",
-        "source_sha256": "1797173c5dee071183c13c07496f57729ed4df6b82051b5a68ed8d98704500a5",
+        "source_sha256": "d3bb78bb068d6a827a49a4c613675a8d2f0e4db48879d54f4660bd6db67f0df1",
         "validation": "Tagged source or current release candidate exists"
       },
       {
@@ -62,7 +62,7 @@
       {
         "file": "personal-agent-growth/references/regression-repair.md",
         "source": "https://github.com/KarmenLoop/personal-agent-growth/blob/v0.4.3/docs/evidence/koder-skip-audit-20261027.json",
-        "source_sha256": "1797173c5dee071183c13c07496f57729ed4df6b82051b5a68ed8d98704500a5",
+        "source_sha256": "d3bb78bb068d6a827a49a4c613675a8d2f0e4db48879d54f4660bd6db67f0df1",
         "validation": "Tagged source or current release candidate exists"
       },
       {
@@ -78,7 +78,7 @@
         "validation": "Tagged source or current release candidate exists"
       }
     ],
-    "core_archive_sha256": "c59d3632b9839e262df635d1064e8b4dc3d0df4bee3c77939a7af24875ad65bc"
+    "core_archive_sha256": "3ac502143eb8f6b7f5e392abdc6bdeb10ed5f63a247e8b151832ea8617945a68"
   },
   "scope": "Source references resolve to package files or release-tag documents; live download readback follows publication"
 }

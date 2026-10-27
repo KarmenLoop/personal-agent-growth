@@ -1,14 +1,50 @@
 {
   "version": "0.4.3",
   "status": "PASS",
-  "scope": "Parse all current embedded Mermaid; render two unchanged maps in a new isolated Chrome profile",
+  "scope": "Parse all current embedded Mermaid and render both new Windows audit diagrams; original 16 SVGs retained",
   "result": {
     "embedded_mermaid_blocks": 11,
     "status": "PASS",
     "screenshots": 2
   },
   "exit_code": 0,
-  "duration_seconds": 6.0254195,
   "stdout": "PARSE_OK START-HERE.md:1\nPARSE_OK docs/release-0.4.2-acceptance.en.md:1\nPARSE_OK docs/release-0.4.2-acceptance.zh-CN.md:1\nPARSE_OK docs/release-0.4.3-acceptance.en.md:1\nPARSE_OK docs/release-0.4.3-acceptance.zh-CN.md:1\nPARSE_OK docs/visual-guide.md:1\nPARSE_OK docs/visual-guide.md:2\nPARSE_OK docs/visual-guide.md:3\nPARSE_OK docs/visual-guide.md:4\nPARSE_OK docs/visual-guide.md:5\nPARSE_OK docs/visual-guide.md:6\n{\"embedded_mermaid_blocks\":11,\"status\":\"PASS\",\"screenshots\":2}\n",
-  "stdout_sha256": "0160201c43f128b01b35a3ee67e4b49c8da34bb9e87d44de2f00b9fc3079abf3"
+  "stdout_sha256": "0160201c43f128b01b35a3ee67e4b49c8da34bb9e87d44de2f00b9fc3079abf3",
+  "generated": {
+    "windows-audit.zh-CN.svg": "c2f5185c9497ddf94f2c408600788f5c0f90c02af0a85b84c5ea672c87c71d4d",
+    "windows-audit.zh-CN.mmd": "acaedad02be334736ca6678e87355853e47eedaf96ad9ac1ad3366ba46ba7037",
+    "windows-audit.en.svg": "f2b694ac5ed534ec7689402fac3110ff9a9d32c40a164c78554c5e81e903f974",
+    "windows-audit.en.mmd": "d99ad0ca0d8f122292eec3e1c567f9d6ac16e04ace01b2506496bb84e62f97fb"
+  },
+  "previous_verification": {
+    "version": "0.4.3",
+    "status": "PASS",
+    "scope": "Parse all current embedded Mermaid; render two unchanged maps in a new isolated Chrome profile",
+    "result": {
+      "embedded_mermaid_blocks": 11,
+      "status": "PASS",
+      "screenshots": 2
+    },
+    "exit_code": 0,
+    "duration_seconds": 6.0254195,
+    "stdout": "PARSE_OK START-HERE.md:1\nPARSE_OK docs/release-0.4.2-acceptance.en.md:1\nPARSE_OK docs/release-0.4.2-acceptance.zh-CN.md:1\nPARSE_OK docs/release-0.4.3-acceptance.en.md:1\nPARSE_OK docs/release-0.4.3-acceptance.zh-CN.md:1\nPARSE_OK docs/visual-guide.md:1\nPARSE_OK docs/visual-guide.md:2\nPARSE_OK docs/visual-guide.md:3\nPARSE_OK docs/visual-guide.md:4\nPARSE_OK docs/visual-guide.md:5\nPARSE_OK docs/visual-guide.md:6\n{\"embedded_mermaid_blocks\":11,\"status\":\"PASS\",\"screenshots\":2}\n",
+    "stdout_sha256": "0160201c43f128b01b35a3ee67e4b49c8da34bb9e87d44de2f00b9fc3079abf3"
+  },
+  "inventory_gate": {
+    "status": "PASS",
+    "initial_negative_tests": {
+      "tests": 5,
+      "pass": 3,
+      "fail": 2,
+      "raw_sha256": "aeb55e1bac59075d3ad990129ca44e0bce928b6dd4e03c3837220898d2140b52"
+    },
+    "after_repair": {
+      "tests": 5,
+      "pass": 5,
+      "fail": 0,
+      "raw_sha256": "f0f214e154587ef67ed7fff70da9507302c8d2b4220fd8381471f0d854ee0613"
+    },
+    "registered_rendered_diagrams": 18,
+    "rule": "Actual SVG files equal the declared publication inventory and the unique render receipt outputs"
+  }
 }

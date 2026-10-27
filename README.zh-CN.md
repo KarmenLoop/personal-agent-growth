@@ -1,6 +1,6 @@
 # Personal Agent Growth · 个人智能体成长
 
-[English](README.md) · [简体中文](README.zh-CN.md) · **0.4.3 预发布版**
+[English](README.md) · [简体中文](README.zh-CN.md) · **0.4.3**
 
 [![检查](https://github.com/KarmenLoop/personal-agent-growth/actions/workflows/check.yml/badge.svg)](https://github.com/KarmenLoop/personal-agent-growth/actions/workflows/check.yml)
 [![发布](https://img.shields.io/github/v/release/KarmenLoop/personal-agent-growth)](https://github.com/KarmenLoop/personal-agent-growth/releases/latest)
@@ -85,7 +85,7 @@ Windows 使用 `py -3 -B -X utf8`；教程优先选择 `D:\AgentKnowledge`，没
 - 历史 Codex 任务收到 **两次真实调度唤醒**，完成执行、改频、恢复检查及暂停后端。
 - 另一项同 Mac Cursor 实测读取并推进共享修订 **1→2、3→4、5→6**，搬迁反例暴露问题后继续修复。
 - **24 次真实 Codex CLI 执行**覆盖软件交接验收和 NASA 数据分析。组合版累计 token **减少 5.9%**，耗时却**增加 7.4%**；不能宣称整体加速或普遍智力提升。[完整报告](docs/cross-domain-trial.zh-CN.md)
-- 私人 Koder 候选全量 **1485 通过、0 失败、0 取消、4 项原生 Windows 跳过**。原 21 项中已有 17 项恢复实跑；剩余 4 项待本机 Windows 虚拟机，不计为完成。[逐项核查](docs/release-0.4.3-acceptance.zh-CN.md)
+- 原 **21 项跳过已全部实跑并通过**：macOS 套件恢复 17 项，真实 Windows ARM64 虚拟机补齐 4 项，另有 3 项真实 ACL 检查通过。保留的 macOS 全量仍为 **1485 通过、0 失败、0 取消、4 项平台跳过**；独立 Windows 运行采用 SYSTEM 特权身份。[逐项核查](docs/release-0.4.3-acceptance.zh-CN.md)
 
 ![完整任务 token 与耗时，保留时钟异常](docs/images/cross-domain-0.4.1.png)
 

@@ -1,8 +1,10 @@
 # Changelog
 
-## 0.4.3 prerelease — 2026-10-27
+## 0.4.3 — 2026-10-27
 
-- Audit every original skipped check and publish its exact evidence scope. Seventeen now execute and pass; four native Windows checks still await the user-selected local VM.
+- Verify diagram files, publication entries, and render receipts as one inventory. Reject missing or duplicate render records; retain the original 16 maps and add two Windows audit diagrams.
+
+- Audit every original skipped check and publish its exact evidence scope. All 21 now execute and pass across the macOS suite and a real Windows ARM64 VM; three additional real ACL checks also pass. Preserve the original macOS platform skips and the privileged SYSTEM scope.
 - Add a reusable skip-audit procedure covering product policy, offline adapter contracts, compatible Core setup, memory isolation, and native-platform evidence.
 - Preserve previous reports and failed attempts. Publish the newly configured full regression, including the installer scheduling repair and bounded package setup.
 - Keep the complete bilingual guides, templates, diagrams, installable Skill, and private product-source boundary.

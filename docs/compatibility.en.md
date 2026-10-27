@@ -10,7 +10,7 @@ Skill readability, utility tests, actual Agent adoption, device portability, and
 | Same-Mac Cursor file recovery | Revisions 1→2, 3→4, 5→6, with two relocation/reference defects repaired | [Historical report](validation.md); no fresh full 0.4.1 behavior run |
 | Optional 0.4.0 adapter | Published five-tool CLI/MCP with writer/revision/hash checks | [Source](../scripts/host.py); prior tutorial reports live Codex read and a separate MCP-client handoff, not Cursor model execution |
 | Windows installation/shared files | 0.4.3 Server 2025, PowerShell 5.1/7, D: and C: Unicode/space paths passed | [Current receipts](evidence/release-0.4.3-windows.json); test processes, not desktop Agents or the four private ACL cases; [original report](windows-install-verification.md) retained |
-| Windows Koder → Cursor Agent | Original complete receipts are missing; the user selected a local Windows VM | NOT_RUN/pending a usable guest and actual Agent receipts; a verbal OK was not substituted for receipts |
+| Windows Koder → Cursor Agent | Original complete receipts are missing; the user selected a local Windows VM | NOT_RUN/pending actual Agent receipts; the ACL guest is now available; a verbal OK was not substituted for receipts |
 | Inner PPC | Actual Agent baseline/general/domain/composed runs, then variation reuse and observe writeback | [Trial](recursive-improvement-trial.md); checker launch count is not full cost |
 | Cross-domain meta-capability | 24 real Codex CLI turns, two domains, quality and resource checks | [Full-task report](cross-domain-trial.md); tokens -5.9%, elapsed +7.4%, no universal speedup |
 | Seed relocation | Historical install, move, load, tool reuse, and removal preserving memory | [Delivery report](delivery-acceptance.md); exported snapshot was path-adapted without a new Agent trial |
@@ -35,11 +35,11 @@ The later candidate `41f82c05a6d104edb295a7c8e80ca2f5c73b9e11` completed 1482 ch
 
 ## Audit of the remaining skips
 
-The 0.4.3 candidate executes 17 of the 21 old skips. Its full suite records 1485 pass, zero failures/cancellations, and four native Windows skips. Those four await the user-selected local VM and are NOT_RUN. Public installer CI is a separate object. [Complete audit](release-0.4.3-acceptance.en.md).
+All 21 original skips now have reached PASS results: 17 in the macOS full suite and four in a real Windows 11 ARM64 VM, plus three real ACL checks. The retained macOS run remains 1485 pass, zero failures/cancellations, and four platform skips. Windows ran through the guest agent as SYSTEM, with UAC restored and reboot verified. Ordinary-user behavior, the full Windows product suite, and desktop Agent continuity are separate acceptance objects. [Complete audit](release-0.4.3-acceptance.en.md).
 
 ## What would support stronger claims
 
-For Windows Agent continuity, recover the original directory and receipts, have actual Koder read/write, then have an actual Cursor model turn read the same revision, review, and write back. Check both artifacts and read sets. Keep this branch pending until the selected Windows guest and actual Agent receipts are available; independent documentation can still publish.
+For Windows Agent continuity, recover the original directory and receipts, have actual Koder read/write, then have an actual Cursor model turn read the same revision, review, and write back. Check both artifacts and read sets. The selected VM now supports ACL checks, but this Agent branch remains pending until actual Agent receipts are available; independent documentation can still publish.
 
 Cross-device claims need content identity, conflict handling, mappings, and permissions checked on both ends. No-new-message operation needs real host events plus execution/acceptance/stopping receipts. Efficiency needs full-task quality, elapsed time, native usage, and optimization overhead rather than call counts.
 
