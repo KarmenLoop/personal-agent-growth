@@ -9,7 +9,7 @@
 | 原生 Codex 唤醒 | 历史 2 次真实事件，执行、改频、回读、恢复复习、暂停均有记录 | [维护者报告](validation.md)；不证明应用关闭或关机后运行 |
 | 同 Mac Cursor 文件恢复 | 修订 1→2、3→4、5→6；独立搬迁与引用检查发现两类缺陷后修复 | [历史报告](validation.md)；未替本次 0.4.1 做全新行为实测 |
 | 0.4.0 可选适配器 | 已发布五工具 CLI/MCP、writer/修订/哈希检查 | [源代码](../scripts/host.py)；既有教程记载 live Codex read 与单独 MCP 客户端交接，不混称 Cursor 模型运行 |
-| Windows 安装与文件共用 | 历史 0.4.1 在 Server 2025、PowerShell 5.1/7、D 盘及 C 盘中文空格路径通过 | [历史收条](evidence/release-0.4.1-windows.json)；独立测试进程，不是桌面 Agent；[原记录](windows-install-verification.md)保留 |
+| Windows 安装与文件共用 | 0.4.3 在 Server 2025、PowerShell 5.1/7、D 盘及 C 盘中文空格路径通过 | [当前收条](evidence/release-0.4.3-windows.json)；独立测试进程，不是桌面 Agent 或四项私人 ACL 检查；[原记录](windows-install-verification.md)保留 |
 | Windows Koder → Cursor Agent | 尚缺原设备完整运行回执；用户已改选本机 Windows 虚拟机 | NOT_RUN/待可用来宾与实际 Agent 回执；用户口头“OK”未替代实际回执 |
 | 内层 PPC | 真 Agent 对比原版、通用、领域及组合；之后变式复用并 observe 回写 | [原实测](recursive-improvement-trial.md)；检查器进程数不是总成本 |
 | 跨领域元能力 | 24 个真实 Codex CLI 回合，两个领域，质量与资源约束检查 | [完整任务报告](cross-domain-trial.zh-CN.md)；token -5.9%，耗时 +7.4%，无普遍加速结论 |

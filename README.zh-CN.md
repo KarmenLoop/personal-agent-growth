@@ -1,6 +1,6 @@
 # Personal Agent Growth · 个人智能体成长
 
-[English](README.md) · [简体中文](README.zh-CN.md) · **0.4.3**
+[English](README.md) · [简体中文](README.zh-CN.md) · **0.4.3 预发布版**
 
 [![检查](https://github.com/KarmenLoop/personal-agent-growth/actions/workflows/check.yml/badge.svg)](https://github.com/KarmenLoop/personal-agent-growth/actions/workflows/check.yml)
 [![发布](https://img.shields.io/github/v/release/KarmenLoop/personal-agent-growth)](https://github.com/KarmenLoop/personal-agent-growth/releases/latest)

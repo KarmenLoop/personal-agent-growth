@@ -4,6 +4,8 @@
 
 ## Result
 
+This distribution is a **prerelease** while the four native Windows checks remain pending. Publishing the completed evidence does not close that acceptance gap.
+
 All **21 original skips were inspected individually**. **17 now execute and pass**: 14 offline provider contracts and 3 integrations against the original compatible Core. **4 native Windows checks remain NOT_RUN**. This is a partial product-acceptance result; the remaining cases have not been converted into passes.
 
 The frozen private candidate `c7ae14b44fb9f41bed6599af5132519de30e19f3` completed `npm test`: **1489 tests, 1485 pass, 0 fail, 0 cancelled, 4 platform skips**. The full command took **446.70 seconds**. Before/after identities matched for 2629 tracked source files, 542 Core source files, 54 mobile dependency files, and the isolated Python dependency inventory. These are source-level and integration checks, not a new autonomous desktop Agent trial.
@@ -89,6 +91,8 @@ flowchart TD
 
 ## Public Skill distribution
 
+The [public CI receipt](evidence/release-0.4.3-ci.json) binds its tested commit and records 50 utility tests on each of Linux x64, macOS Intel, and Windows x64. The [Windows installer receipt](evidence/release-0.4.3-windows.json) records PowerShell 5.1 and 7 installation, shared-file revisions, stale-writer refusal, and protected uninstall. All five jobs passed. Their complete raw installer artifacts are included separately with the release. These hosted runs do not execute the four private ACL cases.
+
 Personal Agent Growth 0.4.3 adds the [skipped-check procedure](../references/regression-repair.en.md) and per-case evidence. The 61-file core package, bilingual manuals, 32 templates, and 16 existing rendered maps remain available. The private Koder candidate retains runtime version 0.4.14 and its original license; no production Koder installation was replaced.
 
-Public utility/package and installation receipts are linked when completed. They establish public distribution behavior, independently of the four private native Windows checks. This release adds no new paid model turn, Windows Koder-to-Cursor Agent continuation, app-closed wakeup, or full-task efficiency experiment.
+The [local receipt](evidence/release-0.4.3-local.json) records 50 passing utility tests, 127 core-package checks over 61 files, installation under a Unicode/space path, relocation, two experience reads, and removal with memory hashes unchanged. The [diagram receipt](evidence/release-0.4.3-diagrams.json) records 11 parsed Mermaid blocks and fresh rendering of two retained maps. These establish public distribution behavior, independently of the four private native Windows checks. This release adds no new paid model turn, Windows Koder-to-Cursor Agent continuation, app-closed wakeup, or full-task efficiency experiment.

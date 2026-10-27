@@ -1,0 +1,507 @@
+{
+  "version": "0.4.3",
+  "status": "PASS",
+  "source_commit": "ab04098d788196b1d1b2763c7c0583aa9f3142a3",
+  "scope": "Public utilities on three hosted OS runners and public installer/shared-file checks in two Windows shells; excludes private native ACL and desktop Agent behavior",
+  "runs": [
+    {
+      "conclusion": "success",
+      "databaseId": 40467642969,
+      "headSha": "ab04098d788196b1d1b2763c7c0583aa9f3142a3",
+      "jobs": [
+        {
+          "completedAt": "2026-10-27T07:32:33Z",
+          "conclusion": "success",
+          "databaseId": 122066818498,
+          "name": "check (macos-26-intel)",
+          "startedAt": "2026-10-27T07:31:40Z",
+          "status": "completed",
+          "steps": [
+            {
+              "completedAt": "2026-10-27T07:31:47Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-10-27T07:31:42Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:32:06Z",
+              "conclusion": "success",
+              "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "number": 2,
+              "startedAt": "2026-10-27T07:31:47Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:32:10Z",
+              "conclusion": "success",
+              "name": "Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+              "number": 3,
+              "startedAt": "2026-10-27T07:32:06Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:32:13Z",
+              "conclusion": "success",
+              "name": "Record Python and platform",
+              "number": 4,
+              "startedAt": "2026-10-27T07:32:10Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:32:29Z",
+              "conclusion": "success",
+              "name": "Run python -m unittest discover -s tests -v",
+              "number": 5,
+              "startedAt": "2026-10-27T07:32:13Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:32:29Z",
+              "conclusion": "success",
+              "name": "Run python tools/build_release.py --output dist",
+              "number": 6,
+              "startedAt": "2026-10-27T07:32:29Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:32:29Z",
+              "conclusion": "success",
+              "name": "Verify the package named by the built manifest",
+              "number": 7,
+              "startedAt": "2026-10-27T07:32:29Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:32:30Z",
+              "conclusion": "success",
+              "name": "Run python -B scripts/check_publication.py",
+              "number": 8,
+              "startedAt": "2026-10-27T07:32:29Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:32:30Z",
+              "conclusion": "success",
+              "name": "Post Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+              "number": 15,
+              "startedAt": "2026-10-27T07:32:30Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:32:31Z",
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "number": 16,
+              "startedAt": "2026-10-27T07:32:30Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:32:31Z",
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 17,
+              "startedAt": "2026-10-27T07:32:31Z",
+              "status": "completed"
+            }
+          ],
+          "url": "https://github.com/KarmenLoop/personal-agent-growth/actions/runs/40467642969/job/122066818498"
+        },
+        {
+          "completedAt": "2026-10-27T07:32:02Z",
+          "conclusion": "success",
+          "databaseId": 122066818739,
+          "name": "check (windows-2025)",
+          "startedAt": "2026-10-27T07:31:37Z",
+          "status": "completed",
+          "steps": [
+            {
+              "completedAt": "2026-10-27T07:31:38Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-10-27T07:31:37Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:31:44Z",
+              "conclusion": "success",
+              "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "number": 2,
+              "startedAt": "2026-10-27T07:31:38Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:31:45Z",
+              "conclusion": "success",
+              "name": "Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+              "number": 3,
+              "startedAt": "2026-10-27T07:31:44Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:31:46Z",
+              "conclusion": "success",
+              "name": "Record Python and platform",
+              "number": 4,
+              "startedAt": "2026-10-27T07:31:45Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:31:56Z",
+              "conclusion": "success",
+              "name": "Run python -m unittest discover -s tests -v",
+              "number": 5,
+              "startedAt": "2026-10-27T07:31:46Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:31:57Z",
+              "conclusion": "success",
+              "name": "Run python tools/build_release.py --output dist",
+              "number": 6,
+              "startedAt": "2026-10-27T07:31:56Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:31:57Z",
+              "conclusion": "success",
+              "name": "Verify the package named by the built manifest",
+              "number": 7,
+              "startedAt": "2026-10-27T07:31:57Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:31:58Z",
+              "conclusion": "success",
+              "name": "Run python -B scripts/check_publication.py",
+              "number": 8,
+              "startedAt": "2026-10-27T07:31:57Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:31:58Z",
+              "conclusion": "success",
+              "name": "Post Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+              "number": 15,
+              "startedAt": "2026-10-27T07:31:58Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:32:00Z",
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "number": 16,
+              "startedAt": "2026-10-27T07:31:58Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:32:01Z",
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 17,
+              "startedAt": "2026-10-27T07:32:00Z",
+              "status": "completed"
+            }
+          ],
+          "url": "https://github.com/KarmenLoop/personal-agent-growth/actions/runs/40467642969/job/122066818739"
+        },
+        {
+          "completedAt": "2026-10-27T07:31:44Z",
+          "conclusion": "success",
+          "databaseId": 122066818747,
+          "name": "check (ubuntu-24.04)",
+          "startedAt": "2026-10-27T07:31:37Z",
+          "status": "completed",
+          "steps": [
+            {
+              "completedAt": "2026-10-27T07:31:38Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-10-27T07:31:38Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:31:39Z",
+              "conclusion": "success",
+              "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "number": 2,
+              "startedAt": "2026-10-27T07:31:38Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:31:39Z",
+              "conclusion": "success",
+              "name": "Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+              "number": 3,
+              "startedAt": "2026-10-27T07:31:39Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:31:39Z",
+              "conclusion": "success",
+              "name": "Record Python and platform",
+              "number": 4,
+              "startedAt": "2026-10-27T07:31:39Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:31:42Z",
+              "conclusion": "success",
+              "name": "Run python -m unittest discover -s tests -v",
+              "number": 5,
+              "startedAt": "2026-10-27T07:31:39Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:31:42Z",
+              "conclusion": "success",
+              "name": "Run python tools/build_release.py --output dist",
+              "number": 6,
+              "startedAt": "2026-10-27T07:31:42Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:31:42Z",
+              "conclusion": "success",
+              "name": "Verify the package named by the built manifest",
+              "number": 7,
+              "startedAt": "2026-10-27T07:31:42Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:31:42Z",
+              "conclusion": "success",
+              "name": "Run python -B scripts/check_publication.py",
+              "number": 8,
+              "startedAt": "2026-10-27T07:31:42Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:31:42Z",
+              "conclusion": "success",
+              "name": "Post Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+              "number": 15,
+              "startedAt": "2026-10-27T07:31:42Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:31:42Z",
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "number": 16,
+              "startedAt": "2026-10-27T07:31:42Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:31:42Z",
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 17,
+              "startedAt": "2026-10-27T07:31:42Z",
+              "status": "completed"
+            }
+          ],
+          "url": "https://github.com/KarmenLoop/personal-agent-growth/actions/runs/40467642969/job/122066818747"
+        }
+      ],
+      "status": "completed",
+      "url": "https://github.com/KarmenLoop/personal-agent-growth/actions/runs/40467642969",
+      "raw_log_sha256": "03a4ad31b6ba6f806cf6dc6742a9d51d7429f2aa897283297a6504574e47d7ee"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 40467642946,
+      "headSha": "ab04098d788196b1d1b2763c7c0583aa9f3142a3",
+      "jobs": [
+        {
+          "completedAt": "2026-10-27T07:31:59Z",
+          "conclusion": "success",
+          "databaseId": 122066818163,
+          "name": "install (pwsh)",
+          "startedAt": "2026-10-27T07:31:37Z",
+          "status": "completed",
+          "steps": [
+            {
+              "completedAt": "2026-10-27T07:31:38Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-10-27T07:31:37Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:31:43Z",
+              "conclusion": "success",
+              "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "number": 2,
+              "startedAt": "2026-10-27T07:31:38Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:31:43Z",
+              "conclusion": "success",
+              "name": "Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+              "number": 3,
+              "startedAt": "2026-10-27T07:31:43Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:31:45Z",
+              "conclusion": "success",
+              "name": "Run python tools/build_release.py --output dist",
+              "number": 4,
+              "startedAt": "2026-10-27T07:31:43Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:31:53Z",
+              "conclusion": "success",
+              "name": "Run guide commands and shared-memory file checks",
+              "number": 5,
+              "startedAt": "2026-10-27T07:31:45Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:31:55Z",
+              "conclusion": "success",
+              "name": "Keep commands, outputs, state revisions, and receipts",
+              "number": 6,
+              "startedAt": "2026-10-27T07:31:53Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:31:55Z",
+              "conclusion": "success",
+              "name": "Run python -B scripts/check_publication.py",
+              "number": 7,
+              "startedAt": "2026-10-27T07:31:55Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:31:55Z",
+              "conclusion": "success",
+              "name": "Post Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+              "number": 13,
+              "startedAt": "2026-10-27T07:31:55Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:31:57Z",
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "number": 14,
+              "startedAt": "2026-10-27T07:31:55Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:31:57Z",
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 15,
+              "startedAt": "2026-10-27T07:31:57Z",
+              "status": "completed"
+            }
+          ],
+          "url": "https://github.com/KarmenLoop/personal-agent-growth/actions/runs/40467642946/job/122066818163"
+        },
+        {
+          "completedAt": "2026-10-27T07:32:12Z",
+          "conclusion": "success",
+          "databaseId": 122066818432,
+          "name": "install (powershell)",
+          "startedAt": "2026-10-27T07:31:37Z",
+          "status": "completed",
+          "steps": [
+            {
+              "completedAt": "2026-10-27T07:31:39Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-10-27T07:31:38Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:31:44Z",
+              "conclusion": "success",
+              "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "number": 2,
+              "startedAt": "2026-10-27T07:31:39Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:31:45Z",
+              "conclusion": "success",
+              "name": "Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+              "number": 3,
+              "startedAt": "2026-10-27T07:31:44Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:31:46Z",
+              "conclusion": "success",
+              "name": "Run python tools/build_release.py --output dist",
+              "number": 4,
+              "startedAt": "2026-10-27T07:31:45Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:32:05Z",
+              "conclusion": "success",
+              "name": "Run guide commands and shared-memory file checks",
+              "number": 5,
+              "startedAt": "2026-10-27T07:31:46Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:32:06Z",
+              "conclusion": "success",
+              "name": "Keep commands, outputs, state revisions, and receipts",
+              "number": 6,
+              "startedAt": "2026-10-27T07:32:05Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:32:07Z",
+              "conclusion": "success",
+              "name": "Run python -B scripts/check_publication.py",
+              "number": 7,
+              "startedAt": "2026-10-27T07:32:06Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:32:07Z",
+              "conclusion": "success",
+              "name": "Post Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+              "number": 13,
+              "startedAt": "2026-10-27T07:32:07Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:32:10Z",
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "number": 14,
+              "startedAt": "2026-10-27T07:32:07Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T07:32:10Z",
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 15,
+              "startedAt": "2026-10-27T07:32:10Z",
+              "status": "completed"
+            }
+          ],
+          "url": "https://github.com/KarmenLoop/personal-agent-growth/actions/runs/40467642946/job/122066818432"
+        }
+      ],
+      "status": "completed",
+      "url": "https://github.com/KarmenLoop/personal-agent-growth/actions/runs/40467642946",
+      "raw_log_sha256": "795c8326a87c8035a92f6175071ad1a026ad5d3753c247332e099f5bfa68ef6e"
+    }
+  ]
+}

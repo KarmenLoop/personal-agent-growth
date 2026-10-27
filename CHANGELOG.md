@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.4.3 — 2026-10-27
+## 0.4.3 prerelease — 2026-10-27
 
 - Audit every original skipped check and publish its exact evidence scope. Seventeen now execute and pass; four native Windows checks still await the user-selected local VM.
 - Add a reusable skip-audit procedure covering product policy, offline adapter contracts, compatible Core setup, memory isolation, and native-platform evidence.
