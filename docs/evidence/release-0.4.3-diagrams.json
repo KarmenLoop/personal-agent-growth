@@ -1,0 +1,14 @@
+{
+  "version": "0.4.3",
+  "status": "PASS",
+  "scope": "Parse all current embedded Mermaid; render two unchanged maps in a new isolated Chrome profile",
+  "result": {
+    "embedded_mermaid_blocks": 11,
+    "status": "PASS",
+    "screenshots": 2
+  },
+  "exit_code": 0,
+  "duration_seconds": 6.0254195,
+  "stdout": "PARSE_OK START-HERE.md:1\nPARSE_OK docs/release-0.4.2-acceptance.en.md:1\nPARSE_OK docs/release-0.4.2-acceptance.zh-CN.md:1\nPARSE_OK docs/release-0.4.3-acceptance.en.md:1\nPARSE_OK docs/release-0.4.3-acceptance.zh-CN.md:1\nPARSE_OK docs/visual-guide.md:1\nPARSE_OK docs/visual-guide.md:2\nPARSE_OK docs/visual-guide.md:3\nPARSE_OK docs/visual-guide.md:4\nPARSE_OK docs/visual-guide.md:5\nPARSE_OK docs/visual-guide.md:6\n{\"embedded_mermaid_blocks\":11,\"status\":\"PASS\",\"screenshots\":2}\n",
+  "stdout_sha256": "0160201c43f128b01b35a3ee67e4b49c8da34bb9e87d44de2f00b9fc3079abf3"
+}

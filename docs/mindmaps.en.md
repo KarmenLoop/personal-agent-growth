@@ -1,4 +1,4 @@
-# Detailed mind maps and diagrams · 0.4.2
+# Detailed mind maps and diagrams · 0.4.3
 
 [English](mindmaps.en.md) · [中文](mindmaps.zh-CN.md)
 

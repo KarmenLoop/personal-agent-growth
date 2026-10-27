@@ -160,7 +160,8 @@ class HandoffTests(unittest.TestCase):
             self.assertIn("personal-agent-growth/scripts/compare_trials.py", names)
             self.assertIn("personal-agent-growth/references/markdown-learning.en.md", names)
             text = archive.read("personal-agent-growth/README.md").decode("utf-8")
-            self.assertIn("https://github.com/KarmenLoop/personal-agent-growth/blob/v0.4.2/docs/architecture.en.md", text)
+            version = json.loads(self.manifest.read_text())["declared_version"]
+            self.assertIn(f"https://github.com/KarmenLoop/personal-agent-growth/blob/v{version}/docs/architecture.en.md", text)
             self.assertNotIn("](docs/architecture.en.md)", text)
 
 

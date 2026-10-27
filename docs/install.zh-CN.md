@@ -1,10 +1,10 @@
-# 完整安装、升级与卸载说明 · 0.4.2
+# 完整安装、升级与卸载说明 · 0.4.3
 
 [English](install.md) · [实际教程](tutorial.zh-CN.md) · [完整离线包](../开始使用.md)
 
 ## 1. 选对交付物与位置
 
-发布页有两种附件：核心 `personal-agent-growth-0.4.2.zip` 含 Skill、双语协议、模板和工具；**完整交付包**另含全部源代码、测试、经验种子、双语长文和图源，适合离线保存。核心包中未附带的长文链接指向版本化 GitHub 文档。需要完整经验库和离线教程时，使用完整包及其中的安装器。
+发布页有两种附件：核心 `personal-agent-growth-0.4.3.zip` 含 Skill、双语协议、模板和工具；**完整交付包**另含全部源代码、测试、经验种子、双语长文和图源，适合离线保存。核心包中未附带的长文链接指向版本化 GitHub 文档。需要完整经验库和离线教程时，使用完整包及其中的安装器。
 
 需要已正常使用的宿主账号、可读写的本地目录和 Python 3.11+；工具只用标准库，无需 pip。Mac 先执行 `python3 --version`，Windows 执行 `py -3 --version`。没有 Python 时可先读取 Markdown，但不能声称已运行工具。安装器不创建账号、后台进程、定时任务或跨设备同步。
 
@@ -13,7 +13,7 @@
 ```text
 AgentKnowledge/
   skills/personal-agent-growth/   技能原件
-  downloads/0.4.2/                发布附件
+  downloads/0.4.3/                发布附件
   learning/                      私人 Markdown 知识
   tasks/                         运行材料、实验与原始回执
   experience/                    完整包可选历史种子，与当前画像分开
@@ -30,25 +30,25 @@ AgentKnowledge/
   GrowthSkillsRoot="$HOME/.agents/skills"
   SkillDir="$GrowthRoot/skills/personal-agent-growth"
   SkillEntry="$GrowthSkillsRoot/personal-agent-growth"
-  ReleaseDir="$GrowthRoot/downloads/0.4.2"
-  ReleaseUrl="https://github.com/KarmenLoop/personal-agent-growth/releases/download/v0.4.2"
+  ReleaseDir="$GrowthRoot/downloads/0.4.3"
+  ReleaseUrl="https://github.com/KarmenLoop/personal-agent-growth/releases/download/v0.4.3"
   if [ -e "$SkillDir" ] || [ -L "$SkillDir" ] || [ -e "$SkillEntry" ] || [ -L "$SkillEntry" ]; then
     echo "An installation already exists. Follow the update section." >&2
     exit 1
   fi
   mkdir -p "$ReleaseDir" "$GrowthRoot/skills" "$GrowthRoot/tasks" "$GrowthSkillsRoot"
-  curl --fail --location --retry 2 --max-time 90 "$ReleaseUrl/personal-agent-growth-0.4.2.zip" -o "$ReleaseDir/personal-agent-growth-0.4.2.zip"
+  curl --fail --location --retry 2 --max-time 90 "$ReleaseUrl/personal-agent-growth-0.4.3.zip" -o "$ReleaseDir/personal-agent-growth-0.4.3.zip"
   curl --fail --location --retry 2 --max-time 90 "$ReleaseUrl/manifest.json" -o "$ReleaseDir/manifest.json"
   python3 - "$ReleaseDir" <<'PY'
 import hashlib, json, pathlib, sys
 p = pathlib.Path(sys.argv[1])
 m = json.loads((p / 'manifest.json').read_text(encoding='utf-8'))
-assert m['archive']['name'] == 'personal-agent-growth-0.4.2.zip'
+assert m['archive']['name'] == 'personal-agent-growth-0.4.3.zip'
 assert hashlib.sha256((p / m['archive']['name']).read_bytes()).hexdigest() == m['archive']['sha256'], 'ZIP checksum mismatch'
 print('Archive hash matches the supplied manifest')
 PY
-  unzip -q "$ReleaseDir/personal-agent-growth-0.4.2.zip" -d "$GrowthRoot/skills"
-  python3 -B "$SkillDir/scripts/verify_handoff.py" --archive "$ReleaseDir/personal-agent-growth-0.4.2.zip" --manifest "$ReleaseDir/manifest.json"
+  unzip -q "$ReleaseDir/personal-agent-growth-0.4.3.zip" -d "$GrowthRoot/skills"
+  python3 -B "$SkillDir/scripts/verify_handoff.py" --archive "$ReleaseDir/personal-agent-growth-0.4.3.zip" --manifest "$ReleaseDir/manifest.json"
   ln -s "$SkillDir" "$SkillEntry"
   test -f "$SkillEntry/SKILL.md"
   printf 'Skill: %s\nDiscovery entry: %s\nTask memory: %s\n' "$SkillDir" "$SkillEntry" "$GrowthRoot/tasks"
@@ -68,18 +68,18 @@ PY
   $GrowthSkillsRoot = Join-Path $env:USERPROFILE '.agents\skills'
   $SkillDir = Join-Path $GrowthRoot 'skills\personal-agent-growth'
   $SkillEntry = Join-Path $GrowthSkillsRoot 'personal-agent-growth'
-  $ReleaseDir = Join-Path $GrowthRoot 'downloads\0.4.2'
-  $ReleaseUrl = 'https://github.com/KarmenLoop/personal-agent-growth/releases/download/v0.4.2'
+  $ReleaseDir = Join-Path $GrowthRoot 'downloads\0.4.3'
+  $ReleaseUrl = 'https://github.com/KarmenLoop/personal-agent-growth/releases/download/v0.4.3'
   if ((Test-Path -LiteralPath $SkillDir) -or (Get-Item -LiteralPath $SkillEntry -Force -ErrorAction SilentlyContinue)) {
     throw 'An installation already exists. Follow the update section.'
   }
   New-Item -ItemType Directory -Force -Path $ReleaseDir, (Join-Path $GrowthRoot 'skills'), (Join-Path $GrowthRoot 'tasks'), $GrowthSkillsRoot | Out-Null
-  $ZipPath = Join-Path $ReleaseDir 'personal-agent-growth-0.4.2.zip'
+  $ZipPath = Join-Path $ReleaseDir 'personal-agent-growth-0.4.3.zip'
   $ManifestPath = Join-Path $ReleaseDir 'manifest.json'
-  Invoke-WebRequest -UseBasicParsing -Uri "$ReleaseUrl/personal-agent-growth-0.4.2.zip" -OutFile $ZipPath
+  Invoke-WebRequest -UseBasicParsing -Uri "$ReleaseUrl/personal-agent-growth-0.4.3.zip" -OutFile $ZipPath
   Invoke-WebRequest -UseBasicParsing -Uri "$ReleaseUrl/manifest.json" -OutFile $ManifestPath
   $Manifest = Get-Content -LiteralPath $ManifestPath -Raw -Encoding UTF8 | ConvertFrom-Json
-  if ($Manifest.archive.name -ne 'personal-agent-growth-0.4.2.zip') { throw 'Unexpected archive name.' }
+  if ($Manifest.archive.name -ne 'personal-agent-growth-0.4.3.zip') { throw 'Unexpected archive name.' }
   if ((Get-FileHash -LiteralPath $ZipPath -Algorithm SHA256).Hash -ne $Manifest.archive.sha256) {
     throw 'ZIP checksum mismatch. Nothing has been extracted.'
   }
@@ -98,7 +98,7 @@ PY
 
 ```powershell
 $GrowthRoot = if (Test-Path -LiteralPath 'D:\') { 'D:\AgentKnowledge' } else { 'C:\AgentKnowledge' }
-py -3 -B -X utf8 (Join-Path $GrowthRoot 'skills\personal-agent-growth\scripts\verify_handoff.py') --archive (Join-Path $GrowthRoot 'downloads\0.4.2\personal-agent-growth-0.4.2.zip') --manifest (Join-Path $GrowthRoot 'downloads\0.4.2\manifest.json')
+py -3 -B -X utf8 (Join-Path $GrowthRoot 'skills\personal-agent-growth\scripts\verify_handoff.py') --archive (Join-Path $GrowthRoot 'downloads\0.4.3\personal-agent-growth-0.4.3.zip') --manifest (Join-Path $GrowthRoot 'downloads\0.4.3\manifest.json')
 if ($LASTEXITCODE -ne 0) { throw 'Verification did not pass.' }
 ```
 
@@ -106,7 +106,7 @@ Junction 需要支持目录联接的文件系统；没有权限时可将解压�
 
 ## 4. 手动安装、项目级使用与其他环境
 
-从 [v0.4.2](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.4.2)下载名称准确的附件与对应 manifest。GitHub 自动生成的 Source code ZIP 与安装附件用途不同。解压整个文件夹到 `.agents/skills/personal-agent-growth`；应直接看到 `SKILL.md`，不要多套一层目录。
+从 [v0.4.3](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.4.3)下载名称准确的附件与对应 manifest。GitHub 自动生成的 Source code ZIP 与安装附件用途不同。解压整个文件夹到 `.agents/skills/personal-agent-growth`；应直接看到 `SKILL.md`，不要多套一层目录。
 
 用户级与项目级入口二选一；项目级使用 `<project>/.agents/skills`。Linux 可用 Mac 步骤，把根目录改成 `$HOME/AgentKnowledge`。WSL、SSH、云端各有自己的文件系统、账号与权限；相同路径字符串不会自动共享数据。跨设备先配置获准传输/挂载并保存路径映射。
 
@@ -114,7 +114,7 @@ Junction 需要支持目录联接的文件系统；没有权限时可将解压�
 
 Codex/Cursor 支持 Agent Skills 的版本可发现 `.agents/skills`；重新打开宿主或项目并选择技能。以当前界面为准。找不到时用绝对路径显式读取：
 
-> 读取 <技能绝对路径>/SKILL.md，报告声明版本 0.4.2、解析后路径，以及本任务所需 reference/script 是否可读。私人学习根目录为 <绝对路径>。按 Markdown 协议恢复当前项目，说明实际读取的 context、最新 node 与来源修订。此次安装检查不创建定时任务。
+> 读取 <技能绝对路径>/SKILL.md，报告声明版本 0.4.3、解析后路径，以及本任务所需 reference/script 是否可读。私人学习根目录为 <绝对路径>。按 Markdown 协议恢复当前项目，说明实际读取的 context、最新 node 与来源修订。此次安装检查不创建定时任务。
 
 目录存在、自动发现、自动选择、实际执行是不同证据。显式读取可用于工作，但应如实标记。接下来按[完整教程](tutorial.zh-CN.md)完成有产物的预习与复习。
 
