@@ -1,0 +1,1035 @@
+{
+  "version": "0.4.4",
+  "status": "PASS",
+  "source_commit": "81876f18363cfe3de767ba5e8028fb60a819a43b",
+  "workflow": "https://github.com/KarmenLoop/personal-agent-growth/actions/runs/40645260603",
+  "scope": "Hosted Windows install, shared-file and removal checks in PowerShell 5.1 and 7; not Agent turns.",
+  "artifacts": [
+    {
+      "artifact": "windows-install-powershell",
+      "receipt": {
+        "status": "PASS",
+        "observed_at": "2026-10-28T06:40:30.053300+00:00",
+        "platform": "Windows-10-10.0.26100-SP0",
+        "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+        "shell": "powershell",
+        "github_run_id": "40645260603",
+        "commit": "81876f18363cfe3de767ba5e8028fb60a819a43b",
+        "records": [
+          {
+            "label": "environment",
+            "argv": [
+              "powershell",
+              "-NoProfile",
+              "-NonInteractive",
+              "-File",
+              "D:\\a\\_temp\\windows-install-evidence\\environment.ps1"
+            ],
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "stdout": "environment.stdout",
+            "child_psmodulepath_reset": true,
+            "stderr": "environment.stderr",
+            "observed_at": "2026-10-28T06:40:37.354271+00:00"
+          },
+          {
+            "label": "default-install",
+            "argv": [
+              "powershell",
+              "-NoProfile",
+              "-NonInteractive",
+              "-File",
+              "D:\\a\\_temp\\windows-install-evidence\\default-install.ps1"
+            ],
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "stdout": "default-install.stdout",
+            "child_psmodulepath_reset": true,
+            "stderr": "default-install.stderr",
+            "observed_at": "2026-10-28T06:40:40.384657+00:00"
+          },
+          {
+            "label": "default-entry",
+            "argv": [
+              "powershell",
+              "-NoProfile",
+              "-NonInteractive",
+              "-File",
+              "D:\\a\\_temp\\windows-install-evidence\\default-entry.ps1"
+            ],
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "stdout": "default-entry.stdout",
+            "child_psmodulepath_reset": true,
+            "stderr": "default-entry.stderr",
+            "observed_at": "2026-10-28T06:40:40.804673+00:00"
+          },
+          {
+            "label": "default-memory-entry",
+            "argv": [
+              "powershell",
+              "-NoProfile",
+              "-NonInteractive",
+              "-File",
+              "D:\\a\\_temp\\windows-install-evidence\\default-memory-entry.ps1"
+            ],
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "stdout": "default-memory-entry.stdout",
+            "child_psmodulepath_reset": true,
+            "stderr": "default-memory-entry.stderr",
+            "observed_at": "2026-10-28T06:40:41.113786+00:00"
+          },
+          {
+            "label": "default-memory-prepare",
+            "argv": [
+              "C:\\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\python.exe",
+              "-X",
+              "utf8",
+              "D:\\a\\personal-agent-growth\\personal-agent-growth\\tools\\check_windows_install.py",
+              "--memory-worker",
+              "prepare",
+              "--task",
+              "D:\\AgentKnowledge\\tasks\\shared-review",
+              "--skill",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-r6hg0mc4\\default\\Discovery \u4e2d\u6587 & entry\\.agents\\skills\\personal-agent-growth",
+              "--release",
+              "D:\\AgentKnowledge\\downloads\\0.4.4"
+            ],
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "stdout": "default-memory-prepare.stdout",
+            "child_psmodulepath_reset": false,
+            "stderr": "default-memory-prepare.stderr",
+            "observed_at": "2026-10-28T06:40:41.199417+00:00"
+          },
+          {
+            "label": "default-memory-review",
+            "argv": [
+              "C:\\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\python.exe",
+              "-X",
+              "utf8",
+              "D:\\a\\personal-agent-growth\\personal-agent-growth\\tools\\check_windows_install.py",
+              "--memory-worker",
+              "review",
+              "--task",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-r6hg0mc4\\default\\Second reader \u4e2d\u6587\\shared-review",
+              "--skill",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-r6hg0mc4\\default\\Discovery \u4e2d\u6587 & entry\\.agents\\skills\\personal-agent-growth",
+              "--release",
+              "D:\\AgentKnowledge\\downloads\\0.4.4"
+            ],
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "stdout": "default-memory-review.stdout",
+            "child_psmodulepath_reset": false,
+            "stderr": "default-memory-review.stderr",
+            "observed_at": "2026-10-28T06:40:41.400890+00:00"
+          },
+          {
+            "label": "default-memory-review-stale",
+            "argv": [
+              "C:\\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\python.exe",
+              "-X",
+              "utf8",
+              "D:\\a\\personal-agent-growth\\personal-agent-growth\\tools\\check_windows_install.py",
+              "--memory-worker",
+              "review",
+              "--task",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-r6hg0mc4\\default\\Second reader \u4e2d\u6587\\shared-review",
+              "--skill",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-r6hg0mc4\\default\\Discovery \u4e2d\u6587 & entry\\.agents\\skills\\personal-agent-growth",
+              "--release",
+              "D:\\AgentKnowledge\\downloads\\0.4.4"
+            ],
+            "exit_code": 3,
+            "expected_exit_code": 3,
+            "stdout": "default-memory-review-stale.stdout",
+            "child_psmodulepath_reset": false,
+            "stderr": "default-memory-review-stale.stderr",
+            "observed_at": "2026-10-28T06:40:41.480954+00:00"
+          },
+          {
+            "label": "default-memory-finish",
+            "argv": [
+              "C:\\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\python.exe",
+              "-X",
+              "utf8",
+              "D:\\a\\personal-agent-growth\\personal-agent-growth\\tools\\check_windows_install.py",
+              "--memory-worker",
+              "finish",
+              "--task",
+              "D:\\AgentKnowledge\\tasks\\shared-review",
+              "--skill",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-r6hg0mc4\\default\\Discovery \u4e2d\u6587 & entry\\.agents\\skills\\personal-agent-growth",
+              "--release",
+              "D:\\AgentKnowledge\\downloads\\0.4.4"
+            ],
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "stdout": "default-memory-finish.stdout",
+            "child_psmodulepath_reset": false,
+            "stderr": "default-memory-finish.stderr",
+            "observed_at": "2026-10-28T06:40:41.560373+00:00"
+          },
+          {
+            "label": "default-repeat-install",
+            "argv": [
+              "powershell",
+              "-NoProfile",
+              "-NonInteractive",
+              "-File",
+              "D:\\a\\_temp\\windows-install-evidence\\default-repeat-install.ps1"
+            ],
+            "exit_code": 1,
+            "expected_exit_code": 1,
+            "stdout": "default-repeat-install.stdout",
+            "child_psmodulepath_reset": true,
+            "stderr": "default-repeat-install.stderr",
+            "observed_at": "2026-10-28T06:40:42.022010+00:00"
+          },
+          {
+            "label": "default-uninstall",
+            "argv": [
+              "powershell",
+              "-NoProfile",
+              "-NonInteractive",
+              "-File",
+              "D:\\a\\_temp\\windows-install-evidence\\default-uninstall.ps1"
+            ],
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "stdout": "default-uninstall.stdout",
+            "child_psmodulepath_reset": true,
+            "stderr": "default-uninstall.stderr",
+            "observed_at": "2026-10-28T06:40:42.446417+00:00"
+          },
+          {
+            "label": "default-uninstall-ordinary-directory",
+            "argv": [
+              "powershell",
+              "-NoProfile",
+              "-NonInteractive",
+              "-File",
+              "D:\\a\\_temp\\windows-install-evidence\\default-uninstall-ordinary-directory.ps1"
+            ],
+            "exit_code": 1,
+            "expected_exit_code": 1,
+            "stdout": "default-uninstall-ordinary-directory.stdout",
+            "child_psmodulepath_reset": true,
+            "stderr": "default-uninstall-ordinary-directory.stderr",
+            "observed_at": "2026-10-28T06:40:42.815008+00:00"
+          },
+          {
+            "label": "custom-install",
+            "argv": [
+              "powershell",
+              "-NoProfile",
+              "-NonInteractive",
+              "-File",
+              "D:\\a\\_temp\\windows-install-evidence\\custom-install.ps1"
+            ],
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "stdout": "custom-install.stdout",
+            "child_psmodulepath_reset": true,
+            "stderr": "custom-install.stderr",
+            "observed_at": "2026-10-28T06:40:44.157860+00:00"
+          },
+          {
+            "label": "custom-entry",
+            "argv": [
+              "powershell",
+              "-NoProfile",
+              "-NonInteractive",
+              "-File",
+              "D:\\a\\_temp\\windows-install-evidence\\custom-entry.ps1"
+            ],
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "stdout": "custom-entry.stdout",
+            "child_psmodulepath_reset": true,
+            "stderr": "custom-entry.stderr",
+            "observed_at": "2026-10-28T06:40:44.577117+00:00"
+          },
+          {
+            "label": "custom-memory-entry",
+            "argv": [
+              "powershell",
+              "-NoProfile",
+              "-NonInteractive",
+              "-File",
+              "D:\\a\\_temp\\windows-install-evidence\\custom-memory-entry.ps1"
+            ],
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "stdout": "custom-memory-entry.stdout",
+            "child_psmodulepath_reset": true,
+            "stderr": "custom-memory-entry.stderr",
+            "observed_at": "2026-10-28T06:40:44.884083+00:00"
+          },
+          {
+            "label": "custom-memory-prepare",
+            "argv": [
+              "C:\\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\python.exe",
+              "-X",
+              "utf8",
+              "D:\\a\\personal-agent-growth\\personal-agent-growth\\tools\\check_windows_install.py",
+              "--memory-worker",
+              "prepare",
+              "--task",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-r6hg0mc4\\Knowledge space \u4e2d\u6587 & review\\tasks\\shared-review",
+              "--skill",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-r6hg0mc4\\custom\\Discovery \u4e2d\u6587 & entry\\.agents\\skills\\personal-agent-growth",
+              "--release",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-r6hg0mc4\\Knowledge space \u4e2d\u6587 & review\\downloads\\0.4.4"
+            ],
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "stdout": "custom-memory-prepare.stdout",
+            "child_psmodulepath_reset": false,
+            "stderr": "custom-memory-prepare.stderr",
+            "observed_at": "2026-10-28T06:40:44.965615+00:00"
+          },
+          {
+            "label": "legacy-non-utf8-verifier",
+            "argv": [
+              "C:\\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\python.exe",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-r6hg0mc4\\custom\\Discovery \u4e2d\u6587 & entry\\.agents\\skills\\personal-agent-growth\\scripts\\verify_handoff.py",
+              "--archive",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-r6hg0mc4\\Knowledge space \u4e2d\u6587 & review\\downloads\\0.4.4\\personal-agent-growth-0.4.4.zip",
+              "--manifest",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-r6hg0mc4\\Knowledge space \u4e2d\u6587 & review\\downloads\\0.4.4\\manifest.json"
+            ],
+            "exit_code": 1,
+            "expected_exit_code": 1,
+            "stdout": "legacy-non-utf8-verifier.stdout",
+            "child_psmodulepath_reset": false,
+            "stderr": "legacy-non-utf8-verifier.stderr",
+            "observed_at": "2026-10-28T06:40:45.103154+00:00"
+          },
+          {
+            "label": "custom-memory-review",
+            "argv": [
+              "C:\\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\python.exe",
+              "-X",
+              "utf8",
+              "D:\\a\\personal-agent-growth\\personal-agent-growth\\tools\\check_windows_install.py",
+              "--memory-worker",
+              "review",
+              "--task",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-r6hg0mc4\\custom\\Second reader \u4e2d\u6587\\shared-review",
+              "--skill",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-r6hg0mc4\\custom\\Discovery \u4e2d\u6587 & entry\\.agents\\skills\\personal-agent-growth",
+              "--release",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-r6hg0mc4\\Knowledge space \u4e2d\u6587 & review\\downloads\\0.4.4"
+            ],
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "stdout": "custom-memory-review.stdout",
+            "child_psmodulepath_reset": false,
+            "stderr": "custom-memory-review.stderr",
+            "observed_at": "2026-10-28T06:40:45.289188+00:00"
+          },
+          {
+            "label": "custom-memory-review-stale",
+            "argv": [
+              "C:\\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\python.exe",
+              "-X",
+              "utf8",
+              "D:\\a\\personal-agent-growth\\personal-agent-growth\\tools\\check_windows_install.py",
+              "--memory-worker",
+              "review",
+              "--task",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-r6hg0mc4\\custom\\Second reader \u4e2d\u6587\\shared-review",
+              "--skill",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-r6hg0mc4\\custom\\Discovery \u4e2d\u6587 & entry\\.agents\\skills\\personal-agent-growth",
+              "--release",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-r6hg0mc4\\Knowledge space \u4e2d\u6587 & review\\downloads\\0.4.4"
+            ],
+            "exit_code": 3,
+            "expected_exit_code": 3,
+            "stdout": "custom-memory-review-stale.stdout",
+            "child_psmodulepath_reset": false,
+            "stderr": "custom-memory-review-stale.stderr",
+            "observed_at": "2026-10-28T06:40:45.370388+00:00"
+          },
+          {
+            "label": "custom-memory-finish",
+            "argv": [
+              "C:\\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\python.exe",
+              "-X",
+              "utf8",
+              "D:\\a\\personal-agent-growth\\personal-agent-growth\\tools\\check_windows_install.py",
+              "--memory-worker",
+              "finish",
+              "--task",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-r6hg0mc4\\Knowledge space \u4e2d\u6587 & review\\tasks\\shared-review",
+              "--skill",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-r6hg0mc4\\custom\\Discovery \u4e2d\u6587 & entry\\.agents\\skills\\personal-agent-growth",
+              "--release",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-r6hg0mc4\\Knowledge space \u4e2d\u6587 & review\\downloads\\0.4.4"
+            ],
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "stdout": "custom-memory-finish.stdout",
+            "child_psmodulepath_reset": false,
+            "stderr": "custom-memory-finish.stderr",
+            "observed_at": "2026-10-28T06:40:45.451881+00:00"
+          },
+          {
+            "label": "custom-repeat-install",
+            "argv": [
+              "powershell",
+              "-NoProfile",
+              "-NonInteractive",
+              "-File",
+              "D:\\a\\_temp\\windows-install-evidence\\custom-repeat-install.ps1"
+            ],
+            "exit_code": 1,
+            "expected_exit_code": 1,
+            "stdout": "custom-repeat-install.stdout",
+            "child_psmodulepath_reset": true,
+            "stderr": "custom-repeat-install.stderr",
+            "observed_at": "2026-10-28T06:40:45.853739+00:00"
+          },
+          {
+            "label": "custom-uninstall",
+            "argv": [
+              "powershell",
+              "-NoProfile",
+              "-NonInteractive",
+              "-File",
+              "D:\\a\\_temp\\windows-install-evidence\\custom-uninstall.ps1"
+            ],
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "stdout": "custom-uninstall.stdout",
+            "child_psmodulepath_reset": true,
+            "stderr": "custom-uninstall.stderr",
+            "observed_at": "2026-10-28T06:40:46.273179+00:00"
+          },
+          {
+            "label": "custom-uninstall-ordinary-directory",
+            "argv": [
+              "powershell",
+              "-NoProfile",
+              "-NonInteractive",
+              "-File",
+              "D:\\a\\_temp\\windows-install-evidence\\custom-uninstall-ordinary-directory.ps1"
+            ],
+            "exit_code": 1,
+            "expected_exit_code": 1,
+            "stdout": "custom-uninstall-ordinary-directory.stdout",
+            "child_psmodulepath_reset": true,
+            "stderr": "custom-uninstall-ordinary-directory.stderr",
+            "observed_at": "2026-10-28T06:40:46.652372+00:00"
+          }
+        ],
+        "cases": [
+          {
+            "case": "default",
+            "status": "PASS",
+            "root": "D:\\AgentKnowledge",
+            "command_substitutions": [
+              "GrowthSkillsRoot"
+            ],
+            "installed_files": 63,
+            "package_checks": 131,
+            "skill_file_identity_shared": true,
+            "memory_file_identity_shared": true,
+            "copied_state_rejected_as_shared": true,
+            "memory_revisions": [
+              1,
+              2,
+              3
+            ],
+            "worker_pids": [
+              5528,
+              8896,
+              5544
+            ],
+            "stale_revision_rejected_without_write": true,
+            "repeat_install_preserved_files": true,
+            "uninstall_preserved_skill_and_memory": true,
+            "ordinary_directory_removal_rejected": true
+          },
+          {
+            "case": "custom",
+            "status": "PASS",
+            "root": "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-r6hg0mc4\\Knowledge space \u4e2d\u6587 & review",
+            "command_substitutions": [
+              "GrowthSkillsRoot",
+              "GrowthRoot"
+            ],
+            "installed_files": 63,
+            "package_checks": 131,
+            "skill_file_identity_shared": true,
+            "memory_file_identity_shared": true,
+            "copied_state_rejected_as_shared": true,
+            "memory_revisions": [
+              1,
+              2,
+              3
+            ],
+            "worker_pids": [
+              8404,
+              7556,
+              1448
+            ],
+            "stale_revision_rejected_without_write": true,
+            "repeat_install_preserved_files": true,
+            "uninstall_preserved_skill_and_memory": true,
+            "ordinary_directory_removal_rejected": true
+          }
+        ],
+        "scope": "Windows guide commands and shared-file recovery by test processes; no desktop agent behavior or scheduler claim",
+        "release_version": "0.4.4",
+        "artifact_transport": "local files; published download URL not exercised",
+        "guide_sha256": {
+          "docs/install.md": "7c2b144bb055764ec47e56480d25c38d812c94e17ec16e369d8ec66582d2ee18",
+          "docs/install.zh-CN.md": "b26e1e7818ee5d7d05530bdc6c3a04ab5c0097cd6965c1db1091203335871878"
+        },
+        "windows_environment": {
+          "powershell": "5.1.26100.33648",
+          "module_path": "C:\\Users\\runneradmin\\Documents\\WindowsPowerShell\\Modules;C:\\\\Modules\\az_15.6.1;C:\\Users\\packer\\Documents\\WindowsPowerShell\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\PowerShell\\Modules\\",
+          "hash_command_module": "Microsoft.PowerShell.Utility",
+          "os": "Microsoft Windows Server 2025 Datacenter",
+          "selected_root": "D:\\AgentKnowledge",
+          "d_drive_present": true,
+          "volumes": [
+            {
+              "DriveLetter": null,
+              "FileSystem": "FAT32",
+              "DriveType": "Fixed"
+            },
+            {
+              "DriveLetter": "D",
+              "FileSystem": "NTFS",
+              "DriveType": "Fixed"
+            },
+            {
+              "DriveLetter": "C",
+              "FileSystem": "NTFS",
+              "DriveType": "Fixed"
+            }
+          ]
+        }
+      },
+      "sha256": "b31c528f74266d51dfbb6ce8d88d238690c34d5b542348b685e613bb04ec62fa"
+    },
+    {
+      "artifact": "windows-install-pwsh",
+      "receipt": {
+        "status": "PASS",
+        "observed_at": "2026-10-28T06:40:26.328579+00:00",
+        "platform": "Windows-10-10.0.26100-SP0",
+        "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+        "shell": "pwsh",
+        "github_run_id": "40645260603",
+        "commit": "81876f18363cfe3de767ba5e8028fb60a819a43b",
+        "records": [
+          {
+            "label": "environment",
+            "argv": [
+              "pwsh",
+              "-NoProfile",
+              "-NonInteractive",
+              "-File",
+              "D:\\a\\_temp\\windows-install-evidence\\environment.ps1"
+            ],
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "stdout": "environment.stdout",
+            "child_psmodulepath_reset": false,
+            "stderr": "environment.stderr",
+            "observed_at": "2026-10-28T06:40:27.626450+00:00"
+          },
+          {
+            "label": "default-install",
+            "argv": [
+              "pwsh",
+              "-NoProfile",
+              "-NonInteractive",
+              "-File",
+              "D:\\a\\_temp\\windows-install-evidence\\default-install.ps1"
+            ],
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "stdout": "default-install.stdout",
+            "child_psmodulepath_reset": false,
+            "stderr": "default-install.stderr",
+            "observed_at": "2026-10-28T06:40:30.075958+00:00"
+          },
+          {
+            "label": "default-entry",
+            "argv": [
+              "pwsh",
+              "-NoProfile",
+              "-NonInteractive",
+              "-File",
+              "D:\\a\\_temp\\windows-install-evidence\\default-entry.ps1"
+            ],
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "stdout": "default-entry.stdout",
+            "child_psmodulepath_reset": false,
+            "stderr": "default-entry.stderr",
+            "observed_at": "2026-10-28T06:40:30.384831+00:00"
+          },
+          {
+            "label": "default-memory-entry",
+            "argv": [
+              "pwsh",
+              "-NoProfile",
+              "-NonInteractive",
+              "-File",
+              "D:\\a\\_temp\\windows-install-evidence\\default-memory-entry.ps1"
+            ],
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "stdout": "default-memory-entry.stdout",
+            "child_psmodulepath_reset": false,
+            "stderr": "default-memory-entry.stderr",
+            "observed_at": "2026-10-28T06:40:30.643418+00:00"
+          },
+          {
+            "label": "default-memory-prepare",
+            "argv": [
+              "C:\\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\python.exe",
+              "-X",
+              "utf8",
+              "D:\\a\\personal-agent-growth\\personal-agent-growth\\tools\\check_windows_install.py",
+              "--memory-worker",
+              "prepare",
+              "--task",
+              "D:\\AgentKnowledge\\tasks\\shared-review",
+              "--skill",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q455srgu\\default\\Discovery \u4e2d\u6587 & entry\\.agents\\skills\\personal-agent-growth",
+              "--release",
+              "D:\\AgentKnowledge\\downloads\\0.4.4"
+            ],
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "stdout": "default-memory-prepare.stdout",
+            "child_psmodulepath_reset": false,
+            "stderr": "default-memory-prepare.stderr",
+            "observed_at": "2026-10-28T06:40:30.704620+00:00"
+          },
+          {
+            "label": "default-memory-review",
+            "argv": [
+              "C:\\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\python.exe",
+              "-X",
+              "utf8",
+              "D:\\a\\personal-agent-growth\\personal-agent-growth\\tools\\check_windows_install.py",
+              "--memory-worker",
+              "review",
+              "--task",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q455srgu\\default\\Second reader \u4e2d\u6587\\shared-review",
+              "--skill",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q455srgu\\default\\Discovery \u4e2d\u6587 & entry\\.agents\\skills\\personal-agent-growth",
+              "--release",
+              "D:\\AgentKnowledge\\downloads\\0.4.4"
+            ],
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "stdout": "default-memory-review.stdout",
+            "child_psmodulepath_reset": false,
+            "stderr": "default-memory-review.stderr",
+            "observed_at": "2026-10-28T06:40:30.852632+00:00"
+          },
+          {
+            "label": "default-memory-review-stale",
+            "argv": [
+              "C:\\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\python.exe",
+              "-X",
+              "utf8",
+              "D:\\a\\personal-agent-growth\\personal-agent-growth\\tools\\check_windows_install.py",
+              "--memory-worker",
+              "review",
+              "--task",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q455srgu\\default\\Second reader \u4e2d\u6587\\shared-review",
+              "--skill",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q455srgu\\default\\Discovery \u4e2d\u6587 & entry\\.agents\\skills\\personal-agent-growth",
+              "--release",
+              "D:\\AgentKnowledge\\downloads\\0.4.4"
+            ],
+            "exit_code": 3,
+            "expected_exit_code": 3,
+            "stdout": "default-memory-review-stale.stdout",
+            "child_psmodulepath_reset": false,
+            "stderr": "default-memory-review-stale.stderr",
+            "observed_at": "2026-10-28T06:40:30.907995+00:00"
+          },
+          {
+            "label": "default-memory-finish",
+            "argv": [
+              "C:\\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\python.exe",
+              "-X",
+              "utf8",
+              "D:\\a\\personal-agent-growth\\personal-agent-growth\\tools\\check_windows_install.py",
+              "--memory-worker",
+              "finish",
+              "--task",
+              "D:\\AgentKnowledge\\tasks\\shared-review",
+              "--skill",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q455srgu\\default\\Discovery \u4e2d\u6587 & entry\\.agents\\skills\\personal-agent-growth",
+              "--release",
+              "D:\\AgentKnowledge\\downloads\\0.4.4"
+            ],
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "stdout": "default-memory-finish.stdout",
+            "child_psmodulepath_reset": false,
+            "stderr": "default-memory-finish.stderr",
+            "observed_at": "2026-10-28T06:40:30.963556+00:00"
+          },
+          {
+            "label": "default-repeat-install",
+            "argv": [
+              "pwsh",
+              "-NoProfile",
+              "-NonInteractive",
+              "-File",
+              "D:\\a\\_temp\\windows-install-evidence\\default-repeat-install.ps1"
+            ],
+            "exit_code": 1,
+            "expected_exit_code": 1,
+            "stdout": "default-repeat-install.stdout",
+            "child_psmodulepath_reset": false,
+            "stderr": "default-repeat-install.stderr",
+            "observed_at": "2026-10-28T06:40:31.386363+00:00"
+          },
+          {
+            "label": "default-uninstall",
+            "argv": [
+              "pwsh",
+              "-NoProfile",
+              "-NonInteractive",
+              "-File",
+              "D:\\a\\_temp\\windows-install-evidence\\default-uninstall.ps1"
+            ],
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "stdout": "default-uninstall.stdout",
+            "child_psmodulepath_reset": false,
+            "stderr": "default-uninstall.stderr",
+            "observed_at": "2026-10-28T06:40:31.696837+00:00"
+          },
+          {
+            "label": "default-uninstall-ordinary-directory",
+            "argv": [
+              "pwsh",
+              "-NoProfile",
+              "-NonInteractive",
+              "-File",
+              "D:\\a\\_temp\\windows-install-evidence\\default-uninstall-ordinary-directory.ps1"
+            ],
+            "exit_code": 1,
+            "expected_exit_code": 1,
+            "stdout": "default-uninstall-ordinary-directory.stdout",
+            "child_psmodulepath_reset": false,
+            "stderr": "default-uninstall-ordinary-directory.stderr",
+            "observed_at": "2026-10-28T06:40:32.087475+00:00"
+          },
+          {
+            "label": "custom-install",
+            "argv": [
+              "pwsh",
+              "-NoProfile",
+              "-NonInteractive",
+              "-File",
+              "D:\\a\\_temp\\windows-install-evidence\\custom-install.ps1"
+            ],
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "stdout": "custom-install.stdout",
+            "child_psmodulepath_reset": false,
+            "stderr": "custom-install.stderr",
+            "observed_at": "2026-10-28T06:40:32.946218+00:00"
+          },
+          {
+            "label": "custom-entry",
+            "argv": [
+              "pwsh",
+              "-NoProfile",
+              "-NonInteractive",
+              "-File",
+              "D:\\a\\_temp\\windows-install-evidence\\custom-entry.ps1"
+            ],
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "stdout": "custom-entry.stdout",
+            "child_psmodulepath_reset": false,
+            "stderr": "custom-entry.stderr",
+            "observed_at": "2026-10-28T06:40:33.232808+00:00"
+          },
+          {
+            "label": "custom-memory-entry",
+            "argv": [
+              "pwsh",
+              "-NoProfile",
+              "-NonInteractive",
+              "-File",
+              "D:\\a\\_temp\\windows-install-evidence\\custom-memory-entry.ps1"
+            ],
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "stdout": "custom-memory-entry.stdout",
+            "child_psmodulepath_reset": false,
+            "stderr": "custom-memory-entry.stderr",
+            "observed_at": "2026-10-28T06:40:33.485740+00:00"
+          },
+          {
+            "label": "custom-memory-prepare",
+            "argv": [
+              "C:\\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\python.exe",
+              "-X",
+              "utf8",
+              "D:\\a\\personal-agent-growth\\personal-agent-growth\\tools\\check_windows_install.py",
+              "--memory-worker",
+              "prepare",
+              "--task",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q455srgu\\Knowledge space \u4e2d\u6587 & review\\tasks\\shared-review",
+              "--skill",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q455srgu\\custom\\Discovery \u4e2d\u6587 & entry\\.agents\\skills\\personal-agent-growth",
+              "--release",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q455srgu\\Knowledge space \u4e2d\u6587 & review\\downloads\\0.4.4"
+            ],
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "stdout": "custom-memory-prepare.stdout",
+            "child_psmodulepath_reset": false,
+            "stderr": "custom-memory-prepare.stderr",
+            "observed_at": "2026-10-28T06:40:33.538884+00:00"
+          },
+          {
+            "label": "legacy-non-utf8-verifier",
+            "argv": [
+              "C:\\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\python.exe",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q455srgu\\custom\\Discovery \u4e2d\u6587 & entry\\.agents\\skills\\personal-agent-growth\\scripts\\verify_handoff.py",
+              "--archive",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q455srgu\\Knowledge space \u4e2d\u6587 & review\\downloads\\0.4.4\\personal-agent-growth-0.4.4.zip",
+              "--manifest",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q455srgu\\Knowledge space \u4e2d\u6587 & review\\downloads\\0.4.4\\manifest.json"
+            ],
+            "exit_code": 1,
+            "expected_exit_code": 1,
+            "stdout": "legacy-non-utf8-verifier.stdout",
+            "child_psmodulepath_reset": false,
+            "stderr": "legacy-non-utf8-verifier.stderr",
+            "observed_at": "2026-10-28T06:40:33.640885+00:00"
+          },
+          {
+            "label": "custom-memory-review",
+            "argv": [
+              "C:\\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\python.exe",
+              "-X",
+              "utf8",
+              "D:\\a\\personal-agent-growth\\personal-agent-growth\\tools\\check_windows_install.py",
+              "--memory-worker",
+              "review",
+              "--task",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q455srgu\\custom\\Second reader \u4e2d\u6587\\shared-review",
+              "--skill",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q455srgu\\custom\\Discovery \u4e2d\u6587 & entry\\.agents\\skills\\personal-agent-growth",
+              "--release",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q455srgu\\Knowledge space \u4e2d\u6587 & review\\downloads\\0.4.4"
+            ],
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "stdout": "custom-memory-review.stdout",
+            "child_psmodulepath_reset": false,
+            "stderr": "custom-memory-review.stderr",
+            "observed_at": "2026-10-28T06:40:33.769504+00:00"
+          },
+          {
+            "label": "custom-memory-review-stale",
+            "argv": [
+              "C:\\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\python.exe",
+              "-X",
+              "utf8",
+              "D:\\a\\personal-agent-growth\\personal-agent-growth\\tools\\check_windows_install.py",
+              "--memory-worker",
+              "review",
+              "--task",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q455srgu\\custom\\Second reader \u4e2d\u6587\\shared-review",
+              "--skill",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q455srgu\\custom\\Discovery \u4e2d\u6587 & entry\\.agents\\skills\\personal-agent-growth",
+              "--release",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q455srgu\\Knowledge space \u4e2d\u6587 & review\\downloads\\0.4.4"
+            ],
+            "exit_code": 3,
+            "expected_exit_code": 3,
+            "stdout": "custom-memory-review-stale.stdout",
+            "child_psmodulepath_reset": false,
+            "stderr": "custom-memory-review-stale.stderr",
+            "observed_at": "2026-10-28T06:40:33.825152+00:00"
+          },
+          {
+            "label": "custom-memory-finish",
+            "argv": [
+              "C:\\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\python.exe",
+              "-X",
+              "utf8",
+              "D:\\a\\personal-agent-growth\\personal-agent-growth\\tools\\check_windows_install.py",
+              "--memory-worker",
+              "finish",
+              "--task",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q455srgu\\Knowledge space \u4e2d\u6587 & review\\tasks\\shared-review",
+              "--skill",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q455srgu\\custom\\Discovery \u4e2d\u6587 & entry\\.agents\\skills\\personal-agent-growth",
+              "--release",
+              "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q455srgu\\Knowledge space \u4e2d\u6587 & review\\downloads\\0.4.4"
+            ],
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "stdout": "custom-memory-finish.stdout",
+            "child_psmodulepath_reset": false,
+            "stderr": "custom-memory-finish.stderr",
+            "observed_at": "2026-10-28T06:40:33.883225+00:00"
+          },
+          {
+            "label": "custom-repeat-install",
+            "argv": [
+              "pwsh",
+              "-NoProfile",
+              "-NonInteractive",
+              "-File",
+              "D:\\a\\_temp\\windows-install-evidence\\custom-repeat-install.ps1"
+            ],
+            "exit_code": 1,
+            "expected_exit_code": 1,
+            "stdout": "custom-repeat-install.stdout",
+            "child_psmodulepath_reset": false,
+            "stderr": "custom-repeat-install.stderr",
+            "observed_at": "2026-10-28T06:40:34.319609+00:00"
+          },
+          {
+            "label": "custom-uninstall",
+            "argv": [
+              "pwsh",
+              "-NoProfile",
+              "-NonInteractive",
+              "-File",
+              "D:\\a\\_temp\\windows-install-evidence\\custom-uninstall.ps1"
+            ],
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "stdout": "custom-uninstall.stdout",
+            "child_psmodulepath_reset": false,
+            "stderr": "custom-uninstall.stderr",
+            "observed_at": "2026-10-28T06:40:34.622063+00:00"
+          },
+          {
+            "label": "custom-uninstall-ordinary-directory",
+            "argv": [
+              "pwsh",
+              "-NoProfile",
+              "-NonInteractive",
+              "-File",
+              "D:\\a\\_temp\\windows-install-evidence\\custom-uninstall-ordinary-directory.ps1"
+            ],
+            "exit_code": 1,
+            "expected_exit_code": 1,
+            "stdout": "custom-uninstall-ordinary-directory.stdout",
+            "child_psmodulepath_reset": false,
+            "stderr": "custom-uninstall-ordinary-directory.stderr",
+            "observed_at": "2026-10-28T06:40:35.001418+00:00"
+          }
+        ],
+        "cases": [
+          {
+            "case": "default",
+            "status": "PASS",
+            "root": "D:\\AgentKnowledge",
+            "command_substitutions": [
+              "GrowthSkillsRoot"
+            ],
+            "installed_files": 63,
+            "package_checks": 131,
+            "skill_file_identity_shared": true,
+            "memory_file_identity_shared": true,
+            "copied_state_rejected_as_shared": true,
+            "memory_revisions": [
+              1,
+              2,
+              3
+            ],
+            "worker_pids": [
+              1320,
+              9028,
+              616
+            ],
+            "stale_revision_rejected_without_write": true,
+            "repeat_install_preserved_files": true,
+            "uninstall_preserved_skill_and_memory": true,
+            "ordinary_directory_removal_rejected": true
+          },
+          {
+            "case": "custom",
+            "status": "PASS",
+            "root": "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\growth-install-q455srgu\\Knowledge space \u4e2d\u6587 & review",
+            "command_substitutions": [
+              "GrowthSkillsRoot",
+              "GrowthRoot"
+            ],
+            "installed_files": 63,
+            "package_checks": 131,
+            "skill_file_identity_shared": true,
+            "memory_file_identity_shared": true,
+            "copied_state_rejected_as_shared": true,
+            "memory_revisions": [
+              1,
+              2,
+              3
+            ],
+            "worker_pids": [
+              7260,
+              8144,
+              3192
+            ],
+            "stale_revision_rejected_without_write": true,
+            "repeat_install_preserved_files": true,
+            "uninstall_preserved_skill_and_memory": true,
+            "ordinary_directory_removal_rejected": true
+          }
+        ],
+        "scope": "Windows guide commands and shared-file recovery by test processes; no desktop agent behavior or scheduler claim",
+        "release_version": "0.4.4",
+        "artifact_transport": "local files; published download URL not exercised",
+        "guide_sha256": {
+          "docs/install.md": "7c2b144bb055764ec47e56480d25c38d812c94e17ec16e369d8ec66582d2ee18",
+          "docs/install.zh-CN.md": "b26e1e7818ee5d7d05530bdc6c3a04ab5c0097cd6965c1db1091203335871878"
+        },
+        "windows_environment": {
+          "powershell": "7.6.7",
+          "module_path": "C:\\Users\\runneradmin\\Documents\\PowerShell\\Modules;C:\\Program Files\\PowerShell\\Modules;c:\\program files\\powershell\\7\\Modules;C:\\\\Modules\\az_15.6.1;C:\\Users\\packer\\Documents\\WindowsPowerShell\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\PowerShell\\Modules\\",
+          "hash_command_module": "Microsoft.PowerShell.Utility",
+          "os": "Microsoft Windows Server 2025 Datacenter",
+          "selected_root": "D:\\AgentKnowledge",
+          "d_drive_present": true,
+          "volumes": [
+            {
+              "DriveLetter": null,
+              "FileSystem": "FAT32",
+              "DriveType": "Fixed"
+            },
+            {
+              "DriveLetter": "D",
+              "FileSystem": "NTFS",
+              "DriveType": "Fixed"
+            },
+            {
+              "DriveLetter": "C",
+              "FileSystem": "NTFS",
+              "DriveType": "Fixed"
+            }
+          ]
+        }
+      },
+      "sha256": "5c359b5e51c6a10f152403e5e6a7ba5df5d1fd9c247440a5ddfcddf0e97c84cb"
+    }
+  ]
+}

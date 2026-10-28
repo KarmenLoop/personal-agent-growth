@@ -83,6 +83,10 @@ B17 又暴露了区间选择缺陷：提示先提到现有正文 1717 汉字，�
 
 ## 发布及范围
 
+公开 Skill 在 Ubuntu 24.04、macOS 26 Intel、Windows Server 2025 各通过 52 项工具测试。PowerShell 5.1/7 也完成安装、共用文件恢复及卸载。这些 CI 是测试进程，不代替模型 Agent。[CI 回执](evidence/release-0.4.4-ci.json) · [Windows 安装回执](evidence/release-0.4.4-windows.json)。
+
+本地核验覆盖 63 文件核心包、20 张渲染图及源文件、32 个模板、中文空格路径安装、搬迁、经验读取和卸载保留记忆。包内六条来源引用解析到四份版本化来源。[本地回执](evidence/release-0.4.4-local.json) · [来源链接检查](evidence/release-0.4.4-package-links.json)。发布页另附 `RELEASE-VERIFICATION.json`，保存最终发布字节及真实网络安装复验，避免压缩包自我引用。
+
 公开发布包括可移植 Skill、中英文说明、可编辑图示及脱敏回执。原生学习命令要求证据中指定提交的独立 Koder 候选；安装 Skill 不会安装私有 Koder 代码。
 
 Windows Cursor、独立标准账户、完整 Windows 产品测试、跨设备同步、宿主关闭后的唤醒与普遍效率提升均不在结论内。原 21 项跳过核查继续保留在 [0.4.3 报告](release-0.4.3-acceptance.zh-CN.md)。

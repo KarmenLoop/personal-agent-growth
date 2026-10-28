@@ -82,6 +82,10 @@ Private candidate source commit: `30d3f0f06d8050b0f6103c2fe6bfe6ffb34f1247`. The
 
 ## Distribution and limits
 
+The public Skill passed 52 utility tests on each hosted operating system: Ubuntu 24.04, macOS 26 Intel and Windows Server 2025. PowerShell 5.1 and 7 also completed installation, shared-file recovery and removal. These CI runs use test processes, not model Agents. [CI receipts](evidence/release-0.4.4-ci.json) · [Windows installation receipts](evidence/release-0.4.4-windows.json).
+
+Local checks verified the 63-file core, all 20 rendered diagrams and their sources, 32 templates, installation into a Unicode/space path, relocation, experience reading and removal with memory retained. Six packaged source references resolved to four versioned sources. [Local receipts](evidence/release-0.4.4-local.json) · [Source-link checks](evidence/release-0.4.4-package-links.json). The release's separate `RELEASE-VERIFICATION.json` records final published-byte and network-install verification without creating a self-referential archive.
+
 The public release includes the portable Skill, bilingual documentation, editable diagrams and sanitized receipts. Native learning commands require the separate Koder candidate identified by its source commit. Installing this Skill does not install private Koder code.
 
 Windows Cursor, a separate standard account, the full Windows product suite, cross-device synchronization, app-closed wakeups and general efficiency improvements remain outside this trial. The original 21-skip audit remains in the [0.4.3 report](release-0.4.3-acceptance.en.md).
