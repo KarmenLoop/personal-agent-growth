@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.4.4 — 2026-10-28
+
+- Add a reusable Windows Agent continuation Skill reference and bilingual tutorial, preserving the complete manuals, templates and editable architecture diagrams.
+- Publish real MiniMax-M3 Koder CLI execution under a non-elevated filtered token: shared Markdown recovery, preparation, native checks, review, candidate-experience supersession and version-aware completion. Preserve every failed launch and coordinator intervention.
+- Document repairs for source contracts, stale or overflowing project packs, UTF-8 paging, false delivery targets, manuscript ranges, diagnostic logging on the startup path, and explicit learning sessions silently losing required tools. Keep private runtime code separate from the public Skill.
+- Add exact Agent artifacts, sanitized read/write receipts, full-task timing and configured regression evidence. Unknown billing remains unknown; no general speedup or autonomous self-repair claim.
+- Retain the Windows Cursor, separate standard-account, full Windows suite and app-closed wakeup limits.
+
 ## 0.4.3 — 2026-10-27
 
 - Verify diagram files, publication entries, and render receipts as one inventory. Reject missing or duplicate render records; retain the original 16 maps and add two Windows audit diagrams.

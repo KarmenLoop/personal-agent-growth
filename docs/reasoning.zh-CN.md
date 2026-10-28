@@ -1,4 +1,4 @@
-# 思考、判断与学习为什么这样连接 · 0.4.3
+# 思考、判断与学习为什么这样连接 · 0.4.4
 
 [English](reasoning.en.md) · [架构](architecture.zh-CN.md) · [判断思维导图](diagrams/reasoning.zh-CN.svg)
 

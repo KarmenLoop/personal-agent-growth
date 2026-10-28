@@ -1,4 +1,4 @@
-# 完整文档索引 · 0.4.3
+# 完整文档索引 · 0.4.4
 
 [English](index.en.md) · [中文](index.zh-CN.md)
 
@@ -16,7 +16,7 @@
 | 记忆契约与伪代码 | [Read](../docs/markdown-learning.en.md) | [阅读](../docs/markdown-learning.zh-CN.md) |
 | 兼容性与证据 | [Read](../docs/compatibility.en.md) | [阅读](../docs/compatibility.zh-CN.md) |
 | 跨领域完整任务实验 | [Read](../docs/cross-domain-trial.md) | [阅读](../docs/cross-domain-trial.zh-CN.md) |
-| 当前发布验收 | [Read](../docs/release-0.4.3-acceptance.en.md) | [阅读](../docs/release-0.4.3-acceptance.zh-CN.md) |
+| 当前发布验收 | [Read](../docs/release-0.4.4-acceptance.en.md) | [阅读](../docs/release-0.4.4-acceptance.zh-CN.md) |
 | 团队介绍 | [Read](../TEAM.md) | [阅读](../TEAM.zh-CN.md) |
 | 协议说明 | [Read](../docs/licensing.md) | [阅读](../docs/licensing.zh-CN.md) |
 
@@ -35,7 +35,7 @@
 
 ## 模板与图源
 
-[32 份模板](../templates/learning/README.md)提供全部 Markdown 原文。[图解手册](mindmaps.zh-CN.md)包含 16 张已渲染 SVG 与 16 份可编辑 Mermaid 源文件，可在浏览器放大；完整分发包同时包含源文件和渲染哈希。
+[32 份模板](../templates/learning/README.md)提供全部 Markdown 原文。[图解手册](mindmaps.zh-CN.md)包含 20 张已渲染 SVG 与 20 份可编辑 Mermaid 源文件，可在浏览器放大；完整分发包同时包含源文件和渲染哈希。
 
 ## 历史证据档案
 
@@ -48,3 +48,7 @@
 - [0.4.1-bundle.1 file and tool trial](delivery-acceptance.md)
 
 原报告保留原语言、对象哈希与失败历史；双语兼容性和当前验收页解释全部结论范围。公开摘要不冒充私有宿主原始轨迹。
+
+## Windows CLI Agent
+
+[普通权限接续教程](windows-agent-continuation.zh-CN.md) · [0.4.4 验收](release-0.4.4-acceptance.zh-CN.md)

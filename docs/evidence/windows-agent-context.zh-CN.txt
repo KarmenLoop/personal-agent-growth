@@ -1,0 +1,36 @@
+---
+schema: 1
+id: "windows-user-continuation-context"
+type: "context"
+project: "windows-user-continuation"
+tags: []
+status: "done"
+revision: 68
+created: "2026-10-27T13:05:03.967Z"
+updated: "2026-10-28T06:19:53.725Z"
+sources: []
+project_revision: 74
+latest_node_id: "windows-user-continuation-node-74"
+latest_node_path: "projects/windows-user-continuation/nodes/2026-10-28-1419-02.md"
+writer: "local"
+handoff_to: null
+---
+## 当前位置
+
+B18 在增补文件标题补上 B17 哈希校正的版本归属，read_file 完整读回确认新增标题出现、冻结指南正确 SHA256 79c9d104…83d5 保留、其余字节未动，冻结主指南未改。实际汉字数与 1000 至 1800 显式区间留待真实交付检查器核验，本轮不预写通过。候选经验仍 untested；独立标准账户、Windows Cursor、应用关闭后的唤醒仍未验。
+
+## 开放假设
+
+标题新增 4 个汉字，正文汉字数应在 1717 附近、仍落在 1000 至 1800 区间；未实测计数。
+
+## 未决问题
+
+
+
+## 下一步
+
+项目完结；可按总结复用
+
+## 恢复说明
+
+

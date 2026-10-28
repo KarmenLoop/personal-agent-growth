@@ -23,6 +23,8 @@ FILES = (
     "references/recursive-improvement.md",
     "references/regression-repair.md",
     "references/regression-repair.en.md",
+    "references/windows-agent-continuation.md",
+    "references/windows-agent-continuation.en.md",
     "scripts/compare_trials.py",
     "scripts/verify_handoff.py",
     "scripts/host.py",

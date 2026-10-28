@@ -1,0 +1,55 @@
+{
+  "version": "0.4.4",
+  "status": "PASS",
+  "initial": {
+    "status": "Historical unresolved references retained in the 0.4.3 report"
+  },
+  "preparation_failure": {
+    "status": "RESOLVED",
+    "cause": "The local checkout initially lacked the v0.4.3 tag used by retained source links.",
+    "repair": "Fetched existing remote tags; verified the tagged source bytes without changing their references."
+  },
+  "fixed": {
+    "missing_local_sources": [],
+    "references": [
+      {
+        "file": "personal-agent-growth/references/regression-repair.en.md",
+        "source": "https://github.com/KarmenLoop/personal-agent-growth/blob/v0.4.3/docs/evidence/koder-skip-audit-20261027.json",
+        "source_sha256": "d3bb78bb068d6a827a49a4c613675a8d2f0e4db48879d54f4660bd6db67f0df1",
+        "validation": "Tagged source or current release candidate exists"
+      },
+      {
+        "file": "personal-agent-growth/references/regression-repair.en.md",
+        "source": "https://github.com/KarmenLoop/personal-agent-growth/blob/v0.4.2/docs/evidence/koder-regression-repair-20261027.json",
+        "source_sha256": "13a50de9751c8e3afa637ad0e74a0d6ef5cb857db476e614cf2ff39ae107fd94",
+        "validation": "Tagged source or current release candidate exists"
+      },
+      {
+        "file": "personal-agent-growth/references/regression-repair.en.md",
+        "source": "https://github.com/KarmenLoop/personal-agent-growth/blob/v0.4.2/docs/release-0.4.2-acceptance.en.md",
+        "source_sha256": "4535e9447c59fae617b0d2ac94ea1f33fe30e865354b015d9adbd07fa8b7ad3c",
+        "validation": "Tagged source or current release candidate exists"
+      },
+      {
+        "file": "personal-agent-growth/references/regression-repair.md",
+        "source": "https://github.com/KarmenLoop/personal-agent-growth/blob/v0.4.3/docs/evidence/koder-skip-audit-20261027.json",
+        "source_sha256": "d3bb78bb068d6a827a49a4c613675a8d2f0e4db48879d54f4660bd6db67f0df1",
+        "validation": "Tagged source or current release candidate exists"
+      },
+      {
+        "file": "personal-agent-growth/references/regression-repair.md",
+        "source": "https://github.com/KarmenLoop/personal-agent-growth/blob/v0.4.2/docs/evidence/koder-regression-repair-20261027.json",
+        "source_sha256": "13a50de9751c8e3afa637ad0e74a0d6ef5cb857db476e614cf2ff39ae107fd94",
+        "validation": "Tagged source or current release candidate exists"
+      },
+      {
+        "file": "personal-agent-growth/references/regression-repair.md",
+        "source": "https://github.com/KarmenLoop/personal-agent-growth/blob/v0.4.2/docs/release-0.4.2-acceptance.zh-CN.md",
+        "source_sha256": "7bf57feb7f56889de84ef4f52513d738390fb5b85c7d9b96caa00879449d8631",
+        "validation": "Tagged source or current release candidate exists"
+      }
+    ],
+    "core_archive_sha256": "52718a3a94f0898465f388c4684900a991758d82981034367b6cb96a8b97e522"
+  },
+  "scope": "Source references resolve to package files or release-tag documents; live download readback follows publication"
+}

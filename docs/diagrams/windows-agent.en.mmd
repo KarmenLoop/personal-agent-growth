@@ -1,0 +1,113 @@
+sequenceDiagram
+    actor U as User
+    participant O as Coordinator
+    participant A as Koder phase A / four turns
+    participant M as Same Markdown memory root
+    participant W as Windows user workspace A
+    participant B as Koder phase B / fresh workspace and chats
+    U->>O: Authorize non-elevated checks and repairs
+    O->>A: Task / real model / non-elevated token
+    A->>M: Read context, latest node, memory
+    A->>W: Read Skill and actual check inputs
+    A->>W: Preflight command
+    W-->>A: Suppressed errors require reconciliation
+    A->>M: Save blocked node and receipt hashes
+    A-->>O: Exit 3, check packet was not run
+    O->>W: Inspect effects, retain failure
+    O->>M: Label coordinator reconciliation explicitly
+    O->>O: Repair summary extraction and continuation guide
+    O->>A: New turn for remaining work only
+    A->>M: Recover the same project
+    A->>W: Save preparation, prediction, failure branch
+    A->>W: Execute actual non-elevated checks
+    W-->>A: Raw stdout, stderr, exit code
+    W-->>A: A2: three guards pass, file-link setup fails
+    O->>W: Provision a real link separately, retain original failure
+    O->>A: A3: resume, verify fixture and run without elevation
+    A->>W: Check link identity, unchanged source, four guards and three ACL effects
+    W-->>A: Seven checks pass with raw receipts
+    A->>M: Save decision and checkpoint, attempt experience
+    M-->>A: Experience rejected: prose evidence / list-shaped steps
+    O->>O: Reproduce errors, repair schema and input validation
+    O->>M: Keep failed turns and original nodes
+    O->>B: New chat and workspace, same project
+    B->>M: Read current revision and latest node
+    B->>W: B1: broad directory listing and external file read
+    W-->>B: Output limit and workspace access boundary
+    O->>W: Reconcile ended process, transfer 18 named original artifacts by hash
+    O->>B: B2: fresh conversation, unchanged shared memory
+    B->>M: Recover current node, use bounded memory tools
+    B->>W: Independently verify handed-over receipts and preparation
+    B->>B: Apply the lesson to a useful guide
+    B->>M: B2 saves a decision, then submits stale memory hashes
+    M-->>B: SOURCE_CHANGED, three rejected writes
+    O->>O: Fix actionable errors and self-invalidating completion sources
+    O->>B: B3 resumes unfinished work
+    B-->>O: Installation scan blocked, API_IDLE_TIMEOUT
+    O->>O: Add a bounded learning-review profile
+    O->>B: B4 fresh turn, same real model
+    B-->>O: ECONNRESET before any tool call
+    O->>B: B5 fresh turn, named receipts only
+    B->>W: Correct guide and read back
+    B-->>O: Heading used as event anchor, experience rejected
+    O->>O: Fix source contract and actionable validation
+    O->>B: B6 fresh turn
+    B->>M: Save and read experience, checkpoint, summary
+    B-->>O: Exit 3, input filename mistaken for output
+    O->>O: Reproduce stale pack and ignored byte offsets
+    O->>O: Repair three defects, preserve guardrails
+    O->>M: Preserve B6 artifacts, reopen bounded quality review
+    O->>B: B7 fresh turn, same root
+    B->>W: Page through the full guide and correct evidence claims
+    B->>M: Save corrected candidate, deprecate predecessor
+    B->>M: Checkpoint 36, explicitly read fresh pack 36
+    B->>M: Complete revision 37, read summary and full guide
+    B-->>O: Step budget ends before final reply, failure retained
+    O->>B: B8 bounded final audit, keep completed project
+    B->>M: Read shared completion and experience chain
+    B->>W: Check full guide, correct two remaining references
+    B-->>O: Budget reached during readback, retain failure
+    O->>B: B9 read-only audit of completed artifacts
+    B->>M: Recover completion and candidate/deprecated experience chain
+    B->>W: Read the entire corrected guide in bounded pages
+    B-->>O: Exit 0 but five version and memory gaps remain
+    O->>M: Reopen only the remaining version reconciliation
+    O->>B: B10 fresh attempt
+    B-->>O: Startup fails, semantic memory unchanged
+    O->>B: B11 recovers the same root and Skill
+    B-->>O: Guessed UTF-8 offsets fail before business writes
+    O->>O: Clarify sequential cursor use, retain range checks
+    O->>B: B12 fresh attempt
+    B-->>O: Startup fails, memory unchanged
+    O->>O: Move optional log checks after valid readiness acknowledgement
+    O->>B: B13 reaches the real model
+    B-->>O: Memory isolation unverified, transient fallback loses learning tools
+    O->>O: Explicit learning projects now fail before model requests
+    O->>W: Same-user native ACL diagnosis passes with original limits
+    O->>B: B14 resumes the remaining version correction
+    B->>M: Read current pack 43 and retained candidate lesson
+    B->>M: Correct facts, checkpoint 45, complete 46
+    B-->>O: JSON result 3, short manuscript and missing native exit receipt
+    O->>O: Fix byte versus character parsing and explicit ranges
+    O->>M: Reconcile saved effects, preserve missing exit and timing as unknown
+    O->>B: B15 resumes same root
+    B->>W: Expand and read back 1630 Han characters
+    B->>M: Checkpoint 52
+    M-->>B: Fresh pack exceeds 4000-token cap
+    B->>M: Open node instead, complete 53
+    B-->>O: Native exit 0, content and pack gaps still prevent acceptance
+    O->>O: Defer long decisions explicitly, keep all constraints and original history
+    O->>O: Require full current pages before memory writes, block after failed packs
+    O->>B: B16 resumes bounded review
+    B->>M: Read full deferred memory, refresh pack 57 to 59, complete 60
+    B-->>O: Exit 0, but one copied hash is wrong
+    O->>B: B17 corrects only the wrong literal
+    B->>M: Read current memory, refresh pack 64 to 66, complete 67
+    B-->>O: Exit 0, checker chose old count instead of explicit interval
+    O->>O: Reproduce precedence bug and pass 53 focused checks
+    O->>B: B18 verifies the repair and updates the version title
+    B->>M: Read full memory and node, refresh pack 71 to 73, complete 74
+    B-->>O: Exit 0, exact interval 1000 to 1800, saved summary read back
+    O->>M: Independently check sources and exact artifacts
+    O->>O: Record quality, all failures, time, usage and limits
+    O-->>U: Publish only after final behavior and regression acceptance

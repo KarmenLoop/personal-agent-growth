@@ -1,0 +1,194 @@
+{
+  "schema": 2,
+  "status": "PASS_BOUNDED_AGENT_CONTINUATION",
+  "verified_at": "2026-10-28T06:22:15.434965+00:00",
+  "private_candidate_commit": "30d3f0f06d8050b0f6103c2fe6bfe6ffb34f1247",
+  "method": "Real MiniMax-M3 turns on Windows ARM64. Coordinator repaired runtime defects, reconciled effects, transferred named artifacts and manually dispatched fresh limited-user tasks.",
+  "effective_scope": "Medium-integrity filtered administrator token, elevated=false; not an independently created standard account.",
+  "same_memory_root": "C:\\Users\\PAGAudit\\PAG-Agent-20261027\\learning",
+  "project": "windows-user-continuation",
+  "restored_workspaces": [
+    "C:\\Users\\PAGAudit\\PAG-Agent-20261027\\workspace-a",
+    "C:\\Users\\PAGAudit\\PAG-Agent-20261027\\workspace-b"
+  ],
+  "recorded_launch_attempts": 22,
+  "preparation_before_execution": true,
+  "windows_checks": [
+    {
+      "name": "original-four",
+      "counts": {
+        "tests": 4,
+        "pass": 4,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      "stdout": "windows-user-agent-original-four.stdout",
+      "sha256": "d1055e43b3aae0429c80add8489376f10f0571bfb9f39899e4bb58687c87752d"
+    },
+    {
+      "name": "native-smoke",
+      "counts": {
+        "tests": 3,
+        "pass": 3,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      "stdout": "windows-user-agent-native-smoke.stdout",
+      "sha256": "fea1f87c9c331adeab88fb7fc98b289ab478c15fef8a1541550c5cdb21b38e3f"
+    }
+  ],
+  "pack_refresh": {
+    "b7_before": 35,
+    "b7_after_checkpoint": 36,
+    "final_before": 71,
+    "final_after_checkpoint": 73,
+    "final_completion": 74,
+    "explicit_deferred_history_read": true
+  },
+  "frozen_guide_audit": {
+    "stage": "agent-b9",
+    "exit_code": 0,
+    "raw_sha256": "256103398c0affdba0a2a3388d9c283bdaa4b9339b33a60922d35355f25d1cd9",
+    "quality_pass": false,
+    "finding": "Version attribution and durable current facts were inconsistent. Exit zero did not close the task.",
+    "paged_full_readback": [
+      {
+        "offset": 0,
+        "bytes": 8999,
+        "next": 8999,
+        "size": 33647,
+        "call_id": "call_01a17e3ca96674669f9dfc0c"
+      },
+      {
+        "offset": 8999,
+        "bytes": 8999,
+        "next": 17998,
+        "size": 33647,
+        "call_id": "call_01a17e3cbabe7633a6fd4a2e"
+      },
+      {
+        "offset": 17998,
+        "bytes": 9000,
+        "next": 26998,
+        "size": 33647,
+        "call_id": "call_01a17e3cc3d971fca1f13f0e"
+      },
+      {
+        "offset": 26998,
+        "bytes": 6649,
+        "next": null,
+        "size": 33647,
+        "call_id": "call_01a17e3cc91e741f990a1dfc"
+      }
+    ]
+  },
+  "final_review": {
+    "stage": "agent-b18",
+    "exit_code": 0,
+    "raw_sha256": "7d5c9808209f3498023dfa983f83274c47c349d4234a15a62b8cca9f1ded1568",
+    "summary_sha256": "ea56c0fc1164e6930c185f607562ff840b5760f8c95902154fbd45e4d4d43f31",
+    "guide_sha256": "79c9d1045b3c65ad34359ce7932809a1ecdebac5507e8bc78fc4621e9fc383d5",
+    "addendum_sha256": "12adf45022b8ed5caf8d8bb7f82fe8fda25943365b03e9e34135bb7c2169e30b",
+    "guide_unchanged": true,
+    "addendum_readback": true,
+    "addendum_han_characters": 1721,
+    "required_han_range": [
+      1000,
+      1800
+    ],
+    "b14_json_result": 3,
+    "b14_os_exit_code": null,
+    "b17_checker_range_preserved": [
+      1546,
+      1888
+    ],
+    "final_explicit_range": [
+      1000,
+      1800
+    ],
+    "current_facts_corrected": true,
+    "completion_readback": true
+  },
+  "experience": {
+    "current": "exp-windows-user-continuation-review-correction-01",
+    "status": "untested",
+    "scope": "project:windows-user-continuation",
+    "deprecated": "exp-windows-user-continuation-review-handoff-01",
+    "supersession_verified": true,
+    "sources_verified": true
+  },
+  "artifacts": [
+    {
+      "file": "windows-agent-guide.zh-CN.txt",
+      "bytes": 33647,
+      "sha256": "79c9d1045b3c65ad34359ce7932809a1ecdebac5507e8bc78fc4621e9fc383d5",
+      "source": "workspace-b/windows-user-guide.md",
+      "note": "Exact Agent-produced Markdown bytes. Frozen guide requires its version addendum; candidate experiences remain project-scoped and untested."
+    },
+    {
+      "file": "windows-agent-guide-addendum.zh-CN.txt",
+      "bytes": 8237,
+      "sha256": "12adf45022b8ed5caf8d8bb7f82fe8fda25943365b03e9e34135bb7c2169e30b",
+      "source": "workspace-b/guide-review-addendum.md",
+      "note": "Exact Agent-produced Markdown bytes. Frozen guide requires its version addendum; candidate experiences remain project-scoped and untested."
+    },
+    {
+      "file": "windows-agent-summary.zh-CN.txt",
+      "bytes": 3705,
+      "sha256": "ea56c0fc1164e6930c185f607562ff840b5760f8c95902154fbd45e4d4d43f31",
+      "source": "learning/projects/windows-user-continuation/summary.md",
+      "note": "Exact Agent-produced Markdown bytes. Frozen guide requires its version addendum; candidate experiences remain project-scoped and untested."
+    },
+    {
+      "file": "windows-agent-memory.zh-CN.txt",
+      "bytes": 15217,
+      "sha256": "3851c31a8e8437a09c8e05ba6763fda541046ae35f864628a5cbf4007f958ff6",
+      "source": "learning/projects/windows-user-continuation/memory.md",
+      "note": "Exact Agent-produced Markdown bytes. Frozen guide requires its version addendum; candidate experiences remain project-scoped and untested."
+    },
+    {
+      "file": "windows-agent-context.zh-CN.txt",
+      "bytes": 1076,
+      "sha256": "3d2eb5b6eaefb3b4ced7e3959fe5a5d4e3895358c671ad94b25ca64cae6486af",
+      "source": "learning/projects/windows-user-continuation/context.md",
+      "note": "Exact Agent-produced Markdown bytes. Frozen guide requires its version addendum; candidate experiences remain project-scoped and untested."
+    },
+    {
+      "file": "windows-agent-experience.zh-CN.txt",
+      "bytes": 4394,
+      "sha256": "d4bb4dea6302ef6d1595ccee4fd83fcf92ae5d452564e02f2d8dc80396c48461",
+      "source": "learning/experience/exp-windows-user-continuation-review-correction-01.md",
+      "note": "Exact Agent-produced Markdown bytes. Frozen guide requires its version addendum; candidate experiences remain project-scoped and untested."
+    },
+    {
+      "file": "windows-agent-experience-deprecated.zh-CN.txt",
+      "bytes": 4565,
+      "sha256": "a958ff60f2cc364d366f904fecc6e48abfad23726ae7bf8693b3a325b4f406a6",
+      "source": "learning/experience/exp-windows-user-continuation-review-handoff-01.md",
+      "note": "Exact Agent-produced Markdown bytes. Frozen guide requires its version addendum; candidate experiences remain project-scoped and untested."
+    }
+  ],
+  "quality_review": "Host checked original file identities, live read/write receipts, source resolution, frozen-guide attribution, current/historical hashes, failure preservation, and bounded next actions. The guide and its addendum are one delivery.",
+  "time": {
+    "first_agent_started_at": "2026-10-27T13:06:52.168Z",
+    "last_agent_ended_at": "2026-10-28T06:20:44.107Z",
+    "wall_span_seconds": 62031.939,
+    "sum_launcher_wall_seconds": 4667.421150085,
+    "timing_scope": "B14 has no saved launcher duration and is excluded from the measured sum, not treated as zero. Launcher wall intervals include the pre-call memory inventory and synchronous CLI invocation; not CPU time or pure model latency. Post-run collection and unrecorded coordinator work are excluded.",
+    "includes_failed_turns": true,
+    "unknown_duration_runs": [
+      "agent-b14"
+    ],
+    "publication_and_later_regression_not_included": true
+  },
+  "cost": null,
+  "limitations": [
+    "Failed turns remain failed, including B7/B8 step exhaustion and B10/B12 startup failures, B11 invalid paging and B13 loss of required tools, and B14 unverified result with missing launcher receipt",
+    "No autonomous wakeup or independent full self-repair claim; coordinator assistance was required",
+    "Windows Cursor, separate standard account, full Windows product suite and cross-device sync not tested",
+    "Provider billing and complete coordinator cost unknown; no speedup claim",
+    "Private product source and raw protocol not published"
+  ]
+}

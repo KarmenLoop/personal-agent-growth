@@ -1,12 +1,12 @@
 {
-  "version": "0.4.3",
+  "version": "0.4.4",
   "documents": [
     "README.md",
     "README.zh-CN.md",
     "SKILL.md",
     "SKILL.en.md",
     "START-HERE.md",
-    "\u5f00\u59cb\u4f7f\u7528.md",
+    "开始使用.md",
     "docs/install.md",
     "docs/install.zh-CN.md",
     "docs/architecture.en.md",
@@ -23,8 +23,10 @@
     "docs/index.zh-CN.md",
     "docs/tutorial.en.md",
     "docs/tutorial.zh-CN.md",
-    "docs/release-0.4.3-acceptance.en.md",
-    "docs/release-0.4.3-acceptance.zh-CN.md"
+    "docs/windows-agent-continuation.en.md",
+    "docs/release-0.4.4-acceptance.en.md",
+    "docs/windows-agent-continuation.zh-CN.md",
+    "docs/release-0.4.4-acceptance.zh-CN.md"
   ],
   "language_pairs": [
     [
@@ -37,7 +39,7 @@
     ],
     [
       "START-HERE.md",
-      "\u5f00\u59cb\u4f7f\u7528.md"
+      "开始使用.md"
     ],
     [
       "docs/install.md",
@@ -122,6 +124,18 @@
     [
       "docs/release-0.4.3-acceptance.en.md",
       "docs/release-0.4.3-acceptance.zh-CN.md"
+    ],
+    [
+      "docs/windows-agent-continuation.en.md",
+      "docs/windows-agent-continuation.zh-CN.md"
+    ],
+    [
+      "docs/release-0.4.4-acceptance.en.md",
+      "docs/release-0.4.4-acceptance.zh-CN.md"
+    ],
+    [
+      "references/windows-agent-continuation.en.md",
+      "references/windows-agent-continuation.md"
     ]
   ],
   "template_types": [
@@ -163,8 +177,10 @@
     "docs/diagrams/memory.en.svg": "5e7c8bb949dfa1fbdc31360dfd6fe013d1fd33ace61419d795fc39de0d26c3e8",
     "docs/diagrams/memory.zh-CN.svg": "66c4a38441297b25f0f20fa31780b9bbedafa4e500f429c7124f22780648181f",
     "docs/diagrams/recursion.zh-CN.svg": "3557b3b96147cccf88f59a120ee26894b057eee5b622e02f93f6e6bdae68e14d",
-    "docs/diagrams/windows-audit.en.svg": "f2b694ac5ed534ec7689402fac3110ff9a9d32c40a164c78554c5e81e903f974",
-    "docs/diagrams/windows-audit.zh-CN.svg": "c2f5185c9497ddf94f2c408600788f5c0f90c02af0a85b84c5ea672c87c71d4d"
+    "docs/diagrams/windows-audit.en.svg": "f508bd082866b4507e0c9d9c10a6df92efba68a383438167b638059ea441014f",
+    "docs/diagrams/windows-audit.zh-CN.svg": "fade37f54d05840a5f6d19733e93bdd304f18c267e91182a38936e3d1a4c1c09",
+    "docs/diagrams/windows-agent.en.svg": "d00bae730a36dcf4b32be9a85f79b3b270bbf472b1c0e50161fc8f31f70762e4",
+    "docs/diagrams/windows-agent.zh-CN.svg": "da0c5b128b85b5b834cebeea5b4c8b38ea18ce1142f633f0682be682b789db5c"
   },
   "source_files": {
     "docs/diagrams/handoff.en.mmd": "218d94d581c7f80988dfeabd6e1807129b4da540a12c7c0dc06c2f9c155d8015",
@@ -188,6 +204,8 @@
     "scripts/compare_trials.py": "a6a05572e9d37e52350139543c0b1a254e737c7a481417a3998c0346cddd7b2c",
     "tools/render_diagrams.mjs": "b6e0991f1a675a7947f67a1ea1c75fa80c72bcfd6968f59eee1b6ff28d99a6ce",
     "docs/diagrams/windows-audit.en.mmd": "d99ad0ca0d8f122292eec3e1c567f9d6ac16e04ace01b2506496bb84e62f97fb",
-    "docs/diagrams/windows-audit.zh-CN.mmd": "acaedad02be334736ca6678e87355853e47eedaf96ad9ac1ad3366ba46ba7037"
+    "docs/diagrams/windows-audit.zh-CN.mmd": "acaedad02be334736ca6678e87355853e47eedaf96ad9ac1ad3366ba46ba7037",
+    "docs/diagrams/windows-agent.en.mmd": "8538be55d1f0b222e416258c38e7b65354bf4776d283915e51832649f0cccf8d",
+    "docs/diagrams/windows-agent.zh-CN.mmd": "fe7d0a38f76644aa4b8905906a88234c1164fa8a4381b7ded73b82d1d3cbb597"
   }
 }

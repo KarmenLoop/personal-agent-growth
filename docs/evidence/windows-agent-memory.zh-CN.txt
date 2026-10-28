@@ -1,0 +1,143 @@
+---
+schema: 1
+id: "windows-user-continuation-memory"
+type: "memory"
+project: "windows-user-continuation"
+tags: []
+status: "done"
+revision: 89
+created: "2026-10-27T13:05:03.967Z"
+updated: "2026-10-28T06:19:53.725Z"
+sources: []
+workspaces: ["C:\\Users\\PAGAudit\\PAG-Agent-20261027\\workspace-a","C:\\Users\\PAGAudit\\PAG-Agent-20261027\\workspace-b"]
+project_revision: 74
+completion_revision: 74
+---
+## 目标
+
+核实 Windows 普通权限 Koder Agent 的 Skill 与 Markdown 接续，交付有依据的教程
+
+## 完成标准
+
+
+
+## 约束
+
+仅本次用户目录；保留失败和未知；不改系统保护、不读取凭据、不对外发布
+
+## 决策
+
+- 阶段一收尾判定与执行前预测（写入于实际执行之前）。
+
+【恢复来源】shared Markdown 项目 windows-user-continuation：context.md rev9、node 2026-10-27-2139.md rev1、memory.md rev10；Skill personal-agent-growth（sha256 284d2eb935b817fd941ef52aa6c98691cce422018d693baa6cea5958a4cfef46）及其 references/windows-agent-continuation.md（538bc84d…）、references/shared-memory.md（21f417d6…）。
+
+【复核到的既有事实，不重扫】preparation.md 的 P3 预测与 stage1-result.md 记录：acl-packet/runs/2026-10-27T13-27-59.553Z-9500/receipt.json status=FAIL，original-four exitCode=1，TAP # tests 4 / # pass 3 / # fail 1 / # skipped 0，失败点 test/windows-acl-helper.test.mjs:19 的 fs.symlinkSync → EPERM（前置条件缺失，非断言失败）；native-smoke exitCode=0，# pass 3 / # fail 0 / # skipped 0。
+
+【本轮判断如何改变】原判断：“该守卫在普通权限下无法建立前置条件，本轮不取得结论，需新的受限条件单独记录。”现改为：原验收目标只要求“被重定向的 ACL 程序在执行前被拒绝且零执行”。该目标与“由谁创建符号链接”解耦。协调器预置的链接把前置条件的建立移出被测进程，但不改断言强度。因此 FIXTURE-CHANGE.patch 满足原验收目标，判断从“无结论”改为“可取得该守卫结论”。
+
+【依据（全部本轮实测）】
+1. 补丁后 original-four 断言保持不变：verify(root)===false 且 run 调用计数===0；未设置环境变量时仍走原 fs.symlinkSync 分支，原用例未被删除。
+2. 补丁新增独立身份校验：lstat(helper).isSymbolicLink()===true；sha256(链接解析后)==acl-packet-user/bin/koder-memory-acl.exe（c4ba925e…4273）；sha256(夹具 src/shared-memory/windows-acl.mjs)==acl-packet-user/src/shared-memory/windows-acl.mjs（606f2812…c948）。实测三者全部成立。
+3. 预置链接为真 Windows 文件符号链接：Get-Item -Force 显示 Attributes=Archive,ReparsePoint；LinkType=SymbolicLink；Target=…\redirected-fixture\bin\koder-memory-acl.exe.real；链接解析后 sha256=c4ba925e…4273；夹具根为普通目录（非 ReparsePoint）。
+4. acl-packet-user/SOURCE-MANIFEST.json 记录 test/windows-acl-helper.test.mjs 基线 4ab5e5d6…3ed、现值 785110ab…bd4 及变更理由；其余 3 个原始文件哈希与 acl-packet 原包完全一致（实测复核）。
+5. 运行前令牌实测：whoami /user = WIN-FRSP6LB6COJ\PAGAudit（S-1-5-21-…-1001）；whoami /priv 仍无 SeCreateSymbolicLinkPrivilege，与 ordinary-user-token.json（elevated=false、medium_integrity=true）一致。
+
+【不变项】被测 verifier 与 helper 字节未变（606f2812…/c4ba925e…）；三个真实 ACL 用例与三个纯逻辑守卫未改；acl-packet 原包与其 runs/ 原回执保留未动。
+
+【必须保留的边界】fixture-provision.json 的 NT AUTHORITY\SYSTEM 是夹具制备身份，不是测试身份；不得据此声称普通用户可创建该符号链接（该能力本轮仍未取得，且令牌实测缺 SeCreateSymbolicLinkPrivilege）。
+
+【执行前预测（可证伪）】
+- P7：run.mjs 不抛 SOURCE_IDENTITY_MISMATCH（4 个清单文件实测哈希与 SOURCE-MANIFEST 一致）。
+- P8：original-four 退出码 0，TAP # pass 4 / # fail 0 / # skipped 0；被测 verifier 因 helper 为符号链接而在 lstat 阶段 return false，run 调用计数为 0。
+- P9：native-smoke 退出码 0，# pass 3 / # fail 0 / # skipped 0，真实 ACL 读写回结果与上一轮一致。
+- P10：receipt.json status=PASS，进程退出码 0；产物落在 acl-packet-user/runs/<时间戳>-<pid>/。
+证伪处理：任一不符即按原始 stdout/stderr 与 receipt 对账，不修改断言、不弱化要求、保留失败。
+
+【产物与记忆路径】准备：preparation.md；原回执：acl-packet/runs/2026-10-27T13-27-59.553Z-9500/；本轮副本包：acl-packet-user/；预置夹具：redirected-fixture/；夹具回执：fixture-provision.json；结果记录：stage1-result.md（阶段一收尾段）。
+- 【本轮：第二工作区复习收尾（2026-10-27）】结论是"交接副本身份全部一致 + TAP 与回执判定互相吻合 + 指南可交付"，不产生新的产品结论。
+
+一、交接文件身份核对（独立复算，不重跑测试）
+用只读 PowerShell 对 review-inputs/manifest.json 的 18 个条目逐条复算 sha256 与字节数：18 MATCH / 0 MISMATCH。复算逻辑固化为工作区脚本 verify-review-inputs.ps1（sha256=1f1b97635ffed6140bf0b9f1b9dbeeb750ec9d0b5cf2382e6422e050edd610c1），本轮执行退出码 0、输出 RESULT: PASS。
+
+二、原始检查输出与回执一致性
+passed/receipt.json status=PASS：original-four exitCode=0（TAP tests 4 / pass 4 / fail 0 / skipped 0）、native-smoke exitCode=0（tests 3 / pass 3 / fail 0 / skipped 0），stderr 全为空。
+original-failed/receipt.json status=FAIL：original-four exitCode=1（tests 4 / pass 3 / fail 1 / skipped 0，失败点 test/windows-acl-helper.test.mjs:19:85 的 fs.symlinkSync → EPERM）、native-smoke exitCode=0（tests 3 / pass 3 / fail 0 / skipped 0）。
+stdout/stderr 的实测 sha256 与 receipt 记录逐项一致；TAP 计数与 receipt 判定互相吻合 → 再次确认 run.mjs 判定与真实报告格式一致，不修改判定、不重跑、不弱化断言。
+
+三、本轮判断
+1) 交接副本 = 原始文件的核验副本，不是重新执行；因此"身份核对 + TAP 对账"是本轮唯一的验证动作，明确不重复 acl-packet 测试。
+2) 技能参考文件哈希已漂移：runtime-repair.json 记录 references/windows-agent-continuation.md = 694d026a…f6149，本轮实测 = 9f9f5aee…f85e2；references/shared-memory.md 仍为 21f417d6…c7a，SKILL.md 仍为 284d2eb9…f46。→ 指南中把"引用参考文件前先复算哈希"写成带触发条件的规则，不把旧快照当现状。
+3) 指南以"已实测 / 仅登记未执行"逐条标注命令，保留原始失败与未取得结论（普通用户自建符号链接能力、Windows Cursor、独立标准账户、应用关闭后的唤醒）。
+
+四、产物
+windows-user-guide.md（bytes=14506, sha256=b0bd2b951b0df18badbc1eeeef9539a8d28e8f1ce47d6a8a9acb7cdd7979c8b8）、verify-review-inputs.ps1、候选经验 3 条（untested）。
+
+五、不变项
+acl-packet 原包与 runs/ 原回执未动；未提权、未改系统设置、未读 .private、未对外发布；成本 unknown。
+- 【B14 长期事实更正：冻结指南版本归属与回合口径】
+
+一、更正被指的过期事实
+1. 旧 memory 中记录的 windows-user-guide.md "bytes=14506, sha256=b0bd2b951b0df18badbc1eeeef9539a8d28e8f1ce47d6a8a9acb7cdd7979c8b8" 是 B2 历史版本，不是当前现行版本，不得再当作现状引用。
+2. 现行冻结指南为 B8 技术指南快照：windows-user-guide.md，33647 字节，SHA256 79c9d1045b3c65ad34359ce7932809a1ecdebac5507e8bc78fc4621e9fc383d5。该值由协调器本轮实际读回核实，并与 review-inputs/closing-audit.json 的 guide 字段逐字段一致。
+3. 读取版本时以文件本身与具名回执核实，不以历史记忆条目为准。
+
+二、版本维护规则（新增约束）
+今后任何对 windows-user-guide.md 的修改，必须同步写入版本节点（新的字节数与新的 sha256），并在长期事实与增补文件中同步更新版本表格；不得沿用旧 hash，也不得把记忆中的快照当现状。原冻结指南本轮不再改动。
+
+三、B8 修订与 B9 审读的事实归属与结果（来自 closing-audit.json 的实际运行回执）
+- B7（agent-b7）：status=FAIL，exit_code=1，349.74 秒，elevated=false，步数上限中断。指南正文"本轮"的默认语义指 B7 编修回合。
+- B8（agent-b8）：status=FAIL，exit_code=1，242.53 秒，elevated=false，步数上限中断。B8 贡献英文参考文件哈希与尾部纠错这一批修订。
+- B9（agent-b9）：status=PROCESS_SUCCEEDED_REQUIRES_BEHAVIOR_REVIEW，exit_code=0，172.14 秒，elevated=false；B9 为只读审查回合，其 exit 0 仅表示审查回合正常结束，实际发现了 5 项缺口，不得表述为全任务通过。
+- B7/B8 的失败与步数上限中断原样保留，不因 B9 的 exit 0 被抹去。
+
+四、本轮新增可核事实
+- 英文参考文件本轮以真实 skill_read 读取 references/windows-agent-continuation.en.md，resourceSha256 实测 = ed31f502e5afde181ff7d4562b227fd07022eb7d1f94e504d7791c8982013e8e，与 closing-audit.json 的 current_english_reference_sha256 一致。闭合 B9 第 3 项；该文件 B8 已实读，故此项不是全局缺口。
+- Skill 主文件本轮实测 sha256 仍为 284d2eb935b817fd941ef52aa6c98691cce422018d693baa6cea5958a4cfef46，未漂移。
+- 引用执行结论只用 closing-audit.json 内协调器实际读回的回执字段（status / exit_code / 耗时 / elevated），不用 manifest 的 source 路径证明执行。
+
+五、保持不变的历史结论
+B2 归属的 18 项哈希复算（B2 固定归属、后续只引用）、B3/B4/B6 各自口径、原始 acl-packet 原包 exit 1 与 fs.symlinkSync → EPERM 的前置条件缺失、7 项检查全通过（其中"拒绝被重定向的 ACL 程序"只是一项断言）、普通用户自建符号链接能力、Windows Cursor、独立标准账户、应用关闭后的唤醒五项未取得结论，全部原样保留。已写入记忆的候选经验仍为 untested，未独立验证不升级。
+- 【B15 收尾决策：检查器修正、B14 真实失败与「记忆 done ≠ 交付通过」规则】
+
+一、本次检查修正（协调器侧，已实修并回归）
+- 长度检查器此前把冻结指南的 33647 字节误当成增补正文的字数目标，且未识别 1000 至 1800 的显式汉字区间。修正后检查器排除「字节」口径、按显式区间判定；三条复现用例先红后绿，52 项针对性回归全部通过。
+- 该修正只发生在检查器侧，不能替代正文侧达标。B14 增补正文实测 734 汉字，仍低于 1000 至 1800 下限，这是真实的稿件缺口，必须扩写正文才成立。
+
+二、B14 的真实结果（依据 review-inputs/b14-reconciliation.json）
+- 持久写入成立：decision/checkpoint/complete 均落到 revision 46；写盘回执 guide-review-addendum.md 为 3543 字节、SHA256 a3ee683b3da9b55816a509445348d520303fb03f2f7c51494ede8f577c5dab71。
+- 最终判定为 raw_result.status=unverified、raw_result.exitCode=3，issues=[TASK_WRITING_LENGTH_OUT_OF_RANGE]；disposition=delivered 只表示文件落盘，不代表验收通过，因此 B14 不计为验收通过。
+- launcher_os_exit_code 与 launcher_wall_seconds 均为 null，主机原生进程退出回执与完整耗时未保存；只能引用原始 JSON 结果中的 3，不得写成已取得操作系统退出码，也不得补造耗时。
+- failed_skill_read 记录：曾以 personal-agent-growth 作为 skill_read 的 id 调用，返回 SKILL_NOT_FOUND（toolCallId call_01a17e7f4a12750e8abe51fb），随后改用准确 id local:0de529bf577f688e11a2aa1e 才读取成功。B14 summary 中「本轮未新增工具失败」与事实不符，必须更正。
+
+三、新增规则
+1. 记忆层 status=done、写入回执存在、进程退出码为 0，任一单独出现都不是交付验收；验收必须同时看正文实际内容与最终结果字段，二者冲突时以最终结果字段为准。
+2. 长度类缺陷先分清是检查器口径错还是稿件内容不足，两者分别取证、分别修复，不以修好检查器冒充稿件达标。
+3. 失败调用与随后恢复必须一并写入总结，不得只写成功项。
+
+四、版本口径保持分明
+- B2 历史版本：windows-user-guide.md 14506 字节 / b0bd2b951b0df18badbc1eeeef9539a8d28e8f1ce47d6a8a9acb7cdd7979c8b8，仅作历史引用，不得当现状。
+- B8 当前冻结版本：windows-user-guide.md 33647 字节 / 79c9d1045b3c65ad34359ce7932809a1ecdebac5507e8bc78fc4621e9fc383d5，与 closing-audit.json 的 guide 字段一致；本轮不改该文件。
+- 增补文件自身：B14 写盘 3543 字节 / a3ee683b…，B15 扩写后另记新值。
+
+五、本轮动作与边界
+顺序为：decision → 扩写 guide-review-addendum.md 至 1000 至 1800 汉字 → read_file 完整读回核对 → checkpoint → 单独 learning_read pack 确认修订号刷新并 open 最新节点取不可变 source → complete（引用已有 exp-windows-user-continuation-review-correction-01，仍 untested）→ open summary 核对。不重跑 7 项检查，不复算 18 项哈希，不新建重复经验，不跑 Shell，不改冻结指南。独立标准账户、Windows Cursor、应用关闭后的唤醒仍未取得结论；候选经验仍为 untested。
+- 纠正旧规则：不再以最终结果字段覆盖正文问题。正文内容质量与检查器结果是两道独立门槛，任一失败或未知都不能验收。B15 断点：宿主原生退出 0，但 checkpoint 后 pack 返回 LEARNING_CONTEXT_LIMIT，节点读取不等于 pack 恢复，整体未验收；本轮已读全当前 memory 并局部修订增补正文。
+- B16 质量复核发现增补第1节把冻结指南 SHA256 抄错一个字符（fc 应为 bc）。本轮按协调器实际哈希做单字符局部纠正，其余文字、章节标题与主指南均未改动。
+- 【B18 收尾：检查器断点与增补标题归属】
+
+一、检查器断点（依据 review-inputs/b17-range-correction.json）
+B17 回执记录检查器曾把历史计数 1717 抢作 target，未采用 required_range=[1000,1800]；协调器已把规则改为「显式区间优先于历史或近似单值」，原 B17 原始计数字段保留、不倒改，53 项针对性检查通过并保留基线复现。B18 不重跑 7 项检查、不复算 18 项哈希、不跑 Shell、不改冻结主指南。
+
+二、本轮唯一写入
+guide-review-addendum.md 第一行版本归属：「B16 局部修订）」→「B16 局部修订，B17 哈希校正）」，仅此一处。read_file 完整读回确认：新增标题出现，冻结指南正确 SHA256 `79c9d1045b3c65ad34359ce7932809a1ecdebac5507e8bc78fc4621e9fc383d5`（bc）保留、错误字面量未残留，其余文字与章节未动。汉字数按新增 4 个汉字推算仍在 1000 至 1800 区间；实际汉字数与显式区间判定交真实交付检查器核验，本轮不预写通过。
+
+三、不变项
+独立标准账户、Windows Cursor、应用关闭后的唤醒仍未取得结论；候选经验仍为 untested。
+
+## 关键路径
+
+
+
+## 禁忌
+
+

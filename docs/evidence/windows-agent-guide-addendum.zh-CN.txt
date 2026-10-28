@@ -1,0 +1,78 @@
+# windows-user-guide.md 适用说明（B14 收尾增补，B15 扩写，B16 局部修订，B17 哈希校正）
+
+本文件是冻结技术指南 `windows-user-guide.md` 的适用说明，不修改指南正文，也不重写其九个章节。
+
+## 1. 适用对象与冻结状态
+
+- 冻结版本：B8 技术指南快照，`windows-user-guide.md`，33647 字节，SHA256 `79c9d1045b3c65ad34359ce7932809a1ecdebac5507e8bc78fc4621e9fc383d5`。该值由协调器在 B14 当轮实际读回核实，并与 `review-inputs/closing-audit.json` 的 `guide` 字段一致。
+- 记忆层早期记录的 14506 字节 / `b0bd2b95…` 属于 B2 历史版本，不是现行版本，引用时不得沿用。
+- 引用任何版本前，先读文件本身与具名回执核对字节数与 sha256，再写入长期事实。
+- 本增补正文在 B15 扩写、B16 局部修订；B14 写盘时的旧快照为 3543 字节 / `a3ee683b…`。本轮修订后的字节数与哈希以真实 `write_file` 回执与协调器导出校验为准，不在正文里声称没有回执记录的字段，文件不自指自身哈希。
+
+## 2. 正文“本轮”的默认含义
+
+指南正文里的“本轮”默认指 **B7 编修**回合；英文参考文件的 sha256 与尾部纠错来自 **B8** 修订，两者不是同一回合，混用会让回执对应关系失真。本增补里的“本轮”指增补自身的写作回合（B14 起草、B15 扩写、B16 修订），与指南正文不同义。
+
+## 3. 三个回合的真实结果
+
+依据 `review-inputs/closing-audit.json` 中协调器实际读回的运行回执，而不是 manifest 路径声明：
+
+| 回合 | status | exit_code | 耗时（秒） | elevated | 性质 |
+| --- | --- | --- | --- | --- | --- |
+| B7 | FAIL | 1 | 349.74 | false | 步数上限中断 |
+| B8 | FAIL | 1 | 242.53 | false | 步数上限中断 |
+| B9 | PROCESS_SUCCEEDED_REQUIRES_BEHAVIOR_REVIEW | 0 | 172.14 | false | 只读审查 |
+
+B9 的 exit 0 只表示只读审查回合正常结束；该回合确实发现 5 项缺口，因此 **不等于全任务通过**。B7 与 B8 的 exit 1 都是步数上限中断，同样不计为通过，两条失败记录原样保留。
+
+## 4. B9 五项反馈的逐项闭合
+
+1. **“本轮”指代不唯一**：本增补第 2 节给出默认归属（B7 编修；B8 承担英文哈希与尾部纠错）。指南正文冻结，因此以本文件作为归属说明。
+2. **§9「保留的失败与未决」未列 B7/B8**：本增补第 3 节补入两回合的 status、exit_code、耗时与 elevated，并注明二者同为步数上限中断。
+3. **英文参考文件当前值当轮未核**：这不是全局缺口。B8 已实际读过该文件；B14 再次以真实 `skill_read` 读取 `references/windows-agent-continuation.en.md`，实测 `resourceSha256 = ed31f502e5afde181ff7d4562b227fd07022eb7d1f94e504d7791c8982013e8e`，与 `closing-audit.json` 的 `current_english_reference_sha256` 一致，此项闭合。Skill 主文件 B14 实测仍为 `284d2eb9…f46`，未漂移。
+4. **记忆层缺 B8 节点**：B8 的修订归属已写入长期记忆决策（decision），并由随后的 checkpoint 节点落盘。
+5. **记忆层指南快照过期**：已更正为上述 33647 字节 / `79c9d104…`；同时确立规则——今后改动该指南必须同步写入版本节点（新的字节数与新的 sha256），不得沿用旧 hash。
+
+## 5. 仍未验证的边界
+
+以下结论本轮没有取得，不得据此推断：独立标准账户下的行为、Windows Cursor 路径、应用关闭后的唤醒。此前 7 项普通权限检查全部通过，但“拒绝被重定向的 ACL 程序”只是其中一项断言，不能读成整组能力都通过；B9 未重跑那 7 项检查、未复算 18 项哈希、未重读历史回执，文中退出码与 TAP 计数属历史引用。
+
+已写入记忆的候选经验仍为 `untested`，未经独立验证不升级。
+
+## 6. 版本维护规则
+
+改动指南本体后，必须补写版本节点并同步更新本增补第 1 节与长期记忆中的现行快照；未改动时保持本文件所述的 B8 冻结状态不变。
+
+## 7. B14 回合的实际结果与不足
+
+B14 的持久写入确实完成：`learning_write` 的 decision、checkpoint、complete 分别落到 revision 44、45、46，而非同为 46，主增补文件的写盘回执为 3543 字节、SHA256 `a3ee683b3da9b55816a509445348d520303fb03f2f7c51494ede8f577c5dab71`。但其最终 JSON 结果是 `status=unverified`、`exitCode=3`，问题记录为 `TASK_WRITING_LENGTH_OUT_OF_RANGE`，因此**不能计为验收通过**：写入发生不等于交付合格。
+
+失败原因有两层，都要保留：
+
+1. 检查器误把冻结指南的 33647 字节当作本增补的字数目标，又未识别 1000 至 1800 汉字区间；该缺陷已由协调器修正，并以三条复现用例先红后绿、52 项针对性回归验证。修正属于检查器侧，不是正文侧。
+2. 正文侧的缺口仍存在：B14 增补正文实际只有 734 汉字，低于原定下限。检查器修好不等于稿件达标，本文件的扩写正是为补上这一段。
+
+另有两项须如实记载：其一，B14 曾以 `personal-agent-growth` 作为 `skill_read` 的 id 调用，返回 `SKILL_NOT_FOUND`，随后改用准确 id `local:0de529bf577f688e11a2aa1e` 才读取成功；其二，B14 的主机原生进程退出回执与完整耗时未保存，`launcher_os_exit_code` 与 `launcher_wall_seconds` 为 null，故只引用原始 JSON 结果中的 3，不写成已取得的操作系统退出码，也不补写耗时。
+
+B15 的宿主原生退出码确为 0，但其 checkpoint 后的 `learning_read pack` 返回 `LEARNING_CONTEXT_LIMIT`，且当时判定规则把最终字段置于内容之上；节点读取不等于 pack 恢复，B15 只完成记忆层收口、整体未验收，不按退出 0 抹去缺口。
+
+## 8. 与 B14 的对账方法
+
+对账只用 `review-inputs/b14-reconciliation.json` 中协调器实际的字段，不引用 manifest 的路径声明：
+
+- `raw_result.status=unverified` 与 `raw_result.exitCode=3` 是最终判定；`taskDeliveryEvidence.disposition=delivered` 只说明文件写到了磁盘。
+- `taskDeliveryEvidence.length.actual=734` 是正文真实汉字数，`required_range` 为 1000 至 1800；`target=33647` 是检查器误取的字节数，引用时须标注为检查器缺陷，不能当作目标字数。
+- `persisted_revision` 记录的是 complete 的修订号 46，decision 与 checkpoint 分别为 44 与 45；`launcher_os_exit_code`、`launcher_wall_seconds` 为 null 说明退出回执与耗时缺失，只能保留未知。
+- `failed_skill_read` 记录了那次 `SKILL_NOT_FOUND` 调用及其 toolCallId，必须与后续恢复一并写入总结，不能只写“本轮未新增工具失败”。
+
+判读原则：`status=done`、写入回执存在、退出码为 0，任一单独出现都不构成交付验收；正文内容质量与检查器结果是两道独立必过的门槛，任何一道失败或未知都不能验收，不存在用最终字段覆盖正文问题的规则。
+
+## 9. 可复用的恢复方法
+
+1. **先修检查器，再修稿件**：长度类缺陷先确认计数字段是字节还是汉字、是否识别显式区间，避免把检查器故障误判成稿件故障。
+2. **长文件按 nextOffset 续读**：英文参考文件用 `skill_read` 分页时，严格按返回的 `nextOffset` 继续，直到 `nextOffset=null`；`learning_read` 的分页结束字段才是 `next=null`。两者不要混用，也不要按字符数估算偏移。
+3. **Skill id 必须精确**：先用 `skill_catalog` 取准确 id（如 `local:0de529bf577f688e11a2aa1e`），不要凭名称猜 id；`SKILL_NOT_FOUND` 后改用准确 id 成功恢复，这一失败与恢复都要如实写进总结。
+4. **失败回合不重放**：B14 未保存原生退出回执，只引用现有 JSON 字段，不重跑命令、不编造耗时；缺失项标注为未知。
+5. **改稿后必须读回**：写盘后用 `read_file` 完整读回，按实际内容核对字数与归属，再落 checkpoint；不要以写入成功代替内容正确。
+
+本文件修订后仍需一次独立的长度复核（按汉字计数、1000 至 1800 区间），结论以实际读回内容为准。

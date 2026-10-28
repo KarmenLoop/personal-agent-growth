@@ -1,4 +1,4 @@
-# Documentation index · 0.4.3
+# Documentation index · 0.4.4
 
 [English](index.en.md) · [中文](index.zh-CN.md)
 
@@ -16,7 +16,7 @@ The current product manual is published in both languages. Runtime names, field 
 | Memory contract and pseudocode | [Read](../docs/markdown-learning.en.md) | [阅读](../docs/markdown-learning.zh-CN.md) |
 | Compatibility and evidence | [Read](../docs/compatibility.en.md) | [阅读](../docs/compatibility.zh-CN.md) |
 | Cross-domain full-task experiment | [Read](../docs/cross-domain-trial.md) | [阅读](../docs/cross-domain-trial.zh-CN.md) |
-| Current release acceptance | [Read](../docs/release-0.4.3-acceptance.en.md) | [阅读](../docs/release-0.4.3-acceptance.zh-CN.md) |
+| Current release acceptance | [Read](../docs/release-0.4.4-acceptance.en.md) | [阅读](../docs/release-0.4.4-acceptance.zh-CN.md) |
 | Team | [Read](../TEAM.md) | [阅读](../TEAM.zh-CN.md) |
 | License guide | [Read](../docs/licensing.md) | [阅读](../docs/licensing.zh-CN.md) |
 
@@ -35,7 +35,7 @@ The current product manual is published in both languages. Runtime names, field 
 
 ## Templates and diagrams
 
-[All 32 templates](../templates/learning/README.md) contain the full raw Markdown. The [diagram guide](mindmaps.en.md) includes 16 rendered SVGs and 16 editable Mermaid sources. Use the browser to zoom; source files and render hashes are included in the full delivery.
+[All 32 templates](../templates/learning/README.md) contain the full raw Markdown. The [diagram guide](mindmaps.en.md) includes 20 rendered SVGs and 20 editable Mermaid sources. Use the browser to zoom; source files and render hashes are included in the full delivery.
 
 ## Historical evidence archive
 
@@ -48,3 +48,7 @@ The current product manual is published in both languages. Runtime names, field 
 - [0.4.1-bundle.1 file and tool trial](delivery-acceptance.md)
 
 These original reports retain their original language, object hashes, and failure history. The bilingual compatibility and current acceptance pages explain their scope. They do not replace raw private host traces.
+
+## Windows CLI Agent
+
+[Non-elevated continuation tutorial](windows-agent-continuation.en.md) · [0.4.4 acceptance](release-0.4.4-acceptance.en.md)

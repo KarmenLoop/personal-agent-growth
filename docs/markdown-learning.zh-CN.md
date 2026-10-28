@@ -1,4 +1,4 @@
-# Markdown 学习记忆完整契约 · 0.4.3
+# Markdown 学习记忆完整契约 · 0.4.4
 
 [English](markdown-learning.en.md) · [全部模板原文](../templates/learning/README.md) · [架构边界](architecture.zh-CN.md#storage)
 
@@ -147,9 +147,17 @@ def project_packet(root, project_id, task, token_limit=4000):
         verify_project_id_revisions_and_sources(context, node, memory)
         if has_unresolved_manual_conflict(context, node, memory):
             return explicit_conflict_without_overwriting()
-        required = [context, node, mandatory_constraints_and_decisions(memory)]
+        required = [context, node, mandatory_non_decision_sections(memory)]
         if count_tokens(required) > token_limit:
             return required_context_overflow()  # never silently drop a constraint
+        decisions = decision_section(memory)
+        if fits(required + [decisions], token_limit):
+            required += [decisions]
+        else:
+            notice = require_paged_read_before_memory_write(memory.id, memory.sha256)
+            if not fits(required + [notice], token_limit):
+                return required_context_overflow()
+            required += [notice]  # original decisions stay unchanged on disk
         hits = search_markdown(root / "experience", id=task.experience_id,
                                tags=task.domain_tags, keywords=task.keywords)
         eligible = [x for x in hits if scope_matches(x, task)
@@ -168,6 +176,8 @@ def project_packet(root, project_id, task, token_limit=4000):
 context 与最新 node 是恢复必读；memory 的强约束和当前决定不能被可选经验挤掉。按领域、失败机制检索经验，先过滤有效性与范围再 top-N，默认最多 5 条。只在项目 done 且来源仍有效时读 summary。日周与 preview 在规划/巩固用途时加载，不每轮读全库。
 
 注入应保留引用路径、哈希/修订和采用理由。调用经验可以注入全文，也可只注入“场景 + 可复制步骤”，但不得遗漏适用范围、反例和失效条件。包预算 2–4k tokens；4k 上限装不下必要项时返回明确冲突。这里只提供协议伪代码，宿主的实际 token 计数和注入接口要单独验证。
+
+修复后的 Koder 候选会明确标记超长决策小节的 ID 和当前哈希，原文不删改、不静默遗漏。原生记忆写入前，用 `learning_read open` 按 `next` 顺序读到 null；部分页或旧版本不足以通过该检查。目标、完成标准、约束、关键路径和禁忌仍必须装入预算。项目包读取失败后，要先对账并成功读取新包，再做依赖写入。这是运行时契约，单独安装便携 Skill 不会增加该接口。
 
 ## 8. 读写与复用操作契约
 

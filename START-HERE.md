@@ -1,16 +1,16 @@
-# Offline delivery: Personal Agent Growth 0.4.3
+# Offline delivery: Personal Agent Growth 0.4.4
 
-[中文说明](开始使用.md) · Bundle **0.4.3-bundle.1** · Complete bilingual distribution
+[中文说明](开始使用.md) · Bundle **0.4.4-bundle.1** · Complete bilingual distribution
 
 This bundle includes the installable skill, reviewed experience excerpts, portable execution profiles, editable source, tests, team and license information, and illustrated acceptance reports. It works without downloading dependencies after extraction if Python 3.11 or later is already installed. Actual model work still uses the host's account and tools. This bundle does not register a scheduler or connect another device.
 
-The [installation guide](docs/install.md) covers the 0.4.3 core package; this page installs the complete offline distribution. Do not overwrite an existing skill or experience library. See the [architecture](docs/architecture.en.md), [Markdown learning contract](docs/markdown-learning.en.md), and [detailed maps](docs/mindmaps.en.md).
+The [installation guide](docs/install.md) covers the 0.4.4 core package; this page installs the complete offline distribution. Do not overwrite an existing skill or experience library. See the [architecture](docs/architecture.en.md), [Markdown learning contract](docs/markdown-learning.en.md), and [detailed maps](docs/mindmaps.en.md).
 
 ## Contents and evidence
 
 | Location | Purpose |
 |---|---|
-| `downloads/personal-agent-growth-0.4.3.zip` and `manifest.json` | Current 61-file bilingual coordinator package with learning templates |
+| `downloads/personal-agent-growth-0.4.4.zip` and `manifest.json` | Current 61-file bilingual coordinator package with learning templates |
 | `examples/experience-seed` | Two indexed profiles, two historical lesson cards, two review excerpts, and export provenance |
 | `SKILL.md`, `references`, `scripts` | Editable coordinator source and standard-library tools |
 | `tools`, `tests` | Delivery builder, checks, installer, experience reader, and utility tests |
@@ -28,7 +28,7 @@ Use your SHA-256 tool to compare the outer ZIP with its accompanying `SHA256SUMS
 
 ```sh
 python3 -B tools/check_delivery.py .
-python3 -B scripts/verify_handoff.py --archive downloads/personal-agent-growth-0.4.3.zip --manifest downloads/manifest.json
+python3 -B scripts/verify_handoff.py --archive downloads/personal-agent-growth-0.4.4.zip --manifest downloads/manifest.json
 ```
 
 On Windows, replace `python3 -B` with `py -3 -B -X utf8`. The first command should report `PASS`; the second should report `PASS`, exit 0, with 127 checks. The manifest detects missing or altered content; it is not a publisher signature. Keep the extracted distribution unchanged and store your work outside it.
@@ -161,7 +161,7 @@ if ($LASTEXITCODE -ne 0) { throw 'Removal stopped; inspect the reported cause.' 
 
 Removal checks every owned skill file and stops if files changed or were added. It preserves `experience`, `tasks`, `distribution`, and the installation receipt. Back up and review deliberate skill edits before deciding what to remove. The user controls any later deletion of retained memory.
 
-If a check fails, keep the output and diagnose its stage. A missing Python interpreter is not a failed package inspection. A hash mismatch requires a fresh trusted copy or an intentional new candidate. An existing install root requires a new root; it is not a reason to erase old memory. The [current acceptance report](docs/release-0.4.3-acceptance.en.md) records the actual platform and checks performed for this build. Windows desktop Agent continuation remains unverified pending the user-selected local Windows VM and actual Agent receipts.
+If a check fails, keep the output and diagnose its stage. A missing Python interpreter is not a failed package inspection. A hash mismatch requires a fresh trusted copy or an intentional new candidate. An existing install root requires a new root; it is not a reason to erase old memory. The [current acceptance report](docs/release-0.4.4-acceptance.en.md) records the actual platform and checks performed for this build. The [Windows Koder tutorial](docs/windows-agent-continuation.en.md) covers the separate native candidate. Windows Cursor desktop execution remains a separate, unverified condition.
 
 ## Rebuild and license
 

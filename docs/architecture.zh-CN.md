@@ -1,4 +1,4 @@
-# 整体架构剖析 · 0.4.3
+# 整体架构剖析 · 0.4.4
 
 [English](architecture.en.md) · [文档索引](index.zh-CN.md) · [复杂思维导图](mindmaps.zh-CN.md)
 
@@ -95,4 +95,4 @@ context 与最新 node 回答“现在做到哪”；memory 提供约束与决�
 
 新增宿主先实现读取、持久写入、产物检查与 writer 交还，再接入真实模型回合，最后验证调度。新增领域先定义来源、可观察质量和独立复用条件，继而设计领域提案。新机制先局部验证，保留历史失败，再通过跨任务回归扩大范围。
 
-近期接续重点是 Windows 原生 Agent 回执、Koder 全量回归、Markdown 迁移工具、更多新领域迁移以及公开可复跑的宿主验收。它们是待办方向，不是这次发布已实现的能力。具体状态见[兼容性表](compatibility.zh-CN.md)。
+Windows Koder CLI 接续已取得真实模型与记忆读写回执。Windows Cursor、独立创建的标准账户、完整 Windows 产品套件、Markdown 迁移工具以及更多领域迁移仍需要独立验收。具体状态见[兼容性表](compatibility.zh-CN.md)与[当前回归报告](release-0.4.4-acceptance.zh-CN.md)。

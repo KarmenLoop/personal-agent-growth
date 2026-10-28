@@ -3,7 +3,7 @@ name: personal-agent-growth
 description: Complete ongoing tasks that need preparation, evidence-based revision, review, shared memory, or bounded recursive improvement of prompts, tools and workflow components. Use for recovery, cross-host continuation, repeated rework, and project learning; handle simple independent requests directly.
 license: AGPL-3.0-only
 metadata:
-  version: "0.4.3"
+  version: "0.4.4"
 ---
 
 # Personal Agent Growth
@@ -68,5 +68,8 @@ Resolve Markdown references relative to their containing file, distinguishing lo
 When the user requests all failures fixed or a new release, read the [regression repair lesson](references/regression-repair.en.md). Bind each failure to its cause, repair, and fresh receipt. A failing baseline explains origin; it does not satisfy a repair request. Verify focused behavior, then run the full suite against one frozen candidate. Report failures, cancellations, and skips separately. Audit each skipped prerequisite and supply available inputs; distinguish product policy, offline contracts, and native-platform acceptance. Preserve an exact blocker and resumption checkpoint for anything still unexecuted. Explain fixture corrections against the actual contract while retaining product acceptance criteria. Check the built package's materialized dependencies, relocation, and installation behavior separately.
 
 For VM continuation, verify the guest's effective identity, protection settings, and input hashes. A zero host-command exit does not establish guest completion. Return actual stdout, stderr, exit codes, and artifacts, then verify them independently on the host. Preserve each platform's original report and reconcile results by original case. Identify SYSTEM execution, stubbed child results, and real operating-system effects separately.
+
+
+For a real Windows CLI Agent continuation, read [Resume a Windows Agent](references/windows-agent-continuation.en.md): bound preparation, save a prediction, reconcile actual receipts, and keep protocol thinking out of durable summaries.
 
 <!-- Copyright (C) 2026 KARMENLOOP Official Team. SPDX-License-Identifier: AGPL-3.0-only -->

@@ -1,4 +1,4 @@
-# How decisions and learning connect · 0.4.3
+# How decisions and learning connect · 0.4.4
 
 [中文](reasoning.zh-CN.md) · [Architecture](architecture.en.md) · [Decision map](diagrams/reasoning.en.svg)
 

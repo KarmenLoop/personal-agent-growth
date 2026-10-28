@@ -1,4 +1,4 @@
-# From installation to preparation, review, and handoff · 0.4.3
+# From installation to preparation, review, and handoff · 0.4.4
 
 [中文](tutorial.zh-CN.md) · [Install](install.md) · [Decision method](reasoning.en.md)
 
