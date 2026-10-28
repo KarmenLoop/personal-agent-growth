@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "status": "PASS_CONFIGURED_MACOS_REGRESSION",
+  "verified_at": "2026-10-28T06:37:31.970060+00:00",
+  "private_candidate_commit": "30d3f0f06d8050b0f6103c2fe6bfe6ffb34f1247",
+  "command": "env KARMEN_FORMAL_TEST_PYTHON=<bundled-python> KARMEN_SHARED_CORE=<compatible-core> PYTHONPATH=<isolated-python-deps> PYTHONDONTWRITEBYTECODE=1 TERM=xterm-256color npm test",
+  "cwd": "<private-candidate>/koder-cli",
+  "limits": "Original per-file limits and concurrency retained. The owned audit VM was stopped before this run; unrelated VMs were not changed.",
+  "final": {
+    "label": "full-agent-summary-02",
+    "counts": {
+      "tests": 1523,
+      "pass": 1519,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 4
+    },
+    "exit_code": 0,
+    "started_at": "2026-10-28T06:25:37.542897+00:00",
+    "duration_seconds": 346.2563949999967,
+    "stdout_sha256": "584307e6775b79df3921a2cd895bbe1ff08413839d4a28c9fc50fc24b49af8ee",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "input_verification": {
+      "inputsUnchanged": true,
+      "sourceCommit": "30d3f0f06d8050b0f6103c2fe6bfe6ffb34f1247",
+      "trackedSourceFiles": 2634,
+      "coreSourceFiles": 542,
+      "coreDependencyFiles": 54,
+      "manifestSha256": "7d56bac913d30fcffae46c07625e298744856cac412b23d8afe155f25d2341b2",
+      "testExitCode": 0
+    }
+  },
+  "preserved_previous_run": {
+    "label": "full-agent-summary-01",
+    "counts": {
+      "tests": 1485,
+      "pass": 1473,
+      "fail": 0,
+      "cancelled": 8,
+      "skipped": 4
+    },
+    "exit_code": 1,
+    "started_at": "2026-10-27T13:25:03.617261+00:00",
+    "duration_seconds": 1107.0008407089626,
+    "stdout_sha256": "b24e8d5a9341c717245b609bc8315fcd8211b5a8b1ae46c284bd4d9c79697d75",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "input_verification": {
+      "inputsUnchanged": true,
+      "sourceCommit": "c7ae14b44fb9f41bed6599af5132519de30e19f3",
+      "trackedSourceFiles": 2629,
+      "coreSourceFiles": 542,
+      "coreDependencyFiles": 54,
+      "manifestSha256": "60f83d642548db032452372fe4de19d6e87e107feba3a6de20c5eeae0d009a02",
+      "testExitCode": 1
+    }
+  },
+  "skip_scope": "Four Windows-only platform guards are skipped on macOS. Their actual non-elevated Windows execution is recorded separately; this macOS suite is not a full Windows product suite.",
+  "raw_evidence": "Complete commands, stdout, stderr, input manifests and source checks retained in the private audit directory; private product source is not distributed."
+}

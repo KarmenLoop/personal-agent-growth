@@ -1,0 +1,55 @@
+---
+schema: 1
+id: "exp-windows-user-continuation-review-correction-01"
+type: "experience"
+project: "windows-user-continuation"
+tags: ["domain/windows","workflow/review-handoff","workflow/evidence","workflow/correction"]
+status: "active"
+revision: 1
+created: "2026-10-27T16:25:38.590Z"
+updated: "2026-10-27T16:25:38.590Z"
+sources: [{"kind":"internal","document_id":"windows-user-continuation-node-35","path_hint":"projects/windows-user-continuation/nodes/2026-10-28-0021.md","observed_revision":1,"excerpt_sha256":"7b8ff2f694f6bb16ac9b55801cf62ece5de04f487324b76b39b00a24ae153974"}]
+validation: "untested"
+scope: "project:windows-user-continuation"
+failure_modes: []
+origin_projects: ["windows-user-continuation"]
+supersedes: ["exp-windows-user-continuation-review-handoff-01"]
+superseded_by: null
+---
+## 场景
+
+限定项目的最终质量接续（learning-review 剖面，本机非提升 Koder）：一份已交付教程被具名质量回执判定存在归属与口径错误，需要按回执内的真实运行结果修正文档，并把含错的旧经验条目用 supersedes 废弃链保留下来。
+
+## 做法
+
+以具名质量回执里的已取回运行结果为唯一依据；用 read_file 的 offset/maxBytes 按 nextOffset 把目标文档分页读全；用互不重叠的唯一锚点做定点替换；改后分页读回核对；新经验用 supersedes 链接旧经验并保持 untested。
+
+## 为何有效
+
+适用边界：仅限本机非提升 Koder（过滤后的管理员令牌，elevated=false、中完整性）下同一物理 Markdown 记忆根的接续与只读复核型收尾；不覆盖 Windows Cursor、独立标准账户、应用关闭后的唤醒，也不覆盖需要重跑检查的执行阶段。本条为 untested 候选，须由独立验证才能升级，不得因写入记忆就自证通过。
+
+## 反例/坑
+
+- 清单或 manifest 的 source 路径只是交接声明，不能证明原目录存在或会话执行；运行结论必须回到具名回执里已取回的运行结果（exit_code、status、耗时）。
+- 交付检查把输入文件名后缀当产物造成的 exit 3 属误报，但该回合仍不能计入通过；真实写入与回合通过是两件事。
+- 回合的读取工具调用要按回执区分：B3 是普通配置且先有读工具调用、随后 API_IDLE_TIMEOUT；只有 B4 才是工具执行前 ECONNRESET。不要笼统写“上一轮无工具”。
+- 18 项哈希复算归属 B2，后续回合只能引用结果，不能重算也不能改归属。
+- 一项断言不等于整组结论：7 项检查全部通过，其中“拒绝被重定向 helper”只是一项，不能写成 7 项的全部结论，也不能用它否定其余 6 项。
+- 不要用无变化替换冒充读取；长文档必须按 nextOffset 分页读到 null。
+- learning_read action=pack 可能返回旧节点缓存；写完 checkpoint 要单独再取 pack 确认修订号与最新节点刷新，引用来源用 open 不可变节点。
+- 不要自行给 source 加 anchor：把 Markdown 标题当行为事件 ID 会让写入失败且不产生任何经验。
+- Skill 参考文件的 sha256 以当轮实际 skill_read 为准，历史快照只作序列保留，不要沿用过期值。
+
+## 可复制步骤
+
+1. 并行取回最小恢复包：learning_read action=pack、当轮 skill_read 的参考文件、具名质量回执与被质疑的旧经验条目；不扫全目录、不重跑已通过的检查。
+2. 用 read_file 的 offset / maxBytes 按返回的 nextOffset 连续读到 null，先把目标文档读全再动笔；读不全就不改那一段。
+3. 把每条待改项落到具名回执里的具体字段（argv、exit_code、status、elevated、耗时、findings 原文），而不是模型推断或清单路径。
+4. 用互不重叠的唯一锚点做定点替换（str_replace），不要整篇覆盖自己没读全的文档；同一文件多处修改串行确认，避免互相覆盖。
+5. 改后分页读回逐条核对落盘，读不到的段落如实标注未复核。
+6. 新经验用 supersedes=[旧经验 id] 保留废弃链；evidence 原样复制 learning_read action=open 不可变节点返回的 source 对象，不自行添加 anchor、不改字段。
+7. 读回新旧经验核对 superseded_by；再写 checkpoint；单独取 pack 确认修订号与最新节点刷新；open 新节点取 source 写 complete；最后 open summary 确认。
+
+## 相关链接
+
+

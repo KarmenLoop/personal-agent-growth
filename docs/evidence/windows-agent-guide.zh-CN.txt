@@ -1,0 +1,279 @@
+# Windows 普通权限下的 Koder Agent 接续与验证指南
+
+**适用范围**：本机（Windows 11 Pro ARM64 / 内核 10.0.26300.9457 / win32 arm64 / node v22.23.2）上，用非提升令牌运行 Koder CLI Agent、跨会话接续同一份 Markdown 学习记忆，并对“Windows ACL 记忆目录保护”这一行为做真实验证的可执行做法。
+
+**证据来源**
+
+1. `review-inputs/` 内交接的 18 份原始回执（`manifest.json` 固化于 2026-10-27T14:21:21.763Z）。**这 18 项的 sha256 与字节数复算发生在 B2 回合（普通执行配置）**：`verify-review-inputs.ps1` 退出码 0、输出 `RESULT: PASS`、18/18 一致。B5/B6 与本轮只**读取**该结果并据此修正指南，**没有再跑一次哈希复算**，也不在 `learning-review` 剖面下跑。
+2. 具名启动回执 `review-inputs/runtime-launch-contract.json`（2026-10-27T15:28:24.102Z，作者自述 `coordinator launch evidence, not model execution`，启动器 `run-stage-v7.mjs` sha256 `34dd1d23…3bc8`）。它补足**三项环境变量**、受控 Skill 升级记录与交接说明；18 份原文件及其核验结果不变。该回执不在 18 项交接清单内。
+3. 具名质量检查回执 `review-inputs/review-repair-02.json`（2026-10-27T15:55:37.367Z，作者自述 `coordinator quality review and installation receipt; not Agent output`）。它列出本指南必须修正的 5 条项（harness 开关、18 项核验归属、输入路径、用例序号、A3/B 回合归属），登记 `--harness learning-review` 出现在 B5 的真实 argv 里，并登记 B6 回合的输入 `C:\Users\PAGAudit\PAG-Agent-20261027\case-inputs\phase-b6.txt`。
+4. 具名质量回执 `review-inputs/review-repair-03.json`（作者自述 `Coordinator read-only review of exported original receipts; not an Agent execution`）：给出**已取回的原始回执**运行结果——A3 exit 1、B exit 3、B2 exit 1、B3 exit 2、B4 exit 2、B5 exit 1、B6 exit 3（status 均为 FAIL、elevated 均为 false）——以及 9 条 findings（pack 缓存、`read_file` 分页、manifest 源路径口径、B3/B4 归属、B6 exit3 性质、7 项检查口径等）。**本指南的回合归属与口径以本回执内的运行结果为准**；`manifest.json` 的 `source` 路径只是交接声明，不能单独证明目录存在或会话执行。
+
+**本轮性质**：只读引用 + 写作。**本轮输入文件名未出现在我读到的任何具名回执中**，故本文不写本轮输入的具体文件名。**未重跑** acl-packet 测试套件，也**未重跑 18 项哈希复算**（归属 B2）；未执行任何 shell 命令，未提权、未改系统设置、未读取凭据、未对外发布。
+
+**标记约定**
+
+| 标记 | 含义 |
+|---|---|
+| 【本轮实跑】 | 本轮有工具回执可证 |
+| 【历史实跑】 | 此前回合有回执，本轮只引用，未重跑 |
+| 【仅登记】 | 只有登记信息（如 argv、stdin 哈希）**本身**；**不等于该会话没执行**——执行回执可能另在别处 |
+| 【用法示例】 | 示范写法，**本轮未执行**，不得当作本轮结果 |
+
+---
+
+## 1. 已实测环境与身份
+
+| 项 | 值 | 来源 |
+|---|---|---|
+| 平台 / 架构 | win32 / arm64 | 两份 `receipt.json` |
+| 系统内核 | 10.0.26300.9457 | `runtime-launch-contract.json` 的 `os.kernel`（源为更早的原生 VM 系统回执） |
+| 营销版本名 | Windows 11 Pro ARM64 | 同上 `os.product`。**注**：旧注册表 `ProductName` 不是营销版本判据，不以它覆盖结论 |
+| Node | v22.23.2 | 两份 `receipt.json` |
+| Node 可执行文件 | `C:\PAG-Agent-Input-20261027\node\node.exe` | `receipt.json` 的 `runs[].command` |
+| Koder CLI | `C:\Users\PAGAudit\PAG-Agent-20261027\distribution\koder-cli\bin\koder.mjs` | `commands/*.command.json` |
+| Skill | `personal-agent-growth`，SKILL.md sha256 `284d2eb935b817fd941ef52aa6c98691cce422018d693baa6cea5958a4cfef46` | 本轮 `skill_read` |
+| Skill 参考文件（受控升级后） | `references/windows-agent-continuation.md` resourceSha256 `0586a1a7ccb9e7c9f579a5225d978e5c0ec4f5c95c03202aae42f1f7ed70c803` | **本轮** `skill_read` 实测（`local:0de529bf577f688e11a2aa1e` 的 `references/windows-agent-continuation.md`）；上一版快照 `dc23dfba…e6fdd` 已过期，快照序列见 §5.6 |
+| 学习项目根 | `KODER_LEARNING_ROOT` = `C:\Users\PAGAudit\PAG-Agent-20261027\learning`，项目 `windows-user-continuation` | 具名回执 + `learning_read pack` 返回的 `root` |
+| 记忆根 | `KODER_MEMORY_ROOT` = `C:\Users\PAGAudit\PAG-Agent-20261027\runtime-memory`（**与学习根是两个不同目录**） | 具名回执 |
+| CLI 配置根 | `KODER_CLI_HOME` = `C:\Users\PAGAudit\PAG-Agent-20261027\koder-profile` | 具名回执 |
+| 当前工作区 | `C:\Users\PAGAudit\PAG-Agent-20261027\workspace-b`（阶段一在 `workspace-a`） | 具名回执 / `stage1-result.md` |
+| 执行身份 | `WIN-FRSP6LB6COJ\PAGAudit`，SID `S-1-5-21-2854777329-3573405487-3956276298-1001` | `ordinary-user-token.json` |
+| 令牌状态 | `elevated=false`、`medium_integrity=true`，Administrators 为 deny-only；私有 SDDL 只含 SYSTEM 与本人；`input_write_denied=true` | `ordinary-user-token.json` |
+| 权限关键点 | 无 `SeCreateSymbolicLinkPrivilege`；Developer Mode `AllowDevelopmentWithoutDevLicense` = `NOT_SET` | `stage1-result.md` 第 3 节 |
+
+### 1.1 身份口径：过滤后的管理员令牌 ≠ 独立标准账户
+
+具名回执的 `scope` 明确写着 “filtered administrator token is not a standard account”。三种身份口径必须分开说：
+
+| 口径 | 本轮是否覆盖 | 说明 |
+|---|---|---|
+| SYSTEM | **不覆盖**（仅历史对照） | `prior-system-receipt.json` 全 PASS 只说明 SYSTEM 下成立，不能外推到普通权限 |
+| **过滤后的管理员令牌**（用户仍属 Administrators 组，但令牌中该 SID 为 deny-only；`elevated=false`、中完整性） | **覆盖** | 本指南全部实测结论只在这一条件下成立 |
+| **独立标准账户**（不属于 Administrators 组的普通用户） | **未覆盖** | 本机没有该账户，本轮未取得结论；**不得用过滤后的管理员令牌结果代替它** |
+
+---
+
+## 2. 各回合实跑归属
+
+| 回合 | 工具面 / 剖面 | 是否实跑 | 证据来源 | 结果与产物 |
+|---|---|---|---|---|
+| 阶段一第一次执行（`workspace-a`） | 完整执行配置 | **是** | `acl-packet/runs/2026-10-27T13-27-59.553Z-9500/` | 退出码 2，`status=FAIL`；original-four 失败于 `fs.symlinkSync` → `EPERM`（夹具建立阶段）。原包与该回执**保留未动** |
+| 阶段一收尾执行（`workspace-a`） | 完整执行配置 | **是** | `acl-packet-user/runs/2026-10-27T13-41-31.384Z-9240/` | 退出码 0，`status=PASS`；original-four 4/4、native-smoke 3/3 |
+| A3 回合（`workspace-a`） | 普通执行配置（argv 无 `--harness`） | **是**（已执行） | `review-repair-03.json` `verified_receipts[stage=agent-a3]`：`source_receipt=receipts/agent-a3-2026-10-27T13-39-12.490Z/receipt.json`，exit 1、status=FAIL、245.3s、elevated=false | 会话确实执行并以非零退出码结束。`manifest.json` 的 `source` 路径只是交接声明，**不能单独证明目录存在或会话执行** |
+| B 回合（`workspace-b`） | 普通执行配置（argv 无 `--harness`） | **是**（已执行） | 同上 `stage=agent-b`：`receipts/agent-b-2026-10-27T14-08-40.817Z/receipt.json`，exit 3、status=FAIL、144.2s | 同上；只按回执写退出码与 status，不据退出码推断会话结论 |
+| B2 复习收尾回合（`workspace-b`） | **普通执行配置**（不是 `learning-review`） | **是**（只读复算） | 交接包 18/18 MATCH；`verify-review-inputs.ps1` 退出码 0、`RESULT: PASS` | 产出本指南初稿；未重跑 acl-packet。**18 项哈希复算归属本回合**，B5/B6 与本轮只是引用其结果。回合级结果按 `review-repair-03.json` 为 **exit 1、status=FAIL**（`verified_receipts[stage=agent-b2]`），与脚本自身的 `RESULT: PASS` 是两件事；回合级失败原样保留，不计入通过 |
+| B3 回合（`workspace-b`） | **普通执行配置**（argv 无 `--harness`） | 回合**先有读工具调用**，随后在 `API_IDLE_TIMEOUT` 结束 | `review-repair-03.json` `verified_receipts[stage=agent-b3]`：exit 2、status=FAIL、475.3s（argv 无 `--harness learning-review`） | **不是无工具的空回合**；回合级失败原样保留，不作为已完成计入 |
+| B4 回合 | `learning-review`（`--harness learning-review`） | 回合在**任何工具执行前**遇 `ECONNRESET` 结束 | 同上 | **无工具写入、无新产物**，失败保留 |
+| B5 回合 | `learning-review`（`--harness learning-review`） | **是**（只读 + 改指南） | `review-repair-02.json` 的 `previous_command` argv、`previous_raw_sha256`、`guide_sha256_before` | 指南已写入（sha256 `c37f0efa…a8b79`）并读回；但**经验写入失败**（自行给 node 来源添加 `anchor=下一步`，把标题当行为事件 ID），节点哈希未变、**未产生任何经验** |
+| B6 回合（`workspace-b`） | `learning-review`（`--harness learning-review`） | **是**（真实写入并读回） | `review-repair-03.json` `verified_receipts[stage=agent-b6]`：exit 3、status=FAIL、450.4s | 真实写入并读回了 1 条经验、checkpoint 与总结；但 **exit 3 是交付检查把输入文件名后缀（`-02.json`）误当产物**造成的误报，且当时存在旧 pack 缓存、指南尾段未读全，**不能宣称 B6 全部通过**，失败原样保留 |
+| 本轮（最终复习收尾） | `learning-review`（`--harness learning-review`），原模型，16 步预算 | **是**（只读 + 写作） | 本轮工具回执 | 仅改本指南、写候选经验、checkpoint、complete；不重跑成功检查 |
+
+第 1–2 行是历史实跑；B4 是**回合级失败**（在工具执行前失败，没有工具写入，因此不产生任何新产物，也不推翻任何已有结论），B3 虽有读工具调用但回合最终以 `API_IDLE_TIMEOUT` 中断，同样不作为已完成计入；B6 有真实写入，但最终 exit 3 属交付误报，**不计入通过**。`learning-review` 是**真实的 CLI 开关**（`run --harness learning-review --stdin ...`，见 `review-repair-02.json` 的 `previous_command` 与 `review-repair-03.json` 中 B4/B5/B6 的 argv），不是只能由启动器注入的字段；它是"只开放已知文件读写 + Skill + 记忆工具"的收紧剖面，没有 Shell、全目录搜索、浏览器和对外操作。
+
+---
+
+## 3. 可执行命令
+
+### 3.1 三项环境变量（先设，再启动）
+
+【来自具名回执；本轮未设置】
+
+```powershell
+$env:KODER_CLI_HOME      = 'C:\Users\PAGAudit\PAG-Agent-20261027\koder-profile'
+$env:KODER_MEMORY_ROOT   = 'C:\Users\PAGAudit\PAG-Agent-20261027\runtime-memory'
+$env:KODER_LEARNING_ROOT = 'C:\Users\PAGAudit\PAG-Agent-20261027\learning'
+```
+
+- 这三项是 CLI 专有变量。具名回执 `scope` 写明 “shell child environment may omit CLI-specific variables”，所以要在**同一会话内**显式设置，并在启动前复核：
+
+```powershell
+Get-ChildItem Env: | Where-Object { $_.Name -like 'KODER_*' } | Format-Table Name,Value -AutoSize
+```
+
+- `--learning-project windows-user-continuation` 决定项目 id；`--skill personal-agent-growth` 与上面三项变量共同决定记忆落点。**换工作区时这几项不能变**，否则就是另一个项目。
+
+### 3.2 用 stdin 传入任务（完整 PowerShell 写法）
+
+【用法示例，本轮未执行；argv 与路径按具名回执登记】
+
+```powershell
+# 1) 同一会话内设置三项 CLI 专有变量（见 3.1）
+$env:KODER_CLI_HOME      = 'C:\Users\PAGAudit\PAG-Agent-20261027\koder-profile'
+$env:KODER_MEMORY_ROOT   = 'C:\Users\PAGAudit\PAG-Agent-20261027\runtime-memory'
+$env:KODER_LEARNING_ROOT = 'C:\Users\PAGAudit\PAG-Agent-20261027\learning'
+
+# 2) 复核子进程环境确实带着这些变量
+Get-ChildItem Env: | Where-Object { $_.Name -like 'KODER_*' }
+
+# 3) 任务文本走 stdin：输入文件在**任务根**下，必须用绝对路径；管道按 UTF-8 送出
+$taskPath = 'C:\Users\PAGAudit\PAG-Agent-20261027\case-inputs\phase-b6.txt'   # B6 回合登记的输入（按实际回执替换）
+if (-not (Test-Path $taskPath)) { throw "输入文件不存在: $taskPath" }
+$task = Get-Content -Raw -Encoding UTF8 $taskPath
+$OutputEncoding = [System.Text.UTF8Encoding]::new($false)          # 管道按 UTF-8 编码
+[Console]::OutputEncoding = [System.Text.UTF8Encoding]::new($false) # 控制台输出同样按 UTF-8
+
+# 4) 启动 Agent：--harness learning-review 是真实 CLI 开关（见 B5 argv 登记）
+$task | & 'C:\PAG-Agent-Input-20261027\node\node.exe' `
+    'C:\Users\PAGAudit\PAG-Agent-20261027\distribution\koder-cli\bin\koder.mjs' `
+    run --harness learning-review --stdin --json --yes --new --session pag-windows-b6 --lang zh `
+    --provider 'C:\Users\PAGAudit\PAG-Agent-20261027\.private\provider.json' `
+    --skill personal-agent-growth --learning-project windows-user-continuation `
+    -w 'C:\Users\PAGAudit\PAG-Agent-20261027\workspace-b'
+```
+
+说明：
+
+- `--provider` 只是**参数路径**。**不要读取 `.private/provider.json` 的内容**，也不要把凭据写进日志、命令历史或记忆。
+- `--harness learning-review` 是**真实的 CLI 开关**：`review-repair-02.json` 的 `previous_command` argv 就是 `run --harness learning-review --stdin --json --yes --new --session pag-windows-b5 ...`。它是收紧剖面（只开放已知文件读写 + Skill + 记忆工具），**不适合执行阶段**：需要跑新检查时应另选与已授权任务相符的配置。
+- **输入文件在任务根 `C:\Users\PAGAudit\PAG-Agent-20261027` 下的 `case-inputs\`，不在 `workspace-b` 里**，必须用绝对路径，不要用相对工作区的路径。回执登记过的输入包括 `case-inputs/phase-b4.txt`（B4）与 `case-inputs/phase-b6.txt`（B6）；**本轮输入的文件名未出现在我读到的具名回执中**，使用前先 `Test-Path` 并以实际回执为准；不要凭路径猜文件内容。
+- stdin 的字节数与哈希会写进回执用于事后对账（登记值：a3 = 1710 字节 / `be6c9b61…`；b = 1936 字节 / `0d60b416…`；B5 = 1877 字节 / `0547536c…`）。PowerShell 管道会附加换行，编码取决于 `$OutputEncoding` 与控制台代码页，因此本示例产生的 stdin 字节数**不会**自动等于登记值；对账时按回执实测哈希说明差异来源，**不要**为凑哈希去改写任务正文。
+- `--new --session <id>` 表示新会话；跨会话接续靠的是**同一记忆根 + 同一项目 id**，不是把旧聊天粘进提示词。
+
+### 3.3 只读核验令牌与权限
+
+【用法示例；同类只读检查在阶段一实跑过】
+
+```cmd
+whoami /user
+whoami /priv
+```
+
+期望：用户名 `WIN-FRSP6LB6COJ\PAGAudit`（`S-1-5-21-…-1001`），权限列表中**没有** `SeCreateSymbolicLinkPrivilege`。若出现提升后的特权，说明已不是本文描述的令牌条件，结论不可直接沿用（见 1.1）。
+
+### 3.4 只读核验“被重定向 helper”夹具身份
+
+【用法示例；同类只读检查在阶段一实跑过】
+
+```cmd
+powershell -NoProfile -NonInteractive -Command "Get-Item -Force 'C:\Users\PAGAudit\PAG-Agent-20261027\workspace-a\redirected-fixture\bin\koder-memory-acl.exe' | Select-Object Name,Attributes,LinkType,Target"
+powershell -NoProfile -NonInteractive -Command "Get-FileHash -Algorithm SHA256 'C:\Users\PAGAudit\PAG-Agent-20261027\workspace-a\redirected-fixture\bin\koder-memory-acl.exe'"
+```
+
+期望：`Attributes=Archive, ReparsePoint`、`LinkType=SymbolicLink`、`Target=…\koder-memory-acl.exe.real`；哈希解析到 `c4ba925e4e08581292a899426aab763168ba0b47583760099ea76ebb3dd04273`（与原 helper 一致）。夹具在阶段一工作区 `workspace-a`；在别的目录下复核前先确认该路径存在。
+
+### 3.5 复算交接副本身份并对账 TAP 计数
+
+【历史实跑：**B2 回合（普通执行配置）**执行，退出码 0、输出 `RESULT: PASS`；B5/B6 与本轮未重跑，只引用】
+
+```cmd
+powershell -NoProfile -NonInteractive -ExecutionPolicy Bypass -File verify-review-inputs.ps1
+```
+
+该脚本只读：逐个比对 `review-inputs/manifest.json` 的 sha256 与字节数，并核对 4 份原始 stdout 的 TAP 计数与两份 `receipt.json` 的判定是否互相吻合。任何不一致都以非零退出码结束。
+
+### 3.6 acl-packet 的两个入口
+
+【历史实跑；本轮未执行】
+
+| 入口 | 归属 | 历史结果 |
+|---|---|---|
+| `…\node.exe acl-packet\run.mjs`（**原包**） | 阶段一第一次执行 | 退出码 **2**，`receipt.json status=FAIL`；original-four exitCode=1，TAP `# tests 4 / # pass 3 / # fail 1 / # skipped 0`，失败点 `test/windows-acl-helper.test.mjs:19:85` 的 `fs.symlinkSync` → `EPERM`。原包与其 `runs/` 原回执**保留未动** |
+| `…\node.exe acl-packet-user\run.mjs`（**副本包，成功用例入口**） | 阶段一收尾执行 | 退出码 **0**，`receipt.json status=PASS`；original-four exitCode=0，TAP `# tests 4 / # pass 4 / # fail 0 / # skipped 0`；native-smoke exitCode=0，`# tests 3 / # pass 3 / # fail 0 / # skipped 0`；stderr 全为空。产物 `acl-packet-user/runs/2026-10-27T13-41-31.384Z-9240/` |
+
+**两个包的区别**（读 `review-inputs/FIXTURE-CHANGE.patch`）：`acl-packet-user/test/windows-acl-helper.test.mjs` 由基线 `4ab5e5d6…3ed` 变为 `785110ab…bd4`。**第 2 条用例**（`a redirected ACL program is refused before execution`，4 条中的第 2 条，**不是第 4 条**）在检测到环境变量 `KODER_TEST_REDIRECTED_ACL_FIXTURE` 时改用**预置夹具**（`redirected-fixture`，由协调器以 `NT AUTHORITY\SYSTEM` 制备），并新增三处独立身份断言：helper 路径 `lstat` 为真符号链接、helper 字节与副本包一致、verifier 字节与副本包一致。**未设置该变量时仍走原 `fs.symlinkSync` 分支**，原用例没有被删除，断言强度未降。成功那一次运行的 `receipt.json` 记录 `fixture.path = C:\Users\PAGAudit\PAG-Agent-20261027\workspace-a\redirected-fixture`，即以该环境变量指向预置夹具根。
+
+脚本约定：`run.mjs` 退出码 **0 = 全 PASS，2 = 存在 FAIL**；产物落在 `runs/<ISO时间戳>-<pid>/`（含各套件 stdout/stderr 与 `receipt.json`）。重跑前先读第 5 节的前置条件；没有独立条件时不要重复已完成的测试。
+
+---
+
+## 4. 预习价值与停止条件
+
+### 4.1 预习了什么，改变了哪个动作
+
+| 预习材料 | 预习得到的判断 | 在真实执行中兑现为 |
+|---|---|---|
+| `whoami /priv`、Developer Mode 注册表项 | 普通令牌缺少创建文件符号链接的特权 | 原始 four 套件中**第 2 条用例**（`a redirected ACL program is refused before execution`，4 条中的第 2 条）以 `EPERM` 失败，且失败点在**夹具建立**而非断言 |
+| Node `--test` 在非 TTY 管道下的报告格式 | `run.mjs` 的 `^# pass N$` / `^# skipped 0$` / `^# fail 0$` 判定与真实 TAP 输出一致 | 判定逻辑未发现缺陷，未改判定、未重跑、未降级断言 |
+| `icacls` / `whoami` / PowerShell 可用性与 helper 的 PE 架构 | 三个真实 ACL 用例在本机 arm64 上可执行 | `native-smoke` 两轮均 `# pass 3 / # fail 0` |
+| Skill `personal-agent-growth` 与 `references/windows-agent-continuation.md`、`references/shared-memory.md` | 恢复流程、证据格式、失败保留规则 | `learning_read` 恢复顺序、`learning_write` 证据格式、失败回执保留 |
+
+### 4.2 停止条件
+
+预习的收益在“新增资料不再改变下一步动作”时即止。判据是**下一步动作是否变化**，不是资料页数。本项目里，开发者模式与令牌特权这两项资料一读完就足以判定 `EPERM` 的性质，继续读 Windows 符号链接文档不会再改变任何动作，因此停止预习并转入预测落盘与执行。
+
+### 4.3 预习与实际使用要分开记账
+
+`preparation.md` 里的 P1–P6 是**执行前**写下的可证伪预测，`stage1-result.md` 是执行后的真实结果；两者并存才能证明预测是被实测证伪或证实，而不是事后补写。本指南只引用后者作为事实。
+
+---
+
+## 5. 真实限制（本机证据边界）
+
+1. **普通令牌不能创建文件符号链接。** 无 `SeCreateSymbolicLinkPrivilege`，Developer Mode `NOT_SET`，Node 报 `EPERM`（Windows 1314 `ERROR_PRIVILEGE_NOT_HELD`），栈顶 `fs.symlinkSync`（`node:fs:1885:11`）← `test/windows-acl-helper.test.mjs:19:85`。
+2. **夹具由 SYSTEM 预置，不等于普通用户能建链接。** `fixture-provision.json` 自述 `purpose = "Fixture provisioning only; not non-elevated test acceptance"`，`identity = NT AUTHORITY\SYSTEM` 是**制备身份**，不是测试身份。
+3. **已取得的产品结论是 7 项检查全部通过，不是 1 项**：在过滤后的管理员令牌下，original-four 4 条用例与 native-smoke 3 条用例合计 **7 项全部通过**（收尾运行：original-four `# pass 4 / # fail 0`、native-smoke `# pass 3 / # fail 0`）。其中「拒绝被重定向的 ACL 程序」只是 7 项中的**一项断言**：verifier 面对符号链接形式的 helper 路径时在 `lstat` 阶段返回 `false`，且 `run` 调用计数为 0（零执行），断言未被降级。**不要把这一项断言写成 7 项的全部结论**，也不要反过来用它否定其余 6 项；被测源 `windows-acl.mjs`（`606f2812…c948`）与 helper（`c4ba925e…4273`）字节未变。
+4. **未取得结论**：普通用户能否自行创建该符号链接；Windows Cursor；**独立标准账户**；应用关闭后的唤醒。这四项都超出本机本轮覆盖范围，见第 7 节的触发条件。
+5. **身份口径只到“过滤后的管理员令牌”。** 全部结论建立在 `elevated=false`、中完整性、Administrators 为 deny-only 的令牌上；独立标准账户与 SYSTEM 都不在其中（见 1.1）。
+6. **Skill 参考文件经历过漂移与受控升级，而且快照会继续过期。**
+   - 漂移事实（保留）：`runtime-repair.json` 记录 `references/windows-agent-continuation.md` = `694d026a3c8091cd5aa303e36e810f363cdcbf57ac4d8f2b6f061375213f6149`，B2 复习回合实测为 `9f9f5aee35a9494fd46374d6531c283067856d5ed053a12c00566b25f21f85e2`；`references/shared-memory.md` 仍为 `21f417d6…c7a`，SKILL.md 仍为 `284d2eb9…f46`。
+   - 快照序列（都保留）：`694d026a…f6149`（runtime-repair 记录）→ `9f9f5aee…f85e2`（B2 实测）→ `0b395e3e…d4a`（v7 启动回执 `controlled_skill_updates`，也是 B5 时点值）→ `dc23dfba…e6fdd`（`review-repair-02.json` 的 `controlled_skill_updates`）→ **`0586a1a7ccb9e7c9f579a5225d978e5c0ec4f5c95c03202aae42f1f7ed70c803`**（**本轮 `skill_read` 实测**，即 §1 取值）。英文参考文件同步变化：`f78a47fd…c5fe` → `ed060af0f94f2df2b5361689d36994b5a63da7ced96a38a6bf6a6fecda2c3f6f`（**B6 时点历史快照**，取自 `review-repair-02.json` 的 `controlled_skill_updates`，当时未单独复算，**不是当前值**）→ **`ed31f502e5afde181ff7d4562b227fd07022eb7d1f94e504d7791c8982013e8e`**（**当前值**：本轮 `skill_read` 实测 `references/windows-agent-continuation.en.md`，与 `review-repair-03.json` 的 `installed_skill` 记录一致）。
+   - 受控升级是**协调器行为，不是模型改写 Skill**。**触发条件**：每次要把某个 `references/*.md` 当作基线引用前，先复算该文件 sha256 并与**最新**回执对照，不把任何历史快照当现状——沿用旧快照会把已经过期的值写进交付物。本轮即按此规则，以**当轮实际 `skill_read` 结果**为准，把 §1 与本节的快照值更新为 `0586a1a7…c803`（此前写下的 `dc23dfba…e6fdd` 已过期）。
+7. **平台覆盖范围有限。** 结论建立在 win32/arm64 + 内核 10.0.26300.9457 + node v22.23.2 上；x64、其他系统版本、其它 node 主版本均未验证。
+8. **成本为 unknown。** 没有取得用量/费用数据，按 `unknown` 记录，不填 0。
+9. **输出超限与回合级网络失败是真实风险。** 上一阶段曾因全目录列举导致输出超限而结束；本轮全部读取限定在 `review-inputs/`、本工作区已知文件与按需学习的少量文档内。B3 回合（普通执行配置，先有读工具调用、无写入）以 `API_IDLE_TIMEOUT` 结束、B4 回合以 `ECONNRESET` 在任何工具执行前结束，两次都没有写入，因此**不产生新产物**，失败原样保留。
+
+---
+
+## 6. 恢复规则（新会话必读）
+
+1. **先恢复记忆，再动手。** `learning_read action=pack` 取回项目 pack；再用**文首元数据 id** 调 `learning_read action=open`（例如 `windows-user-continuation-context`、`windows-user-continuation-node-26`、`windows-user-continuation-memory`）。**`open` 的 id 不是文件路径**；用路径只会取不到。
+2. **只读最小恢复包。** 只读 context、最新 node、memory 与直接相关的回执文件。**禁止**为了定位已知文件而递归列出整个学习根目录——这正是输出超限的原因。
+3. **不把旧聊天或整份知识库粘进提示词冒充恢复。** 新会话必须真的读到修订号与文件哈希。
+4. **跨工作区接续的三条不变量**：同一物理 Markdown 根目录、同一项目 id、同一 Skill 及其参考文件版本。共享记忆绑定**不等于**授权读取另一个工作区；需要别的目录时走协调器在既有授权范围内的交接。
+5. **交接必须带 manifest，接收方必须独立复算。** 交接包记录源路径、字节数、sha256；接收方逐个复算后才可引用其结论，并公开声明“原始文件”与“交接副本”的区别。18/18 全部 MATCH 的复算归属 **B2 回合（普通执行配置）**；B5/B6 与后续回合只引用该结果，未重跑哈希复算。
+6. **环境参数从具名启动回执取，不靠扫目录。** 三项 `KODER_*` 变量、当前工作区、输入文件路径、受控 Skill 升级哈希都写在具名回执里；为补教程去扫描安装目录既越界也拿不到更准的值。
+7. **输出超限或进程状态不明时**：保留原回执、核查进程与已经发生的效果，结束该回合后**只接续剩余工作**；不得靠扩大输出、关闭保护或换工具重放来掩盖错误。回合在网络层失败（`ECONNRESET`、`API_IDLE_TIMEOUT`）时同理：没有工具写入就没有产物，按未完成续接。
+8. **`learning_write` 契约**：`experience` 与 `complete` 的 `evidence` 必须是 `learning_read` 返回的来源对象数组，含 `document_id` 与 `excerpt_sha256`，**优先引用不可变的 node**；叙述性证据写进 `why` / `steps` / `pitfalls`。`decision` 与 `checkpoint` 会更新 memory/context，旧哈希随即失效；写完**读回**核对：写入失败不等于经验已沉淀。`complete` 不引用本项目 memory/context。
+9. **失败回合必须保留。** 新成功只覆盖已复验的条件；原始失败回执（`original-failed/`）不删除、不覆盖。
+10. **Agent 写下的经验仍是 `untested` 候选**，是否推广由独立验证决定，不因写进记忆就升级。
+11. **长文档必须分页读到结尾**：`read_file` 的 `offset` / `maxBytes` 生效于 UTF-8 字节，按返回的 `nextOffset` 连续读到 `nextOffset=null` 才算读完。**不要用无变化替换（no-op `str_replace`）冒充读取**——那不产生任何读取回执。修复后的 `read_file` 仍保持 80KB 上限与工作区约束。
+12. **pack 可能是缓存，恢复要重新观察磁盘**：`learning_read action=pack` 可能返回**旧节点内容**（B6 时点曾出现已写入 node30 但 pack 仍显示 node29）。写完 checkpoint 后要**单独再取一次 pack**，确认修订号与最新节点 id 已刷新（B7 回合实测：写完 checkpoint 后单独再取 pack，`projectRevision` 由 **35** 刷新为 **36**，最新节点变为 **node-36**）；要引用来源时用 `learning_read action=open` 打开不可变节点，取其返回的完整 source 对象作为 evidence。
+
+---
+
+## 7. 下一步（含触发条件）
+
+| # | 事项 | 触发条件 | 记录要求 |
+|---|---|---|---|
+| 1 | 普通用户自建文件符号链接的能力 | 用户明确授权开启 Developer Mode，或提供一个带 `SeCreateSymbolicLinkPrivilege` 的令牌 | 作为**独立受限条件**单独记录；不得混入本轮普通权限结论 |
+| 2 | 独立标准账户下的复跑 | 宿主提供一个不属于 Administrators 组的账户并可复用同一夹具 | 单独回执；不得用过滤后的管理员令牌结果代替（见 1.1） |
+| 3 | 第二宿主/跨宿主接续验证 | 宿主提供可核实的接续入口，且第二执行方能绑定同一记忆根与项目 id | 第二方实际读到本轮修订号后写回一条**新决定**，并说明哪条经验改变了它的动作 |
+| 4 | Windows Cursor 方向 | Cursor 端能访问同一 Markdown 根并具备写回权限 | 与 #3 同样的“实际读 + 实际写回”验收 |
+| 5 | 应用关闭后的唤醒 | 宿主暴露可核实的调度接口 | 登记与触发**分别回读**；只登记不触发不算可用 |
+| 6 | 阶段二范围 | 用户给出新的阶段二目标 | 先写准备与预测，再执行；不与阶段一结论合并叙述 |
+| 7 | Skill 参考完整性复核 | 需要把某个 `references/*.md` 当基线引用时 | 复算其 sha256，与最新具名回执的 `controlled_skill_updates` 对照，并记录与旧快照的差异 |
+
+在没有明确未来工作之前**不创建定时任务**；也不为展示主动性另开对话。
+
+---
+
+## 8. 证据清单与对账结果
+
+交接文件（`review-inputs/manifest.json` 共 18 项），**B2 复习收尾回合**独立复算结果 **18 MATCH / 0 MISMATCH**（B5/B6 与本轮只引用该结果）：
+
+| 类别 | 文件 | 关键值 |
+|---|---|---|
+| 准备 | `preparation.md` | 执行前预测 P1–P6 与验收条件 A1–A6、失败后继 F1–F6 |
+| 结果 | `stage1-result.md` | 第 1–5 节：原始失败；第 6 节：预置夹具下的收尾结果（成功用例 `acl-packet-user\run.mjs`） |
+| 身份 | `ordinary-user-token.json` | `elevated=false`、`medium_integrity=true`、私有 SDDL |
+| 夹具 | `fixture-provision.json` | `NT AUTHORITY\SYSTEM`、`PASS_PROVISIONING_ONLY` |
+| 夹具变更 | `FIXTURE-CHANGE.patch` | 4 条中的第 2 条用例（`a redirected ACL program is refused before execution`，非第 4 条）改为优先使用预置夹具并加三处独立身份断言；未设环境变量时仍走原 `fs.symlinkSync` 分支 |
+| 失败回执 | `original-failed/` | `receipt.json status=FAIL`；original-four exitCode=1，TAP `# tests 4 / # pass 3 / # fail 1 / # skipped 0`；native-smoke exitCode=0，`# pass 3 / # fail 0` |
+| 通过回执 | `passed/` | `receipt.json status=PASS`；original-four exitCode=0，TAP `# tests 4 / # pass 4 / # fail 0 / # skipped 0`；native-smoke exitCode=0，`# pass 3 / # fail 0`；stderr 全为空（`e3b0c442…b855`） |
+| 会话登记 | `commands/agent-a3.command.json`、`commands/agent-b.command.json` | 两次 CLI 启动的 argv、cwd、stdin 字节数与哈希（**仅登记**）。`manifest.json` 的 `source` 路径只是交接声明，**不能单独证明原目录存在或会话执行** |
+| 环境修复 | `runtime-repair.json` | 协调器安装（非 Agent 行为）：`src/learning/learning.mjs`、`kernel/fusion/assistant-service-tools.mjs` 前后哈希；`unchanged_files_verified = 25928` |
+| 具名启动回执（不在 18 项内） | `runtime-launch-contract.json` | 三项 `KODER_*` 环境变量、工作区、输入路径、`controlled_skill_updates` 两条参考文件哈希、启动器 `run-stage-v7.mjs` sha256、18 份原文件未变的声明 |
+| 具名质量回执（不在 18 项内） | `review-repair-03.json` | 已取回原始回执的运行结果：A3 exit 1、B exit 3、B2 exit 1、B3 exit 2、B4 exit 2、B5 exit 1、B6 exit 3（status 均 FAIL、elevated 均 false）与 9 条 findings。**§2 的回合归属与 §5 的口径以它为准** |
+
+TAP 与回执一致性：4 份 stdout 的 `# tests / # pass / # fail / # skipped` 与对应 `receipt.json` 的 `status`、`exitCode`、stdout/stderr sha256 **逐项吻合**，未发现脚手架判定缺陷。
+
+---
+
+## 9. 保留的失败与未决
+
+- **原始失败保留**：`original-failed/original-four.stdout` 中 `not ok 2 - a redirected ACL program is refused before execution`，`failureType: 'testCodeFailure'`，`code: 'EPERM'`，发生在夹具建立阶段。判定为**环境前置条件缺失**，不是产品缺陷，也不改断言。
+- **回合级失败保留**：B3 在**普通执行配置**下先发生了读工具调用，随后回合以 `API_IDLE_TIMEOUT` 结束（exit 2）——不是无工具的空回合；B4 回合以 `ECONNRESET` 在任何工具执行前结束（exit 2），**没有工具写入、没有新产物**。两次失败都不推翻已有结论，也不作为“已完成”计入。
+- **B6 不计入通过**：B6 真实写入并读回了 1 条经验、checkpoint 与总结，但最终 exit 3 是**交付检查把输入文件名后缀（`-02.json`）误当产物**造成的误报；该回合同时存在旧 pack 缓存、指南尾段未读全。失败原样保留，不因已写入就宣称该回合全部通过。
+- **未取得结论**：普通用户自建符号链接的能力；Windows Cursor；独立标准账户；应用关闭后的唤醒。
+- **成本**：unknown。

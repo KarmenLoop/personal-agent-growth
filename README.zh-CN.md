@@ -1,6 +1,6 @@
 # Personal Agent Growth · 个人智能体成长
 
-[English](README.md) · [简体中文](README.zh-CN.md) · **0.4.3**
+[English](README.md) · [简体中文](README.zh-CN.md) · **0.4.4**
 
 [![检查](https://github.com/KarmenLoop/personal-agent-growth/actions/workflows/check.yml/badge.svg)](https://github.com/KarmenLoop/personal-agent-growth/actions/workflows/check.yml)
 [![发布](https://img.shields.io/github/v/release/KarmenLoop/personal-agent-growth)](https://github.com/KarmenLoop/personal-agent-growth/releases/latest)
@@ -19,6 +19,7 @@ Agent 应当说清楚：什么观察改变了判断，哪条经验在下一个�
 | 理解为什么判断、如何改判 | [思考与判断方法](docs/reasoning.zh-CN.md) | [Reasoning method](docs/reasoning.en.md) |
 | 查看完整能力树和关系图 | [复杂思维导图](docs/mindmaps.zh-CN.md) | [Mind maps](docs/mindmaps.en.md) |
 | 使用日、周、项目记忆 | [Markdown 学习体系](docs/markdown-learning.zh-CN.md) | [Markdown learning](docs/markdown-learning.en.md) |
+| Resume a Windows Koder Agent | [Continuation tutorial](docs/windows-agent-continuation.en.md) | [接续实测教程](docs/windows-agent-continuation.zh-CN.md) |
 | 核对真实能力与限制 | [兼容性与验收边界](docs/compatibility.zh-CN.md) | [Compatibility](docs/compatibility.en.md) |
 | 查阅全部文档 | [完整文档索引](docs/index.zh-CN.md) | [Documentation index](docs/index.en.md) |
 
@@ -55,7 +56,7 @@ Agent 应当说清楚：什么观察改变了判断，哪条经验在下一个�
 
 ## 快速开始
 
-从 [v0.4.3 发布页](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.4.3)下载**完整交付包**与 `SHA256SUMS.txt`，解压后按[开始使用](开始使用.md)操作。工具需要 Python 3.11+，运行时无需安装 pip 依赖。
+从 [v0.4.4 发布页](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.4.4)下载**完整交付包**与 `SHA256SUMS.txt`，解压后按[开始使用](开始使用.md)操作。工具需要 Python 3.11+，运行时无需安装 pip 依赖。
 
 Mac 在完整交付包目录执行：
 
@@ -85,11 +86,12 @@ Windows 使用 `py -3 -B -X utf8`；教程优先选择 `D:\AgentKnowledge`，没
 - 历史 Codex 任务收到 **两次真实调度唤醒**，完成执行、改频、恢复检查及暂停后端。
 - 另一项同 Mac Cursor 实测读取并推进共享修订 **1→2、3→4、5→6**，搬迁反例暴露问题后继续修复。
 - **24 次真实 Codex CLI 执行**覆盖软件交接验收和 NASA 数据分析。组合版累计 token **减少 5.9%**，耗时却**增加 7.4%**；不能宣称整体加速或普遍智力提升。[完整报告](docs/cross-domain-trial.zh-CN.md)
+- **Windows Koder CLI 真实接续在已记录范围内通过**：七项非提升检查、两工作区同一 Markdown 根、候选经验纠正和修订 74 的完结读回。22 次启动及所有失败均保留。[Agent 实测](docs/release-0.4.4-acceptance.zh-CN.md)
 - 原 **21 项跳过已全部实跑并通过**：macOS 套件恢复 17 项，真实 Windows ARM64 虚拟机补齐 4 项，另有 3 项真实 ACL 检查通过。保留的 macOS 全量仍为 **1485 通过、0 失败、0 取消、4 项平台跳过**；独立 Windows 运行采用 SYSTEM 特权身份。[逐项核查](docs/release-0.4.3-acceptance.zh-CN.md)
 
 ![完整任务 token 与耗时，保留时钟异常](docs/images/cross-domain-0.4.1.png)
 
-仓库测试证明文件、工具和协议行为，不能代替 Windows 桌面 Agent、重新认证的 Cursor 模型回合、跨设备同步或关闭应用后运行。当前发布检查见 [0.4.3 验收报告](docs/release-0.4.3-acceptance.zh-CN.md)。
+仓库测试证明文件、工具和协议行为，不能代替 Windows 桌面 Agent、重新认证的 Cursor 模型回合、跨设备同步或关闭应用后运行。当前发布检查见 [0.4.4 验收报告](docs/release-0.4.4-acceptance.zh-CN.md)。
 
 ## 开发与核验
 
@@ -97,7 +99,7 @@ Windows 使用 `py -3 -B -X utf8`；教程优先选择 `D:\AgentKnowledge`，没
 python3 -B -m unittest discover -s tests -v
 python3 -B scripts/check_publication.py
 python3 -B tools/build_release.py --output dist
-python3 -B scripts/verify_handoff.py --archive dist/personal-agent-growth-0.4.3.zip --manifest dist/manifest.json
+python3 -B scripts/verify_handoff.py --archive dist/personal-agent-growth-0.4.4.zip --manifest dist/manifest.json
 python3 -B tools/build_delivery.py --output /path/to/fresh-output
 ```
 

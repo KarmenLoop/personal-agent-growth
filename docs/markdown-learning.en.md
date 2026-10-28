@@ -1,4 +1,4 @@
-# Complete Markdown learning contract · 0.4.3
+# Complete Markdown learning contract · 0.4.4
 
 [中文](markdown-learning.zh-CN.md) · [All template source files](../templates/learning/README.md) · [Storage boundaries](architecture.en.md#storage)
 
@@ -147,9 +147,17 @@ def project_packet(root, project_id, task, token_limit=4000):
         verify_project_id_revisions_and_sources(context, node, memory)
         if has_unresolved_manual_conflict(context, node, memory):
             return explicit_conflict_without_overwriting()
-        required = [context, node, mandatory_constraints_and_decisions(memory)]
+        required = [context, node, mandatory_non_decision_sections(memory)]
         if count_tokens(required) > token_limit:
             return required_context_overflow()  # never silently drop a constraint
+        decisions = decision_section(memory)
+        if fits(required + [decisions], token_limit):
+            required += [decisions]
+        else:
+            notice = require_paged_read_before_memory_write(memory.id, memory.sha256)
+            if not fits(required + [notice], token_limit):
+                return required_context_overflow()
+            required += [notice]  # original decisions stay unchanged on disk
         hits = search_markdown(root / "experience", id=task.experience_id,
                                tags=task.domain_tags, keywords=task.keywords)
         eligible = [x for x in hits if scope_matches(x, task)
@@ -168,6 +176,8 @@ def project_packet(root, project_id, task, token_limit=4000):
 Context and the latest node are mandatory for recovery. Required memory constraints cannot be displaced by optional experience. Filter validity and scope before ranking by domain and failure mechanism, then select up to five entries. Load summary only when the project is done and its sources remain current. Daily/weekly/preview material is for planning and consolidation, not blanket injection.
 
 Keep source paths, hashes/revisions, and adoption reasons. Experience can be injected in full or as scenario plus repeatable steps, while preserving scope, counterexamples, and invalidation conditions. The packet targets 2–4k tokens and fails explicitly if required content cannot fit within 4k. Actual token counting and host injection remain separately verifiable implementations of this protocol.
+
+The repaired Koder candidate explicitly defers an oversized decision section, with its document ID and current hash, rather than dropping it silently. Read `learning_read open` pages by following `next` until null before a native memory write. Partial pages or a previous version do not satisfy this guard. Goals, criteria, constraints, critical paths and prohibitions still have to fit. After any failed pack read, reconcile and read a successful fresh pack before dependent writes. This is a runtime contract; the portable Skill alone does not install it.
 
 ## 8. Reuse operations
 

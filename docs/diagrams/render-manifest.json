@@ -148,22 +148,40 @@
       "labels": 137
     },
     {
+      "source": "windows-agent.en.mmd",
+      "source_sha256": "8538be55d1f0b222e416258c38e7b65354bf4776d283915e51832649f0cccf8d",
+      "output": "windows-agent.en.svg",
+      "output_sha256": "d00bae730a36dcf4b32be9a85f79b3b270bbf472b1c0e50161fc8f31f70762e4",
+      "width": 2680.5,
+      "height": 6375,
+      "labels": 118
+    },
+    {
+      "source": "windows-agent.zh-CN.mmd",
+      "source_sha256": "fe7d0a38f76644aa4b8905906a88234c1164fa8a4381b7ded73b82d1d3cbb597",
+      "output": "windows-agent.zh-CN.svg",
+      "output_sha256": "da0c5b128b85b5b834cebeea5b4c8b38ea18ce1142f633f0682be682b789db5c",
+      "width": 1855.5,
+      "height": 6375,
+      "labels": 118
+    },
+    {
       "source": "windows-audit.en.mmd",
       "source_sha256": "d99ad0ca0d8f122292eec3e1c567f9d6ac16e04ace01b2506496bb84e62f97fb",
       "output": "windows-audit.en.svg",
-      "output_sha256": "f2b694ac5ed534ec7689402fac3110ff9a9d32c40a164c78554c5e81e903f974",
+      "output_sha256": "f508bd082866b4507e0c9d9c10a6df92efba68a383438167b638059ea441014f",
       "width": 1138.75,
       "height": 1703.40625,
-      "labels": 2
+      "labels": 38
     },
     {
       "source": "windows-audit.zh-CN.mmd",
       "source_sha256": "acaedad02be334736ca6678e87355853e47eedaf96ad9ac1ad3366ba46ba7037",
       "output": "windows-audit.zh-CN.svg",
-      "output_sha256": "c2f5185c9497ddf94f2c408600788f5c0f90c02af0a85b84c5ea672c87c71d4d",
+      "output_sha256": "fade37f54d05840a5f6d19733e93bdd304f18c267e91182a38936e3d1a4c1c09",
       "width": 1133.5,
       "height": 1445.21875,
-      "labels": 2
+      "labels": 38
     }
   ]
 }

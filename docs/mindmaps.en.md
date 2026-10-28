@@ -1,8 +1,8 @@
-# Detailed mind maps and diagrams · 0.4.3
+# Detailed mind maps and diagrams · 0.4.4
 
 [English](mindmaps.en.md) · [中文](mindmaps.zh-CN.md)
 
-Eight diagrams per language: four detailed mind maps, architecture, scheduling, handoff, and calendar flow. Each language uses the same branch topology. These diagrams describe responsibilities and contracts; they do not establish that every host implements them. Check [compatibility](compatibility.en.md) for evidence. Open SVG files to zoom; Mermaid sources are editable.
+Ten diagrams per language: four detailed mind maps, architecture, scheduling, handoff, calendar flow, Windows skip auditing, and Windows Agent recovery. Each language uses the same branch topology. These diagrams describe responsibilities and contracts; they do not establish that every host implements them. Check [compatibility](compatibility.en.md) for evidence. Open SVG files to zoom; Mermaid sources are editable.
 
 ## Complete capability tree
 
@@ -73,3 +73,17 @@ node tools/render_diagrams.mjs --mermaid-dir /path/to/node_modules/mermaid --pla
 ```
 
 After editing a source, regenerate both languages, inspect the output, and update the corresponding hashes in `publication.json`. The renderer writes source/output hashes and dimensions to `docs/diagrams/render-manifest.json`; `scripts/check_publication.py` rejects drift. Font and browser versions can change layout, so retain the actual generated artifacts.
+
+## Windows skipped-check audit
+
+[SVG](diagrams/windows-audit.en.svg) · [Mermaid](diagrams/windows-audit.en.mmd)
+
+![Windows skipped-check audit](diagrams/windows-audit.en.svg)
+
+## Windows Agent recovery
+
+[SVG](diagrams/windows-agent.en.svg) · [Mermaid](diagrams/windows-agent.en.mmd)
+
+![Windows Agent recovery](diagrams/windows-agent.en.svg)
+
+[Worked continuation guide](windows-agent-continuation.en.md)

@@ -1,0 +1,37 @@
+---
+schema: 1
+id: "windows-user-continuation-summary"
+type: "summary"
+project: "windows-user-continuation"
+tags: []
+status: "done"
+revision: 8
+created: "2026-10-27T13:05:03.967Z"
+updated: "2026-10-28T06:19:53.725Z"
+sources: [{"kind":"internal","document_id":"windows-user-continuation-node-73","path_hint":"projects/windows-user-continuation/nodes/2026-10-28-1419.md","observed_revision":1,"excerpt_sha256":"b5fff8d4709c6eeed8e97fed2a133984fd8262db38de808ab1ae64ba5bd81c69"},{"kind":"internal","document_id":"exp-windows-user-continuation-review-correction-01","path_hint":"experience/exp-windows-user-continuation-review-correction-01.md","observed_revision":1,"excerpt_sha256":"d4bb4dea6302ef6d1595ccee4fd83fcf92ae5d452564e02f2d8dc80396c48461"}]
+completed_at: "2026-10-28T06:19:53.725Z"
+completion_revision: 74
+---
+## 目标
+
+核实 Windows 普通权限 Koder Agent 的 Skill 与 Markdown 接续，交付有依据的教程
+
+## 过程摘要
+
+先 learning_read pack（projectRevision 71，deferredReads 指向 memory rev84）→ open windows-user-continuation-memory 至 next=null；并行 read_file 读全 guide-review-addendum.md、读 review-inputs/b17-range-correction.json、open exp-windows-user-continuation-review-correction-01 与 windows-user-continuation-summary、skill_read 准确 id local:0de529bf577f688e11a2aa1e 的 references/windows-agent-continuation.en.md（resourceSha256 ed31f502…3e8e，nextOffset=null）。随后 str_replace 定点替换标题一处（用户接受后落盘）→ read_file 完整读回逐字核对 → decision（rev72）→ checkpoint（rev73）→ 单独 pack 返回 projectRevision 73 与最新节点 node-73 → 再次 open memory 至 next=null → open node-73 读到 next=null 取不可变 source → 写本 complete，最后 open summary 核对。未跑 Shell、未重跑 7 项检查、未复算 18 项哈希、未改冻结指南、未新建经验。
+
+## 结论
+
+B18 在增补文件标题补上 B17 哈希校正的版本归属，read_file 完整读回确认新增标题出现、冻结指南正确 SHA256 79c9d104…83d5 保留、其余字节未动，冻结主指南未改。实际汉字数与 1000 至 1800 显式区间留待真实交付检查器核验，本轮不预写通过。候选经验仍 untested；独立标准账户、Windows Cursor、应用关闭后的唤醒仍未验。
+
+## 可复用经验
+
+检查器把历史计数当目标时，先修规则并保留原始字段，不倒改历史计数；增量修订只做一处定点替换并完整读回；写入成功与退出码 0 都不等于验收通过，正文达标与检查器判定是两道独立门槛。
+
+## 失败教训
+
+保留未闭合缺口：B14 主机原生退出码与耗时未知（launcher_os_exit_code、launcher_wall_seconds 为 null，只能引用原始 JSON 的 exitCode=3），且曾以 personal-agent-growth 作为 skill_read id 返回 SKILL_NOT_FOUND；B15 宿主原生退出 0 但 checkpoint 后 learning_read pack 返回 LEARNING_CONTEXT_LIMIT，整体未验收；B16 原生退出 0 且 complete 落 revision 60，但质量复核发现增补第1节 SHA256 抄错一个字符（fc 应为 bc），正文未过验收；B17 已修正哈希并落 complete67、pack64→66，但检查器曾把历史计数 1717 抢作 target 而未采用 required_range=[1000,1800]，判定缺口待真实交付检查器按修正后的显式区间核验。历史失败原样保留：B7 FAIL exit 1、B8 FAIL exit 1（均步数上限中断）、B9 exit 0 仅只读审查且发现 5 项缺口、原始 acl-packet exit 1 与 fs.symlinkSync → EPERM。
+
+## 经验条目链接
+
+- [exp-windows-user-continuation-review-correction-01](../../experience/exp-windows-user-continuation-review-correction-01.md)

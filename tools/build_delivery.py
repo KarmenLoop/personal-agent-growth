@@ -16,7 +16,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from build_release import build, ROOT
 from check_delivery import check, inventory
 
-BUILD_ID = "0.4.3-bundle.1"
+BUILD_ID = "0.4.4-bundle.1"
 TOP_FILES = ("SKILL.md", "SKILL.en.md", "README.md", "README.zh-CN.md", "START-HERE.md", "开始使用.md", "LICENSE", "NOTICE", "TEAM.md", "TEAM.zh-CN.md", "CONTRIBUTING.md", "CHANGELOG.md", "publication.json", ".gitignore")
 FOLDERS = ("references", "scripts", "tools", "tests", "docs", "templates", ".github", "examples/experience-seed")
 
@@ -44,7 +44,7 @@ def build_delivery(output):
         if not (staging / "examples/experience-seed/index.json").is_file():
             raise ValueError("Reviewed portable experience seed missing")
         build(staging / "downloads")
-        manifest = {"schema": 1, "build_id": BUILD_ID, "skill_version": "0.4.3",
+        manifest = {"schema": 1, "build_id": BUILD_ID, "skill_version": "0.4.4",
                     "status": "release_distribution", "files": inventory(staging)}
         (staging / "DELIVERY-MANIFEST.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
         result = check(staging)

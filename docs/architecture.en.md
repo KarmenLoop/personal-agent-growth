@@ -1,4 +1,4 @@
-# Architecture explained · 0.4.3
+# Architecture explained · 0.4.4
 
 [中文](architecture.zh-CN.md) · [Documentation index](index.en.md) · [Detailed maps](mindmaps.en.md)
 
@@ -95,4 +95,4 @@ Learn immediately when useful work is already possible. Register spaced review w
 
 For a new host, establish reading, durable writes, artifact checks, and writer transfer first; then run an actual model turn; finally validate scheduling. For a new domain, define sources, observable quality, and independent reuse before proposing a specialized change. Expand only after local evidence and cross-task regression, retaining previous failures.
 
-Remaining work includes native Windows Agent receipts, the Koder full regression suite, Markdown migration tooling, new-domain transfer, and publicly reproducible host acceptance. These are future work, not capabilities established by this release. See the [compatibility matrix](compatibility.en.md).
+The Windows Koder CLI continuation has real model and memory receipts. Windows Cursor, an independently created standard account, the full Windows product suite, Markdown migration tooling, and further domain transfer still need separate acceptance. See the [compatibility matrix](compatibility.en.md) and the [current regression report](release-0.4.4-acceptance.en.md).

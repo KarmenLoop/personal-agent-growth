@@ -1,0 +1,54 @@
+---
+schema: 1
+id: "exp-windows-user-continuation-review-handoff-01"
+type: "experience"
+project: "windows-user-continuation"
+tags: ["domain/windows","workflow/review-handoff","workflow/evidence"]
+status: "deprecated"
+revision: 2
+created: "2026-10-27T16:01:51.288Z"
+updated: "2026-10-27T16:25:38.590Z"
+sources: [{"kind":"internal","document_id":"windows-user-continuation-node-29","path_hint":"projects/windows-user-continuation/nodes/2026-10-27-2357.md","observed_revision":1,"excerpt_sha256":"7cccb8b06cb434f4b6ef257c5e1d243a6a9da7a22e9c5ab97d947f5afe4ab49b"}]
+validation: "untested"
+scope: "project:windows-user-continuation"
+failure_modes: []
+origin_projects: ["windows-user-continuation"]
+supersedes: []
+superseded_by: "exp-windows-user-continuation-review-correction-01"
+---
+## 场景
+
+在受限的 learning-review 剖面下做"只读复核 + 写作"收尾：接手前一轮已写入的教程和一批具名回执，需要按回执证据逐条修正文档中的事实与归属错误，并沉淀一条可复用经验。环境为本机 Windows 非提升 Koder，同一 Markdown 学习项目 windows-user-continuation。
+
+## 做法
+
+把具名回执当事实源：每条待修正项都落到回执里可引用的具体字段（argv、input、manifest 的 source 路径、补丁原文）；用 str_replace 定点修改而不是整篇重写；改完读回核对，读不到的段落如实标注未复核；经验写入时原样复制 learning_read open 返回的 source 对象作为 evidence。
+
+## 为何有效
+
+适用边界：仅限本机非提升 Koder（过滤后的管理员令牌，elevated=false、中完整性）下同根 Markdown 记忆的接续与只读复核型收尾；不覆盖 Windows Cursor、独立标准账户、应用关闭后唤醒，也不覆盖需要重跑检查的执行阶段。经验状态为 untested，须由独立验证才能升级。
+
+## 反例/坑
+
+- 不要把 Markdown 标题当 anchor：anchor 只能是工具返回的行为事件 ID。自行添加 anchor=下一步 会让写入失败，原节点哈希不变，也不会产生任何经验——这正是上一轮失败的原因。
+- 不要把"只交接了启动登记文件"等同于"会话没执行"：交接包只搬运了部分文件（如 command.json），执行回执在同目录的其他文件里，manifest 的 source 路径能看出回执目录存在。
+- 不要把工具剖面当成只有启动器能注入的字段，也不要反过来臆造不存在的开关：以回执里实际出现的 argv 为准。
+- 不要把套件内的第 N 条用例与用例总数混淆（"4 条中的第 2 条"不是"第 4 条"），以补丁原文顺序为准。
+- 不要把历史快照当现状：受控升级会让 references/*.md 的 sha256 继续变化，引用前先复算并与最新回执对照。
+- 不要把上一回合的核验结果记到本回合头上：18 项哈希复算归属 B2（普通执行配置），后续回合只是引用。
+- 不要用整篇 write_file 覆盖自己没读全的文档；读不到尾部时只做定点替换，并如实说明未复核的范围。
+- 退出码 0、工具调用次数、生成的摘要都不是任务质量结论；应审阅真实产物、原始输出与剩余缺口。
+
+## 可复制步骤
+
+1. 先 learning_read action=pack 取回项目 pack，用 skill_read 复核 Skill 参考文件当前哈希，再读交付文档与具名回执；只读与已知文件，不做全目录扫描。
+2. 把每条待修正项落到可核对的具体证据上：harness 开关取自回执里的实际 argv；交接文件核验的回合归属取自回执正文；输入文件路径取自回执的 input 字段与 manifest 的 source 路径；用例序号取自补丁原文顺序；会话归属取自 manifest 中带时间戳的回执目录名。
+3. 用 str_replace 定点改文档，不整篇重写——整篇重写会丢掉自己没读到的段落。
+4. 改完读回文档逐条确认；显示范围之外的段落不假装已核对，必要时用一次存在性核对式替换确认落盘。
+5. learning_read open 一个不可变节点，原样复制返回的 source 对象作为 learning_write experience 的 evidence（不添加 anchor、不改字段），写完再 open 读回确认文件存在，再称已保存。
+6. checkpoint 记录真实路径与限定结论；再 pack 取新节点 id、open 取得 source，用该 source 写 complete，最后 open summary 与经验确认可用；不以退出零自证。
+
+## 相关链接
+
+
+替代条目：[exp-windows-user-continuation-review-correction-01](exp-windows-user-continuation-review-correction-01.md)
