@@ -26,6 +26,8 @@ Blank template. Supply current facts, sources, and revisions when instantiating.
 
 ## Why it works
 
+Record a candidate mechanism, supporting evidence and counterevidence; write “unverified” or “ineffective” when appropriate.
+
 
 ## Counterexamples and pitfalls
 

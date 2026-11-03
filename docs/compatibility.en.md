@@ -1,6 +1,6 @@
-# Compatibility, observed evidence, and open work · 0.6.0
+# Compatibility, observed evidence, and open work · 0.6.1
 
-[中文](compatibility.zh-CN.md) · [Current release acceptance](release-0.6.0-acceptance.en.md)
+[中文](compatibility.zh-CN.md) · [Current release acceptance](release-0.6.1-acceptance.en.md)
 
 Skill readability, utility tests, actual Agent adoption, device portability, and no-new-message wakeups are different claims. This table distinguishes object, version, and execution method. New documentation does not upgrade old trials into universal host acceptance.
 
@@ -16,7 +16,7 @@ Skill readability, utility tests, actual Agent adoption, device portability, and
 | Cross-domain meta-capability | 24 real Codex CLI turns, two domains, quality and resource checks | [Full-task report](cross-domain-trial.md); tokens -5.9%, elapsed +7.4%, no universal speedup |
 | Seed relocation | Historical install, move, load, tool reuse, and removal preserving memory | [Delivery report](delivery-acceptance.md); exported snapshot was path-adapted without a new Agent trial |
 | Markdown daily/weekly learning | Public contract, 16 bilingual template types, scoring/retrieval protocol | Native APIs/injection are in the separate candidate below; the skill is not a resident runner |
-| This bilingual publication | Current files, links, rendering, packages, utilities | [Current acceptance](release-0.6.0-acceptance.en.md); utility results and live Agent evidence are reported separately |
+| This bilingual publication | Current files, links, rendering, packages, utilities | [Current acceptance](release-0.6.1-acceptance.en.md); utility results and live Agent evidence are reported separately |
 
 ## Separate Koder Markdown candidate
 

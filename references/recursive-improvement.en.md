@@ -59,6 +59,8 @@ Do not provide prewritten answers, hidden labels, or post-hoc success conditions
 
 Repeated agreement by the same model is not independent truth. With no verifiable feedback, retain a hypothesis rather than claiming improved quality. A useful change is not guaranteed on every task.
 
+Keep satisfaction and factual accuracy separate. User approval, praise, repeated insistence, or an evaluator's preference for an agreeable answer cannot substitute for the frozen quality checks. A technical diagnosis remains a hypothesis whoever proposes it; revise it only for new evidence or demonstrably stronger reasoning, including correction of the Agent's own unsupported claim. Use the [evidence-based judgment protocol](evidence-based-judgment.en.md) to preserve the specific basis and examine counterexamples. Legitimate goal or preference changes take effect in their scope, but changed evaluation conditions require a new frozen round for every arm; they cannot retroactively convert a failure into a pass. Test both resistance to unsupported pressure and responsiveness to valid correction. Merely disagreeing more often is not an improvement metric.
+
 ## Full-task efficiency and cost
 
 Choose units before collection: success, artifacts, tools/processes, tokens, dollars, and time are distinct. Timing comparisons need at least three paired repetitions of the same task. One fast run does not establish stable acceleration. Unknown model usage stays unknown.

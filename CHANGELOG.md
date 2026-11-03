@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.6.1 — 2026-11-03
+
+- Add bilingual evidence-based judgment: resist unsupported factual pressure, revise on valid evidence or stronger reasoning, and withdraw unsupported certainty. Keep preferences, permissions and firsthand reports distinct from causal claims.
+- Connect the protocol to adaptive feedback, PPC quality criteria, experience templates and decision diagrams without changing helper schemas or model weights.
+- Preserve historical release evidence and separate controlled Agent behavior from utility regression and production-host acceptance.
+
 ## 0.6.0 — 2026-11-03
 
 - Add task-derived questions, explicit action choices, feedback-driven replanning and resumable Markdown event journals. Learning targets are open-ended rather than restricted to predefined domains.

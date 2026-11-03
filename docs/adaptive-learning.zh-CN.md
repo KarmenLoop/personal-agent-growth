@@ -1,4 +1,4 @@
-# 动态学习教程 · 0.6.0
+# 动态学习教程 · 0.6.1
 
 [English](adaptive-learning.en.md) · [运行协议](../references/adaptive-learning.md) · [机制与反馈图](diagrams/adaptive-learning.zh-CN.svg)
 

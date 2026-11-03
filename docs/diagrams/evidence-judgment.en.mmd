@@ -1,0 +1,15 @@
+flowchart TD
+    A["New input or challenge"] --> B{"What kind of input?"}
+    B -->|"Goal, preference, permission"| C["Update task contract; preserve earlier results"]
+    B -->|"Technical claim or firsthand report"| D["Separate observation, attribution, and explanation"]
+    D --> E["Inspect strongest counterexample and hidden assumptions"]
+    E --> F{"Useful check feasible within scope?"}
+    F -->|"Yes"| G["Run bounded external verification; preserve output"]
+    F -->|"No"| H["Assess available evidence and reasoning; state gaps"]
+    G --> I{"New evidence, stronger reasoning, or an exposed error?"}
+    H --> I
+    I -->|"Yes"| J["Revise, narrow, or withdraw; state the specific basis"]
+    I -->|"No"| K["Retain only supported confidence; keep unknowns open"]
+    J --> L["Update dependent decisions and the next action"]
+    K --> L
+    C --> L

@@ -1,0 +1,68 @@
+[
+  {
+    "arm": "baseline",
+    "command": [
+      "<HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-I",
+      "-B",
+      "-c",
+      "import sys, itertools\nsys.path.insert(0,sys.argv[1])\nfrom invoice import total_cents\nfrom cache_path import quote\ncases=list(itertools.product(([0],[1],[11],[10000],[100,207]), (0,1,9,1000), (0,1,10,100)))\nfor items,shipping,discount in cases:\n    expected=sum(items)*(100-discount)//100+shipping\n    assert total_cents(items,shipping,discount)==expected,(items,shipping,discount)\n    assert quote(\"same-customer\",items,shipping,discount)[\"amount\"]==expected,(items,shipping,discount)\nassert quote(\"same-customer\",[100,207],1000,100)[\"amount\"]==1000\nprint({\"formula_cases\":len(cases),\"cache_changed_input_cases\":len(cases),\"unchanged_repeat\":1,\"scope\":\"controlled nonnegative integer inputs within 0..100 percent\"})\n",
+      "<TASK_ROOT>/baseline/fixture"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.05200083402451128,
+    "stdout": "baseline.stdout",
+    "stderr": "baseline.stderr",
+    "input_sha256": {
+      "fixture/reproduce.py": "e2468d7239cdc24e24fba832ab18264efbb64bd56427c0f93bc3d76efe68c5ed",
+      "fixture/reproduce_cache.py": "eaf1a39a74919d3df450caca5c29e1290abe270c8b07f75e8a3ee9ca8bfd74df",
+      "fixture/cache_path.py": "9ac7f2124044b912b389328945131401b13f07601bbefdb3bf9093a0316b7995",
+      "fixture/invoice.py": "1c1acc738bc85804342645f5e9eac3be381db06d31aed16fba1ef80f3a82ca9d"
+    }
+  },
+  {
+    "arm": "candidate",
+    "command": [
+      "<HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-I",
+      "-B",
+      "-c",
+      "import sys, itertools\nsys.path.insert(0,sys.argv[1])\nfrom invoice import total_cents\nfrom cache_path import quote\ncases=list(itertools.product(([0],[1],[11],[10000],[100,207]), (0,1,9,1000), (0,1,10,100)))\nfor items,shipping,discount in cases:\n    expected=sum(items)*(100-discount)//100+shipping\n    assert total_cents(items,shipping,discount)==expected,(items,shipping,discount)\n    assert quote(\"same-customer\",items,shipping,discount)[\"amount\"]==expected,(items,shipping,discount)\nassert quote(\"same-customer\",[100,207],1000,100)[\"amount\"]==1000\nprint({\"formula_cases\":len(cases),\"cache_changed_input_cases\":len(cases),\"unchanged_repeat\":1,\"scope\":\"controlled nonnegative integer inputs within 0..100 percent\"})\n",
+      "<TASK_ROOT>/candidate/fixture"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.026517790975049138,
+    "stdout": "candidate.stdout",
+    "stderr": "candidate.stderr",
+    "input_sha256": {
+      "fixture/reproduce.py": "e2468d7239cdc24e24fba832ab18264efbb64bd56427c0f93bc3d76efe68c5ed",
+      "fixture/reproduce_cache.py": "eaf1a39a74919d3df450caca5c29e1290abe270c8b07f75e8a3ee9ca8bfd74df",
+      "fixture/cache_path.py": "9ac7f2124044b912b389328945131401b13f07601bbefdb3bf9093a0316b7995",
+      "fixture/invoice.py": "1c1acc738bc85804342645f5e9eac3be381db06d31aed16fba1ef80f3a82ca9d"
+    }
+  },
+  {
+    "arm": "transfer",
+    "command": [
+      "<HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-I",
+      "-B",
+      "-c",
+      "import sys, math\nsys.path.insert(0,sys.argv[1])\nfrom report import overall_conversion\ncases=[([{\"visitors\":\"10\",\"conversions\":\"8\"},{\"visitors\":\"990\",\"conversions\":\"99\"}],107/1000),([{\"visitors\":\"1\",\"conversions\":\"1\"},{\"visitors\":\"9\",\"conversions\":\"0\"}],0.1),([{\"visitors\":\"100\",\"conversions\":\"10\"}],0.1)]\nfor rows,expected in cases:\n    assert math.isclose(overall_conversion(rows),expected,rel_tol=1e-12)\n    assert math.isclose(overall_conversion(list(reversed(rows))),expected,rel_tol=1e-12)\nprint({\"metric_cases\":len(cases),\"permutations\":len(cases),\"scope\":\"overall visitor rate on nonnegative counts and positive total exposure\"})\n",
+      "<TASK_ROOT>/transfer"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08818008308298886,
+    "stdout": "transfer.stdout",
+    "stderr": "transfer.stderr",
+    "input_sha256": {
+      "capture_run.py": "548ddce8296ae734994209284961bd5fdbd61101e3615809be8fdd8409fd08c7",
+      "verify_csv.py": "f895def7776173883c80c895bea39e0826db4ca1ba213a1014d3d3d373f6ec8c",
+      "precision_probe.py": "be6e0b095f25cddce3395d9a9831f7f98d285bca7735961d4cb47113fdcc1535",
+      "verify_metric.py": "117fb856aaaff1ba8a34c307d92949606b07fecf82d7f67129fb7147aba9f2b1",
+      "verify_delivery.py": "4314396e63e719481bdc61e6802abe06dba03811d7cb8d9cc8df45bac6f93a07",
+      "report.py": "0127fd22482a1cd7283b5d82f17b1270c24a6f7df9c9bc743552cc212c377cb5",
+      "report.before.py": "eca8887c431abfff3e2e1f4276442c6fa17ab45526639cc5df4274000fa73f37"
+    }
+  }
+]

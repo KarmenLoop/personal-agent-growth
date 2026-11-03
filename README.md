@@ -1,6 +1,6 @@
 # Personal Agent Growth
 
-[English](README.md) · [简体中文](README.zh-CN.md) · **0.6.0**
+[English](README.md) · [简体中文](README.zh-CN.md) · **0.6.1**
 
 [![Checks](https://github.com/KarmenLoop/personal-agent-growth/actions/workflows/check.yml/badge.svg)](https://github.com/KarmenLoop/personal-agent-growth/actions/workflows/check.yml)
 [![Release](https://img.shields.io/github/v/release/KarmenLoop/personal-agent-growth)](https://github.com/KarmenLoop/personal-agent-growth/releases/latest)
@@ -8,6 +8,10 @@
 Personal Agent Growth is an open-source skill for preparing, executing, reviewing, and improving ongoing agent work. It connects durable task memory, evidence-based decisions, cross-tool recovery, and **Propose–Probe–Compose** experiments. Improvements change authorized prompts, tools, retrieval, and workflow components; model training and weight updates are outside the method.
 
 An agent should be able to explain which observation changed its decision, reuse the resulting lesson in another task, and show the result. A larger prompt or a growing collection of notes is not sufficient evidence of improvement.
+
+## Evidence-based judgment in 0.6.1
+
+Technical diagnoses remain hypotheses, including those proposed by the user. Confidence and repeated disagreement alone do not change a supported conclusion; valid evidence or stronger reasoning does. The protocol also requires withdrawing unsupported certainty, investigating firsthand reports, and honoring changed goals or permissions. [Judgment protocol](references/evidence-based-judgment.en.md) · [Behavioral acceptance](docs/release-0.6.1-acceptance.en.md). This is a portable instruction layer, not a change to model training or a guarantee against sycophancy.
 
 ## Start here
 
@@ -59,7 +63,7 @@ The skill depends on its host for the model, tools, execution permissions, and s
 
 ## Quick start
 
-Download the **complete delivery bundle** and `SHA256SUMS.txt` from [v0.6.0](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.6.0). Extract it and follow [START-HERE.md](START-HERE.md). Python 3.11+ is needed for the utilities; there are no runtime pip dependencies.
+Download the **complete delivery bundle** and `SHA256SUMS.txt` from [v0.6.1](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.6.1). Extract it and follow [START-HERE.md](START-HERE.md). Python 3.11+ is needed for the utilities; there are no runtime pip dependencies.
 
 From the extracted full bundle on macOS:
 
@@ -94,7 +98,7 @@ Weights are not trained or updated by this project. A hosted model may not expos
 
 ![Full-task token and time measurements, including the timing anomaly](docs/images/cross-domain-0.4.1.png)
 
-Repository tests establish file, utility, and protocol behavior. They do not replace Windows desktop Agent execution, a fresh authenticated Cursor model turn, cross-device synchronization, or operation after the app closes. Current publication checks and their exact scope are in the [0.6.0 acceptance report](docs/release-0.6.0-acceptance.en.md).
+Repository tests establish file, utility, and protocol behavior. They do not replace Windows desktop Agent execution, a fresh authenticated Cursor model turn, cross-device synchronization, or operation after the app closes. Current publication checks and their exact scope are in the [0.6.1 acceptance report](docs/release-0.6.1-acceptance.en.md).
 
 ## Development
 
@@ -102,7 +106,7 @@ Repository tests establish file, utility, and protocol behavior. They do not rep
 python3 -B -m unittest discover -s tests -v
 python3 -B scripts/check_publication.py
 python3 -B tools/build_release.py --output dist
-python3 -B scripts/verify_handoff.py --archive dist/personal-agent-growth-0.6.0.zip --manifest dist/manifest.json
+python3 -B scripts/verify_handoff.py --archive dist/personal-agent-growth-0.6.1.zip --manifest dist/manifest.json
 python3 -B tools/build_delivery.py --output /path/to/fresh-output
 ```
 
@@ -114,7 +118,7 @@ Created and maintained by the **KARMENLOOP Official Team**, Shanghai, China. We 
 
 Copyright (C) 2026 KARMENLOOP Official Team. Licensed under **AGPL-3.0-only**. Keep [LICENSE](LICENSE) and [NOTICE](NOTICE) with covered copies. Commercial use is allowed; distribution and modified network-service use carry the license's applicable source obligations. AGPL does not require private changes to be posted on GitHub. The [licensing guide](docs/licensing.md) explains the scope.
 
-## Adaptive learning and capability evidence in 0.6.0
+## Adaptive learning and capability evidence introduced in 0.6.0
 
 [Adaptive learning](docs/adaptive-learning.en.md) starts from the current task’s consequential unknowns. The Agent proposes actions, executes them through the host, and revises its judgment from actual observations. Transfer searches shared mechanisms and conditions; a domain name is only a soft hint. A failed analogy becomes a scoped boundary for later tasks. The tools persist Markdown, check revisions and evidence, and enforce finite exploration; interpretation, execution, and independent review remain host responsibilities. They do not claim universal mastery or measured speed gains. [Detailed flow](docs/diagrams/adaptive-learning.en.svg).
 
