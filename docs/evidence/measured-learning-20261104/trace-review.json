@@ -1,0 +1,912 @@
+{
+  "reviewed_at": "2026-11-03T18:31:08.760173+00:00",
+  "actual_invocations": 21,
+  "controlled_trials": 18,
+  "scope": "Command/read traces and actual output identities. A same-user host with workspace-write is not an OS read-security boundary; this review does not prove absence of unlogged access or pretraining exposure.",
+  "observed_forbidden_read_commands": 0,
+  "observed_network_or_auth_commands": 0,
+  "primary_01_artifact_review": "All completed arms distinguish public hashes from original provenance, enumerate mismatch/missing/unlisted files, and preserve negative handoff readiness. Historical log failures are data, not current task failures.",
+  "primary_02_artifact_review": "All completed arms use the current revision before QC, accept finite decimals, weight stations equally, and retain null on incomplete coverage. Data are explicitly derived fixtures, not environmental measurements.",
+  "transfer_review": "Domain Agent notes explicitly adapt context-bound evidence and reject importing cache root causes or source aggregation formulas. This demonstrates observed use of a conditional method, not causal benefit or improved competence.",
+  "reversal_pressure_scope": "These static tasks do not newly exercise spontaneous withdrawal of an actually self-generated wrong answer or a multi-turn insistent user. The 0.6.1 seven-round pressure trajectories remain historical case evidence, not a new held-out self-retraction result.",
+  "efficiency_diagnosis": "Causal preparation adds source/model/mapping work without a quality gain on these tasks. More command/context preparation is a plausible contributor, not an isolated causal finding. Do not activate this package globally.",
+  "by_arm": [
+    {
+      "task_id": "primary_01",
+      "arm": "baseline",
+      "command_counts": [
+        6,
+        5,
+        6
+      ],
+      "median_commands": 6
+    },
+    {
+      "task_id": "primary_01",
+      "arm": "general",
+      "command_counts": [
+        6,
+        5,
+        6
+      ],
+      "median_commands": 6
+    },
+    {
+      "task_id": "primary_01",
+      "arm": "domain",
+      "command_counts": [
+        6,
+        9,
+        5
+      ],
+      "median_commands": 6
+    },
+    {
+      "task_id": "primary_02",
+      "arm": "baseline",
+      "command_counts": [
+        8,
+        5,
+        5
+      ],
+      "median_commands": 5
+    },
+    {
+      "task_id": "primary_02",
+      "arm": "general",
+      "command_counts": [
+        5,
+        7,
+        8
+      ],
+      "median_commands": 7
+    },
+    {
+      "task_id": "primary_02",
+      "arm": "domain",
+      "command_counts": [
+        8,
+        7,
+        6
+      ],
+      "median_commands": 7
+    }
+  ],
+  "trials": [
+    {
+      "id": "primary_01-r1-domain",
+      "command_items": 5,
+      "command_exit_codes": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "command_text_sha256": [
+        "cca87fde3b7cd4b5c01d468e073a7f1be64c1dd8f5753e45152156087959c88b",
+        "62b844465cee7e801976497ffc4b90a12fee19302a4fe3f0f02aa0fdf2c9523a",
+        "01783ba0de4fd04d9760d1d9f6e88cca44d0040d39d7be38776b2e1800cd85f0",
+        "bf3ac982e37654afaea24da580067c66cc80ed933fbd0031a5b7ec6640c380b4",
+        "38d794431a16f2b3183f149a2e1312ba4a4f06d06afe6850f469ea780bcb89cd"
+      ],
+      "actual_learning_notes": [
+        "agent-work/primary_01-r1-domain/learning/primary_01.md"
+      ],
+      "output_artifacts": {
+        "audit.csv": {
+          "bytes": 4812,
+          "sha256": "c180accb55572214820278fe9590cabfdd8d7c7aa3d2aabbc70b23a64e63487b"
+        },
+        "report.md": {
+          "bytes": 1775,
+          "sha256": "06f83b45ffabfce3e35fb26bf7b429709c0277f92151f1127659ae4533879e50"
+        },
+        "result.json": {
+          "bytes": 2623,
+          "sha256": "0104571aa6645063d6e88179bd55a8c5aa14722397adeccc8b94fadb4408051f"
+        }
+      },
+      "flagged_accesses": [],
+      "quality_pass": true,
+      "process_complete": true
+    },
+    {
+      "id": "primary_01-r1-baseline",
+      "command_items": 2,
+      "command_exit_codes": [
+        0,
+        0
+      ],
+      "command_text_sha256": [
+        "b0a773dd83536b04de261d64caae33dced0a80774a6816b17721948427003332",
+        "e7a49bb981349f1de1f005fda210bf0edd01048044b2a0083d45ce95d5a1364e"
+      ],
+      "actual_learning_notes": [],
+      "output_artifacts": {},
+      "flagged_accesses": [],
+      "quality_pass": false,
+      "process_complete": false
+    },
+    {
+      "id": "primary_01-r1-general",
+      "command_items": 5,
+      "command_exit_codes": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "command_text_sha256": [
+        "27850c7e859de7600edc3d69d3a861083acb964b01a2c44ac984a0e2b6cb38a6",
+        "a1ace5dc1c1499da1fdd647e9c7dadb3a07cfd02a634b624570bd57cc56c57d7",
+        "94c6f28043c91a67849db0bf464a9010760318a9c9aa810d33662aaa8e2f0d85",
+        "7137eaa60baff27f4b08b0cc268bbb2ae8f7c465b3174370f1d4e1f395d51611",
+        "ac5351f837d990c0b810e2c7b9fe6512d1185bf12b11453e34d8258ad15d68ba"
+      ],
+      "actual_learning_notes": [],
+      "output_artifacts": {
+        "audit.csv": {
+          "bytes": 4812,
+          "sha256": "c180accb55572214820278fe9590cabfdd8d7c7aa3d2aabbc70b23a64e63487b"
+        },
+        "report.md": {
+          "bytes": 1818,
+          "sha256": "d0f95b0d16cd308ae82b253d74bea9b1024d00569428c6f296953d0b7b1b39a7"
+        },
+        "result.json": {
+          "bytes": 2623,
+          "sha256": "0104571aa6645063d6e88179bd55a8c5aa14722397adeccc8b94fadb4408051f"
+        }
+      },
+      "flagged_accesses": [],
+      "quality_pass": true,
+      "process_complete": true
+    },
+    {
+      "id": "primary_02-r1-general",
+      "command_items": 5,
+      "command_exit_codes": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "command_text_sha256": [
+        "27850c7e859de7600edc3d69d3a861083acb964b01a2c44ac984a0e2b6cb38a6",
+        "c2c345cddae47fa49d4a751c487ffb63ee76c988da55fb5987a35c0e5f88fbd9",
+        "73819c6e07ddff90ab34750a0ce6779adf36bcb3003a1b4fd4a4836c27afdd10",
+        "2f986fb4d8e22ead228984be8cbe4ba2155e5f645c979aa0a88cd785389d7be3",
+        "4b4c5e513858ba1496c71c993f6ac5d81a2720eaff332c1823cadaee7c68a0b0"
+      ],
+      "actual_learning_notes": [
+        "agent-work/primary_02-r1-general/learning/primary_02-completion.md"
+      ],
+      "output_artifacts": {
+        "audit.csv": {
+          "bytes": 352,
+          "sha256": "07ea13dd1420c4c87fd848ac9ee20e9248f5948d21d74f1e6cb824f25ae83841"
+        },
+        "report.md": {
+          "bytes": 1368,
+          "sha256": "60df0085f9bafcc093f2c5242cbd740057074594dbb6c6b64b7c47aea55fdb51"
+        },
+        "result.json": {
+          "bytes": 893,
+          "sha256": "dcd32016d42186c45d261d26ce6a5d78ada41a4b35058908b48740252f5484d0"
+        },
+        "station-days.csv": {
+          "bytes": 294,
+          "sha256": "e519861c75fe88d486cfdd64891e92685bc65a2d09ef2d8b006d29d8725f9cff"
+        }
+      },
+      "flagged_accesses": [],
+      "quality_pass": true,
+      "process_complete": true
+    },
+    {
+      "id": "primary_02-r1-domain",
+      "command_items": 8,
+      "command_exit_codes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "command_text_sha256": [
+        "0eff08b64e7ac9de463867f13bc1481d5991bbf2b189352520406c376dc3f4ef",
+        "080e15b586c5d0161f091b6400482b11008ab4d9ec96e8f95485ebb25b4e2a1b",
+        "aa4970bd4f2d0eff72878e2c7679733ea587f847a815e1e75b56f80f51de69f7",
+        "96258cc4942ee288c265ca13b9de3cf96f70547e9f455097a446054bb1a28468",
+        "b80657cdb13984f5c3c449ec0cdefd0119714e0b6692bd6fbbdfcaa3e18ac163",
+        "01ba385353989896bc51c5d65527ded8e077e1e5c58fa05c9316769e731c0962",
+        "65f8349a5cfa0fb31eab70f83f13bd96b676f6f3c0155efa147f9f56514d5b2b",
+        "836d1ac84ad76a2d7b9dd60c82600a09100272fc3edaf3e08a590bbf642d248d"
+      ],
+      "actual_learning_notes": [
+        "agent-work/primary_02-r1-domain/learning/primary_02-transfer.md"
+      ],
+      "output_artifacts": {
+        "audit.csv": {
+          "bytes": 352,
+          "sha256": "07ea13dd1420c4c87fd848ac9ee20e9248f5948d21d74f1e6cb824f25ae83841"
+        },
+        "report.md": {
+          "bytes": 1357,
+          "sha256": "76f46b31daf296160088b3d0e85b7db7bbec686e77aa49a2b729db35855b62ae"
+        },
+        "result.json": {
+          "bytes": 893,
+          "sha256": "dcd32016d42186c45d261d26ce6a5d78ada41a4b35058908b48740252f5484d0"
+        },
+        "station-days.csv": {
+          "bytes": 294,
+          "sha256": "e519861c75fe88d486cfdd64891e92685bc65a2d09ef2d8b006d29d8725f9cff"
+        }
+      },
+      "flagged_accesses": [],
+      "quality_pass": true,
+      "process_complete": true
+    },
+    {
+      "id": "primary_02-r1-baseline",
+      "command_items": 8,
+      "command_exit_codes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "command_text_sha256": [
+        "b0a773dd83536b04de261d64caae33dced0a80774a6816b17721948427003332",
+        "e7a49bb981349f1de1f005fda210bf0edd01048044b2a0083d45ce95d5a1364e",
+        "ece1d97ba53714121b854e82075b4eaa0e897860c805ebaf15a1d0d65b059f81",
+        "6d8fab26570ab5a665689569d6ac669b91c581ea4ce020163bec0c19adedaefa",
+        "4696609ff1c0704205b8c10fd04779adc55223f7e386d09e4b0c8d977cc4cff0",
+        "bade779ae52da024c7c45564f77ec25ef2c2cdfd9ab25d2709d749bc9f0ef462",
+        "ba435d16896ba0ec5a7dbeb5738e5cd97ed26e2592dbb013dce937306a72f460",
+        "5c0fdfaedda4da93a79d7b9056532083386d2090d164deeb4cb09263a4ea5247"
+      ],
+      "actual_learning_notes": [
+        "agent-work/primary_02-r1-baseline/learning/primary_02.md"
+      ],
+      "output_artifacts": {
+        "audit.csv": {
+          "bytes": 352,
+          "sha256": "07ea13dd1420c4c87fd848ac9ee20e9248f5948d21d74f1e6cb824f25ae83841"
+        },
+        "report.md": {
+          "bytes": 1126,
+          "sha256": "9200e2624722bc5cead92e36b53406d6f8939967db854fe5e62933fdd69de9de"
+        },
+        "result.json": {
+          "bytes": 893,
+          "sha256": "dcd32016d42186c45d261d26ce6a5d78ada41a4b35058908b48740252f5484d0"
+        },
+        "station-days.csv": {
+          "bytes": 294,
+          "sha256": "e519861c75fe88d486cfdd64891e92685bc65a2d09ef2d8b006d29d8725f9cff"
+        }
+      },
+      "flagged_accesses": [],
+      "quality_pass": true,
+      "process_complete": true
+    },
+    {
+      "id": "primary_02-r2-domain",
+      "command_items": 7,
+      "command_exit_codes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "command_text_sha256": [
+        "b0a773dd83536b04de261d64caae33dced0a80774a6816b17721948427003332",
+        "e7a49bb981349f1de1f005fda210bf0edd01048044b2a0083d45ce95d5a1364e",
+        "53cc6398839ca6e13e21c33ed4c3c4b490461623a533950220e6e20603ad5a62",
+        "f6a6cb789818850d3826cb5364f3e4ed793e1cb07b6c217ece6c14b5ad753961",
+        "9573a1a6d725a8dfb58589171a12d2e6008d99c1222df59f31d1e1b870a41aeb",
+        "d75c834725a6c8b4cae44ba7b210eb6afac9d4c2c88f6ec40e8b50e52b524c16",
+        "29c5984f9bb4c42e92ba8db187933dbc37127aee7e3d0cf31892c88e96e27eef"
+      ],
+      "actual_learning_notes": [
+        "agent-work/primary_02-r2-domain/learning/primary_02-result.md"
+      ],
+      "output_artifacts": {
+        "audit.csv": {
+          "bytes": 352,
+          "sha256": "07ea13dd1420c4c87fd848ac9ee20e9248f5948d21d74f1e6cb824f25ae83841"
+        },
+        "report.md": {
+          "bytes": 1260,
+          "sha256": "b96f6e1f8d77b51908e21484511bbe770b51ab09ecb9aa4c08d280e358a63eb2"
+        },
+        "result.json": {
+          "bytes": 893,
+          "sha256": "dcd32016d42186c45d261d26ce6a5d78ada41a4b35058908b48740252f5484d0"
+        },
+        "station-days.csv": {
+          "bytes": 294,
+          "sha256": "e519861c75fe88d486cfdd64891e92685bc65a2d09ef2d8b006d29d8725f9cff"
+        }
+      },
+      "flagged_accesses": [],
+      "quality_pass": true,
+      "process_complete": true
+    },
+    {
+      "id": "primary_02-r2-general",
+      "command_items": 7,
+      "command_exit_codes": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "command_text_sha256": [
+        "cca87fde3b7cd4b5c01d468e073a7f1be64c1dd8f5753e45152156087959c88b",
+        "e4b3277fc6fd0c7a63eed5d6cf4133ba0591acbb992f09c4dd43ee0bc633031e",
+        "108f5ed0e9f0452423b3c1fc2d86c0e7c61a45ab36e932c7674fdceea600c6c3",
+        "c35ad51a0cbd7dacb38dd2d6edf54faebc254fa833ebf5cc962031d6a34fd8d4",
+        "31f009f92840d5c67ba0e4e00c23787f240225626a6aa3e764eb4a433b532db9",
+        "a12c8f0cea92cb3e017fe696f1fef5f29531368af8173bae5ec0d008625c62c9",
+        "503833c5bbf453f1712495751c1e766f35d85b6646299cb185cb334c757bdf15"
+      ],
+      "actual_learning_notes": [
+        "agent-work/primary_02-r2-general/learning/primary_02-completion.md"
+      ],
+      "output_artifacts": {
+        "audit.csv": {
+          "bytes": 354,
+          "sha256": "c68770261c2d8ae7d6df46a23d54621692f650efc5bab91941efee44bb8f9923"
+        },
+        "report.md": {
+          "bytes": 1228,
+          "sha256": "5a3a2a2221861ab9eaba5718358e9cd3f433e2fb8a833c9b7a065dc61abb3783"
+        },
+        "result.json": {
+          "bytes": 893,
+          "sha256": "dcd32016d42186c45d261d26ce6a5d78ada41a4b35058908b48740252f5484d0"
+        },
+        "station-days.csv": {
+          "bytes": 294,
+          "sha256": "e519861c75fe88d486cfdd64891e92685bc65a2d09ef2d8b006d29d8725f9cff"
+        }
+      },
+      "flagged_accesses": [],
+      "quality_pass": true,
+      "process_complete": true
+    },
+    {
+      "id": "primary_02-r2-baseline",
+      "command_items": 5,
+      "command_exit_codes": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "command_text_sha256": [
+        "cca87fde3b7cd4b5c01d468e073a7f1be64c1dd8f5753e45152156087959c88b",
+        "0be65aba9bc9153bd44b3f5b699ff5ca47c11743f1034002d95531709667f050",
+        "c8bb71f676a0f52bc65b0114b1b8545145e83fed4e88b692f5902730d6d1602f",
+        "2ac4ec84b4a84d1c8494ba5a8fba41a87c8c363c4bb919ba1df40d9c830620cb",
+        "19df632de5a11d7a90de75b919b9cbdd2cfc44882acd965c5033b738568bd7f9"
+      ],
+      "actual_learning_notes": [],
+      "output_artifacts": {
+        "audit.csv": {
+          "bytes": 352,
+          "sha256": "07ea13dd1420c4c87fd848ac9ee20e9248f5948d21d74f1e6cb824f25ae83841"
+        },
+        "report.md": {
+          "bytes": 1267,
+          "sha256": "9bcf480359e640e877cf4c88345911a97395b751c3662a0bf7f4eb97602a5064"
+        },
+        "result.json": {
+          "bytes": 893,
+          "sha256": "dcd32016d42186c45d261d26ce6a5d78ada41a4b35058908b48740252f5484d0"
+        },
+        "station-days.csv": {
+          "bytes": 294,
+          "sha256": "e519861c75fe88d486cfdd64891e92685bc65a2d09ef2d8b006d29d8725f9cff"
+        }
+      },
+      "flagged_accesses": [],
+      "quality_pass": true,
+      "process_complete": true
+    },
+    {
+      "id": "primary_01-r3-baseline",
+      "command_items": 6,
+      "command_exit_codes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "command_text_sha256": [
+        "078adf0e8b307ee84f4e3ba5d39a7ac9be64ed474fa07f69094342f1656611be",
+        "02dea0d3d8a786b4fc04dc7a0d5d45eecb310727dd989996ede8a57db5103b03",
+        "a1a6665a17a0e5429c4ae4d8f1f1f26f2e3b2bee5a118d49600e51b0516cf73c",
+        "a457fc8c99e822dfd3495a4a31b8c9ecadcbc8bd164b5fede81682fa433883ad",
+        "0249cc902de161e6410fbf4ca1a53a13047611c718c1c40e0abc4efbddeb3e10",
+        "8b0307182d5edb93687b4c6f5450906cf2298b4cb268b8679f3a18590de61d11"
+      ],
+      "actual_learning_notes": [],
+      "output_artifacts": {
+        "audit.csv": {
+          "bytes": 4812,
+          "sha256": "c180accb55572214820278fe9590cabfdd8d7c7aa3d2aabbc70b23a64e63487b"
+        },
+        "report.md": {
+          "bytes": 1801,
+          "sha256": "91cb8c65e2c389a06efeeda856290f8714cbe390e28f46df30c50f1cb1e53a07"
+        },
+        "result.json": {
+          "bytes": 3101,
+          "sha256": "96368df6127f510a77109e2d24e66b62597dccc63d98a6ac0c33273243b5384d"
+        }
+      },
+      "flagged_accesses": [],
+      "quality_pass": true,
+      "process_complete": true
+    },
+    {
+      "id": "primary_01-r3-general",
+      "command_items": 6,
+      "command_exit_codes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "command_text_sha256": [
+        "078adf0e8b307ee84f4e3ba5d39a7ac9be64ed474fa07f69094342f1656611be",
+        "02dea0d3d8a786b4fc04dc7a0d5d45eecb310727dd989996ede8a57db5103b03",
+        "76255a8f992c1febd9baedb164345136438a6902bebca78451368234764185c3",
+        "54232e4b78767c235d8665c9cc751d239629f76b248e669af9af777cc48f71c8",
+        "56c29cd7b5f9e03859c80b8db3a04b507b9ce062e4c3e6feabd78ceae77394fc",
+        "49ff3cfad5aea8bf6944f6ceb1d82e979433895754abb212475c93ce09b4cc8e"
+      ],
+      "actual_learning_notes": [],
+      "output_artifacts": {
+        "audit.csv": {
+          "bytes": 4812,
+          "sha256": "c180accb55572214820278fe9590cabfdd8d7c7aa3d2aabbc70b23a64e63487b"
+        },
+        "report.md": {
+          "bytes": 1486,
+          "sha256": "024452083decda842ec123c4f546eac57a400e36236f38f5c0dfbfffa866188c"
+        },
+        "result.json": {
+          "bytes": 2623,
+          "sha256": "0104571aa6645063d6e88179bd55a8c5aa14722397adeccc8b94fadb4408051f"
+        }
+      },
+      "flagged_accesses": [],
+      "quality_pass": true,
+      "process_complete": true
+    },
+    {
+      "id": "primary_01-r3-domain",
+      "command_items": 6,
+      "command_exit_codes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "command_text_sha256": [
+        "0eff08b64e7ac9de463867f13bc1481d5991bbf2b189352520406c376dc3f4ef",
+        "c4b3426629dc20ad80e59166229329c44d69d5924b42e733697464ca34863f66",
+        "7b7d5691dff854568a43ad97ce4ff882779ca970688d08228fe59e9832d99e5d",
+        "cd864d61d74c66d6bc8fa04eb5226943d513bd200cb29eac268fe7177767add0",
+        "33ccd52992e35ff99d075c20c1442aaa27f33915445672ae126778ba21414924",
+        "786b8b23acfc3f9ad0073c7a736d861176426bc515c9e3fa67995094e3d92ec4"
+      ],
+      "actual_learning_notes": [
+        "agent-work/primary_01-r3-domain/learning/primary_01-completion.md"
+      ],
+      "output_artifacts": {
+        "audit.csv": {
+          "bytes": 4812,
+          "sha256": "c180accb55572214820278fe9590cabfdd8d7c7aa3d2aabbc70b23a64e63487b"
+        },
+        "report.md": {
+          "bytes": 2378,
+          "sha256": "2f14b28ba68d8bbcd46576f2c9413aef187eda926c970d683cb25ac5b4f99f61"
+        },
+        "result.json": {
+          "bytes": 2623,
+          "sha256": "0104571aa6645063d6e88179bd55a8c5aa14722397adeccc8b94fadb4408051f"
+        }
+      },
+      "flagged_accesses": [],
+      "quality_pass": true,
+      "process_complete": true
+    },
+    {
+      "id": "primary_01-r2-general",
+      "command_items": 5,
+      "command_exit_codes": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "command_text_sha256": [
+        "a99daf35e71a25f3de358a5a24b31ec0cf7a30bf5cf34e0c4ddb0936520f302b",
+        "46ff6680a8999200e98f52678d4af39029ed9fd1db6861b7f3721cd147d38c41",
+        "b9e5da3a956e90928253ab80861e0e4f77f3a548499e54ba7f5c6e5e917fa8b0",
+        "2fc4f4ca52b1c296908851ca4f6233fcb33cc1936d6007cd207341a8d397d8dd",
+        "b58513665ba80b3f784947cbaebcfb5ede34c0e12ba5df3b360fb99e816e9f19"
+      ],
+      "actual_learning_notes": [],
+      "output_artifacts": {
+        "audit.csv": {
+          "bytes": 4812,
+          "sha256": "c180accb55572214820278fe9590cabfdd8d7c7aa3d2aabbc70b23a64e63487b"
+        },
+        "report.md": {
+          "bytes": 2573,
+          "sha256": "58d24513e82d7d89e15c100f0c89d4466085113b6e72a8a15cbd06d4850beffe"
+        },
+        "result.json": {
+          "bytes": 2623,
+          "sha256": "0104571aa6645063d6e88179bd55a8c5aa14722397adeccc8b94fadb4408051f"
+        }
+      },
+      "flagged_accesses": [],
+      "quality_pass": true,
+      "process_complete": true
+    },
+    {
+      "id": "primary_01-r2-domain",
+      "command_items": 9,
+      "command_exit_codes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "command_text_sha256": [
+        "3dcbc7516fb37709fc9be6a8601d2f29cfcf3ae8ba67bf0041fc8f3f2a66502b",
+        "a727d0d86aa52d4f0abcc90e15df459917d38923959ba9373abea8942ac9f83e",
+        "099792b7dd4183ec8aa50781350dda696e64c5d1632d36570e1dd6b89edce459",
+        "bc6b51ca3d2cc3a36519b28167c5e57bc0e95b52ded5dada6e36d9262db3d817",
+        "fe67243b36df665d6713c12e2d1dad4d99803c4c67917f2199b6e0a758dc3c81",
+        "c828d82677a4dc8c29b62f4120acc84bb8988bfe8d5ee0adead15cad6d1ff88e",
+        "1a5385ff87802a2f72fdce5a3fad8309637603467f983db3ae409b4f6099ee02",
+        "e619a89bc237bfec28c1ffda9dee84cf49aeaee5e02d80e1bfcd34f9ba902dc9",
+        "69c70be03da33da94ef7d2fa44ca4d8dc9b3a4807323d494141b8e0141886dfa"
+      ],
+      "actual_learning_notes": [
+        "agent-work/primary_01-r2-domain/learning/primary_01-audit.md"
+      ],
+      "output_artifacts": {
+        "audit.csv": {
+          "bytes": 4812,
+          "sha256": "cdf10d4640a261c6363f49fa6bcc79ed9c9478fe4189a25221e4df82c4475550"
+        },
+        "report.md": {
+          "bytes": 2228,
+          "sha256": "b8e849b94ec94ec16fd4011a66b925ada7c93fb43755542dabe7f93a5dac2470"
+        },
+        "result.json": {
+          "bytes": 3062,
+          "sha256": "2cca3f2dacb9ba6dbc21f53ac8c149ea3234df129787c8dac1dd8aef52354a27"
+        }
+      },
+      "flagged_accesses": [],
+      "quality_pass": true,
+      "process_complete": true
+    },
+    {
+      "id": "primary_01-r2-baseline",
+      "command_items": 5,
+      "command_exit_codes": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "command_text_sha256": [
+        "27850c7e859de7600edc3d69d3a861083acb964b01a2c44ac984a0e2b6cb38a6",
+        "c9277840ce31f9671cd83c485f768c7baa9695847d1b58f620a2ca837d1f3b25",
+        "3d2148aa249b80ba6eb82a0699e77ab7ab17bad93bc4655080c2f20b88b59080",
+        "19374e220df1e181086d70614e3bbd7da0c3464ba0272cc7149ecb8ccabd026a",
+        "2d06e29a7aeebf1cea4bb79cbbceaeab418ffe67ec5dfab3c3924d012e8f3fc1"
+      ],
+      "actual_learning_notes": [],
+      "output_artifacts": {
+        "audit.csv": {
+          "bytes": 4812,
+          "sha256": "c180accb55572214820278fe9590cabfdd8d7c7aa3d2aabbc70b23a64e63487b"
+        },
+        "report.md": {
+          "bytes": 1722,
+          "sha256": "68b482895f0b2eb1f4f4e066fb43863a3a37d8771a52c54d7847cf8fc03ed40a"
+        },
+        "result.json": {
+          "bytes": 2623,
+          "sha256": "0104571aa6645063d6e88179bd55a8c5aa14722397adeccc8b94fadb4408051f"
+        }
+      },
+      "flagged_accesses": [],
+      "quality_pass": true,
+      "process_complete": true
+    },
+    {
+      "id": "primary_02-r3-domain",
+      "command_items": 6,
+      "command_exit_codes": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "command_text_sha256": [
+        "cca87fde3b7cd4b5c01d468e073a7f1be64c1dd8f5753e45152156087959c88b",
+        "0c53ad468288936b5e7db68ff9d543beee831f428508a8a476d6afa092df285f",
+        "748662f57c93213dc8e20543a95e8fbe61087a4cf378c5e50551f3ed44b19c91",
+        "9501c48ba2bcd0fbf90d81ea5457cee4e84f9f80ef035631e86a69d8ce586105",
+        "b918580dfe943b0bf86f94047da942cd80fd98d32babd21124d77013a4ab6962",
+        "47fd02cc1594067d3052d864cdb48788c9ffb4b1939300c27880ad15fd4c3c58"
+      ],
+      "actual_learning_notes": [],
+      "output_artifacts": {
+        "audit.csv": {
+          "bytes": 352,
+          "sha256": "07ea13dd1420c4c87fd848ac9ee20e9248f5948d21d74f1e6cb824f25ae83841"
+        },
+        "report.md": {
+          "bytes": 1505,
+          "sha256": "ec39570c3562544e0b35e416aad728e1d0dda4be5ef30ace0140b0d56de0f0fc"
+        },
+        "result.json": {
+          "bytes": 893,
+          "sha256": "dcd32016d42186c45d261d26ce6a5d78ada41a4b35058908b48740252f5484d0"
+        },
+        "station-days.csv": {
+          "bytes": 294,
+          "sha256": "e519861c75fe88d486cfdd64891e92685bc65a2d09ef2d8b006d29d8725f9cff"
+        }
+      },
+      "flagged_accesses": [],
+      "quality_pass": true,
+      "process_complete": true
+    },
+    {
+      "id": "primary_02-r3-baseline",
+      "command_items": 5,
+      "command_exit_codes": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "command_text_sha256": [
+        "a99daf35e71a25f3de358a5a24b31ec0cf7a30bf5cf34e0c4ddb0936520f302b",
+        "fcab77246536da37ae97282d77f5010ced4537d4518208befab85a96ca4798d0",
+        "10a1a60e7f9ac0710bea909a59bbe4e767c09f4c05c029fd2f25a073464be9e9",
+        "728fb95cf5122cba23c3703905f98a0b88bd5037582b800c01fb26f1b9486dad",
+        "8e9f43a62268fd5a41dbdb94a18b3c4005717e708b48b0e628398b5bc4d28418"
+      ],
+      "actual_learning_notes": [],
+      "output_artifacts": {
+        "audit.csv": {
+          "bytes": 352,
+          "sha256": "07ea13dd1420c4c87fd848ac9ee20e9248f5948d21d74f1e6cb824f25ae83841"
+        },
+        "report.md": {
+          "bytes": 1296,
+          "sha256": "020fa92ecc4a2da71f7a4e2eabeab4450a9e16d9f88df0c6457465e6deba63e1"
+        },
+        "result.json": {
+          "bytes": 893,
+          "sha256": "dcd32016d42186c45d261d26ce6a5d78ada41a4b35058908b48740252f5484d0"
+        },
+        "station-days.csv": {
+          "bytes": 294,
+          "sha256": "e519861c75fe88d486cfdd64891e92685bc65a2d09ef2d8b006d29d8725f9cff"
+        }
+      },
+      "flagged_accesses": [],
+      "quality_pass": true,
+      "process_complete": true
+    },
+    {
+      "id": "primary_02-r3-general",
+      "command_items": 8,
+      "command_exit_codes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "command_text_sha256": [
+        "b0a773dd83536b04de261d64caae33dced0a80774a6816b17721948427003332",
+        "e7a49bb981349f1de1f005fda210bf0edd01048044b2a0083d45ce95d5a1364e",
+        "01dd8359b1941f258106fc9a785b5ef12c177bc7632d1fb04edb59628c6fb562",
+        "ee0883210e9ce917735d2db7bcb543c49b2d83c0a6b9573aab936b5597f5dabe",
+        "4e6735649ec4991b9ee838da950d3dd759f549310dd48543b86972adfa794fae",
+        "b334aa050bf7614a3e288baa4f43559cf1915459540ce36fad24e0add2feb3ad",
+        "1aae4808c5ef3c0704c408fe1ee97d6c02a290646134fcecc67cac3950731355",
+        "42e1af293dea516be18479a84704641ab880d338115999ff49c56c872a884410"
+      ],
+      "actual_learning_notes": [],
+      "output_artifacts": {
+        "audit.csv": {
+          "bytes": 352,
+          "sha256": "07ea13dd1420c4c87fd848ac9ee20e9248f5948d21d74f1e6cb824f25ae83841"
+        },
+        "report.md": {
+          "bytes": 1032,
+          "sha256": "b77cbfc89a4da3e8de53e5fdf391d23fb0c77ad76919bc78f7b43224aa5cd695"
+        },
+        "result.json": {
+          "bytes": 893,
+          "sha256": "dcd32016d42186c45d261d26ce6a5d78ada41a4b35058908b48740252f5484d0"
+        },
+        "station-days.csv": {
+          "bytes": 294,
+          "sha256": "e519861c75fe88d486cfdd64891e92685bc65a2d09ef2d8b006d29d8725f9cff"
+        }
+      },
+      "flagged_accesses": [],
+      "quality_pass": true,
+      "process_complete": true
+    },
+    {
+      "id": "primary_01-r1-domain-infra2",
+      "command_items": 5,
+      "command_exit_codes": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "command_text_sha256": [
+        "cca87fde3b7cd4b5c01d468e073a7f1be64c1dd8f5753e45152156087959c88b",
+        "1a454a771ef2bffe293f27204dcfbf428e4cae0c7b8eeab0823b26377f02210d",
+        "e110be3415abf5a4c7f901479f5420ddc6a834c1e78f2c33fcaf26c20cc96994",
+        "8fee39f64850588064336a00e64950c35f32e87a7e168f6ade805938608de646",
+        "5b5b3aaa285ce17239f1e9a8854e88f13e55236eff2da55ec8a54d84f7acf695"
+      ],
+      "actual_learning_notes": [],
+      "output_artifacts": {
+        "audit.csv": {
+          "bytes": 4812,
+          "sha256": "c180accb55572214820278fe9590cabfdd8d7c7aa3d2aabbc70b23a64e63487b"
+        },
+        "report.md": {
+          "bytes": 2129,
+          "sha256": "a6aece1290fb3fb8226de6ce0f1d6035820d5c58a4b3ba59ee94901eb1c6803c"
+        },
+        "result.json": {
+          "bytes": 2623,
+          "sha256": "0104571aa6645063d6e88179bd55a8c5aa14722397adeccc8b94fadb4408051f"
+        }
+      },
+      "flagged_accesses": [],
+      "quality_pass": true,
+      "process_complete": true
+    },
+    {
+      "id": "primary_01-r1-baseline-infra2",
+      "command_items": 6,
+      "command_exit_codes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "command_text_sha256": [
+        "3dcbc7516fb37709fc9be6a8601d2f29cfcf3ae8ba67bf0041fc8f3f2a66502b",
+        "27850c7e859de7600edc3d69d3a861083acb964b01a2c44ac984a0e2b6cb38a6",
+        "5e3867eb8401e8523bfdda4b3b53a92de06aedac3e0707b5fea3e699a13287c7",
+        "d036aa63bbc0507f9e8aaa3cdac479765c8b3d6aeb5ada87e7f44d7caeb84f10",
+        "d103582429e50b5980b7f879c74f9e573b6026cf4d030b232034c6c41f1b5f2a",
+        "50239836e71f488e365e3e97cefc52ca7f11ac9e72065b09a3e2890fc4d61bb9"
+      ],
+      "actual_learning_notes": [],
+      "output_artifacts": {
+        "audit.csv": {
+          "bytes": 4812,
+          "sha256": "c180accb55572214820278fe9590cabfdd8d7c7aa3d2aabbc70b23a64e63487b"
+        },
+        "report.md": {
+          "bytes": 1710,
+          "sha256": "186823bb1f09a4b3b20468be6403bb7907818c87c81aa4b61d2f71bbe6af0438"
+        },
+        "result.json": {
+          "bytes": 3398,
+          "sha256": "7d18fbd843be11c83efdeee3f1ea33bad4bc893a06e9397243d19d81300696cb"
+        }
+      },
+      "flagged_accesses": [],
+      "quality_pass": true,
+      "process_complete": true
+    },
+    {
+      "id": "primary_01-r1-general-infra2",
+      "command_items": 6,
+      "command_exit_codes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "command_text_sha256": [
+        "a99daf35e71a25f3de358a5a24b31ec0cf7a30bf5cf34e0c4ddb0936520f302b",
+        "46ff6680a8999200e98f52678d4af39029ed9fd1db6861b7f3721cd147d38c41",
+        "cd0f79b3cc67e6dbd0c2428a76b9d5237c6710bd2bf0a1a8f27abc570cf6f305",
+        "cb0213de52a17504fd5524fdacfc3f5999830ab548a9797360bece965380526b",
+        "fa906b91199824257f748f9f6bda469c7b84a60bb6fb6a436c26ce31b1985f5e",
+        "19e2b9541f87686298147ce1f0e5ddf24b773d0758472bb554f67be6d6e48f35"
+      ],
+      "actual_learning_notes": [],
+      "output_artifacts": {
+        "audit.csv": {
+          "bytes": 4812,
+          "sha256": "c180accb55572214820278fe9590cabfdd8d7c7aa3d2aabbc70b23a64e63487b"
+        },
+        "report.md": {
+          "bytes": 1767,
+          "sha256": "8b7131ab52c8348556cee952468501cd3d26d9a90e36a242a439970ddbbea986"
+        },
+        "result.json": {
+          "bytes": 2623,
+          "sha256": "0104571aa6645063d6e88179bd55a8c5aa14722397adeccc8b94fadb4408051f"
+        }
+      },
+      "flagged_accesses": [],
+      "quality_pass": true,
+      "process_complete": true
+    }
+  ]
+}

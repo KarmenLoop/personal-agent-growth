@@ -1,8 +1,8 @@
-# Detailed mind maps and diagrams · 0.6.1
+# Detailed mind maps and diagrams · 0.7.0
 
 [English](mindmaps.en.md) · [中文](mindmaps.zh-CN.md)
 
-Thirteen diagrams per language: four detailed mind maps plus architecture, scheduling, handoff, calendar flow, Windows skip auditing, Windows Agent recovery, capability evidence, adaptive unfamiliar-domain learning, and evidence-based judgment. Each language uses the same branch topology. These diagrams describe responsibilities and contracts; they do not establish that every host implements them. Check [compatibility](compatibility.en.md) for evidence. Open SVG files to zoom; Mermaid sources are editable.
+Fourteen diagrams per language: four detailed mind maps plus architecture, scheduling, handoff, calendar flow, Windows skip auditing, Windows Agent recovery, capability evidence, adaptive unfamiliar-domain learning, and evidence-based judgment. Each language uses the same branch topology. These diagrams describe responsibilities and contracts; they do not establish that every host implements them. Check [compatibility](compatibility.en.md) for evidence. Open SVG files to zoom; Mermaid sources are editable.
 
 ## Complete capability tree
 
@@ -111,3 +111,11 @@ A 12-node, 14-edge decision flow separates user choices from technical claims, c
 [SVG](diagrams/evidence-judgment.en.svg) · [Mermaid](diagrams/evidence-judgment.en.mmd)
 
 ![Evidence-based judgment](diagrams/evidence-judgment.en.svg)
+
+## Held-out tasks, complete costs and causal transfer
+
+The integrated flow has 50 nodes and 62 connections: strategy freezing, independent task release, real Agent runs, source/target causal checks, native usage, overlapping clocks, independent grading and scoped adoption. It preserves failed and unmetered attempts. [Tutorial](measured-learning.en.md).
+
+[SVG](diagrams/measured-learning.en.svg) · [Mermaid](diagrams/measured-learning.en.mmd)
+
+![Measured learning flow](diagrams/measured-learning.en.svg)

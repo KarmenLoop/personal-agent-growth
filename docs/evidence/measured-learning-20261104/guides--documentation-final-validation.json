@@ -1,0 +1,74 @@
+{
+  "languages": [
+    {
+      "language": "en",
+      "document_sha256": "3549c916698c5a6670d6a98a534ec3bafd53a39f799b1aaa6d5573dc345fc660",
+      "diagram_source_sha256": "ba5e1b3f2b0a59ff130017c3310bd9a719c21cd689c424c5e68bc2994b0d12a6",
+      "helper_sha256": {
+        "scripts/blind_trials.py": "a7014fb823713f78a9829900de64d372f9c0c0bf155e53a1abc8662e27e7ef45",
+        "scripts/run_agent_trial.py": "a856955e5db5c8451b3492146d99135b4ec424384a32b6273abbca3241fecba2",
+        "scripts/task_costs.py": "b7860d80c32500af8830e5c3bd20876dcc2b8275b45a2de908eec48363f9ef37",
+        "scripts/experience_transfer.py": "7c866f341b4635de1b55320b896a5029ea084979a32e3e9632685a6e5970d664",
+        "scripts/causal_models.py": "7b42c20c3d0f4f06f875b311a50cb140a61503fb9f789f353c2885ebf43cb80e",
+        "scripts/capability_ledger.py": "685b9eb410f728602764c1b0d317fffd10346988d2f65d9336f3e6a48fe605f4"
+      },
+      "offline_block_exits": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "real_cli": "NOT_RUN; shell syntax only",
+      "schedule_runs": 6,
+      "known_synthetic_tokens": 120,
+      "synthetic_tool_union_seconds": 4,
+      "compatible_no_shared_labels": true,
+      "reversed_mapping_rejected": true,
+      "condition_conflict_blocks_probe": true,
+      "followup_revision": 1,
+      "followup_outcome": "inconclusive",
+      "local_links": "all resolved",
+      "nodes": 50,
+      "edges": 62,
+      "scope": "Controlled synthetic protocol examples; no novelty, Agent-quality/benefit, model-inference time, or billing evidence."
+    },
+    {
+      "language": "zh-CN",
+      "document_sha256": "902e9605557118964553ef039d84e6775770d0f0e0b2c3083066460c06a304d4",
+      "diagram_source_sha256": "269736b74729ba717fa0e54af29f9152e2de263016dccd36473dfefd8ea71545",
+      "helper_sha256": {
+        "scripts/blind_trials.py": "a7014fb823713f78a9829900de64d372f9c0c0bf155e53a1abc8662e27e7ef45",
+        "scripts/run_agent_trial.py": "a856955e5db5c8451b3492146d99135b4ec424384a32b6273abbca3241fecba2",
+        "scripts/task_costs.py": "b7860d80c32500af8830e5c3bd20876dcc2b8275b45a2de908eec48363f9ef37",
+        "scripts/experience_transfer.py": "7c866f341b4635de1b55320b896a5029ea084979a32e3e9632685a6e5970d664",
+        "scripts/causal_models.py": "7b42c20c3d0f4f06f875b311a50cb140a61503fb9f789f353c2885ebf43cb80e",
+        "scripts/capability_ledger.py": "685b9eb410f728602764c1b0d317fffd10346988d2f65d9336f3e6a48fe605f4"
+      },
+      "offline_block_exits": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "real_cli": "NOT_RUN; shell syntax only",
+      "schedule_runs": 6,
+      "known_synthetic_tokens": 120,
+      "synthetic_tool_union_seconds": 4,
+      "compatible_no_shared_labels": true,
+      "reversed_mapping_rejected": true,
+      "condition_conflict_blocks_probe": true,
+      "followup_revision": 1,
+      "followup_outcome": "inconclusive",
+      "local_links": "all resolved",
+      "nodes": 50,
+      "edges": 62,
+      "scope": "Controlled synthetic protocol examples; no novelty, Agent-quality/benefit, model-inference time, or billing evidence."
+    }
+  ],
+  "bilingual_topology_and_code": "identical",
+  "helpers_unchanged_during_validation": true
+}

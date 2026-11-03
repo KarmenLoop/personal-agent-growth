@@ -1,4 +1,4 @@
-# Adaptive learning tutorial · 0.6.1
+# Adaptive learning tutorial · 0.7.0
 
 [中文](adaptive-learning.zh-CN.md) · [Runtime protocol](../references/adaptive-learning.en.md) · [Mechanism and feedback map](diagrams/adaptive-learning.en.svg)
 

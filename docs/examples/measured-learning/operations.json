@@ -1,0 +1,105 @@
+{
+  "commands": [
+    {
+      "operation": 1,
+      "arguments": [
+        "add",
+        "--root",
+        "<LEARNING_ROOT>",
+        "--experience",
+        "<LEARNING_ROOT>/requests/general-preparation-20261104.md"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "10256f8cee0bd126b6568e3be90d972802cde770fe73c90a391307c25d9e81fc"
+    },
+    {
+      "operation": 2,
+      "arguments": [
+        "observe",
+        "--root",
+        "<LEARNING_ROOT>",
+        "--id",
+        "general-preparation-20261104",
+        "--observation",
+        "<LEARNING_ROOT>/requests/primary_01-general-feedback.md",
+        "--expected-revision",
+        "0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "dee5c5c35341e41f473530ec529d9bdf497a48f99e691ea27041be4f374f5b91"
+    },
+    {
+      "operation": 3,
+      "arguments": [
+        "observe",
+        "--root",
+        "<LEARNING_ROOT>",
+        "--id",
+        "general-preparation-20261104",
+        "--observation",
+        "<LEARNING_ROOT>/requests/primary_02-general-feedback.md",
+        "--expected-revision",
+        "1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "6e9597858ef049924604c7a421a18e02e34528182e8abdd00726a2f70f01fdd2"
+    },
+    {
+      "operation": 4,
+      "arguments": [
+        "add",
+        "--root",
+        "<LEARNING_ROOT>",
+        "--experience",
+        "<LEARNING_ROOT>/requests/domain-preparation-20261104.md"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "63139e2529371bcba338332414b967ee909e354181b4fd161d14a59ea61e8fb8"
+    },
+    {
+      "operation": 5,
+      "arguments": [
+        "observe",
+        "--root",
+        "<LEARNING_ROOT>",
+        "--id",
+        "domain-preparation-20261104",
+        "--observation",
+        "<LEARNING_ROOT>/requests/primary_01-domain-feedback.md",
+        "--expected-revision",
+        "0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "440d9e7c9e35f68b2937b7262c4eff8553109e8c7f12fc22fffe9fa40892e77e"
+    },
+    {
+      "operation": 6,
+      "arguments": [
+        "observe",
+        "--root",
+        "<LEARNING_ROOT>",
+        "--id",
+        "domain-preparation-20261104",
+        "--observation",
+        "<LEARNING_ROOT>/requests/primary_02-domain-feedback.md",
+        "--expected-revision",
+        "1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "f6aedafbcf0c97452d1ab8a24122ecc99d027558025ff329c1b6a32d3bd30a7c"
+    },
+    {
+      "operation": 7,
+      "arguments": [
+        "retrieve",
+        "--root",
+        "<LEARNING_ROOT>",
+        "--query",
+        "<LEARNING_ROOT>/requests/query.md"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "5d9c6d7602abc16e264292e305353b2f7213f9f8f396a7e84ecc799370ef4049"
+    }
+  ],
+  "scope": "Actual helper persistence and retrieval of observed study feedback; not another Agent transfer trial."
+}

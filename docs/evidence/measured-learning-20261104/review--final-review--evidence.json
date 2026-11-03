@@ -1,0 +1,247 @@
+{
+  "scope": "Read-only original/public study and portable feedback claim checks. No model invocation, credentials, global chats, or sealed reserve inputs/graders.",
+  "errors": [],
+  "actual_invocations": 21,
+  "controlled_trials": 18,
+  "excluded_original_block": [
+    "primary_01-r1-baseline",
+    "primary_01-r1-domain",
+    "primary_01-r1-general"
+  ],
+  "known_native_tokens": 2772032,
+  "unknown_usage_invocations": 1,
+  "active_trial_seconds": 1909.7995434975019,
+  "dispatch_through_delivery_seconds": 2262.740697,
+  "recomputed_groups": [
+    {
+      "task": "primary_01",
+      "arm": "baseline",
+      "native_tokens": 123534,
+      "complete_seconds": 80.01002870802768
+    },
+    {
+      "task": "primary_01",
+      "arm": "general",
+      "native_tokens": 113227,
+      "complete_seconds": 71.44764083297923
+    },
+    {
+      "task": "primary_01",
+      "arm": "domain",
+      "native_tokens": 155436,
+      "complete_seconds": 85.96746137493756
+    },
+    {
+      "task": "primary_02",
+      "arm": "baseline",
+      "native_tokens": 115570,
+      "complete_seconds": 80.237793249893
+    },
+    {
+      "task": "primary_02",
+      "arm": "general",
+      "native_tokens": 136994,
+      "complete_seconds": 80.73068720800802
+    },
+    {
+      "task": "primary_02",
+      "arm": "domain",
+      "native_tokens": 159618,
+      "complete_seconds": 82.3458704170771
+    }
+  ],
+  "native_record_checks": [
+    {
+      "id": "primary_01-r1-domain",
+      "native_turns": 1,
+      "total_tokens": 127987,
+      "quality_pass": true
+    },
+    {
+      "id": "primary_01-r1-baseline",
+      "native_turns": 0,
+      "total_tokens": null,
+      "quality_pass": false
+    },
+    {
+      "id": "primary_01-r1-general",
+      "native_turns": 1,
+      "total_tokens": 120328,
+      "quality_pass": true
+    },
+    {
+      "id": "primary_02-r1-general",
+      "native_turns": 1,
+      "total_tokens": 115937,
+      "quality_pass": true
+    },
+    {
+      "id": "primary_02-r1-domain",
+      "native_turns": 1,
+      "total_tokens": 209740,
+      "quality_pass": true
+    },
+    {
+      "id": "primary_02-r1-baseline",
+      "native_turns": 1,
+      "total_tokens": 151180,
+      "quality_pass": true
+    },
+    {
+      "id": "primary_02-r2-domain",
+      "native_turns": 1,
+      "total_tokens": 119688,
+      "quality_pass": true
+    },
+    {
+      "id": "primary_02-r2-general",
+      "native_turns": 1,
+      "total_tokens": 168195,
+      "quality_pass": true
+    },
+    {
+      "id": "primary_02-r2-baseline",
+      "native_turns": 1,
+      "total_tokens": 115570,
+      "quality_pass": true
+    },
+    {
+      "id": "primary_01-r3-baseline",
+      "native_turns": 1,
+      "total_tokens": 123256,
+      "quality_pass": true
+    },
+    {
+      "id": "primary_01-r3-general",
+      "native_turns": 1,
+      "total_tokens": 113227,
+      "quality_pass": true
+    },
+    {
+      "id": "primary_01-r3-domain",
+      "native_turns": 1,
+      "total_tokens": 155436,
+      "quality_pass": true
+    },
+    {
+      "id": "primary_01-r2-general",
+      "native_turns": 1,
+      "total_tokens": 107140,
+      "quality_pass": true
+    },
+    {
+      "id": "primary_01-r2-domain",
+      "native_turns": 1,
+      "total_tokens": 210042,
+      "quality_pass": true
+    },
+    {
+      "id": "primary_01-r2-baseline",
+      "native_turns": 1,
+      "total_tokens": 127905,
+      "quality_pass": true
+    },
+    {
+      "id": "primary_02-r3-domain",
+      "native_turns": 1,
+      "total_tokens": 159618,
+      "quality_pass": true
+    },
+    {
+      "id": "primary_02-r3-baseline",
+      "native_turns": 1,
+      "total_tokens": 114967,
+      "quality_pass": true
+    },
+    {
+      "id": "primary_02-r3-general",
+      "native_turns": 1,
+      "total_tokens": 136994,
+      "quality_pass": true
+    },
+    {
+      "id": "primary_01-r1-domain-infra2",
+      "native_turns": 1,
+      "total_tokens": 126353,
+      "quality_pass": true
+    },
+    {
+      "id": "primary_01-r1-baseline-infra2",
+      "native_turns": 1,
+      "total_tokens": 123534,
+      "quality_pass": true
+    },
+    {
+      "id": "primary_01-r1-general-infra2",
+      "native_turns": 1,
+      "total_tokens": 144935,
+      "quality_pass": true
+    }
+  ],
+  "public_export_entries_verified": 1236,
+  "duplicate_identical_export_paths": [
+    "overhead/summary.json"
+  ],
+  "analysis_original_public": {
+    "path": "analysis.json",
+    "original_bytes": 68936,
+    "original_sha256": "0d4d209face8b2966210e99168c8b4cfb1451c4eb07425f7b1b653a724461c7a",
+    "public_bytes": 68843,
+    "public_sha256": "8cc0867ed00952adbeb2f62314d2cb6732a24fb238b8af13d3b042bf298f9872",
+    "path_redacted": true,
+    "reasoning_items_removed": 0
+  },
+  "portable_journals": [
+    {
+      "id": "domain-preparation-20261104",
+      "outcomes": [
+        "harmful",
+        "harmful"
+      ],
+      "validation": "hypothesis"
+    },
+    {
+      "id": "general-preparation-20261104",
+      "outcomes": [
+        "inconclusive",
+        "harmful"
+      ],
+      "validation": "hypothesis"
+    }
+  ],
+  "portable_operations": 7,
+  "package_commands": 14,
+  "retained_package_invocation_error": "The coordinator initially passed record/--file to a CLI requiring --request. Original exit-2 stderr retained; corrected invocation succeeded. No product code or acceptance condition changed.",
+  "regression_raw_tail": [
+    "",
+    "----------------------------------------------------------------------",
+    "Ran 171 tests in 14.385s",
+    "",
+    "OK"
+  ],
+  "chronology": {
+    "policy_freeze": "2026-11-03T17:15:17.274352+00:00",
+    "primary_input_freezes": {
+      "primary_01": "2026-11-03T17:25:37.324988+00:00",
+      "primary_02": "2026-11-03T17:25:37.336169+00:00"
+    },
+    "primary_evaluator_freezes": {
+      "primary_01": "2026-11-03T17:28:44.354086+00:00",
+      "primary_02": "2026-11-03T17:28:44.354086+00:00"
+    },
+    "full_candidate_freeze": "2026-11-03T17:41:48.493256+00:00",
+    "primary_release": "2026-11-03T17:45:29.471137+00:00"
+  },
+  "acceptance_line_9_at_review": {
+    "en": "The general/domain policy text and source-experience choices froze at 17:15:17 UTC, before independent target authoring. Primary input and evaluator manifests froze at 17:25:37 and 17:28:44; complete strategy/source/executable snapshots froze at 17:41:48, before the 17:45:29 target release. This is not a claim that complete executable snapshots preceded target authoring. The author did not read candidate policies/code, and the coordinator did not open sealed target contents before release. Released 0.6.1 was the baseline. Each task had three fresh-context repetitions per arm, with seeded order, the same CLI/model/effort/transport, a 240-second Agent limit, 24 command items and an independently invoked artifact grader. The grader's expected results were not sent to the solving Agents. All initial attempts completed before comparative outcomes were opened.",
+    "zh-CN": "通用/领域提案文本和来源经验选择于 UTC 17:15:17 冻结，早于独立目标编写。主任务输入和验收器清单分别于 17:25:37、17:28:44 冻结；完整策略/来源/可执行快照于 17:41:48 冻结，早于 17:45:29 目标发布，不能称为早于目标编写。作者未读候选提案/代码，总控在发布前未打开封存目标内容。原版为已发布 0.6.1。每个任务、每路三个新上下文重复，按种子排序；CLI、模型、推理强度与传输相同，Agent 限时 240 秒、24 个命令项，另行调用独立产物验收。解题 Agent 没有收到验收标准答案。初始尝试全部结束后才打开比较结果。"
+  },
+  "reviewed_file_hashes": {
+    "docs/release-0.7.0-acceptance.en.md": "cbd0ab5e54b06987fdb37b3ba47e63a5d723ecb0e6268c3f7633113ab0fed287",
+    "docs/release-0.7.0-acceptance.zh-CN.md": "a4a5f9d4a147e15d72370ae5c0c369c00cdf770a32e115e69dc3cbff5da34e67",
+    "docs/evidence/measured-learning-20261104/analysis.json": "8cc0867ed00952adbeb2f62314d2cb6732a24fb238b8af13d3b042bf298f9872",
+    "docs/evidence/measured-learning-20261104/trace-review.json": "7248e9e992b876b00f0146eeae301ed63dd14c07bf126a24b5e5a30c09e622b2",
+    "docs/evidence/measured-learning-20261104/package.json": "fc344d70d82d7c156c781086b519e552218e03846474cb05f0a252124a00dad6",
+    "docs/examples/measured-learning/evidence/analysis.json": "8cc0867ed00952adbeb2f62314d2cb6732a24fb238b8af13d3b042bf298f9872"
+  }
+}

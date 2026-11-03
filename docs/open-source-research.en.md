@@ -1,4 +1,4 @@
-# Open-source research and interoperability for 0.6.1
+# Open-source research and interoperability for 0.7.0
 
 English · [简体中文](open-source-research.zh-CN.md)
 

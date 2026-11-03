@@ -1,6 +1,6 @@
 # Personal Agent Growth
 
-[English](README.md) · [简体中文](README.zh-CN.md) · **0.6.1**
+[English](README.md) · [简体中文](README.zh-CN.md) · **0.7.0**
 
 [![Checks](https://github.com/KarmenLoop/personal-agent-growth/actions/workflows/check.yml/badge.svg)](https://github.com/KarmenLoop/personal-agent-growth/actions/workflows/check.yml)
 [![Release](https://img.shields.io/github/v/release/KarmenLoop/personal-agent-growth)](https://github.com/KarmenLoop/personal-agent-growth/releases/latest)
@@ -9,9 +9,18 @@ Personal Agent Growth is an open-source skill for preparing, executing, reviewin
 
 An agent should be able to explain which observation changed its decision, reuse the resulting lesson in another task, and show the result. A larger prompt or a growing collection of notes is not sufficient evidence of improvement.
 
-## Evidence-based judgment in 0.6.1
+## Evidence-based judgment introduced in 0.6.1
 
-Technical diagnoses remain hypotheses, including those proposed by the user. Confidence and repeated disagreement alone do not change a supported conclusion; valid evidence or stronger reasoning does. The protocol also requires withdrawing unsupported certainty, investigating firsthand reports, and honoring changed goals or permissions. [Judgment protocol](references/evidence-based-judgment.en.md) · [Behavioral acceptance](docs/release-0.6.1-acceptance.en.md). This is a portable instruction layer, not a change to model training or a guarantee against sycophancy.
+Technical diagnoses remain hypotheses, including those proposed by the user. Confidence and repeated disagreement alone do not change a supported conclusion; valid evidence or stronger reasoning does. The protocol also requires withdrawing unsupported certainty, investigating firsthand reports, and honoring changed goals or permissions. [Judgment protocol](references/evidence-based-judgment.en.md) · [Behavioral acceptance](docs/release-0.7.0-acceptance.en.md). This is a portable instruction layer, not a change to model training or a guarantee against sycophancy.
+
+## Measured learning in 0.7.0
+
+[Detailed flow](docs/diagrams/measured-learning.en.svg) · [Editable Mermaid](docs/diagrams/measured-learning.en.mmd)
+
+
+Freeze strategies before releasing unfamiliar tasks, capture actual native usage and complete execution windows, and propose cross-domain analogies through explicit variable and directed-relation mappings. Markdown remains the learning record. A structural match is a hypothesis; improvements require independent artifact checks. [Tutorial](docs/measured-learning.en.md) · [Acceptance and limits](docs/release-0.7.0-acceptance.en.md).
+
+The first two-task study preserved quality in all 18 controlled trials, but neither candidate met its predeclared resource-benefit gate. The baseline remains active; negative feedback is retained. Native usage is measured, while billed fees remain unknown.
 
 ## Start here
 
@@ -63,7 +72,7 @@ The skill depends on its host for the model, tools, execution permissions, and s
 
 ## Quick start
 
-Download the **complete delivery bundle** and `SHA256SUMS.txt` from [v0.6.1](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.6.1). Extract it and follow [START-HERE.md](START-HERE.md). Python 3.11+ is needed for the utilities; there are no runtime pip dependencies.
+Download the **complete delivery bundle** and `SHA256SUMS.txt` from [v0.7.0](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.7.0). Extract it and follow [START-HERE.md](START-HERE.md). Python 3.11+ is needed for the utilities; there are no runtime pip dependencies.
 
 From the extracted full bundle on macOS:
 
@@ -98,7 +107,7 @@ Weights are not trained or updated by this project. A hosted model may not expos
 
 ![Full-task token and time measurements, including the timing anomaly](docs/images/cross-domain-0.4.1.png)
 
-Repository tests establish file, utility, and protocol behavior. They do not replace Windows desktop Agent execution, a fresh authenticated Cursor model turn, cross-device synchronization, or operation after the app closes. Current publication checks and their exact scope are in the [0.6.1 acceptance report](docs/release-0.6.1-acceptance.en.md).
+Repository tests establish file, utility, and protocol behavior. They do not replace Windows desktop Agent execution, a fresh authenticated Cursor model turn, cross-device synchronization, or operation after the app closes. Current publication checks and their exact scope are in the [0.7.0 acceptance report](docs/release-0.7.0-acceptance.en.md).
 
 ## Development
 
@@ -106,7 +115,7 @@ Repository tests establish file, utility, and protocol behavior. They do not rep
 python3 -B -m unittest discover -s tests -v
 python3 -B scripts/check_publication.py
 python3 -B tools/build_release.py --output dist
-python3 -B scripts/verify_handoff.py --archive dist/personal-agent-growth-0.6.1.zip --manifest dist/manifest.json
+python3 -B scripts/verify_handoff.py --archive dist/personal-agent-growth-0.7.0.zip --manifest dist/manifest.json
 python3 -B tools/build_delivery.py --output /path/to/fresh-output
 ```
 

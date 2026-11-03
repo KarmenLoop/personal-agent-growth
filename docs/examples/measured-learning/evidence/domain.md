@@ -1,0 +1,3 @@
+# Causal-transfer preparation candidate
+
+Apply the existing Skill. Retrieve a source experience only as a candidate explanation. Explicitly map source variables and directed relationships onto the target problem; identify required conditions, the missing condition most likely to break the analogy, an observable prediction and a falsifier. A matching tag or domain name alone does not establish transfer. Check the decisive condition using available task evidence. Adopt, adapt or reject the source lesson accordingly, preserving the scope of both the old finding and the target result. Deliver the requested artifact; the mapping is preparation, not a substitute for completion. This policy supplies no target diagnosis or answer.

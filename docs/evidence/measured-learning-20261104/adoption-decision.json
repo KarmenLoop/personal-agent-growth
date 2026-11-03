@@ -1,0 +1,11 @@
+{
+  "at": "2026-11-03T18:31:08.763405+00:00",
+  "type": "adoption-decision",
+  "global_strategy_activated": false,
+  "baseline_retained": true,
+  "conditional_source_ablation": "NOT_TRIGGERED: domain qualifies on neither primary task",
+  "no_favorable_result_retry": true,
+  "remaining_leaf_token_budget": 227968,
+  "billing": "UNKNOWN",
+  "next_research": "A sparse, relevance-gated preparation candidate may be proposed for a future prospectively budgeted study. Neither sealed reserve is opened or used to repair these policies."
+}

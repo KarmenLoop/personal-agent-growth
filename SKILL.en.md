@@ -3,7 +3,7 @@ name: personal-agent-growth
 description: Complete ongoing tasks that need preparation, evidence-based revision, review, shared memory, or bounded recursive improvement of prompts, tools and workflow components. Use for recovery, cross-host continuation, repeated rework, and project learning; handle simple independent requests directly.
 license: AGPL-3.0-only
 metadata:
-  version: "0.6.1"
+  version: "0.7.0"
 ---
 
 # Personal Agent Growth
@@ -41,6 +41,8 @@ Check whether local success advances the whole objective. Attribute tool failure
 Bind every result to the inspected object/version, environment, reached stage, and raw output. If the object or directory changed, reassess attribution before reusing a conclusion. An exit code or PASS label alone is insufficient. Retain each attempt's command, output, and status before repair; label missing original output rather than replacing it with a retrospective summary.
 
 ## Learn and improve
+
+For strategy changes, unfamiliar-task transfer, or efficiency claims, read [held-out tasks, costs and causal transfer](references/measured-learning.en.md). Freeze candidates before releasing targets; use real Agents and independent artifact checks. Retain all attempts and complete cost records. Optional causal mappings propose testable hypotheses. Report native tokens, charges, inference time and complete elapsed time separately; preserve unknowns and retain the baseline when benefit is insufficient.
 
 For unfamiliar work or ideas from another domain, read [adaptive learning and experience transfer](references/adaptive-learning.en.md). Derive open questions from the current goal; retrieve by problem structure, mechanism, and conditions. An analogy proposes a hypothesis. Use `scripts/experience_transfer.py` for lessons and positive or negative feedback, and `scripts/adaptive_learning.py` for plans, actual starts, and observations. Replan after feedback without automatically accepting its factual interpretation; reconcile unknown external outcomes before resuming. Domain names and knowledge counts are not capability gates. The host Agent proposes questions, executes tools, and reviews deliverables.
 

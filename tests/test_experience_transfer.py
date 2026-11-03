@@ -11,6 +11,7 @@ import unittest
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 import capability_ledger as store
 import experience_transfer as transfer
+from test_causal_models import graph as causal_graph, mapping as causal_mapping
 
 
 class ExperienceTransferTests(unittest.TestCase):
@@ -76,6 +77,37 @@ class ExperienceTransferTests(unittest.TestCase):
         self.assertEqual(candidate["snapshot_ref"], added["snapshot_ref"])
         self.assertEqual(candidate["snapshot_ref"]["revision"], 0)
         self.assertEqual(candidate["snapshot_ref"]["head_sha256"], candidate["snapshot_ref"]["sha256"])
+
+    def test_renamed_causal_structure_can_retrieve_without_overlapping_tags(self):
+        self.add(causal_model=causal_graph())
+        result = self.retrieve(problem_structure=["fresh-context"], mechanisms=["different-words"],
+                               causal_context=causal_graph("conditions", "recommendation"),
+                               causal_mappings={"stages": causal_mapping()})
+        candidate = result["candidates"][0]
+        self.assertTrue(candidate["causal_match"]["compatible"])
+        self.assertTrue(candidate["eligible_for_probe"])
+        self.assertEqual(candidate["matches"]["problem_structure"], [])
+        self.assertEqual(candidate["matches"]["mechanisms"], [])
+
+    def test_causal_analogy_still_requires_conditions_and_valid_direction(self):
+        self.add(causal_model=causal_graph())
+        query = {"causal_context": causal_graph("conditions", "recommendation"),
+                 "causal_mappings": {"stages": causal_mapping()}}
+        self.assertFalse(self.retrieve(facts={"stage-observable": False}, **query)["candidates"][0]["eligible_for_probe"])
+        query["causal_context"]["relations"][0].update({"from":"recommendation", "to":"conditions"})
+        candidate = self.retrieve(**query)["candidates"][0]
+        self.assertFalse(candidate["eligible_for_probe"])
+        self.assertIn("directed_relations_not_preserved", candidate["causal_match"]["issues"])
+
+    def test_source_model_requires_mapping_and_legacy_explicit_mapping_cannot_bypass(self):
+        self.add(causal_model=causal_graph())
+        self.assertFalse(self.retrieve()["candidates"][0]["eligible_for_probe"])
+        self.add("legacy")
+        result = self.retrieve(causal_context=causal_graph("conditions", "recommendation"),
+                               causal_mappings={"legacy": causal_mapping()})
+        candidate = next(row for row in result["candidates"] if row["id"] == "legacy")
+        self.assertFalse(candidate["eligible_for_probe"])
+        self.assertIn("source_causal_model_missing", candidate["causal_match"]["issues"])
 
     def test_domain_or_keywords_alone_do_not_admit(self):
         self.add()

@@ -1,0 +1,1979 @@
+{
+  "scope": "Actual real-Agent task artifacts and native resource observations; original operational failures retained. No model training or universal mastery claim.",
+  "model_config": {
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "low",
+    "transport": "openai-http",
+    "training": false,
+    "cli_version": "codex-cli 0.165.0-alpha.1.2",
+    "backend_weight_identity": "not independently attested",
+    "automatic_unrelated_context": false,
+    "nested_agents": false
+  },
+  "actual_invocations": 21,
+  "controlled_trials": 18,
+  "task_units": 2,
+  "replications_per_arm_per_task": 3,
+  "infrastructure_contaminated_original_blocks": [
+    [
+      "primary_01",
+      1
+    ]
+  ],
+  "unresolved_blocks": [],
+  "groups": [
+    {
+      "task_id": "primary_01",
+      "arm": "baseline",
+      "trials": 3,
+      "accepted_artifacts": 3,
+      "all_quality_pass": true,
+      "usage_complete": true,
+      "native_token_samples": [
+        123534,
+        127905,
+        123256
+      ],
+      "complete_seconds_samples": [
+        80.01002870802768,
+        86.72495629102923,
+        77.6467491670046
+      ],
+      "median_native_tokens": 123534,
+      "median_complete_seconds": 80.01002870802768,
+      "known_tokens_per_accepted_artifact": 124898.33333333333,
+      "billed_usd": null,
+      "trial_ids": [
+        "primary_01-r1-baseline-infra2",
+        "primary_01-r2-baseline",
+        "primary_01-r3-baseline"
+      ]
+    },
+    {
+      "task_id": "primary_01",
+      "arm": "general",
+      "trials": 3,
+      "accepted_artifacts": 3,
+      "all_quality_pass": true,
+      "usage_complete": true,
+      "native_token_samples": [
+        144935,
+        107140,
+        113227
+      ],
+      "complete_seconds_samples": [
+        85.92736116610467,
+        63.150102208019234,
+        71.44764083297923
+      ],
+      "median_native_tokens": 113227,
+      "median_complete_seconds": 71.44764083297923,
+      "known_tokens_per_accepted_artifact": 121767.33333333333,
+      "billed_usd": null,
+      "trial_ids": [
+        "primary_01-r1-general-infra2",
+        "primary_01-r2-general",
+        "primary_01-r3-general"
+      ]
+    },
+    {
+      "task_id": "primary_01",
+      "arm": "domain",
+      "trials": 3,
+      "accepted_artifacts": 3,
+      "all_quality_pass": true,
+      "usage_complete": true,
+      "native_token_samples": [
+        126353,
+        210042,
+        155436
+      ],
+      "complete_seconds_samples": [
+        85.96746137493756,
+        90.68319650006015,
+        77.81162562500685
+      ],
+      "median_native_tokens": 155436,
+      "median_complete_seconds": 85.96746137493756,
+      "known_tokens_per_accepted_artifact": 163943.66666666666,
+      "billed_usd": null,
+      "trial_ids": [
+        "primary_01-r1-domain-infra2",
+        "primary_01-r2-domain",
+        "primary_01-r3-domain"
+      ]
+    },
+    {
+      "task_id": "primary_02",
+      "arm": "baseline",
+      "trials": 3,
+      "accepted_artifacts": 3,
+      "all_quality_pass": true,
+      "usage_complete": true,
+      "native_token_samples": [
+        151180,
+        115570,
+        114967
+      ],
+      "complete_seconds_samples": [
+        90.04446374997497,
+        80.237793249893,
+        52.50533437507693
+      ],
+      "median_native_tokens": 115570,
+      "median_complete_seconds": 80.237793249893,
+      "known_tokens_per_accepted_artifact": 127239.0,
+      "billed_usd": null,
+      "trial_ids": [
+        "primary_02-r1-baseline",
+        "primary_02-r2-baseline",
+        "primary_02-r3-baseline"
+      ]
+    },
+    {
+      "task_id": "primary_02",
+      "arm": "general",
+      "trials": 3,
+      "accepted_artifacts": 3,
+      "all_quality_pass": true,
+      "usage_complete": true,
+      "native_token_samples": [
+        115937,
+        168195,
+        136994
+      ],
+      "complete_seconds_samples": [
+        80.73068720800802,
+        98.61609400005545,
+        80.24881262506824
+      ],
+      "median_native_tokens": 136994,
+      "median_complete_seconds": 80.73068720800802,
+      "known_tokens_per_accepted_artifact": 140375.33333333334,
+      "billed_usd": null,
+      "trial_ids": [
+        "primary_02-r1-general",
+        "primary_02-r2-general",
+        "primary_02-r3-general"
+      ]
+    },
+    {
+      "task_id": "primary_02",
+      "arm": "domain",
+      "trials": 3,
+      "accepted_artifacts": 3,
+      "all_quality_pass": true,
+      "usage_complete": true,
+      "native_token_samples": [
+        209740,
+        119688,
+        159618
+      ],
+      "complete_seconds_samples": [
+        124.72290679102298,
+        74.35189233301207,
+        82.3458704170771
+      ],
+      "median_native_tokens": 159618,
+      "median_complete_seconds": 82.3458704170771,
+      "known_tokens_per_accepted_artifact": 163015.33333333334,
+      "billed_usd": null,
+      "trial_ids": [
+        "primary_02-r1-domain",
+        "primary_02-r2-domain",
+        "primary_02-r3-domain"
+      ]
+    }
+  ],
+  "comparisons": [
+    {
+      "task_id": "primary_01",
+      "arm": "general",
+      "relative_native_token_gain": 0.08343452005116,
+      "relative_time_change": -0.10701643298109886,
+      "qualifies_on_this_task": false,
+      "reasons": [
+        "Native token median gain below predeclared 10 percent"
+      ],
+      "scope": "Observed task-specific criteria only; small sample, no general or monetary benefit established"
+    },
+    {
+      "task_id": "primary_01",
+      "arm": "domain",
+      "relative_native_token_gain": -0.25824469376851716,
+      "relative_time_change": 0.07445857429510139,
+      "qualifies_on_this_task": false,
+      "reasons": [
+        "Native token median gain below predeclared 10 percent"
+      ],
+      "scope": "Observed task-specific criteria only; small sample, no general or monetary benefit established"
+    },
+    {
+      "task_id": "primary_02",
+      "arm": "general",
+      "relative_native_token_gain": -0.18537682789651294,
+      "relative_time_change": 0.006142915179383701,
+      "qualifies_on_this_task": false,
+      "reasons": [
+        "Native token median gain below predeclared 10 percent"
+      ],
+      "scope": "Observed task-specific criteria only; small sample, no general or monetary benefit established"
+    },
+    {
+      "task_id": "primary_02",
+      "arm": "domain",
+      "relative_native_token_gain": -0.38113697326295753,
+      "relative_time_change": 0.026272870698458517,
+      "qualifies_on_this_task": false,
+      "reasons": [
+        "Native token median gain below predeclared 10 percent"
+      ],
+      "scope": "Observed task-specific criteria only; small sample, no general or monetary benefit established"
+    }
+  ],
+  "operational_account": {
+    "known_native_tokens": 2772032,
+    "unmetered_invocations": 1,
+    "active_trial_seconds_sum": 1909.7995434975019,
+    "first_dispatch_through_last_delivery_seconds": 2262.740697,
+    "billed_usd": null,
+    "billing_status": "Unavailable; no financial savings claim"
+  },
+  "global_strategy_activated": false,
+  "attribution_limit": "Baseline and general arms can read the legacy source lesson; domain adds a causal representation and mapping procedure. Differences concern the whole frozen package, not the isolated effect of one memory field.",
+  "trials": [
+    {
+      "id": "primary_01-r1-domain",
+      "original_slot": "primary_01-r1-domain",
+      "task_id": "primary_01",
+      "replicate": 1,
+      "arm": "domain",
+      "native_tokens": 127987,
+      "usage_coverage": "complete_reported_turns",
+      "infrastructure_contaminated": false,
+      "cost_record_sha256": "134238a255d9448bbe0669e85bb01f91efad19cb3275e6c90e70091e1a44221e",
+      "controller_exit": 0,
+      "process_exit": 0,
+      "stop_reason": null,
+      "native_session_ids": [
+        "01a1a284-1ff5-7581-aa44-f7ea891366a7"
+      ],
+      "artifact_quality_pass": true,
+      "mandatory_checks": [
+        {
+          "id": "output_directory",
+          "pass": true,
+          "detail": "Output directory exists and is not a symlink."
+        },
+        {
+          "id": "required_artifacts",
+          "pass": true,
+          "detail": "Missing, empty, oversized, or non-ordinary files: []"
+        },
+        {
+          "id": "result_json",
+          "pass": true,
+          "detail": "Strict JSON object, with no duplicate keys or nonfinite constants."
+        },
+        {
+          "id": "frozen_inputs",
+          "pass": true,
+          "detail": "Frozen public inputs and the complete raw file set are unchanged."
+        },
+        {
+          "id": "input_fingerprints",
+          "pass": true,
+          "detail": "Result identifies every actual raw input by SHA-256."
+        },
+        {
+          "id": "task_identity",
+          "pass": true,
+          "detail": "Schema and task ID match this frozen target."
+        },
+        {
+          "id": "data_provenance",
+          "pass": true,
+          "detail": "Historical versus derived-fixture scope is attributed correctly."
+        },
+        {
+          "id": "inventory_coverage",
+          "pass": true,
+          "detail": "Exactly the declared/present file union is inventoried with unique identities."
+        },
+        {
+          "id": "byte_identity_and_attribution",
+          "pass": true,
+          "detail": "Actual bytes, declared public identity, source provenance, transformation relation, and statuses are correct."
+        },
+        {
+          "id": "handoff_summary",
+          "pass": true,
+          "detail": "Counts and readiness reflect artifact integrity, including verified redacted derivatives."
+        }
+      ],
+      "execution_completed": true,
+      "input_integrity": true,
+      "complete_task_seconds": 91.51765362499282,
+      "agent_process_seconds": 91.34217325004283,
+      "tool_union_seconds": 0.30443829216528684,
+      "input_tokens": 124339,
+      "cached_input_tokens": 88448,
+      "output_tokens": 3648,
+      "billed_usd": null,
+      "cost_record": "trial-costs/primary_01-r1-domain.md",
+      "grade_sha256": "0fa9af3880485cc9326e700298184dc059a6fb6ef373aa0f745f6c61f810dc3b",
+      "started_at": "2026-11-03T17:45:29.670893+00:00",
+      "finished_at": "2026-11-03T17:47:01.189549+00:00"
+    },
+    {
+      "id": "primary_01-r1-baseline",
+      "original_slot": "primary_01-r1-baseline",
+      "task_id": "primary_01",
+      "replicate": 1,
+      "arm": "baseline",
+      "native_tokens": null,
+      "usage_coverage": "partial_or_unavailable",
+      "infrastructure_contaminated": true,
+      "cost_record_sha256": "58ed18f3a75ae15f2a390c699ebe291101df623f174bca348054eee81d261d13",
+      "controller_exit": 0,
+      "process_exit": -15,
+      "stop_reason": "deadline",
+      "native_session_ids": [
+        "01a1a285-8509-7903-b8b0-42cb8fb9475c"
+      ],
+      "artifact_quality_pass": false,
+      "mandatory_checks": [
+        {
+          "id": "output_directory",
+          "pass": true,
+          "detail": "Output directory exists and is not a symlink."
+        },
+        {
+          "id": "required_artifacts",
+          "pass": false,
+          "detail": "Missing, empty, oversized, or non-ordinary files: ['audit.csv', 'result.json', 'report.md']"
+        },
+        {
+          "id": "result_json",
+          "pass": false,
+          "detail": "Strict JSON object, with no duplicate keys or nonfinite constants."
+        },
+        {
+          "id": "frozen_inputs",
+          "pass": true,
+          "detail": "Frozen public inputs and the complete raw file set are unchanged."
+        },
+        {
+          "id": "input_fingerprints",
+          "pass": false,
+          "detail": "Result identifies every actual raw input by SHA-256."
+        },
+        {
+          "id": "task_identity",
+          "pass": false,
+          "detail": "Schema and task ID match this frozen target."
+        },
+        {
+          "id": "data_provenance",
+          "pass": false,
+          "detail": "Historical versus derived-fixture scope is attributed correctly."
+        },
+        {
+          "id": "domain_artifacts_readable",
+          "pass": false,
+          "detail": "[Errno 2] No such file or directory: '<TASK>/agent-work/primary_01-r1-baseline/output/audit.csv'"
+        }
+      ],
+      "execution_completed": false,
+      "input_integrity": true,
+      "complete_task_seconds": 240.30615050008055,
+      "agent_process_seconds": 240.11381624999922,
+      "tool_union_seconds": 8.737493772059679e-05,
+      "input_tokens": null,
+      "cached_input_tokens": null,
+      "output_tokens": null,
+      "billed_usd": null,
+      "cost_record": "trial-costs/primary_01-r1-baseline.md",
+      "grade_sha256": "132a11d1422ac337bc3277a9de2f4d01d71fe5350f01106aac06916661277800",
+      "started_at": "2026-11-03T17:47:01.402006+00:00",
+      "finished_at": "2026-11-03T17:51:01.710804+00:00"
+    },
+    {
+      "id": "primary_01-r1-general",
+      "original_slot": "primary_01-r1-general",
+      "task_id": "primary_01",
+      "replicate": 1,
+      "arm": "general",
+      "native_tokens": 120328,
+      "usage_coverage": "complete_reported_turns",
+      "infrastructure_contaminated": false,
+      "cost_record_sha256": "07dc764acb637f74821ea1c4f6fd292ed30fd27d660a3076ea986d61367de60c",
+      "controller_exit": 0,
+      "process_exit": 0,
+      "stop_reason": null,
+      "native_session_ids": [
+        "01a1a28e-82c4-7be2-ae29-615963f3b51f"
+      ],
+      "artifact_quality_pass": true,
+      "mandatory_checks": [
+        {
+          "id": "output_directory",
+          "pass": true,
+          "detail": "Output directory exists and is not a symlink."
+        },
+        {
+          "id": "required_artifacts",
+          "pass": true,
+          "detail": "Missing, empty, oversized, or non-ordinary files: []"
+        },
+        {
+          "id": "result_json",
+          "pass": true,
+          "detail": "Strict JSON object, with no duplicate keys or nonfinite constants."
+        },
+        {
+          "id": "frozen_inputs",
+          "pass": true,
+          "detail": "Frozen public inputs and the complete raw file set are unchanged."
+        },
+        {
+          "id": "input_fingerprints",
+          "pass": true,
+          "detail": "Result identifies every actual raw input by SHA-256."
+        },
+        {
+          "id": "task_identity",
+          "pass": true,
+          "detail": "Schema and task ID match this frozen target."
+        },
+        {
+          "id": "data_provenance",
+          "pass": true,
+          "detail": "Historical versus derived-fixture scope is attributed correctly."
+        },
+        {
+          "id": "inventory_coverage",
+          "pass": true,
+          "detail": "Exactly the declared/present file union is inventoried with unique identities."
+        },
+        {
+          "id": "byte_identity_and_attribution",
+          "pass": true,
+          "detail": "Actual bytes, declared public identity, source provenance, transformation relation, and statuses are correct."
+        },
+        {
+          "id": "handoff_summary",
+          "pass": true,
+          "detail": "Counts and readiness reflect artifact integrity, including verified redacted derivatives."
+        }
+      ],
+      "execution_completed": true,
+      "input_integrity": true,
+      "complete_task_seconds": 94.80276275007054,
+      "agent_process_seconds": 94.58855516603217,
+      "tool_union_seconds": 0.14470795600209385,
+      "input_tokens": 116536,
+      "cached_input_tokens": 90880,
+      "output_tokens": 3792,
+      "billed_usd": null,
+      "cost_record": "trial-costs/primary_01-r1-general.md",
+      "grade_sha256": "054ae37ec079c89dc15df2bf0f41aa090939e7f5db324bad05e2f785fa3bcab5",
+      "started_at": "2026-11-03T17:56:50.605035+00:00",
+      "finished_at": "2026-11-03T17:58:25.407743+00:00"
+    },
+    {
+      "id": "primary_02-r1-general",
+      "original_slot": "primary_02-r1-general",
+      "task_id": "primary_02",
+      "replicate": 1,
+      "arm": "general",
+      "native_tokens": 115937,
+      "usage_coverage": "complete_reported_turns",
+      "infrastructure_contaminated": false,
+      "cost_record_sha256": "3a401ca61a1f5410509fe2f36c946b2f1f62380bd66f33d3f7289577841a45bd",
+      "controller_exit": 0,
+      "process_exit": 0,
+      "stop_reason": null,
+      "native_session_ids": [
+        "01a1a28f-f53b-7490-a2e0-10038ebcfa3d"
+      ],
+      "artifact_quality_pass": true,
+      "mandatory_checks": [
+        {
+          "id": "output_directory",
+          "pass": true,
+          "detail": "Output directory exists and is not a symlink."
+        },
+        {
+          "id": "required_artifacts",
+          "pass": true,
+          "detail": "Missing, empty, oversized, or non-ordinary files: []"
+        },
+        {
+          "id": "result_json",
+          "pass": true,
+          "detail": "Strict JSON object, with no duplicate keys or nonfinite constants."
+        },
+        {
+          "id": "frozen_inputs",
+          "pass": true,
+          "detail": "Frozen public inputs and the complete raw file set are unchanged."
+        },
+        {
+          "id": "input_fingerprints",
+          "pass": true,
+          "detail": "Result identifies every actual raw input by SHA-256."
+        },
+        {
+          "id": "task_identity",
+          "pass": true,
+          "detail": "Schema and task ID match this frozen target."
+        },
+        {
+          "id": "data_provenance",
+          "pass": true,
+          "detail": "Historical versus derived-fixture scope is attributed correctly."
+        },
+        {
+          "id": "row_qc_and_calibration",
+          "pass": true,
+          "detail": "Every source row is attributed to its true revision/QC disposition and calibrated only when accepted."
+        },
+        {
+          "id": "station_day_import",
+          "pass": true,
+          "detail": "Configured station/date coverage, accepted replicate counts, and means are correct."
+        },
+        {
+          "id": "equal_station_index_and_coverage",
+          "pass": true,
+          "detail": "Daily indices use equal station weight and remain null on incomplete station coverage."
+        }
+      ],
+      "execution_completed": true,
+      "input_integrity": true,
+      "complete_task_seconds": 80.73068720800802,
+      "agent_process_seconds": 80.61269354110118,
+      "tool_union_seconds": 0.0004190410254523158,
+      "input_tokens": 112842,
+      "cached_input_tokens": 65024,
+      "output_tokens": 3095,
+      "billed_usd": null,
+      "cost_record": "trial-costs/primary_02-r1-general.md",
+      "grade_sha256": "cd89c05a4a1e4f10aa5f77fc8df2bcfe7df7ce8023d3dfdf7d317a62954035c5",
+      "started_at": "2026-11-03T17:58:25.633442+00:00",
+      "finished_at": "2026-11-03T17:59:46.364082+00:00"
+    },
+    {
+      "id": "primary_02-r1-domain",
+      "original_slot": "primary_02-r1-domain",
+      "task_id": "primary_02",
+      "replicate": 1,
+      "arm": "domain",
+      "native_tokens": 209740,
+      "usage_coverage": "complete_reported_turns",
+      "infrastructure_contaminated": false,
+      "cost_record_sha256": "90f16f7c413a4ad6254ee04b7a74fd0686891a659681862e8e92598372e7f697",
+      "controller_exit": 0,
+      "process_exit": 0,
+      "stop_reason": null,
+      "native_session_ids": [
+        "01a1a291-3128-7661-943e-ffe37ce7fb05"
+      ],
+      "artifact_quality_pass": true,
+      "mandatory_checks": [
+        {
+          "id": "output_directory",
+          "pass": true,
+          "detail": "Output directory exists and is not a symlink."
+        },
+        {
+          "id": "required_artifacts",
+          "pass": true,
+          "detail": "Missing, empty, oversized, or non-ordinary files: []"
+        },
+        {
+          "id": "result_json",
+          "pass": true,
+          "detail": "Strict JSON object, with no duplicate keys or nonfinite constants."
+        },
+        {
+          "id": "frozen_inputs",
+          "pass": true,
+          "detail": "Frozen public inputs and the complete raw file set are unchanged."
+        },
+        {
+          "id": "input_fingerprints",
+          "pass": true,
+          "detail": "Result identifies every actual raw input by SHA-256."
+        },
+        {
+          "id": "task_identity",
+          "pass": true,
+          "detail": "Schema and task ID match this frozen target."
+        },
+        {
+          "id": "data_provenance",
+          "pass": true,
+          "detail": "Historical versus derived-fixture scope is attributed correctly."
+        },
+        {
+          "id": "row_qc_and_calibration",
+          "pass": true,
+          "detail": "Every source row is attributed to its true revision/QC disposition and calibrated only when accepted."
+        },
+        {
+          "id": "station_day_import",
+          "pass": true,
+          "detail": "Configured station/date coverage, accepted replicate counts, and means are correct."
+        },
+        {
+          "id": "equal_station_index_and_coverage",
+          "pass": true,
+          "detail": "Daily indices use equal station weight and remain null on incomplete station coverage."
+        }
+      ],
+      "execution_completed": true,
+      "input_integrity": true,
+      "complete_task_seconds": 124.72290679102298,
+      "agent_process_seconds": 124.55015470797662,
+      "tool_union_seconds": 0.2772899572737515,
+      "input_tokens": 205545,
+      "cached_input_tokens": 171136,
+      "output_tokens": 4195,
+      "billed_usd": null,
+      "cost_record": "trial-costs/primary_02-r1-domain.md",
+      "grade_sha256": "9de4bec60025d5d9723fbf75844cdde2a9020387f0d0767e8dc2e81a633e02fe",
+      "started_at": "2026-11-03T17:59:46.525586+00:00",
+      "finished_at": "2026-11-03T18:01:51.248427+00:00"
+    },
+    {
+      "id": "primary_02-r1-baseline",
+      "original_slot": "primary_02-r1-baseline",
+      "task_id": "primary_02",
+      "replicate": 1,
+      "arm": "baseline",
+      "native_tokens": 151180,
+      "usage_coverage": "complete_reported_turns",
+      "infrastructure_contaminated": false,
+      "cost_record_sha256": "1d169a99f1d46bacf1b7b596d7e2717b70c5aab35d79a6323b2b0fc0d554927c",
+      "controller_exit": 0,
+      "process_exit": 0,
+      "stop_reason": null,
+      "native_session_ids": [
+        "01a1a293-1b73-74a2-8887-a57ca579f7a9"
+      ],
+      "artifact_quality_pass": true,
+      "mandatory_checks": [
+        {
+          "id": "output_directory",
+          "pass": true,
+          "detail": "Output directory exists and is not a symlink."
+        },
+        {
+          "id": "required_artifacts",
+          "pass": true,
+          "detail": "Missing, empty, oversized, or non-ordinary files: []"
+        },
+        {
+          "id": "result_json",
+          "pass": true,
+          "detail": "Strict JSON object, with no duplicate keys or nonfinite constants."
+        },
+        {
+          "id": "frozen_inputs",
+          "pass": true,
+          "detail": "Frozen public inputs and the complete raw file set are unchanged."
+        },
+        {
+          "id": "input_fingerprints",
+          "pass": true,
+          "detail": "Result identifies every actual raw input by SHA-256."
+        },
+        {
+          "id": "task_identity",
+          "pass": true,
+          "detail": "Schema and task ID match this frozen target."
+        },
+        {
+          "id": "data_provenance",
+          "pass": true,
+          "detail": "Historical versus derived-fixture scope is attributed correctly."
+        },
+        {
+          "id": "row_qc_and_calibration",
+          "pass": true,
+          "detail": "Every source row is attributed to its true revision/QC disposition and calibrated only when accepted."
+        },
+        {
+          "id": "station_day_import",
+          "pass": true,
+          "detail": "Configured station/date coverage, accepted replicate counts, and means are correct."
+        },
+        {
+          "id": "equal_station_index_and_coverage",
+          "pass": true,
+          "detail": "Daily indices use equal station weight and remain null on incomplete station coverage."
+        }
+      ],
+      "execution_completed": true,
+      "input_integrity": true,
+      "complete_task_seconds": 90.04446374997497,
+      "agent_process_seconds": 89.85269079101272,
+      "tool_union_seconds": 0.0006429158383980393,
+      "input_tokens": 147749,
+      "cached_input_tokens": 127488,
+      "output_tokens": 3431,
+      "billed_usd": null,
+      "cost_record": "trial-costs/primary_02-r1-baseline.md",
+      "grade_sha256": "ce641aafc715b3a89bc28344b4f934988e1ae168e5dd76a804fe6d22647b918d",
+      "started_at": "2026-11-03T18:01:51.491247+00:00",
+      "finished_at": "2026-11-03T18:03:21.535660+00:00"
+    },
+    {
+      "id": "primary_02-r2-domain",
+      "original_slot": "primary_02-r2-domain",
+      "task_id": "primary_02",
+      "replicate": 2,
+      "arm": "domain",
+      "native_tokens": 119688,
+      "usage_coverage": "complete_reported_turns",
+      "infrastructure_contaminated": false,
+      "cost_record_sha256": "13243cdc4e862ac5a1cec5da27f190dc0652470f340526931b274ecee699e3d3",
+      "controller_exit": 0,
+      "process_exit": 0,
+      "stop_reason": null,
+      "native_session_ids": [
+        "01a1a294-79d8-70a3-9f3c-6770f60f6645"
+      ],
+      "artifact_quality_pass": true,
+      "mandatory_checks": [
+        {
+          "id": "output_directory",
+          "pass": true,
+          "detail": "Output directory exists and is not a symlink."
+        },
+        {
+          "id": "required_artifacts",
+          "pass": true,
+          "detail": "Missing, empty, oversized, or non-ordinary files: []"
+        },
+        {
+          "id": "result_json",
+          "pass": true,
+          "detail": "Strict JSON object, with no duplicate keys or nonfinite constants."
+        },
+        {
+          "id": "frozen_inputs",
+          "pass": true,
+          "detail": "Frozen public inputs and the complete raw file set are unchanged."
+        },
+        {
+          "id": "input_fingerprints",
+          "pass": true,
+          "detail": "Result identifies every actual raw input by SHA-256."
+        },
+        {
+          "id": "task_identity",
+          "pass": true,
+          "detail": "Schema and task ID match this frozen target."
+        },
+        {
+          "id": "data_provenance",
+          "pass": true,
+          "detail": "Historical versus derived-fixture scope is attributed correctly."
+        },
+        {
+          "id": "row_qc_and_calibration",
+          "pass": true,
+          "detail": "Every source row is attributed to its true revision/QC disposition and calibrated only when accepted."
+        },
+        {
+          "id": "station_day_import",
+          "pass": true,
+          "detail": "Configured station/date coverage, accepted replicate counts, and means are correct."
+        },
+        {
+          "id": "equal_station_index_and_coverage",
+          "pass": true,
+          "detail": "Daily indices use equal station weight and remain null on incomplete station coverage."
+        }
+      ],
+      "execution_completed": true,
+      "input_integrity": true,
+      "complete_task_seconds": 74.35189233301207,
+      "agent_process_seconds": 74.230695166043,
+      "tool_union_seconds": 0.0003815409727394581,
+      "input_tokens": 116530,
+      "cached_input_tokens": 93696,
+      "output_tokens": 3158,
+      "billed_usd": null,
+      "cost_record": "trial-costs/primary_02-r2-domain.md",
+      "grade_sha256": "907310576abe300b948bfc64ca37ca7eea30887c51683e86d9cf73845b76be3c",
+      "started_at": "2026-11-03T18:03:21.738842+00:00",
+      "finished_at": "2026-11-03T18:04:36.090691+00:00"
+    },
+    {
+      "id": "primary_02-r2-general",
+      "original_slot": "primary_02-r2-general",
+      "task_id": "primary_02",
+      "replicate": 2,
+      "arm": "general",
+      "native_tokens": 168195,
+      "usage_coverage": "complete_reported_turns",
+      "infrastructure_contaminated": false,
+      "cost_record_sha256": "171543ef88cbbbc9e7d8ffc02a13ad5c83e5d6f6aa53e0b2c242b0358a47223f",
+      "controller_exit": 0,
+      "process_exit": 0,
+      "stop_reason": null,
+      "native_session_ids": [
+        "01a1a295-9da5-7b21-b39c-7acab32fb301"
+      ],
+      "artifact_quality_pass": true,
+      "mandatory_checks": [
+        {
+          "id": "output_directory",
+          "pass": true,
+          "detail": "Output directory exists and is not a symlink."
+        },
+        {
+          "id": "required_artifacts",
+          "pass": true,
+          "detail": "Missing, empty, oversized, or non-ordinary files: []"
+        },
+        {
+          "id": "result_json",
+          "pass": true,
+          "detail": "Strict JSON object, with no duplicate keys or nonfinite constants."
+        },
+        {
+          "id": "frozen_inputs",
+          "pass": true,
+          "detail": "Frozen public inputs and the complete raw file set are unchanged."
+        },
+        {
+          "id": "input_fingerprints",
+          "pass": true,
+          "detail": "Result identifies every actual raw input by SHA-256."
+        },
+        {
+          "id": "task_identity",
+          "pass": true,
+          "detail": "Schema and task ID match this frozen target."
+        },
+        {
+          "id": "data_provenance",
+          "pass": true,
+          "detail": "Historical versus derived-fixture scope is attributed correctly."
+        },
+        {
+          "id": "row_qc_and_calibration",
+          "pass": true,
+          "detail": "Every source row is attributed to its true revision/QC disposition and calibrated only when accepted."
+        },
+        {
+          "id": "station_day_import",
+          "pass": true,
+          "detail": "Configured station/date coverage, accepted replicate counts, and means are correct."
+        },
+        {
+          "id": "equal_station_index_and_coverage",
+          "pass": true,
+          "detail": "Daily indices use equal station weight and remain null on incomplete station coverage."
+        }
+      ],
+      "execution_completed": true,
+      "input_integrity": true,
+      "complete_task_seconds": 98.61609400005545,
+      "agent_process_seconds": 98.44427945802454,
+      "tool_union_seconds": 0.20495333068538457,
+      "input_tokens": 164427,
+      "cached_input_tokens": 149248,
+      "output_tokens": 3768,
+      "billed_usd": null,
+      "cost_record": "trial-costs/primary_02-r2-general.md",
+      "grade_sha256": "f6800a8b99f54fa031126227b8fc3a82aacd93a822636d1ed3df926ba646adc3",
+      "started_at": "2026-11-03T18:04:36.309539+00:00",
+      "finished_at": "2026-11-03T18:06:14.925580+00:00"
+    },
+    {
+      "id": "primary_02-r2-baseline",
+      "original_slot": "primary_02-r2-baseline",
+      "task_id": "primary_02",
+      "replicate": 2,
+      "arm": "baseline",
+      "native_tokens": 115570,
+      "usage_coverage": "complete_reported_turns",
+      "infrastructure_contaminated": false,
+      "cost_record_sha256": "a528d497ce91777f191519a09115757ae643bb5ebf0a2509c4f03e96a5dcb5e5",
+      "controller_exit": 0,
+      "process_exit": 0,
+      "stop_reason": null,
+      "native_session_ids": [
+        "01a1a297-22fd-7912-a7ea-c95da072999a"
+      ],
+      "artifact_quality_pass": true,
+      "mandatory_checks": [
+        {
+          "id": "output_directory",
+          "pass": true,
+          "detail": "Output directory exists and is not a symlink."
+        },
+        {
+          "id": "required_artifacts",
+          "pass": true,
+          "detail": "Missing, empty, oversized, or non-ordinary files: []"
+        },
+        {
+          "id": "result_json",
+          "pass": true,
+          "detail": "Strict JSON object, with no duplicate keys or nonfinite constants."
+        },
+        {
+          "id": "frozen_inputs",
+          "pass": true,
+          "detail": "Frozen public inputs and the complete raw file set are unchanged."
+        },
+        {
+          "id": "input_fingerprints",
+          "pass": true,
+          "detail": "Result identifies every actual raw input by SHA-256."
+        },
+        {
+          "id": "task_identity",
+          "pass": true,
+          "detail": "Schema and task ID match this frozen target."
+        },
+        {
+          "id": "data_provenance",
+          "pass": true,
+          "detail": "Historical versus derived-fixture scope is attributed correctly."
+        },
+        {
+          "id": "row_qc_and_calibration",
+          "pass": true,
+          "detail": "Every source row is attributed to its true revision/QC disposition and calibrated only when accepted."
+        },
+        {
+          "id": "station_day_import",
+          "pass": true,
+          "detail": "Configured station/date coverage, accepted replicate counts, and means are correct."
+        },
+        {
+          "id": "equal_station_index_and_coverage",
+          "pass": true,
+          "detail": "Daily indices use equal station weight and remain null on incomplete station coverage."
+        }
+      ],
+      "execution_completed": true,
+      "input_integrity": true,
+      "complete_task_seconds": 80.237793249893,
+      "agent_process_seconds": 80.00507641700096,
+      "tool_union_seconds": 0.026531915878877044,
+      "input_tokens": 112578,
+      "cached_input_tokens": 90112,
+      "output_tokens": 2992,
+      "billed_usd": null,
+      "cost_record": "trial-costs/primary_02-r2-baseline.md",
+      "grade_sha256": "8cdece03762f36d59322901124f3bbb809078d7ce0502e7ea0959e06a45eb34a",
+      "started_at": "2026-11-03T18:06:15.126583+00:00",
+      "finished_at": "2026-11-03T18:07:35.364336+00:00"
+    },
+    {
+      "id": "primary_01-r3-baseline",
+      "original_slot": "primary_01-r3-baseline",
+      "task_id": "primary_01",
+      "replicate": 3,
+      "arm": "baseline",
+      "native_tokens": 123256,
+      "usage_coverage": "complete_reported_turns",
+      "infrastructure_contaminated": false,
+      "cost_record_sha256": "2bf590e6048aa4ad279bacdfb9396f936bf8e8f6e9f9b451ae808536203bbea2",
+      "controller_exit": 0,
+      "process_exit": 0,
+      "stop_reason": null,
+      "native_session_ids": [
+        "01a1a298-5efe-7ee1-8284-214913462f06"
+      ],
+      "artifact_quality_pass": true,
+      "mandatory_checks": [
+        {
+          "id": "output_directory",
+          "pass": true,
+          "detail": "Output directory exists and is not a symlink."
+        },
+        {
+          "id": "required_artifacts",
+          "pass": true,
+          "detail": "Missing, empty, oversized, or non-ordinary files: []"
+        },
+        {
+          "id": "result_json",
+          "pass": true,
+          "detail": "Strict JSON object, with no duplicate keys or nonfinite constants."
+        },
+        {
+          "id": "frozen_inputs",
+          "pass": true,
+          "detail": "Frozen public inputs and the complete raw file set are unchanged."
+        },
+        {
+          "id": "input_fingerprints",
+          "pass": true,
+          "detail": "Result identifies every actual raw input by SHA-256."
+        },
+        {
+          "id": "task_identity",
+          "pass": true,
+          "detail": "Schema and task ID match this frozen target."
+        },
+        {
+          "id": "data_provenance",
+          "pass": true,
+          "detail": "Historical versus derived-fixture scope is attributed correctly."
+        },
+        {
+          "id": "inventory_coverage",
+          "pass": true,
+          "detail": "Exactly the declared/present file union is inventoried with unique identities."
+        },
+        {
+          "id": "byte_identity_and_attribution",
+          "pass": true,
+          "detail": "Actual bytes, declared public identity, source provenance, transformation relation, and statuses are correct."
+        },
+        {
+          "id": "handoff_summary",
+          "pass": true,
+          "detail": "Counts and readiness reflect artifact integrity, including verified redacted derivatives."
+        }
+      ],
+      "execution_completed": true,
+      "input_integrity": true,
+      "complete_task_seconds": 77.6467491670046,
+      "agent_process_seconds": 77.46092070790473,
+      "tool_union_seconds": 0.019708041800186038,
+      "input_tokens": 120264,
+      "cached_input_tokens": 97664,
+      "output_tokens": 2992,
+      "billed_usd": null,
+      "cost_record": "trial-costs/primary_01-r3-baseline.md",
+      "grade_sha256": "4aade503025b5852f54955a06607e8a6f4675ebb4484d3664a0ce77ed6573ed6",
+      "started_at": "2026-11-03T18:07:35.601674+00:00",
+      "finished_at": "2026-11-03T18:08:53.286614+00:00"
+    },
+    {
+      "id": "primary_01-r3-general",
+      "original_slot": "primary_01-r3-general",
+      "task_id": "primary_01",
+      "replicate": 3,
+      "arm": "general",
+      "native_tokens": 113227,
+      "usage_coverage": "complete_reported_turns",
+      "infrastructure_contaminated": false,
+      "cost_record_sha256": "a0162147861ac486805b07ef5f9b7ddec85ad2ed9a385c94c7237b4c9b3e9421",
+      "controller_exit": 0,
+      "process_exit": 0,
+      "stop_reason": null,
+      "native_session_ids": [
+        "01a1a299-8e64-7293-82e8-5bd29ad4fc62"
+      ],
+      "artifact_quality_pass": true,
+      "mandatory_checks": [
+        {
+          "id": "output_directory",
+          "pass": true,
+          "detail": "Output directory exists and is not a symlink."
+        },
+        {
+          "id": "required_artifacts",
+          "pass": true,
+          "detail": "Missing, empty, oversized, or non-ordinary files: []"
+        },
+        {
+          "id": "result_json",
+          "pass": true,
+          "detail": "Strict JSON object, with no duplicate keys or nonfinite constants."
+        },
+        {
+          "id": "frozen_inputs",
+          "pass": true,
+          "detail": "Frozen public inputs and the complete raw file set are unchanged."
+        },
+        {
+          "id": "input_fingerprints",
+          "pass": true,
+          "detail": "Result identifies every actual raw input by SHA-256."
+        },
+        {
+          "id": "task_identity",
+          "pass": true,
+          "detail": "Schema and task ID match this frozen target."
+        },
+        {
+          "id": "data_provenance",
+          "pass": true,
+          "detail": "Historical versus derived-fixture scope is attributed correctly."
+        },
+        {
+          "id": "inventory_coverage",
+          "pass": true,
+          "detail": "Exactly the declared/present file union is inventoried with unique identities."
+        },
+        {
+          "id": "byte_identity_and_attribution",
+          "pass": true,
+          "detail": "Actual bytes, declared public identity, source provenance, transformation relation, and statuses are correct."
+        },
+        {
+          "id": "handoff_summary",
+          "pass": true,
+          "detail": "Counts and readiness reflect artifact integrity, including verified redacted derivatives."
+        }
+      ],
+      "execution_completed": true,
+      "input_integrity": true,
+      "complete_task_seconds": 71.44764083297923,
+      "agent_process_seconds": 71.31960495794192,
+      "tool_union_seconds": 0.05037366517353803,
+      "input_tokens": 110461,
+      "cached_input_tokens": 76672,
+      "output_tokens": 2766,
+      "billed_usd": null,
+      "cost_record": "trial-costs/primary_01-r3-general.md",
+      "grade_sha256": "d9ad475263a3e5b57500a81708b34feece30d0183590efbc865e6cb976ff60a7",
+      "started_at": "2026-11-03T18:08:53.618451+00:00",
+      "finished_at": "2026-11-03T18:10:05.067465+00:00"
+    },
+    {
+      "id": "primary_01-r3-domain",
+      "original_slot": "primary_01-r3-domain",
+      "task_id": "primary_01",
+      "replicate": 3,
+      "arm": "domain",
+      "native_tokens": 155436,
+      "usage_coverage": "complete_reported_turns",
+      "infrastructure_contaminated": false,
+      "cost_record_sha256": "0c44aae3b1732679a569a3557974865e01df3d9d05aeb47e97bcca3ff62437eb",
+      "controller_exit": 0,
+      "process_exit": 0,
+      "stop_reason": null,
+      "native_session_ids": [
+        "01a1a29a-a228-7420-b62b-3303e0684447"
+      ],
+      "artifact_quality_pass": true,
+      "mandatory_checks": [
+        {
+          "id": "output_directory",
+          "pass": true,
+          "detail": "Output directory exists and is not a symlink."
+        },
+        {
+          "id": "required_artifacts",
+          "pass": true,
+          "detail": "Missing, empty, oversized, or non-ordinary files: []"
+        },
+        {
+          "id": "result_json",
+          "pass": true,
+          "detail": "Strict JSON object, with no duplicate keys or nonfinite constants."
+        },
+        {
+          "id": "frozen_inputs",
+          "pass": true,
+          "detail": "Frozen public inputs and the complete raw file set are unchanged."
+        },
+        {
+          "id": "input_fingerprints",
+          "pass": true,
+          "detail": "Result identifies every actual raw input by SHA-256."
+        },
+        {
+          "id": "task_identity",
+          "pass": true,
+          "detail": "Schema and task ID match this frozen target."
+        },
+        {
+          "id": "data_provenance",
+          "pass": true,
+          "detail": "Historical versus derived-fixture scope is attributed correctly."
+        },
+        {
+          "id": "inventory_coverage",
+          "pass": true,
+          "detail": "Exactly the declared/present file union is inventoried with unique identities."
+        },
+        {
+          "id": "byte_identity_and_attribution",
+          "pass": true,
+          "detail": "Actual bytes, declared public identity, source provenance, transformation relation, and statuses are correct."
+        },
+        {
+          "id": "handoff_summary",
+          "pass": true,
+          "detail": "Counts and readiness reflect artifact integrity, including verified redacted derivatives."
+        }
+      ],
+      "execution_completed": true,
+      "input_integrity": true,
+      "complete_task_seconds": 77.81162562500685,
+      "agent_process_seconds": 77.69275700009894,
+      "tool_union_seconds": 0.0006847918266430497,
+      "input_tokens": 152163,
+      "cached_input_tokens": 100864,
+      "output_tokens": 3273,
+      "billed_usd": null,
+      "cost_record": "trial-costs/primary_01-r3-domain.md",
+      "grade_sha256": "afe28a32ac33e8043178d11dcdadb0ef932680dd14a98f7d49b9584eb63d3070",
+      "started_at": "2026-11-03T18:10:05.245302+00:00",
+      "finished_at": "2026-11-03T18:11:23.057373+00:00"
+    },
+    {
+      "id": "primary_01-r2-general",
+      "original_slot": "primary_01-r2-general",
+      "task_id": "primary_01",
+      "replicate": 2,
+      "arm": "general",
+      "native_tokens": 107140,
+      "usage_coverage": "complete_reported_turns",
+      "infrastructure_contaminated": false,
+      "cost_record_sha256": "3b7bebdee2a8e40ff675fbc01d15f686ebb30110e205630224a5149c0d523a20",
+      "controller_exit": 0,
+      "process_exit": 0,
+      "stop_reason": null,
+      "native_session_ids": [
+        "01a1a29b-d2a0-7671-a7e1-af229d0964df"
+      ],
+      "artifact_quality_pass": true,
+      "mandatory_checks": [
+        {
+          "id": "output_directory",
+          "pass": true,
+          "detail": "Output directory exists and is not a symlink."
+        },
+        {
+          "id": "required_artifacts",
+          "pass": true,
+          "detail": "Missing, empty, oversized, or non-ordinary files: []"
+        },
+        {
+          "id": "result_json",
+          "pass": true,
+          "detail": "Strict JSON object, with no duplicate keys or nonfinite constants."
+        },
+        {
+          "id": "frozen_inputs",
+          "pass": true,
+          "detail": "Frozen public inputs and the complete raw file set are unchanged."
+        },
+        {
+          "id": "input_fingerprints",
+          "pass": true,
+          "detail": "Result identifies every actual raw input by SHA-256."
+        },
+        {
+          "id": "task_identity",
+          "pass": true,
+          "detail": "Schema and task ID match this frozen target."
+        },
+        {
+          "id": "data_provenance",
+          "pass": true,
+          "detail": "Historical versus derived-fixture scope is attributed correctly."
+        },
+        {
+          "id": "inventory_coverage",
+          "pass": true,
+          "detail": "Exactly the declared/present file union is inventoried with unique identities."
+        },
+        {
+          "id": "byte_identity_and_attribution",
+          "pass": true,
+          "detail": "Actual bytes, declared public identity, source provenance, transformation relation, and statuses are correct."
+        },
+        {
+          "id": "handoff_summary",
+          "pass": true,
+          "detail": "Counts and readiness reflect artifact integrity, including verified redacted derivatives."
+        }
+      ],
+      "execution_completed": true,
+      "input_integrity": true,
+      "complete_task_seconds": 63.150102208019234,
+      "agent_process_seconds": 63.01860008307267,
+      "tool_union_seconds": 0.031103874905966222,
+      "input_tokens": 104628,
+      "cached_input_tokens": 94592,
+      "output_tokens": 2512,
+      "billed_usd": null,
+      "cost_record": "trial-costs/primary_01-r2-general.md",
+      "grade_sha256": "7ce4961c196bfde673ea16ac7090f73c5bd38645bb2ced4acd7c3c71beafd005",
+      "started_at": "2026-11-03T18:11:23.233606+00:00",
+      "finished_at": "2026-11-03T18:12:26.384065+00:00"
+    },
+    {
+      "id": "primary_01-r2-domain",
+      "original_slot": "primary_01-r2-domain",
+      "task_id": "primary_01",
+      "replicate": 2,
+      "arm": "domain",
+      "native_tokens": 210042,
+      "usage_coverage": "complete_reported_turns",
+      "infrastructure_contaminated": false,
+      "cost_record_sha256": "7b0c1c0e539239ea9521faac4b848f59457dc8a25bfff463e11c801ff05eaeb9",
+      "controller_exit": 0,
+      "process_exit": 0,
+      "stop_reason": null,
+      "native_session_ids": [
+        "01a1a29c-ca8b-72d0-bd60-0d09adba0bf9"
+      ],
+      "artifact_quality_pass": true,
+      "mandatory_checks": [
+        {
+          "id": "output_directory",
+          "pass": true,
+          "detail": "Output directory exists and is not a symlink."
+        },
+        {
+          "id": "required_artifacts",
+          "pass": true,
+          "detail": "Missing, empty, oversized, or non-ordinary files: []"
+        },
+        {
+          "id": "result_json",
+          "pass": true,
+          "detail": "Strict JSON object, with no duplicate keys or nonfinite constants."
+        },
+        {
+          "id": "frozen_inputs",
+          "pass": true,
+          "detail": "Frozen public inputs and the complete raw file set are unchanged."
+        },
+        {
+          "id": "input_fingerprints",
+          "pass": true,
+          "detail": "Result identifies every actual raw input by SHA-256."
+        },
+        {
+          "id": "task_identity",
+          "pass": true,
+          "detail": "Schema and task ID match this frozen target."
+        },
+        {
+          "id": "data_provenance",
+          "pass": true,
+          "detail": "Historical versus derived-fixture scope is attributed correctly."
+        },
+        {
+          "id": "inventory_coverage",
+          "pass": true,
+          "detail": "Exactly the declared/present file union is inventoried with unique identities."
+        },
+        {
+          "id": "byte_identity_and_attribution",
+          "pass": true,
+          "detail": "Actual bytes, declared public identity, source provenance, transformation relation, and statuses are correct."
+        },
+        {
+          "id": "handoff_summary",
+          "pass": true,
+          "detail": "Counts and readiness reflect artifact integrity, including verified redacted derivatives."
+        }
+      ],
+      "execution_completed": true,
+      "input_integrity": true,
+      "complete_task_seconds": 90.68319650006015,
+      "agent_process_seconds": 90.59041658393107,
+      "tool_union_seconds": 0.07751054095569998,
+      "input_tokens": 206514,
+      "cached_input_tokens": 177792,
+      "output_tokens": 3528,
+      "billed_usd": null,
+      "cost_record": "trial-costs/primary_01-r2-domain.md",
+      "grade_sha256": "2d70a697119579247f85c6b2e155947f84099925fe0166437b9ee549771d4e87",
+      "started_at": "2026-11-03T18:12:26.593880+00:00",
+      "finished_at": "2026-11-03T18:13:57.277583+00:00"
+    },
+    {
+      "id": "primary_01-r2-baseline",
+      "original_slot": "primary_01-r2-baseline",
+      "task_id": "primary_01",
+      "replicate": 2,
+      "arm": "baseline",
+      "native_tokens": 127905,
+      "usage_coverage": "complete_reported_turns",
+      "infrastructure_contaminated": false,
+      "cost_record_sha256": "5f008b471b3e7cc0920cc37908c73f7425879a2f4c8a5224f78276bfe8bc5323",
+      "controller_exit": 0,
+      "process_exit": 0,
+      "stop_reason": null,
+      "native_session_ids": [
+        "01a1a29e-2cd3-74e3-bcae-2b23a487f103"
+      ],
+      "artifact_quality_pass": true,
+      "mandatory_checks": [
+        {
+          "id": "output_directory",
+          "pass": true,
+          "detail": "Output directory exists and is not a symlink."
+        },
+        {
+          "id": "required_artifacts",
+          "pass": true,
+          "detail": "Missing, empty, oversized, or non-ordinary files: []"
+        },
+        {
+          "id": "result_json",
+          "pass": true,
+          "detail": "Strict JSON object, with no duplicate keys or nonfinite constants."
+        },
+        {
+          "id": "frozen_inputs",
+          "pass": true,
+          "detail": "Frozen public inputs and the complete raw file set are unchanged."
+        },
+        {
+          "id": "input_fingerprints",
+          "pass": true,
+          "detail": "Result identifies every actual raw input by SHA-256."
+        },
+        {
+          "id": "task_identity",
+          "pass": true,
+          "detail": "Schema and task ID match this frozen target."
+        },
+        {
+          "id": "data_provenance",
+          "pass": true,
+          "detail": "Historical versus derived-fixture scope is attributed correctly."
+        },
+        {
+          "id": "inventory_coverage",
+          "pass": true,
+          "detail": "Exactly the declared/present file union is inventoried with unique identities."
+        },
+        {
+          "id": "byte_identity_and_attribution",
+          "pass": true,
+          "detail": "Actual bytes, declared public identity, source provenance, transformation relation, and statuses are correct."
+        },
+        {
+          "id": "handoff_summary",
+          "pass": true,
+          "detail": "Counts and readiness reflect artifact integrity, including verified redacted derivatives."
+        }
+      ],
+      "execution_completed": true,
+      "input_integrity": true,
+      "complete_task_seconds": 86.72495629102923,
+      "agent_process_seconds": 86.62428708304651,
+      "tool_union_seconds": 0.7636275839759037,
+      "input_tokens": 124305,
+      "cached_input_tokens": 99072,
+      "output_tokens": 3600,
+      "billed_usd": null,
+      "cost_record": "trial-costs/primary_01-r2-baseline.md",
+      "grade_sha256": "17b13a2ae9dd2b48e380b624813f7068d037e6f58f174dedecb832a1f1c2bb71",
+      "started_at": "2026-11-03T18:13:57.442915+00:00",
+      "finished_at": "2026-11-03T18:15:24.168360+00:00"
+    },
+    {
+      "id": "primary_02-r3-domain",
+      "original_slot": "primary_02-r3-domain",
+      "task_id": "primary_02",
+      "replicate": 3,
+      "arm": "domain",
+      "native_tokens": 159618,
+      "usage_coverage": "complete_reported_turns",
+      "infrastructure_contaminated": false,
+      "cost_record_sha256": "d95d2efad4289b910f655852cad0484b26aa45835e25aa3a9ae625ad4697e231",
+      "controller_exit": 0,
+      "process_exit": 0,
+      "stop_reason": null,
+      "native_session_ids": [
+        "01a1a29f-80f7-7603-bd24-d5ffe19f0e3a"
+      ],
+      "artifact_quality_pass": true,
+      "mandatory_checks": [
+        {
+          "id": "output_directory",
+          "pass": true,
+          "detail": "Output directory exists and is not a symlink."
+        },
+        {
+          "id": "required_artifacts",
+          "pass": true,
+          "detail": "Missing, empty, oversized, or non-ordinary files: []"
+        },
+        {
+          "id": "result_json",
+          "pass": true,
+          "detail": "Strict JSON object, with no duplicate keys or nonfinite constants."
+        },
+        {
+          "id": "frozen_inputs",
+          "pass": true,
+          "detail": "Frozen public inputs and the complete raw file set are unchanged."
+        },
+        {
+          "id": "input_fingerprints",
+          "pass": true,
+          "detail": "Result identifies every actual raw input by SHA-256."
+        },
+        {
+          "id": "task_identity",
+          "pass": true,
+          "detail": "Schema and task ID match this frozen target."
+        },
+        {
+          "id": "data_provenance",
+          "pass": true,
+          "detail": "Historical versus derived-fixture scope is attributed correctly."
+        },
+        {
+          "id": "row_qc_and_calibration",
+          "pass": true,
+          "detail": "Every source row is attributed to its true revision/QC disposition and calibrated only when accepted."
+        },
+        {
+          "id": "station_day_import",
+          "pass": true,
+          "detail": "Configured station/date coverage, accepted replicate counts, and means are correct."
+        },
+        {
+          "id": "equal_station_index_and_coverage",
+          "pass": true,
+          "detail": "Daily indices use equal station weight and remain null on incomplete station coverage."
+        }
+      ],
+      "execution_completed": true,
+      "input_integrity": true,
+      "complete_task_seconds": 82.3458704170771,
+      "agent_process_seconds": 82.13814624992665,
+      "tool_union_seconds": 0.04478833416942507,
+      "input_tokens": 155563,
+      "cached_input_tokens": 113920,
+      "output_tokens": 4055,
+      "billed_usd": null,
+      "cost_record": "trial-costs/primary_02-r3-domain.md",
+      "grade_sha256": "7ac04ed33ff18380c87cb256d36cf611bd8522d223e613a6f5f9dbb1575352f5",
+      "started_at": "2026-11-03T18:15:24.401973+00:00",
+      "finished_at": "2026-11-03T18:16:46.748304+00:00"
+    },
+    {
+      "id": "primary_02-r3-baseline",
+      "original_slot": "primary_02-r3-baseline",
+      "task_id": "primary_02",
+      "replicate": 3,
+      "arm": "baseline",
+      "native_tokens": 114967,
+      "usage_coverage": "complete_reported_turns",
+      "infrastructure_contaminated": false,
+      "cost_record_sha256": "cbf0f1842b48bf735f4e0eedfb7c4268848e708502a97bda96d31ed0ce67d292",
+      "controller_exit": 0,
+      "process_exit": 0,
+      "stop_reason": null,
+      "native_session_ids": [
+        "01a1a2a0-c357-7d83-9da5-7cda345ab31e"
+      ],
+      "artifact_quality_pass": true,
+      "mandatory_checks": [
+        {
+          "id": "output_directory",
+          "pass": true,
+          "detail": "Output directory exists and is not a symlink."
+        },
+        {
+          "id": "required_artifacts",
+          "pass": true,
+          "detail": "Missing, empty, oversized, or non-ordinary files: []"
+        },
+        {
+          "id": "result_json",
+          "pass": true,
+          "detail": "Strict JSON object, with no duplicate keys or nonfinite constants."
+        },
+        {
+          "id": "frozen_inputs",
+          "pass": true,
+          "detail": "Frozen public inputs and the complete raw file set are unchanged."
+        },
+        {
+          "id": "input_fingerprints",
+          "pass": true,
+          "detail": "Result identifies every actual raw input by SHA-256."
+        },
+        {
+          "id": "task_identity",
+          "pass": true,
+          "detail": "Schema and task ID match this frozen target."
+        },
+        {
+          "id": "data_provenance",
+          "pass": true,
+          "detail": "Historical versus derived-fixture scope is attributed correctly."
+        },
+        {
+          "id": "row_qc_and_calibration",
+          "pass": true,
+          "detail": "Every source row is attributed to its true revision/QC disposition and calibrated only when accepted."
+        },
+        {
+          "id": "station_day_import",
+          "pass": true,
+          "detail": "Configured station/date coverage, accepted replicate counts, and means are correct."
+        },
+        {
+          "id": "equal_station_index_and_coverage",
+          "pass": true,
+          "detail": "Daily indices use equal station weight and remain null on incomplete station coverage."
+        }
+      ],
+      "execution_completed": true,
+      "input_integrity": true,
+      "complete_task_seconds": 52.50533437507693,
+      "agent_process_seconds": 52.34323741705157,
+      "tool_union_seconds": 0.00912304176017642,
+      "input_tokens": 112136,
+      "cached_input_tokens": 94208,
+      "output_tokens": 2831,
+      "billed_usd": null,
+      "cost_record": "trial-costs/primary_02-r3-baseline.md",
+      "grade_sha256": "7f68b18b9e34074f209e2eeeadf93332f6cbb6435adf9336e723c88b54bcf8f2",
+      "started_at": "2026-11-03T18:16:46.911958+00:00",
+      "finished_at": "2026-11-03T18:17:39.417590+00:00"
+    },
+    {
+      "id": "primary_02-r3-general",
+      "original_slot": "primary_02-r3-general",
+      "task_id": "primary_02",
+      "replicate": 3,
+      "arm": "general",
+      "native_tokens": 136994,
+      "usage_coverage": "complete_reported_turns",
+      "infrastructure_contaminated": false,
+      "cost_record_sha256": "92dabc8bad20304110d2dfc0e79d2927ca8b0b3a7c175f92f2683ff9358bcd00",
+      "controller_exit": 0,
+      "process_exit": 0,
+      "stop_reason": null,
+      "native_session_ids": [
+        "01a1a2a1-92a5-74b2-a57f-0cf11878ba83"
+      ],
+      "artifact_quality_pass": true,
+      "mandatory_checks": [
+        {
+          "id": "output_directory",
+          "pass": true,
+          "detail": "Output directory exists and is not a symlink."
+        },
+        {
+          "id": "required_artifacts",
+          "pass": true,
+          "detail": "Missing, empty, oversized, or non-ordinary files: []"
+        },
+        {
+          "id": "result_json",
+          "pass": true,
+          "detail": "Strict JSON object, with no duplicate keys or nonfinite constants."
+        },
+        {
+          "id": "frozen_inputs",
+          "pass": true,
+          "detail": "Frozen public inputs and the complete raw file set are unchanged."
+        },
+        {
+          "id": "input_fingerprints",
+          "pass": true,
+          "detail": "Result identifies every actual raw input by SHA-256."
+        },
+        {
+          "id": "task_identity",
+          "pass": true,
+          "detail": "Schema and task ID match this frozen target."
+        },
+        {
+          "id": "data_provenance",
+          "pass": true,
+          "detail": "Historical versus derived-fixture scope is attributed correctly."
+        },
+        {
+          "id": "row_qc_and_calibration",
+          "pass": true,
+          "detail": "Every source row is attributed to its true revision/QC disposition and calibrated only when accepted."
+        },
+        {
+          "id": "station_day_import",
+          "pass": true,
+          "detail": "Configured station/date coverage, accepted replicate counts, and means are correct."
+        },
+        {
+          "id": "equal_station_index_and_coverage",
+          "pass": true,
+          "detail": "Daily indices use equal station weight and remain null on incomplete station coverage."
+        }
+      ],
+      "execution_completed": true,
+      "input_integrity": true,
+      "complete_task_seconds": 80.24881262506824,
+      "agent_process_seconds": 79.9689546659356,
+      "tool_union_seconds": 0.009782500215806067,
+      "input_tokens": 133551,
+      "cached_input_tokens": 115072,
+      "output_tokens": 3443,
+      "billed_usd": null,
+      "cost_record": "trial-costs/primary_02-r3-general.md",
+      "grade_sha256": "c4bbefff9a357e37c4006093d5706f614c574eebf9b44e83a621126b79bef612",
+      "started_at": "2026-11-03T18:17:39.686002+00:00",
+      "finished_at": "2026-11-03T18:18:59.935266+00:00"
+    },
+    {
+      "id": "primary_01-r1-domain-infra2",
+      "original_slot": "primary_01-r1-domain",
+      "task_id": "primary_01",
+      "replicate": 1,
+      "arm": "domain",
+      "native_tokens": 126353,
+      "usage_coverage": "complete_reported_turns",
+      "infrastructure_contaminated": false,
+      "cost_record_sha256": "24bc3e819b456013432cce89662755ec62bc5fc6a78a6f09046939d28adc116d",
+      "controller_exit": 0,
+      "process_exit": 0,
+      "stop_reason": null,
+      "native_session_ids": [
+        "01a1a2a2-cb57-7a43-89ca-8e214c817083"
+      ],
+      "artifact_quality_pass": true,
+      "mandatory_checks": [
+        {
+          "id": "output_directory",
+          "pass": true,
+          "detail": "Output directory exists and is not a symlink."
+        },
+        {
+          "id": "required_artifacts",
+          "pass": true,
+          "detail": "Missing, empty, oversized, or non-ordinary files: []"
+        },
+        {
+          "id": "result_json",
+          "pass": true,
+          "detail": "Strict JSON object, with no duplicate keys or nonfinite constants."
+        },
+        {
+          "id": "frozen_inputs",
+          "pass": true,
+          "detail": "Frozen public inputs and the complete raw file set are unchanged."
+        },
+        {
+          "id": "input_fingerprints",
+          "pass": true,
+          "detail": "Result identifies every actual raw input by SHA-256."
+        },
+        {
+          "id": "task_identity",
+          "pass": true,
+          "detail": "Schema and task ID match this frozen target."
+        },
+        {
+          "id": "data_provenance",
+          "pass": true,
+          "detail": "Historical versus derived-fixture scope is attributed correctly."
+        },
+        {
+          "id": "inventory_coverage",
+          "pass": true,
+          "detail": "Exactly the declared/present file union is inventoried with unique identities."
+        },
+        {
+          "id": "byte_identity_and_attribution",
+          "pass": true,
+          "detail": "Actual bytes, declared public identity, source provenance, transformation relation, and statuses are correct."
+        },
+        {
+          "id": "handoff_summary",
+          "pass": true,
+          "detail": "Counts and readiness reflect artifact integrity, including verified redacted derivatives."
+        }
+      ],
+      "execution_completed": true,
+      "input_integrity": true,
+      "complete_task_seconds": 85.96746137493756,
+      "agent_process_seconds": 85.84851429203991,
+      "tool_union_seconds": 0.005116750951856375,
+      "input_tokens": 122331,
+      "cached_input_tokens": 77824,
+      "output_tokens": 4022,
+      "billed_usd": null,
+      "cost_record": "trial-costs/primary_01-r1-domain-infra2.md",
+      "grade_sha256": "d54c60fad49c5c3aba13acfaf9dbff5d20e9ca1ec34cac8609ff5fcf24533800",
+      "started_at": "2026-11-03T18:19:00.115271+00:00",
+      "finished_at": "2026-11-03T18:20:26.083215+00:00"
+    },
+    {
+      "id": "primary_01-r1-baseline-infra2",
+      "original_slot": "primary_01-r1-baseline",
+      "task_id": "primary_01",
+      "replicate": 1,
+      "arm": "baseline",
+      "native_tokens": 123534,
+      "usage_coverage": "complete_reported_turns",
+      "infrastructure_contaminated": false,
+      "cost_record_sha256": "9f73023220faad9d4e72b6bb54553745e810b3efe8b84212a07a6960f0b7970e",
+      "controller_exit": 0,
+      "process_exit": 0,
+      "stop_reason": null,
+      "native_session_ids": [
+        "01a1a2a4-1d0b-7eb2-8011-50a8dc1fb02a"
+      ],
+      "artifact_quality_pass": true,
+      "mandatory_checks": [
+        {
+          "id": "output_directory",
+          "pass": true,
+          "detail": "Output directory exists and is not a symlink."
+        },
+        {
+          "id": "required_artifacts",
+          "pass": true,
+          "detail": "Missing, empty, oversized, or non-ordinary files: []"
+        },
+        {
+          "id": "result_json",
+          "pass": true,
+          "detail": "Strict JSON object, with no duplicate keys or nonfinite constants."
+        },
+        {
+          "id": "frozen_inputs",
+          "pass": true,
+          "detail": "Frozen public inputs and the complete raw file set are unchanged."
+        },
+        {
+          "id": "input_fingerprints",
+          "pass": true,
+          "detail": "Result identifies every actual raw input by SHA-256."
+        },
+        {
+          "id": "task_identity",
+          "pass": true,
+          "detail": "Schema and task ID match this frozen target."
+        },
+        {
+          "id": "data_provenance",
+          "pass": true,
+          "detail": "Historical versus derived-fixture scope is attributed correctly."
+        },
+        {
+          "id": "inventory_coverage",
+          "pass": true,
+          "detail": "Exactly the declared/present file union is inventoried with unique identities."
+        },
+        {
+          "id": "byte_identity_and_attribution",
+          "pass": true,
+          "detail": "Actual bytes, declared public identity, source provenance, transformation relation, and statuses are correct."
+        },
+        {
+          "id": "handoff_summary",
+          "pass": true,
+          "detail": "Counts and readiness reflect artifact integrity, including verified redacted derivatives."
+        }
+      ],
+      "execution_completed": true,
+      "input_integrity": true,
+      "complete_task_seconds": 80.01002870802768,
+      "agent_process_seconds": 79.77676833397709,
+      "tool_union_seconds": 0.13085120695177466,
+      "input_tokens": 120461,
+      "cached_input_tokens": 84480,
+      "output_tokens": 3073,
+      "billed_usd": null,
+      "cost_record": "trial-costs/primary_01-r1-baseline-infra2.md",
+      "grade_sha256": "17b13a2ae9dd2b48e380b624813f7068d037e6f58f174dedecb832a1f1c2bb71",
+      "started_at": "2026-11-03T18:20:26.304023+00:00",
+      "finished_at": "2026-11-03T18:21:46.314507+00:00"
+    },
+    {
+      "id": "primary_01-r1-general-infra2",
+      "original_slot": "primary_01-r1-general",
+      "task_id": "primary_01",
+      "replicate": 1,
+      "arm": "general",
+      "native_tokens": 144935,
+      "usage_coverage": "complete_reported_turns",
+      "infrastructure_contaminated": false,
+      "cost_record_sha256": "0eb3722694a77923eb6532161ba6d23fc895e2b6df3b295154606b81b4d48d92",
+      "controller_exit": 0,
+      "process_exit": 0,
+      "stop_reason": null,
+      "native_session_ids": [
+        "01a1a2a5-561f-7e31-ae58-c29dfeec1b27"
+      ],
+      "artifact_quality_pass": true,
+      "mandatory_checks": [
+        {
+          "id": "output_directory",
+          "pass": true,
+          "detail": "Output directory exists and is not a symlink."
+        },
+        {
+          "id": "required_artifacts",
+          "pass": true,
+          "detail": "Missing, empty, oversized, or non-ordinary files: []"
+        },
+        {
+          "id": "result_json",
+          "pass": true,
+          "detail": "Strict JSON object, with no duplicate keys or nonfinite constants."
+        },
+        {
+          "id": "frozen_inputs",
+          "pass": true,
+          "detail": "Frozen public inputs and the complete raw file set are unchanged."
+        },
+        {
+          "id": "input_fingerprints",
+          "pass": true,
+          "detail": "Result identifies every actual raw input by SHA-256."
+        },
+        {
+          "id": "task_identity",
+          "pass": true,
+          "detail": "Schema and task ID match this frozen target."
+        },
+        {
+          "id": "data_provenance",
+          "pass": true,
+          "detail": "Historical versus derived-fixture scope is attributed correctly."
+        },
+        {
+          "id": "inventory_coverage",
+          "pass": true,
+          "detail": "Exactly the declared/present file union is inventoried with unique identities."
+        },
+        {
+          "id": "byte_identity_and_attribution",
+          "pass": true,
+          "detail": "Actual bytes, declared public identity, source provenance, transformation relation, and statuses are correct."
+        },
+        {
+          "id": "handoff_summary",
+          "pass": true,
+          "detail": "Counts and readiness reflect artifact integrity, including verified redacted derivatives."
+        }
+      ],
+      "execution_completed": true,
+      "input_integrity": true,
+      "complete_task_seconds": 85.92736116610467,
+      "agent_process_seconds": 85.6712413750356,
+      "tool_union_seconds": 0.051885667140595615,
+      "input_tokens": 141129,
+      "cached_input_tokens": 122624,
+      "output_tokens": 3806,
+      "billed_usd": null,
+      "cost_record": "trial-costs/primary_01-r1-general-infra2.md",
+      "grade_sha256": "2f787bd664902cf1b7a7324cbba8712c9ec4f60544d8782f85a78f487886c359",
+      "started_at": "2026-11-03T18:21:46.483780+00:00",
+      "finished_at": "2026-11-03T18:23:12.411590+00:00"
+    }
+  ]
+}

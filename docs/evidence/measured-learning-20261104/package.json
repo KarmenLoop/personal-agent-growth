@@ -1,0 +1,248 @@
+{
+  "status": "PASS",
+  "version": "0.7.0",
+  "core_files": 84,
+  "core_checks": 173,
+  "relocation": {
+    "from": "<TASK>/package-smoke/安装 初始目录",
+    "to": "<TASK>/package-smoke/搬迁后 共享记忆",
+    "old_path_absent": true
+  },
+  "memory_sha256_before": "e731724de2ae28db6a646f8fc0f81a5c895c96ae2734ffaf13dee4dc515f2030",
+  "memory_sha256_after": "e731724de2ae28db6a646f8fc0f81a5c895c96ae2734ffaf13dee4dc515f2030",
+  "commands": [
+    {
+      "label": "core-build",
+      "argv": [
+        "<HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "tools/build_release.py",
+        "--output",
+        "<TASK>/package-smoke/core"
+      ],
+      "exit_code": 0,
+      "started_epoch": 1793731027.707029,
+      "elapsed_seconds": 0.10432729206513613,
+      "stdout_sha256": "00970a15a7850863840749b76113cf9f8ab540a154c59dd9f3ad1e872fd523aa",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "bundle-build",
+      "argv": [
+        "<HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "tools/build_delivery.py",
+        "--output",
+        "<TASK>/package-smoke/bundle"
+      ],
+      "exit_code": 0,
+      "started_epoch": 1793731027.811638,
+      "elapsed_seconds": 1.0273871249519289,
+      "stdout_sha256": "332247b6f6b138569286bbdc94c5d6a8b3930ae0be6cfe19957ef6c27601b64f",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "core-verify",
+      "argv": [
+        "<HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "scripts/verify_handoff.py",
+        "--archive",
+        "<TASK>/package-smoke/core/personal-agent-growth-0.7.0.zip",
+        "--manifest",
+        "<TASK>/package-smoke/core/manifest.json"
+      ],
+      "exit_code": 0,
+      "started_epoch": 1793731028.839361,
+      "elapsed_seconds": 0.12092362507246435,
+      "stdout_sha256": "32496e0a40255546f506369f5d0fec4bf66e95f6b56fb8fc7c25f3d652566610",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "delivery-verify",
+      "argv": [
+        "<HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "<TASK>/package-smoke/extracted/personal-agent-growth-delivery-0.7.0-bundle.1/tools/check_delivery.py",
+        "<TASK>/package-smoke/extracted/personal-agent-growth-delivery-0.7.0-bundle.1"
+      ],
+      "exit_code": 0,
+      "started_epoch": 1793731029.072303,
+      "elapsed_seconds": 0.09657633397728205,
+      "stdout_sha256": "05b9c7cd1d3b11ad57adc8d2aa3ac91de6c5b37c49b137a60d39a2249c6d98cb",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "install",
+      "argv": [
+        "<HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "<TASK>/package-smoke/extracted/personal-agent-growth-delivery-0.7.0-bundle.1/tools/local_install.py",
+        "install",
+        "--root",
+        "<TASK>/package-smoke/安装 初始目录"
+      ],
+      "exit_code": 0,
+      "started_epoch": 1793731029.169288,
+      "elapsed_seconds": 0.4588757499586791,
+      "stdout_sha256": "e58479354276eee4ae73535591cab3e619fd70fa64885913210795e175079470",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "runner-import",
+      "argv": [
+        "<HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "<TASK>/package-smoke/搬迁后 共享记忆/skills/personal-agent-growth/scripts/run_agent_trial.py",
+        "--help"
+      ],
+      "exit_code": 0,
+      "started_epoch": 1793731029.642039,
+      "elapsed_seconds": 0.09778287506196648,
+      "stdout_sha256": "66b1df90396c84cae6f3879f3ca7743cac00d60e575c2d101cfee9c68be9a30a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "causal-import",
+      "argv": [
+        "<HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "<TASK>/package-smoke/搬迁后 共享记忆/skills/personal-agent-growth/scripts/experience_transfer.py",
+        "--help"
+      ],
+      "exit_code": 0,
+      "started_epoch": 1793731029.740737,
+      "elapsed_seconds": 0.08262108301278204,
+      "stdout_sha256": "b3933519a48c3703c46474cd723e5b8abb628f9d2b21392021c9d1ad7a1673e7",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "experience-retrieve",
+      "argv": [
+        "<HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "<TASK>/package-smoke/搬迁后 共享记忆/skills/personal-agent-growth/scripts/experience_transfer.py",
+        "retrieve",
+        "--root",
+        "<TASK>/package-smoke/搬迁后 共享记忆/learning",
+        "--query",
+        "<TASK>/package-smoke/搬迁后 共享记忆/learning/requests/query.md"
+      ],
+      "exit_code": 0,
+      "started_epoch": 1793731029.8238652,
+      "elapsed_seconds": 0.05825925001408905,
+      "stdout_sha256": "5d9c6d7602abc16e264292e305353b2f7213f9f8f396a7e84ecc799370ef4049",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "freeze",
+      "argv": [
+        "<HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "<TASK>/package-smoke/搬迁后 共享记忆/skills/personal-agent-growth/scripts/blind_trials.py",
+        "freeze",
+        "--root",
+        "<TASK>/package-smoke/搬迁后 共享记忆/learning",
+        "--file",
+        "<TASK>/package-smoke/搬迁后 共享记忆/learning/demo-plan.md"
+      ],
+      "exit_code": 0,
+      "started_epoch": 1793731029.8854241,
+      "elapsed_seconds": 0.05358774994965643,
+      "stdout_sha256": "e8d75ecb4f73b9a97a2b711f68143223d3577a5a613fb7cf7f65887b7cad2bd6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "release",
+      "argv": [
+        "<HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "<TASK>/package-smoke/搬迁后 共享记忆/skills/personal-agent-growth/scripts/blind_trials.py",
+        "release",
+        "--root",
+        "<TASK>/package-smoke/搬迁后 共享记忆/learning",
+        "--id",
+        "relocated-protocol",
+        "--file",
+        "<TASK>/package-smoke/搬迁后 共享记忆/learning/demo-task.md"
+      ],
+      "exit_code": 0,
+      "started_epoch": 1793731029.942146,
+      "elapsed_seconds": 0.08542100002523512,
+      "stdout_sha256": "6b60525b88d043c04ab6b14cfe1e01d69790a311bdf6b988ff0cfbd2b23c1fd3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "schedule",
+      "argv": [
+        "<HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "<TASK>/package-smoke/搬迁后 共享记忆/skills/personal-agent-growth/scripts/blind_trials.py",
+        "schedule",
+        "--root",
+        "<TASK>/package-smoke/搬迁后 共享记忆/learning",
+        "--id",
+        "relocated-protocol"
+      ],
+      "exit_code": 0,
+      "started_epoch": 1793731030.028329,
+      "elapsed_seconds": 0.05609170801471919,
+      "stdout_sha256": "075aa8bbac6b5f2108e9d0ca9f618fc03a0c52733a5db329c24d1bd510c890b7",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "cost-replay",
+      "argv": [
+        "<HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "<TASK>/package-smoke/搬迁后 共享记忆/skills/personal-agent-growth/scripts/task_costs.py",
+        "record",
+        "--root",
+        "<TASK>/package-smoke/搬迁后 共享记忆/learning",
+        "--file",
+        "<TASK>/package-smoke/搬迁后 共享记忆/learning/native-replay/request.md"
+      ],
+      "exit_code": 2,
+      "started_epoch": 1793731030.089973,
+      "elapsed_seconds": 0.0495674159610644,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "c22209df42a4ea172c9bf43c85920a43950d283bfce56d93bed51ecd9cbc972a"
+    },
+    {
+      "label": "cost-replay-corrected",
+      "argv": [
+        "<HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "<TASK>/package-smoke/搬迁后 共享记忆/skills/personal-agent-growth/scripts/task_costs.py",
+        "--root",
+        "<TASK>/package-smoke/搬迁后 共享记忆/learning",
+        "--request",
+        "<TASK>/package-smoke/搬迁后 共享记忆/learning/native-replay/request.md"
+      ],
+      "exit_code": 0,
+      "started_epoch": 1793731071.285726,
+      "elapsed_seconds": 0.07964720798190683,
+      "stdout_sha256": "629ddae4c44a61e42b08bb8a0884bfd752430539d2d10cfbb631195a22397b24",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "uninstall",
+      "argv": [
+        "<HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "<TASK>/package-smoke/搬迁后 共享记忆/distribution/tools/local_install.py",
+        "uninstall",
+        "--root",
+        "<TASK>/package-smoke/搬迁后 共享记忆"
+      ],
+      "exit_code": 0,
+      "started_epoch": 1793731071.36657,
+      "elapsed_seconds": 0.10448945802636445,
+      "stdout_sha256": "e87314c35448f8fab581fceae930b38395830484991abc84f3d86e8b1f5089a5",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "corrected_invocation_error": "The coordinator initially passed record/--file to a CLI requiring --request. Original exit-2 stderr retained; corrected invocation succeeded. No product code or acceptance condition changed.",
+  "source_manifest_sha256": "f6600e140bba0337e1ea7b100d0c68ff6dfcbfb5d921682454364f9da571456b",
+  "scope": "Actual local build/install/relocation/helper execution/removal. Native replay and controlled protocol fixtures are labeled and are not new Agent evidence."
+}
