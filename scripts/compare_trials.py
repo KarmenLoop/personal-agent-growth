@@ -233,10 +233,10 @@ def compare_probes(root):
             reason = "resource_evidence_unknown"
         elif row["guard_failures"]:
             reason = "whole_task_resource_regression"
+        elif any(v is None for v in base["checks"].values()):
+            reason = "baseline_quality_unknown"
         elif any(v is False for v in base["checks"].values()):
             reason = "quality_repair"
-        elif not base["quality_pass"]:
-            reason = "baseline_quality_unknown"
         elif gain >= plan["min_relative_gain"]:
             reason = "measured_metric_gain"
         else:
@@ -339,10 +339,10 @@ def compare(root):
         reason = "resource_evidence_unknown"
     elif failed_guards:
         reason = "whole_task_resource_regression"
+    elif any(v is None for v in base["checks"].values()):
+        reason = "baseline_quality_unknown"
     elif any(v is False for v in base["checks"].values()):
         reason = "quality_repair"
-    elif not base["quality_pass"]:
-        reason = "baseline_quality_unknown"
     elif gain >= plan["min_relative_gain"]:
         reason = "measured_metric_gain"
     else:

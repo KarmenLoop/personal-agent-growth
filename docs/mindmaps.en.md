@@ -1,8 +1,8 @@
-# Detailed mind maps and diagrams · 0.4.4
+# Detailed mind maps and diagrams · 0.5.0
 
 [English](mindmaps.en.md) · [中文](mindmaps.zh-CN.md)
 
-Ten diagrams per language: four detailed mind maps, architecture, scheduling, handoff, calendar flow, Windows skip auditing, and Windows Agent recovery. Each language uses the same branch topology. These diagrams describe responsibilities and contracts; they do not establish that every host implements them. Check [compatibility](compatibility.en.md) for evidence. Open SVG files to zoom; Mermaid sources are editable.
+Eleven diagrams per language: four detailed mind maps, architecture, scheduling, handoff, calendar flow, Windows skip auditing, and Windows Agent recovery, and the capability curriculum. Each language uses the same branch topology. These diagrams describe responsibilities and contracts; they do not establish that every host implements them. Check [compatibility](compatibility.en.md) for evidence. Open SVG files to zoom; Mermaid sources are editable.
 
 ## Complete capability tree
 
@@ -87,3 +87,11 @@ After editing a source, regenerate both languages, inspect the output, and updat
 ![Windows Agent recovery](diagrams/windows-agent.en.svg)
 
 [Worked continuation guide](windows-agent-continuation.en.md)
+
+## Learning, teaching, and real application
+
+111 nodes connect diagnosis, preparation, counterexamples, independent teaching, Markdown evidence, real scheduling, PPC and rollback.
+
+[SVG](diagrams/capability-learning.en.svg) · [Editable Mermaid](diagrams/capability-learning.en.mmd)
+
+![Capability curriculum](diagrams/capability-learning.en.svg)

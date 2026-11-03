@@ -1,4 +1,4 @@
-# 完整文档索引 · 0.4.4
+# 完整文档索引 · 0.5.0
 
 [English](index.en.md) · [中文](index.zh-CN.md)
 
@@ -16,7 +16,7 @@
 | 记忆契约与伪代码 | [Read](../docs/markdown-learning.en.md) | [阅读](../docs/markdown-learning.zh-CN.md) |
 | 兼容性与证据 | [Read](../docs/compatibility.en.md) | [阅读](../docs/compatibility.zh-CN.md) |
 | 跨领域完整任务实验 | [Read](../docs/cross-domain-trial.md) | [阅读](../docs/cross-domain-trial.zh-CN.md) |
-| 当前发布验收 | [Read](../docs/release-0.4.4-acceptance.en.md) | [阅读](../docs/release-0.4.4-acceptance.zh-CN.md) |
+| 当前发布验收 | [Read](../docs/release-0.5.0-acceptance.en.md) | [阅读](../docs/release-0.5.0-acceptance.zh-CN.md) |
 | 团队介绍 | [Read](../TEAM.md) | [阅读](../TEAM.zh-CN.md) |
 | 协议说明 | [Read](../docs/licensing.md) | [阅读](../docs/licensing.zh-CN.md) |
 
@@ -52,3 +52,10 @@
 ## Windows CLI Agent
 
 [普通权限接续教程](windows-agent-continuation.zh-CN.md) · [0.4.4 验收](release-0.4.4-acceptance.zh-CN.md)
+
+## 学习与独立实现 · 0.5.0
+
+- [能力学习教程](capability-learning.zh-CN.md)
+- [运行时学习协议](../references/capability-learning.md)
+- [学习科学与课程体系研究](learning-science.zh-CN.md)
+- [开源机制与互操作设计](open-source-research.zh-CN.md)

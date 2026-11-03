@@ -1,0 +1,26 @@
+# 教师执行前预测
+
+保存 UTC：2026-11-03T12:05:28.766748+00:00
+执行者：`/root/capability_teacher_trial`
+reviewer：null
+
+目标：写出下一位 Agent 能独立照做的 `capability_ledger.py` 教材，实跑 init、record、status、due，并检查至少一个容易误判为通过的反例。教材质量及教学有效性在独立执行和审阅前保持 unknown。
+
+范围：产品仓库只读；仅写本 teacher 目录及共享 learning 根中的 teacher-ledger 能力。不得网络、调度或修改产品。model tokens、cost 未知，记 null。
+
+当前解释：能力账本是保存多维证据的 Markdown 记录器。命令退出零码仅证明工具接受了输入，不证明实际能力通过。技能与能力学习参考已读；尚未读 CLI help 或实现。
+
+三个决定性未知：
+1. 记录观测所需的完整 JSON 字段与 artifact 格式。
+2. 未有独立 reviewer 的 unknown 记录如何反映在 status；伪造/不完整 pass 能否被阻止。
+3. due 的时间输入和输出，以及复习窗口是否需要显式声明。
+
+预先预测：
+- 正常初始化会生成 teacher-ledger 对应的 Markdown 文件；不知道具体路径。
+- 未审阅但真实产物配套的 unknown 观测可以记录，status 不会显示该维度已通过。
+- 反例：将未审阅 unknown 观测仅改为 pass，reviewer 保留 null，预期 record 拒绝或 status 不得判通过。若被接受，查验脚本真实检查边界并在教材禁止从接受推论语义通过。
+- due 只列出复习项，不启动后台唤醒。真实延迟提取尚未发生。
+
+验收：可复制命令、完整观测示例、错误恢复、跨会话根路径、身份与哈希边界都在教材中；实际命令的原始 stdout/stderr、退出码、UTC 起止记录于 commands.json。失败和预测偏差保留，不改旧记录。
+
+失败后继：按命令报错区分参数/文件/规则错误，读取相关原始说明或源码，修正教材并重试新的尝试；绝不补写独立 reviewer 或通过身份。

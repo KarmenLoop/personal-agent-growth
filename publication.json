@@ -1,5 +1,5 @@
 {
-  "version": "0.4.4",
+  "version": "0.5.0",
   "documents": [
     "README.md",
     "README.zh-CN.md",
@@ -24,9 +24,15 @@
     "docs/tutorial.en.md",
     "docs/tutorial.zh-CN.md",
     "docs/windows-agent-continuation.en.md",
-    "docs/release-0.4.4-acceptance.en.md",
     "docs/windows-agent-continuation.zh-CN.md",
-    "docs/release-0.4.4-acceptance.zh-CN.md"
+    "docs/capability-learning.en.md",
+    "docs/capability-learning.zh-CN.md",
+    "docs/learning-science.en.md",
+    "docs/learning-science.zh-CN.md",
+    "docs/open-source-research.en.md",
+    "docs/open-source-research.zh-CN.md",
+    "docs/release-0.5.0-acceptance.en.md",
+    "docs/release-0.5.0-acceptance.zh-CN.md"
   ],
   "language_pairs": [
     [
@@ -136,6 +142,26 @@
     [
       "references/windows-agent-continuation.en.md",
       "references/windows-agent-continuation.md"
+    ],
+    [
+      "docs/capability-learning.en.md",
+      "docs/capability-learning.zh-CN.md"
+    ],
+    [
+      "docs/learning-science.en.md",
+      "docs/learning-science.zh-CN.md"
+    ],
+    [
+      "docs/open-source-research.en.md",
+      "docs/open-source-research.zh-CN.md"
+    ],
+    [
+      "references/capability-learning.en.md",
+      "references/capability-learning.md"
+    ],
+    [
+      "docs/release-0.5.0-acceptance.en.md",
+      "docs/release-0.5.0-acceptance.zh-CN.md"
     ]
   ],
   "template_types": [
@@ -180,7 +206,9 @@
     "docs/diagrams/windows-audit.en.svg": "f508bd082866b4507e0c9d9c10a6df92efba68a383438167b638059ea441014f",
     "docs/diagrams/windows-audit.zh-CN.svg": "fade37f54d05840a5f6d19733e93bdd304f18c267e91182a38936e3d1a4c1c09",
     "docs/diagrams/windows-agent.en.svg": "d00bae730a36dcf4b32be9a85f79b3b270bbf472b1c0e50161fc8f31f70762e4",
-    "docs/diagrams/windows-agent.zh-CN.svg": "da0c5b128b85b5b834cebeea5b4c8b38ea18ce1142f633f0682be682b789db5c"
+    "docs/diagrams/windows-agent.zh-CN.svg": "da0c5b128b85b5b834cebeea5b4c8b38ea18ce1142f633f0682be682b789db5c",
+    "docs/diagrams/capability-learning.en.svg": "f6928b88e8a8b08fedba2f5076e2c18eeb49c04625758e21d24bf79640787476",
+    "docs/diagrams/capability-learning.zh-CN.svg": "0ccb60bb6e3faae34d014983ac62f3c273cec8e89cd7afe78d643eeb01b5929d"
   },
   "source_files": {
     "docs/diagrams/handoff.en.mmd": "218d94d581c7f80988dfeabd6e1807129b4da540a12c7c0dc06c2f9c155d8015",
@@ -201,11 +229,14 @@
     "docs/diagrams/memory.en.mmd": "124382cef0afae132f232b94a2d1849356f24545156b69b720110643852d5c85",
     "scripts/host.py": "30f9d6b13177a8d372bc9d3262490cae658cd2dde97e59572fe49702ec8726cb",
     "scripts/host_support.py": "47849645586c94df85dde5487ceb756858a3ee99237e301d1d6b063c9314300f",
-    "scripts/compare_trials.py": "a6a05572e9d37e52350139543c0b1a254e737c7a481417a3998c0346cddd7b2c",
-    "tools/render_diagrams.mjs": "b6e0991f1a675a7947f67a1ea1c75fa80c72bcfd6968f59eee1b6ff28d99a6ce",
+    "scripts/compare_trials.py": "5c04af542702f774986113e2010531bef4032e7161f166da4f60f37bf3e5c6b4",
+    "tools/render_diagrams.mjs": "e7ac3562ab055b90cd2987dc0e1c051fe92866fc3a7ceefa7ad7104c5dcbb8b6",
     "docs/diagrams/windows-audit.en.mmd": "d99ad0ca0d8f122292eec3e1c567f9d6ac16e04ace01b2506496bb84e62f97fb",
     "docs/diagrams/windows-audit.zh-CN.mmd": "acaedad02be334736ca6678e87355853e47eedaf96ad9ac1ad3366ba46ba7037",
     "docs/diagrams/windows-agent.en.mmd": "8538be55d1f0b222e416258c38e7b65354bf4776d283915e51832649f0cccf8d",
-    "docs/diagrams/windows-agent.zh-CN.mmd": "fe7d0a38f76644aa4b8905906a88234c1164fa8a4381b7ded73b82d1d3cbb597"
+    "docs/diagrams/windows-agent.zh-CN.mmd": "fe7d0a38f76644aa4b8905906a88234c1164fa8a4381b7ded73b82d1d3cbb597",
+    "scripts/capability_ledger.py": "685b9eb410f728602764c1b0d317fffd10346988d2f65d9336f3e6a48fe605f4",
+    "docs/diagrams/capability-learning.en.mmd": "4c92ba91c026cf6f147e91646fa4ce33ef570e0a9b225e903c72960307097556",
+    "docs/diagrams/capability-learning.zh-CN.mmd": "46292859c96a885749e1c94290bb727a056324199a73275428c64615349e419c"
   }
 }

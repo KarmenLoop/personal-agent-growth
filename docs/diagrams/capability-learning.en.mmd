@@ -1,0 +1,260 @@
+%%{init: {'flowchart': {'nodeSpacing': 24, 'rankSpacing': 65, 'padding': 16, 'curve': 'linear'}}}%%
+flowchart LR
+  n0["Capability learning 0.5.0<br/>Protocol architecture<br/>01–07: learn and deliver<br/>08–11: evidence and control"]
+  n1["01 Scope and task graph"]
+  n0 --> n1
+  class n1 milestone
+  n2["Restore the actual task"]
+  n1 --> n2
+  n3["Context plus latest node"]
+  n2 --> n3
+  n4["Relevant facts and constraints"]
+  n2 --> n4
+  n5["Split until a useful test exists"]
+  n1 --> n5
+  n6["Parts, inputs, mechanism, outputs"]
+  n5 --> n6
+  n7["Prerequisites, failures, boundaries"]
+  n5 --> n7
+  n8["Freeze acceptance before study"]
+  n1 --> n8
+  n9["Usable artifact and intended user"]
+  n8 --> n9
+  n10["Quality, time, cost, stop conditions"]
+  n8 --> n10
+  n11["02 Diagnose the missing capability"]
+  n0 --> n11
+  class n11 milestone
+  n12["Concept and causality"]
+  n11 --> n12
+  n13["Cannot define or predict"]
+  n12 --> n13
+  n14["Can repeat but cannot explain why"]
+  n12 --> n14
+  n15["Procedure and transfer"]
+  n11 --> n15
+  n16["Can explain but cannot operate"]
+  n15 --> n16
+  n17["Familiar examples only"]
+  n15 --> n17
+  n18["Environment and evidence"]
+  n11 --> n18
+  n19["Check tools, access, dependencies"]
+  n18 --> n19
+  n20["Agent errors are not user weaknesses"]
+  n18 --> n20
+  n21["03 Predict and prepare"]
+  n0 --> n21
+  class n21 milestone
+  n22["Before reading the material"]
+  n21 --> n22
+  n23["Save prediction and uncertainty"]
+  n22 --> n23
+  n24["Preserve the original wrong guess"]
+  n22 --> n24
+  n25["Learn for one named unknown"]
+  n21 --> n25
+  n26["Primary sources and source dates"]
+  n25 --> n26
+  n27["Separate facts, analogy, hypothesis"]
+  n25 --> n27
+  n28["Bound the preparation"]
+  n21 --> n28
+  n29["Two reads without action change: try"]
+  n28 --> n29
+  n30["Keep only relevant context"]
+  n28 --> n30
+  n31["04 Apply, challenge, remediate"]
+  n0 --> n31
+  class n31 milestone
+  n32["Real attempt with fading hints"]
+  n31 --> n32
+  n33["Input, calls, output, exit, artifact"]
+  n32 --> n33
+  n34["Uninvoked is not passed"]
+  n32 --> n34
+  n35["Counterexample and prediction"]
+  n31 --> n35
+  n36["Change one decisive condition"]
+  n35 --> n36
+  n37["Find the first divergence"]
+  n35 --> n37
+  n38["Repair the actual cause"]
+  n31 --> n38
+  n39["Knowledge, tool, strategy, or test"]
+  n38 --> n39
+  n40["Return to the original task"]
+  n38 --> n40
+  n41["05 Judge and transfer"]
+  n0 --> n41
+  class n41 milestone
+  n42["Evidence-based decision"]
+  n41 --> n42
+  n43["Goal, alternatives, decisive<br/>evidence"]
+  n42 --> n43
+  n44["Counterevidence, rationale, reversal"]
+  n42 --> n44
+  n45["Probe the decisive uncertainty"]
+  n41 --> n45
+  n46["Research, execute, wait, or ask"]
+  n45 --> n46
+  n47["Read back effects; revise judgment"]
+  n45 --> n47
+  n48["Transfer to unfamiliar work"]
+  n41 --> n48
+  n49["Prior apply plus a new task"]
+  n48 --> n49
+  n50["Shared mechanism and differences"]
+  n48 --> n50
+  n51["06 Teach a different executor"]
+  n0 --> n51
+  class n51 milestone
+  n52["Write an actionable lesson"]
+  n51 --> n52
+  n53["Prerequisites and reproducible steps"]
+  n52 --> n53
+  n54["Counterexamples and diagnosis"]
+  n52 --> n54
+  n55["Independent learner and new input"]
+  n51 --> n55
+  n56["Different learner, reviewer, teacher"]
+  n55 --> n56
+  n57["New artifact; no teacher hash reuse"]
+  n55 --> n57
+  n58["Inspect learning by doing"]
+  n51 --> n58
+  n59["Paraphrasing alone is insufficient"]
+  n58 --> n59
+  n60["Repair the specific lesson gap"]
+  n58 --> n60
+  n61["07 Deliver the whole outcome"]
+  n0 --> n61
+  class n61 milestone
+  n62["Check the actual use case"]
+  n61 --> n62
+  n63["Artifact works for intended user"]
+  n62 --> n63
+  n64["Independent review of substance"]
+  n62 --> n64
+  n65["Check continuation and maintenance"]
+  n61 --> n65
+  n66["Recovery and relocation"]
+  n65 --> n66
+  n67["Known limits and next action"]
+  n65 --> n67
+  n68["Keep acceptance levels distinct"]
+  n61 --> n68
+  n69["Source, local execution, deployment"]
+  n68 --> n69
+  n70["Practice throughout; not after<br/>mastery"]
+  n68 --> n70
+  n71["08 Markdown evidence ledger"]
+  n0 --> n71
+  class n71 milestone
+  n72["Eight independent dimensions"]
+  n71 --> n72
+  n73["Explain, apply, counterexample,<br/>transfer"]
+  n72 --> n73
+  n74["Teach, deliver, recall, regression"]
+  n72 --> n74
+  n75["Replay explicit evidence"]
+  n71 --> n75
+  n76["Revision, identity declarations,<br/>hashes"]
+  n75 --> n76
+  n77["UTC order and immutable policy"]
+  n75 --> n77
+  n78["Retain uncertainty and failures"]
+  n71 --> n78
+  n79["Latest failure lowers current<br/>judgment"]
+  n78 --> n79
+  n80["Changed or invalid source needs<br/>review"]
+  n78 --> n80
+  n81["09 Review and host wakeup"]
+  n0 --> n81
+  class n81 milestone
+  n82["Actual delayed retrieval"]
+  n81 --> n82
+  n83["At least 24 hours; answer hidden"]
+  n82 --> n83
+  n84["Variation and original regression"]
+  n82 --> n84
+  n85["Due list suggests work"]
+  n81 --> n85
+  n86["Default review intervals: 1, 3, 7<br/>days"]
+  n85 --> n86
+  n87["Ledger never registers a scheduler"]
+  n85 --> n87
+  n88["Host owns real execution"]
+  n81 --> n88
+  n89["Register, read back, native event ID"]
+  n88 --> n89
+  n90["Resume memory; verify output; adjust"]
+  n88 --> n90
+  n91["10 Two levels of PPC recursion"]
+  n0 --> n91
+  class n91 milestone
+  n92["Task-level experiment"]
+  n91 --> n92
+  n93["Freeze baseline, inputs, model,<br/>rubric"]
+  n92 --> n93
+  n94["Run general and domain proposals"]
+  n92 --> n94
+  n95["Compose only with new evidence"]
+  n91 --> n95
+  n96["Run composed behavior separately"]
+  n95 --> n96
+  n97["Quality, whole-task time, total cost"]
+  n95 --> n97
+  n98["Cross-task adoption and rollback"]
+  n91 --> n98
+  n99["Require transfer and regression"]
+  n98 --> n99
+  n100["Regress: revert; retain failed<br/>evidence"]
+  n98 --> n100
+  n101["11 Boundaries that remain explicit"]
+  n0 --> n101
+  class n101 milestone
+  n102["Helper consistency is not<br/>authentication"]
+  n101 --> n102
+  n103["Reviewer checks real host receipts"]
+  n102 --> n103
+  n104["A portfolio list is not execution"]
+  n102 --> n104
+  n105["Original core with cited ideas"]
+  n101 --> n105
+  n106["Frozen weights; external scaffolding"]
+  n105 --> n106
+  n107["Research effects are not our results"]
+  n105 --> n107
+  n108["Autonomy within the actual task"]
+  n101 --> n108
+  n109["User decisions only when necessary"]
+  n108 --> n109
+  n110["No hidden permission or rubric<br/>change"]
+  n108 --> n110
+  classDef capabilityRoot fill:#16324f,color:#ffffff,stroke:#16324f,font-size:19px,font-weight:bold
+  class n0 capabilityRoot
+  classDef milestone stroke-width:2.5px,font-weight:bold
+  classDef g0 fill:#dceaf5,color:#14273d,stroke:#657b8b
+  class n1,n2,n3,n4,n5,n6,n7,n8,n9,n10 g0
+  classDef g1 fill:#e9e2f2,color:#14273d,stroke:#657b8b
+  class n11,n12,n13,n14,n15,n16,n17,n18,n19,n20 g1
+  classDef g2 fill:#f8e9d3,color:#14273d,stroke:#657b8b
+  class n21,n22,n23,n24,n25,n26,n27,n28,n29,n30 g2
+  classDef g3 fill:#dceef1,color:#14273d,stroke:#657b8b
+  class n31,n32,n33,n34,n35,n36,n37,n38,n39,n40 g3
+  classDef g4 fill:#f4dfe3,color:#14273d,stroke:#657b8b
+  class n41,n42,n43,n44,n45,n46,n47,n48,n49,n50 g4
+  classDef g5 fill:#e7ebce,color:#14273d,stroke:#657b8b
+  class n51,n52,n53,n54,n55,n56,n57,n58,n59,n60 g5
+  classDef g6 fill:#e3e5f5,color:#14273d,stroke:#657b8b
+  class n61,n62,n63,n64,n65,n66,n67,n68,n69,n70 g6
+  classDef g7 fill:#e7ecd1,color:#14273d,stroke:#657b8b
+  class n71,n72,n73,n74,n75,n76,n77,n78,n79,n80 g7
+  classDef g8 fill:#d9efdf,color:#14273d,stroke:#657b8b
+  class n81,n82,n83,n84,n85,n86,n87,n88,n89,n90 g8
+  classDef g9 fill:#d5ebe5,color:#14273d,stroke:#657b8b
+  class n91,n92,n93,n94,n95,n96,n97,n98,n99,n100 g9
+  classDef g10 fill:#dbeaf0,color:#14273d,stroke:#657b8b
+  class n101,n102,n103,n104,n105,n106,n107,n108,n109,n110 g10
+  linkStyle default fill:none,stroke:#526d86,stroke-width:1.2px

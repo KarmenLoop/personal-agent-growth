@@ -1,0 +1,1120 @@
+{
+  "schema": 1,
+  "date": "2026-11-03",
+  "release": "0.5.0",
+  "status": "PASS_BOUNDED_LEARNING_AND_TEACHING",
+  "reviewer": "/root",
+  "agent_host": "Codex child agents",
+  "real_agent_tasks": 3,
+  "domains": [
+    "software-release and tool instruction",
+    "education content and source appraisal"
+  ],
+  "baseline_tests": {
+    "pass": 52,
+    "fail": 0,
+    "python": "3.12.14",
+    "initial_default_python": "3.9.6 caused one explicit minimum-version failure"
+  },
+  "tests": {
+    "pass": 79,
+    "fail": 0,
+    "skip": 0,
+    "seconds": 20.387797832954675,
+    "source_unchanged": true,
+    "stderr_sha256": "fce44eea8a1322b604cbad38cc3a0ea2f9fd7c3ae964a4b95d89556b21aacf43"
+  },
+  "defects_repaired": [
+    "mixed failed and unknown baseline promoted candidates",
+    "duplicate evidence moved the review deadline",
+    "invalidated sources contributed to practice streaks",
+    "changed teacher material reused learner evidence to extend review"
+  ],
+  "agent_results": {
+    "teacher-ledger": {
+      "revision": 6,
+      "dimensions": {
+        "explain": "unobserved",
+        "apply": "pass",
+        "counterexample": "pass",
+        "transfer": "unobserved",
+        "teach": "pass",
+        "deliver": "unobserved",
+        "recall": "unobserved",
+        "regression": "unobserved"
+      },
+      "assessment": "incomplete_or_review_due"
+    },
+    "education-claim-review": {
+      "revision": 3,
+      "dimensions": {
+        "explain": "pass",
+        "apply": "pass",
+        "counterexample": "unobserved",
+        "transfer": "unobserved",
+        "teach": "unobserved",
+        "deliver": "unobserved",
+        "recall": "unobserved",
+        "regression": "unobserved"
+      },
+      "assessment": "incomplete_or_review_due"
+    },
+    "learner-release-manifest": {
+      "revision": 3,
+      "dimensions": {
+        "explain": "unobserved",
+        "apply": "pass",
+        "counterexample": "unobserved",
+        "transfer": "unobserved",
+        "teach": "unobserved",
+        "deliver": "unobserved",
+        "recall": "unobserved",
+        "regression": "unobserved"
+      },
+      "assessment": "incomplete_or_review_due"
+    }
+  },
+  "current_source_manifest": [
+    {
+      "path": "SKILL.md",
+      "bytes": 8452,
+      "sha256": "9b80d86de8e967e88baf530ed7518566e5751c45fa8870a525239ed33a7582ed"
+    },
+    {
+      "path": "SKILL.en.md",
+      "bytes": 8853,
+      "sha256": "2b9ee4732510a78bc5dcf055abc99f737a9bf1592908066f99986bf623566b08"
+    },
+    {
+      "path": "scripts/capability_ledger.py",
+      "bytes": 22034,
+      "sha256": "685b9eb410f728602764c1b0d317fffd10346988d2f65d9336f3e6a48fe605f4"
+    },
+    {
+      "path": "scripts/compare_trials.py",
+      "bytes": 29693,
+      "sha256": "5c04af542702f774986113e2010531bef4032e7161f166da4f60f37bf3e5c6b4"
+    },
+    {
+      "path": "references/capability-learning.md",
+      "bytes": 8902,
+      "sha256": "063219c4fa64cb09d250045b948c56a63ee91c7ba995481d4e96e2e492280382"
+    }
+  ],
+  "exports": {
+    "teacher--prediction.txt": {
+      "local_source": "teacher/prediction.md",
+      "original_sha256": "b90b3260dcc40c96ec2898941dc21c1a919af20ee302d7fe77a4cebb4737f759",
+      "published_sha256": "b90b3260dcc40c96ec2898941dc21c1a919af20ee302d7fe77a4cebb4737f759",
+      "path_redacted": false
+    },
+    "teacher--lesson.txt": {
+      "local_source": "teacher/lesson.md",
+      "original_sha256": "b2269d0bcbd6b09f4e9a8a737ab09e2b03f19caca53327c19c13a6cfb2984698",
+      "published_sha256": "6f4300a4badd94d2f874b479a08a27c78888b6016613bd7d96067acb5a94ad91",
+      "path_redacted": true
+    },
+    "teacher--summary.txt": {
+      "local_source": "teacher/summary.md",
+      "original_sha256": "c83f9d644299f44f0571d0d227d9c2f5941ebcf8daa3e63aee4d9ba5837f2845",
+      "published_sha256": "c83f9d644299f44f0571d0d227d9c2f5941ebcf8daa3e63aee4d9ba5837f2845",
+      "path_redacted": false
+    },
+    "education--prediction.txt": {
+      "local_source": "education/prediction.md",
+      "original_sha256": "48d20e9251c7d6aa7590b283ed2348f202e36b02b05f0ee7417e7e47afff94e3",
+      "published_sha256": "48d20e9251c7d6aa7590b283ed2348f202e36b02b05f0ee7417e7e47afff94e3",
+      "path_redacted": false
+    },
+    "education--learning-card.txt": {
+      "local_source": "education/learning-card.md",
+      "original_sha256": "8d11b5921c6a9ac5f6a0ddbeba2a005275efeccf9f8a37ab1cec89c35936a9a9",
+      "published_sha256": "8d11b5921c6a9ac5f6a0ddbeba2a005275efeccf9f8a37ab1cec89c35936a9a9",
+      "path_redacted": false
+    },
+    "education--claim-audit.txt": {
+      "local_source": "education/claim-audit.md",
+      "original_sha256": "25c57d13af9ac94e1ab8d8cff3c23247e275402081f7fb4b53c5349dcc0b4b24",
+      "published_sha256": "25c57d13af9ac94e1ab8d8cff3c23247e275402081f7fb4b53c5349dcc0b4b24",
+      "path_redacted": false
+    },
+    "education--summary.txt": {
+      "local_source": "education/summary.md",
+      "original_sha256": "84f536ef139d5daa236fcd6ae1b10873aee2e4dad4086e04a30702f9143aeefa",
+      "published_sha256": "84f536ef139d5daa236fcd6ae1b10873aee2e4dad4086e04a30702f9143aeefa",
+      "path_redacted": false
+    },
+    "learner--prediction.txt": {
+      "local_source": "learner/prediction.md",
+      "original_sha256": "0eb317497a11c8a76bb7d3a534ee6abdfa9911c20263680ab059c59e0749214b",
+      "published_sha256": "0eb317497a11c8a76bb7d3a534ee6abdfa9911c20263680ab059c59e0749214b",
+      "path_redacted": false
+    },
+    "learner--learner-report.txt": {
+      "local_source": "learner/learner-report.md",
+      "original_sha256": "09680ff5fe8e548b80b1308e1400b8eb59a0102dd7d288a14fccb44e70cd7e96",
+      "published_sha256": "09680ff5fe8e548b80b1308e1400b8eb59a0102dd7d288a14fccb44e70cd7e96",
+      "path_redacted": false
+    },
+    "learner--release-source-manifest-v2.json": {
+      "local_source": "learner/release-source-manifest-v2.json",
+      "original_sha256": "7122ec507bec7e0f7d0da2612d4344477c98bb70804455306ea69d3c714bce43",
+      "published_sha256": "9633363ab42130ed45b2b9b9042be1667dc40dd8bcd538e2ef2e58b755aec8ee",
+      "path_redacted": true
+    },
+    "comparator-red.stderr": {
+      "local_source": "comparator-red.stderr",
+      "original_sha256": "4c7cfc4f023a371b45c12cd1f7d6f772089d159050c85f9a8a99279c99a35a82",
+      "published_sha256": "70b24596cccce050c94ce9338f0159235585122f85e25df88ae02c629ecea2ae",
+      "path_redacted": true
+    },
+    "comparator-green.stderr": {
+      "local_source": "comparator-green.stderr",
+      "original_sha256": "48462fa3b81f333dffd17ba15d00faa7a193c55b88f3d7daa76c67afcd52e18b",
+      "published_sha256": "48462fa3b81f333dffd17ba15d00faa7a193c55b88f3d7daa76c67afcd52e18b",
+      "path_redacted": false
+    },
+    "ledger-red.stderr": {
+      "local_source": "ledger-red.stderr",
+      "original_sha256": "5699063eceb3225b494c50c2e2cfc1c5b5d9bc097639ce3efaf202c00e1bd582",
+      "published_sha256": "0a5ddacbab8f8c25078437f7ba085900de2d8d4dc25980f3f4539916f2e2a81a",
+      "path_redacted": true
+    },
+    "ledger-green.stderr": {
+      "local_source": "ledger-green.stderr",
+      "original_sha256": "4b05aabecba71912ffa9e715e44986da30ac502f26431fd93c04ad0760257e6a",
+      "published_sha256": "4b05aabecba71912ffa9e715e44986da30ac502f26431fd93c04ad0760257e6a",
+      "path_redacted": false
+    },
+    "final-tests.stderr": {
+      "local_source": "final-tests.stderr",
+      "original_sha256": "fce44eea8a1322b604cbad38cc3a0ea2f9fd7c3ae964a4b95d89556b21aacf43",
+      "published_sha256": "fce44eea8a1322b604cbad38cc3a0ea2f9fd7c3ae964a4b95d89556b21aacf43",
+      "path_redacted": false
+    }
+  },
+  "traces": {
+    "teacher": {
+      "raw_sha256": "f3af94287d8695e326a71efe85d950cae03600f203b4ec36e8358e13a58a2056",
+      "commands": [
+        {
+          "label": "cli-help",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "<SKILL_ROOT>/scripts/capability_ledger.py",
+            "--help"
+          ],
+          "start": "2026-11-03T12:05:58.148966+00:00",
+          "end": "2026-11-03T12:05:58.227776+00:00",
+          "seconds": 0.07841700001154095,
+          "exit_code": 0,
+          "stdout_sha256": "78c6b198a7d8389708ee61be6c25b8c0e3bb06051e6b6c1a9545cd2c939add2f",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "tutorial-read",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-c",
+            "from pathlib import Path; print(Path('<SKILL_ROOT>/docs/capability-learning.zh-CN.md').read_text())"
+          ],
+          "start": "2026-11-03T12:05:58.540875+00:00",
+          "end": "2026-11-03T12:05:58.600327+00:00",
+          "seconds": 0.058913916000165045,
+          "exit_code": 0,
+          "stdout_sha256": "e0d31e3d80990933bb86769614689626bcefab33dd3e506cc214f9155319b5b6",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "interface-and-guards",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-c",
+            "from pathlib import Path; p=Path('<SKILL_ROOT>/scripts/capability_ledger.py'); lines=p.read_text().splitlines(); print('\\n'.join(f'{i+1}: {s}' for i,s in enumerate(lines) if any(x in s for x in ['def ', 'reviewer', 'resolve(', 'artifact', 'revision', 'add_argument', 'mkdir', 'due_at'])))"
+          ],
+          "start": "2026-11-03T12:06:13.247696+00:00",
+          "end": "2026-11-03T12:06:13.315144+00:00",
+          "seconds": 0.06727070908527821,
+          "exit_code": 0,
+          "stdout_sha256": "1e1a6bc8cb47937db677a0c67d4af6a0a15afd85d2ccee6882151baf5c8f7848",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "init",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "<SKILL_ROOT>/scripts/capability_ledger.py",
+            "init",
+            "--root",
+            "<TASK_ROOT>/learning",
+            "--id",
+            "teacher-ledger",
+            "--goal",
+            "编写可独立执行的 capability_ledger.py 教材并验证记录与反例边界",
+            "--domain",
+            "agent-learning"
+          ],
+          "start": "2026-11-03T12:06:13.486783+00:00",
+          "end": "2026-11-03T12:06:13.587186+00:00",
+          "seconds": 0.09929524990729988,
+          "exit_code": 0,
+          "stdout_sha256": "f2af4440c3c3264f4268ff51435ca651bad269f85715cc67f2ad9388427d6c39",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "validation-detail",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-c",
+            "from pathlib import Path; lines=Path('<SKILL_ROOT>/scripts/capability_ledger.py').read_text().splitlines(); print('\\n'.join(f'{i+1}: {lines[i]}' for a,b in [(120,141),(229,270),(301,355),(377,425)] for i in range(a-1,min(b-1,len(lines)))))"
+          ],
+          "start": "2026-11-03T12:06:21.258834+00:00",
+          "end": "2026-11-03T12:06:21.311764+00:00",
+          "seconds": 0.05281912500504404,
+          "exit_code": 0,
+          "stdout_sha256": "be8ecabc44ff93d8f61910894f7dafc329c6142865e56311e7ff4e0ac8ab535f",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "freeze-lesson-and-observations",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-"
+          ],
+          "start": "2026-11-03T12:09:11.089131+00:00",
+          "end": "2026-11-03T12:09:11.199792+00:00",
+          "seconds": 0.10918437503278255,
+          "exit_code": 0,
+          "stdout_sha256": "6f9b2a1d35c8e458b0dd8ce292b1a580bff2011fe7ed3d82a2c3dbd02ebb560c",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "record-unknown",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "<SKILL_ROOT>/scripts/capability_ledger.py",
+            "record",
+            "--root",
+            "<TASK_ROOT>/learning",
+            "--id",
+            "teacher-ledger",
+            "--observation",
+            "<TASK_ROOT>/teacher/apply-01-observation.md",
+            "--expected-revision",
+            "0"
+          ],
+          "start": "2026-11-03T12:09:11.560251+00:00",
+          "end": "2026-11-03T12:09:11.696409+00:00",
+          "seconds": 0.13203962508123368,
+          "exit_code": 0,
+          "stdout_sha256": "9e4ffaafb3a1a8626ca5db14b6b6d9de24897bfae0dcc7e544f0bd9a71fc014b",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "reject-null-reviewer",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "<SKILL_ROOT>/scripts/capability_ledger.py",
+            "record",
+            "--root",
+            "<TASK_ROOT>/learning",
+            "--id",
+            "teacher-ledger",
+            "--observation",
+            "<TASK_ROOT>/teacher/counterexample-null-reviewer.md",
+            "--expected-revision",
+            "1"
+          ],
+          "start": "2026-11-03T12:09:12.075345+00:00",
+          "end": "2026-11-03T12:09:12.252189+00:00",
+          "seconds": 0.17649075004737824,
+          "exit_code": 2,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "4492731514340ed143ce9074c5528e8b88b63f17faecf5b07c6176557cd8fb5c"
+        },
+        {
+          "label": "reject-stale-revision",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "<SKILL_ROOT>/scripts/capability_ledger.py",
+            "record",
+            "--root",
+            "<TASK_ROOT>/learning",
+            "--id",
+            "teacher-ledger",
+            "--observation",
+            "<TASK_ROOT>/teacher/apply-01-observation.md",
+            "--expected-revision",
+            "0"
+          ],
+          "start": "2026-11-03T12:09:13.118843+00:00",
+          "end": "2026-11-03T12:09:13.340039+00:00",
+          "seconds": 0.21210791706107557,
+          "exit_code": 2,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "87533eb6bf1a04cc992238953aa91c6f128df3a9920947f335451dbbb4268cd3"
+        },
+        {
+          "label": "drift-evidence",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-c",
+            "from pathlib import Path; p=Path('<TASK_ROOT>/learning/capabilities/teacher-ledger/evidence/lesson-v1.md'); p.write_bytes(p.read_bytes()+b'\\nTEST_DRIFT\\n'); print('Appended test drift to teacher-owned evidence only')"
+          ],
+          "start": "2026-11-03T12:09:41.098268+00:00",
+          "end": "2026-11-03T12:09:41.236585+00:00",
+          "seconds": 0.1371363749494776,
+          "exit_code": 0,
+          "stdout_sha256": "91f482353beaca6f23c1667d8826850f97dddb284b232ad933a6892fa04bcb6f",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "status-drift-rejected",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "<SKILL_ROOT>/scripts/capability_ledger.py",
+            "status",
+            "--root",
+            "<TASK_ROOT>/learning",
+            "--id",
+            "teacher-ledger"
+          ],
+          "start": "2026-11-03T12:09:41.442075+00:00",
+          "end": "2026-11-03T12:09:41.590513+00:00",
+          "seconds": 0.1477070830296725,
+          "exit_code": 2,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "3bbd44577aa7aafdaa650c9c27561b4e3083cc82b272c5a36b3321b67ee42c66"
+        },
+        {
+          "label": "restore-exact-evidence",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-c",
+            "from pathlib import Path; import hashlib; t=Path('<TASK_ROOT>/teacher'); p=t.parent/'learning/capabilities/teacher-ledger/evidence/lesson-v1.md'; raw=(t/'lesson-v1-backup.md').read_bytes(); assert hashlib.sha256(raw).hexdigest()=='7572e1152186a1bb550910c074462c899f202350f7ee8326bdf0ed8cdc4e7106'; p.write_bytes(raw); print(hashlib.sha256(p.read_bytes()).hexdigest())"
+          ],
+          "start": "2026-11-03T12:09:41.825735+00:00",
+          "end": "2026-11-03T12:09:41.889487+00:00",
+          "seconds": 0.06114045903086662,
+          "exit_code": 0,
+          "stdout_sha256": "751d535d3302183f78117ecbd255181d5492eecaf345a9347039b25f9ae15d5e",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "status-restored",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "<SKILL_ROOT>/scripts/capability_ledger.py",
+            "status",
+            "--root",
+            "<TASK_ROOT>/learning",
+            "--id",
+            "teacher-ledger"
+          ],
+          "start": "2026-11-03T12:09:42.043859+00:00",
+          "end": "2026-11-03T12:09:42.137963+00:00",
+          "seconds": 0.0843075419543311,
+          "exit_code": 0,
+          "stdout_sha256": "9e4ffaafb3a1a8626ca5db14b6b6d9de24897bfae0dcc7e544f0bd9a71fc014b",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "due-initial",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "<SKILL_ROOT>/scripts/capability_ledger.py",
+            "due",
+            "--root",
+            "<TASK_ROOT>/learning"
+          ],
+          "start": "2026-11-03T12:09:42.367509+00:00",
+          "end": "2026-11-03T12:09:42.516726+00:00",
+          "seconds": 0.1459318338893354,
+          "exit_code": 0,
+          "stdout_sha256": "75c44bd0378ce8f4ae4a2f828c91b8949777e816f53e73a540497b6046b66dce",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "lesson-example-exact-generator",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-"
+          ],
+          "start": "2026-11-03T12:10:17.336641+00:00",
+          "end": "2026-11-03T12:10:17.504368+00:00",
+          "seconds": 0.16424524993635714,
+          "exit_code": 0,
+          "stdout_sha256": "18da4624579e91069edac2404756825a81680dd8a7cd40d771e282bcdc51a4f2",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "record-lesson-example",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "<SKILL_ROOT>/scripts/capability_ledger.py",
+            "record",
+            "--root",
+            "<TASK_ROOT>/learning",
+            "--id",
+            "teacher-ledger",
+            "--observation",
+            "<TASK_ROOT>/learning/capabilities/teacher-ledger/evidence/apply-01-observation.md",
+            "--expected-revision",
+            "1"
+          ],
+          "start": "2026-11-03T12:10:17.626598+00:00",
+          "end": "2026-11-03T12:10:17.764212+00:00",
+          "seconds": 0.13465675001498312,
+          "exit_code": 0,
+          "stdout_sha256": "7e14dadcd6f3f0249288e5ee2d7e46d42e7d1c90d122e7656ed8f4ad73560c4f",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "lesson-counterexample-exact-generator",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-"
+          ],
+          "start": "2026-11-03T12:10:17.888612+00:00",
+          "end": "2026-11-03T12:10:17.977880+00:00",
+          "seconds": 0.08798341697547585,
+          "exit_code": 0,
+          "stdout_sha256": "11f361d31cdcd3f5dcbf28a5adeb039d077a163d34416bfba0c6577daff4a012",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "reject-lesson-example-pass",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "<SKILL_ROOT>/scripts/capability_ledger.py",
+            "record",
+            "--root",
+            "<TASK_ROOT>/learning",
+            "--id",
+            "teacher-ledger",
+            "--observation",
+            "<TASK_ROOT>/learning/capabilities/teacher-ledger/evidence/counterexample-null-reviewer-01.md",
+            "--expected-revision",
+            "2"
+          ],
+          "start": "2026-11-03T12:10:18.149043+00:00",
+          "end": "2026-11-03T12:10:18.389741+00:00",
+          "seconds": 0.2404146670596674,
+          "exit_code": 2,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "4492731514340ed143ce9074c5528e8b88b63f17faecf5b07c6176557cd8fb5c"
+        },
+        {
+          "label": "freeze-results-and-source-fingerprints",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-"
+          ],
+          "start": "2026-11-03T12:11:11.187599+00:00",
+          "end": "2026-11-03T12:11:11.301772+00:00",
+          "seconds": 0.11358387500513345,
+          "exit_code": 0,
+          "stdout_sha256": "1b2b3ab6a2e962ddde8eb441bb09934f4c2156e17623fda25775de14132490db",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "record-counterexamples-unknown",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "<SKILL_ROOT>/scripts/capability_ledger.py",
+            "record",
+            "--root",
+            "<TASK_ROOT>/learning",
+            "--id",
+            "teacher-ledger",
+            "--observation",
+            "<TASK_ROOT>/teacher/counterexamples-observation.md",
+            "--expected-revision",
+            "2"
+          ],
+          "start": "2026-11-03T12:11:11.585340+00:00",
+          "end": "2026-11-03T12:11:11.694079+00:00",
+          "seconds": 0.10843570891302079,
+          "exit_code": 0,
+          "stdout_sha256": "0175830c115ba07a1b25c43caec24b96fb9f261dddc05dcfc151e8bc0cec7a98",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "status-final",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "<SKILL_ROOT>/scripts/capability_ledger.py",
+            "status",
+            "--root",
+            "<TASK_ROOT>/learning",
+            "--id",
+            "teacher-ledger"
+          ],
+          "start": "2026-11-03T12:12:03.058561+00:00",
+          "end": "2026-11-03T12:12:03.269989+00:00",
+          "seconds": 0.2104039170080796,
+          "exit_code": 0,
+          "stdout_sha256": "0175830c115ba07a1b25c43caec24b96fb9f261dddc05dcfc151e8bc0cec7a98",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "due-final",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "<SKILL_ROOT>/scripts/capability_ledger.py",
+            "due",
+            "--root",
+            "<TASK_ROOT>/learning"
+          ],
+          "start": "2026-11-03T12:12:03.784429+00:00",
+          "end": "2026-11-03T12:12:03.935905+00:00",
+          "seconds": 0.1426163330907002,
+          "exit_code": 0,
+          "stdout_sha256": "7aaeb3448641670d482fd610923acf42d7ebe064fa1eb928b14ae9e363c4b434",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "summary-and-final-readback",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-"
+          ],
+          "start": "2026-11-03T12:12:04.431189+00:00",
+          "end": "2026-11-03T12:12:04.531955+00:00",
+          "seconds": 0.0994412909494713,
+          "exit_code": 0,
+          "stdout_sha256": "00c6763ff07e246aa01653fd6ed9b37b7262db553ae27d709fbaccbee838c481",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "Actual child-process receipts from a real Codex Agent; not complete host-turn telemetry."
+    },
+    "learner": {
+      "raw_sha256": "9486bf34f08ccd2ce2eb549669982d38bad4155028633dc81a727850070e3522",
+      "commands": [
+        {
+          "label": "01-materials-before",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "<TASK_ROOT>/learner/hash_materials.py"
+          ],
+          "start": "2026-11-03T13:06:58.832802+00:00",
+          "end": "2026-11-03T13:06:59.055525+00:00",
+          "seconds": 0.22072254098020494,
+          "exit_code": 0,
+          "stdout_sha256": "8b0f469a5d281c33440369ae484e9840a180fa40d5a5f4124e61e951e9d9d822",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "02-python-version",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "--version"
+          ],
+          "start": "2026-11-03T13:07:17.997315+00:00",
+          "end": "2026-11-03T13:07:18.031332+00:00",
+          "seconds": 0.0337689999723807,
+          "exit_code": 0,
+          "stdout_sha256": "4c3569f5da09975434dd9fd9a91fadbc4367a91d8f3c3fab59e9241ab9ee4bd8",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "03-ledger-help",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "<SKILL_ROOT>/scripts/capability_ledger.py",
+            "--help"
+          ],
+          "start": "2026-11-03T13:07:18.262845+00:00",
+          "end": "2026-11-03T13:07:18.364566+00:00",
+          "seconds": 0.10044458298943937,
+          "exit_code": 0,
+          "stdout_sha256": "78c6b198a7d8389708ee61be6c25b8c0e3bb06051e6b6c1a9545cd2c939add2f",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "04-init",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "<SKILL_ROOT>/scripts/capability_ledger.py",
+            "init",
+            "--root",
+            "<TASK_ROOT>/learning",
+            "--id",
+            "learner-release-manifest",
+            "--goal",
+            "Create and verify the five-file release-source manifest, honestly record observations, reject an invalid hash, and recover state.",
+            "--domain",
+            "software-release"
+          ],
+          "start": "2026-11-03T13:08:17.597317+00:00",
+          "end": "2026-11-03T13:08:17.704485+00:00",
+          "seconds": 0.10690466698724777,
+          "exit_code": 0,
+          "stdout_sha256": "52aedbdebe631466cbe887af3016b30a35eed6712fbe4c34361c2c625a0dab94",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "05-status-after-init",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "<SKILL_ROOT>/scripts/capability_ledger.py",
+            "status",
+            "--root",
+            "<TASK_ROOT>/learning",
+            "--id",
+            "learner-release-manifest"
+          ],
+          "start": "2026-11-03T13:08:17.862907+00:00",
+          "end": "2026-11-03T13:08:17.936004+00:00",
+          "seconds": 0.07101958303246647,
+          "exit_code": 0,
+          "stdout_sha256": "52aedbdebe631466cbe887af3016b30a35eed6712fbe4c34361c2c625a0dab94",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "06-build-manifest",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "<TASK_ROOT>/learner/build_manifest.py"
+          ],
+          "start": "2026-11-03T13:08:26.357392+00:00",
+          "end": "2026-11-03T13:08:26.455563+00:00",
+          "seconds": 0.09758579195477068,
+          "exit_code": 0,
+          "stdout_sha256": "3a365f1a609bdc25589864d7c599fcfbe0c2c92dc3b15b99813f3f4289469e52",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "07-verify-manifest",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "<TASK_ROOT>/learner/verify_manifest.py"
+          ],
+          "start": "2026-11-03T13:08:26.622015+00:00",
+          "end": "2026-11-03T13:08:26.724227+00:00",
+          "seconds": 0.0949681659694761,
+          "exit_code": 0,
+          "stdout_sha256": "95e1040a123b454f168dc69a7724bbd38577d518af8199d28a4c2289bebf74d1",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "08-prepare-observation",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "<TASK_ROOT>/learner/make_observation.py",
+            "valid"
+          ],
+          "start": "2026-11-03T13:08:26.890452+00:00",
+          "end": "2026-11-03T13:08:26.970984+00:00",
+          "seconds": 0.07831008394714445,
+          "exit_code": 0,
+          "stdout_sha256": "a22e855844b4ab3ca83e5b4d342ab8c6847e26b4dce5b9142c22f1c5d43bc93b",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "09-status-before-record",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "<SKILL_ROOT>/scripts/capability_ledger.py",
+            "status",
+            "--root",
+            "<TASK_ROOT>/learning",
+            "--id",
+            "learner-release-manifest"
+          ],
+          "start": "2026-11-03T13:08:44.316317+00:00",
+          "end": "2026-11-03T13:08:44.458464+00:00",
+          "seconds": 0.14116912498138845,
+          "exit_code": 0,
+          "stdout_sha256": "52aedbdebe631466cbe887af3016b30a35eed6712fbe4c34361c2c625a0dab94",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "10-record-unknown",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "<SKILL_ROOT>/scripts/capability_ledger.py",
+            "record",
+            "--root",
+            "<TASK_ROOT>/learning",
+            "--id",
+            "learner-release-manifest",
+            "--observation",
+            "<TASK_ROOT>/learning/capabilities/learner-release-manifest/evidence/release-manifest-apply-01.md",
+            "--expected-revision",
+            "0"
+          ],
+          "start": "2026-11-03T13:08:57.619642+00:00",
+          "end": "2026-11-03T13:08:57.756785+00:00",
+          "seconds": 0.13432658300735056,
+          "exit_code": 0,
+          "stdout_sha256": "f8ab89802610977497e3a3787f598e1d6c07e4af791901c5ab364b9d3a3b1623",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "11-status-unknown",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "<SKILL_ROOT>/scripts/capability_ledger.py",
+            "status",
+            "--root",
+            "<TASK_ROOT>/learning",
+            "--id",
+            "learner-release-manifest"
+          ],
+          "start": "2026-11-03T13:08:57.993655+00:00",
+          "end": "2026-11-03T13:08:58.098231+00:00",
+          "seconds": 0.10389533394481987,
+          "exit_code": 0,
+          "stdout_sha256": "f8ab89802610977497e3a3787f598e1d6c07e4af791901c5ab364b9d3a3b1623",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "12-prepare-wrong-hash",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "<TASK_ROOT>/learner/make_observation.py",
+            "invalid-hash"
+          ],
+          "start": "2026-11-03T13:09:18.387688+00:00",
+          "end": "2026-11-03T13:09:18.434685+00:00",
+          "seconds": 0.04516754194628447,
+          "exit_code": 0,
+          "stdout_sha256": "633823c8be5ab94f7abf87c195ab1b4eb32d4ef049781acb5da41ecbf788c917",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "13-state-before-counterexample",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "<TASK_ROOT>/learner/capture_state.py",
+            "before"
+          ],
+          "start": "2026-11-03T13:09:18.615826+00:00",
+          "end": "2026-11-03T13:09:18.675275+00:00",
+          "seconds": 0.05920820799656212,
+          "exit_code": 0,
+          "stdout_sha256": "44a54a11cdac339786eb843df3370e31b8e2cff14a966ee60f0559595615a99c",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "14-record-wrong-hash",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "<SKILL_ROOT>/scripts/capability_ledger.py",
+            "record",
+            "--root",
+            "<TASK_ROOT>/learning",
+            "--id",
+            "learner-release-manifest",
+            "--observation",
+            "<TASK_ROOT>/learning/capabilities/learner-release-manifest/evidence/release-manifest-wrong-hash-01.md",
+            "--expected-revision",
+            "1"
+          ],
+          "start": "2026-11-03T13:09:25.335648+00:00",
+          "end": "2026-11-03T13:09:25.427344+00:00",
+          "seconds": 0.0901665409328416,
+          "exit_code": 2,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "ddb1181d1e516f8a8a3a8580af3bec257791d8a4a4150d53521fe6ecd0658edd"
+        },
+        {
+          "label": "15-state-after-counterexample",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "<TASK_ROOT>/learner/capture_state.py",
+            "after"
+          ],
+          "start": "2026-11-03T13:09:33.789395+00:00",
+          "end": "2026-11-03T13:09:33.863503+00:00",
+          "seconds": 0.07303887500893325,
+          "exit_code": 0,
+          "stdout_sha256": "c1177401c021694469ddccb7c305ef69c488a1b874e6f7f1eec6d0610105b59c",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "16-status-fresh-process",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "<SKILL_ROOT>/scripts/capability_ledger.py",
+            "status",
+            "--root",
+            "<TASK_ROOT>/learning",
+            "--id",
+            "learner-release-manifest"
+          ],
+          "start": "2026-11-03T13:09:34.201840+00:00",
+          "end": "2026-11-03T13:09:34.309069+00:00",
+          "seconds": 0.10408370906952769,
+          "exit_code": 0,
+          "stdout_sha256": "f8ab89802610977497e3a3787f598e1d6c07e4af791901c5ab364b9d3a3b1623",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "17-due",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "<SKILL_ROOT>/scripts/capability_ledger.py",
+            "due",
+            "--root",
+            "<TASK_ROOT>/learning"
+          ],
+          "start": "2026-11-03T13:09:34.515215+00:00",
+          "end": "2026-11-03T13:09:34.657994+00:00",
+          "seconds": 0.1425550829153508,
+          "exit_code": 0,
+          "stdout_sha256": "be7c0ca5173d7510f570225360d05000b00e803a4026c380c9bc990e524d20ec",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "18-validate-results",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "<TASK_ROOT>/learner/validate_results.py"
+          ],
+          "start": "2026-11-03T13:10:47.618614+00:00",
+          "end": "2026-11-03T13:10:47.708010+00:00",
+          "seconds": 0.08910679188556969,
+          "exit_code": 0,
+          "stdout_sha256": "463b22d6650082d01657af9bffd63944b397f55771e1dc13bd46ba11c7114998",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "19-refresh-project",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "<TASK_ROOT>/learner/refresh_project.py"
+          ],
+          "start": "2026-11-03T13:12:21.849145+00:00",
+          "end": "2026-11-03T13:12:21.905491+00:00",
+          "seconds": 0.054761916981078684,
+          "exit_code": 0,
+          "stdout_sha256": "f1818631b725f748ec9d9e5f77f51f4bc6326e9eb5a169149b747de1769bd9a2",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "20-reread-project-v2",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "<TASK_ROOT>/learner/read_recovery_v2.py"
+          ],
+          "start": "2026-11-03T13:12:54.553654+00:00",
+          "end": "2026-11-03T13:12:54.643010+00:00",
+          "seconds": 0.08869920810684562,
+          "exit_code": 0,
+          "stdout_sha256": "e4c89c313ca43ddf78f2dbd503ed832ce593247a0abbd65097488c29b8bd631a",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "21-status-before-v2",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "<SKILL_ROOT>/scripts/capability_ledger.py",
+            "status",
+            "--root",
+            "<TASK_ROOT>/learning",
+            "--id",
+            "learner-release-manifest"
+          ],
+          "start": "2026-11-03T13:12:55.026410+00:00",
+          "end": "2026-11-03T13:12:55.163946+00:00",
+          "seconds": 0.13586320797912776,
+          "exit_code": 0,
+          "stdout_sha256": "f8ab89802610977497e3a3787f598e1d6c07e4af791901c5ab364b9d3a3b1623",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "22-capture-sources-v2",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "<TASK_ROOT>/learner/manifest_v2.py",
+            "capture"
+          ],
+          "start": "2026-11-03T13:13:34.567979+00:00",
+          "end": "2026-11-03T13:13:34.694376+00:00",
+          "seconds": 0.12469800002872944,
+          "exit_code": 0,
+          "stdout_sha256": "2b5d96d7a8a8ccac35fbcb3f66cb861f1b484137e3f4e7676f0f4698d8d64ca9",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "23-build-manifest-v2",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "<TASK_ROOT>/learner/manifest_v2.py",
+            "build"
+          ],
+          "start": "2026-11-03T13:13:34.908091+00:00",
+          "end": "2026-11-03T13:13:35.001949+00:00",
+          "seconds": 0.09348166605923325,
+          "exit_code": 0,
+          "stdout_sha256": "7122ec507bec7e0f7d0da2612d4344477c98bb70804455306ea69d3c714bce43",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "24-verify-manifest-v2",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "<TASK_ROOT>/learner/verify_manifest_v2.py"
+          ],
+          "start": "2026-11-03T13:13:35.241393+00:00",
+          "end": "2026-11-03T13:13:35.330353+00:00",
+          "seconds": 0.08658749994356185,
+          "exit_code": 0,
+          "stdout_sha256": "b0f9f98d6608ce92f94c587e717598be5bba8c1f84e0ae6457203ea162a10ec2",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "25-prepare-observation-v2",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "<TASK_ROOT>/learner/make_observation_v2.py"
+          ],
+          "start": "2026-11-03T13:13:55.586406+00:00",
+          "end": "2026-11-03T13:13:55.700220+00:00",
+          "seconds": 0.11099083290901035,
+          "exit_code": 0,
+          "stdout_sha256": "1e4389c7a3a51cbfcf0c038bbc7b47c682210e76a6b39447c5beaa99247ff4e9",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "26-status-before-record-v2",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "<SKILL_ROOT>/scripts/capability_ledger.py",
+            "status",
+            "--root",
+            "<TASK_ROOT>/learning",
+            "--id",
+            "learner-release-manifest"
+          ],
+          "start": "2026-11-03T13:13:56.055380+00:00",
+          "end": "2026-11-03T13:13:56.175902+00:00",
+          "seconds": 0.11908683401998132,
+          "exit_code": 0,
+          "stdout_sha256": "f8ab89802610977497e3a3787f598e1d6c07e4af791901c5ab364b9d3a3b1623",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "27-record-unknown-v2",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "<SKILL_ROOT>/scripts/capability_ledger.py",
+            "record",
+            "--root",
+            "<TASK_ROOT>/learning",
+            "--id",
+            "learner-release-manifest",
+            "--observation",
+            "<TASK_ROOT>/learning/capabilities/learner-release-manifest/evidence/release-manifest-apply-02.md",
+            "--expected-revision",
+            "1"
+          ],
+          "start": "2026-11-03T13:14:05.682548+00:00",
+          "end": "2026-11-03T13:14:05.794092+00:00",
+          "seconds": 0.11115574999712408,
+          "exit_code": 0,
+          "stdout_sha256": "75959b1bb7a4807677d6ef1eee80b18ca503313258486b259b3202ca82cf7796",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "28-status-fresh-process-v2",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "<SKILL_ROOT>/scripts/capability_ledger.py",
+            "status",
+            "--root",
+            "<TASK_ROOT>/learning",
+            "--id",
+            "learner-release-manifest"
+          ],
+          "start": "2026-11-03T13:14:06.044413+00:00",
+          "end": "2026-11-03T13:14:06.133925+00:00",
+          "seconds": 0.08926729205995798,
+          "exit_code": 0,
+          "stdout_sha256": "75959b1bb7a4807677d6ef1eee80b18ca503313258486b259b3202ca82cf7796",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "29-finalize-v2",
+          "argv": [
+            "<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "<TASK_ROOT>/learner/finalize_v2.py"
+          ],
+          "start": "2026-11-03T13:15:37.610345+00:00",
+          "end": "2026-11-03T13:15:37.739812+00:00",
+          "seconds": 0.12416295800358057,
+          "exit_code": 0,
+          "stdout_sha256": "694462415fe9105c3e801ac878d4f082ef541ca43a4842b627ec988aa95e0d77",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "Actual child-process receipts from a real Codex Agent; not complete host-turn telemetry."
+    }
+  },
+  "schedule": {
+    "registered": true,
+    "native_status": "ACTIVE",
+    "configured": "2026-11-04 21:30 Asia/Shanghai, one occurrence",
+    "triggered": false,
+    "delayed_recall": "PENDING_REAL_TIME"
+  },
+  "cost": {
+    "tokens": null,
+    "usd": null,
+    "whole_agent_time": null,
+    "scope": "Native complete host usage and coordinator costs unavailable. Recorded phase/command times are not full-task acceleration evidence."
+  },
+  "limits": [
+    "Teacher and education initial intake preceded their standalone timers.",
+    "Teacher stdin scripts were not separately captured as raw stdin; retained transcript and tutorial material do not make a complete replay bundle.",
+    "Learner retained script bytes/hashes and all 29 post-intake commands; initial intake UTC absent.",
+    "Root assisted with review and notified the learner of code changes.",
+    "Independent learner is an Agent, not a human student.",
+    "No new Windows/Cursor/cross-device or app-closed wakeup run.",
+    "No before/after speed or universal intelligence claim.",
+    "Human education and ten OSS reviews are references, not installed integrations."
+  ]
+}

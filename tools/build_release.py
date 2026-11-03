@@ -14,6 +14,11 @@ import zipfile
 ROOT = Path(__file__).resolve().parents[1]
 NAME = "personal-agent-growth"
 FILES = (
+    "references/capability-learning.md",
+    "references/capability-learning.en.md",
+    "docs/capability-learning.en.md",
+    "docs/capability-learning.zh-CN.md",
+    "scripts/capability_ledger.py",
     "SKILL.md",
     "SKILL.en.md",
     "references/task-record.md",

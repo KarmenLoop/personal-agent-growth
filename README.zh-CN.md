@@ -1,6 +1,6 @@
 # Personal Agent Growth · 个人智能体成长
 
-[English](README.md) · [简体中文](README.zh-CN.md) · **0.4.4**
+[English](README.md) · [简体中文](README.zh-CN.md) · **0.5.0**
 
 [![检查](https://github.com/KarmenLoop/personal-agent-growth/actions/workflows/check.yml/badge.svg)](https://github.com/KarmenLoop/personal-agent-growth/actions/workflows/check.yml)
 [![发布](https://img.shields.io/github/v/release/KarmenLoop/personal-agent-growth)](https://github.com/KarmenLoop/personal-agent-growth/releases/latest)
@@ -19,7 +19,7 @@ Agent 应当说清楚：什么观察改变了判断，哪条经验在下一个�
 | 理解为什么判断、如何改判 | [思考与判断方法](docs/reasoning.zh-CN.md) | [Reasoning method](docs/reasoning.en.md) |
 | 查看完整能力树和关系图 | [复杂思维导图](docs/mindmaps.zh-CN.md) | [Mind maps](docs/mindmaps.en.md) |
 | 使用日、周、项目记忆 | [Markdown 学习体系](docs/markdown-learning.zh-CN.md) | [Markdown learning](docs/markdown-learning.en.md) |
-| Resume a Windows Koder Agent | [Continuation tutorial](docs/windows-agent-continuation.en.md) | [接续实测教程](docs/windows-agent-continuation.zh-CN.md) |
+| 恢复 Windows Koder Agent | [接续实测教程](docs/windows-agent-continuation.zh-CN.md) | [Continuation tutorial](docs/windows-agent-continuation.en.md) |
 | 核对真实能力与限制 | [兼容性与验收边界](docs/compatibility.zh-CN.md) | [Compatibility](docs/compatibility.en.md) |
 | 查阅全部文档 | [完整文档索引](docs/index.zh-CN.md) | [Documentation index](docs/index.en.md) |
 
@@ -56,7 +56,7 @@ Agent 应当说清楚：什么观察改变了判断，哪条经验在下一个�
 
 ## 快速开始
 
-从 [v0.4.4 发布页](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.4.4)下载**完整交付包**与 `SHA256SUMS.txt`，解压后按[开始使用](开始使用.md)操作。工具需要 Python 3.11+，运行时无需安装 pip 依赖。
+从 [v0.5.0 发布页](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.5.0)下载**完整交付包**与 `SHA256SUMS.txt`，解压后按[开始使用](开始使用.md)操作。工具需要 Python 3.11+，运行时无需安装 pip 依赖。
 
 Mac 在完整交付包目录执行：
 
@@ -91,7 +91,7 @@ Windows 使用 `py -3 -B -X utf8`；教程优先选择 `D:\AgentKnowledge`，没
 
 ![完整任务 token 与耗时，保留时钟异常](docs/images/cross-domain-0.4.1.png)
 
-仓库测试证明文件、工具和协议行为，不能代替 Windows 桌面 Agent、重新认证的 Cursor 模型回合、跨设备同步或关闭应用后运行。当前发布检查见 [0.4.4 验收报告](docs/release-0.4.4-acceptance.zh-CN.md)。
+仓库测试证明文件、工具和协议行为，不能代替 Windows 桌面 Agent、重新认证的 Cursor 模型回合、跨设备同步或关闭应用后运行。当前发布检查见 [0.5.0 验收报告](docs/release-0.5.0-acceptance.zh-CN.md)。
 
 ## 开发与核验
 
@@ -99,7 +99,7 @@ Windows 使用 `py -3 -B -X utf8`；教程优先选择 `D:\AgentKnowledge`，没
 python3 -B -m unittest discover -s tests -v
 python3 -B scripts/check_publication.py
 python3 -B tools/build_release.py --output dist
-python3 -B scripts/verify_handoff.py --archive dist/personal-agent-growth-0.4.4.zip --manifest dist/manifest.json
+python3 -B scripts/verify_handoff.py --archive dist/personal-agent-growth-0.5.0.zip --manifest dist/manifest.json
 python3 -B tools/build_delivery.py --output /path/to/fresh-output
 ```
 
@@ -110,3 +110,9 @@ python3 -B tools/build_delivery.py --output /path/to/fresh-output
 由来自中国上海的 **KARMENLOOP Official Team** 创建与维护。团队开发 Koder 与 KARMEN BOT。[团队介绍](TEAM.zh-CN.md) · [官网](https://karmenloop.com) · [GitHub](https://github.com/KarmenLoop) · [邮箱](mailto:info@karmenloop.com)
 
 Copyright (C) 2026 KARMENLOOP Official Team。采用 **AGPL-3.0-only**，分发适用副本时保留 [LICENSE](LICENSE) 和 [NOTICE](NOTICE)。允许商用；分发及修改版网络服务需履行协议适用的源代码义务。AGPL 不要求将纯私人修改上传 GitHub。见[协议说明](docs/licensing.zh-CN.md)。
+
+## 0.5.0 能力学习
+
+新增[能力账本](docs/capability-learning.zh-CN.md)，用 Markdown 分别记录解释、应用、反例、迁移、教学、交付、延迟复习与回归。工具拒绝缺失身份、变更产物、陈旧写入和过早复习，后续失败会使依赖证据失效；身份真实性与内容质量仍由独立审阅核验。
+
+[教育研究](docs/learning-science.zh-CN.md)整理学段进阶、四国课程机制及大学教学方法；[开源研究](docs/open-source-research.zh-CN.md)核查十个项目与许可。核心实现独立编写，外部思想明确引用，未接入的框架不宣称已经集成。

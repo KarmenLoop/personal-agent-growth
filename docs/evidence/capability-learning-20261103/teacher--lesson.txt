@@ -1,0 +1,151 @@
+# capability_ledger.py：完成任务后留下可复核的能力记录
+
+执行者：`/root/capability_teacher_trial`。这份教材的内容和教学效果尚待独立审阅，reviewer 为 null。
+
+## 先掌握三个区别
+
+`init` 建账；`record` 校验并追加一次观测；`status` 重新读取 Markdown 与证据，报告当前状态；`due` 汇总应核验、补课或复习的项。所有命令都不执行模型、不证明身份真实、不启动调度器。
+
+一条观测是“真实任务 + 真实产物 + 时间 + 身份声明 + 验收结论”。命令退出 0 说明格式、哈希及规则被接受，不能代替内容审阅。没有独立审阅时填写 `unknown` 和 `reviewer: null`；不要为了让界面变绿另填一个身份。能力状态由 Markdown 重建，命令 JSON 输出和回执文件不是可回写的第二套语义状态。
+
+## 前提和工作目录
+
+需要 Python 3.11+ 标准库、脚本可读，以及获准写入的学习根。路径不能是符号链接；产物必须在学习根内，引用相对路径，不能用 `..`、反斜杠、冒号或绝对路径。证据不可为空，单文件上限 32 MiB。不要把将来还会修改的 commands.json 或 lesson.md 直接当作历史证据；先保存不可变快照再算 SHA-256。
+
+以下是 macOS/zsh 可执行示例。先把 `CAP_ID` 改为本任务授权的、尚不存在的能力 ID，把 `ACTOR` 改为宿主实际给你的身份；不要使用教师的 `teacher-ledger`。`TASK_ID` 必须对应你的真实任务。当前试验采用同一个物理学习根，跨会话不另复制一个同名根。
+
+```sh
+PY='<USER_HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3'
+LEDGER='<SKILL_ROOT>/scripts/capability_ledger.py'
+LEARNING_ROOT='<TASK_ROOT>/learning'
+CAP_ID='learner-replace-with-authorized-id'
+TASK_ID='learner-new-task-01'
+ACTOR='replace-with-actual-host-agent-id'
+export PY LEDGER LEARNING_ROOT CAP_ID TASK_ID ACTOR
+"$PY" --version
+"$PY" -B "$LEDGER" --help
+```
+
+开始前保存目标、最多三个未知、预测、验收条件及失败后继；读现有项目 context 与最新 node（若有）。脚本初次使用或换版本时先看实际 `--help`。
+
+## 新能力初始化；已有能力先恢复
+
+```sh
+"$PY" -B "$LEDGER" init --root "$LEARNING_ROOT" --id "$CAP_ID" \
+  --goal '完成新任务，保存真实产物并核验记录规则' --domain agent-learning
+"$PY" -B "$LEDGER" status --root "$LEARNING_ROOT" --id "$CAP_ID"
+```
+
+新能力初始 revision 为 0，八个维度均为 unobserved。已有 ID 不重复 init，不覆盖 capability.md；直接 status，并核对 goal、domain、revision、history 与当前任务的关系。脚本创建 `capabilities/<id>/capability.md` 和 `attempts/`。初始策略默认延迟提取至少 24 小时，复习 1/3/7 天；不能在见到结果后修改策略或伪造时间。
+
+## 生成一个真实产物和完整 unknown 观测
+
+这个小任务实际计算一组数的平方及总和，用于学习记录接口；它本身不证明复杂任务能力。正式任务换成自己的真实产物与验收条件。下列代码使用 `x` 排他写入，防止重跑覆盖历史；若文件已存在，先读回判断已做到哪一步，再给新的尝试换新文件名和事件 ID。
+
+```sh
+"$PY" - <<'PYCODE'
+import os, json, hashlib
+from pathlib import Path
+from datetime import datetime, timezone
+root = Path(os.environ['LEARNING_ROOT'])
+cap = os.environ['CAP_ID']
+evidence = root / 'capabilities' / cap / 'evidence'
+evidence.mkdir(exist_ok=True)
+values = [3, 5, 8]  # 在新任务中使用新的输入，先预测再计算。
+result = {'input': values, 'squares': [n*n for n in values]}
+result['sum_of_squares'] = sum(result['squares'])
+artifact = evidence / 'apply-01-result.json'
+raw = (json.dumps(result, ensure_ascii=False, indent=2) + '\n').encode()
+with artifact.open('xb') as f:
+    f.write(raw)
+observation = {
+    'id': 'apply-01', 'kind': 'apply',
+    'task_id': os.environ['TASK_ID'], 'executor': os.environ['ACTOR'],
+    'reviewer': None, 'outcome': 'unknown',
+    'observed_at': datetime.now(timezone.utc).isoformat(),
+    'summary': '实际计算及产物已保存，待独立审阅内容与宿主回执。',
+    'artifacts': [{'path': artifact.relative_to(root).as_posix(),
+                   'sha256': hashlib.sha256(raw).hexdigest()}],
+    'cost': {'wall_seconds': None, 'tokens': None, 'usd': None},
+}
+obs = evidence / 'apply-01-observation.md'
+with obs.open('x', encoding='utf-8') as f:
+    f.write('---\n' + json.dumps(observation, ensure_ascii=False, indent=2)
+            + '\n---\n\n真实计算已执行；内容与身份真实性仍需审阅。\n')
+print(json.dumps(result, ensure_ascii=False))
+print(obs)
+PYCODE
+```
+
+这段生成的是 JSON 形式的 YAML 1.2 文首元数据，不支持随意 YAML 写法。顶层字段必须恰好匹配类型要求，不能增加自定义字段；说明写在第二个 `---` 后的正文。UTC 时间不得早于 init、晚于真实当前时间或早于上一次观测。未知成本保留 null；同一次运行跨维度记录时不要重复计入整场成本。子进程耗时也不等于完整 Agent 耗时。
+
+## 记录、读回、核验到期项
+
+先再读一次 status，人工核对 revision 与 history。首次应是 0；如果不是，解释已有写入后再使用当前修订号，不盲目自动重试。
+
+```sh
+"$PY" -B "$LEDGER" status --root "$LEARNING_ROOT" --id "$CAP_ID"
+EXPECTED_REVISION=0  # 必须替换为刚核对的实际 revision。
+"$PY" -B "$LEDGER" record --root "$LEARNING_ROOT" --id "$CAP_ID" \
+  --observation "$LEARNING_ROOT/capabilities/$CAP_ID/evidence/apply-01-observation.md" \
+  --expected-revision "$EXPECTED_REVISION"
+"$PY" -B "$LEDGER" status --root "$LEARNING_ROOT" --id "$CAP_ID"
+"$PY" -B "$LEDGER" due --root "$LEARNING_ROOT"
+```
+
+预期 record 后修订号增加 1，apply 为 unknown，assessment 为 incomplete_or_review_due；due 将 unknown 列为立即待 verify，且 scheduler_registered 为 false。due 读取整根，所以输出可能包含其他能力；只处理自己的授权范围。due 若发现某能力坏记录会列 errors 并返回非零，不能忽略 errors 后称全根正常。保存每条命令的 argv、工作目录、UTC 起止、stdout、stderr、exit；命令输出只是回执，语义结论仍以真实产物及审阅为准。
+
+## 必做反例：未审阅的 pass
+
+先预测：只把 unknown 改成 pass，reviewer 保持 null，record 应拒绝。复制观测为**新文件、新 ID、新时间**，不改已记账版本，保持 artifact 哈希真实。以下接上方首次成功记录，若 revision 已变，先读回并改实际修订号。
+
+```sh
+"$PY" - <<'PYCODE'
+import os, json
+from pathlib import Path
+from datetime import datetime, timezone
+e = Path(os.environ['LEARNING_ROOT']) / 'capabilities' / os.environ['CAP_ID'] / 'evidence'
+raw = (e / 'apply-01-observation.md').read_text(encoding='utf-8')
+data = json.loads(raw.split('---', 2)[1])
+data.update(id='counterexample-null-reviewer-01', outcome='pass',
+            observed_at=datetime.now(timezone.utc).isoformat())
+out = e / 'counterexample-null-reviewer-01.md'
+with out.open('x', encoding='utf-8') as f:
+    f.write('---\n' + json.dumps(data, ensure_ascii=False, indent=2)
+            + '\n---\n\n故意构造的无审阅 pass；不是能力通过声明。\n')
+PYCODE
+"$PY" -B "$LEDGER" record --root "$LEARNING_ROOT" --id "$CAP_ID" \
+  --observation "$LEARNING_ROOT/capabilities/$CAP_ID/evidence/counterexample-null-reviewer-01.md" \
+  --expected-revision 1
+"$PY" -B "$LEDGER" status --root "$LEARNING_ROOT" --id "$CAP_ID"
+```
+
+预期 exit 2、stderr 含 Independent reviewer required，revision 不增加，原 unknown 保留。反例被正确拒绝只证明这一条规则，不证明身份防伪：脚本只比较身份字符串，独立 reviewer 必须由真实执行和审阅回执另外证实。不要用另填姓名来“修复”这个预期失败。若结果不同，保留原始回执，核对脚本版本、当前修订和输入，改教材中的限制而不改写预测。
+
+## 错误恢复与不可变证据
+
+| 报错或状态 | 正确后继 |
+|---|---|
+| Stale revision | 读 status 和新历史，核对是否已有相同任务结果；需要新事件才用当前修订重提。拒绝不会消耗 revision。 |
+| Duplicate event id | 不重发旧事件；先读旧记录，新的实际尝试才换 ID。 |
+| Independent reviewer required | 继续 unknown，交真实独立审阅；不得伪造 reviewer。 |
+| Artifact changed / 产物失踪 | 保留错误回执，找真实不可变证据备份；如能按原 SHA 恢复精确原件再核验。不要重写历史的哈希来洗掉漂移。找不到原件则账本保持不完整，另立获准的新能力记录后继，不假称已恢复。 |
+| 未来时间、早于 init、乱序 | 用真实 UTC 检查时钟与记录顺序；不得回填假时间或改已发布历史。 |
+| Path escapes root / Unsafe path / Symlink | 把真实证据副本放到获准根内的普通文件，使用安全相对路径；不要绕过路径检查。 |
+| 锁存在、事务或磁盘错误 | 停止冲突写入，确认其他写者与实际文件；不要直接删别人锁或覆盖尝试文件。 |
+
+账本 status 会复核全部已列证据；因此连 unknown 记录附带的产物也必须保持哈希一致。后续改教材要生成 lesson-v2.md 等新快照并追加新观测，原文件留存。JSON 输出中的 state 是当前结论，history 保存旧事件；同维度后续 fail/unknown 会使当前结论降级。
+
+## 教学、跨会话与适用限制
+
+换会话时记录并重新确认同一个真实 `LEARNING_ROOT`、自己的能力 ID、脚本版本/哈希、项目 context/最新 node、账本和真实产物。从当前 revision 续接，不复制出第二根，不重放已完成动作。单纯从另一个进程读到相同数据只能证明进程间回读；另一个 Agent/宿主的接续要有其真实回执。
+
+`teach` 除基础字段还需 learner、不同的 learner_task_id、learner_artifacts；学习者要不同于教师及 reviewer，产物哈希不能照搬教师。未实际产生学习者新产物前，不把教材交付记作 teach pass。`transfer` 要已有通过的 apply source_attempt 和不同 task_id；`recall` 要通过的 source_attempt、no_answer_visible: true 及实际至少 24 小时时间间隔。传 unknown 也不代表可以跳过这些类型的前提；缺前提就保持该维度 unobserved，并在正文或任务记录说明。
+
+建议下一位学习者用这份教材在自己的授权 ID 下处理新输入，例如一个真实文件清单的数量、总字节和 SHA-256，独立记录 unknown、做一个不同的错误反例、退出进程后重读同根，并解释两者不等于独立通过或真实延迟复习。教师自己的运行不证明教学成功；由第三方检查学习者新产物后才可能追加相应通过。
+
+本教材只覆盖这个工具的本地 Markdown 记录流程，不证明通用精通、身份认证、真实延迟复习、搬迁、其他平台、远程宿主或后台调度。软件和教材版本变动时重新核对接口。
+
+来源：本地 `SKILL.md`、`references/capability-learning.md`、`docs/capability-learning.zh-CN.md`、脚本实际 `--help` 与实现检查。真实试验结果见同目录 commands.json 和 summary.md。
+
+教师实际运行记录（UTC 2026-11-03）：两个 PYCODE 片段逐字提取执行，外部环境指向教师获准能力；示例产生 `[9,25,64]`、总和 98，unknown 记录被接受。null reviewer 的 pass 被拒绝且 exit 2；陈旧 revision 被拒绝且 exit 2；修改 unknown 记录附带的证据后，status 以 `Artifact changed` 拒绝，按原备份精确恢复后 status 再次可读。上述均是教师实际运行，尚不构成学习者或独立审阅结果。

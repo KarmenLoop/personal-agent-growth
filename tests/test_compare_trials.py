@@ -217,6 +217,23 @@ class TrialTests(unittest.TestCase):
                                    "reviewer": "independent-test-reviewer", "arms": {"composed": row}}
         self.save("composition-evaluation.json", self.compose_evaluation)
 
+    def test_known_failure_does_not_hide_an_unknown_baseline_check(self):
+        self.evaluation["arms"]["baseline"]["checks"] = {"identity": False, "usable": None}
+        self.save("evaluation.json", self.evaluation)
+        result = gate.compare(self.root)
+        self.assertEqual(result["eligible"], [])
+        self.assertEqual(result["arms"]["domain"]["reason"], "baseline_quality_unknown")
+        with self.assertRaisesRegex(ValueError, "unqualified"):
+            gate.record(self.root, self.library, 0, "domain")
+
+    def test_composition_cannot_repair_a_partly_unknown_baseline(self):
+        self.evaluation["arms"]["baseline"]["checks"] = {"identity": False, "usable": None}
+        self.save("evaluation.json", self.evaluation)
+        self.prepare_composition()
+        result = gate.compare(self.root)
+        self.assertEqual(result["eligible"], [])
+        self.assertEqual(result["arms"]["composed"]["reason"], "baseline_quality_unknown")
+
     def test_composition_requires_its_own_run_and_can_be_adopted(self):
         self.prepare_composition()
         report = gate.compare(self.root)

@@ -10,7 +10,7 @@ import crypto from 'node:crypto';
 const args = process.argv.slice(2);
 const option = (key) => args[args.indexOf(key) + 1];
 if (!args.includes('--mermaid-dir') || !args.includes('--playwright')) {
-  throw new Error('Usage: node tools/render_diagrams.mjs --mermaid-dir /path/to/mermaid --playwright /path/to/playwright [--browser /path/to/chromium]');
+  throw new Error('Usage: node tools/render_diagrams.mjs --mermaid-dir /path/to/mermaid --playwright /path/to/playwright [--browser /path/to/chromium] [--only-prefix filename-prefix]');
 }
 const mermaid = path.resolve(option('--mermaid-dir'));
 const require = createRequire(import.meta.url);
@@ -18,6 +18,17 @@ const { chromium } = require(path.resolve(option('--playwright')));
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const folder = path.join(root, 'docs/diagrams');
 const hash = (data) => crypto.createHash('sha256').update(data).digest('hex');
+const onlyPrefix = args.includes('--only-prefix') ? option('--only-prefix') : null;
+if (onlyPrefix !== null && (!onlyPrefix || !/^[a-zA-Z0-9._-]+$/.test(onlyPrefix))) {
+  throw new Error('Invalid --only-prefix filename prefix');
+}
+const names = (await fs.readdir(folder)).filter(n => n.endsWith('.mmd') && (!onlyPrefix || n.startsWith(onlyPrefix))).sort();
+if (!names.length) throw new Error('No matching diagram sources');
+const previous = onlyPrefix ? JSON.parse(await fs.readFile(path.join(folder, 'render-manifest.json'), 'utf8')) : null;
+const version = JSON.parse(await fs.readFile(path.join(mermaid, 'package.json'), 'utf8')).version;
+if (previous && (!Array.isArray(previous.diagrams) || previous.mermaid_version !== version)) {
+  throw new Error('Partial rendering requires an existing manifest with the same Mermaid version');
+}
 const server = http.createServer(async (req, res) => {
   try {
     if (req.url === '/') {
@@ -46,7 +57,7 @@ try {
       mindmap: { padding: 22, useMaxWidth: false }, flowchart: { htmlLabels: false, useMaxWidth: false, curve: 'basis' }, sequence: { useMaxWidth: false } });
   });
   const records = [];
-  for (const name of (await fs.readdir(folder)).filter(n => n.endsWith('.mmd')).sort()) {
+  for (const name of names) {
     const source = await fs.readFile(path.join(folder, name), 'utf8');
     const result = await page.evaluate(async ({ source }) => {
       document.body.innerHTML = '';
@@ -62,8 +73,10 @@ try {
     records.push({ source: name, source_sha256: hash(source), output, output_sha256: hash(result.svg + '\n'), width: result.width, height: result.height, labels: result.labels });
     process.stdout.write(JSON.stringify({ source: name, width: result.width, height: result.height, labels: result.labels }) + '\n');
   }
-  const version = JSON.parse(await fs.readFile(path.join(mermaid, 'package.json'), 'utf8')).version;
-  await fs.writeFile(path.join(folder, 'render-manifest.json'), JSON.stringify({ mermaid_version: version, renderer: 'Chromium via Playwright', scope: 'Actual SVG rendering, not Agent behavior acceptance', diagrams: records }, null, 2) + '\n');
+  const manifest = previous
+    ? { ...previous, diagrams: [...previous.diagrams.filter(record => !names.includes(record.source)), ...records] }
+    : { mermaid_version: version, renderer: 'Chromium via Playwright', scope: 'Actual SVG rendering, not Agent behavior acceptance', diagrams: records };
+  await fs.writeFile(path.join(folder, 'render-manifest.json'), JSON.stringify(manifest, null, 2) + '\n');
 } finally {
   if (browser) await browser.close();
   await new Promise(resolve => server.close(resolve));
