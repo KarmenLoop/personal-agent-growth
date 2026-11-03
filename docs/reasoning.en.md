@@ -1,4 +1,4 @@
-# How decisions and learning connect · 0.5.0
+# How decisions and learning connect · 0.6.0
 
 [中文](reasoning.zh-CN.md) · [Architecture](architecture.en.md) · [Decision map](diagrams/reasoning.en.svg)
 
@@ -75,3 +75,11 @@ Entrepreneurship is a method example: clarify the domain, constraints, and deliv
 For people, distinguish their public statements, observed decisions, third-party evaluations, and system inference. Proposed cognitive frameworks need sources and counterexamples. For events, establish chronology, causes, process, outcomes, participants, and gaps. Causal claims need alternative explanations; value judgments identify affected parties and time horizons.
 
 Across domains the structure remains purpose → decomposition → evidence → hypothesis → discriminating test → decision → observation → revision. Domain knowledge fills the content rather than replacing the loop.
+
+## 9. Learn when the field is unfamiliar
+
+Begin with the desired output and a question whose answer can change the next action. Search prior experience by shared relationships, such as repeated setup or a bottleneck, then ask which conditions made that mechanism work. A common label is a retrieval clue; the host still needs to inspect the source, map the roles, and look for a difference that could reverse the conclusion. If no useful analogy survives, inspect local concepts and run a small discriminating task.
+
+For example, grouping software jobs may amortize setup. Applying that idea to an unfamiliar service workflow is a hypothesis, not a result. If actual observations show that batching increases unacceptable delay, revise the recommendation and record the harmful conditions. A later software task with strict per-item deadlines should retrieve that boundary too. This is a design example, not a new trial.
+
+A useful failed prediction can resolve a question; an unknown action effect cannot. The next proposal must retain unresolved questions, seek counterevidence when it matters, and stop at the run's limits. The Agent writes both the task result and, when a lesson was used, separate transfer feedback. See [the executable protocol](adaptive-learning.en.md) for revision checks, source snapshots, actual execution boundaries, and later reuse.

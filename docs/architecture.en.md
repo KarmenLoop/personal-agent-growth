@@ -1,4 +1,4 @@
-# Architecture explained · 0.5.0
+# Architecture explained · 0.6.0
 
 [中文](architecture.zh-CN.md) · [Documentation index](index.en.md) · [Detailed maps](mindmaps.en.md)
 
@@ -97,7 +97,7 @@ For a new host, establish reading, durable writes, artifact checks, and writer t
 
 The Windows Koder CLI continuation has real model and memory receipts. Windows Cursor, an independently created standard account, the full Windows product suite, Markdown migration tooling, and further domain transfer still need separate acceptance. See the [compatibility matrix](compatibility.en.md) and the [Windows regression report](release-0.4.4-acceptance.en.md).
 
-## Capability curriculum extension · 0.5.0
+## Capability curriculum extension · 0.6.0
 
 The existing coordinator gains a scoped capability evidence layer; it is not replaced by another framework. The flow connects a user goal to a task contract, prerequisite diagnosis, evidence-seeking preparation, a small real attempt, error classification, targeted remediation, a new variation, independent teaching, whole-task delivery, and later review. Practice runs throughout. A curriculum depends on task prerequisites rather than a universal school-grade label.
 
@@ -118,3 +118,20 @@ The six conceptual dimensions (explanation, causality, execution, transfer, teac
 A changed or missing artifact blocks state reconstruction. A later failed/unknown source invalidates dependent transfer and recall. Corrections preserve the old event and use a new reviewed observation; old files are not overwritten to manufacture a clean history. The hash chain detects inconsistent prior entries when a successor binds them; it is not a digital signature or protection against someone rewriting the entire local store.
 
 See the [executable tutorial](capability-learning.en.md), [mechanism research](learning-science.en.md), and [interoperability contracts](open-source-research.en.md).
+
+## Adaptive learning extension · 0.6.0
+
+An unfamiliar task enters through its goal, acceptance, consequential unknowns, available tools, and finite budget. The host Agent describes relationships and candidate mechanisms rather than selecting a fixed domain curriculum. `experience_transfer.py` retrieves comparable mechanisms and their applicability conditions; shared domain labels alone cannot make a lesson eligible. External ideas and analogies enter as hypotheses. Contradictory or missing conditions require a local check before use.
+
+`adaptive_learning.py` persists the request, proposed actions, starts, and observations as Markdown under `learning-runs/`. The host chooses and actually performs an eligible action. A terminal observation clears the old plan; the next plan preserves unresolved questions and responds to what changed. An unknown effect retains the same pending action until reconciliation, including after the budget expires. No helper invokes a model or creates a background worker.
+
+| Boundary | Persistent record | Owner of the substantive judgment |
+|---|---|---|
+| Task recovery | Same-root context, latest node, request and event revisions | Host checks actual files and pending effects before continuing |
+| Candidate retrieval | `experience/mechanism/`, source artifacts, scoped use feedback | Host maps relationships, verifies conditions, and rejects weak analogies |
+| Action choice | Current questions, estimates, preconditions and snapshot references | Host weighs the next useful investigation; heuristic score is not measured information gain |
+| Observation | Start token, actual artifacts, finding, changed hypothesis and declared cost | Executor supplies receipts; reviewer assesses meaning and quality |
+| Transfer | Separate feedback for each actual use of a lesson | Host distinguishes source validity from harmful use in a different context |
+| Strategy improvement | Existing PPC trials and regressions | Full-task evidence determines adoption; this loop does not bypass PPC |
+
+Learning semantics remain in Markdown. These paths extend the explicitly selected learning root and do not migrate the legacy JSON experiment library. Independent capability observations remain in the capability ledger. This separation allows a new host to resume actual work without equating a successful file operation, a lesson, and proven proficiency. See the [complete tutorial](adaptive-learning.en.md) and [execution map](diagrams/adaptive-learning.en.svg).

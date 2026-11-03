@@ -1,10 +1,10 @@
-# Complete installation, update, and removal · 0.5.0
+# Complete installation, update, and removal · 0.6.0
 
 [中文](install.zh-CN.md) · [Hands-on tutorial](tutorial.en.md) · [Full offline bundle](../START-HERE.md)
 
 ## 1. Choose the package and location
 
-The release provides a core `personal-agent-growth-0.5.0.zip` containing the skill, bilingual protocols, templates, and utilities. The **complete delivery bundle** also contains all source, tests, the historical experience seed, bilingual long-form guides, and diagram sources. Core-package links to omitted long-form material point to versioned GitHub documents. Choose the complete bundle for offline documentation and experience installation.
+The release provides a core `personal-agent-growth-0.6.0.zip` containing the skill, bilingual protocols, templates, and utilities. The **complete delivery bundle** also contains all source, tests, the historical experience seed, bilingual long-form guides, and diagram sources. Core-package links to omitted long-form material point to versioned GitHub documents. Choose the complete bundle for offline documentation and experience installation.
 
 Use a working host account, writable local folders, and Python 3.11+. Utilities need only the standard library, with no pip install. Check `python3 --version` on macOS or `py -3 --version` on Windows. Markdown can be read without Python, but utility execution cannot be claimed. Installation creates no account, daemon, scheduled task, or device sync.
 
@@ -13,7 +13,7 @@ The suggested skill root is `~/Desktop/AgentKnowledge` on macOS and D: when pres
 ```text
 AgentKnowledge/
   skills/personal-agent-growth/   Canonical skill
-  downloads/0.5.0/                Release assets
+  downloads/0.6.0/                Release assets
   learning/                      Private Markdown knowledge
   tasks/                         Inputs, experiments, raw receipts
   experience/                    Optional historical seed, separate from the current profile
@@ -30,25 +30,25 @@ Run the entire block in Terminal. It stops when a skill or discovery entry alrea
   GrowthSkillsRoot="$HOME/.agents/skills"
   SkillDir="$GrowthRoot/skills/personal-agent-growth"
   SkillEntry="$GrowthSkillsRoot/personal-agent-growth"
-  ReleaseDir="$GrowthRoot/downloads/0.5.0"
-  ReleaseUrl="https://github.com/KarmenLoop/personal-agent-growth/releases/download/v0.5.0"
+  ReleaseDir="$GrowthRoot/downloads/0.6.0"
+  ReleaseUrl="https://github.com/KarmenLoop/personal-agent-growth/releases/download/v0.6.0"
   if [ -e "$SkillDir" ] || [ -L "$SkillDir" ] || [ -e "$SkillEntry" ] || [ -L "$SkillEntry" ]; then
     echo "An installation already exists. Follow the update section." >&2
     exit 1
   fi
   mkdir -p "$ReleaseDir" "$GrowthRoot/skills" "$GrowthRoot/tasks" "$GrowthSkillsRoot"
-  curl --fail --location --retry 2 --max-time 90 "$ReleaseUrl/personal-agent-growth-0.5.0.zip" -o "$ReleaseDir/personal-agent-growth-0.5.0.zip"
+  curl --fail --location --retry 2 --max-time 90 "$ReleaseUrl/personal-agent-growth-0.6.0.zip" -o "$ReleaseDir/personal-agent-growth-0.6.0.zip"
   curl --fail --location --retry 2 --max-time 90 "$ReleaseUrl/manifest.json" -o "$ReleaseDir/manifest.json"
   python3 - "$ReleaseDir" <<'PY'
 import hashlib, json, pathlib, sys
 p = pathlib.Path(sys.argv[1])
 m = json.loads((p / 'manifest.json').read_text(encoding='utf-8'))
-assert m['archive']['name'] == 'personal-agent-growth-0.5.0.zip'
+assert m['archive']['name'] == 'personal-agent-growth-0.6.0.zip'
 assert hashlib.sha256((p / m['archive']['name']).read_bytes()).hexdigest() == m['archive']['sha256'], 'ZIP checksum mismatch'
 print('Archive hash matches the supplied manifest')
 PY
-  unzip -q "$ReleaseDir/personal-agent-growth-0.5.0.zip" -d "$GrowthRoot/skills"
-  python3 -B "$SkillDir/scripts/verify_handoff.py" --archive "$ReleaseDir/personal-agent-growth-0.5.0.zip" --manifest "$ReleaseDir/manifest.json"
+  unzip -q "$ReleaseDir/personal-agent-growth-0.6.0.zip" -d "$GrowthRoot/skills"
+  python3 -B "$SkillDir/scripts/verify_handoff.py" --archive "$ReleaseDir/personal-agent-growth-0.6.0.zip" --manifest "$ReleaseDir/manifest.json"
   ln -s "$SkillDir" "$SkillEntry"
   test -f "$SkillEntry/SKILL.md"
   printf 'Skill: %s\nDiscovery entry: %s\nTask memory: %s\n' "$SkillDir" "$SkillEntry" "$GrowthRoot/tasks"
@@ -68,18 +68,18 @@ Use PowerShell 5.1 or 7 rather than CMD. Change the root if needed. Retain UTF-8
   $GrowthSkillsRoot = Join-Path $env:USERPROFILE '.agents\skills'
   $SkillDir = Join-Path $GrowthRoot 'skills\personal-agent-growth'
   $SkillEntry = Join-Path $GrowthSkillsRoot 'personal-agent-growth'
-  $ReleaseDir = Join-Path $GrowthRoot 'downloads\0.5.0'
-  $ReleaseUrl = 'https://github.com/KarmenLoop/personal-agent-growth/releases/download/v0.5.0'
+  $ReleaseDir = Join-Path $GrowthRoot 'downloads\0.6.0'
+  $ReleaseUrl = 'https://github.com/KarmenLoop/personal-agent-growth/releases/download/v0.6.0'
   if ((Test-Path -LiteralPath $SkillDir) -or (Get-Item -LiteralPath $SkillEntry -Force -ErrorAction SilentlyContinue)) {
     throw 'An installation already exists. Follow the update section.'
   }
   New-Item -ItemType Directory -Force -Path $ReleaseDir, (Join-Path $GrowthRoot 'skills'), (Join-Path $GrowthRoot 'tasks'), $GrowthSkillsRoot | Out-Null
-  $ZipPath = Join-Path $ReleaseDir 'personal-agent-growth-0.5.0.zip'
+  $ZipPath = Join-Path $ReleaseDir 'personal-agent-growth-0.6.0.zip'
   $ManifestPath = Join-Path $ReleaseDir 'manifest.json'
-  Invoke-WebRequest -UseBasicParsing -Uri "$ReleaseUrl/personal-agent-growth-0.5.0.zip" -OutFile $ZipPath
+  Invoke-WebRequest -UseBasicParsing -Uri "$ReleaseUrl/personal-agent-growth-0.6.0.zip" -OutFile $ZipPath
   Invoke-WebRequest -UseBasicParsing -Uri "$ReleaseUrl/manifest.json" -OutFile $ManifestPath
   $Manifest = Get-Content -LiteralPath $ManifestPath -Raw -Encoding UTF8 | ConvertFrom-Json
-  if ($Manifest.archive.name -ne 'personal-agent-growth-0.5.0.zip') { throw 'Unexpected archive name.' }
+  if ($Manifest.archive.name -ne 'personal-agent-growth-0.6.0.zip') { throw 'Unexpected archive name.' }
   if ((Get-FileHash -LiteralPath $ZipPath -Algorithm SHA256).Hash -ne $Manifest.archive.sha256) {
     throw 'ZIP checksum mismatch. Nothing has been extracted.'
   }
@@ -98,7 +98,7 @@ To check it again:
 
 ```powershell
 $GrowthRoot = if (Test-Path -LiteralPath 'D:\') { 'D:\AgentKnowledge' } else { 'C:\AgentKnowledge' }
-py -3 -B -X utf8 (Join-Path $GrowthRoot 'skills\personal-agent-growth\scripts\verify_handoff.py') --archive (Join-Path $GrowthRoot 'downloads\0.5.0\personal-agent-growth-0.5.0.zip') --manifest (Join-Path $GrowthRoot 'downloads\0.5.0\manifest.json')
+py -3 -B -X utf8 (Join-Path $GrowthRoot 'skills\personal-agent-growth\scripts\verify_handoff.py') --archive (Join-Path $GrowthRoot 'downloads\0.6.0\personal-agent-growth-0.6.0.zip') --manifest (Join-Path $GrowthRoot 'downloads\0.6.0\manifest.json')
 if ($LASTEXITCODE -ne 0) { throw 'Verification did not pass.' }
 ```
 
@@ -106,7 +106,7 @@ Junctions require a supporting filesystem. If link creation is unavailable, put 
 
 ## 4. Manual, project-level, and other environments
 
-Download the exact asset and its manifest from [v0.5.0](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.5.0). GitHub's automatic Source code ZIP serves a different purpose from the installer asset. Extract the whole folder into `.agents/skills/personal-agent-growth` so `SKILL.md` is directly inside it.
+Download the exact asset and its manifest from [v0.6.0](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.6.0). GitHub's automatic Source code ZIP serves a different purpose from the installer asset. Extract the whole folder into `.agents/skills/personal-agent-growth` so `SKILL.md` is directly inside it.
 
 Choose one user-level or project-level entry; a project entry uses `<project>/.agents/skills`. Linux can use the macOS procedure with `$HOME/AgentKnowledge`. WSL, SSH, and cloud environments have separate filesystems, accounts, and permissions. Identical path strings do not synchronize data. Configure authorized transfer/mounting and path mappings before cross-device use.
 
@@ -114,7 +114,7 @@ Choose one user-level or project-level entry; a project entry uses `<project>/.a
 
 Codex/Cursor versions supporting Agent Skills can discover `.agents/skills`. Reload the host/project and select the skill using its current interface. If discovery is unavailable, explicitly read an absolute path:
 
-> Read <absolute-skill-path>/SKILL.md. Report version 0.5.0, its resolved path, and the references/scripts needed for this task. The private learning root is <absolute-path>. Resume the project using the Markdown protocol and identify the context, newest node, and source revisions actually read. Do not create a schedule for this installation check.
+> Read <absolute-skill-path>/SKILL.md. Report version 0.6.0, its resolved path, and the references/scripts needed for this task. The private learning root is <absolute-path>. Resume the project using the Markdown protocol and identify the context, newest node, and source revisions actually read. Do not create a schedule for this installation check.
 
 Directory presence, discovery, automatic selection, and execution are different evidence. Explicit reading is usable but should be labeled honestly. Continue with the [full tutorial](tutorial.en.md) to produce preparation and review artifacts.
 
@@ -135,6 +135,12 @@ Without a scheduler interface, retain not_registered. A Markdown plan does not r
 Inside the full bundle, run `python3 -B tools/check_delivery.py .`, then follow [START-HERE](../START-HERE.md) to install into a fresh root. The installer retains a distribution copy, copies the seed, and creates empty task storage; it creates no discovery entry or background work. Historical methods need current applicability and are not a current user profile or a new trial.
 
 Native `learning` commands from the separate Koder candidate are outside this installation. The public skill provides protocols, templates, and tools; native product injection remains subject to its own acceptance limits.
+
+## 8.1 Enable adaptive learning in the same memory root
+
+The 74-file core includes `scripts/adaptive_learning.py`, `scripts/experience_transfer.py`, and bilingual runtime references. No extra runtime package is required. Use the [adaptive-learning tutorial](adaptive-learning.en.md) to create an actual request and evidence-backed lesson; its hash and identity placeholders must be replaced before running. Both tools take the same explicit `--root` used for private Markdown learning. They create `learning-runs/` and `experience/mechanism/` beneath it without replacing existing projects.
+
+When switching hosts, pass that same resolved root, run ID, and expected revision. Read project context and the latest node, then inspect `adaptive_learning.py status`; a pending effect must be reconciled before another action. Installing the skill alone does not inject these records, execute a model turn, or register a review schedule. The host must actually read, act, preserve receipts, and update them.
 
 ## 9. Update, roll back, remove
 

@@ -1,6 +1,6 @@
 # Personal Agent Growth
 
-[English](README.md) · [简体中文](README.zh-CN.md) · **0.5.0**
+[English](README.md) · [简体中文](README.zh-CN.md) · **0.6.0**
 
 [![Checks](https://github.com/KarmenLoop/personal-agent-growth/actions/workflows/check.yml/badge.svg)](https://github.com/KarmenLoop/personal-agent-growth/actions/workflows/check.yml)
 [![Release](https://img.shields.io/github/v/release/KarmenLoop/personal-agent-growth)](https://github.com/KarmenLoop/personal-agent-growth/releases/latest)
@@ -18,6 +18,7 @@ An agent should be able to explain which observation changed its decision, reuse
 | Understand the whole architecture | [Architecture](docs/architecture.en.md) | [架构剖析](docs/architecture.zh-CN.md) |
 | Follow the decision and learning logic | [Reasoning method](docs/reasoning.en.md) | [思考与判断方法](docs/reasoning.zh-CN.md) |
 | Explore the detailed maps | [Mind maps and diagrams](docs/mindmaps.en.md) | [复杂思维导图](docs/mindmaps.zh-CN.md) |
+| Learn an unfamiliar field and transfer experience | [Adaptive learning](docs/adaptive-learning.en.md) | [未知领域学习](docs/adaptive-learning.zh-CN.md) |
 | Use daily, weekly, and project memory | [Markdown learning](docs/markdown-learning.en.md) | [Markdown 学习体系](docs/markdown-learning.zh-CN.md) |
 | Resume a Windows Koder Agent | [Continuation tutorial](docs/windows-agent-continuation.en.md) | [接续实测教程](docs/windows-agent-continuation.zh-CN.md) |
 | Check actual support and evidence | [Compatibility and evidence](docs/compatibility.en.md) | [兼容性与验收边界](docs/compatibility.zh-CN.md) |
@@ -48,6 +49,8 @@ The user can choose: **finish anything the agent can resolve; contact the user o
 | [32 learning templates](templates/learning/README.md) | Sixteen document types in each language, including daily/weekly reports, checkpoints, experience, and user evidence |
 | `scripts/verify_handoff.py` | Bounded ZIP/manifest consistency checks |
 | `scripts/compare_trials.py` | Frozen experiments, comparison, composition checks, experience versions, and rollback |
+| `scripts/adaptive_learning.py` | Revision-bound questions, action selection, pending-result reconciliation, and finite run budgets |
+| `scripts/experience_transfer.py` | Mechanism/condition retrieval and feedback on actual reuse across tasks |
 | `scripts/host.py` | Optional local CLI/MCP adapter with five checkpoint and handoff tools |
 | `tools/local_install.py` and delivery tools | Full bundle installation, relocation checks, experience loading, and removal that retains memory |
 | `examples/experience-seed` | Reviewed historical profiles and lesson excerpts with export provenance |
@@ -56,7 +59,7 @@ The skill depends on its host for the model, tools, execution permissions, and s
 
 ## Quick start
 
-Download the **complete delivery bundle** and `SHA256SUMS.txt` from [v0.5.0](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.5.0). Extract it and follow [START-HERE.md](START-HERE.md). Python 3.11+ is needed for the utilities; there are no runtime pip dependencies.
+Download the **complete delivery bundle** and `SHA256SUMS.txt` from [v0.6.0](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.6.0). Extract it and follow [START-HERE.md](START-HERE.md). Python 3.11+ is needed for the utilities; there are no runtime pip dependencies.
 
 From the extracted full bundle on macOS:
 
@@ -91,7 +94,7 @@ Weights are not trained or updated by this project. A hosted model may not expos
 
 ![Full-task token and time measurements, including the timing anomaly](docs/images/cross-domain-0.4.1.png)
 
-Repository tests establish file, utility, and protocol behavior. They do not replace Windows desktop Agent execution, a fresh authenticated Cursor model turn, cross-device synchronization, or operation after the app closes. Current publication checks and their exact scope are in the [0.5.0 acceptance report](docs/release-0.5.0-acceptance.en.md).
+Repository tests establish file, utility, and protocol behavior. They do not replace Windows desktop Agent execution, a fresh authenticated Cursor model turn, cross-device synchronization, or operation after the app closes. Current publication checks and their exact scope are in the [0.6.0 acceptance report](docs/release-0.6.0-acceptance.en.md).
 
 ## Development
 
@@ -99,7 +102,7 @@ Repository tests establish file, utility, and protocol behavior. They do not rep
 python3 -B -m unittest discover -s tests -v
 python3 -B scripts/check_publication.py
 python3 -B tools/build_release.py --output dist
-python3 -B scripts/verify_handoff.py --archive dist/personal-agent-growth-0.5.0.zip --manifest dist/manifest.json
+python3 -B scripts/verify_handoff.py --archive dist/personal-agent-growth-0.6.0.zip --manifest dist/manifest.json
 python3 -B tools/build_delivery.py --output /path/to/fresh-output
 ```
 
@@ -111,7 +114,9 @@ Created and maintained by the **KARMENLOOP Official Team**, Shanghai, China. We 
 
 Copyright (C) 2026 KARMENLOOP Official Team. Licensed under **AGPL-3.0-only**. Keep [LICENSE](LICENSE) and [NOTICE](NOTICE) with covered copies. Commercial use is allowed; distribution and modified network-service use carry the license's applicable source obligations. AGPL does not require private changes to be posted on GitHub. The [licensing guide](docs/licensing.md) explains the scope.
 
-## Capability learning in 0.5.0
+## Adaptive learning and capability evidence in 0.6.0
+
+[Adaptive learning](docs/adaptive-learning.en.md) starts from the current task’s consequential unknowns. The Agent proposes actions, executes them through the host, and revises its judgment from actual observations. Transfer searches shared mechanisms and conditions; a domain name is only a soft hint. A failed analogy becomes a scoped boundary for later tasks. The tools persist Markdown, check revisions and evidence, and enforce finite exploration; interpretation, execution, and independent review remain host responsibilities. They do not claim universal mastery or measured speed gains. [Detailed flow](docs/diagrams/adaptive-learning.en.svg).
 
 The new [capability ledger](docs/capability-learning.en.md) records explanation, application, counterexamples, transfer, teaching, delivery, delayed review, and regression in Markdown. It rejects unsupported identities, changed artifacts, stale writers, and premature recall; later failures invalidate dependent evidence. It does not authenticate Agents or replace independent artifact review.
 

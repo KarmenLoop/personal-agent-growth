@@ -1,6 +1,6 @@
-# 兼容性、实测证据与未完成项 · 0.5.0
+# 兼容性、实测证据与未完成项 · 0.6.0
 
-[English](compatibility.en.md) · [当前发布验收](release-0.5.0-acceptance.zh-CN.md)
+[English](compatibility.en.md) · [当前发布验收](release-0.6.0-acceptance.zh-CN.md)
 
 “能读取 Skill”“工具测试通过”“Agent 实际采用”“跨设备可用”“无新消息唤醒”是五类不同结论。本表按原始对象、版本和执行方式区分；新版文档不把旧行为实测自动升级为所有宿主全部通过。
 
@@ -16,7 +16,7 @@
 | 跨领域元能力 | 24 个真实 Codex CLI 回合，两个领域，质量与资源约束检查 | [完整任务报告](cross-domain-trial.zh-CN.md)；token -5.9%，耗时 +7.4%，无普遍加速结论 |
 | 经验种子搬迁 | 历史完整包安装、搬迁、加载、工具重用和卸载保留记忆 | [交付报告](delivery-acceptance.md)；导出快照做了路径适配，未新增 Agent 行为试验 |
 | Markdown 日周学习 | 公开契约、16 类双语模板、评分与检索协议已提供 | 原生自动 API 与注入见下方独立候选；公开 Skill 本身不是常驻运行器 |
-| 本次双语文档与图 | 当前文件、链接、渲染、包与工具检查 | [当前验收](release-0.5.0-acceptance.zh-CN.md)；工具测试与真实 Agent 证据分开记录 |
+| 本次双语文档与图 | 当前文件、链接、渲染、包与工具检查 | [当前验收](release-0.6.0-acceptance.zh-CN.md)；工具测试与真实 Agent 证据分开记录 |
 
 ## 独立 Koder Markdown 候选
 

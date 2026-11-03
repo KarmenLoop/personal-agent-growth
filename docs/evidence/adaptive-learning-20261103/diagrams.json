@@ -1,0 +1,77 @@
+{
+  "status": "PASS_RENDER_LAYOUT_AND_VISUAL",
+  "scope": "Actual SVG render and diagram review only; not Agent behavior acceptance or learning-efficiency evidence.",
+  "mermaid_version": "11.4.1",
+  "renderer": "Chromium via Playwright",
+  "render_exit_code": 0,
+  "original_records_preserved": 22,
+  "original_files_preserved": 44,
+  "new_diagrams": [
+    {
+      "source": "adaptive-learning.en.mmd",
+      "source_sha256": "49d2caa504942f38797ca7ec8fa39f32135f40f589bdb7a15141db7df80fb1cf",
+      "output": "adaptive-learning.en.svg",
+      "output_sha256": "20ebe3e1e3f1946cd033973271a5da72d1500e5d5d5c6d5f93c7b73ce926fe76",
+      "width": 2918.3515625,
+      "height": 3963.89990234375,
+      "labels": 140
+    },
+    {
+      "source": "adaptive-learning.zh-CN.mmd",
+      "source_sha256": "0ed3318e3918de385789bde331a00cc10a159adec51390f3caa3a3d33413d60d",
+      "output": "adaptive-learning.zh-CN.svg",
+      "output_sha256": "49965fca6d8b47d489163cd2b0020527eb16798767d1497c4770629f51c0210d",
+      "width": 2587.296875,
+      "height": 3289,
+      "labels": 140
+    }
+  ],
+  "layout": [
+    {
+      "lang": "en",
+      "nodes": 56,
+      "overlaps": [],
+      "edges": 77,
+      "unfilledEdges": 77,
+      "width": 2918.3515625,
+      "height": 3963.89990234375
+    },
+    {
+      "lang": "zh-CN",
+      "nodes": 56,
+      "overlaps": [],
+      "edges": 77,
+      "unfilledEdges": 77,
+      "width": 2587.296875,
+      "height": 3289
+    }
+  ],
+  "visual_review": {
+    "observed": [
+      "English action-choice group at native scale",
+      "Chinese initial-task group at native scale",
+      "Chinese two-layer delivery group"
+    ],
+    "finding": "Readable node labels and clean connectors. Initial English group-title wrapping was rejected and repaired by shortening the group headings; final native-scale inspection verified the corrected heading.",
+    "initial_failure_retained": true
+  },
+  "development_setup": {
+    "existing_mermaid_cache_used": true,
+    "redundant_npm_install_terminated": true,
+    "runtime_dependency_change": false
+  },
+  "screenshots": [
+    {
+      "path": "adaptive.en.g3.png",
+      "sha256": "64cc81a6040e7362b7e16faa56f44dc3fa6c8dba4aaa4ddceef2075a5a228d1f"
+    },
+    {
+      "path": "adaptive.zh-CN.g0.png",
+      "sha256": "ca58e3f20818064402336d8189ee8370765e64a7fae5381de9137ed463f7174e"
+    },
+    {
+      "path": "adaptive.zh-CN.g6.png",
+      "sha256": "15e56f165313b00177d57ad65b7c823b99439938388d61bc6205c68228785253"
+    }
+  ]
+}

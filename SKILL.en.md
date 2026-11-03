@@ -3,7 +3,7 @@ name: personal-agent-growth
 description: Complete ongoing tasks that need preparation, evidence-based revision, review, shared memory, or bounded recursive improvement of prompts, tools and workflow components. Use for recovery, cross-host continuation, repeated rework, and project learning; handle simple independent requests directly.
 license: AGPL-3.0-only
 metadata:
-  version: "0.5.0"
+  version: "0.6.0"
 ---
 
 # Personal Agent Growth
@@ -39,6 +39,8 @@ Check whether local success advances the whole objective. Attribute tool failure
 Bind every result to the inspected object/version, environment, reached stage, and raw output. If the object or directory changed, reassess attribution before reusing a conclusion. An exit code or PASS label alone is insufficient. Retain each attempt's command, output, and status before repair; label missing original output rather than replacing it with a retrospective summary.
 
 ## Learn and improve
+
+For unfamiliar work or ideas from another domain, read [adaptive learning and experience transfer](references/adaptive-learning.en.md). Derive open questions from the current goal; retrieve by problem structure, mechanism, and conditions. An analogy proposes a hypothesis. Use `scripts/experience_transfer.py` for lessons and positive or negative feedback, and `scripts/adaptive_learning.py` for plans, actual starts, and observations. Replan after feedback; reconcile unknown external outcomes before resuming. Domain names and knowledge counts are not capability gates. The host Agent proposes questions, executes tools, and reviews deliverables.
 
 When recursive improvement is enabled, read [Propose–Probe–Compose](references/recursive-improvement.en.md). Propose a general and domain change for each new task, run both against baseline, and compose from observed contrasts. A changed composition requires its own test. Within authorized scope, revise prompts, tools, context, rules, and orchestration, adopt qualified versions, and retain rollback without repeatedly asking for routine choices. Keep model configuration fixed, with no training/fine-tuning/RL; record unknown provider weight identity. Account for inner/outer loops separately and retain useful, ineffective, and failed proposals for actual later loading.
 

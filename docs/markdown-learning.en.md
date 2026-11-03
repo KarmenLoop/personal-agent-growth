@@ -1,4 +1,4 @@
-# Complete Markdown learning contract · 0.5.0
+# Complete Markdown learning contract · 0.6.0
 
 [中文](markdown-learning.zh-CN.md) · [All template source files](../templates/learning/README.md) · [Storage boundaries](architecture.en.md#storage)
 

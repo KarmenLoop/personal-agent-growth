@@ -14,6 +14,12 @@ import zipfile
 ROOT = Path(__file__).resolve().parents[1]
 NAME = "personal-agent-growth"
 FILES = (
+    "scripts/experience_transfer.py",
+    "scripts/adaptive_learning.py",
+    "references/adaptive-learning.md",
+    "references/adaptive-learning.en.md",
+    "docs/adaptive-learning.zh-CN.md",
+    "docs/adaptive-learning.en.md",
     "references/capability-learning.md",
     "references/capability-learning.en.md",
     "docs/capability-learning.en.md",

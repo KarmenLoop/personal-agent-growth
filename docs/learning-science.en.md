@@ -1,4 +1,4 @@
-# Learning science and curriculum design · 0.5.0
+# Learning science and curriculum design · 0.6.0
 
 [中文](learning-science.zh-CN.md) · [Documentation index](index.en.md) · [Architecture](architecture.en.md)
 

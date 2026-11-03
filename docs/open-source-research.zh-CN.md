@@ -1,4 +1,4 @@
-# 0.5.0 开源 Agent 研究与互操作设计
+# 0.6.0 开源 Agent 研究与互操作设计
 
 [English](open-source-research.en.md) · 简体中文
 

@@ -1,0 +1,79 @@
+{
+  "at": "2026-11-03T14:53:30.195081+00:00",
+  "root": "$HOME/Desktop/\u4e2a\u4eba\u667a\u80fd\u4f53\u6210\u957f\u7cfb\u7edf\u65b9\u6848/\u672a\u77e5\u9886\u57df\u5b66\u4e60\u5f00\u53d1-20261103-01/agent-shared",
+  "records": [
+    {
+      "id": "instruction",
+      "revision": 15,
+      "state": "delivered",
+      "actions": 5,
+      "run_elapsed_seconds": 359.090662,
+      "command": [
+        "$HOME/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "$HOME/Desktop/\u4e2a\u4eba\u667a\u80fd\u4f53\u6210\u957f\u7cfb\u7edf\u65b9\u6848/\u5f00\u6e90\u53d1\u5e03/personal-agent-growth/scripts/adaptive_learning.py",
+        "status",
+        "--root",
+        "$HOME/Desktop/\u4e2a\u4eba\u667a\u80fd\u4f53\u6210\u957f\u7cfb\u7edf\u65b9\u6848/\u672a\u77e5\u9886\u57df\u5b66\u4e60\u5f00\u53d1-20261103-01/agent-shared",
+        "--id",
+        "instruction"
+      ],
+      "exit_code": 0
+    },
+    {
+      "id": "ops-baseline",
+      "revision": 6,
+      "state": "delivered",
+      "actions": 2,
+      "run_elapsed_seconds": 314.356103,
+      "command": [
+        "$HOME/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "$HOME/Desktop/\u4e2a\u4eba\u667a\u80fd\u4f53\u6210\u957f\u7cfb\u7edf\u65b9\u6848/\u5f00\u6e90\u53d1\u5e03/personal-agent-growth/scripts/adaptive_learning.py",
+        "status",
+        "--root",
+        "$HOME/Desktop/\u4e2a\u4eba\u667a\u80fd\u4f53\u6210\u957f\u7cfb\u7edf\u65b9\u6848/\u672a\u77e5\u9886\u57df\u5b66\u4e60\u5f00\u53d1-20261103-01/agent-shared",
+        "--id",
+        "ops-baseline"
+      ],
+      "exit_code": 0
+    },
+    {
+      "id": "ops-general",
+      "revision": 12,
+      "state": "delivered",
+      "actions": 4,
+      "run_elapsed_seconds": 532.071949,
+      "command": [
+        "$HOME/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "$HOME/Desktop/\u4e2a\u4eba\u667a\u80fd\u4f53\u6210\u957f\u7cfb\u7edf\u65b9\u6848/\u5f00\u6e90\u53d1\u5e03/personal-agent-growth/scripts/adaptive_learning.py",
+        "status",
+        "--root",
+        "$HOME/Desktop/\u4e2a\u4eba\u667a\u80fd\u4f53\u6210\u957f\u7cfb\u7edf\u65b9\u6848/\u672a\u77e5\u9886\u57df\u5b66\u4e60\u5f00\u53d1-20261103-01/agent-shared",
+        "--id",
+        "ops-general"
+      ],
+      "exit_code": 0
+    },
+    {
+      "id": "ops-domain",
+      "revision": 6,
+      "state": "delivered",
+      "actions": 2,
+      "run_elapsed_seconds": 433.753979,
+      "command": [
+        "$HOME/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "$HOME/Desktop/\u4e2a\u4eba\u667a\u80fd\u4f53\u6210\u957f\u7cfb\u7edf\u65b9\u6848/\u5f00\u6e90\u53d1\u5e03/personal-agent-growth/scripts/adaptive_learning.py",
+        "status",
+        "--root",
+        "$HOME/Desktop/\u4e2a\u4eba\u667a\u80fd\u4f53\u6210\u957f\u7cfb\u7edf\u65b9\u6848/\u672a\u77e5\u9886\u57df\u5b66\u4e60\u5f00\u53d1-20261103-01/agent-shared",
+        "--id",
+        "ops-domain"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "scope": "Real host Agent work plus parent review, followed by actual same-root Markdown replay. Controlled drill processes are separate from these four Agents. Native token/cost unavailable."
+}

@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.6.0 — 2026-11-03
+
+- Add task-derived questions, explicit action choices, feedback-driven replanning and resumable Markdown event journals. Learning targets are open-ended rather than restricted to predefined domains.
+- Retrieve cross-domain hypotheses by represented problem structure, mechanism and conditions. Preserve contrary observations and reject stale experience snapshots before starting an action.
+- Keep compatible failures from other domains visible as unverified counterexamples without treating them as proven harm in the new task.
+- Exclude abandoned temporary publication files from the accepted-event capacity, preserving reconciliation after interrupted writes.
+- Bind asynchronous observations to unique starts, preserve unknown outcomes for reconciliation, reserve final journal capacity, and freeze completed-run timing.
+- Reject oversized stored envelopes before publication, bound planning, and reject duration estimates that cannot produce finite rankings.
+- Add bilingual protocols, executable guides and detailed diagrams. Keep host judgment, actual Agent work, controlled tests, native costs, and PPC strategy adoption distinct.
+
 ## 0.5.0 — 2026-11-03
 
 - Add an original, dependency-free Markdown capability ledger with revision checks, immutable attempts, evidence hashes, source invalidation, independent teaching declarations, delayed-review rules, and derived due work.
