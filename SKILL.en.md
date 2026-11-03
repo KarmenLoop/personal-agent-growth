@@ -3,10 +3,12 @@ name: personal-agent-growth
 description: Complete ongoing tasks that need preparation, evidence-based revision, review, shared memory, or bounded recursive improvement of prompts, tools and workflow components. Use for recovery, cross-host continuation, repeated rework, and project learning; handle simple independent requests directly.
 license: AGPL-3.0-only
 metadata:
-  version: "0.4.4"
+  version: "0.5.0"
 ---
 
 # Personal Agent Growth
+
+When a task requires learning an unfamiliar field, deeper understanding, transfer, independent teaching, or practical mastery, read [Capability learning](references/capability-learning.en.md). Diagnose the gap and define artifact acceptance before research, application, remediation, and independent reuse. Keep explanation, application, transfer, teaching, and delayed review separately evidenced. Use `scripts/capability_ledger.py` for a Markdown ledger inside the shared learning root. Missing or failed evidence cannot promote capability; a due list still needs an actual host scheduler. Practice starts early.
 
 [中文 canonical entry](SKILL.md). This is the English translation, not a second installed skill. Keep one discovery entry pointing to this folder.
 

@@ -1,0 +1,90 @@
+# 当前学习者交接：两轮真实源码清单，待独立审阅
+
+当前能力 `learner-release-manifest` 的最后实读 revision 为 **2**，历史保留 `release-manifest-apply-01`、`release-manifest-apply-02` 两条真实 unknown，reviewer 均为 null。没有自填 pass。第一轮完整报告冻结为 `learner-report-v1.md`，原文也保留在本文件后半部；其中 revision 1 和 77,053 字节是第一轮时点事实，不是当前版本。
+
+## 协调器通知后的真实接续
+
+`/root` 在第一轮后明确通知账本三项规则修复及参考文档补充，并要求重新清点当前版本。本学习者没有自主发现这些 bug，也没有独立复跑其 25 项测试。此轮只核验版本改变后的源文件清单、恢复和追加记录。
+
+重新读取同一 project context、最新 node、memory 和本能力 status 后确认 revision 1；保留 v1 产物与第一条 attempt，另写预测、v2 材料快照、清单和独立流式重读。
+
+| 变更文件 | 第一轮字节数 | 第二轮字节数 | 第二轮 SHA-256 |
+|---|---:|---:|---|
+| scripts/capability_ledger.py | 21524 | 22034 | 685b9eb410f728602764c1b0d317fffd10346988d2f65d9336f3e6a48fe605f4 |
+| references/capability-learning.md | 8531 | 8902 | 063219c4fa64cb09d250045b948c56a63ee91c7ba995481d4e96e2e492280382 |
+
+另三份文件路径、字节数和 SHA 与第一轮一致。完整五文件清单为 `release-source-manifest-v2.json`，合计 **77,934 字节**，比第一轮增加 881 字节；v2 清单自身 SHA 为 `7122ec507bec7e0f7d0da2612d4344477c98bb70804455306ea69d3c714bce43`。旧新逐项差异与旧 SHA 在 `materials-before-v2.json`，没有将旧清单更新成新哈希。
+
+生成进程 PID 92659，独立读取进程 PID 92662；精确五路径、大小、哈希、合计及两个保存副本全部一致。追加前再次 status 确认 revision 1，随后 `record --expected-revision 1` 实际 exit 0，新的 CLI status 读取 revision 2、两条 unknown 历史。第一轮 attempt 字节哈希仍未变。新记录为 apply，不冒充有前置通过要求的 transfer。
+
+本次接续实际用到了教材关于先恢复、检查 revision、新证据另存、旧历史不可重写的规则。初始来源变更来自协调器通知；实际差异来自本 Agent 的重新读取。没有重跑旧反例、重新 init、改源码或启动定时器。
+
+## 完整回执及待审阅边界
+
+`commands.json` 记录恢复 intake 后的全部任务子进程；01–19 为第一轮，20–28 为重新恢复、v2 清点、记录及新进程读回，29 为本次最终汇总与项目刷新。每条保存实际 argv、cwd、UTC 起止、stdout/stderr、退出码、脚本/输入快照与 SHA；tokens/USD 均为 null。初始 intake 缺独立 UTC 起止的已知边界在第一轮报告中完整保留，不伪称没有缺口。所有负例、旧报告、旧上下文快照仍保留。
+
+root 下一步独立审阅 v1/v2 两份清单和当前源码、版本差异、两次重读、第一次错误哈希拒绝的原回执、两个 unknown 历史，以及本 Agent 的真实宿主执行记录，再决定是否追加审阅结果。最新 node 为 `2026-11-03-learner-release-manifest-v2.md`。截至本学习者交接，独立 root 结论未写入。
+
+剩余未测维持第一轮边界，另明确：未独立验证协调器源码修复的业务正确性；未声称远程安装、发布、跨主机、真实 24 小时 recall、身份认证或通用精通。
+
+---
+
+# 独立学习者实测报告
+
+执行者：`/root/capability_learner_trial`。任务：`learner-release-source-manifest-01`。状态：实际执行与自核已完成，等待独立 root 审阅；`outcome: unknown`，`reviewer: null`。
+
+本 Agent 根据同一物理学习根的 project context、最新 node、memory 及 teacher/lesson.md，完成了新的 release-source manifest 任务。未请求旧聊天，未读取教师 commands.json、summary.md 或额外运行答案；教材本身末尾包含教师运行摘要，已按教材内容读取。本次不是延迟回忆测试。
+
+## 实际结果
+
+| 相对路径 | 字节数 | SHA-256 |
+|---|---:|---|
+| SKILL.md | 8452 | 9b80d86de8e967e88baf530ed7518566e5751c45fa8870a525239ed33a7582ed |
+| SKILL.en.md | 8853 | 2b9ee4732510a78bc5dcf055abc99f737a9bf1592908066f99986bf623566b08 |
+| scripts/capability_ledger.py | 21524 | edec7efe62468afead222878c31610728bb2081a0934d9bb983369e536a725aa |
+| scripts/compare_trials.py | 29693 | 5c04af542702f774986113e2010531bef4032e7161f166da4f60f37bf3e5c6b4 |
+| references/capability-learning.md | 8531 | bb2cfa943c7fe4490ebef78ff8307738d36db43f8bc12e1e11cf1994cf1bd676 |
+
+五个文件合计 **77,053 字节**。正式清单为 `release-source-manifest.json`，清单自身 SHA-256 为 `3a365f1a609bdc25589864d7c599fcfbe0c2c92dc3b15b99813f3f4289469e52`。初始材料快照、清单生成及随后独立流式读取三次的源码哈希一致。生成进程 PID 90741；独立重读脚本进程 PID 90760；二者分别编写，未导入共用清单函数，但均由本学习者编写，因此不能代替独立 Agent 审阅。
+
+使用教材的 bundled Python 路径，实际版本为 **Python 3.12.14**。init 与初次 status 实际返回 revision 0；记录 `release-manifest-apply-01` 后为 revision 1，apply 为 unknown，reviewer 为 null，assessment 为 `incomplete_or_review_due`。
+
+受控反例复制为新 observation、新 ID、新真实 UTC，只把第一件 artifact 的哈希首字符从 `3` 改为 `0`，未改原 artifact。`record --expected-revision 1` 实际 exit **2**，stderr 为：
+
+```json
+{"status": "INCOMPLETE", "error": "Artifact changed: capabilities/learner-release-manifest/evidence/release-source-manifest-v1.json"}
+```
+
+反例前后 revision 均为 1，`capability.md` 与 `attempts/000001.md` 字节数、SHA-256 完全一致；新的 CLI 进程读回输出与反例前 status JSON 完全相等。学习根真实路径一致，device 为 16777234，inode 为 160947456。此处证明新进程回读同一目录，不证明跨主机迁移或 24 小时延迟提取。
+
+`due` 实际 exit 0，`errors: []`，本能力立即需要 verify，`scheduler_registered: false`。未启动调度器或创建定时器。拒绝的输入不进入历史；counterexample 维度仍为 unobserved，不能因正确拒绝就自动填入能力 pass。
+
+## 教材实际帮助
+
+1. 初始化、status、record、expected revision 的顺序可以直接迁移到这份清单任务，不需要询问旧会话。
+2. unknown/null reviewer 及“命令接受不代表独立验收”的说明，使真实产物与能力通过保持分开。本次没有自行填入 reviewer 或 pass。
+3. 安全相对路径和不可变证据说明，指导我把清单、独立重读结果、预测、材料摘要、阶段命令快照放入本能力 evidence，再按真实 SHA 引用；持续增长的 commands.json 没有直接进入已接受历史。
+4. 反例必须另建文件、ID、时间的做法可以迁移到错误哈希，不需要修改历史观测。错误恢复表指导我保留失败回执，并比较原文件，而不是改历史哈希。
+5. 同物理根和跨进程边界的说明，使本次只报告实际恢复范围，不把它称为 transfer、recall 或通用精通。
+
+## 遇到的缺口与本次补足
+
+- 教材要求完整命令回执，但没有提供捕获 argv、脚本字节、stdout/stderr 和 UTC 的执行包装器。本次在 `learner/run_command.py` 自行实现实际 subprocess 包装；每条命令保存原输出、退出码、UTC 起止、实际 argv、cwd、脚本/输入文件快照及 SHA。未使用内联 stdin，所有执行脚本均为文件。模型 tokens、USD 仍为 null。
+- 初始恢复材料读取发生在包装器创建前，只有宿主工具回执，没有独立 UTC 起止记录。本次不回填假时间。`commands.json` 完整覆盖恢复读取后的任务子进程；初始 `pwd`、文件列表和合并 `cat` 是明确的 intake 边界。若下一轮要求连 intake 都具备完整 UTC，应由宿主在启动 Agent 前提供统一回执包装器。准备文件的 apply_patch 操作属于宿主工具写入，也不是 subprocess。
+- 教材用平方和举例，没有提供 release manifest 的专门生成与重读程序。本次自行编写生成脚本和单独的流式校验脚本，固定恰好五个相对路径，并与初始材料哈希比较。这是本次迁移工作，而非照搬教师任务答案。
+- `Artifact changed` 同时可表示输入哈希写错或真实产物漂移，错误文字本身不能区分。本次通过保留原 artifact、原观测以及前后语义文件哈希，证明是故意错误的声明被拒绝。
+- 教材页首仍写“尚待独立审阅”，而较新的 project context 声明教师已获 root 审阅。未修改冻结教材或据此自授通过；按当前恢复包执行，并将这个版本状态差异交回 root。建议以后在 context 指明教材固定 SHA 与最新审阅节点，避免读者把冻结页首当成最新状态。
+
+## 证据与成本边界
+
+主要文件：`prediction.md`、`scope.md`、`materials-before.json`、`release-source-manifest.json`、`manifest-verification.json`、`state-before-counterexample.json`、`state-after-counterexample.json`、`counterexample-readback-result.json`、`commands.json` 和 `command-receipts/`。能力根内另有不可变证据副本。
+
+command 01–17 覆盖初始材料哈希、版本/帮助、init、清单生成/重读、unknown 记录、反例、新进程读回和 due；command 18 核验这些结果。只有 command 14 的 exit 2 是预期负例。最后的交接核验另留回执。命令耗时只是各子进程耗时，未冒充 Agent 全程时长或模型成本；账本 cost 三项均为 null。
+
+源码和教师教材在初始哈希与 command 18 之间保持一致。授权的 project context 将刷新，旧 context 已保存为不可变输入快照；旧 node、project memory、teacher/education 能力均不修改。
+
+## 下一步与剩余未测
+
+请 root 独立检查五份实际源码、清单内容、独立重读脚本与回执、错误输入拒绝与持久文件未变、新进程同根状态，以及本 Agent 的宿主执行身份。root 作出真实结论后，才能追加审阅观测或判断本教材 teach 是否通过。原 unknown 记录和本次失败输入必须保留。
+
+未测：独立 root 审阅；真实至少 24 小时后的无答案提取；已通过 apply 后的 transfer；跨主机/搬迁；并发写锁及中断恢复；安装、发布或远程执行；其他平台；身份认证；通用精通。本次并未运行 compare_trials.py 的业务流程，只对其源码计数和计算哈希。

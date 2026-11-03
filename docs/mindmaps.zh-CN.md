@@ -1,8 +1,8 @@
-# 复杂思维导图与流程图 · 0.4.4
+# 复杂思维导图与流程图 · 0.5.0
 
 [English](mindmaps.en.md) · [中文](mindmaps.zh-CN.md)
 
-中英文各十张：四张详细思维导图，以及架构、调度、交接、日周、Windows 跳过核查与 Agent 接续图。两种语言保持相同分支结构。图示说明责任与协议，不代表每个宿主都已实现；实际范围以[兼容性](compatibility.zh-CN.md)为准。SVG 可放大，Mermaid 源文件可编辑。
+中英文各十一张：四张详细思维导图，以及架构、调度、交接、日周、Windows 跳过核查、Agent 接续与能力课程图。两种语言保持相同分支结构。图示说明责任与协议，不代表每个宿主都已实现；实际范围以[兼容性](compatibility.zh-CN.md)为准。SVG 可放大，Mermaid 源文件可编辑。
 
 ## 完整能力树
 
@@ -87,3 +87,11 @@ node tools/render_diagrams.mjs --mermaid-dir /path/to/node_modules/mermaid --pla
 ![Windows Agent 恢复](diagrams/windows-agent.zh-CN.svg)
 
 [接续实操教程](windows-agent-continuation.zh-CN.md)
+
+## 学习、教学与真实实操
+
+111 个节点连接诊断、预习、反例、独立教学、Markdown 证据、真实调度、PPC 与回退。
+
+[SVG](diagrams/capability-learning.zh-CN.svg) · [可编辑 Mermaid](diagrams/capability-learning.zh-CN.mmd)
+
+![能力课程](diagrams/capability-learning.zh-CN.svg)

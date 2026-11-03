@@ -1,0 +1,38 @@
+# 教师任务交接
+
+执行者：/root/capability_teacher_trial。记录时间 UTC：2026-11-03T12:12:04.509899+00:00。reviewer 保持 null；独立审阅由 root 后续执行。
+
+## 实际交付
+
+- lesson.md：前提、完整可复制命令、JSON 文首元数据生成器、错误恢复、同根跨会话接续与边界；最终快照为 learning/capabilities/teacher-ledger/evidence/lesson-v2.md。
+- prediction.md 和 counterexample-predictions.md：在对应试验前保存的未知与预测。
+- commands.json：真实子进程 argv、cwd、UTC 起止、stdout/stderr、exit_code 与耗时；模型 tokens/cost 未知为 null。它是原始回执，不是语义真相。最初技能阅读和记录器 bootstrap 发生在记录器建立前，其精确时间未补造，聊天保留原始调用。
+- counterexample-results.md：预测对照与实际结果。
+- source-fingerprints.json：Python 3.12.14 与当前脚本/来源哈希；哈希在试验后采集，不冒充持续版本监控。
+- final-status.json / final-due.json：最终真实 CLI 输出副本。
+
+## 得到的新信息与判断变化
+
+1. help 与教程明确：观测必须用 JSON 形式的 YAML 文首元数据，字段严格匹配 kind；我从仅知概念推进到可运行的完整输入。
+2. 源码与实际记录明确：unknown 在 due 中立即产生 verify，起初只知道不升级能力，现在确定其待办含义；due 不注册调度。
+3. 规则与反例明确：pass 的 reviewer 要非空且不同于 executor，但只有字符串一致性，没有身份认证；因此教材把宿主真实审阅与格式验收分开。
+4. 证据漂移检查适用于 unknown，且会使整个能力 status 返回非零；恢复必须精确复原原字节，不能改历史哈希。实际报错是 Artifact changed，据此修正教材措辞并保留 lesson-v1。
+5. transfer/recall/teach 有额外前提，unknown 也不跳过这些前提；没有学习者就保持 teach unobserved。
+
+## 实跑与预测对照
+
+- init exit 0，revision 0。教材快照 unknown record exit 0，revision 1。
+- null reviewer 的 pass exit 2 / Independent reviewer required。
+- 旧 revision=0 写入 exit 2 / Stale revision; read status again。
+- 临时漂移 lesson-v1 后 status exit 2 / Artifact changed；原备份精确恢复后 status exit 0。
+- lesson.md 两个 PYCODE 示例逐字提取执行，只有环境改为教师获准 ID：实际 input [3,5,8]、squares [9,25,64]、sum 98。unknown 示例记录 exit 0 / revision 2；由第二示例生成的伪 pass 仍 exit 2。
+- 反例及新版教材以 unknown 追加，revision 3。最终 status/due 均 exit 0。apply=unknown、counterexample=unknown，其余 unobserved；assessment=incomplete_or_review_due；scheduler_registered=false。全部历史 reviewer=null。
+- 三类反例与预先预测一致，没有预期不符；本轮未伪造一次改判失败来表现学习。
+
+## 尚未证实
+
+教材语义质量、学习者独立新任务是否成功、真实教学/迁移通过、至少 24 小时的闭卷提取、跨宿主、搬迁与其他平台都未验收。这里的独立子进程只是教师工具运行，不冒充第二个 Agent。未改产品源码、未网络操作、未启动定时器。完整 Agent 成本未知，账本各成本为 null；已记录子进程耗时不替代完整成本。
+
+## 给下一位学习者的新任务
+
+从主线项目 context 与最新 node 读取同一物理 learning 根，使用自己的授权 capability ID 和真实身份，按教材给一个新的真实 release source manifest 任务：限定源码文件清单，计算相对路径、大小和 SHA-256；保存真实 manifest 与工具回执；以 unknown 记录并回读；用一个不同错误（例如产物哈希错误或重复事件）验证拒绝及修订不变。学习者不能复用教师产物当作自己的新成果。root 审阅真实产物与回执后再追加对应新通过，不改早期 unknown。

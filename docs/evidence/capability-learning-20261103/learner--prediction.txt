@@ -1,0 +1,32 @@
+# Learner prediction, before task execution
+
+Actor: `/root/capability_learner_trial`. Task: `learner-release-source-manifest-01`.
+
+## Goal
+
+Use only the current project recovery package and teacher lesson to inventory the five authorized release source files, independently reread them, record an honest unknown observation, reject a deliberately wrong artifact hash without changing revision, and recover the same state in a fresh CLI process.
+
+## Unknowns (maximum three)
+
+1. Exact current source bytes, counts, SHA-256 values, and CLI behavior have not been measured.
+2. Whether the lesson alone is sufficient to form a valid observation for this different task is unverified.
+3. Whether the currently installed script rejects a wrong hash before committing an attempt is unverified.
+
+## Predictions
+
+- The five named repository paths are readable regular files. Two separate read passes will produce identical relative paths, byte counts, and SHA-256 digests. No numerical count/byte/hash answer is predicted without measurement.
+- Initialization will create revision 0. A valid apply observation with outcome unknown and reviewer null will create revision 1; it will not establish mastery or an independently approved outcome.
+- A new observation whose first artifact SHA-256 is intentionally wrong will exit nonzero and leave revision 1 and its original history intact.
+- A subsequent fresh CLI process using the identical physical learning root will read revision 1 and the same unknown event. This will prove process readback only, not delayed recall or a different host.
+
+## Acceptance
+
+Exactly SKILL.md, SKILL.en.md, scripts/capability_ledger.py, scripts/compare_trials.py, and references/capability-learning.md appear in the release-source manifest. A separate process rereads the sources and checks the manifest. Evidence records include real UTC boundaries, argv, script paths/hashes, stdout/stderr and exits. No self-assigned pass or reviewer; model tokens and USD remain null. The rejected counterexample consumes no revision. A fresh status invocation verifies state. A new project node and context describe the actual next step.
+
+## Failure successors
+
+Keep all failed command receipts. If a source file or interface differs, report the actual evidence and adapt only learner artifacts. If revision is unexpected, read and explain history before any write. Never retry by inventing reviewer, modifying package source, copying a second learning root, deleting another writer's lock, or starting a scheduler. Any unexpected hash mismatch stops recording until explained.
+
+## Boundary of this record
+
+The initial recovery-package reads used two shell tool calls before this file existed. They were intake, not benchmark execution. The command runner introduced next will capture every subsequent task subprocess with actual UTC boundaries and replayable inputs; those initial intake calls have no retrospectively invented UTC timestamps.

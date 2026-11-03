@@ -1,0 +1,69 @@
+test_chronology_revision_gap_and_bool_revision (test_capability_ledger.CapabilityTests.test_chronology_revision_gap_and_bool_revision) ... ok
+test_cli_has_real_clock_and_no_time_override (test_capability_ledger.CapabilityTests.test_cli_has_real_clock_and_no_time_override) ... ok
+test_concurrent_writers_commit_one (test_capability_ledger.CapabilityTests.test_concurrent_writers_commit_one) ... ok
+test_configuration_edits_invalidate_bound_history (test_capability_ledger.CapabilityTests.test_configuration_edits_invalidate_bound_history) ... ok
+test_delayed_recall_uses_elapsed_time_not_dates_or_simulated_cli (test_capability_ledger.CapabilityTests.test_delayed_recall_uses_elapsed_time_not_dates_or_simulated_cli) ... ok
+test_due_intervals_and_expired_evidence (test_capability_ledger.CapabilityTests.test_due_intervals_and_expired_evidence) ... ok
+test_duplicate_nested_keys_and_nonfinite_metadata (test_capability_ledger.CapabilityTests.test_duplicate_nested_keys_and_nonfinite_metadata) ... ok
+test_duplicate_task_or_output_does_not_extend_review_interval (test_capability_ledger.CapabilityTests.test_duplicate_task_or_output_does_not_extend_review_interval) ... ok
+test_finite_individual_cost_overflow_is_explicit_not_zero (test_capability_ledger.CapabilityTests.test_finite_individual_cost_overflow_is_explicit_not_zero) ... ok
+test_future_and_before_init_rejected_without_journal_write (test_capability_ledger.CapabilityTests.test_future_and_before_init_rejected_without_journal_write) ... ok
+test_hash_forgery_and_artifact_changes_fail_closed (test_capability_ledger.CapabilityTests.test_hash_forgery_and_artifact_changes_fail_closed) ... ok
+test_invalid_policy_cost_ids_and_timestamp (test_capability_ledger.CapabilityTests.test_invalid_policy_cost_ids_and_timestamp) ... ok
+test_invalidated_transfer_cannot_extend_a_repaired_streak (test_capability_ledger.CapabilityTests.test_invalidated_transfer_cannot_extend_a_repaired_streak) ... FAIL
+test_later_failure_unknown_and_recovery_are_retained (test_capability_ledger.CapabilityTests.test_later_failure_unknown_and_recovery_are_retained) ... ok
+test_md_only_replay_and_unknown_cost (test_capability_ledger.CapabilityTests.test_md_only_replay_and_unknown_cost) ... ok
+test_old_event_edits_break_the_forward_binding (test_capability_ledger.CapabilityTests.test_old_event_edits_break_the_forward_binding) ... ok
+test_pass_requires_independent_reviewer_and_artifact (test_capability_ledger.CapabilityTests.test_pass_requires_independent_reviewer_and_artifact) ... ok
+test_path_escape_and_symlink_rejected (test_capability_ledger.CapabilityTests.test_path_escape_and_symlink_rejected) ... ok
+test_recall_does_not_revalidate_an_invalidated_parent_chain (test_capability_ledger.CapabilityTests.test_recall_does_not_revalidate_an_invalidated_parent_chain) ... ok
+test_repeated_evidence_cannot_refresh_its_due_date (test_capability_ledger.CapabilityTests.test_repeated_evidence_cannot_refresh_its_due_date) ... FAIL
+test_source_failure_invalidates_dependent_pass_and_blocks_reuse (test_capability_ledger.CapabilityTests.test_source_failure_invalidates_dependent_pass_and_blocks_reuse) ... ok
+test_stale_revision_and_duplicate_event_preserve_first (test_capability_ledger.CapabilityTests.test_stale_revision_and_duplicate_event_preserve_first) ... ok
+test_teaching_requires_independent_learner_and_output (test_capability_ledger.CapabilityTests.test_teaching_requires_independent_learner_and_output) ... ok
+test_teaching_review_requires_new_learner_work (test_capability_ledger.CapabilityTests.test_teaching_review_requires_new_learner_work) ... FAIL
+test_transfer_requires_prior_apply_and_distinct_task (test_capability_ledger.CapabilityTests.test_transfer_requires_prior_apply_and_distinct_task) ... ok
+
+======================================================================
+FAIL: test_invalidated_transfer_cannot_extend_a_repaired_streak (test_capability_ledger.CapabilityTests.test_invalidated_transfer_cannot_extend_a_repaired_streak)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SKILL_ROOT>/tests/test_capability_ledger.py", line 222, in test_invalidated_transfer_cannot_extend_a_repaired_streak
+    self.assertEqual(result["dimensions"]["transfer"]["review_at"],
+AssertionError: '2026-01-04T00:00:00+00:00' != '2026-01-02T00:00:00+00:00'
+- 2026-01-04T00:00:00+00:00
+?          ^
++ 2026-01-02T00:00:00+00:00
+?          ^
+
+
+======================================================================
+FAIL: test_repeated_evidence_cannot_refresh_its_due_date (test_capability_ledger.CapabilityTests.test_repeated_evidence_cannot_refresh_its_due_date)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SKILL_ROOT>/tests/test_capability_ledger.py", line 210, in test_repeated_evidence_cannot_refresh_its_due_date
+    self.assertEqual(result["dimensions"]["apply"]["review_at"],
+AssertionError: '2026-01-02T23:00:00+00:00' != '2026-01-02T00:00:00+00:00'
+- 2026-01-02T23:00:00+00:00
+?            ^^
++ 2026-01-02T00:00:00+00:00
+?            ^^
+
+
+======================================================================
+FAIL: test_teaching_review_requires_new_learner_work (test_capability_ledger.CapabilityTests.test_teaching_review_requires_new_learner_work)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SKILL_ROOT>/tests/test_capability_ledger.py", line 233, in test_teaching_review_requires_new_learner_work
+    self.assertEqual(result["dimensions"]["teach"]["review_at"],
+AssertionError: '2026-01-04T23:00:00+00:00' != '2026-01-02T00:00:00+00:00'
+- 2026-01-04T23:00:00+00:00
+?          ^ ^^
++ 2026-01-02T00:00:00+00:00
+?          ^ ^^
+
+
+----------------------------------------------------------------------
+Ran 25 tests in 1.019s
+
+FAILED (failures=3)

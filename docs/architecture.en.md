@@ -1,4 +1,4 @@
-# Architecture explained · 0.4.4
+# Architecture explained · 0.5.0
 
 [中文](architecture.zh-CN.md) · [Documentation index](index.en.md) · [Detailed maps](mindmaps.en.md)
 
@@ -95,4 +95,26 @@ Learn immediately when useful work is already possible. Register spaced review w
 
 For a new host, establish reading, durable writes, artifact checks, and writer transfer first; then run an actual model turn; finally validate scheduling. For a new domain, define sources, observable quality, and independent reuse before proposing a specialized change. Expand only after local evidence and cross-task regression, retaining previous failures.
 
-The Windows Koder CLI continuation has real model and memory receipts. Windows Cursor, an independently created standard account, the full Windows product suite, Markdown migration tooling, and further domain transfer still need separate acceptance. See the [compatibility matrix](compatibility.en.md) and the [current regression report](release-0.4.4-acceptance.en.md).
+The Windows Koder CLI continuation has real model and memory receipts. Windows Cursor, an independently created standard account, the full Windows product suite, Markdown migration tooling, and further domain transfer still need separate acceptance. See the [compatibility matrix](compatibility.en.md) and the [Windows regression report](release-0.4.4-acceptance.en.md).
+
+## Capability curriculum extension · 0.5.0
+
+The existing coordinator gains a scoped capability evidence layer; it is not replaced by another framework. The flow connects a user goal to a task contract, prerequisite diagnosis, evidence-seeking preparation, a small real attempt, error classification, targeted remediation, a new variation, independent teaching, whole-task delivery, and later review. Practice runs throughout. A curriculum depends on task prerequisites rather than a universal school-grade label.
+
+| Layer | Input and decision | Durable output | Implementation boundary |
+|---|---|---|---|
+| Task understanding | User goal, constraints, decisive unknowns | Project memory and predicted checks | Skill protocol; real host reasons and acts |
+| Curriculum | Missing concepts, dependencies, available evidence | Bounded lesson and next exercise | Original protocol; no automatic course crawler |
+| Source appraisal | Primary material, date, license, contradictory evidence | Research notes, candidate experience | Actual host browsing; external content is data |
+| Execution | Authorized tools and reversible next action | Actual artifacts and native receipts | Host capability; no synthesized execution |
+| Evidence state | Observation, reviewer, artifacts, revision | capability.md and immutable attempt MD | Public capability_ledger.py |
+| Judgment | Options, criteria, uncertainty, action-changing evidence | Brief decision and revision reason | Model plus independent reviewer, not a numeric truth oracle |
+| Teaching | Lesson and a new learner task | Separate teacher and learner artifacts | Real independent Agent or human; no self-certified learning |
+| Review | Failures, changed sources, actual elapsed time | Due suggestion and project continuation | Public due calculation; real wakeup remains host-provided |
+| Recursive improvement | Baseline/general/domain/composed runs | Existing PPC receipts and candidate experience | Existing comparator plus per-task reviewer; declarations alone are insufficient |
+
+The six conceptual dimensions (explanation, causality, execution, transfer, teaching, judgment) map to eight operational observation kinds. Causality is tested by counterexamples; judgment is reviewed in predictions and decisions across kinds. This is a design mapping, not eight psychometric scores. Native Koder learning APIs remain separate; the new helper does not silently turn those private APIs into public functionality.
+
+A changed or missing artifact blocks state reconstruction. A later failed/unknown source invalidates dependent transfer and recall. Corrections preserve the old event and use a new reviewed observation; old files are not overwritten to manufacture a clean history. The hash chain detects inconsistent prior entries when a successor binds them; it is not a digital signature or protection against someone rewriting the entire local store.
+
+See the [executable tutorial](capability-learning.en.md), [mechanism research](learning-science.en.md), and [interoperability contracts](open-source-research.en.md).

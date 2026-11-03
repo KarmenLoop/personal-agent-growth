@@ -1,0 +1,42 @@
+{
+  "status": "PASS_RENDER_AND_VISUAL",
+  "agent_behavior_acceptance": false,
+  "old_records_preserved": 20,
+  "old_files_preserved": 40,
+  "new_diagrams": [
+    {
+      "source": "capability-learning.en.mmd",
+      "source_sha256": "4c92ba91c026cf6f147e91646fa4ce33ef570e0a9b225e903c72960307097556",
+      "output": "capability-learning.en.svg",
+      "output_sha256": "f6928b88e8a8b08fedba2f5076e2c18eeb49c04625758e21d24bf79640787476",
+      "width": 1267,
+      "height": 7130.5,
+      "labels": 221
+    },
+    {
+      "source": "capability-learning.zh-CN.mmd",
+      "source_sha256": "46292859c96a885749e1c94290bb727a056324199a73275428c64615349e419c",
+      "output": "capability-learning.zh-CN.svg",
+      "output_sha256": "0ccb60bb6e3faae34d014983ac62f3c273cec8e89cd7afe78d643eeb01b5929d",
+      "width": 1217.734375,
+      "height": 5702.5,
+      "labels": 221
+    }
+  ],
+  "layout": [
+    {
+      "lang": "en",
+      "nodes": 111,
+      "overlaps": [],
+      "edges": 110,
+      "unfilledEdges": 110
+    },
+    {
+      "lang": "zh-CN",
+      "nodes": 111,
+      "overlaps": [],
+      "edges": 110,
+      "unfilledEdges": 110
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+# Visual review
+
+The first Mermaid mindmap rendered 111 labels per language with valid dimensions and hashes. Visual inspection found overlapping labels near the center in both languages. This was rejected as unreadable; the positive render receipt is retained as a rendering result only.
+
+The source was revised to a numbered directional hierarchy with eleven colored branches and wrapped labels. Original project diagrams remain unchanged. The replacement must be rendered and visually inspected independently.
+
+The directional layout removed node overlap. A second visual issue exposed a reserved Mermaid class collision: naming the root node class `root` also styled Mermaid internal root groups, filling connectors. Merely adding linkStyle fill:none did not overcome the class rule. The node class was renamed capabilityRoot and the diagrams were rendered again. This changes only the two new diagram sources, not the renderer or old diagrams.
+
+One screenshot attempt used an out-of-viewport clip and failed; corrected by scrolling the page. A diagnostic regex over the large SVG was interrupted through its own exec session (exit130); a bounded single-path check revealed the style collision. Neither diagnostic failure was a product execution result.
+
+Final rendering completed with exit0. Both accepted SVGs contain 111 nodes and 110 unfilled connectors, with zero node rectangle overlaps. English middle and Chinese top regions were visually inspected at native readable scale. Old 20 records and all 40 original MMD/SVG hashes remain unchanged. This accepts rendering/readability only, not Agent behavior.

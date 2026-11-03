@@ -1,4 +1,4 @@
-# Resume work with Koder CLI on Windows · 0.4.4
+# Resume work with Koder CLI on Windows · 0.5.0
 
 [中文](windows-agent-continuation.zh-CN.md) · [Installation and removal](install.md) · [Markdown learning](markdown-learning.en.md)
 

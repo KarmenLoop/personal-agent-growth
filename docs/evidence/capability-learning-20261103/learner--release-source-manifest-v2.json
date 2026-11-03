@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "task_id": "learner-release-source-manifest-02",
+  "executor": "/root/capability_learner_trial",
+  "created_at_utc": "2026-11-03T13:13:34.985991+00:00",
+  "process_id": 92659,
+  "repository_root": "<SKILL_ROOT>",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 8452,
+      "sha256": "9b80d86de8e967e88baf530ed7518566e5751c45fa8870a525239ed33a7582ed"
+    },
+    {
+      "path": "SKILL.en.md",
+      "bytes": 8853,
+      "sha256": "2b9ee4732510a78bc5dcf055abc99f737a9bf1592908066f99986bf623566b08"
+    },
+    {
+      "path": "scripts/capability_ledger.py",
+      "bytes": 22034,
+      "sha256": "685b9eb410f728602764c1b0d317fffd10346988d2f65d9336f3e6a48fe605f4"
+    },
+    {
+      "path": "scripts/compare_trials.py",
+      "bytes": 29693,
+      "sha256": "5c04af542702f774986113e2010531bef4032e7161f166da4f60f37bf3e5c6b4"
+    },
+    {
+      "path": "references/capability-learning.md",
+      "bytes": 8902,
+      "sha256": "063219c4fa64cb09d250045b948c56a63ee91c7ba995481d4e96e2e492280382"
+    }
+  ],
+  "file_count": 5,
+  "total_bytes": 77934,
+  "previous_manifest_sha256": "3a365f1a609bdc25589864d7c599fcfbe0c2c92dc3b15b99813f3f4289469e52",
+  "source_change_context": "Coordinator explicitly notified new finalized ledger code and reference documentation; this learner only measures source drift."
+}

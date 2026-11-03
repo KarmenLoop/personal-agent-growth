@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.5.0 — 2026-11-03
+
+- Add an original, dependency-free Markdown capability ledger with revision checks, immutable attempts, evidence hashes, source invalidation, independent teaching declarations, delayed-review rules, and derived due work.
+- Extend the Skill with task-first diagnosis, preparation, causal tests, remediation, transfer, independent teaching, practical delivery, and explicit judgment. Keep model training outside the optimization surface.
+- Fix candidate and composition promotion when a failed baseline check concealed another unknown check. Preserve the rejecting regression cases and original acceptance standards.
+- Fix three review-scheduling defects: repeated observations moving a deadline, invalidated transfer evidence extending a streak, and reused learner output extending teaching intervals.
+- Add bilingual learning-science research, a review of ten open-source projects and licenses, an executable tutorial, and two detailed diagrams. No third-party Agent framework is installed or represented as original code.
+- Preserve the original Windows and cross-domain evidence. New independent Agent task results, utility checks, and scheduled-but-unexecuted delayed review are reported separately.
+
 ## 0.4.4 — 2026-10-28
 
 - Add a reusable Windows Agent continuation Skill reference and bilingual tutorial, preserving the complete manuals, templates and editable architecture diagrams.
