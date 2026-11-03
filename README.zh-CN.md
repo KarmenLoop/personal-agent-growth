@@ -1,6 +1,6 @@
 # Personal Agent Growth · 个人智能体成长
 
-[English](README.md) · [简体中文](README.zh-CN.md) · **0.5.0**
+[English](README.md) · [简体中文](README.zh-CN.md) · **0.6.0**
 
 [![检查](https://github.com/KarmenLoop/personal-agent-growth/actions/workflows/check.yml/badge.svg)](https://github.com/KarmenLoop/personal-agent-growth/actions/workflows/check.yml)
 [![发布](https://img.shields.io/github/v/release/KarmenLoop/personal-agent-growth)](https://github.com/KarmenLoop/personal-agent-growth/releases/latest)
@@ -18,6 +18,7 @@ Agent 应当说清楚：什么观察改变了判断，哪条经验在下一个�
 | 理解整体架构 | [架构剖析](docs/architecture.zh-CN.md) | [Architecture](docs/architecture.en.md) |
 | 理解为什么判断、如何改判 | [思考与判断方法](docs/reasoning.zh-CN.md) | [Reasoning method](docs/reasoning.en.md) |
 | 查看完整能力树和关系图 | [复杂思维导图](docs/mindmaps.zh-CN.md) | [Mind maps](docs/mindmaps.en.md) |
+| 学习陌生领域并迁移经验 | [未知领域学习](docs/adaptive-learning.zh-CN.md) | [Adaptive learning](docs/adaptive-learning.en.md) |
 | 使用日、周、项目记忆 | [Markdown 学习体系](docs/markdown-learning.zh-CN.md) | [Markdown learning](docs/markdown-learning.en.md) |
 | 恢复 Windows Koder Agent | [接续实测教程](docs/windows-agent-continuation.zh-CN.md) | [Continuation tutorial](docs/windows-agent-continuation.en.md) |
 | 核对真实能力与限制 | [兼容性与验收边界](docs/compatibility.zh-CN.md) | [Compatibility](docs/compatibility.en.md) |
@@ -48,6 +49,8 @@ Agent 应当说清楚：什么观察改变了判断，哪条经验在下一个�
 | [32 份学习模板](templates/learning/README.md) | 中英文各 16 类，覆盖日报、周报、节点、经验与用户行为证据 |
 | `scripts/verify_handoff.py` | 有边界的 ZIP 与 manifest 一致性检查 |
 | `scripts/compare_trials.py` | 冻结实验、比较、组合验收、经验版本和回退 |
+| `scripts/adaptive_learning.py` | 绑定修订的问题与行动、待定结果核实及有限运行预算 |
+| `scripts/experience_transfer.py` | 按机制和条件检索经验，记录跨任务实际使用反馈 |
 | `scripts/host.py` | 可选的本地 CLI/MCP 适配器，提供五个检查点与交接工具 |
 | `tools/local_install.py` 等 | 完整交付包安装、搬迁检查、经验加载及保留记忆的卸载 |
 | `examples/experience-seed` | 已审查的历史策略与经验摘录，附导出来源关系 |
@@ -56,7 +59,7 @@ Agent 应当说清楚：什么观察改变了判断，哪条经验在下一个�
 
 ## 快速开始
 
-从 [v0.5.0 发布页](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.5.0)下载**完整交付包**与 `SHA256SUMS.txt`，解压后按[开始使用](开始使用.md)操作。工具需要 Python 3.11+，运行时无需安装 pip 依赖。
+从 [v0.6.0 发布页](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.6.0)下载**完整交付包**与 `SHA256SUMS.txt`，解压后按[开始使用](开始使用.md)操作。工具需要 Python 3.11+，运行时无需安装 pip 依赖。
 
 Mac 在完整交付包目录执行：
 
@@ -91,7 +94,7 @@ Windows 使用 `py -3 -B -X utf8`；教程优先选择 `D:\AgentKnowledge`，没
 
 ![完整任务 token 与耗时，保留时钟异常](docs/images/cross-domain-0.4.1.png)
 
-仓库测试证明文件、工具和协议行为，不能代替 Windows 桌面 Agent、重新认证的 Cursor 模型回合、跨设备同步或关闭应用后运行。当前发布检查见 [0.5.0 验收报告](docs/release-0.5.0-acceptance.zh-CN.md)。
+仓库测试证明文件、工具和协议行为，不能代替 Windows 桌面 Agent、重新认证的 Cursor 模型回合、跨设备同步或关闭应用后运行。当前发布检查见 [0.6.0 验收报告](docs/release-0.6.0-acceptance.zh-CN.md)。
 
 ## 开发与核验
 
@@ -99,7 +102,7 @@ Windows 使用 `py -3 -B -X utf8`；教程优先选择 `D:\AgentKnowledge`，没
 python3 -B -m unittest discover -s tests -v
 python3 -B scripts/check_publication.py
 python3 -B tools/build_release.py --output dist
-python3 -B scripts/verify_handoff.py --archive dist/personal-agent-growth-0.5.0.zip --manifest dist/manifest.json
+python3 -B scripts/verify_handoff.py --archive dist/personal-agent-growth-0.6.0.zip --manifest dist/manifest.json
 python3 -B tools/build_delivery.py --output /path/to/fresh-output
 ```
 
@@ -111,7 +114,9 @@ python3 -B tools/build_delivery.py --output /path/to/fresh-output
 
 Copyright (C) 2026 KARMENLOOP Official Team。采用 **AGPL-3.0-only**，分发适用副本时保留 [LICENSE](LICENSE) 和 [NOTICE](NOTICE)。允许商用；分发及修改版网络服务需履行协议适用的源代码义务。AGPL 不要求将纯私人修改上传 GitHub。见[协议说明](docs/licensing.zh-CN.md)。
 
-## 0.5.0 能力学习
+## 0.6.0 自适应学习与能力证据
+
+[未知领域学习](docs/adaptive-learning.zh-CN.md)从当前任务中会影响行动的未知出发：Agent 提出候选、通过宿主实际执行，再根据观察改变判断。跨任务检索比较机制和条件，领域名仅作辅助；失败类比形成有范围的边界，供以后复用。工具负责 Markdown 落盘、修订与证据校验和有限探索，理解、执行与独立审阅由宿主承担，不据此宣称普遍精通或已测提速。[详细流程图](docs/diagrams/adaptive-learning.zh-CN.svg)。
 
 新增[能力账本](docs/capability-learning.zh-CN.md)，用 Markdown 分别记录解释、应用、反例、迁移、教学、交付、延迟复习与回归。工具拒绝缺失身份、变更产物、陈旧写入和过早复习，后续失败会使依赖证据失效；身份真实性与内容质量仍由独立审阅核验。
 

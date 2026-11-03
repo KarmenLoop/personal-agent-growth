@@ -1,16 +1,16 @@
-# Offline delivery: Personal Agent Growth 0.5.0
+# Offline delivery: Personal Agent Growth 0.6.0
 
-[中文说明](开始使用.md) · Bundle **0.5.0-bundle.1** · Complete bilingual distribution
+[中文说明](开始使用.md) · Bundle **0.6.0-bundle.1** · Complete bilingual distribution
 
 This bundle includes the installable skill, reviewed experience excerpts, portable execution profiles, editable source, tests, team and license information, and illustrated acceptance reports. It works without downloading dependencies after extraction if Python 3.11 or later is already installed. Actual model work still uses the host's account and tools. This bundle does not register a scheduler or connect another device.
 
-The [installation guide](docs/install.md) covers the 0.5.0 core package; this page installs the complete offline distribution. Do not overwrite an existing skill or experience library. See the [architecture](docs/architecture.en.md), [Markdown learning contract](docs/markdown-learning.en.md), and [detailed maps](docs/mindmaps.en.md).
+The [installation guide](docs/install.md) covers the 0.6.0 core package; this page installs the complete offline distribution. Do not overwrite an existing skill or experience library. See the [architecture](docs/architecture.en.md), [Markdown learning contract](docs/markdown-learning.en.md), and [detailed maps](docs/mindmaps.en.md).
 
 ## Contents and evidence
 
 | Location | Purpose |
 |---|---|
-| `downloads/personal-agent-growth-0.5.0.zip` and `manifest.json` | Current 68-file bilingual coordinator package with learning templates |
+| `downloads/personal-agent-growth-0.6.0.zip` and `manifest.json` | Current 74-file bilingual coordinator package with learning templates |
 | `examples/experience-seed` | Two indexed profiles, two historical lesson cards, two review excerpts, and export provenance |
 | `SKILL.md`, `references`, `scripts` | Editable coordinator source and standard-library tools |
 | `tools`, `tests` | Delivery builder, checks, installer, experience reader, and utility tests |
@@ -28,7 +28,7 @@ Use your SHA-256 tool to compare the outer ZIP with its accompanying `SHA256SUMS
 
 ```sh
 python3 -B tools/check_delivery.py .
-python3 -B scripts/verify_handoff.py --archive downloads/personal-agent-growth-0.5.0.zip --manifest downloads/manifest.json
+python3 -B scripts/verify_handoff.py --archive downloads/personal-agent-growth-0.6.0.zip --manifest downloads/manifest.json
 ```
 
 On Windows, replace `python3 -B` with `py -3 -B -X utf8`. The first command should report `PASS`; the second should report `PASS`, exit 0, with the check count reported for this manifest. The manifest detects missing or altered content; it is not a publisher signature. Keep the extracted distribution unchanged and store your work outside it.
@@ -56,7 +56,7 @@ For a custom location, change `GrowthRoot`. If the drive root is not writable, c
 
 ```text
 AgentKnowledge/
-├── skills/personal-agent-growth/  # bilingual coordinator, 68 files
+├── skills/personal-agent-growth/  # bilingual coordinator, 74 files
 ├── experience/                   # writable, independent copy of the seed
 ├── tasks/                        # private task records, initially empty
 ├── distribution/                 # complete source, docs, tools and original seed
@@ -64,6 +64,8 @@ AgentKnowledge/
 ```
 
 Choose a separate `learning/` root for current Markdown knowledge, using the [16 document types](templates/learning/README.md). The copied JSON seed remains historical experiment material; it is not a second user profile or an automatic Markdown migration.
+
+For unfamiliar tasks, use the [adaptive-learning tutorial](docs/adaptive-learning.en.md) with that same Markdown root. The installed core includes both learning and transfer helpers. Preserve the current run ID, revision, pending action, and source snapshots when handing off; retrieve by mechanism and conditions instead of assuming the historical seed covers a new field.
 
 The installer does not scan your home directory or create automatic discovery links. You can use the absolute skill path immediately. For automatic discovery on hosts that support `.agents/skills`, create one entry explicitly:
 
@@ -161,7 +163,7 @@ if ($LASTEXITCODE -ne 0) { throw 'Removal stopped; inspect the reported cause.' 
 
 Removal checks every owned skill file and stops if files changed or were added. It preserves `experience`, `tasks`, `distribution`, and the installation receipt. Back up and review deliberate skill edits before deciding what to remove. The user controls any later deletion of retained memory.
 
-If a check fails, keep the output and diagnose its stage. A missing Python interpreter is not a failed package inspection. A hash mismatch requires a fresh trusted copy or an intentional new candidate. An existing install root requires a new root; it is not a reason to erase old memory. The [current acceptance report](docs/release-0.5.0-acceptance.en.md) records the actual platform and checks performed for this build. The [Windows Koder tutorial](docs/windows-agent-continuation.en.md) covers the separate native candidate. Windows Cursor desktop execution remains a separate, unverified condition.
+If a check fails, keep the output and diagnose its stage. A missing Python interpreter is not a failed package inspection. A hash mismatch requires a fresh trusted copy or an intentional new candidate. An existing install root requires a new root; it is not a reason to erase old memory. The [current acceptance report](docs/release-0.6.0-acceptance.en.md) records the actual platform and checks performed for this build. The [Windows Koder tutorial](docs/windows-agent-continuation.en.md) covers the separate native candidate. Windows Cursor desktop execution remains a separate, unverified condition.
 
 ## Rebuild and license
 

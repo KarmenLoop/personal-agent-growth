@@ -1,0 +1,159 @@
+%%{init: {'flowchart': {'nodeSpacing': 24, 'rankSpacing': 48, 'padding': 14, 'curve': 'linear'}}}%%
+flowchart TB
+  subgraph g0["01 · Task scope"]
+    n1["Unfamiliar task arrives"]
+    n2["Recover same-root context"]
+    n3["Define useful outcome"]
+    n4["Identify consequential unknowns"]
+    n5["Latest node and real artifacts"]
+    n6["Acceptance, authority and budget"]
+    n7["Concept, mechanism, tool or evidence"]
+    n8["Revise the problem as evidence changes"]
+    n1 --> n2
+    n1 --> n3
+    n1 --> n4
+    n2 --> n5
+    n3 --> n6
+    n4 --> n7
+    n5 --> n8
+    n6 --> n8
+    n7 --> n8
+  end
+  class n1,n8 milestone
+  subgraph g1["02 · Retrieval"]
+    n9["Represent relationships explicitly"]
+    n10["Problem-structure labels"]
+    n11["Candidate mechanism labels"]
+    n12["Conditions and domain hint"]
+    n13["Match relations across domains"]
+    n14["Host aligns synonyms and languages"]
+    n15["Unknown or contradictory facts"]
+    n16["Read ranked lessons and use feedback"]
+    n9 --> n10
+    n9 --> n11
+    n9 --> n12
+    n10 --> n13
+    n11 --> n14
+    n12 --> n15
+    n13 --> n16
+    n14 --> n16
+    n15 --> n16
+  end
+  class n9,n16 milestone
+  subgraph g2["03 · Analogy"]
+    n17["Treat the analogy as a hypothesis"]
+    n18["Map shared relationships"]
+    n19["Check important differences"]
+    n20["Seek a disconfirming observation"]
+    n21["Preserve source scope and evidence"]
+    n22["Check quality, deadlines and resources"]
+    n23["No useful match: learn local basics"]
+    n24["Keep, adapt, or reject the candidate"]
+    n17 --> n18
+    n17 --> n19
+    n17 --> n20
+    n18 --> n21
+    n19 --> n22
+    n20 --> n23
+    n21 --> n24
+    n22 --> n24
+    n23 --> n24
+  end
+  class n17,n24 milestone
+  subgraph g3["04 · Action choice"]
+    n25["Host proposes current learning actions"]
+    n26["Retrieve or inspect primary evidence"]
+    n27["Run a small discriminating test"]
+    n28["Check tools or review the result"]
+    n29["Question importance and expected gain"]
+    n30["Estimated time and unmet conditions"]
+    n31["Snapshot revision and remaining budget"]
+    n32["Choose an eligible action and record why"]
+    n25 --> n26
+    n25 --> n27
+    n25 --> n28
+    n26 --> n29
+    n27 --> n30
+    n28 --> n31
+    n29 --> n32
+    n30 --> n32
+    n31 --> n32
+  end
+  class n25,n32 milestone
+  subgraph g4["05 · Execute"]
+    n33["Start binds a unique pending token"]
+    n34["Host performs the permitted action"]
+    n35["Capture actual commands and artifacts"]
+    n36["Assess the observation"]
+    n37["Unknown effect: reconcile same start"]
+    n38["Progress or refutation: update judgment"]
+    n39["Failure or no progress: diagnose cause"]
+    n40["Append feedback; require a fresh plan"]
+    n33 --> n34
+    n33 --> n35
+    n33 --> n36
+    n34 --> n37
+    n35 --> n38
+    n36 --> n39
+    n37 --> n40
+    n38 --> n40
+    n39 --> n40
+  end
+  class n33,n40 milestone
+  subgraph g5["06 · Experience"]
+    n41["Separate episode from explanation"]
+    n42["Retain original source experience"]
+    n43["Append use outcome and context"]
+    n44["Derive a narrower new candidate"]
+    n45["Artifacts, original limits and hashes"]
+    n46["Helpful, harmful or inconclusive"]
+    n47["Link counterexamples and next test"]
+    n48["Later host reads and tests the lesson"]
+    n41 --> n42
+    n41 --> n43
+    n41 --> n44
+    n42 --> n45
+    n43 --> n46
+    n44 --> n47
+    n45 --> n48
+    n46 --> n48
+    n47 --> n48
+  end
+  class n41,n48 milestone
+  subgraph g6["07 · Improvement"]
+    n49["Improve the method of learning"]
+    n50["PPC: baseline, general and domain"]
+    n51["Check complete task quality and cost"]
+    n52["Keep execution boundaries explicit"]
+    n53["Real probes, composition and regression"]
+    n54["Deliver after independent review"]
+    n55["Limits or uncertainty preserve next step"]
+    n56["Future work needs a real host trigger"]
+    n49 --> n50
+    n49 --> n51
+    n49 --> n52
+    n50 --> n53
+    n51 --> n54
+    n52 --> n55
+    n53 --> n56
+    n54 --> n56
+    n55 --> n56
+  end
+  class n49,n56 milestone
+  n8 --> n9
+  n16 --> n17
+  n24 --> n25
+  n32 --> n33
+  n40 --> n41
+  n48 --> n49
+  n40 -. "New evidence, new plan" .-> n25
+  n45 -. "Use feedback changes retrieval" .-> n16
+  n48 -. "New task, new conditions" .-> n9
+  n55 -. "Persist a recovery node" .-> n5
+  n53 -. "Adopt only tested strategy changes" .-> n25
+  n37 -. "Reconcile; do not repeat blindly" .-> n33
+  n31 -. "Refresh stale lesson snapshots" .-> n16
+  n56 -. "Observed trigger only" .-> n1
+  classDef milestone fill:#214c73,color:#ffffff,stroke:#12344f,stroke-width:1.5px
+  classDef caution fill:#fff0d3,color:#583b08,stroke:#bc842a
+  class n15,n23,n30,n37,n39,n55 caution

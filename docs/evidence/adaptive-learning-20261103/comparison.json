@@ -1,0 +1,37 @@
+{
+  "recorded_at": "2026-11-03T14:54:28.320123+00:00",
+  "scope": "One actual host Agent per predeclared arm; same common task and final helper implementation. Parent reviewed full artifacts and independently reproduced each drill. Concurrent wall windows and review waiting confound causal timing. Native tokens/USD and backend weight identity unavailable.",
+  "arms": [
+    {
+      "arm": "baseline",
+      "first_reviewable_seconds": 203.782757,
+      "final_seconds": 418.045477,
+      "artifact_quality": "PASS on first review",
+      "review_repairs": 0,
+      "native_tokens": null,
+      "native_usd": null
+    },
+    {
+      "arm": "general",
+      "first_reviewable_seconds": 242.635157,
+      "corrected_usable_seconds": 371.671216,
+      "final_seconds": 608.242643,
+      "artifact_quality": "Initial negative-check attribution defect; revised artifact PASS",
+      "review_repairs": 1,
+      "native_tokens": null,
+      "native_usd": null
+    },
+    {
+      "arm": "domain",
+      "first_reviewable_seconds": 251.701139,
+      "final_seconds": 512.444879,
+      "artifact_quality": "PASS on first review",
+      "review_repairs": 0,
+      "native_tokens": null,
+      "native_usd": null
+    }
+  ],
+  "experience_use": "General actually read prior instructional-design context/latest node and retrieved the same physical mechanism root; its cold plan already contained key recovery ideas. Feedback recorded inconclusive causal benefit.",
+  "compose_decision": "No new global strategy adopted; preserve baseline and both candidate artifacts. No combined component was activated, so a composition run was not fabricated. A new composition requires its own run.",
+  "promotion": "NOT_QUALIFIED: one sample per arm, unknown native cost; existing PPC repeat and quality gates unchanged."
+}

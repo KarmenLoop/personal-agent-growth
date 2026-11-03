@@ -1,4 +1,4 @@
-# Documentation index · 0.5.0
+# Documentation index · 0.6.0
 
 [English](index.en.md) · [中文](index.zh-CN.md)
 
@@ -12,11 +12,12 @@ The current product manual is published in both languages. Runtime names, field 
 | Complete task tutorial | [Read](../docs/tutorial.en.md) | [阅读](../docs/tutorial.zh-CN.md) |
 | Architecture and responsibility | [Read](../docs/architecture.en.md) | [阅读](../docs/architecture.zh-CN.md) |
 | Causal judgment and learning | [Read](../docs/reasoning.en.md) | [阅读](../docs/reasoning.zh-CN.md) |
-| Eight detailed diagrams | [Read](../docs/mindmaps.en.md) | [阅读](../docs/mindmaps.zh-CN.md) |
+| Detailed maps and execution flows | [Read](../docs/mindmaps.en.md) | [阅读](../docs/mindmaps.zh-CN.md) |
 | Memory contract and pseudocode | [Read](../docs/markdown-learning.en.md) | [阅读](../docs/markdown-learning.zh-CN.md) |
+| Unfamiliar-domain learning and experience transfer | [Read](../docs/adaptive-learning.en.md) | [阅读](../docs/adaptive-learning.zh-CN.md) |
 | Compatibility and evidence | [Read](../docs/compatibility.en.md) | [阅读](../docs/compatibility.zh-CN.md) |
 | Cross-domain full-task experiment | [Read](../docs/cross-domain-trial.md) | [阅读](../docs/cross-domain-trial.zh-CN.md) |
-| Current release acceptance | [Read](../docs/release-0.5.0-acceptance.en.md) | [阅读](../docs/release-0.5.0-acceptance.zh-CN.md) |
+| Current release acceptance | [Read](../docs/release-0.6.0-acceptance.en.md) | [阅读](../docs/release-0.6.0-acceptance.zh-CN.md) |
 | Team | [Read](../TEAM.md) | [阅读](../TEAM.zh-CN.md) |
 | License guide | [Read](../docs/licensing.md) | [阅读](../docs/licensing.zh-CN.md) |
 
@@ -29,13 +30,14 @@ The current product manual is published in both languages. Runtime names, field 
 - Learning and contact: [English](../references/learning-and-contact.en.md) · [中文](../references/learning-and-contact.md)
 - Autonomous continuation: [English](../references/autonomous-continuation.en.md) · [中文](../references/autonomous-continuation.md)
 - Recursive improvement: [English](../references/recursive-improvement.en.md) · [中文](../references/recursive-improvement.md)
+- Adaptive unfamiliar-domain learning: [English](../references/adaptive-learning.en.md) · [中文](../references/adaptive-learning.md)
 - Markdown learning: [English](../references/markdown-learning.en.md) · [中文](../references/markdown-learning.md)
 
 - Regression repair experience: [English](../references/regression-repair.en.md) · [中文](../references/regression-repair.md)
 
 ## Templates and diagrams
 
-[All 32 templates](../templates/learning/README.md) contain the full raw Markdown. The [diagram guide](mindmaps.en.md) includes 20 rendered SVGs and 20 editable Mermaid sources. Use the browser to zoom; source files and render hashes are included in the full delivery.
+[All 32 templates](../templates/learning/README.md) contain the full raw Markdown. The [diagram guide](mindmaps.en.md) includes 24 rendered SVGs and 24 editable Mermaid sources. Use the browser to zoom; source files and render hashes are included in the full delivery.
 
 ## Historical evidence archive
 
@@ -53,7 +55,7 @@ These original reports retain their original language, object hashes, and failur
 
 [Non-elevated continuation tutorial](windows-agent-continuation.en.md) · [0.4.4 acceptance](release-0.4.4-acceptance.en.md)
 
-## Learning and independent implementation · 0.5.0
+## Learning and independent implementation · 0.6.0
 
 - [Capability tutorial](capability-learning.en.md)
 - [Runtime learning protocol](../references/capability-learning.en.md)

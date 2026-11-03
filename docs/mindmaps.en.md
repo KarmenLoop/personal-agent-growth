@@ -1,8 +1,8 @@
-# Detailed mind maps and diagrams · 0.5.0
+# Detailed mind maps and diagrams · 0.6.0
 
 [English](mindmaps.en.md) · [中文](mindmaps.zh-CN.md)
 
-Eleven diagrams per language: four detailed mind maps, architecture, scheduling, handoff, calendar flow, Windows skip auditing, and Windows Agent recovery, and the capability curriculum. Each language uses the same branch topology. These diagrams describe responsibilities and contracts; they do not establish that every host implements them. Check [compatibility](compatibility.en.md) for evidence. Open SVG files to zoom; Mermaid sources are editable.
+Twelve diagrams per language: four detailed mind maps plus architecture, scheduling, handoff, calendar flow, Windows skip auditing, Windows Agent recovery, capability evidence, and adaptive unfamiliar-domain learning. Each language uses the same branch topology. These diagrams describe responsibilities and contracts; they do not establish that every host implements them. Check [compatibility](compatibility.en.md) for evidence. Open SVG files to zoom; Mermaid sources are editable.
 
 ## Complete capability tree
 
@@ -95,3 +95,11 @@ After editing a source, regenerate both languages, inspect the output, and updat
 [SVG](diagrams/capability-learning.en.svg) · [Editable Mermaid](diagrams/capability-learning.en.mmd)
 
 ![Capability curriculum](diagrams/capability-learning.en.svg)
+
+## Adaptive learning across unfamiliar fields
+
+This 56-node, 77-connection map follows problem recovery, mechanism retrieval, analogy checks, action choice, real host execution, scoped feedback, and later reuse. Return paths show where new evidence changes a plan and where a changed experience snapshot must be read again. The actual execution boundary separates a recorded start from the host action. Unknown effects return to reconciliation rather than an automatic retry.
+
+[SVG](diagrams/adaptive-learning.en.svg) · [Editable Mermaid](diagrams/adaptive-learning.en.mmd) · [Executable tutorial](adaptive-learning.en.md)
+
+![Adaptive unfamiliar-domain learning](diagrams/adaptive-learning.en.svg)

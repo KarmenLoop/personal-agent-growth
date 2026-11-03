@@ -1,8 +1,8 @@
-# 复杂思维导图与流程图 · 0.5.0
+# 复杂思维导图与流程图 · 0.6.0
 
 [English](mindmaps.en.md) · [中文](mindmaps.zh-CN.md)
 
-中英文各十一张：四张详细思维导图，以及架构、调度、交接、日周、Windows 跳过核查、Agent 接续与能力课程图。两种语言保持相同分支结构。图示说明责任与协议，不代表每个宿主都已实现；实际范围以[兼容性](compatibility.zh-CN.md)为准。SVG 可放大，Mermaid 源文件可编辑。
+中英文各十二张：四张详细思维导图，以及架构、调度、交接、日周、Windows 跳过核查、Agent 接续、能力证据与未知领域自适应学习图。两种语言保持相同分支结构。图示说明责任与协议，不代表每个宿主都已实现；实际范围以[兼容性](compatibility.zh-CN.md)为准。SVG 可放大，Mermaid 源文件可编辑。
 
 ## 完整能力树
 
@@ -95,3 +95,11 @@ node tools/render_diagrams.mjs --mermaid-dir /path/to/node_modules/mermaid --pla
 [SVG](diagrams/capability-learning.zh-CN.svg) · [可编辑 Mermaid](diagrams/capability-learning.zh-CN.mmd)
 
 ![能力课程](diagrams/capability-learning.zh-CN.svg)
+
+## 陌生领域的自适应学习
+
+这张 56 节点、77 连线的图连接任务恢复、机制检索、类比检查、动作选择、宿主实际执行、范围明确的反馈与后续复用。回路标明新证据如何改变计划，以及经验快照变化后为何要重新读取。实际执行边界把登记启动与宿主行动分开；效果未知进入核实，不自动重试。
+
+[SVG](diagrams/adaptive-learning.zh-CN.svg) · [可编辑 Mermaid](diagrams/adaptive-learning.zh-CN.mmd) · [可执行教程](adaptive-learning.zh-CN.md)
+
+![未知领域自适应学习](diagrams/adaptive-learning.zh-CN.svg)

@@ -1,4 +1,4 @@
-# 完整文档索引 · 0.5.0
+# 完整文档索引 · 0.6.0
 
 [English](index.en.md) · [中文](index.zh-CN.md)
 
@@ -12,11 +12,12 @@
 | 完整任务教程 | [Read](../docs/tutorial.en.md) | [阅读](../docs/tutorial.zh-CN.md) |
 | 架构与责任剖析 | [Read](../docs/architecture.en.md) | [阅读](../docs/architecture.zh-CN.md) |
 | 因果判断与学习方法 | [Read](../docs/reasoning.en.md) | [阅读](../docs/reasoning.zh-CN.md) |
-| 八张复杂图解 | [Read](../docs/mindmaps.en.md) | [阅读](../docs/mindmaps.zh-CN.md) |
+| 复杂图解与执行流程 | [Read](../docs/mindmaps.en.md) | [阅读](../docs/mindmaps.zh-CN.md) |
 | 记忆契约与伪代码 | [Read](../docs/markdown-learning.en.md) | [阅读](../docs/markdown-learning.zh-CN.md) |
+| 未知领域学习与经验迁移 | [Read](../docs/adaptive-learning.en.md) | [阅读](../docs/adaptive-learning.zh-CN.md) |
 | 兼容性与证据 | [Read](../docs/compatibility.en.md) | [阅读](../docs/compatibility.zh-CN.md) |
 | 跨领域完整任务实验 | [Read](../docs/cross-domain-trial.md) | [阅读](../docs/cross-domain-trial.zh-CN.md) |
-| 当前发布验收 | [Read](../docs/release-0.5.0-acceptance.en.md) | [阅读](../docs/release-0.5.0-acceptance.zh-CN.md) |
+| 当前发布验收 | [Read](../docs/release-0.6.0-acceptance.en.md) | [阅读](../docs/release-0.6.0-acceptance.zh-CN.md) |
 | 团队介绍 | [Read](../TEAM.md) | [阅读](../TEAM.zh-CN.md) |
 | 协议说明 | [Read](../docs/licensing.md) | [阅读](../docs/licensing.zh-CN.md) |
 
@@ -29,13 +30,14 @@
 - 学习与联系: [English](../references/learning-and-contact.en.md) · [中文](../references/learning-and-contact.md)
 - 自主接续: [English](../references/autonomous-continuation.en.md) · [中文](../references/autonomous-continuation.md)
 - 递归改进: [English](../references/recursive-improvement.en.md) · [中文](../references/recursive-improvement.md)
+- 自适应未知领域学习: [English](../references/adaptive-learning.en.md) · [中文](../references/adaptive-learning.md)
 - Markdown 学习: [English](../references/markdown-learning.en.md) · [中文](../references/markdown-learning.md)
 
 - 全量回归修复经验: [English](../references/regression-repair.en.md) · [中文](../references/regression-repair.md)
 
 ## 模板与图源
 
-[32 份模板](../templates/learning/README.md)提供全部 Markdown 原文。[图解手册](mindmaps.zh-CN.md)包含 20 张已渲染 SVG 与 20 份可编辑 Mermaid 源文件，可在浏览器放大；完整分发包同时包含源文件和渲染哈希。
+[32 份模板](../templates/learning/README.md)提供全部 Markdown 原文。[图解手册](mindmaps.zh-CN.md)包含 24 张已渲染 SVG 与 24 份可编辑 Mermaid 源文件，可在浏览器放大；完整分发包同时包含源文件和渲染哈希。
 
 ## 历史证据档案
 
@@ -53,7 +55,7 @@
 
 [普通权限接续教程](windows-agent-continuation.zh-CN.md) · [0.4.4 验收](release-0.4.4-acceptance.zh-CN.md)
 
-## 学习与独立实现 · 0.5.0
+## 学习与独立实现 · 0.6.0
 
 - [能力学习教程](capability-learning.zh-CN.md)
 - [运行时学习协议](../references/capability-learning.md)

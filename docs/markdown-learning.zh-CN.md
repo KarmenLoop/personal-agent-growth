@@ -1,4 +1,4 @@
-# Markdown 学习记忆完整契约 · 0.5.0
+# Markdown 学习记忆完整契约 · 0.6.0
 
 [English](markdown-learning.en.md) · [全部模板原文](../templates/learning/README.md) · [架构边界](architecture.zh-CN.md#storage)
 
