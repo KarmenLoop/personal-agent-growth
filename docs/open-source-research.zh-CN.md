@@ -226,4 +226,3 @@ shell/runner 改动实际提高权限或改变外部副作用时，仍需遵守�
 | microsoft/autogen | `d07c667a3239ea4ab7af62a53b0f4ff205a1f23d` | README.md: `042b9df197a220ec7072a116d694cd497ec332ad`<br>LICENSE-CODE: `9e841e7a26e4eb057b24511e7b92d42b257a80e5` |
 
 所有框架的有效性能、真实互通、后台唤醒与多平台行为仍需本项目单独执行验收。本轮研究成果不能计入这些能力的PASS。
-

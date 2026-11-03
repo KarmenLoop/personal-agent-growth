@@ -259,4 +259,3 @@ Preserved lookup failures: mini-swe-agent's LICENSE path returned 404 before LIC
 | microsoft/autogen | `d07c667a3239ea4ab7af62a53b0f4ff205a1f23d` | README.md: `042b9df197a220ec7072a116d694cd497ec332ad`<br>LICENSE-CODE: `9e841e7a26e4eb057b24511e7b92d42b257a80e5` |
 
 Performance, actual interoperability, autonomous wakeups, and platform behavior require separate PAG execution evidence. This research does not mark any of those capabilities as passed.
-
