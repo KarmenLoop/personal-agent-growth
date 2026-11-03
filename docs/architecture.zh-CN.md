@@ -1,4 +1,4 @@
-# 整体架构剖析 · 0.6.0
+# 整体架构剖析 · 0.6.1
 
 [English](architecture.en.md) · [文档索引](index.zh-CN.md) · [复杂思维导图](mindmaps.zh-CN.md)
 
@@ -97,7 +97,7 @@ context 与最新 node 回答“现在做到哪”；memory 提供约束与决�
 
 Windows Koder CLI 接续已取得真实模型与记忆读写回执。Windows Cursor、独立创建的标准账户、完整 Windows 产品套件、Markdown 迁移工具以及更多领域迁移仍需要独立验收。具体状态见[兼容性表](compatibility.zh-CN.md)与[Windows 历史回归报告](release-0.4.4-acceptance.zh-CN.md)。
 
-## 能力课程扩展 · 0.6.0
+## 能力课程扩展 · 0.6.1
 
 在原协调体系上增加有明确范围的能力证据层，不替换现有框架。完整连接：用户目标→任务契约→先修诊断→解决未知的预习→真实小实践→错误分类→定向补课→新变式→独立教学→整任务交付→后续复习。实操始终穿插；课程依赖实际任务先修，不用统一年级判断用户。
 
@@ -119,7 +119,7 @@ Windows Koder CLI 接续已取得真实模型与记忆读写回执。Windows Cur
 
 操作见[可执行教程](capability-learning.zh-CN.md)，依据见[教育研究](learning-science.zh-CN.md)和[互操作契约](open-source-research.zh-CN.md)。
 
-## 自适应学习扩展 · 0.6.0
+## 自适应学习扩展 · 0.6.1
 
 陌生任务从目标、验收、影响行动的未知、可用工具和有限预算进入。宿主 Agent 描述关系与候选机制，不选择预设领域课程。`experience_transfer.py` 检索类似机制及适用条件；仅有相同领域标签不能使经验具备探测资格。外部思想与类比先作为假设，条件矛盾或缺失时先做本地核实。
 

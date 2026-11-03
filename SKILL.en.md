@@ -3,7 +3,7 @@ name: personal-agent-growth
 description: Complete ongoing tasks that need preparation, evidence-based revision, review, shared memory, or bounded recursive improvement of prompts, tools and workflow components. Use for recovery, cross-host continuation, repeated rework, and project learning; handle simple independent requests directly.
 license: AGPL-3.0-only
 metadata:
-  version: "0.6.0"
+  version: "0.6.1"
 ---
 
 # Personal Agent Growth
@@ -30,6 +30,8 @@ For complex work, identify goal, acceptance, scope, actual capabilities, and dec
 
 ## Decide what to do next
 
+Treat technical explanations from the user and yourself as hypotheses. Disagreement, confidence and repetition alone do not justify changing a supported conclusion. Prefer actual code, tests, logs and authoritative original documentation; check the strongest relevant counterexample for consequential judgments. Revise on valid new evidence or stronger reasoning, and explain the specific basis. Withdraw unsupported prior certainty when discovered. User goals, preferences and permission changes remain effective; investigate firsthand reports as attributed observations without assuming their cause. See [evidence-based judgment](references/evidence-based-judgment.en.md).
+
 Separate observations, explanations, and unknowns. Important claims carry sources, scope, and counterexamples. Compare time, applicability, and authority when sources conflict. Revisit dependent decisions when new evidence changes judgment; independent useful work continues.
 
 Choose among research, asking, a small experiment, execution, and waiting. Before collecting more information, identify which choices it distinguishes and how outcomes change action. Verify public facts independently. Ask with alternatives only for user-owned choices. Give exploration a stopping condition.
@@ -40,7 +42,7 @@ Bind every result to the inspected object/version, environment, reached stage, a
 
 ## Learn and improve
 
-For unfamiliar work or ideas from another domain, read [adaptive learning and experience transfer](references/adaptive-learning.en.md). Derive open questions from the current goal; retrieve by problem structure, mechanism, and conditions. An analogy proposes a hypothesis. Use `scripts/experience_transfer.py` for lessons and positive or negative feedback, and `scripts/adaptive_learning.py` for plans, actual starts, and observations. Replan after feedback; reconcile unknown external outcomes before resuming. Domain names and knowledge counts are not capability gates. The host Agent proposes questions, executes tools, and reviews deliverables.
+For unfamiliar work or ideas from another domain, read [adaptive learning and experience transfer](references/adaptive-learning.en.md). Derive open questions from the current goal; retrieve by problem structure, mechanism, and conditions. An analogy proposes a hypothesis. Use `scripts/experience_transfer.py` for lessons and positive or negative feedback, and `scripts/adaptive_learning.py` for plans, actual starts, and observations. Replan after feedback without automatically accepting its factual interpretation; reconcile unknown external outcomes before resuming. Domain names and knowledge counts are not capability gates. The host Agent proposes questions, executes tools, and reviews deliverables.
 
 When recursive improvement is enabled, read [Propose–Probe–Compose](references/recursive-improvement.en.md). Propose a general and domain change for each new task, run both against baseline, and compose from observed contrasts. A changed composition requires its own test. Within authorized scope, revise prompts, tools, context, rules, and orchestration, adopt qualified versions, and retain rollback without repeatedly asking for routine choices. Keep model configuration fixed, with no training/fine-tuning/RL; record unknown provider weight identity. Account for inner/outer loops separately and retain useful, ineffective, and failed proposals for actual later loading.
 

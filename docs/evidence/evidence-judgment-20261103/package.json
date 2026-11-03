@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "core_files": 76,
+  "core_checks": 157,
+  "commands": 8,
+  "memory_before_after": "6a171c67ccd9530d2d28c53e9b44b386449a6a20c909b29cf7411496bcceb649",
+  "scope": "Actual local bundle build, install, Unicode-space relocation, both new helpers, separate-process recovery and removal retaining Markdown; not desktop Agent acceptance"
+}

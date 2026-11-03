@@ -14,6 +14,8 @@ import zipfile
 ROOT = Path(__file__).resolve().parents[1]
 NAME = "personal-agent-growth"
 FILES = (
+    "references/evidence-based-judgment.md",
+    "references/evidence-based-judgment.en.md",
     "scripts/experience_transfer.py",
     "scripts/adaptive_learning.py",
     "references/adaptive-learning.md",

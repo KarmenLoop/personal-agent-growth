@@ -218,6 +218,28 @@
       "width": 2587.296875,
       "height": 3289,
       "labels": 140
+    },
+    {
+      "source": "evidence-judgment.en.mmd",
+      "source_sha256": "92edb7c34062be4f2a73fc5d3838cb563b8eacd9b294e7046ee8cd8efa1fb2cc",
+      "output": "evidence-judgment.en.svg",
+      "output_sha256": "e8a8437014ed8bd246cab32dd2e97a984abbaec0d8bdef3816e18bd34783d61e",
+      "width": 896,
+      "height": 1925.893798828125,
+      "labels": 14,
+      "nodes": 12,
+      "edges": 14
+    },
+    {
+      "source": "evidence-judgment.zh-CN.mmd",
+      "source_sha256": "8daccc2ed2415aa3d55a8a184ee53700f7c0515ead895ef2de3ce7b862dfebfd",
+      "output": "evidence-judgment.zh-CN.svg",
+      "output_sha256": "3611cc77510a42dd5f4988eec7577d0f7d8697168aacd4a78e55d4a5f45f8409",
+      "width": 896,
+      "height": 1736.75,
+      "labels": 14,
+      "nodes": 12,
+      "edges": 14
     }
   ]
 }

@@ -1,8 +1,8 @@
-# 复杂思维导图与流程图 · 0.6.0
+# 复杂思维导图与流程图 · 0.6.1
 
 [English](mindmaps.en.md) · [中文](mindmaps.zh-CN.md)
 
-中英文各十二张：四张详细思维导图，以及架构、调度、交接、日周、Windows 跳过核查、Agent 接续、能力证据与未知领域自适应学习图。两种语言保持相同分支结构。图示说明责任与协议，不代表每个宿主都已实现；实际范围以[兼容性](compatibility.zh-CN.md)为准。SVG 可放大，Mermaid 源文件可编辑。
+中英文各十三张：四张详细思维导图，以及架构、调度、交接、日周、Windows 跳过核查、Agent 接续、能力证据、未知领域自适应学习与基于证据的判断图。两种语言保持相同分支结构。图示说明责任与协议，不代表每个宿主都已实现；实际范围以[兼容性](compatibility.zh-CN.md)为准。SVG 可放大，Mermaid 源文件可编辑。
 
 ## 完整能力树
 
@@ -103,3 +103,11 @@ node tools/render_diagrams.mjs --mermaid-dir /path/to/node_modules/mermaid --pla
 [SVG](diagrams/adaptive-learning.zh-CN.svg) · [可编辑 Mermaid](diagrams/adaptive-learning.zh-CN.mmd) · [可执行教程](adaptive-learning.zh-CN.md)
 
 ![未知领域自适应学习](diagrams/adaptive-learning.zh-CN.svg)
+
+## 基于证据的判断
+
+12 个节点、14 条边，区分用户取舍与技术主张，核查反证，并分别保留、修正、撤回或暂缓结论。[完整协议](../references/evidence-based-judgment.md)。
+
+[SVG](diagrams/evidence-judgment.zh-CN.svg) · [Mermaid](diagrams/evidence-judgment.zh-CN.mmd)
+
+![基于证据的判断](diagrams/evidence-judgment.zh-CN.svg)

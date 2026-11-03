@@ -1,4 +1,4 @@
-# Documentation index · 0.6.0
+# Documentation index · 0.6.1
 
 [English](index.en.md) · [中文](index.zh-CN.md)
 
@@ -17,7 +17,7 @@ The current product manual is published in both languages. Runtime names, field 
 | Unfamiliar-domain learning and experience transfer | [Read](../docs/adaptive-learning.en.md) | [阅读](../docs/adaptive-learning.zh-CN.md) |
 | Compatibility and evidence | [Read](../docs/compatibility.en.md) | [阅读](../docs/compatibility.zh-CN.md) |
 | Cross-domain full-task experiment | [Read](../docs/cross-domain-trial.md) | [阅读](../docs/cross-domain-trial.zh-CN.md) |
-| Current release acceptance | [Read](../docs/release-0.6.0-acceptance.en.md) | [阅读](../docs/release-0.6.0-acceptance.zh-CN.md) |
+| Current release acceptance | [Read](../docs/release-0.6.1-acceptance.en.md) | [阅读](../docs/release-0.6.1-acceptance.zh-CN.md) |
 | Team | [Read](../TEAM.md) | [阅读](../TEAM.zh-CN.md) |
 | License guide | [Read](../docs/licensing.md) | [阅读](../docs/licensing.zh-CN.md) |
 
@@ -55,9 +55,13 @@ These original reports retain their original language, object hashes, and failur
 
 [Non-elevated continuation tutorial](windows-agent-continuation.en.md) · [0.4.4 acceptance](release-0.4.4-acceptance.en.md)
 
-## Learning and independent implementation · 0.6.0
+## Learning and independent implementation · 0.6.1
 
 - [Capability tutorial](capability-learning.en.md)
 - [Runtime learning protocol](../references/capability-learning.en.md)
 - [Learning science and curriculum research](learning-science.en.md)
 - [Open-source mechanisms and interoperability](open-source-research.en.md)
+
+## Evidence-based judgment · 0.6.1
+
+[English protocol](../references/evidence-based-judgment.en.md) · [中文协议](../references/evidence-based-judgment.md) · [0.6.0 historical acceptance](release-0.6.0-acceptance.en.md)

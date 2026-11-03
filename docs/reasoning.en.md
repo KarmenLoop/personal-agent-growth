@@ -1,4 +1,4 @@
-# How decisions and learning connect · 0.6.0
+# How decisions and learning connect · 0.6.1
 
 [中文](reasoning.zh-CN.md) · [Architecture](architecture.en.md) · [Decision map](diagrams/reasoning.en.svg)
 
@@ -27,6 +27,34 @@ An explanation can stop when the mechanism is clear enough. A design task must a
 | Unknown | A second host has not run the task | Retain NOT_RUN rather than extrapolating |
 
 Resolve source conflicts by date, originality, object, and method, not page count. Reposts and summaries of one original are one source. Public statements can support a sourced hypothesis about a person's working method; reputation, tone, or school background do not establish their internal thoughts.
+
+### Keep conclusions accountable when challenged
+
+Treat technical explanations, diagnoses, and proposed fixes as hypotheses regardless of who offers them. The user's confidence, repetition, or disagreement does not itself support a factual reversal. Neither does the Agent's earlier confidence justify keeping a weak claim. A demonstrable error in the existing reasoning can require correction without a new file or test result.
+
+First classify the input. A changed goal, preference, or permission changes the applicable task contract; it does not need factual proof. A firsthand report is new, attributed evidence about an observation, but does not by itself establish its cause. For technical claims, inspect the strongest counterexample, failure condition, and hidden assumption. When feasible, check relevant code, reproducible tests, raw logs, runtime behavior, or primary documentation before deciding.
+
+Revise, narrow, or withdraw a conclusion when new evidence or stronger inspectable reasoning warrants it. Otherwise retain only the confidence the existing evidence supports, identify what remains unknown, and choose a bounded discriminating check when useful. Do not repeat checks indefinitely just because the disagreement continues. Record the previous claim, specific basis for the decision, affected scope, and next check in the existing task record. See the [evidence-based judgment protocol](../references/evidence-based-judgment.en.md).
+
+```mermaid
+flowchart TD
+    A["New input or challenge"] --> B{"What kind of input?"}
+    B -->|"Goal, preference, permission"| C["Update task contract; preserve earlier results"]
+    B -->|"Technical claim or firsthand report"| D["Separate observation, attribution, and explanation"]
+    D --> E["Inspect strongest counterexample and hidden assumptions"]
+    E --> F{"Useful check feasible within scope?"}
+    F -->|"Yes"| G["Run bounded external verification; preserve output"]
+    F -->|"No"| H["Assess available evidence and reasoning; state gaps"]
+    G --> I{"New evidence, stronger reasoning, or an exposed error?"}
+    H --> I
+    I -->|"Yes"| J["Revise, narrow, or withdraw; state the specific basis"]
+    I -->|"No"| K["Retain only supported confidence; keep unknowns open"]
+    J --> L["Update dependent decisions and the next action"]
+    K --> L
+    C --> L
+```
+
+This protocol governs the Agent's work and records. It does not remove prior model training or guarantee that a model will never be sycophantic. A format-valid record is not proof that its judgment is correct.
 
 ## 4. Research, experiment, act, or ask
 

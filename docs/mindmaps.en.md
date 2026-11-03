@@ -1,8 +1,8 @@
-# Detailed mind maps and diagrams · 0.6.0
+# Detailed mind maps and diagrams · 0.6.1
 
 [English](mindmaps.en.md) · [中文](mindmaps.zh-CN.md)
 
-Twelve diagrams per language: four detailed mind maps plus architecture, scheduling, handoff, calendar flow, Windows skip auditing, Windows Agent recovery, capability evidence, and adaptive unfamiliar-domain learning. Each language uses the same branch topology. These diagrams describe responsibilities and contracts; they do not establish that every host implements them. Check [compatibility](compatibility.en.md) for evidence. Open SVG files to zoom; Mermaid sources are editable.
+Thirteen diagrams per language: four detailed mind maps plus architecture, scheduling, handoff, calendar flow, Windows skip auditing, Windows Agent recovery, capability evidence, adaptive unfamiliar-domain learning, and evidence-based judgment. Each language uses the same branch topology. These diagrams describe responsibilities and contracts; they do not establish that every host implements them. Check [compatibility](compatibility.en.md) for evidence. Open SVG files to zoom; Mermaid sources are editable.
 
 ## Complete capability tree
 
@@ -103,3 +103,11 @@ This 56-node, 77-connection map follows problem recovery, mechanism retrieval, a
 [SVG](diagrams/adaptive-learning.en.svg) · [Editable Mermaid](diagrams/adaptive-learning.en.mmd) · [Executable tutorial](adaptive-learning.en.md)
 
 ![Adaptive unfamiliar-domain learning](diagrams/adaptive-learning.en.svg)
+
+## Evidence-based judgment
+
+A 12-node, 14-edge decision flow separates user choices from technical claims, checks contrary evidence, and supports retaining, revising, withdrawing or suspending a conclusion. [Protocol](../references/evidence-based-judgment.en.md).
+
+[SVG](diagrams/evidence-judgment.en.svg) · [Mermaid](diagrams/evidence-judgment.en.mmd)
+
+![Evidence-based judgment](diagrams/evidence-judgment.en.svg)

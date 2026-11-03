@@ -1,4 +1,4 @@
-# Architecture explained · 0.6.0
+# Architecture explained · 0.6.1
 
 [中文](architecture.zh-CN.md) · [Documentation index](index.en.md) · [Detailed maps](mindmaps.en.md)
 
@@ -97,7 +97,7 @@ For a new host, establish reading, durable writes, artifact checks, and writer t
 
 The Windows Koder CLI continuation has real model and memory receipts. Windows Cursor, an independently created standard account, the full Windows product suite, Markdown migration tooling, and further domain transfer still need separate acceptance. See the [compatibility matrix](compatibility.en.md) and the [Windows regression report](release-0.4.4-acceptance.en.md).
 
-## Capability curriculum extension · 0.6.0
+## Capability curriculum extension · 0.6.1
 
 The existing coordinator gains a scoped capability evidence layer; it is not replaced by another framework. The flow connects a user goal to a task contract, prerequisite diagnosis, evidence-seeking preparation, a small real attempt, error classification, targeted remediation, a new variation, independent teaching, whole-task delivery, and later review. Practice runs throughout. A curriculum depends on task prerequisites rather than a universal school-grade label.
 
@@ -119,7 +119,7 @@ A changed or missing artifact blocks state reconstruction. A later failed/unknow
 
 See the [executable tutorial](capability-learning.en.md), [mechanism research](learning-science.en.md), and [interoperability contracts](open-source-research.en.md).
 
-## Adaptive learning extension · 0.6.0
+## Adaptive learning extension · 0.6.1
 
 An unfamiliar task enters through its goal, acceptance, consequential unknowns, available tools, and finite budget. The host Agent describes relationships and candidate mechanisms rather than selecting a fixed domain curriculum. `experience_transfer.py` retrieves comparable mechanisms and their applicability conditions; shared domain labels alone cannot make a lesson eligible. External ideas and analogies enter as hypotheses. Contradictory or missing conditions require a local check before use.
 

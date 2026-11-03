@@ -1,6 +1,6 @@
 # Personal Agent Growth · 个人智能体成长
 
-[English](README.md) · [简体中文](README.zh-CN.md) · **0.6.0**
+[English](README.md) · [简体中文](README.zh-CN.md) · **0.6.1**
 
 [![检查](https://github.com/KarmenLoop/personal-agent-growth/actions/workflows/check.yml/badge.svg)](https://github.com/KarmenLoop/personal-agent-growth/actions/workflows/check.yml)
 [![发布](https://img.shields.io/github/v/release/KarmenLoop/personal-agent-growth)](https://github.com/KarmenLoop/personal-agent-growth/releases/latest)
@@ -8,6 +8,10 @@
 Personal Agent Growth 是一套开源 Skill，把持续任务中的预习、执行、复习、补课与方法改进连接起来。它结合持久任务记忆、证据驱动的判断、跨工具接续，以及 **Propose–Probe–Compose（提案—实测—组合）** 对比实验。改进对象是已授权的提示词、工具、检索和流程组件；不进行模型训练或权重更新。
 
 Agent 应当说清楚：什么观察改变了判断，哪条经验在下一个任务中被采用，最终产物如何。提示词变长、笔记增多，本身不能证明能力提升。
+
+## 0.6.1 基于证据的判断
+
+用户和 Agent 提出的技术诊断都先作为假设。信心或重复质疑本身不改变有依据的结论；有效证据或更强推理可以改判。同时撤回无依据的确定判断、调查亲历报告，并及时执行用户的目标或权限变化。[判断协议](references/evidence-based-judgment.md) · [行为验收](docs/release-0.6.1-acceptance.zh-CN.md)。这是可移植的执行约束，不改变模型训练，也不保证消除迎合。
 
 ## 从这里开始
 
@@ -59,7 +63,7 @@ Agent 应当说清楚：什么观察改变了判断，哪条经验在下一个�
 
 ## 快速开始
 
-从 [v0.6.0 发布页](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.6.0)下载**完整交付包**与 `SHA256SUMS.txt`，解压后按[开始使用](开始使用.md)操作。工具需要 Python 3.11+，运行时无需安装 pip 依赖。
+从 [v0.6.1 发布页](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.6.1)下载**完整交付包**与 `SHA256SUMS.txt`，解压后按[开始使用](开始使用.md)操作。工具需要 Python 3.11+，运行时无需安装 pip 依赖。
 
 Mac 在完整交付包目录执行：
 
@@ -94,7 +98,7 @@ Windows 使用 `py -3 -B -X utf8`；教程优先选择 `D:\AgentKnowledge`，没
 
 ![完整任务 token 与耗时，保留时钟异常](docs/images/cross-domain-0.4.1.png)
 
-仓库测试证明文件、工具和协议行为，不能代替 Windows 桌面 Agent、重新认证的 Cursor 模型回合、跨设备同步或关闭应用后运行。当前发布检查见 [0.6.0 验收报告](docs/release-0.6.0-acceptance.zh-CN.md)。
+仓库测试证明文件、工具和协议行为，不能代替 Windows 桌面 Agent、重新认证的 Cursor 模型回合、跨设备同步或关闭应用后运行。当前发布检查见 [0.6.1 验收报告](docs/release-0.6.1-acceptance.zh-CN.md)。
 
 ## 开发与核验
 
@@ -102,7 +106,7 @@ Windows 使用 `py -3 -B -X utf8`；教程优先选择 `D:\AgentKnowledge`，没
 python3 -B -m unittest discover -s tests -v
 python3 -B scripts/check_publication.py
 python3 -B tools/build_release.py --output dist
-python3 -B scripts/verify_handoff.py --archive dist/personal-agent-growth-0.6.0.zip --manifest dist/manifest.json
+python3 -B scripts/verify_handoff.py --archive dist/personal-agent-growth-0.6.1.zip --manifest dist/manifest.json
 python3 -B tools/build_delivery.py --output /path/to/fresh-output
 ```
 
@@ -114,7 +118,7 @@ python3 -B tools/build_delivery.py --output /path/to/fresh-output
 
 Copyright (C) 2026 KARMENLOOP Official Team。采用 **AGPL-3.0-only**，分发适用副本时保留 [LICENSE](LICENSE) 和 [NOTICE](NOTICE)。允许商用；分发及修改版网络服务需履行协议适用的源代码义务。AGPL 不要求将纯私人修改上传 GitHub。见[协议说明](docs/licensing.zh-CN.md)。
 
-## 0.6.0 自适应学习与能力证据
+## 0.6.0 引入的自适应学习与能力证据
 
 [未知领域学习](docs/adaptive-learning.zh-CN.md)从当前任务中会影响行动的未知出发：Agent 提出候选、通过宿主实际执行，再根据观察改变判断。跨任务检索比较机制和条件，领域名仅作辅助；失败类比形成有范围的边界，供以后复用。工具负责 Markdown 落盘、修订与证据校验和有限探索，理解、执行与独立审阅由宿主承担，不据此宣称普遍精通或已测提速。[详细流程图](docs/diagrams/adaptive-learning.zh-CN.svg)。
 

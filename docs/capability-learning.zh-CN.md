@@ -1,4 +1,4 @@
-# 能力学习使用教程 · 0.6.0
+# 能力学习使用教程 · 0.6.1
 
 [English](capability-learning.en.md) · [运行协议](../references/capability-learning.md) · [教育研究](learning-science.zh-CN.md)
 

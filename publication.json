@@ -1,5 +1,5 @@
 {
-  "version": "0.6.0",
+  "version": "0.6.1",
   "documents": [
     "README.md",
     "README.zh-CN.md",
@@ -33,8 +33,8 @@
     "docs/open-source-research.zh-CN.md",
     "docs/adaptive-learning.en.md",
     "docs/adaptive-learning.zh-CN.md",
-    "docs/release-0.6.0-acceptance.en.md",
-    "docs/release-0.6.0-acceptance.zh-CN.md"
+    "docs/release-0.6.1-acceptance.en.md",
+    "docs/release-0.6.1-acceptance.zh-CN.md"
   ],
   "language_pairs": [
     [
@@ -188,6 +188,14 @@
     [
       "docs/examples/adaptive-learning/README.md",
       "docs/examples/adaptive-learning/README.zh-CN.md"
+    ],
+    [
+      "docs/release-0.6.1-acceptance.en.md",
+      "docs/release-0.6.1-acceptance.zh-CN.md"
+    ],
+    [
+      "references/evidence-based-judgment.en.md",
+      "references/evidence-based-judgment.md"
     ]
   ],
   "template_types": [
@@ -236,7 +244,9 @@
     "docs/diagrams/capability-learning.en.svg": "f6928b88e8a8b08fedba2f5076e2c18eeb49c04625758e21d24bf79640787476",
     "docs/diagrams/capability-learning.zh-CN.svg": "0ccb60bb6e3faae34d014983ac62f3c273cec8e89cd7afe78d643eeb01b5929d",
     "docs/diagrams/adaptive-learning.en.svg": "20ebe3e1e3f1946cd033973271a5da72d1500e5d5d5c6d5f93c7b73ce926fe76",
-    "docs/diagrams/adaptive-learning.zh-CN.svg": "49965fca6d8b47d489163cd2b0020527eb16798767d1497c4770629f51c0210d"
+    "docs/diagrams/adaptive-learning.zh-CN.svg": "49965fca6d8b47d489163cd2b0020527eb16798767d1497c4770629f51c0210d",
+    "docs/diagrams/evidence-judgment.en.svg": "e8a8437014ed8bd246cab32dd2e97a984abbaec0d8bdef3816e18bd34783d61e",
+    "docs/diagrams/evidence-judgment.zh-CN.svg": "3611cc77510a42dd5f4988eec7577d0f7d8697168aacd4a78e55d4a5f45f8409"
   },
   "source_files": {
     "docs/diagrams/handoff.en.mmd": "218d94d581c7f80988dfeabd6e1807129b4da540a12c7c0dc06c2f9c155d8015",
@@ -269,6 +279,8 @@
     "docs/diagrams/adaptive-learning.en.mmd": "49d2caa504942f38797ca7ec8fa39f32135f40f589bdb7a15141db7df80fb1cf",
     "docs/diagrams/adaptive-learning.zh-CN.mmd": "0ed3318e3918de385789bde331a00cc10a159adec51390f3caa3a3d33413d60d",
     "scripts/adaptive_learning.py": "003948807edddfb5b33902fbe317eeb706135da5a1b9c65bc05a96bf36d55760",
-    "scripts/experience_transfer.py": "ba2b690952b65e0544fd24d5aa5cb9e6782a64616b6410a06d660a0fb9f42da8"
+    "scripts/experience_transfer.py": "ba2b690952b65e0544fd24d5aa5cb9e6782a64616b6410a06d660a0fb9f42da8",
+    "docs/diagrams/evidence-judgment.en.mmd": "92edb7c34062be4f2a73fc5d3838cb563b8eacd9b294e7046ee8cd8efa1fb2cc",
+    "docs/diagrams/evidence-judgment.zh-CN.mmd": "8daccc2ed2415aa3d55a8a184ee53700f7c0515ead895ef2de3ce7b862dfebfd"
   }
 }

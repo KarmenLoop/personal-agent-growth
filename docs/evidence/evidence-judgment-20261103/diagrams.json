@@ -1,0 +1,44 @@
+{
+  "scope": "Actual fresh Chromium rendering of the current inline diagrams; not Agent behavior validation",
+  "mermaid_version": "11.4.1",
+  "playwright_path": "<HOME>/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright",
+  "browser_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+  "browser_version": "156.0.8078.80",
+  "node_version": "v22.23.2",
+  "diagrams": [
+    {
+      "source_document": "docs/reasoning.en.md",
+      "source_document_sha256": "7e7cc1db362abcc516b27ac417a4908dbe8a32352af876b959a875ecdb795913",
+      "source": "evidence-judgment.en.mmd",
+      "source_sha256": "92edb7c34062be4f2a73fc5d3838cb563b8eacd9b294e7046ee8cd8efa1fb2cc",
+      "svg_sha256": "e8a8437014ed8bd246cab32dd2e97a984abbaec0d8bdef3816e18bd34783d61e",
+      "screenshot": "evidence-judgment.en.png",
+      "screenshot_sha256": "256528a8a738107cd4d5a3545d52742e61cb70d8abc15cac24222a85b6fda553",
+      "diagram_type": "flowchart-v2",
+      "width": 896,
+      "height": 1925.893798828125,
+      "nodes": 12,
+      "edges": 14,
+      "text_labels": 14,
+      "labels_outside_svg": [],
+      "svg": "evidence-judgment.en.svg"
+    },
+    {
+      "source_document": "docs/reasoning.zh-CN.md",
+      "source_document_sha256": "9e2cbd67b01797c0be2c94e1c050beea5d3531425b50265f73ac1dbea47eb118",
+      "source": "evidence-judgment.zh-CN.mmd",
+      "source_sha256": "8daccc2ed2415aa3d55a8a184ee53700f7c0515ead895ef2de3ce7b862dfebfd",
+      "svg_sha256": "3611cc77510a42dd5f4988eec7577d0f7d8697168aacd4a78e55d4a5f45f8409",
+      "screenshot": "evidence-judgment.zh-CN.png",
+      "screenshot_sha256": "ab8e7e7dcfbc8262805963f9b0c99053d9a2cca9d07aa7986cf5e32a7d7b92b7",
+      "diagram_type": "flowchart-v2",
+      "width": 896,
+      "height": 1736.75,
+      "nodes": 12,
+      "edges": 14,
+      "text_labels": 14,
+      "labels_outside_svg": [],
+      "svg": "evidence-judgment.zh-CN.svg"
+    }
+  ]
+}
