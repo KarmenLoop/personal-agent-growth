@@ -14,6 +14,14 @@ import zipfile
 ROOT = Path(__file__).resolve().parents[1]
 NAME = "personal-agent-growth"
 FILES = (
+    "scripts/causal_models.py",
+    "scripts/task_costs.py",
+    "scripts/blind_trials.py",
+    "scripts/run_agent_trial.py",
+    "references/measured-learning.md",
+    "references/measured-learning.en.md",
+    "docs/measured-learning.en.md",
+    "docs/measured-learning.zh-CN.md",
     "references/evidence-based-judgment.md",
     "references/evidence-based-judgment.en.md",
     "scripts/experience_transfer.py",

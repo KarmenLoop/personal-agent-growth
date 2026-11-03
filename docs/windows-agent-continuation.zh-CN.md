@@ -1,4 +1,4 @@
-# Windows Koder CLI 接续教程 · 0.6.1
+# Windows Koder CLI 接续教程 · 0.7.0
 
 [English](windows-agent-continuation.en.md) · [通用安装与卸载](install.zh-CN.md) · [Markdown 学习模式](markdown-learning.zh-CN.md)
 

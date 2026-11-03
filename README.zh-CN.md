@@ -1,6 +1,6 @@
 # Personal Agent Growth · 个人智能体成长
 
-[English](README.md) · [简体中文](README.zh-CN.md) · **0.6.1**
+[English](README.md) · [简体中文](README.zh-CN.md) · **0.7.0**
 
 [![检查](https://github.com/KarmenLoop/personal-agent-growth/actions/workflows/check.yml/badge.svg)](https://github.com/KarmenLoop/personal-agent-growth/actions/workflows/check.yml)
 [![发布](https://img.shields.io/github/v/release/KarmenLoop/personal-agent-growth)](https://github.com/KarmenLoop/personal-agent-growth/releases/latest)
@@ -9,9 +9,18 @@ Personal Agent Growth 是一套开源 Skill，把持续任务中的预习、执�
 
 Agent 应当说清楚：什么观察改变了判断，哪条经验在下一个任务中被采用，最终产物如何。提示词变长、笔记增多，本身不能证明能力提升。
 
-## 0.6.1 基于证据的判断
+## 0.6.1 引入的判断规则
 
-用户和 Agent 提出的技术诊断都先作为假设。信心或重复质疑本身不改变有依据的结论；有效证据或更强推理可以改判。同时撤回无依据的确定判断、调查亲历报告，并及时执行用户的目标或权限变化。[判断协议](references/evidence-based-judgment.md) · [行为验收](docs/release-0.6.1-acceptance.zh-CN.md)。这是可移植的执行约束，不改变模型训练，也不保证消除迎合。
+用户和 Agent 提出的技术诊断都先作为假设。信心或重复质疑本身不改变有依据的结论；有效证据或更强推理可以改判。同时撤回无依据的确定判断、调查亲历报告，并及时执行用户的目标或权限变化。[判断协议](references/evidence-based-judgment.md) · [行为验收](docs/release-0.7.0-acceptance.zh-CN.md)。这是可移植的执行约束，不改变模型训练，也不保证消除迎合。
+
+首轮两任务研究的 18 个可比试次产物全部合格，但两份候选都未达到预定资源收益门槛；保留原策略与负面反馈。原生用量已测，实收费用未知。
+
+## 0.7.0 可核验的学习收益
+
+[完整流程图](docs/diagrams/measured-learning.zh-CN.svg) · [可编辑 Mermaid](docs/diagrams/measured-learning.zh-CN.mmd)
+
+
+先冻结策略再发布未见任务，记录真实原生使用量与完整执行窗口，通过明确变量和关系方向提出跨领域类比。学习记录继续使用 Markdown。结构匹配只产生假设，收益须由独立产物验收支持。[实操教程](docs/measured-learning.zh-CN.md) · [真实验收与边界](docs/release-0.7.0-acceptance.zh-CN.md)。
 
 ## 从这里开始
 
@@ -63,7 +72,7 @@ Agent 应当说清楚：什么观察改变了判断，哪条经验在下一个�
 
 ## 快速开始
 
-从 [v0.6.1 发布页](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.6.1)下载**完整交付包**与 `SHA256SUMS.txt`，解压后按[开始使用](开始使用.md)操作。工具需要 Python 3.11+，运行时无需安装 pip 依赖。
+从 [v0.7.0 发布页](https://github.com/KarmenLoop/personal-agent-growth/releases/tag/v0.7.0)下载**完整交付包**与 `SHA256SUMS.txt`，解压后按[开始使用](开始使用.md)操作。工具需要 Python 3.11+，运行时无需安装 pip 依赖。
 
 Mac 在完整交付包目录执行：
 
@@ -98,7 +107,7 @@ Windows 使用 `py -3 -B -X utf8`；教程优先选择 `D:\AgentKnowledge`，没
 
 ![完整任务 token 与耗时，保留时钟异常](docs/images/cross-domain-0.4.1.png)
 
-仓库测试证明文件、工具和协议行为，不能代替 Windows 桌面 Agent、重新认证的 Cursor 模型回合、跨设备同步或关闭应用后运行。当前发布检查见 [0.6.1 验收报告](docs/release-0.6.1-acceptance.zh-CN.md)。
+仓库测试证明文件、工具和协议行为，不能代替 Windows 桌面 Agent、重新认证的 Cursor 模型回合、跨设备同步或关闭应用后运行。当前发布检查见 [0.7.0 验收报告](docs/release-0.7.0-acceptance.zh-CN.md)。
 
 ## 开发与核验
 
@@ -106,7 +115,7 @@ Windows 使用 `py -3 -B -X utf8`；教程优先选择 `D:\AgentKnowledge`，没
 python3 -B -m unittest discover -s tests -v
 python3 -B scripts/check_publication.py
 python3 -B tools/build_release.py --output dist
-python3 -B scripts/verify_handoff.py --archive dist/personal-agent-growth-0.6.1.zip --manifest dist/manifest.json
+python3 -B scripts/verify_handoff.py --archive dist/personal-agent-growth-0.7.0.zip --manifest dist/manifest.json
 python3 -B tools/build_delivery.py --output /path/to/fresh-output
 ```
 

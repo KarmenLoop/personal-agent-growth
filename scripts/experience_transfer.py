@@ -17,6 +17,7 @@ import sys
 import unicodedata
 
 import capability_ledger as store
+import causal_models as causal
 
 EXPERIENCE_KEYS = {"id", "type", "source_task_id", "domain", "problem_structure", "mechanisms",
                    "required_conditions", "exceptions", "intervention", "explanation", "validation",
@@ -36,8 +37,9 @@ def normal(value):
     return " ".join(unicodedata.normalize("NFKC", value).casefold().split())
 
 
-def fields(item, keys):
-    store.require(isinstance(item, dict) and set(item) == keys, "Invalid metadata fields")
+def fields(item, keys, optional=()):
+    store.require(isinstance(item, dict) and keys <= set(item) <= keys | set(optional),
+                  "Invalid metadata fields")
 
 
 def labels(values, label):
@@ -69,7 +71,7 @@ def actors(item, independent):
 
 
 def experience_check(root, item, stored=False):
-    fields(item, EXPERIENCE_KEYS | (EXPERIENCE_INTERNAL if stored else set()))
+    fields(item, EXPERIENCE_KEYS | (EXPERIENCE_INTERNAL if stored else set()), {"causal_model"})
     store.require(item["type"] == "mechanism-experience", "Invalid experience type")
     store.identifier(item["id"]); store.identifier(item["source_task_id"])
     normal(item["domain"])
@@ -85,18 +87,24 @@ def experience_check(root, item, stored=False):
     store.require(item["validation"] in ("hypothesis", "supported"), "Invalid validation status")
     actors(item, item["validation"] == "supported")
     store.artifacts(root, item["artifacts"], True)
+    if "causal_model" in item:
+        causal.graph_check(item["causal_model"])
     if stored:
         store.require(type(item["schema"]) is int and item["schema"] == 1, "Unsupported experience schema")
         store.require(store.utc(item["created_at"]) <= store.clock(), "Future experience timestamp")
 
 
 def query_check(item):
-    fields(item, QUERY_KEYS)
+    fields(item, QUERY_KEYS, {"causal_context", "causal_mappings"})
     store.require(item["type"] == "transfer-query", "Invalid query type")
     store.identifier(item["id"]); store.identifier(item["task_id"])
     normal(item["domain"])
     labels(item["problem_structure"], "problem structure"); labels(item["mechanisms"], "mechanisms")
     labels(item["keywords"], "keywords"); facts(item["facts"], True)
+    if "causal_context" in item:
+        causal.graph_check(item["causal_context"])
+    if "causal_mappings" in item:
+        causal.mappings_check(item["causal_mappings"], item.get("causal_context"))
 
 
 def observation_check(root, item, source, stored=False):
@@ -268,7 +276,9 @@ def retrieve(root, query_md, limit=5):
             item = current["experience"]
             old_structure, old_mechanisms = labels(item["problem_structure"], "structure"), labels(item["mechanisms"], "mechanisms")
             smatch, mmatch = structure & old_structure, mechanisms & old_mechanisms
-            if not (smatch or mmatch):
+            analogy = causal.match(item.get("causal_model"), query.get("causal_context"),
+                                   query.get("causal_mappings", {}).get(item["id"]))
+            if not (smatch or mmatch or analogy["compatible"] is True):
                 continue
             requirements = facts(item["required_conditions"])
             unresolved = sorted(key for key in requirements if query_facts.get(key) is None)
@@ -290,15 +300,18 @@ def retrieve(root, query_md, limit=5):
                                "unresolved_conditions": unresolved, "conflicting_conditions": conflicting,
                                "relevant_feedback": feedback,
                                "counterexample_review_required": any(row["target_scope"] == "cross-domain-unverified" for row in feedback),
-                               "eligible_for_probe": not (unresolved or conflicting or possible_harm),
+                               "causal_match": analogy,
+                               "eligible_for_probe": not (unresolved or conflicting or possible_harm or
+                                                          analogy["compatible"] is False),
                                "adaptation_required": True, "experience": item, "body": current["body"],
                                "snapshot_ref": current["snapshot_ref"], "evidence_refs": current["evidence_refs"]})
         except (ValueError, OSError, UnicodeError) as error:
             errors.append({"entry": folder.name, "error": str(error)})
-    candidates.sort(key=lambda item: (-item["score"], item["id"]))
+    candidates.sort(key=lambda item: (item["causal_match"]["compatible"] is not True,
+                                     -item["score"], item["id"]))
     return {"query_id": query["id"], "query_sha256": query_hash, "task_id": query["task_id"],
             "candidates": candidates[:limit], "matched_count": len(candidates), "errors": errors,
-            "ranking": "0.35 structure Jaccard + 0.55 mechanism Jaccard + 0.05 domain + 0.05 keyword fraction; matching same-domain harmful feedback subtracts 0.4; foreign counterexamples require review without automatic penalty",
+            "ranking": "Explicit structurally compatible causal mappings first; remaining heuristic is 0.35 structure Jaccard + 0.55 mechanism Jaccard + 0.05 domain + 0.05 keyword fraction; matching same-domain harmful feedback subtracts 0.4; foreign counterexamples require review without automatic penalty. Neither ranking is a causal probability.",
             "scope": "Heuristic hypothesis retrieval, not semantic matching, authorization, automatic activation or proof of transfer"}
 
 

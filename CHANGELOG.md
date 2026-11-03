@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.7.0 — 2026-11-04
+
+- Add Markdown strategy freezes, independently released targets and seeded task/repetition blocks.
+- Capture real Codex CLI events and clocks; report native input/cached/output tokens, complete task time, overlapping intervals, failures and unknown billing separately.
+- Extend existing experience retrieval with explicit source/target causal graphs, falsifiable predictions and variable mappings while preserving legacy records.
+- Fix late cost-record publication failures and explicit causal mappings bypassing legacy-source validation.
+- Add bilingual protocols, executable tutorials, rendered diagrams and scoped actual Agent acceptance evidence.
+
 ## 0.6.1 — 2026-11-03
 
 - Add bilingual evidence-based judgment: resist unsupported factual pressure, revise on valid evidence or stronger reasoning, and withdraw unsupported certainty. Keep preferences, permissions and firsthand reports distinct from causal claims.

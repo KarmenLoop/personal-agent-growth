@@ -1,0 +1,143 @@
+%%{init: {'flowchart': {'nodeSpacing': 24, 'rankSpacing': 50, 'padding': 14, 'curve': 'linear'}}}%%
+flowchart TB
+  subgraph g0["Freeze and independent release"]
+    direction TB
+    n00["Measured learning 0.7.0"]
+    n01["Restore Markdown context<br/>and latest project node"]
+    n02{"New benefit claim?"}
+    n03["Reuse applicable strategy<br/>Record the actual task result"]
+    n04["Declare unit, quality rubric,<br/>budget, gain and stop rule"]
+    n05["Source evidence plus separate<br/>general and domain proposals"]
+    n06["Fix visible model, effort,<br/>permissions and transport"]
+    n07["Freeze strategy inventories<br/>before target release"]
+    n08[("frozen.md<br/>Plan and strategy hashes")]
+    n09["Independent author<br/>unexposed failure-derived targets"]
+    n10[("Public task and inputs")]
+    n11[("Protected evaluator<br/>and target provenance")]
+    n12{"Read boundary verified?"}
+    n13["Provide isolated access<br/>and reviewer control"]
+    n14[("Release task Markdown<br/>Bind inputs and evaluator hashes")]
+    n15["Seeded task/repetition blocks<br/>Every arm in each block"]
+    n16["Cross-check request against<br/>freeze, release and schedule"]
+    n17{"Content or config drift?"}
+    n18["Stop; retain failure<br/>New identity for changed study"]
+  end
+  subgraph g1["Real execution and complete records"]
+    direction TB
+    n19["Fresh context<br/>Actual authorized CLI invocation"]
+    n20["Only assigned strategy<br/>and public inputs"]
+    n21[("Native events.jsonl<br/>Monotonic timeline.jsonl")]
+    n22["Observe deadline, command cap<br/>and external effects"]
+    n23{"Stopped or reconnected?"}
+    n24["Retain missing usage<br/>Reconcile unknown remote effects"]
+    n25[("Output artifacts<br/>and actual access/tool traces")]
+    n26["Separate protected<br/>artifact evaluation"]
+    n27[("Grade, raw outputs and exits<br/>Process exit is separate")]
+    n28["Trial window plus separate<br/>setup, review and release overhead"]
+    n29[("Hash-bound cost request<br/>events + clocks + measurement")]
+    n30[("Immutable trial-costs Markdown")]
+    n31["Input includes cache<br/>Output includes reasoning detail"]
+    n32["Missing usage, charges and<br/>inference time stay unknown"]
+    n33["Union overlapping intervals<br/>Never add parent and children"]
+  end
+  subgraph g2["Causal hypothesis and follow-up"]
+    direction TB
+    n34[("Source lesson and evidence<br/>Optional causal graph")]
+    n35["Target graph and explicit<br/>source-variable mapping"]
+    n36{"Roles, distinct variables<br/>and directions preserved?"}
+    n37["Reject analogy<br/>Keep counterexample evidence"]
+    n38["Check prerequisites, unknowns,<br/>negative feedback and falsifier"]
+    n39{"Eligible for bounded probe?"}
+    n40["Actual authorized target check<br/>Prediction before action"]
+    n41[("Artifacts and observed feedback<br/>Append Markdown observation")]
+  end
+  subgraph g3["Comparison and scoped adoption"]
+    direction TB
+    n42["Exposed or repaired target<br/>Keep as development; use reserve"]
+    n43["Compare every task/repetition<br/>Quality, time, tokens and coverage"]
+    n44{"Complete and comparable?"}
+    n45["Inconclusive<br/>Keep baseline; resolve gaps"]
+    n46{"Frozen gain and all guards met?"}
+    n47["Keep baseline<br/>Retain unsuccessful candidates"]
+    n48["Scoped adoption<br/>PPC, regression, rollback<br/>Changed composition: new freeze"]
+    n49["Later actual use, adaptation<br/>or rejection plus observed result"]
+  end
+  n00 --> n01
+  n01 --> n02
+  n02 -->|no| n03
+  n02 -->|yes| n04
+  n04 --> n05
+  n05 --> n06
+  n06 --> n07
+  n07 --> n08
+  n08 --> n09
+  n09 --> n10
+  n09 --> n11
+  n10 --> n12
+  n11 --> n12
+  n12 -->|no| n13
+  n13 -->|verify| n12
+  n12 -->|yes| n14
+  n14 --> n15
+  n15 --> n16
+  n08 -->|bind| n16
+  n16 --> n17
+  n17 -->|yes| n18
+  n17 -->|no| n20
+  n20 --> n19
+  n19 --> n21
+  n19 --> n22
+  n22 --> n23
+  n23 -->|yes| n24
+  n24 -->|reconcile| n25
+  n23 -->|no| n25
+  n21 --> n29
+  n25 --> n26
+  n11 -->|protected| n26
+  n26 --> n27
+  n19 --> n28
+  n27 --> n28
+  n28 --> n29
+  n29 --> n30
+  n30 --> n31
+  n30 --> n32
+  n30 --> n33
+  n05 -->|candidate| n34
+  n34 --> n35
+  n35 --> n36
+  n36 -->|no| n37
+  n36 -->|yes| n38
+  n38 --> n39
+  n39 -->|no| n37
+  n39 -->|yes| n40
+  n40 --> n41
+  n37 -->|rejection record| n41
+  n27 -->|if exposed| n42
+  n27 --> n43
+  n31 --> n43
+  n32 --> n43
+  n33 --> n43
+  n41 -->|relevant evidence| n43
+  n43 --> n44
+  n44 -->|no| n45
+  n44 -->|yes| n46
+  n46 -->|no| n47
+  n46 -->|yes| n48
+  n48 --> n49
+  classDef default fill:#eef4f7,color:#183747,stroke:#6f8792
+  classDef measuredRoot fill:#173449,color:#fff,stroke:#173449,font-size:18px,font-weight:bold
+  classDef artifact fill:#e6f0f4,color:#183747,stroke:#5b8294
+  classDef decision fill:#fff1d8,color:#4e3920,stroke:#b08c4c
+  classDef hold fill:#f8e6e5,color:#583331,stroke:#b37d77
+  classDef act fill:#e6f0e7,color:#294833,stroke:#6a9675
+  class n00 measuredRoot
+  class n08,n10,n11,n14,n21,n25,n27,n29,n30,n34,n41 artifact
+  class n02,n12,n17,n23,n36,n39,n44,n46 decision
+  class n18,n24,n37,n42,n45,n47 hold
+  class n19,n26,n40,n48,n49 act
+  style g0 fill:#f6f8fb,stroke:#a6b7c4,color:#183747
+  style g1 fill:#f4f8f7,stroke:#a2b8ad,color:#183747
+  style g2 fill:#f9f6fc,stroke:#b7a9c7,color:#183747
+  style g3 fill:#fdf9f0,stroke:#c5b995,color:#183747
+  linkStyle default stroke:#607681,stroke-width:1.2px
+%% Copyright (C) 2026 KARMENLOOP Official Team. SPDX-License-Identifier: AGPL-3.0-only

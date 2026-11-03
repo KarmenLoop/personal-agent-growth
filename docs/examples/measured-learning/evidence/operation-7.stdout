@@ -1,0 +1,240 @@
+{
+  "query_id": "inspect-observed-boundaries",
+  "query_sha256": "78108f0945d357ce1b2a6a278643cac76fd5f6bb6032e1aa50c34c3a63a99cf8",
+  "task_id": "future-unfamiliar-task",
+  "candidates": [
+    {
+      "id": "domain-preparation-20261104",
+      "score": 0.625,
+      "relevance_before_feedback": 0.625,
+      "matches": {
+        "problem_structure": [
+          "extra-preparation-before-delivery"
+        ],
+        "mechanisms": [
+          "conditional-causal-mapping"
+        ],
+        "keywords": [],
+        "domain_match": false
+      },
+      "unresolved_conditions": [],
+      "conflicting_conditions": [],
+      "relevant_feedback": [
+        {
+          "id": "primary_01-domain-feedback",
+          "task_id": "primary_01",
+          "outcome": "harmful",
+          "finding": "All three artifacts met mandatory quality. Native-token median change versus baseline: 25.8245%; complete-time median change: 7.4459%. Did not meet the preregistered 10% native-resource gain rule. Keep baseline.",
+          "adaptation": "Actual frozen whole-package comparison; not a source-only causal estimate.",
+          "conditions": {
+            "offline-useful-artifact": true
+          },
+          "source_domain": "publication-audit",
+          "target_domain": "new-domain",
+          "target_scope": "cross-domain-unverified",
+          "context_match": "matched",
+          "unresolved_conditions": [],
+          "ref": {
+            "path": "experience/mechanism/domain-preparation-20261104/observations/000001.md",
+            "sha256": "e2bd86d6f3f316b9dd2a8bd0201229b5baff3806ae895f7b99db0a0cfff89c08"
+          }
+        },
+        {
+          "id": "primary_02-domain-feedback",
+          "task_id": "primary_02",
+          "outcome": "harmful",
+          "finding": "All three artifacts met mandatory quality. Native-token median change versus baseline: 38.1137%; complete-time median change: 2.6273%. Did not meet the preregistered 10% native-resource gain rule. Keep baseline.",
+          "adaptation": "Actual frozen whole-package comparison; not a source-only causal estimate.",
+          "conditions": {
+            "offline-useful-artifact": true
+          },
+          "source_domain": "scientific-data-qc",
+          "target_domain": "new-domain",
+          "target_scope": "cross-domain-unverified",
+          "context_match": "matched",
+          "unresolved_conditions": [],
+          "ref": {
+            "path": "experience/mechanism/domain-preparation-20261104/observations/000002.md",
+            "sha256": "72f921d7eb1f8c7d3d94ef186909b569428bd912e41dae736aa6b7b123f3db7b"
+          }
+        }
+      ],
+      "counterexample_review_required": true,
+      "causal_match": {
+        "status": "legacy_labels",
+        "compatible": null,
+        "issues": [],
+        "scope": "No source causal graph; legacy heuristic only"
+      },
+      "eligible_for_probe": true,
+      "adaptation_required": true,
+      "experience": {
+        "id": "domain-preparation-20261104",
+        "type": "mechanism-experience",
+        "source_task_id": "proposal-domain-20261104",
+        "domain": "strategy-evaluation",
+        "problem_structure": [
+          "extra-preparation-before-delivery"
+        ],
+        "mechanisms": [
+          "conditional-causal-mapping"
+        ],
+        "required_conditions": {
+          "offline-useful-artifact": true
+        },
+        "exceptions": [
+          "Two tasks with three repetitions each do not establish performance in other domains.",
+          "The source-memory effect was not isolated; feedback concerns the entire frozen policy/code/context package.",
+          "Native tokens are not billed fees. All arms could read the legacy lesson."
+        ],
+        "intervention": "# Causal-transfer preparation candidate\n\nApply the existing Skill. Retrieve a source experience only as a candidate explanation. Explicitly map source variables and directed relationships onto the target problem; identify required conditions, the missing condition most likely to break the analogy, an observable prediction and a falsifier. A matching tag or domain name alone does not establish transfer. Check the decisive condition using available task evidence. Adopt, adapt or reject the source lesson accordingly, preserving the scope of both the old finding and the target result. Deliver the requested artifact; the mapping is preparation, not a substitute for completion. This policy supplies no target diagnosis or answer.\n",
+        "explanation": "A plausible improvement proposal retained with its actual negative or inconclusive feedback. Not an activated default.",
+        "validation": "hypothesis",
+        "executor": "frozen-policy-author",
+        "reviewer": null,
+        "artifacts": [
+          {
+            "path": "evidence/analysis.json",
+            "sha256": "8cc0867ed00952adbeb2f62314d2cb6732a24fb238b8af13d3b042bf298f9872"
+          },
+          {
+            "path": "evidence/domain.md",
+            "sha256": "24f2ba57cdd0fb6eb92dd9bb2ac02a9403b8071b062651b7204efa12905b2fc6"
+          }
+        ],
+        "schema": 1,
+        "created_at": "2026-11-03T18:34:16.154000+00:00"
+      },
+      "body": "## 场景\n\n陌生任务的额外准备策略。\n\n## 做法\n\n保留冻结提案与两项实际反馈；后续先检查反馈再决定是否试用。\n\n## 为何有效\n\n尚未建立净收益，禁止当作已验证提效默认。\n\n## 反例/坑\n\n产物全部正确仍可能增加总耗时与 token。源经验帮助与整个包的差异不能混为一谈。\n\n## 可复制步骤\n\n读取来源与观察；新领域重新检查条件；保留原策略，另做预先定义的比较。\n\n## 相关链接\n\nSee metadata artifacts; portable publication derivatives are SHA-bound locally.",
+      "snapshot_ref": {
+        "path": "experience/mechanism/domain-preparation-20261104/experience.md",
+        "sha256": "e731724de2ae28db6a646f8fc0f81a5c895c96ae2734ffaf13dee4dc515f2030",
+        "revision": 2,
+        "head_sha256": "72f921d7eb1f8c7d3d94ef186909b569428bd912e41dae736aa6b7b123f3db7b"
+      },
+      "evidence_refs": [
+        {
+          "path": "experience/mechanism/domain-preparation-20261104/experience.md",
+          "sha256": "e731724de2ae28db6a646f8fc0f81a5c895c96ae2734ffaf13dee4dc515f2030"
+        },
+        {
+          "path": "experience/mechanism/domain-preparation-20261104/observations/000001.md",
+          "sha256": "e2bd86d6f3f316b9dd2a8bd0201229b5baff3806ae895f7b99db0a0cfff89c08"
+        },
+        {
+          "path": "experience/mechanism/domain-preparation-20261104/observations/000002.md",
+          "sha256": "72f921d7eb1f8c7d3d94ef186909b569428bd912e41dae736aa6b7b123f3db7b"
+        }
+      ]
+    },
+    {
+      "id": "general-preparation-20261104",
+      "score": 0.625,
+      "relevance_before_feedback": 0.625,
+      "matches": {
+        "problem_structure": [
+          "extra-preparation-before-delivery"
+        ],
+        "mechanisms": [
+          "evidence-bound-preparation"
+        ],
+        "keywords": [],
+        "domain_match": false
+      },
+      "unresolved_conditions": [],
+      "conflicting_conditions": [],
+      "relevant_feedback": [
+        {
+          "id": "primary_02-general-feedback",
+          "task_id": "primary_02",
+          "outcome": "harmful",
+          "finding": "All three artifacts met mandatory quality. Native-token median change versus baseline: 18.5377%; complete-time median change: 0.6143%. Did not meet the preregistered 10% native-resource gain rule. Keep baseline.",
+          "adaptation": "Actual frozen whole-package comparison; not a source-only causal estimate.",
+          "conditions": {
+            "offline-useful-artifact": true
+          },
+          "source_domain": "scientific-data-qc",
+          "target_domain": "new-domain",
+          "target_scope": "cross-domain-unverified",
+          "context_match": "matched",
+          "unresolved_conditions": [],
+          "ref": {
+            "path": "experience/mechanism/general-preparation-20261104/observations/000002.md",
+            "sha256": "6eb4a4c696eb1600a96643530f63767ba4119264ddd0f939f7bdc173fa406cac"
+          }
+        }
+      ],
+      "counterexample_review_required": true,
+      "causal_match": {
+        "status": "legacy_labels",
+        "compatible": null,
+        "issues": [],
+        "scope": "No source causal graph; legacy heuristic only"
+      },
+      "eligible_for_probe": true,
+      "adaptation_required": true,
+      "experience": {
+        "id": "general-preparation-20261104",
+        "type": "mechanism-experience",
+        "source_task_id": "proposal-general-20261104",
+        "domain": "strategy-evaluation",
+        "problem_structure": [
+          "extra-preparation-before-delivery"
+        ],
+        "mechanisms": [
+          "evidence-bound-preparation"
+        ],
+        "required_conditions": {
+          "offline-useful-artifact": true
+        },
+        "exceptions": [
+          "Two tasks with three repetitions each do not establish performance in other domains.",
+          "The source-memory effect was not isolated; feedback concerns the entire frozen policy/code/context package.",
+          "Native tokens are not billed fees. All arms could read the legacy lesson."
+        ],
+        "intervention": "# General preparation candidate\n\nApply the existing Skill. Before a consequential action, state the smallest unresolved question that could change the deliverable. Select a discriminating check rather than collecting broad background. Bind observations to their actual object, revision and environment. Keep a short decision record and reuse an existing result only when those conditions still match. Preserve failed and unknown outcomes. Finish the useful artifact, then verify the task contract. This policy supplies no task diagnosis or answer.\n",
+        "explanation": "A plausible improvement proposal retained with its actual negative or inconclusive feedback. Not an activated default.",
+        "validation": "hypothesis",
+        "executor": "frozen-policy-author",
+        "reviewer": null,
+        "artifacts": [
+          {
+            "path": "evidence/analysis.json",
+            "sha256": "8cc0867ed00952adbeb2f62314d2cb6732a24fb238b8af13d3b042bf298f9872"
+          },
+          {
+            "path": "evidence/general.md",
+            "sha256": "6bdfb4319e953627ae89e0e14401e4674f83b4a3d0d2c68fd605b3d26fbe593f"
+          }
+        ],
+        "schema": 1,
+        "created_at": "2026-11-03T18:34:15.847441+00:00"
+      },
+      "body": "## 场景\n\n陌生任务的额外准备策略。\n\n## 做法\n\n保留冻结提案与两项实际反馈；后续先检查反馈再决定是否试用。\n\n## 为何有效\n\n尚未建立净收益，禁止当作已验证提效默认。\n\n## 反例/坑\n\n产物全部正确仍可能增加总耗时与 token。源经验帮助与整个包的差异不能混为一谈。\n\n## 可复制步骤\n\n读取来源与观察；新领域重新检查条件；保留原策略，另做预先定义的比较。\n\n## 相关链接\n\nSee metadata artifacts; portable publication derivatives are SHA-bound locally.",
+      "snapshot_ref": {
+        "path": "experience/mechanism/general-preparation-20261104/experience.md",
+        "sha256": "429c812040409e214d4112318d0d8009e8e3b57c6f654d9e4421505a60e4132e",
+        "revision": 2,
+        "head_sha256": "6eb4a4c696eb1600a96643530f63767ba4119264ddd0f939f7bdc173fa406cac"
+      },
+      "evidence_refs": [
+        {
+          "path": "experience/mechanism/general-preparation-20261104/experience.md",
+          "sha256": "429c812040409e214d4112318d0d8009e8e3b57c6f654d9e4421505a60e4132e"
+        },
+        {
+          "path": "experience/mechanism/general-preparation-20261104/observations/000001.md",
+          "sha256": "7be0e34cec0b928b0bcc1a803630e64a47ef0e4f074cdcd91d3ea9b294fe73f7"
+        },
+        {
+          "path": "experience/mechanism/general-preparation-20261104/observations/000002.md",
+          "sha256": "6eb4a4c696eb1600a96643530f63767ba4119264ddd0f939f7bdc173fa406cac"
+        }
+      ]
+    }
+  ],
+  "matched_count": 2,
+  "errors": [],
+  "ranking": "Explicit structurally compatible causal mappings first; remaining heuristic is 0.35 structure Jaccard + 0.55 mechanism Jaccard + 0.05 domain + 0.05 keyword fraction; matching same-domain harmful feedback subtracts 0.4; foreign counterexamples require review without automatic penalty. Neither ranking is a causal probability.",
+  "scope": "Heuristic hypothesis retrieval, not semantic matching, authorization, automatic activation or proof of transfer"
+}

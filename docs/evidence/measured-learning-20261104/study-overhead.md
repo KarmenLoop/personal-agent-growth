@@ -1,0 +1,189 @@
+---
+{
+  "type": "study-overhead",
+  "id": "measured-transfer-overhead",
+  "recorded_at": "2026-11-03T18:44:40.525303+00:00",
+  "independent_agents": [
+    {
+      "agent_path": "/root/measured_guides",
+      "thread_id": "01a1a286-38e8-7321-acd1-abeb3208ffe0",
+      "known_native_usage": {
+        "input_tokens": 3737135,
+        "cached_input_tokens": 3541504,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 42022,
+        "reasoning_output_tokens": 13173,
+        "total_tokens": 3779157
+      },
+      "complete_through_snapshot": true
+    },
+    {
+      "agent_path": "/root/measurement_review",
+      "thread_id": "01a1a271-4b25-70f0-bcd6-96979bcf6a99",
+      "known_native_usage": {
+        "input_tokens": 3031963,
+        "cached_input_tokens": 2931200,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 27091,
+        "reasoning_output_tokens": 12890,
+        "total_tokens": 3059054
+      },
+      "complete_through_snapshot": true
+    },
+    {
+      "agent_path": "/root/heldout_author",
+      "thread_id": "01a1a269-800a-7c51-a436-20db29d7bb70",
+      "known_native_usage": {
+        "input_tokens": 1321839,
+        "cached_input_tokens": 1244800,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 37289,
+        "reasoning_output_tokens": 16887,
+        "total_tokens": 1359128
+      },
+      "complete_through_snapshot": true
+    }
+  ],
+  "coordinator": {
+    "known_native_usage": {
+      "input_tokens": 29383987,
+      "cached_input_tokens": 28867072,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 189831,
+      "reasoning_output_tokens": 101153,
+      "total_tokens": 29573818
+    },
+    "complete_through_snapshot": true
+  },
+  "setup_cli_invocations": [
+    {
+      "id": "host-probe",
+      "events_path": "host-probe/events.jsonl",
+      "events_sha256": "313bdfa6f20c9f904b256d7a10a02b4b6dab7e975e09c326a0a9e6b54111432c",
+      "native_usage": {
+        "input_tokens": 47763,
+        "cached_input_tokens": 23680,
+        "output_tokens": 128,
+        "total_tokens": 47891,
+        "reasoning_output_tokens": 0,
+        "native_turns_completed": 1,
+        "native_turns_failed": 0,
+        "native_error_events": 4,
+        "coverage": "partial_or_unavailable",
+        "session_ids": [
+          "01a1a266-e75d-7ce0-9b8f-8f9081dfd2c2"
+        ],
+        "command_items": 1,
+        "unfinished_command_items": [],
+        "billed_usd": null,
+        "billing_status": "Not supplied by these native events; not zero",
+        "scope": "Host-returned token counts only; cached input is included in input and reasoning detail is included in output. Failed/unreturned provider attempts may be unmetered."
+      },
+      "scope": "Setup invocation, outside controlled study. An empty pre-configuration rejection is not an actual Agent success."
+    },
+    {
+      "id": "host-probe-compact",
+      "events_path": "host-probe-compact/events.jsonl",
+      "events_sha256": "98d73f0bc4cbc90c2abfa9afb2355e29e9fe7bfd08fcd72cd68044e7748b9692",
+      "native_usage": {
+        "input_tokens": 28509,
+        "cached_input_tokens": 0,
+        "output_tokens": 122,
+        "total_tokens": 28631,
+        "reasoning_output_tokens": 0,
+        "native_turns_completed": 1,
+        "native_turns_failed": 0,
+        "native_error_events": 4,
+        "coverage": "partial_or_unavailable",
+        "session_ids": [
+          "01a1a270-053c-7ce2-ac6f-362df1d606b8"
+        ],
+        "command_items": 1,
+        "unfinished_command_items": [],
+        "billed_usd": null,
+        "billing_status": "Not supplied by these native events; not zero",
+        "scope": "Host-returned token counts only; cached input is included in input and reasoning detail is included in output. Failed/unreturned provider attempts may be unmetered."
+      },
+      "scope": "Setup invocation, outside controlled study. An empty pre-configuration rejection is not an actual Agent success."
+    },
+    {
+      "id": "host-probe-http",
+      "events_path": "host-probe-http/events.jsonl",
+      "events_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "native_usage": {
+        "input_tokens": null,
+        "cached_input_tokens": null,
+        "output_tokens": null,
+        "total_tokens": null,
+        "reasoning_output_tokens": null,
+        "native_turns_completed": 0,
+        "native_turns_failed": 0,
+        "native_error_events": 0,
+        "coverage": "partial_or_unavailable",
+        "session_ids": [],
+        "command_items": 0,
+        "unfinished_command_items": [],
+        "billed_usd": null,
+        "billing_status": "Not supplied by these native events; not zero",
+        "scope": "Host-returned token counts only; cached input is included in input and reasoning detail is included in output. Failed/unreturned provider attempts may be unmetered."
+      },
+      "scope": "Setup invocation, outside controlled study. An empty pre-configuration rejection is not an actual Agent success."
+    },
+    {
+      "id": "host-probe-http-custom",
+      "events_path": "host-probe-http-custom/events.jsonl",
+      "events_sha256": "9e777a031135f7d20d761dc568ec26ad9b7e6c5bb7e2e8353084a128e419df9e",
+      "native_usage": {
+        "input_tokens": 23642,
+        "cached_input_tokens": 4480,
+        "output_tokens": 138,
+        "total_tokens": 23780,
+        "reasoning_output_tokens": 0,
+        "native_turns_completed": 1,
+        "native_turns_failed": 0,
+        "native_error_events": 0,
+        "coverage": "complete_reported_turns",
+        "session_ids": [
+          "01a1a276-3317-7a61-ba57-aa9ffc9247da"
+        ],
+        "command_items": 1,
+        "unfinished_command_items": [],
+        "billed_usd": null,
+        "billing_status": "Not supplied by these native events; not zero",
+        "scope": "Host-returned token counts only; cached input is included in input and reasoning detail is included in output. Failed/unreturned provider attempts may be unmetered."
+      },
+      "scope": "Setup invocation, outside controlled study. An empty pre-configuration rejection is not an actual Agent success."
+    },
+    {
+      "id": "agent-runs/controller-smoke",
+      "events_path": "agent-runs/controller-smoke/events.jsonl",
+      "events_sha256": "f74234bb63f027bac00e2b9b2dc07ebbdbbc5b808a2da8bd3737f42dbb3b13dc",
+      "native_usage": {
+        "input_tokens": 40965,
+        "cached_input_tokens": 26112,
+        "output_tokens": 185,
+        "total_tokens": 41150,
+        "reasoning_output_tokens": 0,
+        "native_turns_completed": 1,
+        "native_turns_failed": 0,
+        "native_error_events": 0,
+        "coverage": "complete_reported_turns",
+        "session_ids": [
+          "01a1a281-9284-7c91-8560-aad8cd4562b5"
+        ],
+        "command_items": 3,
+        "unfinished_command_items": [],
+        "billed_usd": null,
+        "billing_status": "Not supplied by these native events; not zero",
+        "scope": "Host-returned token counts only; cached input is included in input and reasoning detail is included in output. Failed/unreturned provider attempts may be unmetered."
+      },
+      "scope": "Setup invocation, outside controlled study. An empty pre-configuration rejection is not an actual Agent success."
+    }
+  ],
+  "known_setup_native_tokens": 141452,
+  "billed_usd": null,
+  "scope": "Development/coordination overhead is separate from randomized leaf costs. Coordinator measurement is right-censored; setup elapsed phases without original clocks remain unknown."
+}
+---
+
+Actual host-provided usage metadata. Cached/reasoning token details are subsets, not added again. These are resource counts, not charges. No per-arm allocation or speed claim.

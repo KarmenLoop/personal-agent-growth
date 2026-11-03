@@ -1,0 +1,7 @@
+task_id,arm,trials,accepted_artifacts,median_native_tokens,median_complete_seconds,usage_complete,billed_usd
+primary_01,baseline,3,3,123534,80.01002870802768,True,
+primary_01,general,3,3,113227,71.44764083297923,True,
+primary_01,domain,3,3,155436,85.96746137493756,True,
+primary_02,baseline,3,3,115570,80.237793249893,True,
+primary_02,general,3,3,136994,80.73068720800802,True,
+primary_02,domain,3,3,159618,82.3458704170771,True,

@@ -1,0 +1,143 @@
+%%{init: {'flowchart': {'nodeSpacing': 24, 'rankSpacing': 50, 'padding': 14, 'curve': 'linear'}}}%%
+flowchart TB
+  subgraph g0["冻结与独立发布"]
+    direction TB
+    n00["计量学习 0.7.0"]
+    n01["恢复 Markdown context<br/>与最新项目 node"]
+    n02{"提出新的收益主张？"}
+    n03["复用已适用策略<br/>记录实际任务结果"]
+    n04["声明比较单位、质量标准<br/>预算、收益与停止条件"]
+    n05["来源证据与分别保存的<br/>通用改法、领域改法"]
+    n06["固定可见模型、推理强度<br/>权限与传输"]
+    n07["目标发布前<br/>冻结策略目录清单"]
+    n08[("frozen.md<br/>计划与策略哈希")]
+    n09["独立作者组织<br/>未暴露的失败来源目标"]
+    n10[("公开任务与输入")]
+    n11[("受保护的验收器<br/>与目标来源记录")]
+    n12{"已核实读取边界？"}
+    n13["落实隔离访问<br/>与审阅控制"]
+    n14[("发布任务 Markdown<br/>绑定输入与验收器哈希")]
+    n15["带种子的任务/重复块<br/>每个块包含全部路"]
+    n16["核对请求与<br/>冻结、发布、排程"]
+    n17{"内容或配置漂移？"}
+    n18["停止并保留失败<br/>变更研究使用新身份"]
+  end
+  subgraph g1["真实执行与完整记录"]
+    direction TB
+    n19["新上下文<br/>真实已授权 CLI 调用"]
+    n20["仅交付指定策略<br/>与公开输入"]
+    n21[("原生 events.jsonl<br/>单调 timeline.jsonl")]
+    n22["观察期限、命令上限<br/>与外部效果"]
+    n23{"停止或重连？"}
+    n24["保留缺失使用量<br/>核实未知远端效果"]
+    n25[("输出产物<br/>与真实访问/工具轨迹")]
+    n26["独立受保护的<br/>产物验收"]
+    n27[("验收、原始输出与退出码<br/>进程退出单列")]
+    n28["试次窗口与单列的<br/>准备、审阅、发布开销"]
+    n29[("成本请求绑定哈希<br/>事件＋时钟＋计时")]
+    n30[("不可覆盖的 trial-costs Markdown")]
+    n31["输入已含缓存<br/>输出已含推理明细"]
+    n32["缺失使用量、实收费用<br/>推理时间保持未知"]
+    n33["重叠区间取并集<br/>父子区间不相加"]
+  end
+  subgraph g2["因果假设与后续核验"]
+    direction TB
+    n34[("来源经验与证据<br/>可选因果图")]
+    n35["目标图与显式的<br/>来源变量映射"]
+    n36{"角色、不同变量<br/>与方向均保持？"}
+    n37["拒绝类比<br/>保留反例证据"]
+    n38["核对前提、未知<br/>负反馈与反证条件"]
+    n39{"可做有限试验？"}
+    n40["真实已授权目标核验<br/>行动前保存预测"]
+    n41[("产物与已观察反馈<br/>追加 Markdown 观察")]
+  end
+  subgraph g3["比较与限定采用"]
+    direction TB
+    n42["目标已暴露或已修复<br/>留作开发，改用保留任务"]
+    n43["比较全部任务/重复<br/>质量、时间、token 与覆盖"]
+    n44{"完整且可比？"}
+    n45["无法判定<br/>保留原策略，解决缺口"]
+    n46{"达到冻结收益与全部护栏？"}
+    n47["保留原策略<br/>保留未成功候选"]
+    n48["限定范围采用<br/>PPC、回归、回退<br/>组合变更须重新冻结"]
+    n49["后续实际使用、调整<br/>或拒绝，并保留观察结果"]
+  end
+  n00 --> n01
+  n01 --> n02
+  n02 -->|否| n03
+  n02 -->|是| n04
+  n04 --> n05
+  n05 --> n06
+  n06 --> n07
+  n07 --> n08
+  n08 --> n09
+  n09 --> n10
+  n09 --> n11
+  n10 --> n12
+  n11 --> n12
+  n12 -->|否| n13
+  n13 -->|核实| n12
+  n12 -->|是| n14
+  n14 --> n15
+  n15 --> n16
+  n08 -->|绑定| n16
+  n16 --> n17
+  n17 -->|是| n18
+  n17 -->|否| n20
+  n20 --> n19
+  n19 --> n21
+  n19 --> n22
+  n22 --> n23
+  n23 -->|是| n24
+  n24 -->|核实后| n25
+  n23 -->|否| n25
+  n21 --> n29
+  n25 --> n26
+  n11 -->|受保护| n26
+  n26 --> n27
+  n19 --> n28
+  n27 --> n28
+  n28 --> n29
+  n29 --> n30
+  n30 --> n31
+  n30 --> n32
+  n30 --> n33
+  n05 -->|候选| n34
+  n34 --> n35
+  n35 --> n36
+  n36 -->|否| n37
+  n36 -->|是| n38
+  n38 --> n39
+  n39 -->|否| n37
+  n39 -->|是| n40
+  n40 --> n41
+  n37 -->|拒绝记录| n41
+  n27 -->|如已暴露| n42
+  n27 --> n43
+  n31 --> n43
+  n32 --> n43
+  n33 --> n43
+  n41 -->|相关证据| n43
+  n43 --> n44
+  n44 -->|否| n45
+  n44 -->|是| n46
+  n46 -->|否| n47
+  n46 -->|是| n48
+  n48 --> n49
+  classDef default fill:#eef4f7,color:#183747,stroke:#6f8792
+  classDef measuredRoot fill:#173449,color:#fff,stroke:#173449,font-size:18px,font-weight:bold
+  classDef artifact fill:#e6f0f4,color:#183747,stroke:#5b8294
+  classDef decision fill:#fff1d8,color:#4e3920,stroke:#b08c4c
+  classDef hold fill:#f8e6e5,color:#583331,stroke:#b37d77
+  classDef act fill:#e6f0e7,color:#294833,stroke:#6a9675
+  class n00 measuredRoot
+  class n08,n10,n11,n14,n21,n25,n27,n29,n30,n34,n41 artifact
+  class n02,n12,n17,n23,n36,n39,n44,n46 decision
+  class n18,n24,n37,n42,n45,n47 hold
+  class n19,n26,n40,n48,n49 act
+  style g0 fill:#f6f8fb,stroke:#a6b7c4,color:#183747
+  style g1 fill:#f4f8f7,stroke:#a2b8ad,color:#183747
+  style g2 fill:#f9f6fc,stroke:#b7a9c7,color:#183747
+  style g3 fill:#fdf9f0,stroke:#c5b995,color:#183747
+  linkStyle default stroke:#607681,stroke-width:1.2px
+%% Copyright (C) 2026 KARMENLOOP Official Team. SPDX-License-Identifier: AGPL-3.0-only

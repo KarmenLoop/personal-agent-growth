@@ -1,4 +1,4 @@
-# Capability learning tutorial · 0.6.1
+# Capability learning tutorial · 0.7.0
 
 [中文](capability-learning.zh-CN.md) · [Runtime protocol](../references/capability-learning.en.md) · [Learning research](learning-science.en.md)
 

@@ -1,8 +1,8 @@
-# 复杂思维导图与流程图 · 0.6.1
+# 复杂思维导图与流程图 · 0.7.0
 
 [English](mindmaps.en.md) · [中文](mindmaps.zh-CN.md)
 
-中英文各十三张：四张详细思维导图，以及架构、调度、交接、日周、Windows 跳过核查、Agent 接续、能力证据、未知领域自适应学习与基于证据的判断图。两种语言保持相同分支结构。图示说明责任与协议，不代表每个宿主都已实现；实际范围以[兼容性](compatibility.zh-CN.md)为准。SVG 可放大，Mermaid 源文件可编辑。
+中英文各十四张：四张详细思维导图，以及架构、调度、交接、日周、Windows 跳过核查、Agent 接续、能力证据、未知领域自适应学习与基于证据的判断图。两种语言保持相同分支结构。图示说明责任与协议，不代表每个宿主都已实现；实际范围以[兼容性](compatibility.zh-CN.md)为准。SVG 可放大，Mermaid 源文件可编辑。
 
 ## 完整能力树
 
@@ -111,3 +111,11 @@ node tools/render_diagrams.mjs --mermaid-dir /path/to/node_modules/mermaid --pla
 [SVG](diagrams/evidence-judgment.zh-CN.svg) · [Mermaid](diagrams/evidence-judgment.zh-CN.mmd)
 
 ![基于证据的判断](diagrams/evidence-judgment.zh-CN.svg)
+
+## 未见任务、完整成本与因果迁移
+
+50 个节点、62 条连接，串起策略冻结、独立任务发布、真实 Agent 执行、来源/目标因果映射、原生用量、重叠时钟、独立验收与限定范围的采用决定，并保留失败及未返回使用量的试次。[教程](measured-learning.zh-CN.md)。
+
+[SVG](diagrams/measured-learning.zh-CN.svg) · [Mermaid](diagrams/measured-learning.zh-CN.mmd)
+
+![学习收益实测流程](diagrams/measured-learning.zh-CN.svg)

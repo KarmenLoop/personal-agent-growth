@@ -1,4 +1,4 @@
-# 学习科学与课程体系设计 · 0.6.1
+# 学习科学与课程体系设计 · 0.7.0
 
 [English](learning-science.en.md) · [文档索引](index.zh-CN.md) · [整体架构](architecture.zh-CN.md)
 

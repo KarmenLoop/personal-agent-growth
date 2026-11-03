@@ -240,6 +240,24 @@
       "labels": 14,
       "nodes": 12,
       "edges": 14
+    },
+    {
+      "source": "measured-learning.en.mmd",
+      "source_sha256": "ba5e1b3f2b0a59ff130017c3310bd9a719c21cd689c424c5e68bc2994b0d12a6",
+      "output": "measured-learning.en.svg",
+      "output_sha256": "2b7be47ca369eaac672937096ab0646ac8058bf571016cf5d5af4a7b2d1536da",
+      "width": 2467.51171875,
+      "height": 6767.5546875,
+      "labels": 116
+    },
+    {
+      "source": "measured-learning.zh-CN.mmd",
+      "source_sha256": "269736b74729ba717fa0e54af29f9152e2de263016dccd36473dfefd8ea71545",
+      "output": "measured-learning.zh-CN.svg",
+      "output_sha256": "aee2da4bdebd553ab8e4819bc94a680a41786e70639a31da660288f569ddf471",
+      "width": 2050.390625,
+      "height": 5702.97265625,
+      "labels": 116
     }
   ]
 }
